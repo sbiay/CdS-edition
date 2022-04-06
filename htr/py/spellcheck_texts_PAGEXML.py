@@ -20,6 +20,7 @@
 import os
 import re
 import sys
+import json
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
 
@@ -35,9 +36,8 @@ def suppress_punctuation(text):
         text = text.replace(sign, " ")
     return text
 
-spell = SpellChecker(language=None, local_dictionary=sys.argv[3], case_sensitive=True)
-# local_dictionary=sys.argv[3] indique que le paramètre local_dictionary est déterminé par l'index 3
-# des arguments passés dans la commande
+# On charge le dictionnaire local dans un fichier Json pour pouvoir le passer à SpellChecker
+spell = SpellChecker(language=None, local_dictionary="./dictionnaireComplet.json", case_sensitive=True)
 # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
 # This means that all the uppercase words will be considered wrong but that helps correct them
 # To use that technique, we have to call a local dictionary
@@ -54,10 +54,14 @@ for root, dirs, files in os.walk(sys.argv[1]):
             content = suppress_punctuation(content)
             words = content.split()
             misspelled = spell.unknown(words)
-            for word in misspelled:
-                dictionary[word] = spell.correction(word)
+            for index, word in enumerate(misspelled):
+                dictionary[word] = {
+                    "lemme": spell.correction(word),
+                    "contexte": f"{words}"
+                }
         # On écrit le résultat dans un fichier de sortie au format .py
-        with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"),"w") as file_out:
+        with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
             print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
-            file_out.write(filename.replace(".xml", "") +" = ")
+            file_out.write(filename.replace(".xml", "").replace(" ", "-") +" = ")
             file_out.write(str(dictionary).replace("',", "',\n"))
+
