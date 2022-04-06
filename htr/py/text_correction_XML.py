@@ -35,14 +35,33 @@ for root, dirs, files in os.walk(sys.argv[1]):
         # On ouvre le fichier XML de sortie
         with open(sys.argv[2] + filename, 'w') as xml_corr:
             # On boucle sur chaque ligne du contenuXML
-            for ligne in contenuXML:
+            for ligneBrute in contenuXML:
                 # Si la ligne de code xml ne contient pas d'élément Unicode,
                 # on écrit telle quelle cette ligne dans la sortie
-                if "Unicode" not in ligne:
-                    xml_corr.write(ligne + "\n")
+                if "Unicode" not in ligneBrute:
+                    xml_corr.write(ligneBrute + "\n")
                 else:
-                    # On boucle sur les entrées du dictionnaire
+                    # Si la ligne contient Unicode, il s'agit de la transcription à corriger
+                    # Pour chercher si les mots de la ligne courante sont dans le dictionnaire,
+                    # on tokénise cette ligne en commençant par éliminer les signes de ponctuation
+                    ponctuation = ",;:!.'"
+                    for signe in ponctuation:
+                        ligne = ligneBrute.replace(signe, " ")
+                    # Puis on supprime les éventuelles doubles espaces
+                    ligne = ligne.replace("  ", " ")
+                    # On supprime également les balises collées au premier et au dernier mot
+                    ligne = ligne.replace("<Unicode>", "")
+                    ligne = ligne.replace("</Unicode>", "")
+                    # Et on découpe chaque mot selon les espaces restantes
+                    ligne = ligne.split(" ")
+                    # On initie la ligne corrigée
+                    ligneCorr = ligneBrute
                     for cle, valeur in dictGlobal.items():
-                        if cle in ligne:
-                            ligne = ligne.replace(cle, valeur)
-                    xml_corr.write(ligne + "\n")
+                        for mot in ligne:
+                            # Comme la liste des mots contient des vides, on pose une condition d'existence
+                            if mot:
+                                # Si le mot courant correspond à l'entrée de dictionnaire
+                                if cle == mot:
+                                    ligneCorr = ligneCorr.replace(cle, valeur)
+                    xml_corr.write(ligneCorr + "\n")
+                    
