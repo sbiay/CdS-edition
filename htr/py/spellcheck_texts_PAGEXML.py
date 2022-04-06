@@ -54,11 +54,30 @@ for root, dirs, files in os.walk(sys.argv[1]):
             content = suppress_punctuation(content)
             words = content.split()
             misspelled = spell.unknown(words)
-            for word in misspelled:
-                dictionary[word] = spell.correction(word)
+            # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
+            for index, mot in enumerate(words):
+                if mot in misspelled:
+                    # On initie le contexte comme une liste
+                    contexte = []
+                    try:
+                        contexte.append(words[index - 3])
+                        contexte.append(words[index - 2])
+                        contexte.append(words[index - 1])
+                        contexte.append("###")
+                        contexte.append(words[index + 1])
+                        contexte.append(words[index + 2])
+                        contexte.append(words[index + 3])
+                    except IndexError:
+                        True
+                    contexte = ' '.join(contexte)
+                    # On écrit l'entrée du dictionnaire pour préciser le contexte
+                    dictionary[mot] = {
+                        'lem': spell.correction(mot),
+                        'ctxt': contexte
+                    }
         # On écrit le résultat dans un fichier de sortie au format .py
         with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
             print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
-            file_out.write(filename.replace(".xml", "").replace(" ", "-") +" = ")
-            file_out.write(str(dictionary).replace("',", "',\n"))
+            file_out.write(filename.replace(".xml", "").replace(" ", "-") + " = ")
+            file_out.write(str(dictionary).replace("},", "},\n"))
 

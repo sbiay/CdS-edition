@@ -60,19 +60,16 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         print(ligne)
                     # On initie la ligne corrigée
                     ligneCorr = ligneBrute
-                    for cle, valeur in dictCDS.items():
+                    for forme in dictCDS:
+                        lemme = dictCDS[forme]
                         for index, mot in enumerate(ligne):
                             # Comme la liste des mots contient des vides, on pose une condition d'existence
                             if mot:
                                 # Si le mot courant correspond à l'entrée de dictionnaire
-                                if cle == mot:
-                                    ligneCorr = ligneCorr.replace(cle, valeur)
-                                    if mot == "udrédulite":
-                                        print(index, ": ", mot)
-                                        try:
-                                            print(index + 1, ": ", ligne[index + 4])
-                                        except IndexError:
-                                            True
+                                if forme == mot:
+                                    ligneCorr = ligneCorr.replace(forme, lemme)
+                                    # On récupère le contexte du mot
+                                    
                     if "udrédulite" in ligneBrute:
                         print(ligneCorr)
                     xml_corr.write(ligneCorr + "\n")

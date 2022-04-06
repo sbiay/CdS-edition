@@ -101,7 +101,28 @@ D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièr
 	```shell
 	python3 py/spellcheck_texts_PAGEXML.py ./xmlPage/ ./dictPages/
 	```
-
+	- On tente de développer le script pour afficher le contexte du mot et en conserver la mémoire :
+		```py
+		contexte = []
+		try:
+			contexte.append(ligne[index - 3])
+			contexte.append(ligne[index - 2])
+			contexte.append(ligne[index - 1])
+			contexte.append(lemme.upper())
+			contexte.append(ligne[index + 1])
+			contexte.append(ligne[index + 2])
+			contexte.append(ligne[index + 3])
+		except IndexError:
+			True
+		contexte = ' '.join(contexte)
+		print(contexte)
+		# On réécrit l'entrée du dictionnaire pour préciser le contexte
+		dictCDS[forme] = {
+			'lemme': lemme,
+			'contexte': [contexte]
+		}
+		print(dictCDS[forme])
+		```
 4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier `./dictPages/` ;
     - Temps de correction : 35 min pour une double page.
     - Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot. 
