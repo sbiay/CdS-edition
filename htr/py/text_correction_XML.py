@@ -44,7 +44,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     # Si la ligne contient Unicode, il s'agit de la transcription à corriger
                     # Pour chercher si les mots de la ligne courante sont dans le dictionnaire,
                     # on tokénise cette ligne en commençant par éliminer les signes de ponctuation
-                    ponctuation = ",;:!.'"
+                    ponctuation = ",;:!."
                     for signe in ponctuation:
                         ligne = ligneBrute.replace(signe, " ")
                     # Puis on supprime les éventuelles doubles espaces
