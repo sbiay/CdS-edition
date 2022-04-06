@@ -18,7 +18,6 @@
 
 
 import os
-import lxml
 import re
 import sys
 from bs4 import BeautifulSoup

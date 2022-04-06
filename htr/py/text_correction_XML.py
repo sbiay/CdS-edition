@@ -10,27 +10,39 @@
     ======
     python name_of_this_script.py arg1 arg2
 
-    arg1: folder of the files to correct
-    arg2: folder for the files corrected
+    arg1: folder of the files to correct (attention à faire suivre le nom du dossier de "/")
+    arg2: folder for the files corrected (attention à faire suivre le nom du dossier de "/")
 
+    Commentaire : on procède à un parsage des documents XML d'entrée sous forme d'une liste de chaînes de caractères
+    afin d'éviter la modification du format des balises qui survient lorsqu'on les parse avec lxml ou BeautifulSoup,
+    ce qui entraîne des problèmes de compatibilité au moment de réimporter les fichiers dans eScriptorium.
 """
 
 import os
-import re
 import sys
-import dictionary
-#The dictionary must be in the same place as the script in the tree structure.
+from lxml import etree
+from dictGlobal import dictGlobal
 
-
+# On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(sys.argv[1]):
+    # On boucle sur chaque nom de fichier
     for filename in files:
-        with open(sys.argv[1] + filename, 'r') as file_in:
-            print("reading from "+sys.argv[1] + filename)
-            text = file_in.read()
-        correction_dictionary = eval("dictionary." + filename.replace(".xml", ""))
-        for cle, valeur in correction_dictionary.items():
-            if cle in text:
-                text = text.replace(cle, valeur)
-        with open(sys.argv[2] + filename,"w") as file_out:
-            print("writing to "+sys.argv[2] + filename)
-            file_out.write(text)
+        print(f"On lit le fichier {filename}")
+        # On ouvre le fichier XML d'entrée et on récupère le contenu dans une list de lignes
+        with open(sys.argv[1] + filename, 'r') as xml_orig:
+            contenuXML = xml_orig.read().split("\n")
+            
+        # On ouvre le fichier XML de sortie
+        with open(sys.argv[2] + filename, 'w') as xml_corr:
+            # On boucle sur chaque ligne du contenuXML
+            for ligne in contenuXML:
+                # Si la ligne de code xml ne contient pas d'élément Unicode,
+                # on écrit telle quelle cette ligne dans la sortie
+                if "Unicode" not in ligne:
+                    xml_corr.write(ligne + "\n")
+                else:
+                    # On boucle sur les entrées du dictionnaire
+                    for cle, valeur in dictGlobal.items():
+                        if cle in ligne:
+                            ligne = ligne.replace(cle, valeur)
+                    xml_corr.write(ligne + "\n")
