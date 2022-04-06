@@ -94,17 +94,23 @@ Temps de correction manuel d'une double page : environ 25 min (c'est le cas de l
 ### <span style="color : rgb(000, 200, 100, 0.7)">Correction automatisée grâce aux scripts du projet DAHN</span>
 D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièrement [ici](https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Documentation/Post-OCR%20correction%20for%20TEXT%20files.md#how-to-do-a-post-ocr-correction-for-text-files).
 
-1. Exporter les prédiction HTR au format XML-Page (le format texte ne peut pas être réimporté dans eScriptorium) dans un [dossier dédié](./xmlPage/) ;
+1. Exporter les prédictions HTR au format XML-Page (car le format texte ne peut pas être réimporté dans eScriptorium) dans un [dossier dédié](./xmlPage/) ;
 2. Créer un [dossier](./dictPages/) destiné à héberger les dictionnaires Python qui seront générés par le premier script pour chaque fichier représentant une double page ;
-3. Corriger à la main les entrées du dictionnaire de chaque fichier ;
+3. Appliquer le [script](./py/spellcheck_texts_PAGEXML.py) d'analyse des mots dans le fichier XML ;
+4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier `./dictPages/` ;
     - Temps de correction : 35 min pour une double page.
-	- Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot. 
-4. Regrouper les dictionnaires produits dans un seul fichier (pas de script pour cela) ;
-5. Appliquer le dictionnaire de correction grâce à ce [script](./py/text_correction_XML.py)
-6. Réimporter les fichiers corrigés dans eScriptorium
-	- Attention, il faudrait transformer les **esperluettes** pour éviter des problèmes de lecture du XML ;
-7. Corriger manuellement les résultats
-	- 
+    - Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot. 
+5. Regrouper les dictionnaires produits dans un seul fichier (**pas de script pour cela**) ;
+6. Appliquer le dictionnaire de correction aux fichiers XML grâce à ce [script](./py/text_correction_XML.py) :
+	```shell
+	python3 py/text_correction_XML.py ./xmlPage/ ./xmlPageCorrig/
+	```
+	- Problème : les modifications étant nombreuses, il faut tokénizer les mots et non procéder à un simple `replace()`.
+	- je n'arrive bizarrement pas à gérer le mot actuellement imprimé par le script (question des apostrophes) ;
+7. Réimporter les fichiers corrigés dans eScriptorium :
+    - Attention, il faudrait transformer les **esperluettes** pour éviter des problèmes de lecture du XML ;
+8. Corriger manuellement les résultats
+    - **J'en suis ici** : reprendre la correction du fichier [texte](./correctionManuelle/CdS02_Konv002-02_0066-corr-auto.txt), l. 40.
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Tester les performances du modèle entraîné par H. Souvay</span>
 

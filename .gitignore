@@ -12,3 +12,7 @@ recueils/
 htr/brouillonsCDSimg
 .idea
 htr/img/
+__pycache__
+py/__pycache__
+htr/correctionManuelle/
+htr/py/__pycache__

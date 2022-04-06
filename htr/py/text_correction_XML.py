@@ -45,8 +45,9 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     # Pour chercher si les mots de la ligne courante sont dans le dictionnaire,
                     # on tokénise cette ligne en commençant par éliminer les signes de ponctuation
                     ponctuation = ",;:!."
+                    ligne = ligneBrute
                     for signe in ponctuation:
-                        ligne = ligneBrute.replace(signe, " ")
+                        ligne = ligne.replace(signe, " ")
                     # Puis on supprime les éventuelles doubles espaces
                     ligne = ligne.replace("  ", " ")
                     # On supprime également les balises collées au premier et au dernier mot
@@ -54,6 +55,9 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     ligne = ligne.replace("</Unicode>", "")
                     # Et on découpe chaque mot selon les espaces restantes
                     ligne = ligne.split(" ")
+                    # Test sur un mot pour voir comment il est traité
+                    if "mapar" in ligneBrute:
+                        print(ligne)
                     # On initie la ligne corrigée
                     ligneCorr = ligneBrute
                     for cle, valeur in dictGlobal.items():
@@ -63,5 +67,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
                                 # Si le mot courant correspond à l'entrée de dictionnaire
                                 if cle == mot:
                                     ligneCorr = ligneCorr.replace(cle, valeur)
+                    if "udrédulite" in ligneBrute:
+                        print(ligneCorr)
                     xml_corr.write(ligneCorr + "\n")
                     
