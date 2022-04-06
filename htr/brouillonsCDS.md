@@ -1,0 +1,99 @@
+Dépouillement des brouillons de lettres de CDS
+====
+
+Recherche des lettres ayant :
+- Comme auteur CDS
+- Comme *Vorlage* : *Entwurf*
+- Comme critère de classement des résultats : la date
+
+- C05/S38/121-124*** : 
+	- atroce
+- CdS/67/034-035 : texte d'une main différente de la signature
+- [CdS/67/031-033](https://constance-de-salm.de/archiv/#/document/9486)*** : 
+	- brouillon potentiellement autographe ; 
+	- imposerait peut-être un traitement de l'image à cause de la transparence ;
+	- on ne possède pas de copie de cette lettre
+- C05/S40/152-154 :
+	- Probablement pas autographe 
+	- Mention "Signé" avant le nom
+	- Beaucoup plus lisible
+- CdS/92/010-011 :
+	- Seule la date de fin est de sa main
+- C09/S72/008-009 :
+	- Le texte n'est pas de la main de l'auteur
+	- Des corrections de la main de l'auteur
+- C11/S92/045-046 :
+	- Pas de la main de l'auteur, seulement quelques corrections
+- [C11/S92/047-049](https://constance-de-salm.de/archiv/#/document/765)*** :
+	- De la main de l'auteur
+	- Assez lisible
+- C04/S22/112-116 :
+	- Ecriture mauvaise mais très penchée
+	- Probablement pas de la main de l'auteur
+- [CdS/67/022-030](https://constance-de-salm.de/archiv/#/document/3814)*** :
+	- Bel autographe
+	- Long
+	- **Très intéressant**
+- [C04/S22/056-062](https://constance-de-salm.de/archiv/#/document/5811)*** : 
+	- Possiblement autographe
+	- Mais écriture très penchée (?)
+- [C04/S22/108](https://constance-de-salm.de/archiv/#/document/5822) :
+	- Autographe probable
+	- Assez penché
+- [C04/S22/035-038](https://constance-de-salm.de/archiv/#/document/5807)*** :
+	- Autographe certain
+	- 5 pages
+- [C04/S22/069-070](https://constance-de-salm.de/archiv/#/document/5814)*** :
+	- Autographe certain
+	- 2 p.
+- [C04/S22/094-096](https://constance-de-salm.de/archiv/#/document/8254)
+	- Autographe certain
+	- Beaucoup de ratures
+- C04/S22/091-093, 097 :
+	- Autographe certain
+	- Beaucoup de ratures
+	- Deux dernières pages correctes
+- [C04/S22/039-049](https://constance-de-salm.de/archiv/#/document/5808)*** :
+	- Vingt pages environ
+	- Lisibilité correcte
+- [C04/S22/084-087](https://constance-de-salm.de/archiv/#/document/8252) :
+	- Quatre pages autographes
+	- Qualité assez mauvaise
+- C08/S68/152-161 :
+	- Ecriture assez cursive
+	- Pas forcément autographe
+	- Des corrections autographes vers la fin
+- C11/S93/010-012 :
+	- Autographe certain
+	- 4 pages
+	- Pas mal de râture
+- [C04/S22/071-073](https://constance-de-salm.de/archiv/#/document/5815)*** :
+    - Autographe certain
+	- 4 pages
+    - Bonne lisibilité
+- C09/S74/408-413 :
+    - Autographe certain
+    - Pas mal de râture
+    - Ecriture partiuclièrement cursive
+- C04/S22/074-078 :
+    - Autographe certain
+    - Pas mal de râture
+- C11/S92/021-022 :
+    - Autographe certain
+    - Très cursive
+- C11/S92/016-020 :
+    - Autographe certain
+    - Très cursive
+    - Beaucoup de taches : document en mauvais état
+- [C11/S92/050-051](https://constance-de-salm.de/archiv/#/document/766) *** :
+    - Autographe certain
+    - Bonne lisibilité
+    - 3 p.
+- [CdS/68/027-029](https://constance-de-salm.de/archiv/#/document/8980) :
+    - Trois pages de bonne qualité
+- [C04/S22/027-034](https://constance-de-salm.de/archiv/#/document/5806)*** :
+    - Autographe certain
+    - 10 p.
+    - Certaines avec bcp de corrections, mais le début est très clair
+
+Reprendre le dépouillement ici.
