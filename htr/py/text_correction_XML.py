@@ -21,7 +21,7 @@
 import os
 import sys
 from lxml import etree
-from dictGlobal import dictGlobal
+from dictCDS import dictCDS
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(sys.argv[1]):
@@ -56,18 +56,25 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     # Et on découpe chaque mot selon les espaces restantes
                     ligne = ligne.split(" ")
                     # Test sur un mot pour voir comment il est traité
-                    if "mapar" in ligneBrute:
+                    if "udrédulite" in ligneBrute:
                         print(ligne)
                     # On initie la ligne corrigée
                     ligneCorr = ligneBrute
-                    for cle, valeur in dictGlobal.items():
-                        for mot in ligne:
+                    for cle, valeur in dictCDS.items():
+                        for index, mot in enumerate(ligne):
                             # Comme la liste des mots contient des vides, on pose une condition d'existence
                             if mot:
                                 # Si le mot courant correspond à l'entrée de dictionnaire
                                 if cle == mot:
                                     ligneCorr = ligneCorr.replace(cle, valeur)
+                                    if mot == "udrédulite":
+                                        print(index, ": ", mot)
+                                        try:
+                                            print(index + 1, ": ", ligne[index + 4])
+                                        except IndexError:
+                                            True
                     if "udrédulite" in ligneBrute:
                         print(ligneCorr)
                     xml_corr.write(ligneCorr + "\n")
+
                     

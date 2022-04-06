@@ -96,11 +96,18 @@ D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièr
 
 1. Exporter les prédictions HTR au format XML-Page (car le format texte ne peut pas être réimporté dans eScriptorium) dans un [dossier dédié](./xmlPage/) ;
 2. Créer un [dossier](./dictPages/) destiné à héberger les dictionnaires Python qui seront générés par le premier script pour chaque fichier représentant une double page ;
-3. Appliquer le [script](./py/spellcheck_texts_PAGEXML.py) d'analyse des mots dans le fichier XML ;
+
+3. Appliquer le [script](./py/spellcheck_texts_PAGEXML.py) d'analyse des mots dans le fichier XML :
+	```shell
+	python3 py/spellcheck_texts_PAGEXML.py ./xmlPage/ ./dictPages/
+	```
+
 4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier `./dictPages/` ;
     - Temps de correction : 35 min pour une double page.
     - Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot. 
+
 5. Regrouper les dictionnaires produits dans un seul fichier (**pas de script pour cela**) ;
+
 6. Appliquer le dictionnaire de correction aux fichiers XML grâce à ce [script](./py/text_correction_XML.py) :
 	```shell
 	python3 py/text_correction_XML.py ./xmlPage/ ./xmlPageCorrig/

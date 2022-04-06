@@ -1,4 +1,4 @@
-dictGlobal = {
+dictCDS = {
  'out': 'ont',
  'onc': 'ont',
  'pase': 'passe',
