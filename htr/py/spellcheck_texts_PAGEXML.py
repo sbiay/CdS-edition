@@ -45,6 +45,7 @@ spell = SpellChecker(language=None, local_dictionary=sys.argv[3], case_sensitive
 for root, dirs, files in os.walk(sys.argv[1]):
     for filename in files:
         dictionary = {}
+        # On ouvre le fichier XML d'entrée
         with open(sys.argv[1] + filename, 'r') as xml_file:
             print("reading from "+sys.argv[1] + filename)
             soup = BeautifulSoup(xml_file, 'lxml')
@@ -55,6 +56,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
             misspelled = spell.unknown(words)
             for word in misspelled:
                 dictionary[word] = spell.correction(word)
+        # On écrit le résultat dans un fichier de sortie au format .py
         with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"),"w") as file_out:
             print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
             file_out.write(filename.replace(".xml", "") +" = ")
