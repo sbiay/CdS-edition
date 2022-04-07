@@ -938,6 +938,9 @@ dictCDS = {'out':
  'Mtmle':
 	{'lem': 'Septembre',
 	 'ctxt': ['Cerle ruhe, le 7 SEPTEMBRE,181.']},
+  'davoir':
+	{'lem': '''d'avoir''',
+	 'ctxt': ['la grande Duchesse est charmée d avoir en']},
  "n'chin":
 	{'lem': "qu'hier", 'ctxt': []},
  'posission':
@@ -958,6 +961,9 @@ dictCDS = {'out':
  'Mharnantes':
 	{'lem': 'charmantes',
 	 'ctxt': ['completes de Mme de Salm dout elle est digne d&#39;apprécier les CHARMANTES']},
+'dout':
+	{'lem': 'dont',
+	 'ctxt': ['completes de Mme de Salm DONT elle est digne d&#39;apprécier les']},
  'Sallu':
 	{'lem': 'Salm',
 	 'ctxt': ['completes de Mme de SALM dout elle est digne d&#39;apprécier les charmantes']},
@@ -983,14 +989,17 @@ dictCDS = {'out':
 	{'lem': 'Son',
 	 'ctxt': ['plaisait à répéter ea chanter. SON Altesse Royale me charge, honneur']},
  'chonseur':
-	{'lem': 'honneur',
-	 'ctxt': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, HONNEUR']},
+	{'lem': 'Monsieur',
+	 'ctxt': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, MONSIEUR']},
  'Mltesse':
 	{'lem': 'Altesse',
 	 'ctxt': ['plaisait à répéter ea chanter. Son ALTESSE Royale me charge, honneur']},
  'davantie':
 	{'lem': 'davantage',
 	 'ctxt': ['à de tous ses remerciments. Elle vous en devra DAVANTAGE si vous lu four-']},
+	 'meme':
+	{'lem': 'même',
+	 'ctxt': ['elle même']},
  'fur-':
 	{'lem': 'four-',
 	 'ctxt': ['à de tous ses remerciments. Elle vous en devra davantage si vous lu FOUR-']},
