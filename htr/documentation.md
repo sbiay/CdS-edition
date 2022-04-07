@@ -5,22 +5,21 @@ Plan :
 	1. Paléographie
 	2. Organisation des sources
 2. Problématique
-3. Expériences d'HTR comparables
+3. Expériences comparables
 	1. Lectaurep
 4. Mettre en oeuvre des entraînements de modèles HTR
 	1. Constituer des sous-corpus paléographiquement homogènes
 		1. Main1
-	2. Augmenter le volume des vérités de terrain
-	3.  Corriger les prédictions grâce aux scripts du projet DAHN
-	4. Tester les performances du modèle entraîné par H. Souvay
-	5. Réitérer les opérations pour d'autres sous-corpus
-	6. Confronter les résultats avec ceux d'un autre modèle générique
+	2. Corriger les prédictions
+		1. Correction manuelle
+		2. Correction automatisée grâce aux scripts du projet DAHN
+			1. Marche à suivre
+			2. Développements et remarques
+	3. Tester les performances du modèle entraîné par H. Souvay
+	4. Réitérer les opérations pour d'autres sous-corpus
+	5. Confronter les résultats avec ceux d'un autre modèle générique
 5. Test de transcription de l'écriture CDS
 6. Segmentation et typage des zones
-7. Corrections
-	1. Test sur main1
-		1. Correction manuelle
-		2. Correction automatisée
 
 ***
 
@@ -92,7 +91,7 @@ On ne s'est pas attaché à prendre des pièces entières mais à ne sélectionn
 Temps de correction manuel d'une double page : environ 25 min (c'est le cas de la p. 1).
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Correction automatisée grâce aux scripts du projet DAHN</span>
-#### Marche à suivre
+#### <span style="color : rgb(050, 100, 060, 0.7)">Marche à suivre</span>
 D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièrement [ici](https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Documentation/Post-OCR%20correction%20for%20TEXT%20files.md#how-to-do-a-post-ocr-correction-for-text-files), on procède ainsi :
 
 1. Exporter les prédictions HTR au format XML-Page dans un [dossier dédié](./xmlPage-aCorriger/) ;
@@ -116,11 +115,11 @@ D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièr
 
 8. Corriger manuellement les résultats
 
-#### Développements et remarques
-##### Exporter les prédictions HTR au format XML-Page
+#### <span style="color : rgb(050, 100, 060, 0.7)">Développements et remarques</span>
+##### <span style="color : rgb(080, 080, 050, 0.7)">Exporter les prédictions HTR au format XML-Page</span>
 On a écarté le format texte, qui ne peut pas être réimporté dans eScriptorium.
 
-##### Appliquer le script d'analyse de mots spellcheck_texts_PAGEXML.py
+##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le script d'analyse de mots spellcheck_texts_PAGEXML.py</span>
 Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout en l'état actuel du modèle encore peu entraîné. La correction est donc un travail conséquent.
 
 Développement réalisés :
@@ -133,12 +132,12 @@ Développement réalisés :
 A faire :
 - Mobiliser les vérités de terrain afin de ne pas rechercher dans tout le **dictionnaireComplet** les formes déjà validées. 
 
-##### Corriger à la main les entrées des dictionnaires pour chaque fichier
+##### <span style="color : rgb(080, 080, 050, 0.7)">Corriger à la main les entrées des dictionnaires pour chaque fichier</span>
 - Temps de correction initial : 35 min pour une double page.
 - Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot.
 - La présentation du contexte du mot développée au point précédent facilite cette tache de validation des corrections proposées par le script **spellcheck_texts**. 
 
-##### Regrouper les dictionnaires produits dans un seul fichier
+##### <span style="color : rgb(080, 080, 050, 0.7)">Regrouper les dictionnaires produits dans un seul fichier</span>
 Cette opération se fait pour l'instant à la main, elle est facilement automatisable mais suppose de **faire attention** à ne pas effacer d'anciennes corrections par de nouvelles corrections : certaines formes mal reconnues seront ambiguës, car pouvant se résoudre dans des mots différents selon les contextes. Il faudra donc les neutraliser et conserver la mémoire de cette neutralisation.
 
 Lui consacrer un script permet de contrôler les nouvelles entrées du dictionnaire :
@@ -151,14 +150,14 @@ Lui consacrer un script permet de contrôler les nouvelles entrées du dictionna
 		5. Relancer le script.
 	- Si le lemme est identique : on intègre l'entrée au dictionnaire en remplaçant le contexte par le plus récent ;
 
-##### Appliquer le dictionnaire de correction aux fichiers XML (text_correction_XML.py)
+##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le dictionnaire de correction aux fichiers XML (text_correction_XML.py)</span>
 Développements effectués :
 - Les modifications étant nombreuses, il a fallu adapter le script afin de *tokéniser* les mots à remplacer.
 
-##### Réimporter les fichiers corrigés dans eScriptorium
+##### <span style="color : rgb(080, 080, 050, 0.7)">Réimporter les fichiers corrigés dans eScriptorium</span>
 - Attention, il faudrait transformer les **esperluettes** pour éviter des problèmes de lecture du XML.
 
-##### Corriger manuellement les résultats
+##### <span style="color : rgb(080, 080, 050, 0.7)">Corriger manuellement les résultats</span>
 - **J'en suis ici** : reprendre la correction du fichier [texte](./correctionManuelle/CdS02_Konv002-02_0066-corr-auto.txt), l. 40.
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Tester les performances du modèle entraîné par H. Souvay</span>
@@ -189,3 +188,4 @@ Difficultés dans la reconnaissance des lignes :
 - Des mots soulignés
 - Des rubriques : "autographe"
 - Des notes de bas de page (CdS02_Konv002-02_0066)
+
