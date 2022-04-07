@@ -7,7 +7,13 @@ Plan :
 2. Problématique
 3. Expériences comparables
 	1. Lectaurep
-4. Mettre en oeuvre des entraînements de modèles HTR
+4. Segmentation et typage des zones
+	1. Typer les zones
+		1. Proposition d'ontologie de SegmOnto
+		2. Applicabilité à un recueil de correspondance CDS
+		3. Les types d'informations à traiter
+	2. Résultats de la segmentation
+5. Mettre en oeuvre des entraînements de modèles HTR
 	1. Constituer des sous-corpus paléographiquement homogènes
 		1. Main1
 	2. Corriger les prédictions
@@ -18,8 +24,7 @@ Plan :
 	3. Tester les performances du modèle entraîné par H. Souvay
 	4. Réitérer les opérations pour d'autres sous-corpus
 	5. Confronter les résultats avec ceux d'un autre modèle générique
-5. Test de transcription de l'écriture CDS
-6. Segmentation et typage des zones
+6. Test de transcription de l'écriture CDS
 
 ***
 
@@ -77,6 +82,56 @@ Différentes méthodes employés :
     - Temps de calcul nécessaire : "Comme on a plus d’images et que le learning rate est plus petit, le modèle a besoin de plus de époques d’entraînement, ce qui ralentit l’ensemble du processus . Pour obtenir notre modèle à 91%, il nous a ainsi fallu compter 16h pour l’apprentissage" {chagueCreationModelesTranscriptiona}.
     - Résultat : le modèle `generic_lectau26`. Serait intéressant de l'obtenir (**il est volontiers partagé**).
 
+# <span style="color : rgb(015, 005, 230, 0.8)">Segmentation et typage des zones</span>
+## <span style="color : rgb(020, 080, 170, 0.8)">Typer les zones</span>
+Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes selon leur type, afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
+
+Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les Guidelines de l'édition de correspondance du projet DAHN permettent de guider cette réflexion ({chiffoleauCorrespondenceGuidelines2022}).
+
+Eléments TEI importants :
+- `opener` : en-tête de la lettre, comprenant des éléments
+	- `dateline` : lieu et date
+	- `salute` : "Cher Untel"
+	- `title` : en position de titre (centré, en grandes lettres) se trouve dans nos recueils le destinataire
+	- `letterhead` : en-tête proprement dite de la lettre ; cette position en haut à gauche est occupée dans nos recueils par une indication de l'expéditeur précédé de l'année, c'est une sorte de **manchette** au rôle proche du `letterhead` : délivrer le nom de l'expéditeur.
+- `closer` :
+	- `signed`
+	- `postscript`
+
+### <span style="color : rgb(000, 200, 100, 0.7)">Proposition d'ontologie de SegmOnto</span>
+F. Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle ({chiffoleauCorrespondanceLangueFrancaise2021}) :
+- `Main` (pink)
+- `Title` (<span style="color: #00bc66">green</span>) : two kinds of title : 
+	1. one that numbers the letter 
+	2. one that gives the subject
+- `Signature` (<span style="color: #fc6f03">orange</span>) : salutation and signature of the sender (sometimes handwritten)
+- `Stamp` (yellow) : faded stamp presents in almost all the pages of this corpus
+- `Letterhead` (<span style="color: #910078">purple</span>) : printed letterhead
+- `Numbering` (<span style="color: #fc03ef">pink</span>/red?) : numbering at the top of the letter
+- `Address` (light blue) : name and place of the recipient
+- `Salute` (red)
+- `Dateline` (dark blue) : place and date of writing for the letter
+- `Additions` (turquoise) : handwritten additions outside of the main text
+
+### <span style="color : rgb(000, 200, 100, 0.7)">Applicabilité à un recueil de correspondance CDS</span>
+Cf. schéma **en cours de réalisation** ([dossier](./segmentation/)).
+
+Les types d'informations à traiter :
+- **Corrections** : CDS corrige certains mots de sa main. 
+	- En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Floriane ajoutait un symbole `££` au début de la correction, pour attirer l'attention de l'encodeur. C'est une bonne idée car de nombreux cas consistent en une simple lettre barrée ([en local](./img/main1/CdS02_Konv002-02_0065.jpg)) ; dans ce cas, le typage est impossible.
+	- En réécrivant dans l'interligne : il est alors pertinent d'utiliser le type de ligne eScriptorium `correction`.
+- Des mots soulignés
+- Des rubriques : "autographe"
+- Des notes de bas de page ([en local](./img/main1/CdS02_Konv002-02_0066.jpg))
+- Une pagination à la mine.
+- Des passages en vers ([en local](./img/main1/CdS02_Konv002-02_0082.jpg))
+
+## <span style="color : rgb(020, 080, 170, 0.8)">Résultats de la segmentation</span>
+Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" sur la main1 font apparaître une bonne segmentation des doubles pages.
+
+Difficultés dans la reconnaissance des lignes :
+- Les références placées en haut à gauche (avec la date et le nom de l'expéditeur), écrites en diagonale, ne sont pas toujours bien lues (lignes sectionnées en plusieurs morceaux)
+
 # <span style="color : rgb(015, 005, 230, 0.8)">Mettre en oeuvre des entraînements de modèles HTR</span>
 Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
 
@@ -114,6 +169,12 @@ D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièr
 7. Réimporter les fichiers corrigés dans eScriptorium :
 
 8. Corriger manuellement les résultats
+
+9. Télécharger la verité de terrain pour la sauvegarder
+
+10. Renommer le fichier image dans le code XML-Alto (la reconnaissance se fait sur les fichiers tiff, mais ont joindra aux vérités de terrain les fichiers jpeg)
+
+11. Appliquer un script de récupération des mots dans les fichiers ajoutés (**pas encore écrit**), afin de constituer un glossaire de la correspondance et d'optimiser les performances de la correction automatique
 
 #### <span style="color : rgb(050, 100, 060, 0.7)">Développements et remarques</span>
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Exporter les prédictions HTR au format XML-Page</span>
@@ -179,13 +240,4 @@ Aucun *original* de CdS, mais **52 brouillons** (passage en revue depuis les plu
 
 Voir le dépouillement dans le fichier `../brouillonsCDS.md`
 
-# <span style="color : rgb(015, 005, 230, 0.8)">Segmentation et typage des zones</span>
-Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" sur la main1 font apparaître une bonne segmentation des doubles pages.
-
-Difficultés dans la reconnaissance des lignes :
-- Les références placées en haut à gauche (avec la date et le nom de l'expéditeur), écrites en diagonale, ne sont pas toujours bien lues (lignes sectionnées en plusieurs morceaux) ; et **quel type leur donner ?** (voir l'ontologie de DAHN)
-- **Corrections** : CDS corrige certains mots de sa main. Il faut pouvoir poser une balise qui s'exporte avec la transcription afin de permettre de savoir à la lecture du fichier TEI, qu'il y a une correction à ajouter (Floriane Chiff. le faisait et ajoutant un symbole `££`) ;
-- Des mots soulignés
-- Des rubriques : "autographe"
-- Des notes de bas de page (CdS02_Konv002-02_0066)
 
