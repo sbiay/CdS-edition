@@ -23,6 +23,7 @@ import sys
 import json
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
+from dictCDS import dictCDS
 
 def suppress_punctuation(text):
     """ Suppress punctuation in a text
@@ -53,6 +54,33 @@ for root, dirs, files in os.walk(sys.argv[1]):
             content = unicode.string
             content = suppress_punctuation(content)
             words = content.split()
+            
+            # On cherche chaque mot dans le dictCDS
+            for index, mot in enumerate(words):
+                if dictCDS.get(mot):
+                    # On retire le mot de la liste à traiter avec la fonction spell
+                    words.remove(mot)
+                    # On initie le contexte comme une liste
+                    contexte = []
+                    try:
+                        contexte.append(words[index - 3])
+                        contexte.append(words[index - 2])
+                        contexte.append(words[index - 1])
+                        contexte.append(dictCDS[mot]['lem'].upper())
+                        contexte.append(words[index + 1])
+                        contexte.append(words[index + 2])
+                        contexte.append(words[index + 3])
+                    except IndexError:
+                        True
+                    contexte = ' '.join(contexte)
+                    # On écrit l'entrée du dictionnaire pour préciser le contexte
+                    dictionary[mot] = {
+                        'lem': dictCDS[mot]['lem'],
+                        'ctxt': contexte,
+                        'deja utilisé': dictCDS[mot]['ctxt']
+                    }
+            
+            # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
             misspelled = spell.unknown(words)
             # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
             for index, mot in enumerate(words):
@@ -63,7 +91,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         contexte.append(words[index - 3])
                         contexte.append(words[index - 2])
                         contexte.append(words[index - 1])
-                        contexte.append("###")
+                        contexte.append(spell.correction(mot).upper())
                         contexte.append(words[index + 1])
                         contexte.append(words[index + 2])
                         contexte.append(words[index + 3])
@@ -75,9 +103,13 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         'lem': spell.correction(mot),
                         'ctxt': contexte
                     }
+        
+        # On re-type et indente le dictionnaire pour la sortie
+        dictionary = str(dictionary).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
+
         # On écrit le résultat dans un fichier de sortie au format .py
         with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
             print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
-            file_out.write(filename.replace(".xml", "").replace(" ", "-") + " = ")
-            file_out.write(str(dictionary).replace("},", "},\n"))
+            file_out.write("dictPage = ")
+            file_out.write(dictionary)
 
