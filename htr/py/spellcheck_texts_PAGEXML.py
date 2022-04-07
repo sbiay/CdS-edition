@@ -52,37 +52,34 @@ for root, dirs, files in os.walk(sys.argv[1]):
             soup = BeautifulSoup(xml_file, 'lxml')
         for unicode in soup.find_all('unicode'):
             content = unicode.string
-            
-            #content = suppress_punctuation(content)
+            content = suppress_punctuation(content)
             words = content.split(" ")
-            
-            # On cherche chaque mot dans le dictCDS
+            # On boucle sur chaque mot de l'élément Unicode courant
             for index, mot in enumerate(words):
+                # On cherche chaque mot dans le dictCDS
                 if dictCDS.get(mot):
-                    if "étar" in words:
-                        print(words)
-                    # TODO nettoyer
-                    # On retire le mot de la liste à traiter avec la fonction spell
-                    #words.remove(mot)
-                    # On initie le contexte comme une liste
-                    contexte = []
-                    try:
-                        contexte.append(words[index - 3])
-                        contexte.append(words[index - 2])
-                        contexte.append(words[index - 1])
-                        contexte.append(dictCDS[mot]['lem'].upper())
-                        contexte.append(words[index + 1])
-                        contexte.append(words[index + 2])
-                        contexte.append(words[index + 3])
-                    except IndexError:
-                        True
-                    contexte = ' '.join(contexte)
-                    # On écrit l'entrée du dictionnaire pour préciser le contexte
-                    dictionary[mot] = {
-                        'lem': dictCDS[mot]['lem'],
-                        'ctxt': contexte.replace("'", ' '),
-                        'deja utilisé': dictCDS[mot]['ctxt']
-                    }
+                    # On vérifie que la solution ne soit pas ambiguë (id est qu'il n'y ait pas deux contextes de
+                    # résolution concurrents et qu'il existe bien un lemme)
+                    if not len(dictCDS[mot]['contxt']) > 1 and dictCDS[mot]['lem']:
+                        # On initie le contexte comme une liste
+                        contexte = []
+                        try:
+                            contexte.append(words[index - 3])
+                            contexte.append(words[index - 2])
+                            contexte.append(words[index - 1])
+                            contexte.append(dictCDS[mot]['lem'].upper())
+                            contexte.append(words[index + 1])
+                            contexte.append(words[index + 2])
+                            contexte.append(words[index + 3])
+                        except IndexError:
+                            True
+                        contexte = ' '.join(contexte)
+                        # On écrit l'entrée du dictionnaire pour préciser le contexte
+                        dictionary[mot] = {
+                            'lem': dictCDS[mot]['lem'],
+                            'ctxt': contexte.replace("'", ' '),
+                            'deja utilisé': dictCDS[mot]['ctxt']
+                        }
                 else:
                     # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
                     misspelled = spell.unknown(mot)
