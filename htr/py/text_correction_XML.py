@@ -31,7 +31,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
         # On ouvre le fichier XML d'entrée et on récupère le contenu dans une list de lignes
         with open(sys.argv[1] + filename, 'r') as xml_orig:
             contenuXML = xml_orig.read().split("\n")
-            
+        
         # On ouvre le fichier XML de sortie
         with open(sys.argv[2] + filename, 'w') as xml_corr:
             # On boucle sur chaque ligne du contenuXML
@@ -60,18 +60,45 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         print(ligne)
                     # On initie la ligne corrigée
                     ligneCorr = ligneBrute
+                    # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
+                    entreesMAJ = {}
+                    # On boucle sur les formes du dictionnaire personnalisé
                     for forme in dictCDS:
-                        lemme = dictCDS[forme]
+                        lemme = dictCDS[forme]["lem"]
                         for index, mot in enumerate(ligne):
                             # Comme la liste des mots contient des vides, on pose une condition d'existence
                             if mot:
                                 # Si le mot courant correspond à l'entrée de dictionnaire
                                 if forme == mot:
                                     ligneCorr = ligneCorr.replace(forme, lemme)
-                                    # On récupère le contexte du mot
-                                    
+                                    entreesMAJ[forme] = {
+                                        "lem": lemme,
+                                        "ctxt": []
+                                    }
+                    # On renvoie le contexte du mot traité dans le dictionnaire global en reparsant la ligne corrigée
+                    for entree in entreesMAJ:
+                        # On inscrit dans le dictionnaire le contexte en sélectionnant le noeud texte de l'élément
+                        # Unicode par une slice et en mettant en valeur le lemme dans le texte corrigé par une casse
+                        # en capitales
+                        entreesMAJ[entree]["ctxt"] = [
+                            ligneCorr[19:-10].replace(
+                                entreesMAJ[entree]["lem"], entreesMAJ[entree]["lem"].upper()
+                            )
+                        ]
+                        
+                        # On met à jour le dictCDS avec les contextes actualisés
+                        dictCDS[entree] = entreesMAJ[entree]
+                        
                     if "udrédulite" in ligneBrute:
                         print(ligneCorr)
+                        
                     xml_corr.write(ligneCorr + "\n")
 
-                    
+# On transforme le dictCDS pour l'indenter
+dictCDS = str(dictCDS).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
+
+# On met à jour le dictCDS
+with open("./py/dictCDS.py", mode="w") as f:
+    f.write(
+        f"dictCDS = {dictCDS}"
+    )
