@@ -1,5 +1,3 @@
-from dictCDS import dictCDS
-
 def dictCDStransform():
     """
     USAGE UNIQUE
@@ -9,7 +7,7 @@ def dictCDStransform():
     et "ctxt" pour contexte.
     """
     
-    from dictCDS import dictCDS
+    from dictComplets.dictCDS import dictCDS
     
     nouveauDict = {}
     

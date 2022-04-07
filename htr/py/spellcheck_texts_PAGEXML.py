@@ -18,12 +18,10 @@
 
 
 import os
-import re
 import sys
-import json
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
-from dictCDS import dictCDS
+from dictComplets.dictCDS import dictCDS
 
 def suppress_punctuation(text):
     """ Suppress punctuation in a text
@@ -38,7 +36,7 @@ def suppress_punctuation(text):
     return text
 
 # On charge le dictionnaire local dans un fichier Json pour pouvoir le passer à SpellChecker
-spell = SpellChecker(language=None, local_dictionary="./dictionnaireComplet.json", case_sensitive=True)
+spell = SpellChecker(language=None, local_dictionary="./dictComplets/dictGeneral.json", case_sensitive=True)
 # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
 # This means that all the uppercase words will be considered wrong but that helps correct them
 # To use that technique, we have to call a local dictionary

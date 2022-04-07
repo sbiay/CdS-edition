@@ -20,8 +20,7 @@
 
 import os
 import sys
-from lxml import etree
-from dictCDS import dictCDS
+from dictComplets.dictCDS import dictCDS
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(sys.argv[1]):
