@@ -52,14 +52,18 @@ for root, dirs, files in os.walk(sys.argv[1]):
             soup = BeautifulSoup(xml_file, 'lxml')
         for unicode in soup.find_all('unicode'):
             content = unicode.string
-            content = suppress_punctuation(content)
-            words = content.split()
+            
+            #content = suppress_punctuation(content)
+            words = content.split(" ")
             
             # On cherche chaque mot dans le dictCDS
             for index, mot in enumerate(words):
                 if dictCDS.get(mot):
+                    if "étar" in words:
+                        print(words)
+                    # TODO nettoyer
                     # On retire le mot de la liste à traiter avec la fonction spell
-                    words.remove(mot)
+                    #words.remove(mot)
                     # On initie le contexte comme une liste
                     contexte = []
                     try:
@@ -76,37 +80,35 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     # On écrit l'entrée du dictionnaire pour préciser le contexte
                     dictionary[mot] = {
                         'lem': dictCDS[mot]['lem'],
-                        'ctxt': contexte,
+                        'ctxt': contexte.replace("'", ' '),
                         'deja utilisé': dictCDS[mot]['ctxt']
                     }
-            
-            # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
-            misspelled = spell.unknown(words)
-            # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
-            for index, mot in enumerate(words):
-                if mot in misspelled:
-                    # On initie le contexte comme une liste
-                    contexte = []
-                    try:
-                        contexte.append(words[index - 3])
-                        contexte.append(words[index - 2])
-                        contexte.append(words[index - 1])
-                        contexte.append(spell.correction(mot).upper())
-                        contexte.append(words[index + 1])
-                        contexte.append(words[index + 2])
-                        contexte.append(words[index + 3])
-                    except IndexError:
-                        True
-                    contexte = ' '.join(contexte)
-                    # On écrit l'entrée du dictionnaire pour préciser le contexte
-                    dictionary[mot] = {
-                        'lem': spell.correction(mot),
-                        'ctxt': contexte
-                    }
-        
+                else:
+                    # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
+                    misspelled = spell.unknown(mot)
+                    # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
+                    if misspelled:
+                        # On initie le contexte comme une liste
+                        contexte = []
+                        try:
+                            contexte.append(words[index - 3])
+                            contexte.append(words[index - 2])
+                            contexte.append(words[index - 1])
+                            contexte.append(spell.correction(mot).upper())
+                            contexte.append(words[index + 1])
+                            contexte.append(words[index + 2])
+                            contexte.append(words[index + 3])
+                        except IndexError:
+                            True
+                        contexte = ' '.join(contexte)
+                        # On écrit l'entrée du dictionnaire pour préciser le contexte
+                        dictionary[mot] = {
+                            'lem': spell.correction(mot),
+                            'ctxt': contexte.replace("'", ' ')
+                        }
         # On re-type et indente le dictionnaire pour la sortie
         dictionary = str(dictionary).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
-
+        
         # On écrit le résultat dans un fichier de sortie au format .py
         with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
             print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
