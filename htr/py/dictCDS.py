@@ -374,7 +374,7 @@ dict = {'out':
 	{'lem': 'Liedberg)',
 	 'ctxt': ['A Mr Prous (au chateau de) LIEDBERG)']},
  'Prouhae':
-	{'lem': 'Prous',
+	{'lem': 'Prons',
 	 'ctxt': ['A Mr PROUS (au chateau de) Liedberg)']},
  'Mr':
 	{'lem': 'Mr',
@@ -494,7 +494,7 @@ dict = {'out':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE']},
  'Prouchae':
-	{'lem': 'Prous',
+	{'lem': 'Prons',
 	 'ctxt': ['A Mr PROUS (au chateau de Liedberg)']},
  'caere':
 	{'lem': '(au chateau de',
@@ -521,7 +521,7 @@ dict = {'out':
 	{'lem': 'hotesse',
 	 'ctxt': ['Mille compliments à Mr Prous et à son aimable HOTESSE sir']},
  'Prous':
-	{'lem': 'Prous',
+	{'lem': 'Prons',
 	 'ctxt': ['Mille compliments à Mr PROUS et à son aimable hotesse sir']},
  'Jenvoie':
 	{'lem': "J'envoie", 'ctxt': ["l&#39;a encore. J'ENVOIE savoir de leurs nouveles et les prie de me faire"]},
@@ -619,7 +619,7 @@ dict = {'out':
 	{'lem': 'insupportable',
 	 'ctxt': ['en dat INSUPPORTABLE pour une trop vive vivavité']},
  'Piois':
-	{'lem': 'Prous',
+	{'lem': 'Prons',
 	 'ctxt': ['Mr PROUS comprendra ont cela. Je Lui fos mes sincères amitiés']},
  'anctis':
 	{'lem': 'amitiés',
