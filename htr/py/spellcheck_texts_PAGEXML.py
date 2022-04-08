@@ -21,7 +21,7 @@ import sys
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
 from constantes import XMLaCORRIGER, DICTPAGES
-from dictCDScorr import dict
+from dictCDS import dict
 
 def suppress_punctuation(text):
     """ Suppress punctuation in a text

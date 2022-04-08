@@ -10,7 +10,7 @@ def dictCDStransform():
     et "ctxt" pour contexte.
     """
     
-    from py.dictCDScorr import dict
+    from py.dictCDS import dict
     
     nouveauDict = {}
     
@@ -22,7 +22,7 @@ def dictCDStransform():
     
     nouveauDict = str(nouveauDict).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
     
-    with open("./py/dictCDScorr.py", mode="w") as f:
+    with open("./py/dictCDS.py", mode="w") as f:
         f.write(
             f"dictCDS = {nouveauDict}"
         )

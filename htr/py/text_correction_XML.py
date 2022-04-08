@@ -20,7 +20,7 @@
 
 import os
 import sys
-from py.dictCDScorr import dict
+from py.dictCDS import dict
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(sys.argv[1]):
@@ -97,7 +97,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
 dictCDS = str(dict).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
 
 # On met à jour le dictCDS
-with open("./py/dictCDScorr.py", mode="w") as f:
+with open("./py/dictCDS.py", mode="w") as f:
     f.write(
         f"dictCDS = {dictCDS}"
     )
