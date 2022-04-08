@@ -11,20 +11,21 @@ Plan :
 	1. Typer les zones
 		1. Proposition d'ontologie de SegmOnto
 		2. Applicabilité à un recueil de correspondance CDS
-		3. Les types d'informations à traiter
 	2. Résultats de la segmentation
-5. Mettre en oeuvre des entraînements de modèles HTR
-	1. Constituer des sous-corpus paléographiquement homogènes
-		1. Main1
-	2. Corriger les prédictions
+5. HTR : mise en oeuvre
+	1. Point de départ
+		1. Essais d'HTR
+	2. Constituer des sous-corpus paléographiquement homogènes
+		1. Main 1
+		2. Test de transcription de l'écriture CDS
+	3. Corriger les prédictions
 		1. Correction manuelle
 		2. Correction automatisée grâce aux scripts du projet DAHN
 			1. Marche à suivre
 			2. Développements et remarques
-	3. Tester les performances du modèle entraîné par H. Souvay
-	4. Réitérer les opérations pour d'autres sous-corpus
-	5. Confronter les résultats avec ceux d'un autre modèle générique
-6. Test de transcription de l'écriture CDS
+	4. Tester les performances du modèle entraîné par H. Souvay
+	5. Réitérer les opérations pour d'autres sous-corpus
+	6. Confronter les résultats avec ceux d'un autre modèle générique
 
 ***
 
@@ -135,7 +136,7 @@ Difficultés dans la reconnaissance des lignes :
 # <span style="color : rgb(015, 005, 230, 0.8)">HTR : mise en oeuvre</span>
 Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
 
-## Point de départ
+## <span style="color : rgb(020, 080, 170, 0.8)">Point de départ</span>
 ### <span style="color : rgb(000, 200, 100, 0.7)">Essais d'HTR</span>
 Le dépôt Github du DHI [Constance de Salm](https://github.com/dhi-digital-humanities/constance-de-salm) contient un [modèle d'entraînement](https://github.com/dhi-digital-humanities/constance-de-salm/tree/main/HTR/Training%20Models) avec des vérités de terrain en petite quantité et un modèle entraîné.
 
@@ -152,13 +153,25 @@ Les fichiers images sont issus de la même source que celle testée par H. Souva
 
 On ne s'est pas attaché à prendre des pièces entières mais à ne sélectionner que des doubles pages ne comportant qu'une seule main principale (quelques corrections de la main de CDS apparaissent ponctuellement).
 
+### <span style="color : rgb(000, 200, 100, 0.7)">CDS : test de transcription de l'écriture de l'auteur</span>
+Je passe en revue les lettres de l'auteur de façon chronologique en commençant par les plus anciennes.
+
+Les lettres sont de trois types : 
+1. Original
+2. Copie : *Abschrift*
+3. Brouillon : *Entwurf*
+
+Aucun *original* de CdS, mais **52 brouillons** (passage en revue depuis les plus récents). Le dépouillement des notices se trouve dans le fichier.
+
+Voir le dépouillement dans le fichier `./mains/brouillonsCDS.md`
+
 ## <span style="color : rgb(020, 080, 170, 0.8)">Corriger les prédictions</span>
 ### <span style="color : rgb(000, 200, 100, 0.7)">Correction manuelle</span>
 Temps de correction manuel d'une double page : environ 25 min (c'est le cas de la p. 1).
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Correction automatisée grâce aux scripts du projet DAHN</span>
 #### <span style="color : rgb(050, 100, 060, 0.7)">Marche à suivre</span>
-D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièrement [ici](https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Documentation/Post-OCR%20correction%20for%20TEXT%20files.md#how-to-do-a-post-ocr-correction-for-text-files), on procède ainsi :
+D'après la démarche expliquée dans la documentation du projet DAHN, plus particulièrement [ici](https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Documentation/Post-OCR%20correction%20for%20TEXT%20files.md#how-to-do-a-post-ocr-correction-for-text-files), on procède ainsi :
 
 1. Exporter les prédictions HTR au format XML-Page dans un [dossier dédié](./xmlPage-aCorriger/) ;
 
@@ -185,7 +198,9 @@ D'après la démarche expliquée dans {chiffoleauDAHNProject}, plus particulièr
 
 10. Renommer le fichier image dans le code XML-Alto (la reconnaissance se fait sur les fichiers tiff, mais ont joindra aux vérités de terrain les fichiers jpeg)
 
-11. Appliquer un script de récupération des mots dans les fichiers ajoutés (**pas encore écrit**), afin de constituer un glossaire de la correspondance et d'optimiser les performances de la correction automatique
+11. Appliquer un script de récupération des mots dans les fichiers ajoutés (**pas encore écrit**), afin de constituer un glossaire de la correspondance et d'optimiser les performances de la correction automatique.
+
+{chiffoleauDAHNProject}
 
 #### <span style="color : rgb(050, 100, 060, 0.7)">Développements et remarques</span>
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Exporter les prédictions HTR au format XML-Page</span>
@@ -238,17 +253,3 @@ Développements effectués :
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Confronter les résultats avec ceux d'un autre modèle générique</span>
 On testera le modèle entraîné par le projet Lectaurep.
-
-# <span style="color : rgb(015, 005, 230, 0.8)">Test de transcription de l'écriture CDS</span>
-Je passe en revue les lettres de l'auteur de façon chronologique en commençant par les plus anciennes.
-
-Les lettres sont de trois types : 
-1. Original
-2. Copie : *Abschrift*
-3. Brouillon : *Entwurf*
-
-Aucun *original* de CdS, mais **52 brouillons** (passage en revue depuis les plus récents). Le dépouillement des notices se trouve dans le fichier.
-
-Voir le dépouillement dans le fichier `../brouillonsCDS.md`
-
-
