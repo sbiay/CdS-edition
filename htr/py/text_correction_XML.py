@@ -93,6 +93,4 @@ dictCDS = str(dict).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '
 
 # On met à jour le dictCDS
 with open("./py/dictCDS.py", mode="w") as f:
-    f.write(
-        f"dictCDS = {dictCDS}"
-    )
+    f.write(f"dict = {dictCDS}")

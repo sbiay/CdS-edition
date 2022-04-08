@@ -1,8 +1,3 @@
-"""
-Ce dictionnaire contient les corrections à appliquer dans les prédictions HTR
-- Clés : formes mal transcrites
-- Valeurs : dictionnaire contenant le lemme corrigeant la forme mal transcrites et son contexte d'usage
-"""
 dict = {'out':
 	{'lem': 'ont',
 	 'ctxt': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
@@ -15,1077 +10,1076 @@ dict = {'out':
  'anmes':
 	{'lem': 'années',
 	 'ctxt': ['depuis quelques ANNÉES commence à me faire croire à la providence']},
-		'epère':
+ 'epère':
 	{'lem': 'espère',
 	 'ctxt': ['j&#39;ESPÈRE qu&#39;il leur arrivera quelqu grande Catas trapbe Cependant']},
-		'vour':
+ 'vour':
 	{'lem': 'vous',
 	 'ctxt': ['Elle est bonne pour de vieux routiers comme nous ; gardez le tone VOUS']},
-		'per':
+ 'per':
 	{'lem': 'par',
 	 'ctxt': ['ma lettre PAR des formules de respect & ; mai je fais trop de as']},
-		'lattre':
+ 'lattre':
 	{'lem': 'lettre',
 	 'ctxt': ['ma LETTRE par des formules de respect & ; mai je fais trop de as']},
-		'vine':
+ 'vine':
 	{'lem': 'vive',
 	 'ctxt': ['en dat insupportable pour une trop VIVE vivavité']},
-		'pes':
+ 'pes':
 	{'lem': 'pas',
 	 'ctxt': ['PAS pluis heureux que nous et que es mangeurs en Chef (les Anglais']},
-		'mangés':
+ 'mangés':
 	{'lem': 'mangis',
 	 'ctxt': []},
-		'vours':
+ 'vours':
 	{'lem': 'vous',
 	 'ctxt': ['à nous en es consoler en voyant que ceux qui VOUS ont mangis, me sont']},
-		'cetxe':
+ 'cetxe':
 	{'lem': 'ceux',
 	 'ctxt': ['à nous en es consoler en voyant que CEUX qui vous ont mangis, me sont']},
-		'noeis':
+ 'noeis':
 	{'lem': 'nous en',
 	 'ctxt': ['à NOUS EN es consoler en voyant que ceux qui vous ont mangis, me sont']},
-		'cousolr':
+ 'cousolr':
 	{'lem': 'consoler',
 	 'ctxt': ['à nous en es CONSOLER en voyant que ceux qui vous ont mangis, me sont']},
-		'voyanst':
+ 'voyanst':
 	{'lem': 'voyant',
 	 'ctxt': ['à nous en es consoler en VOYANT que ceux qui vous ont mangis, me sont']},
-		'(les':
+ '(les':
 	{'lem': '(les',
 	 'ctxt': ['pas pluis heureux que nous et que es mangeurs en Chef (LES Anglais']},
-		'Mglis':
+ 'Mglis':
 	{'lem': 'Anglais',
 	 'ctxt': ['pas pluis heureux que nous et que es mangeurs en Chef (les ANGLAIS']},
-		'Chf':
+ 'Chf':
 	{'lem': 'Chef',
 	 'ctxt': ['pas pluis heureux que nous et que es mangeurs en CHEF (les Anglais']},
-		'heureur':
+ 'heureur':
 	{'lem': 'heureux',
 	 'ctxt': ['pas pluis HEUREUX que nous et que es mangeurs en Chef (les Anglais']},
-		'Coume':
+ 'Coume':
 	{'lem': 'Comme',
 	 'ctxt': ['sont d&#39;ans la position la plus fâcheuse. COMME tout ce qui se passe']},
-		'fachiense':
+ 'fachiense':
 	{'lem': 'fâcheuse',
 	 'ctxt': ['sont d&#39;ans la position la plus FÂCHEUSE. Comme tout ce qui se passe']},
-		'nosition':
+ 'nosition':
 	{'lem': 'position',
 	 'ctxt': ['sont d&#39;ans la POSITION la plus fâcheuse. Comme tout ce qui se passe']},
-		'fadre':
+ 'fadre':
 	{'lem': 'faire',
 	 'ctxt': ['depuis quelques années commence à me FAIRE croire à la providence']},
-		'pronidence':
+ 'pronidence':
 	{'lem': 'providence',
 	 'ctxt': ['depuis quelques années commence à me faire croire à la PROVIDENCE']},
-		'quelires':
+ 'quelires':
 	{'lem': 'quelques',
 	 'ctxt': ['depuis QUELQUES années commence à me faire croire à la providence']},
-		'dre':
+ 'dre':
 	{'lem': 'dire',
 	 'ctxt': ['Ma femme se part tres bien. ll me charge de vous DIRE beaucoup']},
-		'chase':
+ 'chase':
 	{'lem': 'chose',
 	 'ctxt': []},
-		'chases':
+ 'chases':
 	{'lem': 'choses',
 	 'ctxt': ['d CHOSES. tres deux fels vous assurent de l&#39;leur respects Mme Couraerni&#39;l']},
-		'Catas trapbe':
+ 'Catas trapbe':
 	{'lem': 'Catastrophe',
 	 'ctxt': []},
-		'Erendnt':
+ 'Erendnt':
 	{'lem': 'Cependant',
 	 'ctxt': ['j&#39;espère qu&#39;il leur arrivera quelqu grande Catas trapbe CEPENDANT']},
-		'Eangile':
+ 'Eangile':
 	{'lem': 'Evangile',
 	 'ctxt': ['comme dit l&#39;EVANGILE, sene veun pas la mort du pécheur, mais je']},
-		'péchear':
+ 'péchear':
 	{'lem': 'pécheur',
 	 'ctxt': ['comme dit l&#39;Evangile, sene veun pas la mort du PÉCHEUR, mais je']},
-		'souhate':
+ 'souhate':
 	{'lem': 'souhaite',
 	 'ctxt': ['SOUHAITE que la leçon soit assez forte pour les convertir, et leur']},
-		'connertire':
+ 'connertire':
 	{'lem': 'convertir',
 	 'ctxt': ['souhaite que la leçon soit assez forte pour les CONVERTIR, et leur']},
-		'uplis':
+ 'uplis':
 	{'lem': 'peuples',
 	 'ctxt': ['faire sentir que leur intérêt est le même que celui des PEUPLES la conti-']},
-		'mêmi':
+ 'mêmi':
 	{'lem': 'même',
 	 'ctxt': ['faire sentir que leur intérêt est le MÊME que celui des peuples la conti-']},
-		'intrêt':
+ 'intrêt':
 	{'lem': 'intérêt',
 	 'ctxt': ['faire sentir que leur INTÉRÊT est le même que celui des peuples la conti-']},
-		'mutie':
+ 'mutie':
 	{'lem': 'conti-',
 	 'ctxt': ['faire sentir que leur intérêt est le même que celui des peuples la CONTI-']},
-		'Gataubraand':
+ 'Gataubraand':
 	{'lem': 'Chateaubriand',
 	 'ctxt': ['M de CHATEAUBRIAND travaille dans ce moment eu à un ouvrage']},
-		'momeae':
+ 'momeae':
 	{'lem': 'moment',
 	 'ctxt': ['M de Chateaubriand travaille dans ce MOMENT eu à un ouvrage']},
-		'trapaile':
+ 'trapaile':
 	{'lem': 'travaille',
 	 'ctxt': ['M de Chateaubriand TRAVAILLE dans ce moment eu à un ouvrage']},
-		'fauis':
+ 'fauis':
 	{'lem': 'dans',
 	 'ctxt': ['M de Chateaubriand travaille DANS ce moment eu à un ouvrage']},
-		"d'ans":
+ "d'ans":
 	{'lem': 'dans',
 	 'ctxt': []},
-		'epèrent':
+ 'epèrent':
 	{'lem': 'espèrent',
 	 'ctxt': ['en faveur de la liberté de la presse. Lui et son parti ESPÈRENT bien']},
-		'fneur':
+ 'fneur':
 	{'lem': 'faveur',
 	 'ctxt': ['en FAVEUR de la liberté de la presse. Lui et son parti espèrent bien']},
-		'Lui':
+ 'Lui':
 	{'lem': 'Lui',
 	 'ctxt': ['Mr Prous comprendra ont cela. Je LUI fos mes sincères amitiés']},
-		'ienverger':
+ 'ienverger':
 	{'lem': 'renverser',
 	 'ctxt': ['si elle leur est accordée, s&#39;on servir pour RENVERSER la Ministère, la']},
-		'srimstère':
+ 'srimstère':
 	{'lem': 'Ministère',
 	 'ctxt': ['si elle leur est accordée, s&#39;on servir pour renverser la MINISTÈRE, la']},
-		'acordée':
+ 'acordée':
 	{'lem': 'accordée',
 	 'ctxt': ['si elle leur est ACCORDÉE, s&#39;on servir pour renverser la Ministère, la']},
-		'servrr':
+ 'servrr':
 	{'lem': 'servir',
 	 'ctxt': ['si elle leur est accordée, s&#39;on SERVIR pour renverser la Ministère, la']},
-		'oustitutionnelle':
+ 'oustitutionnelle':
 	{'lem': 'constitutionnelle',
 	 'ctxt': ['charte CONSTITUTIONNELLE de et empêcher leurs adversaires d&#39;en faire ange']},
-		'adpuisaves':
+ 'adpuisaves':
 	{'lem': 'adversaires',
 	 'ctxt': ['charte constitutionnelle de et empêcher leurs ADVERSAIRES d&#39;en faire ange']},
-		'leuxs':
+ 'leuxs':
 	{'lem': 'leurs',
 	 'ctxt': ['charte constitutionnelle de et empêcher LEURS adversaires d&#39;en faire ange']},
-		'enpécher':
+ 'enpécher':
 	{'lem': 'empêcher',
 	 'ctxt': ['charte constitutionnelle de et EMPÊCHER leurs adversaires d&#39;en faire ange']},
-		'cauge':
+ 'cauge':
 	{'lem': 'charge',
 	 'ctxt': ['Ma femme se part tres bien. ll me CHARGE de vous dire beaucoup']},
-		'Ma':
+ 'Ma':
 	{'lem': 'Ma',
 	 'ctxt': ['MA femme se part tres bien. ll me charge de vous dire beaucoup']},
-		'bemcour':
+ 'bemcour':
 	{'lem': 'beaucoup',
 	 'ctxt': ['Ma femme se part tres bien. ll me charge de vous dire BEAUCOUP']},
-		'fainme':
+ 'fainme':
 	{'lem': 'femme',
 	 'ctxt': ['Ma FEMME se part tres bien. ll me charge de vous dire beaucoup']},
-		'urgrespets':
+ 'urgrespets':
 	{'lem': 'leur respects',
 	 'ctxt': ['d choses. tres deux fels vous assurent de l&#39;LEUR RESPECTS Mme Couraerni&#39;l']},
-		'Couraerni':
+ 'Couraerni':
 	{'lem': 'Courier n a',
 	 'ctxt': []},
-		'Mres':
+ 'Mres':
 	{'lem': 'tres',
 	 'ctxt': ['d choses. TRES deux fels vous assurent de l&#39;leur respects Mme Couraerni&#39;l']},
-		'Mme':
+ 'Mme':
 	{'lem': 'Mme',
-	 'ctxt': ['completes de MME de Salm dout elle est digne d&#39;apprécier les charmantes']},
-		'aparène':
+	 'ctxt': ['completes de MME de Salm dont elle est digne d&#39;apprécier les charmantes']},
+ 'aparène':
 	{'lem': 'apparence',
 	 'ctxt': ['point encore d&#39;enfant, ni APPARENCE d&#39;en avoir. lla n&#39;est pas dine très']},
-		'entont':
+ 'entont':
 	{'lem': 'enfant',
 	 'ctxt': ['point encore d&#39;ENFANT, ni apparence d&#39;en avoir. lla n&#39;est pas dine très']},
-		'trête':
+ 'trête':
 	{'lem': 'très',
 	 'ctxt': ['point encore d&#39;enfant, ni apparence d&#39;en avoir. lla n&#39;est pas dine TRÈS']},
-		'Vome':
+ 'Vome':
 	{'lem': 'bonne',
 	 'ctxt': ['BONNE santé e le mariage ne lu a pas réussi quoim&#39;elle sait aussi']},
-		'quoim':
+ 'quoim':
 	{'lem': 'quoi',
 	 'ctxt': []},
-		'saité':
+ 'saité':
 	{'lem': 'santé',
 	 'ctxt': ['bonne SANTÉ e le mariage ne lu a pas réussi quoim&#39;elle sait aussi']},
-		'rélissi':
+ 'rélissi':
 	{'lem': 'réussi',
 	 'ctxt': ['bonne santé e le mariage ne lu a pas RÉUSSI quoim&#39;elle sait aussi']},
-		'marage':
+ 'marage':
 	{'lem': 'mariage',
 	 'ctxt': ['bonne santé e le MARIAGE ne lu a pas réussi quoim&#39;elle sait aussi']},
-		'ausse':
+ 'ausse':
 	{'lem': 'aussi',
 	 'ctxt': ['bonne santé e le mariage ne lu a pas réussi quoim&#39;elle sait AUSSI']},
-		'Caidraer':
+ 'Caidraer':
 	{'lem': 'Courrier',
 	 'ctxt': ['heureuse qu&#39;elle puisse l&#39;être. COURRIER se porte bien ; il travaille au']},
-		'tranoill':
+ 'tranoill':
 	{'lem': 'travaille',
 	 'ctxt': ['heureuse qu&#39;elle puisse l&#39;être. Courrier se porte bien ; il TRAVAILLE au']},
-		'purense':
+ 'purense':
 	{'lem': 'heureuse',
 	 'ctxt': ['HEUREUSE qu&#39;elle puisse l&#39;être. Courrier se porte bien ; il travaille au']},
-		'biaém':
+ 'biaém':
 	{'lem': 'Académ',
 	 'ctxt': []},
-		'ffaume':
+ 'ffaume':
 	{'lem': 'Paume',
 	 'ctxt': ['gue, joue à la PAUME de Je l&#39;avais mis sur les rangs pour biaém&#39;ien']},
-		'avaus':
+ 'avaus':
 	{'lem': 'avais',
 	 'ctxt': ['gue, joue à la Paume de Je l&#39;AVAIS mis sur les rangs pour biaém&#39;ien']},
-		'Je':
+ 'Je':
 	{'lem': 'Je',
 	 'ctxt': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
-		'prenraidreles':
+ 'prenraidreles':
 	{'lem': 'prenaient les',
 	 'ctxt': ['libre ; mais grand j&#39;ai v la tournure que PRENAIENT LES choses, je']},
-		'Cibre':
+ 'Cibre':
 	{'lem': 'libre',
 	 'ctxt': ['LIBRE ; mais grand j&#39;ai v la tournure que prenaient les choses, je']},
-		'Mhoses':
+ 'Mhoses':
 	{'lem': 'choses',
 	 'ctxt': ['libre ; mais grand j&#39;ai v la tournure que prenaient les CHOSES, je']},
-		'visitie':
+ 'visitie':
 	{'lem': 'visite',
 	 'ctxt': ['n&#39;ai donné aucune suite à cela et il n&#39;a pas fait la moindre VISITE']},
-		'domné':
+ 'domné':
 	{'lem': 'donné',
 	 'ctxt': ['n&#39;ai DONNÉ aucune suite à cela et il n&#39;a pas fait la moindre visite']},
-		'auque':
+ 'auque':
 	{'lem': 'aucune',
 	 'ctxt': ['n&#39;ai donné AUCUNE suite à cela et il n&#39;a pas fait la moindre visite']},
-		'poriers':
+ 'poriers':
 	{'lem': 'papiers',
 	 'ctxt': ['Je ne sais si vous pourez lre tout le griffonnage. Les PAPIERS']},
-		'guiffonage':
+ 'guiffonage':
 	{'lem': 'griffonnage',
 	 'ctxt': ['Je ne sais si vous pourez lre tout le GRIFFONNAGE. Les papiers']},
-		'Goues':
+ 'Goues':
 	{'lem': 'époux',
 	 'ctxt': ['publics m&#39;ont appris que votre ÉPOUX était révérent Prince et par']},
-		'Prince':
+ 'Prince':
 	{'lem': 'Prince',
 	 'ctxt': ['on PRINCE ']},
-		'pulles':
+ 'pulles':
 	{'lem': 'publics',
 	 'ctxt': ['PUBLICS m&#39;ont appris que votre époux était révérent Prince et par']},
-		'redsema':
+ 'redsema':
 	{'lem': 'révérent',
 	 'ctxt': ['publics m&#39;ont appris que votre époux était RÉVÉRENT Prince et par']},
-		'apprs':
+ 'apprs':
 	{'lem': 'appris',
 	 'ctxt': ['publics m&#39;ont APPRIS que votre époux était révérent Prince et par']},
-		'Piuras':
+ 'Piuras':
 	{'lem': 'devrais',
 	 'ctxt': ['conséquent que vous êtes Princesse je DEVRAIS d&#39;apre cela terminer']},
-		'entin':
+ 'entin':
 	{'lem': 'enfin',
 	 'ctxt': ['et ENFIN s&#39;il ne viendra pas aussi me voir et dissiper ses ennuis a']},
-		'sonbaete':
+ 'sonbaete':
 	{'lem': 'souhaite',
 	 'ctxt': []},
-		'avce':
+ 'avce':
 	{'lem': 'avec',
 	 'ctxt': ['fou le Pétrone. Cette lecture ne va pas AVEC vos demoiselles.']},
-		'ves':
+ 'ves':
 	{'lem': 'vos',
 	 'ctxt': ['fou le Pétrone. Cette lecture ne va pas avec VOS demoiselles.']},
-		'rontiers':
+ 'rontiers':
 	{'lem': 'routiers',
 	 'ctxt': []},
-		'Phincsse':
+ 'Phincsse':
 	{'lem': 'Princesse',
 	 'ctxt': ['conséquent que vous êtes PRINCESSE je devrais d&#39;apre cela terminer']},
-		'termmer':
+ 'termmer':
 	{'lem': 'terminer',
 	 'ctxt': ['conséquent que vous êtes Princesse je devrais d&#39;apre cela TERMINER']},
-		'demaindé':
+ 'demaindé':
 	{'lem': 'demandé',
 	 'ctxt': []},
-		'vérueté':
+ 'vérueté':
 	{'lem': 'vérité',
 	 'ctxt': []},
-		'Silm':
+ 'Silm':
 	{'lem': 'Salm',
 	 'ctxt': []},
-		'Prellez':
+ 'Prellez':
 	{'lem': 'Prenez',
 	 'ctxt': []},
-		'Silm.':
+ 'Silm.':
 	{'lem': 'Salm.',
 	 'ctxt': []},
-		'avor':
+ 'avor':
 	{'lem': 'avoir',
 	 'ctxt': ["sAVOIR si j'aurai le plaisir d&#39;AVOIR une de ces Dames Laquelle "]},
-		'vons':
+ 'vons':
 	{'lem': 'vous',
 	 'ctxt': ['Je preble de votre exprès pour VOUS due, mon voi, que nous aVOUS']},
-		'oomme':
+ 'oomme':
 	{'lem': 'comme',
 	 'ctxt': ['COMME dit l&#39;Evangile, sene veun pas la mort du pécheur, mais je']},
-		'M r':
+ 'M r':
 	{'lem': 'Mr',
 	 'ctxt': []},
-		'nouveles':
+ 'nouveles':
 	{'lem': 'nouveles',
 	 'ctxt': ["l&#39;a encore. J'envoie savoir de leurs NOUVELES et les prie de me faire"]},
-		'sentire':
+ 'sentire':
 	{'lem': 'sentir',
 	 'ctxt': ['faire SENTIR que leur intérêt est le même que celui des peuples la conti-']},
-		'enore':
+ 'enore':
 	{'lem': 'encore',
 	 'ctxt': ['ferez grand plaisir. Si Mme van der dein et ENCORE demain à Liedberg']},
-		'atendant':
+ 'atendant':
 	{'lem': 'attendant',
 	 'ctxt': ["Je suis toute en dair, ATTENDANT, n'ATTENDANT pas quelqu un; ne"]},
-		'nouis':
+ 'nouis':
 	{'lem': 'nous',
 	 'ctxt': ['vous l&#39;engageons à venir et NOUS vous chargeons de toutes les ne ga ciatre']},
-		'celu':
+ 'celu':
 	{'lem': 'celui',
 	 'ctxt': ['faire sentir que leur intérêt est le même que CELUI des peuples la conti-']},
-		'I':
+ 'I':
 	{'lem': '&',
 	 'ctxt': ['ma lettre par des formules de respect & ; mai je fais trop de as']},
-		'deman':
+ 'deman':
 	{'lem': 'demain',
 	 'ctxt': ['l Prince de Salm Krautein et sa famille. Ils restent DEMAIN']},
-		'resprt':
+ 'resprt':
 	{'lem': 'respect',
 	 'ctxt': ['ma lettre par des formules de RESPECT & ; mai je fais trop de as']},
-		'tenvire':
+ 'tenvire':
 	{'lem': 'sincère',
 	 'ctxt': ['pais SINCÈRE attachement']},
-		'abaecanent':
+ 'abaecanent':
 	{'lem': 'attachement',
 	 'ctxt': ['pais sincère ATTACHEMENT']},
-		'Ctavier':
+ 'Ctavier':
 	{'lem': 'Clavier',
 	 'ctxt': ['(Signé) CLAVIER.']},
-		'(Signé)':
+ '(Signé)':
 	{'lem': '(Signé)',
 	 'ctxt': ['(SIGNÉ) Ag alh &amp; Walsh s8']},
-		'Lettree':
+ 'Lettree':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE']},
-		'A':
+ 'A':
 	{'lem': 'A',
 	 'ctxt': ['A Mr le Prince de Salm']},
-		'Lidbeg)':
+ 'Lidbeg)':
 	{'lem': 'Liedberg)',
 	 'ctxt': ['A Mr Prous (au chateau de) LIEDBERG)']},
-		'Prouhae':
+ 'Prouhae':
 	{'lem': 'Prous',
 	 'ctxt': ['A Mr PROUS (au chateau de) Liedberg)']},
-		'Mr':
+ 'Mr':
 	{'lem': 'Mr',
 	 'ctxt': ['A MR le Prince de Salm']},
-		'aehaude':
+ 'aehaude':
 	{'lem': '(au chateau de)',
 	 'ctxt': ['A Mr Prous (AU CHATEAU DE) Liedberg)']},
-		'Mût':
+ 'Mût':
 	{'lem': 'Août',
 	 'ctxt': ['Dyck, le 1a AOÛT, 1824.']},
-		'Dyck':
+ 'Dyck':
 	{'lem': 'Dyck',
 	 'ctxt': ['DYCK, le 20 coût, 181.']},
-		'Dince':
+ 'Dince':
 	{'lem': 'Prince',
 	 'ctxt': ['l PRINCE de Salm Krautein et sa famille. Ils restent demain']},
-		'Ls':
+ 'Ls':
 	{'lem': 'Ils',
 	 'ctxt': ['l Prince de Salm Krautein et sa famille. ILS restent demain']},
-		'Salm':
+ 'Salm':
 	{'lem': 'Salm',
-	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
-		'liberti':
+	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele même à Bade à madame de SALM']},
+ 'liberti':
 	{'lem': 'liberté',
 	 'ctxt': ['en faveur de la LIBERTÉ de la presse. Lui et son parti espèrent bien']},
-		'al':
+ 'al':
 	{'lem': 'il',
 	 'ctxt': ['j&#39;espère qu&#39;IL leur arrivera quelqu grande Catas trapbe Cependant']},
-		'fainille':
+ 'fainille':
 	{'lem': 'famille',
 	 'ctxt': ['l Prince de Salm Krautein et sa FAMILLE. Ils restent demain']},
-		'Prausein':
+ 'Prausein':
 	{'lem': 'Krautein',
 	 'ctxt': ['l Prince de Salm KRAUTEIN et sa famille. Ils restent demain']},
-		'vouleu':
+ 'vouleu':
 	{'lem': 'voulez',
 	 'ctxt': ['si vous VOULEZ tous venir augmenter la bonne société, vous vous']},
-		'sgciété':
+ 'sgciété':
 	{'lem': 'société',
 	 'ctxt': ['si vous voulez tous venir augmenter la bonne SOCIÉTÉ, vous vous']},
-		'vrond':
+ 'vrond':
 	{'lem': 'grand',
 	 'ctxt': ['ferez GRAND plaisir. Si Mme van der dein et encore demain à Liedberg']},
-		'Me':
+ 'Me':
 	{'lem': 'Mme',
 	 'ctxt': ['ferez grand plaisir. Si MME van der dein et encore demain à Liedberg']},
-		'Lradbeng':
+ 'Lradbeng':
 	{'lem': 'Liedberg',
 	 'ctxt': ['ferez grand plaisir. Si Mme van der dein et encore demain à LIEDBERG']},
-		'Sa':
+ 'Sa':
 	{'lem': 'Si',
 	 'ctxt': ['ferez grand plaisir. SI Mme van der dein et encore demain à Liedberg']},
-		'ne ga ciatre':
+ 'ne ga ciatre':
 	{'lem': 'négociations',
 	 'ctxt': []},
-		'engugeons':
+ 'engugeons':
 	{'lem': 'engageons',
 	 'ctxt': ['vous l&#39;ENGAGEONS à venir et nous vous chargeons de toutes les ne ga ciatre']},
-		'leise':
+ 'leise':
 	{'lem': 'laisse',
 	 'ctxt': ['ou y&#39;est mieux entre soi, pourtant je vous LAISSE tous les maitres et']},
-		'chergeons':
+ 'chergeons':
 	{'lem': 'chargeons',
 	 'ctxt': ['vous l&#39;engageons à venir et nous vous CHARGEONS de toutes les ne ga ciatre']},
-		'amié':
+ 'amié':
 	{'lem': 'amitié',
 	 'ctxt': ['Mille assurances d&#39;AMITIÉ sincère.']},
-		'dons':
+ 'dons':
 	{'lem': 'dans',
 	 'ctxt': ['il n&#39;y a pas moyen de rien DANSier pour le major, DANS le sens aui vous']},
-		'M.uir':
+ 'M.uir':
 	{'lem': 'clair',
 	 'ctxt': []},
-		'pofable':
+ 'pofable':
 	{'lem': 'possible',
 	 'ctxt': ['il fait un s beau Muir de lune que le diner du soir serait POSSIBLE']},
-		'touis':
+ 'touis':
 	{'lem': 'tous',
 	 'ctxt': ['ou y&#39;est mieux entre soi, pourtant je vous laisse TOUS les maitres et']},
-		'sentement':
+ 'sentement':
 	{'lem': 'seulement',
 	 'ctxt': ['vous prie SEULEMENT mon cher voisin de m&#39;envoyer dans la journée le']},
-		'vrie':
+ 'vrie':
 	{'lem': 'prie',
 	 'ctxt': ['vous PRIE seulement mon cher voisin de m&#39;envoyer dans la journée le']},
-		'moide':
+ 'moide':
 	{'lem': 'monde',
 	 'ctxt': ['réponse de tous le MONDE et de vous à la tele']},
-		'repoise':
+ 'repoise':
 	{'lem': 'réponse',
 	 'ctxt': ['RÉPONSE de tous le monde et de vous à la tele']},
-		'afraandes':
+ 'afraandes':
 	{'lem': 'assurances',
 	 'ctxt': ['Mille ASSURANCES d&#39;amitié sincère.']},
-		'Milr':
+ 'Milr':
 	{'lem': 'Mille',
 	 'ctxt': ['MILLE assurances d&#39;amitié sincère.']},
-		'(Siigne':
+ '(Siigne':
 	{'lem': '(Signé',
 	 'ctxt': ['(SIGNÉ Cons tone de Salm.']},
-		'Cons tone':
+ 'Cons tone':
 	{'lem': 'Constance',
 	 'ctxt': []},
-		'upresr':
+ 'upresr':
 	{'lem': 'réponse',
 	 'ctxt': ['coutes reflexions faios, j&#39;a vore le petit pire qui rapportera à RÉPONSE']},
-		'rptioions':
+ 'rptioions':
 	{'lem': 'reflexions',
 	 'ctxt': ['coutes REFLEXIONS faios, j&#39;a vore le petit pire qui rapportera à réponse']},
-		'rpparter':
+ 'rpparter':
 	{'lem': 'rapportera',
 	 'ctxt': ['coutes reflexions faios, j&#39;a vore le petit pire qui RAPPORTERA à réponse']},
-		'selit':
+ 'selit':
 	{'lem': 'petit',
 	 'ctxt': ['coutes reflexions faios, j&#39;a vore le PETIT pire qui rapportera à réponse']},
-		'Letttre':
+ 'Letttre':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE']},
-		'Prouchae':
+ 'Prouchae':
 	{'lem': 'Prous',
 	 'ctxt': ['A Mr PROUS (au chateau de Liedberg)']},
-		'caere':
+ 'caere':
 	{'lem': '(au chateau de',
 	 'ctxt': ['A Mr Prous (AU CHATEAU DE Liedberg)']},
-		'Liedrg)':
+ 'Liedrg)':
 	{'lem': 'Liedberg)',
 	 'ctxt': ['A Mr Prous (au chateau de LIEDBERG)']},
-		'Aûet':
+ 'Aûet':
 	{'lem': 'Août',
 	 'ctxt': ['Dyck, ce ja AOÛT, 1826.']},
-		'(yack':
+ '(yack':
 	{'lem': 'Dyck',
 	 'ctxt': ['DYCK, ce ja Août, 1826.']},
-		'Mla':
+ 'Mla':
 	{'lem': 'Mille',
 	 'ctxt': ['MILLE compliments à Mr Prous et à son aimable hotesse sir']},
-		'complisent':
+ 'complisent':
 	{'lem': 'compliments',
 	 'ctxt': ['Mille COMPLIMENTS à Mr Prous et à son aimable hotesse sir']},
-		'sonaimable':
+ 'sonaimable':
 	{'lem': 'son aimable',
 	 'ctxt': ['Mille compliments à Mr Prous et à SON AIMABLE hotesse sir']},
-		'selesses':
+ 'selesses':
 	{'lem': 'hotesse',
 	 'ctxt': ['Mille compliments à Mr Prous et à son aimable HOTESSE sir']},
-		'Prous':
+ 'Prous':
 	{'lem': 'Prous',
 	 'ctxt': ['Mille compliments à Mr PROUS et à son aimable hotesse sir']},
-		'Jenvoie':
+ 'Jenvoie':
 	{'lem': "J'envoie", 'ctxt': ["l&#39;a encore. J'ENVOIE savoir de leurs nouveles et les prie de me faire"]},
-		'eneor':
+ 'eneor':
 	{'lem': 'encore',
 	 'ctxt': ["l&#39;a ENCORE. J'envoie savoir de leurs nouveles et les prie de me faire"]},
-		'Sames':
+ 'Sames':
 	{'lem': 'Dames',
 	 'ctxt': ["savoir si j'aurai le plaisir d&#39;avoir une de ces DAMES Laquelle "]},
-		'éaquele':
+ 'éaquele':
 	{'lem': 'Laquelle',
 	 'ctxt': ["savoir si j'aurai le plaisir d&#39;avoir une de ces Dames LAQUELLE "]},
-		'jauirai':
+ 'jauirai':
 	{'lem': "j'aurai", 'ctxt': ["savoir si J'AURAI le plaisir d&#39;avoir une de ces Dames Laquelle "]},
-		'dsape':
+ 'dsape':
 	{'lem': 'dissiper',
 	 'ctxt': ['et enfin s&#39;il ne viendra pas aussi me voir et DISSIPER ses ennuis a']},
-		'tunuis':
+ 'tunuis':
 	{'lem': 'ennuis',
 	 'ctxt': ['et enfin s&#39;il ne viendra pas aussi me voir et dissiper ses ENNUIS a']},
-		'Dibaaic':
+ 'Dibaaic':
 	{'lem': 'dissipant',
 	 'ctxt': ['DISSIPANT les viens']},
-		'suès':
+ 'suès':
 	{'lem': 'suis',
 	 'ctxt': ["Je SUIS toute en dair, attendant, n'attendant pas quelqu un; ne"]},
-		'qulpu':
+ 'qulpu':
 	{'lem': 'quelqu',
 	 'ctxt': ["Je suis toute en dair, attendant, n'attendant pas QUELQU un; ne"]},
-		'pateudant':
+ 'pateudant':
 	{'lem': "n'attendant", 'ctxt': ["Je suis toute en dair, attendant, N'ATTENDANT pas quelqu un; ne"]},
-		'Ie':
+ 'Ie':
 	{'lem': 'Je',
 	 'ctxt': ["JE suis toute en dair, attendant, n'attendant pas quelqu un; ne"]},
-		'suire':
+ 'suire':
 	{'lem': 'sûre',
 	 'ctxt': ['enfin, mécontente de tout, Mra ge je ne suis SÛRE de rer, ce qui est.']},
-		'compapie':
+ 'compapie':
 	{'lem': 'compagnie',
 	 'ctxt': ['sachant si je resterai pule ou ri j&#39;aurai une agréable COMPAGNIE, 8']},
-		'agresle':
+ 'agresle':
 	{'lem': 'agréable',
 	 'ctxt': ['sachant si je resterai pule ou ri j&#39;aurai une AGRÉABLE compagnie, 8']},
-		'piserai':
+ 'piserai':
 	{'lem': 'resterai',
 	 'ctxt': ['sachant si je RESTERAI pule ou ri j&#39;aurai une agréable compagnie, 8']},
-		'sahaut':
+ 'sahaut':
 	{'lem': 'sachant',
 	 'ctxt': ['SACHANT si je resterai pule ou ri j&#39;aurai une agréable compagnie, 8']},
-		'qi':
+ 'qi':
 	{'lem': 'qui',
 	 'ctxt': ['enfin, mécontente de tout, Mra ge je ne suis sûre de rer, ce QUI est.']},
-		'aureni':
+ 'aureni':
 	{'lem': 'aurai',
 	 'ctxt': ['sachant si je resterai pule ou ri j&#39;AURAI une agréable compagnie, 8']},
-		'8et':
+ '8et':
 	{'lem': 'est',
 	 'ctxt': ['enfin, mécontente de tout, Mra ge je ne suis sûre de rer, ce qui EST.']},
-		'néontente':
+ 'néontente':
 	{'lem': 'mécontente',
 	 'ctxt': ['enfin, MÉCONTENTE de tout, Mra ge je ne suis sûre de rer, ce qui est.']},
-		'trut':
+ 'trut':
 	{'lem': 'tout',
 	 'ctxt': ['enfin, mécontente de TOUT, Mra ge je ne suis sûre de rer, ce qui est.']},
-		'it':
+ 'it':
 	{'lem': 'et',
 	 'ctxt': ['en faveur de la liberté de la presse. Lui ET son parti espèrent bien']},
-		'poun':
+ 'poun':
 	{'lem': 'pour',
 	 'ctxt': ['si elle leur est accordée, s&#39;on servir POUR renverser la Ministère, la']},
-		"s'on":
+ "s'on":
 	{'lem': "s'en", 'ctxt': []},
-		'esin':
+ 'esin':
 	{'lem': 'enfin',
 	 'ctxt': ['ENFIN, mécontente de tout, Mra ge je ne suis sûre de rer, ce qui est.']},
-		'Mra ge':
+ 'Mra ge':
 	{'lem': 'parce que',
 	 'ctxt': []},
-		'Cain':
+ 'Cain':
 	{'lem': 'Corresp.',
 	 'ctxt': ['( or CORRESP.,120e']},
-		'120)':
+ '120)':
 	{'lem': '120e',
 	 'ctxt': ['( or Corresp.,120E']},
-		'uue':
+ 'uue':
 	{'lem': 'une',
 	 'ctxt': ['en dat insupportable pour UNE trop vive vivavité']},
-		'daep':
+ 'daep':
 	{'lem': 'trop',
 	 'ctxt': ['en dat insupportable pour une TROP vive vivavité']},
-		'hivaili':
+ 'hivaili':
 	{'lem': 'vivavité',
 	 'ctxt': ['en dat insupportable pour une trop vive VIVAVITÉ']},
-		'inrpprgrtable':
+ 'inrpprgrtable':
 	{'lem': 'insupportable',
 	 'ctxt': ['en dat INSUPPORTABLE pour une trop vive vivavité']},
-		'Piois':
+ 'Piois':
 	{'lem': 'Prous',
 	 'ctxt': ['Mr PROUS comprendra ont cela. Je Lui fos mes sincères amitiés']},
-		'anctis':
+ 'anctis':
 	{'lem': 'amitiés',
 	 'ctxt': ['Mr Prous comprendra ont cela. Je Lui fos mes sincères AMITIÉS']},
-		'compondtre':
+ 'compondtre':
 	{'lem': 'comprendra',
 	 'ctxt': ['Mr Prous COMPRENDRA ont cela. Je Lui fos mes sincères amitiés']},
-		'sincares':
+ 'sincares':
 	{'lem': 'sincères',
 	 'ctxt': ['Mr Prous comprendra ont cela. Je Lui fos mes SINCÈRES amitiés']},
-		'Couestanc':
+ 'Couestanc':
 	{'lem': 'Constance',
 	 'ctxt': ['(Signé) CONSTANCE de Salm.']},
-		'(Sisgné)':
+ '(Sisgné)':
 	{'lem': '(Signé)',
 	 'ctxt': ['(SIGNÉ) Constance de Salm.']},
-		'Lettre':
+ 'Lettre':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE']},
-		'Pronhaimaise':
+ 'Pronhaimaise':
 	{'lem': 'Prous (au chaateau de Liedberg',
 	 'ctxt': ['A Mr PROUS (AU CHAATEAU DE LIEDBERG der.']},
-		'troune':
+ 'troune':
 	{'lem': 'trouve',
 	 'ctxt': ['Je vous TROUVE heureux, Monsieur, d&#39;être le Chaperon de deux']},
-		'Monsaur':
+ 'Monsaur':
 	{'lem': 'Monsieur',
 	 'ctxt': ['Je vous trouve heureux, MONSIEUR, d&#39;être le Chaperon de deux']},
-		'Mapern':
+ 'Mapern':
 	{'lem': 'Chaperon',
 	 'ctxt': ['Je vous trouve heureux, Monsieur, d&#39;être le CHAPERON de deux']},
-		'gimoiselues':
+ 'gimoiselues':
 	{'lem': 'Demoiselles',
 	 'ctxt': ['jeunes DEMOISELLES. Prenez parre p&#39;au lien de les diriger, elles ne']},
-		'Venez':
+ 'Venez':
 	{'lem': 'Prenez',
 	 'ctxt': ['jeunes Demoiselles. PRENEZ parre p&#39;au lien de les diriger, elles ne']},
-		'ene':
+ 'ene':
 	{'lem': 'elle',
 	 'ctxt': ['heureuse qu&#39;ELLE puisse l&#39;être. Courrier se porte bien ; il travaille au']},
-		'jeuies':
+ 'jeuies':
 	{'lem': 'jeunes',
 	 'ctxt': ['JEUNES Demoiselles. Prenez parre p&#39;au lien de les diriger, elles ne']},
-		'dirigr':
+ 'dirigr':
 	{'lem': 'diriger',
 	 'ctxt': ['jeunes Demoiselles. Prenez parre p&#39;au lien de les DIRIGER, elles ne']},
-		'véruité':
+ 'véruité':
 	{'lem': 'vérité',
 	 'ctxt': ['vous dirigent la Nature et faible ; mais il fait à la VÉRITÉ qu&#39;elle']},
-		'pusse':
+ 'pusse':
 	{'lem': 'puisse',
 	 'ctxt': ['heureuse qu&#39;elle PUISSE l&#39;être. Courrier se porte bien ; il travaille au']},
-		'drigent':
+ 'drigent':
 	{'lem': 'dirigent',
 	 'ctxt': ['vous DIRIGENT la Nature et faible ; mais il fait à la vérité qu&#39;elle']},
-		'fatire':
+ 'fatire':
 	{'lem': 'Nature',
 	 'ctxt': ['vous dirigent la NATURE et faible ; mais il fait à la vérité qu&#39;elle']},
-		'fuon':
+ 'fuon':
 	{'lem': 'fier',
 	 'ctxt': ['sut forte pour être faille, et à vois er coure, mn pait s&#39;u FIER']},
-		'sonbaite':
+ 'sonbaite':
 	{'lem': 'souhaite',
 	 'ctxt': ['à vous. Je ne vous le SOUHAITE pas.']},
-		'demoisites':
+ 'demoisites':
 	{'lem': 'demoiselles',
 	 'ctxt': ['fou le Pétrone. Cette lecture ne va pas avec vos DEMOISELLES.']},
-		'Pétrre':
+ 'Pétrre':
 	{'lem': 'Pétrone',
 	 'ctxt': ['fou le PÉTRONE. Cette lecture ne va pas avec vos demoiselles.']},
-		'Cille':
+ 'Cille':
 	{'lem': 'Cette',
 	 'ctxt': ['fou le Pétrone. CETTE lecture ne va pas avec vos demoiselles.']},
-		'qe':
+ 'qe':
 	{'lem': 'que',
 	 'ctxt': ['libre ; mais grand j&#39;ai v la tournure QUE prenaient les choses, je']},
-		'Llle':
+ 'Llle':
 	{'lem': 'Elle',
 	 'ctxt': ['ELLE est bonne pour de vieux routiers comme nous ; gardez le tone vous']},
-		'gurde':
+ 'gurde':
 	{'lem': 'gardez',
 	 'ctxt': ['Elle est bonne pour de vieux routiers comme nous ; GARDEZ le tone vous']},
-		'boune':
+ 'boune':
 	{'lem': 'bonne',
 	 'ctxt': ['Elle est BONNE pour de vieux routiers comme nous ; gardez le tone vous']},
-		'loutiques':
+ 'loutiques':
 	{'lem': 'boutiques',
 	 'ctxt': ['vous. il m&#39;est arrivé hier une cargaison de vieux gardes BOUTIQUES']},
-		'grivé':
+ 'grivé':
 	{'lem': 'arrivé',
 	 'ctxt': ['vous. il m&#39;est ARRIVÉ hier une cargaison de vieux gardes boutiques']},
-		'Il':
+ 'Il':
 	{'lem': 'il',
 	 'ctxt': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
-		'cergaison':
+ 'cergaison':
 	{'lem': 'cargaison',
 	 'ctxt': ['vous. il m&#39;est arrivé hier une CARGAISON de vieux gardes boutiques']},
-		'vairx':
+ 'vairx':
 	{'lem': 'vieux',
 	 'ctxt': ['vous. il m&#39;est arrivé hier une cargaison de VIEUX gardes boutiques']},
-		'Mer':
+ 'Mer':
 	{'lem': 'Saër',
 	 'ctxt': ['que de SAËR aura été sans doute charmé qui je lui aie demandé']},
-		'laui':
+ 'laui':
 	{'lem': 'lui',
 	 'ctxt': ['que de Saër aura été sans doute charmé qui je LUI aie demandé']},
-		'armné':
+ 'armné':
 	{'lem': 'charmé',
 	 'ctxt': ['que de Saër aura été sans doute CHARMÉ qui je lui aie demandé']},
-		'bonche':
+ 'bonche':
 	{'lem': 'bouche',
 	 'ctxt': ['mais ce sont de bons BOUCHE tons tuas ma bibliothèque et dans moi']},
-		'biblisthrèdre':
+ 'biblisthrèdre':
 	{'lem': 'bibliothèque',
 	 'ctxt': ['mais ce sont de bons bouche tons tuas ma BIBLIOTHÈQUE et dans moi']},
-		'teups':
+ 'teups':
 	{'lem': 'temps',
 	 'ctxt': ['TEMPS. J&#39;en ai pour dux vas à lire, sans d&#39;ébrider, si se le veux']},
-		"d'ébrider":
+ "d'ébrider":
 	{'lem': 'débrider',
 	 'ctxt': []},
-		'J':
+ 'J':
 	{'lem': 'J',
 	 'ctxt': []},
-		'déguere':
+ 'déguere':
 	{'lem': 'de guerre',
 	 'ctxt': ['Vous ni parlez plus DE GUERRE, comme ces gens qui voyant que les tore']},
-		'Vous':
+ 'Vous':
 	{'lem': 'Vous',
 	 'ctxt': ['VOUS ni parlez plus de guerre, comme ces gens qui voyant que les tore']},
-		'sarblnc-':
+ 'sarblnc-':
 	{'lem': 'satisfac-',
 	 'ctxt': ['vont comme i les avaient annoncées, se taisent par aiis de SATISFAC-']},
-		'annonciis':
+ 'annonciis':
 	{'lem': 'annoncées',
 	 'ctxt': ['vont comme i les avaient ANNONCÉES, se taisent par aiis de satisfac-']},
-		'tisest':
+ 'tisest':
 	{'lem': 'taisent',
 	 'ctxt': ['vont comme i les avaient annoncées, se TAISENT par aiis de satisfac-']},
-		'avaier':
+ 'avaier':
 	{'lem': 'avaient',
 	 'ctxt': ['vont comme i les AVAIENT annoncées, se taisent par aiis de satisfac-']},
-		'malgrié':
+ 'malgrié':
 	{'lem': 'malgré',
 	 'ctxt': ['tion. E! bien, j&#39;ai pourtant encore un fond d&#39;incrédulité et MALGRÉ']},
-		'envre':
+ 'envre':
 	{'lem': 'encore',
 	 'ctxt': ['tion. E! bien, j&#39;ai pourtant ENCORE un fond d&#39;incrédulité et malgré']},
-		'udrédulite':
+ 'udrédulite':
 	{'lem': 'incrédulité',
 	 'ctxt': ['tion. E! bien, j&#39;ai pourtant encore un fond d&#39;INCRÉDULITÉ et malgré']},
-		'E!':
+ 'E!':
 	{'lem': 'Eh',
 	 'ctxt': []},
-		'seus':
+ 'seus':
 	{'lem': 'sens',
 	 'ctxt': ['il n&#39;y a pas moyen de rien dansier pour le major, dans le SENS aui vous']},
-		'jene':
+ 'jene':
 	{'lem': 'je ne',
 	 'ctxt': ['aetre silence JE NE puis ête de votre ans.']},
-		'slênce':
+ 'slênce':
 	{'lem': 'silence',
 	 'ctxt': ['aetre SILENCE je ne puis ête de votre ans.']},
-		'mapar':
+ 'mapar':
 	{'lem': 'major',
 	 'ctxt': ['il n&#39;y a pas moyen de rien dansier pour le MAJOR, dans le sens aui vous']},
-		'donsier':
+ 'donsier':
 	{'lem': 'donner',
 	 'ctxt': ['il n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
-		'rouvrsation':
+ 'rouvrsation':
 	{'lem': 'conversation',
 	 'ctxt': ['C&#39;entandez. J&#39;airais fait que ques frais de politesse pour sa CONVERSATION']},
-		"C'entandez":
+ "C'entandez":
 	{'lem': "l'entendez", 'ctxt': []},
-		'poilesse':
+ 'poilesse':
 	{'lem': 'politesse',
 	 'ctxt': ['C&#39;entandez. J&#39;airais fait que ques frais de POLITESSE pour sa conversation']},
-		'loignement':
+ 'loignement':
 	{'lem': 'éloignement',
 	 'ctxt': ['et sa société surtout dans l&#39;ÉLOIGNEMENT de toute chose où je vis ;']},
-		'surtont':
+ 'surtont':
 	{'lem': 'surtout',
 	 'ctxt': ['et sa société SURTOUT dans l&#39;éloignement de toute chose où je vis ;']},
-		'souéte':
+ 'souéte':
 	{'lem': 'société',
 	 'ctxt': ['et sa SOCIÉTÉ surtout dans l&#39;éloignement de toute chose où je vis ;']},
-		"mi'ettes":
+ "mi'ettes":
 	{'lem': 'miettes',
 	 'ctxt': []},
-		'quitombent':
+ 'quitombent':
 	{'lem': 'qui tombent',
 	 'ctxt': ['mas por la correspondance, je me contente des mi&#39;ettes QUI TOMBENT']},
-		'cxrrespendance':
+ 'cxrrespendance':
 	{'lem': 'correspondance',
 	 'ctxt': ['mas por la CORRESPONDANCE, je me contente des mi&#39;ettes qui tombent']},
-		'coutente':
+ 'coutente':
 	{'lem': 'contente',
 	 'ctxt': ['mas por la correspondance, je me CONTENTE des mi&#39;ettes qui tombent']},
-		'Dames':
+ 'Dames':
 	{'lem': 'james',
 	 'ctxt': ['de la table de ces JAMES.']},
-		'pourvurc':
+ 'pourvurc':
 	{'lem': 'pourquoi',
 	 'ctxt': ['Je ne sais POURQUOI vous me parlez d&#39;oublis, je n&#39;y suis point']},
-		'pout':
+ 'pout':
 	{'lem': 'point',
 	 'ctxt': ['Je ne sais pourquoi vous me parlez d&#39;oublis, je n&#39;y suis POINT']},
-		'oubles':
+ 'oubles':
 	{'lem': 'oublis',
 	 'ctxt': ['Je ne sais pourquoi vous me parlez d&#39;OUBLIS, je n&#39;y suis point']},
-		'Muitonit':
+ 'Muitonit':
 	{'lem': 'surtout',
 	 'ctxt': ['sujette, SURTOUT en amitié Mele moi sur la voie si vous voulue']},
-		'Vpte':
+ 'Vpte':
 	{'lem': 'sujette',
 	 'ctxt': ['SUJETTE, surtout en amitié Mele moi sur la voie si vous voulue']},
-		'voulle':
+ 'voulle':
 	{'lem': 'voulue',
 	 'ctxt': ['sujette, surtout en amitié Mele moi sur la voie si vous VOULUE']},
-		'vures':
+ 'vures':
 	{'lem': 'voie',
 	 'ctxt': ['sujette, surtout en amitié Mele moi sur la VOIE si vous voulue']},
-		'veus':
+ 'veus':
 	{'lem': 'vous',
 	 'ctxt': ['sujette, surtout en amitié Mele moi sur la voie si VOUS voulue']},
-		'amitre':
+ 'amitre':
 	{'lem': 'amitié',
 	 'ctxt': ['sujette, surtout en AMITIÉ Mele moi sur la voie si vous voulue']},
-		'(doresp':
+ '(doresp':
 	{'lem': '(Corresp.',
 	 'ctxt': ['(CORRESP.: l:)']},
-		'pa qu la':
+ 'pa qu la':
 	{'lem': 'jusque là',
 	 'ctxt': []},
-		'auur':
+ 'auur':
 	{'lem': 'accuse',
 	 'ctxt': ['qu j y&#39;entende, pa qu la, est veous que j&#39;ACCUSE de m&#39;ACCUSEr']},
-		'entrde':
+ 'entrde':
 	{'lem': 'entende',
 	 'ctxt': ['qu j y&#39;ENTENDE, pa qu la, est veous que j&#39;accuse de m&#39;accuser']},
-		'acuser':
+ 'acuser':
 	{'lem': 'accuser',
 	 'ctxt': ['qu j y&#39;entende, pa qu la, est veous que j&#39;accuse de m&#39;ACCUSER']},
-		'Etame':
+ 'Etame':
 	{'lem': 'Estime',
 	 'ctxt': ['Amitié et ESTIME']},
-		'Aimncté':
+ 'Aimncté':
 	{'lem': 'Amitié',
 	 'ctxt': ['AMITIÉ et Estime']},
-		'deluvrame':
+ 'deluvrame':
 	{'lem': 'délivrance',
 	 'ctxt': ['Je suis charme de la DÉLIVRANCE de ella.']},
-		'Bella':
+ 'Bella':
 	{'lem': 'ella',
 	 'ctxt': ['Je suis charme de la délivrance de ELLA.']},
-		'Slm':
+ 'Slm':
 	{'lem': 'Salm',
 	 'ctxt': ['(Signé) Cous tince de SALM.']},
-		'(Sgné)':
+ '(Sgné)':
 	{'lem': '(Signé)',
 	 'ctxt': ['(SIGNÉ) Cous tince de Salm.']},
-		'Cous tince':
+ 'Cous tince':
 	{'lem': 'Constance',
 	 'ctxt': []},
-		'goce':
+ 'goce':
 	{'lem': 'grâce',
-	 'ctxt': ['dout voous serez Dieu le pere. que la GRÂCE soit avec vous àe s']},
-		'Den':
+	 'ctxt': ['dont voous serez Dieu le pere. que la GRÂCE soit avec vous àe s']},
+ 'Den':
 	{'lem': 'Dieu',
-	 'ctxt': ['dout voous serez DIEU le pere. que la grâce soit avec vous àe s']},
-		'sgez':
+	 'ctxt': ['dont voous serez DIEU le pere. que la grâce soit avec vous àe s']},
+ 'sgez':
 	{'lem': 'serez',
-	 'ctxt': ['dout voous SEREZ Dieu le pere. que la grâce soit avec vous àe s']},
-		'srvêtre':
+	 'ctxt': ['dont voous SEREZ Dieu le pere. que la grâce soit avec vous àe s']},
+ 'srvêtre':
 	{'lem': 'sur votre',
 	 'ctxt': ['dous dinons à 2&#39;y précises le 4. Je compte SUR VOTRE trinité']},
-		'préuses':
+ 'préuses':
 	{'lem': 'précises',
 	 'ctxt': ['dous dinons à 2&#39;y PRÉCISES le 4. Je compte sur votre trinité']},
-		'frinte':
+ 'frinte':
 	{'lem': 'trinité',
 	 'ctxt': ['dous dinons à 2&#39;y précises le 4. Je compte sur votre TRINITÉ']},
-		'dnons':
+ 'dnons':
 	{'lem': 'dinons',
 	 'ctxt': ['dous DINONS à 2&#39;y précises le 4. Je compte sur votre trinité']},
-		'Lttrce':
+ 'Lttrce':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE.']},
-		'Cre':
+ 'Cre':
 	{'lem': 'Cor.',
 	 'ctxt': ['( COR.. gr le (n° 20))']},
-		'20))':
+ '20))':
 	{'lem': '20))',
 	 'ctxt': ['( Cor.. gr le (n° 20))']},
-		'gr le':
+ 'gr le':
 	{'lem': 'génle',
 	 'ctxt': []},
-		'(n°':
+ '(n°':
 	{'lem': '(n°',
 	 'ctxt': ['( Cor.. gr le (N° 20))']},
-		'trestais':
+ 'trestais':
 	{'lem': 'Griesbash',
 	 'ctxt': ['le n&#39;est n&#39;chin à mon retour de GRIESBASH à Carlsruhe qu&#39;on']},
-		'Carlruve':
+ 'Carlruve':
 	{'lem': 'Carlsruhe',
 	 'ctxt': ['le n&#39;est n&#39;chin à mon retour de Griesbash à CARLSRUHE qu&#39;on']},
-		'rétege':
+ 'rétege':
 	{'lem': 'retour',
 	 'ctxt': ['le n&#39;est n&#39;chin à mon RETOUR de Griesbash à Carlsruhe qu&#39;on']},
-		'Mon':
+ 'Mon':
 	{'lem': 'on',
 	 'ctxt': ['ON Prince ']},
-		'Cerle ruhe':
+ 'Cerle ruhe':
 	{'lem': 'Carslruhe',
 	 'ctxt': []},
-		'Mtmle':
+ 'Mtmle':
 	{'lem': 'Septembre',
 	 'ctxt': ['Cerle ruhe, le 7 SEPTEMBRE,181.']},
-		'davoir':
-	{'lem': '''d'avoir''',
-	 'ctxt': ['la grande Duchesse est charmée d avoir en']},
-		"n'chin":
+ 'davoir':
+	{'lem': "d'avoir", 'ctxt': ["Madame la grande Duchesse est charmée D'AVOIR en nu possession les oeuvres"]},
+ "n'chin":
 	{'lem': "qu'hier", 'ctxt': []},
-		'posission':
+ 'posission':
 	{'lem': 'possession',
-	 'ctxt': ['Madame la grande Duchesse est charmée davoir en nu POSSESSION les oeuvres']},
-		'ravres':
+	 'ctxt': ["Madame la grande Duchesse est charmée d'avoir en nu POSSESSION les oeuvres"]},
+ 'ravres':
 	{'lem': 'oeuvres',
-	 'ctxt': ['Madame la grande Duchesse est charmée davoir en nu possession les OEUVRES']},
-		'charméz':
+	 'ctxt': ["Madame la grande Duchesse est charmée d'avoir en nu possession les OEUVRES"]},
+ 'charméz':
 	{'lem': 'charmée',
-	 'ctxt': ['Madame la grande Duchesse est CHARMÉE davoir en nu possession les oeuvres']},
-		'Dtuchse':
+	 'ctxt': ["Madame la grande Duchesse est CHARMÉE d'avoir en nu possession les oeuvres"]},
+ 'Dtuchse':
 	{'lem': 'Duchesse',
-	 'ctxt': ['Madame la grande DUCHESSE est charmée davoir en nu possession les oeuvres']},
-		'Mndane':
+	 'ctxt': ["Madame la grande DUCHESSE est charmée d'avoir en nu possession les oeuvres"]},
+ 'Mndane':
 	{'lem': 'Madame',
-	 'ctxt': ['MADAME la grande Duchesse est charmée davoir en nu possession les oeuvres']},
-		'Mharnantes':
+	 'ctxt': ["MADAME la grande Duchesse est charmée d'avoir en nu possession les oeuvres"]},
+ 'Mharnantes':
 	{'lem': 'charmantes',
-	 'ctxt': ['completes de Mme de Salm dout elle est digne d&#39;apprécier les CHARMANTES']},
-		'dout':
+	 'ctxt': ['completes de Mme de Salm dont elle est digne d&#39;apprécier les CHARMANTES']},
+ 'dout':
 	{'lem': 'dont',
-	 'ctxt': ['completes de Mme de Salm DONT elle est digne d&#39;apprécier les']},
-		'Sallu':
+	 'ctxt': ['completes de Mme de Salm DONT elle est digne d&#39;apprécier les charmantes']},
+ 'Sallu':
 	{'lem': 'Salm',
-	 'ctxt': ['completes de Mme de SALM dout elle est digne d&#39;apprécier les charmantes']},
-		'apprécer':
+	 'ctxt': ['completes de Mme de SALM dont elle est digne d&#39;apprécier les charmantes']},
+ 'apprécer':
 	{'lem': 'apprécier',
-	 'ctxt': ['completes de Mme de Salm dout elle est digne d&#39;APPRÉCIER les charmantes']},
-		'frasments':
+	 'ctxt': ['completes de Mme de Salm dont elle est digne d&#39;APPRÉCIER les charmantes']},
+ 'frasments':
 	{'lem': 'fragments',
 	 'ctxt': ['productions. lle n&#39;en connaissait que quelques FRAGMENTS qu&#39;ell se']},
-		'prodnctions':
+ 'prodnctions':
 	{'lem': 'productions',
 	 'ctxt': ['PRODUCTIONS. lle n&#39;en connaissait que quelques fragments qu&#39;ell se']},
-		'Mantez':
+ 'Mantez':
 	{'lem': 'chanter',
-	 'ctxt': ['plaisait à répéter ea CHANTER. Son Altesse Royale me charge, honneur']},
-		'répéder':
+	 'ctxt': ['plaisait à répéter ea CHANTER. Son Altesse Royale me charge, Monsieur']},
+ 'répéder':
 	{'lem': 'répéter',
-	 'ctxt': ['plaisait à RÉPÉTER ea chanter. Son Altesse Royale me charge, honneur']},
-		'Furale':
+	 'ctxt': ['plaisait à RÉPÉTER ea chanter. Son Altesse Royale me charge, Monsieur']},
+ 'Furale':
 	{'lem': 'Royale',
-	 'ctxt': ['plaisait à répéter ea chanter. Son Altesse ROYALE me charge, honneur']},
-		'Son':
+	 'ctxt': ['plaisait à répéter ea chanter. Son Altesse ROYALE me charge, Monsieur']},
+ 'Son':
 	{'lem': 'Son',
-	 'ctxt': ['plaisait à répéter ea chanter. SON Altesse Royale me charge, honneur']},
-		'chonseur':
+	 'ctxt': ['plaisait à répéter ea chanter. SON Altesse Royale me charge, Monsieur']},
+ 'chonseur':
 	{'lem': 'Monsieur',
 	 'ctxt': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, MONSIEUR']},
-		'Mltesse':
+ 'Mltesse':
 	{'lem': 'Altesse',
-	 'ctxt': ['plaisait à répéter ea chanter. Son ALTESSE Royale me charge, honneur']},
-		'davantie':
+	 'ctxt': ['plaisait à répéter ea chanter. Son ALTESSE Royale me charge, Monsieur']},
+ 'davantie':
 	{'lem': 'davantage',
 	 'ctxt': ['à de tous ses remerciments. Elle vous en devra DAVANTAGE si vous lu four-']},
-		'meme':
+ 'meme':
 	{'lem': 'même',
-	 'ctxt': ['elle même']},
-		'fur-':
+	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele MÊME à Bade à madame de Salm']},
+ 'fur-':
 	{'lem': 'four-',
 	 'ctxt': ['à de tous ses remerciments. Elle vous en devra davantage si vous lu FOUR-']},
-		'Grade':
+ 'Grade':
 	{'lem': 'Bade',
-	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele meme à BADE à madame de Salm']},
-		'Madame':
+	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele même à BADE à madame de Salm']},
+ 'Madame':
 	{'lem': 'madame',
-	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à MADAME de Salm']},
-		'ocaspion':
+	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele même à Bade à MADAME de Salm']},
+ 'ocaspion':
 	{'lem': 'occasion',
-	 'ctxt': ['misse l&#39;OCCASION d&#39;en faire ele meme à Bade à madame de Salm']},
-		'(ue lle':
+	 'ctxt': ['misse l&#39;OCCASION d&#39;en faire ele même à Bade à madame de Salm']},
+ '(ue lle':
 	{'lem': 'quelle',
 	 'ctxt': []},
-		'honnene':
+ 'honnene':
 	{'lem': 'honneur',
 	 'ctxt': ['(ue lle j&#39;ai l&#39;HONNEUR d&#39;elle']},
-		'assurane':
+ 'assurane':
 	{'lem': 'assurance',
 	 'ctxt': ['Agréez l&#39;ASSURANCE de le Considération la plus distingue avec la-']},
-		'Mgrées':
+ 'Mgrées':
 	{'lem': 'Agréez',
 	 'ctxt': ['AGRÉEZ l&#39;assurance de le Considération la plus distingue avec la-']},
-		'Conndération':
+ 'Conndération':
 	{'lem': 'Considération',
 	 'ctxt': ['Agréez l&#39;assurance de le CONSIDÉRATION la plus distingue avec la-']},
-		'Arince':
+ 'Arince':
 	{'lem': 'Prince',
 	 'ctxt': ['PRINCE']},
-		'(ore':
+ '(ore':
 	{'lem': 'Votre',
 	 'ctxt': ['VOTRE très humble et de']},
-		'Walh':
+ 'Walh':
 	{'lem': 'alh',
 	 'ctxt': ['(Signé) Ag ALH &amp; Walsh s8']},
-		'Wals':
+ 'Wals':
 	{'lem': 'Walsh',
 	 'ctxt': ['(Signé) Ag alh &amp; WALSH s8']},
-		's8)':
+ 's8)':
 	{'lem': 's8',
 	 'ctxt': ['(Signé) Ag alh &amp; Walsh S8']},
-		'Mg':
+ 'Mg':
 	{'lem': 'Ag',
 	 'ctxt': ['(Signé) AG alh &amp; Walsh s8']},
-		'Servante':
+ 'Servante':
 	{'lem': 'Servante',
 	 'ctxt': ['Obéissante SERVANTE']},
-		'Messante':
+ 'Messante':
 	{'lem': 'Obéissante',
 	 'ctxt': ['OBÉISSANTE Servante']},
-		'A)':
+ 'A)':
 	{'lem': '(1)',
 	 'ctxt': ['(1) Celle dame était dame d&#39;honneur de la princesse Stephanie']},
-		'Prinesse':
+ 'Prinesse':
 	{'lem': 'princesse',
 	 'ctxt': ['(1) Celle dame était dame d&#39;honneur de la PRINCESSE Stephanie']},
-		'étar':
+ 'étar':
 	{'lem': 'était',
 	 'ctxt': ['(1) Celle dame ÉTAIT dame d&#39;honneur de la princesse Stephanie']},
-		'Steshane':
+ 'Steshane':
 	{'lem': 'Stephanie',
 	 'ctxt': ['(1) Celle dame était dame d&#39;honneur de la princesse STEPHANIE']},
-		'houneur':
+ 'houneur':
 	{'lem': 'honneur',
 	 'ctxt': ['(1) Celle dame était dame d&#39;HONNEUR de la princesse Stephanie']},
-		'Dame':
+ 'Dame':
 	{'lem': 'dame',
 	 'ctxt': ['(1) Celle DAME était DAME d&#39;honneur de la princesse Stephanie']},
-		'poisis':
+ 'poisis':
 	{'lem': 'poésies',
 	 'ctxt': ['de Bade. de Prince lui avait envoyé les POÉSIES de la Princesse']},
-		'enoyécles':
+ 'enoyécles':
 	{'lem': 'envoyé les',
 	 'ctxt': ['de Bade. de Prince lui avait ENVOYÉ LES poésies de la Princesse']},
-		'Priuce':
+ 'Priuce':
 	{'lem': 'Prince',
 	 'ctxt': ['de Bade. de PRINCE lui avait envoyé les poésies de la PRINCEsse']},
-		'Pade':
+ 'Pade':
 	{'lem': 'Bade',
 	 'ctxt': ['de BADE. de Prince lui avait envoyé les poésies de la Princesse']},
-		'Prines':
+ 'Prines':
 	{'lem': 'Princesse',
 	 'ctxt': ['de Bade. de Prince lui avait envoyé les poésies de la PRINCESSE']}}
