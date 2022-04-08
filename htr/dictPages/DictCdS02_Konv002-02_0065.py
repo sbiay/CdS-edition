@@ -22,10 +22,6 @@ dictPage = {'noeis':
 	{'lem': 'ont',
 	 'ctxt': 'cetxe qui vours ONT mangis  me',
 	 'deja utilisé': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
- 'pes':
-	{'lem': 'pas',
-	 'ctxt': 'Chf (les Mglis PAS pluis heureur que',
-	 'deja utilisé': ['PAS pluis heureux que nous et que es mangeurs en Chef (les Anglais']},
  'heureur':
 	{'lem': 'heureux',
 	 'ctxt': 'Mglis pes pluis HEUREUX que nous et',
@@ -74,10 +70,6 @@ dictPage = {'noeis':
 	{'lem': 'providence',
 	 'ctxt': 'croire à la PROVIDENCE',
 	 'deja utilisé': ['depuis quelques années commence à me faire croire à la PROVIDENCE']},
- 'epère':
-	{'lem': 'espère',
-	 'ctxt': 'trapbe Erendnt j ESPÈRE qu al leur',
-	 'deja utilisé': ['j&#39;ESPÈRE qu&#39;il leur arrivera quelqu grande Catas trapbe Cependant']},
  'al':
 	{'lem': 'il',
 	 'ctxt': 'j epère qu IL leur arrivera quelqu',
@@ -109,10 +101,6 @@ dictPage = {'noeis':
 	{'lem': 'convertir',
 	 'ctxt': 'forte pour les CONVERTIR  et leur',
 	 'deja utilisé': ['souhaite que la leçon soit assez forte pour les CONVERTIR, et leur']},
- 'sentire':
-	{'lem': 'sentir',
-	 'ctxt': 'la mutie faire SENTIR que leur intrêt',
-	 'deja utilisé': ['faire SENTIR que leur intérêt est le même que celui des peuples la conti-']},
  'intrêt':
 	{'lem': 'intérêt',
 	 'ctxt': 'sentire que leur INTÉRÊT est le mêmi',
@@ -133,9 +121,6 @@ dictPage = {'noeis':
 	{'lem': 'conti-',
 	 'ctxt': 'des uplis la CONTI-',
 	 'deja utilisé': ['faire sentir que leur intérêt est le même que celui des peuples la CONTI-']},
- 'M':
-	{'lem': 'à',
-	 'ctxt': 'à un ouvrage À de Gataubraand trapaile'},
  'Gataubraand':
 	{'lem': 'Chateaubriand',
 	 'ctxt': 'ouvrage M de CHATEAUBRIAND trapaile fauis ce',
@@ -160,10 +145,6 @@ dictPage = {'noeis':
 	{'lem': 'liberté',
 	 'ctxt': 'fneur de la LIBERTÉ de la presse',
 	 'deja utilisé': ['en faveur de la LIBERTÉ de la presse. Lui et son parti espèrent bien']},
- 'Lui':
-	{'lem': 'Lui',
-	 'ctxt': 'la presse  LUI it son parti',
-	 'deja utilisé': ['Mr Prous comprendra ont cela. Je LUI fos mes sincères amitiés']},
  'it':
 	{'lem': 'et',
 	 'ctxt': 'presse  Lui ET son parti epèrent',
@@ -208,10 +189,6 @@ dictPage = {'noeis':
 	{'lem': 'adversaires',
 	 'ctxt': 'et enpécher leuxs ADVERSAIRES d en faire',
 	 'deja utilisé': ['charte constitutionnelle de et empêcher leurs ADVERSAIRES d&#39;en faire ange']},
- 'Ma':
-	{'lem': 'Ma',
-	 'ctxt': 'vous dre bemcour MA fainme se part',
-	 'deja utilisé': ['MA femme se part tres bien. ll me charge de vous dire beaucoup']},
  'fainme':
 	{'lem': 'femme',
 	 'ctxt': 'dre bemcour Ma FEMME se part tres',
@@ -220,18 +197,10 @@ dictPage = {'noeis':
 	{'lem': 'charge',
 	 'ctxt': ' ll me CHARGE de vous dre',
 	 'deja utilisé': ['Ma femme se part tres bien. ll me CHARGE de vous dire beaucoup']},
- 'dre':
-	{'lem': 'dire',
-	 'ctxt': 'cauge de vous DIRE bemcour',
-	 'deja utilisé': ['Ma femme se part tres bien. ll me charge de vous DIRE beaucoup']},
  'bemcour':
 	{'lem': 'beaucoup',
 	 'ctxt': 'de vous dre BEAUCOUP',
 	 'deja utilisé': ['Ma femme se part tres bien. ll me charge de vous dire BEAUCOUP']},
- 'chases':
-	{'lem': 'choses',
-	 'ctxt': 'Couraerni l d CHOSES  Mres deux',
-	 'deja utilisé': ['d CHOSES. tres deux fels vous assurent de l&#39;leur respects Mme Couraerni&#39;l']},
  'Mres':
 	{'lem': 'tres',
 	 'ctxt': 'd chases  TRES deux fels vous',
@@ -240,10 +209,6 @@ dictPage = {'noeis':
 	{'lem': 'leur respects',
 	 'ctxt': 'assurent de l LEUR RESPECTS Mme Couraerni l',
 	 'deja utilisé': ['d choses. tres deux fels vous assurent de l&#39;LEUR RESPECTS Mme Couraerni&#39;l']},
- 'Mme':
-	{'lem': 'Mme',
-	 'ctxt': 'de l urgrespets MME Couraerni l',
-	 'deja utilisé': ['completes de MME de Salm dout elle est digne d&#39;apprécier les charmantes']},
  'Couraerni':
 	{'lem': 'Courier n a',
 	 'ctxt': 'l urgrespets Mme COURIER N A l',
@@ -308,10 +273,6 @@ dictPage = {'noeis':
 	{'lem': 'Paume',
 	 'ctxt': 'joue à la PAUME de Je l',
 	 'deja utilisé': ['gue, joue à la PAUME de Je l&#39;avais mis sur les rangs pour biaém&#39;ien']},
- 'Je':
-	{'lem': 'Je',
-	 'ctxt': 'que nous avons JE preble de votre',
-	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
  'avaus':
 	{'lem': 'avais',
 	 'ctxt': 'de Je l AVAIS mis sur les',
@@ -352,9 +313,6 @@ dictPage = {'noeis':
 	{'lem': 'griffonnage',
 	 'ctxt': 'lre tout le GRIFFONNAGE  Les poriers',
 	 'deja utilisé': ['Je ne sais si vous pourez lre tout le GRIFFONNAGE. Les papiers']},
- 'Les':
-	{'lem': 'les',
-	 'ctxt': 'le guiffonage  LES poriers'},
  'poriers':
 	{'lem': 'papiers',
 	 'ctxt': 'guiffonage  Les PAPIERS',
@@ -379,10 +337,6 @@ dictPage = {'noeis':
 	{'lem': 'révérent',
 	 'ctxt': 'votre Goues était RÉVÉRENT Prince et par',
 	 'deja utilisé': ['publics m&#39;ont appris que votre époux était RÉVÉRENT Prince et par']},
- 'Prince':
-	{'lem': 'Prince',
-	 'ctxt': 'Goues était redsema PRINCE et par',
-	 'deja utilisé': ['on PRINCE ']},
  'Phincsse':
 	{'lem': 'Princesse',
 	 'ctxt': 'que vous êtes PRINCESSE je Piuras d',
@@ -399,10 +353,6 @@ dictPage = {'noeis':
 	{'lem': 'lettre',
 	 'ctxt': 'de as ma LETTRE per des formules',
 	 'deja utilisé': ['ma LETTRE par des formules de respect & ; mai je fais trop de as']},
- 'per':
-	{'lem': 'par',
-	 'ctxt': 'as ma lattre PAR des formules de',
-	 'deja utilisé': ['ma lettre PAR des formules de respect & ; mai je fais trop de as']},
  'resprt':
 	{'lem': 'respect',
 	 'ctxt': 'des formules de RESPECT I  ',
@@ -435,14 +385,6 @@ dictPage = {'noeis':
 	{'lem': 'Lettre',
 	 'ctxt': '',
 	 'deja utilisé': ['LETTRE']},
- 'A':
-	{'lem': 'A',
-	 'ctxt': 'Prouchae caere Liedrg) A Mr Prouchae caere',
-	 'deja utilisé': ['A Mr le Prince de Salm']},
- 'Mr':
-	{'lem': 'Mr',
-	 'ctxt': 'Mla complisent à MR Prous et à',
-	 'deja utilisé': ['A MR le Prince de Salm']},
  'Prouhae':
 	{'lem': 'Prous',
 	 'ctxt': 'Lidbeg) A Mr PROUS aehaude Lidbeg)',
@@ -455,10 +397,6 @@ dictPage = {'noeis':
 	{'lem': 'Liedberg)',
 	 'ctxt': 'Mr Prouhae aehaude LIEDBERG)',
 	 'deja utilisé': ['A Mr Prous (au chateau de) LIEDBERG)']},
- 'Dyck':
-	{'lem': 'Dyck',
-	 'ctxt': ' 1824  DYCK  le 1a',
-	 'deja utilisé': ['DYCK, le 20 coût, 181.']},
  'Mût':
 	{'lem': 'Août',
 	 'ctxt': ' le 1a AOÛT  1824 ',
@@ -471,10 +409,6 @@ dictPage = {'noeis':
 	{'lem': 'Prince',
 	 'ctxt': 'restent deman l PRINCE de Salm Prausein',
 	 'deja utilisé': ['l PRINCE de Salm Krautein et sa famille. Ils restent demain']},
- 'Salm':
-	{'lem': 'Salm',
-	 'ctxt': 'Cons tone de SALM ',
-	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
  'Prausein':
 	{'lem': 'Krautein',
 	 'ctxt': 'Dince de Salm KRAUTEIN et sa fainille',
@@ -531,10 +465,6 @@ dictPage = {'noeis':
 	{'lem': 'chargeons',
 	 'ctxt': 'et nouis vous CHARGEONS de toutes les',
 	 'deja utilisé': ['vous l&#39;engageons à venir et nous vous CHARGEONS de toutes les ne ga ciatre']},
- 'Il':
-	{'lem': 'il',
-	 'ctxt': 'soir serait pofable IL fait un s',
-	 'deja utilisé': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
  'Muir':
 	{'lem': 'fuir',
 	 'ctxt': 'un s beau FUIR de lune que'},
@@ -542,10 +472,6 @@ dictPage = {'noeis':
 	{'lem': 'possible',
 	 'ctxt': 'du soir serait POSSIBLE',
 	 'deja utilisé': ['il fait un s beau Muir de lune que le diner du soir serait POSSIBLE']},
- 'leise':
-	{'lem': 'laisse',
-	 'ctxt': 'pourtant je vous LAISSE touis les maitres',
-	 'deja utilisé': ['ou y&#39;est mieux entre soi, pourtant je vous LAISSE tous les maitres et']},
  'touis':
 	{'lem': 'tous',
 	 'ctxt': 'je vous leise TOUS les maitres et',
@@ -637,10 +563,6 @@ dictPage = {'noeis':
 	{'lem': 'compliments',
 	 'ctxt': 'selesses sir Mla COMPLIMENTS à Mr Prous',
 	 'deja utilisé': ['Mille COMPLIMENTS à Mr Prous et à son aimable hotesse sir']},
- 'Prous':
-	{'lem': 'Prous',
-	 'ctxt': 'complisent à Mr PROUS et à sonaimable',
-	 'deja utilisé': ['Mille compliments à Mr PROUS et à son aimable hotesse sir']},
  'sonaimable':
 	{'lem': 'son aimable',
 	 'ctxt': 'Prous et à SON AIMABLE selesses sir',
@@ -663,10 +585,6 @@ dictPage = {'noeis':
  'jauirai':
 	{'lem': "j'aurai", 'ctxt': ' savoir si J AURAI le plaisir d',
 	 'deja utilisé': ["savoir si J'AURAI le plaisir d&#39;avoir une de ces Dames Laquelle "]},
- 'avor':
-	{'lem': 'avoir',
-	 'ctxt': 'le plaisir d AVOIR une de ces',
-	 'deja utilisé': ["sAVOIR si j'aurai le plaisir d&#39;AVOIR une de ces Dames Laquelle "]},
  'Sames':
 	{'lem': 'Dames',
 	 'ctxt': 'une de ces DAMES éaquele ',

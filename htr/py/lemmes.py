@@ -1,10 +1,9 @@
-import click
 from lxml import etree
 import os
 from constantes import VERITESTERRAIN as VT
 
-@click.command()
-def collectLemmes():
+
+def get_lemmes():
     """
     Cette fonction parse le contenu des vérités de terrain et retourne un set des mots qu'elles contiennent.
     :returns: mots contenus dans les vérités de terrain.
@@ -34,9 +33,7 @@ def collectLemmes():
                     # On verifie que le mot ne soit pas vide et pas césuré
                     if mot and mot[-1] != '-':
                         motsParses.append(mot)
-
+    
     # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
+    motsParses = set(motsParses)
     return motsParses
-
-if __name__ == '__main__':
-    collectLemmes()

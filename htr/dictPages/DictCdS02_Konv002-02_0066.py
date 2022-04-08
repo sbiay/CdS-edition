@@ -18,10 +18,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'vivavité',
 	 'ctxt': 'uue daep vine VIVAVITÉ',
 	 'deja utilisé': ['en dat insupportable pour une trop vive VIVAVITÉ']},
- 'Mr':
-	{'lem': 'Mr',
-	 'ctxt': 'de Salm A MR le Prince de',
-	 'deja utilisé': ['A MR le Prince de Salm']},
  'Piois':
 	{'lem': 'Prous',
 	 'ctxt': 'sincares anctis Mr PROUS compondtre out cela',
@@ -34,14 +30,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'ont',
 	 'ctxt': 'Mr Piois compondtre ONT cela  Je',
 	 'deja utilisé': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
- 'Je':
-	{'lem': 'Je',
-	 'ctxt': 'le 4  JE compte srvêtre frinte',
-	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
- 'Lui':
-	{'lem': 'Lui',
-	 'ctxt': 'cela  Je LUI fos mes sincares',
-	 'deja utilisé': ['Mr Prous comprendra ont cela. Je LUI fos mes sincères amitiés']},
  'sincares':
 	{'lem': 'sincères',
 	 'ctxt': 'Lui fos mes SINCÈRES anctis',
@@ -58,21 +46,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Constance',
 	 'ctxt': 'Salm  (Sisgné) CONSTANCE de Salm ',
 	 'deja utilisé': ['(Signé) CONSTANCE de Salm.']},
- 'Salm':
-	{'lem': 'Salm',
-	 'ctxt': 'à Madame de SALM',
-	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
- 'S':
-	{'lem': 'à',
-	 'ctxt': 'S 2246 de À 2246'},
- 'Lettre':
-	{'lem': 'Lettre',
-	 'ctxt': '',
-	 'deja utilisé': ['LETTRE']},
- 'A':
-	{'lem': 'A',
-	 'ctxt': 'Prince de Salm A Mr le Prince',
-	 'deja utilisé': ['A Mr le Prince de Salm']},
  'Pronhaimaise':
 	{'lem': 'Prous (au chaateau de Liedberg',
 	 'ctxt': ' A Mr PROUS (AU CHAATEAU DE LIEDBERG der ',
@@ -89,10 +62,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Chaperon',
 	 'ctxt': 'd être le CHAPERON de deux',
 	 'deja utilisé': ['Je vous trouve heureux, Monsieur, d&#39;être le CHAPERON de deux']},
- 'Dyck':
-	{'lem': 'Dyck',
-	 'ctxt': ' 181  DYCK  le 20',
-	 'deja utilisé': ['DYCK, le 20 coût, 181.']},
  'jeuies':
 	{'lem': 'jeunes',
 	 'ctxt': ' elles ne JEUNES gimoiselues  Venez',
@@ -101,10 +70,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Demoiselles',
 	 'ctxt': 'elles ne jeuies DEMOISELLES  Venez parre',
 	 'deja utilisé': ['jeunes DEMOISELLES. Prenez parre p&#39;au lien de les diriger, elles ne']},
- 'Venez':
-	{'lem': 'Prenez',
-	 'ctxt': 'jeuies gimoiselues  PRENEZ parre p au',
-	 'deja utilisé': ['jeunes Demoiselles. PRENEZ parre p&#39;au lien de les diriger, elles ne']},
  'dirigr':
 	{'lem': 'diriger',
 	 'ctxt': 'lien de les DIRIGER  elles ne',
@@ -165,10 +130,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'vous',
 	 'ctxt': 'gurde le tone VOUS',
 	 'deja utilisé': ['Elle est bonne pour de vieux routiers comme nous ; gardez le tone VOUS']},
- 'Il':
-	{'lem': 'il',
-	 'ctxt': 'seus aui vous IL n y a',
-	 'deja utilisé': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
  'grivé':
 	{'lem': 'arrivé',
 	 'ctxt': 'Il m est ARRIVÉ hier une cergaison',
@@ -213,14 +174,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'temps',
 	 'ctxt': 'se le veux TEMPS  J en',
 	 'deja utilisé': ['TEMPS. J&#39;en ai pour dux vas à lire, sans d&#39;ébrider, si se le veux']},
- 'J':
-	{'lem': 'J',
-	 'ctxt': 'C entandez  J airais fait que',
-	 'deja utilisé': []},
- 'Vous':
-	{'lem': 'Vous',
-	 'ctxt': 'que les tore VOUS ni parlez plus',
-	 'deja utilisé': ['VOUS ni parlez plus de guerre, comme ces gens qui voyant que les tore']},
  'déguere':
 	{'lem': 'de guerre',
 	 'ctxt': 'ni parlez plus DE GUERRE  comme ces',
@@ -311,10 +264,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'qui tombent',
 	 'ctxt': 'des mi ettes QUI TOMBENT',
 	 'deja utilisé': ['mas por la correspondance, je me contente des mi&#39;ettes QUI TOMBENT']},
- 'Dames':
-	{'lem': 'james',
-	 'ctxt': 'table de ces JAMES ',
-	 'deja utilisé': ['de la table de ces JAMES.']},
  'pourvurc':
 	{'lem': 'pourquoi',
 	 'ctxt': 'Je ne sais POURQUOI vous me parlez',
@@ -382,10 +331,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'délivrance',
 	 'ctxt': 'charme de la DÉLIVRANCE de Bella ',
 	 'deja utilisé': ['Je suis charme de la DÉLIVRANCE de ella.']},
- 'Bella':
-	{'lem': 'ella',
-	 'ctxt': 'la deluvrame de ELLA ',
-	 'deja utilisé': ['Je suis charme de la délivrance de ELLA.']},
  '(Sgné)':
 	{'lem': '(Signé)',
 	 'ctxt': 'de Slm  (SIGNÉ) Cous tince de',
@@ -397,10 +342,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Salm',
 	 'ctxt': 'Cous tince de SALM ',
 	 'deja utilisé': ['(Signé) Cous tince de SALM.']},
- 'dout':
-	{'lem': 'dont',
-	 'ctxt': 'Mme de Sallu DONT elle est digne',
-	 'deja utilisé': ['completes de Mme de Salm DONT elle est digne d&#39;apprécier les']},
  'sgez':
 	{'lem': 'serez',
 	 'ctxt': 's dout voous SEREZ Den le pere',
@@ -445,10 +386,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': '20))',
 	 'ctxt': 'gr le (n° 20))',
 	 'deja utilisé': ['( Cor.. gr le (n° 20))']},
- 'Prince':
-	{'lem': 'Prince',
-	 'ctxt': 'Prince  Mon PRINCE ',
-	 'deja utilisé': ['on PRINCE ']},
  'rétege':
 	{'lem': 'retour',
 	 'ctxt': 'chin à mon RETOUR de trestais à',
@@ -461,10 +398,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Carlsruhe',
 	 'ctxt': 'de trestais à CARLSRUHE qu on',
 	 'deja utilisé': ['le n&#39;est n&#39;chin à mon retour de Griesbash à CARLSRUHE qu&#39;on']},
- 'Mon':
-	{'lem': 'on',
-	 'ctxt': 'Mon Prince  ON Prince ',
-	 'deja utilisé': ['ON Prince ']},
  'Cerle':
 	{'lem': 'perle',
 	 'ctxt': 'Mtmle 181  PERLE ruhe  le'},
@@ -495,10 +428,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'oeuvres',
 	 'ctxt': 'nu posission les OEUVRES',
 	 'deja utilisé': ['Madame la grande Duchesse est charmée davoir en nu possession les OEUVRES']},
- 'Mme':
-	{'lem': 'Mme',
-	 'ctxt': 'Mharnantes completes de MME de Sallu dout',
-	 'deja utilisé': ['completes de MME de Salm dout elle est digne d&#39;apprécier les charmantes']},
  'Sallu':
 	{'lem': 'Salm',
 	 'ctxt': 'de Mme de SALM dout elle est',
@@ -527,10 +456,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'chanter',
 	 'ctxt': 'à répéder ea CHANTER  Son Mltesse',
 	 'deja utilisé': ['plaisait à répéter ea CHANTER. Son Altesse Royale me charge, honneur']},
- 'Son':
-	{'lem': 'Son',
-	 'ctxt': 'ea Mantez  SON Mltesse Furale me',
-	 'deja utilisé': ['plaisait à répéter ea chanter. SON Altesse Royale me charge, honneur']},
  'Mltesse':
 	{'lem': 'Altesse',
 	 'ctxt': 'Mantez  Son ALTESSE Furale me charge',
@@ -543,9 +468,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Monsieur',
 	 'ctxt': 'me charge  MONSIEUR',
 	 'deja utilisé': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, MONSIEUR']},
- 'Elle':
-	{'lem': 'elle',
-	 'ctxt': 'ses remerciments  ELLE vous en devra'},
  'davantie':
 	{'lem': 'davantage',
 	 'ctxt': 'vous en devra DAVANTAGE si vous lu',
@@ -566,10 +488,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Bade',
 	 'ctxt': 'ele meme à BADE à Madame de',
 	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à BADE à madame de Salm']},
- 'Madame':
-	{'lem': 'madame',
-	 'ctxt': 'à Grade à MADAME de Salm',
-	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à MADAME de Salm']},
  'honnene':
 	{'lem': 'honneur',
 	 'ctxt': 'j ai l HONNEUR d elle',
@@ -618,10 +536,6 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Obéissante',
 	 'ctxt': '',
 	 'deja utilisé': ['OBÉISSANTE Servante']},
- 'Servante':
-	{'lem': 'Servante',
-	 'ctxt': 'Messante Servante Messante SERVANTE',
-	 'deja utilisé': ['Obéissante SERVANTE']},
  'A)':
 	{'lem': '(1)',
 	 'ctxt': 'la Prinesse Steshane (1) Celle Dame étar',
@@ -629,10 +543,6 @@ dictPage = {'inrpprgrtable':
  'Celle':
 	{'lem': 'elle',
 	 'ctxt': 'Prinesse Steshane A) ELLE Dame étar Dame'},
- 'Dame':
-	{'lem': 'dame',
-	 'ctxt': 'Celle Dame étar DAME d houneur de',
-	 'deja utilisé': ['(1) Celle DAME était DAME d&#39;honneur de la princesse Stephanie']},
  'étar':
 	{'lem': 'était',
 	 'ctxt': 'A) Celle Dame ÉTAIT Dame d houneur',

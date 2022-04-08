@@ -17,3 +17,5 @@ py/__pycache__
 htr/correctionManuelle/
 htr/py/__pycache__
 *xcf
+test.py
+*test.py
