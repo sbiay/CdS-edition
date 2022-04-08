@@ -132,11 +132,22 @@ Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" su
 Difficultés dans la reconnaissance des lignes :
 - Les références placées en haut à gauche (avec la date et le nom de l'expéditeur), écrites en diagonale, ne sont pas toujours bien lues (lignes sectionnées en plusieurs morceaux)
 
-# <span style="color : rgb(015, 005, 230, 0.8)">Mettre en oeuvre des entraînements de modèles HTR</span>
+# <span style="color : rgb(015, 005, 230, 0.8)">HTR : mise en oeuvre</span>
 Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
 
+## Point de départ
+### <span style="color : rgb(000, 200, 100, 0.7)">Essais d'HTR</span>
+Le dépôt Github du DHI [Constance de Salm](https://github.com/dhi-digital-humanities/constance-de-salm) contient un [modèle d'entraînement](https://github.com/dhi-digital-humanities/constance-de-salm/tree/main/HTR/Training%20Models) avec des vérités de terrain en petite quantité et un modèle entraîné.
+
+Le rapport de stage d'H. Souvay a été consulté {souvayCorrespondanceConstanceSalm2021}.
+
+Méthodologie employée :
+> Nous avons décidé de tenter la transcription automatique sur un sous-ensemble du corpus composé de copies de lettres compilées dans des recueils. […] Les mains sont relativement constantes dans le temps dans ce sous-ensemble contrairement au reste du corpus. Même proches, ces mains demeurent différentes. Nous avons donc opté pour l’**entraînement d’un modèle multi-mains**, c’est à dire un modèle non-spécialisé capable de transcrire plusieurs mains représentées dans le corpus d’entraînement [p. 6-7]{souvayCorrespondanceConstanceSalm2021}.
+
+H. Souvay a utilisé la méthode d'entraînement dite *few shots* (à "peu d'époques").
+
 ## <span style="color : rgb(020, 080, 170, 0.8)">Constituer des sous-corpus paléographiquement homogènes</span>
-### <span style="color : rgb(000, 200, 100, 0.7)">Main1</span>
+### <span style="color : rgb(000, 200, 100, 0.7)">Main 1</span>
 Les fichiers images sont issus de la même source que celle testée par H. Souvay : `CdS02_Konv002-02` (Corres. générale, 2e vol., 2e t. - [ici en local](../recueils/2e-copie-02-CdS-b2-0080-0.pdf)). La liste des images est contenue dans le fichier [main1-liste-images.txt](./main1-liste-images.txt).
 
 On ne s'est pas attaché à prendre des pièces entières mais à ne sélectionner que des doubles pages ne comportant qu'une seule main principale (quelques corrections de la main de CDS apparaissent ponctuellement).
