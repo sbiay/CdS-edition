@@ -217,7 +217,7 @@ D'après la démarche expliquée dans la documentation du projet DAHN, plus part
 
 3. Appliquer le [script](./py/spellcheck_texts_PAGEXML.py) d'analyse des mots dans le fichier XML :
 	```shell
-	python3 py/spellcheck_texts_PAGEXML.py ./xmlPage-aCorriger/ ./dictPages/
+	python3 py/spellcheck_texts_PAGEXML.py
 	```
 
 4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier [dictPages/](./dictPages/) ;
@@ -226,7 +226,7 @@ D'après la démarche expliquée dans la documentation du projet DAHN, plus part
 
 6. Appliquer le dictionnaire de correction aux fichiers XML grâce à ce [script](./py/text_correction_XML.py) :
 	```shell
-	python3 py/text_correction_XML.py ./xmlPage-aCorriger/ ./xmlPage-corrigees/
+	python3 py/text_correction_XML.py
 	```
 7. Réimporter les fichiers corrigés dans eScriptorium
 
