@@ -128,13 +128,21 @@ Régions reprises telles quelles :
 
 Il pourrait être pertinent de modifier l'usage de :
 - `Additions` (<span style="color: #03fcf5">turquoise</span>) : cette catégorie est utilisée ailleurs dans Segmonto, pour les [documents administratifs](https://github.com/SegmOnto/examples/tree/main/sources/administratif_XIXe) ; elle intervient dans le traitement du document **postérieurement à sa rédaction**, n'est-ce pas le cas pour l'élément que je signale en turquoise ?.
+	- Serait également applicable aux **rubriques** : par exemple "autographe" ([ici](./img/main1_bd/reduit_CdS02_Konv002-02_0064_copie.jpg))
 
 Il faudrait ajouter :
 - `Note` (<span style="color: #626262">grey</span>) : pour les notes infrapaginales (utilisé dans SegmOnto pour les [imprimés](https://github.com/SegmOnto/examples/tree/main/sources/prints/BnF_cb120117553)).
 - `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
-### Lignes et problèmes plus complexes
-- `Verse` pour les passages en vers ([ici](./img/main1_bd/CdS02_Konv002-02_0082.jpg))
+### Types de lignes
+Types de lignes dont on propose l'utilisation :
+- `Main`
+- `Verse`, à créer, pour les passages en vers ([ici](./img/main1_bd/reduit_CdS02_Konv002-02_0082.jpg))
+- `Correction`, par défaut dans eScriptorium, uniquement pour les corrections appliquées dans l'interligne ([ici](./img/main1_bd/reduit_CdS02_Konv002-02_0070.jpg))
+
+### Phénomènes qui ne seraient pas traités par le typage des zones ou des lignes
+- Mots soulignés
+- Mots biffés
 
 #### Corrections
 CDS corrige certains mots de sa main :
@@ -155,10 +163,6 @@ Je me demande s'il ne vaudrait pas mieux ne pas encoder ces éléments dans la p
 2. Introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités terrain.
 
 Proposition finale : **transcrire tout ce qui est lisible** (y compris les lettres biffées) en privilégiant le dernier état du texte (dans le cas et seulement dans le cas où la correction a été superposée à la première couche d'écriture.)
-
-- Des mots soulignés
-- Des rubriques : "autographe"
-
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Résultats de la segmentation</span>
 Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" sur la main1 font apparaître une bonne segmentation des doubles pages.
