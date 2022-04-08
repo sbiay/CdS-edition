@@ -175,22 +175,22 @@ D'après la démarche expliquée dans la documentation du projet DAHN, plus part
 
 1. Exporter les prédictions HTR au format XML-Page dans un [dossier dédié](./xmlPage-aCorriger/) ;
 
-2. Créer un [dossier](./dictPages/) destiné à héberger les dictionnaires Python qui seront générés par le premier script pour chaque fichier représentant une double page ;
+2. Créer un dossier [dictPages/](./dictPages/) destiné à héberger les dictionnaires Python qui seront générés par le premier script pour chaque fichier représentant une double page ;
 
 3. Appliquer le [script](./py/spellcheck_texts_PAGEXML.py) d'analyse des mots dans le fichier XML :
 	```shell
 	python3 py/spellcheck_texts_PAGEXML.py ./xmlPage-aCorriger/ ./dictPages/
 	```
 
-4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier `./dictPages/` ;
+4. Corriger à la main les entrées du dictionnaire de chacun des fichiers générés dans le dossier [dictPages/](./dictPages/) ;
 
-5. Regrouper les dictionnaires produits dans un seul fichier (**pas de script pour cela**) ;
+5. Regrouper les dictionnaires produits dans un seul fichier (**script py à écrire**) ;
 
 6. Appliquer le dictionnaire de correction aux fichiers XML grâce à ce [script](./py/text_correction_XML.py) :
 	```shell
 	python3 py/text_correction_XML.py ./xmlPage-aCorriger/ ./xmlPage-corrigees/
 	```
-7. Réimporter les fichiers corrigés dans eScriptorium :
+7. Réimporter les fichiers corrigés dans eScriptorium
 
 8. Corriger manuellement les résultats
 
@@ -217,18 +217,18 @@ Développement réalisés :
 	- Ne pas travailler sur des corrections déjà identifiées comme ambiguës (*id est* ayant deux contextes différents en compétition).
 
 A faire :
-- Mobiliser les vérités de terrain afin de ne pas rechercher dans tout le **dictionnaireComplet** les formes déjà validées. 
+- Mobiliser les vérités de terrain afin de ne pas rechercher dans tout le **dictionnaireComplet** les formes déjà validées (c'est le point 11 de la démarche).
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Corriger à la main les entrées des dictionnaires pour chaque fichier</span>
 - Temps de correction initial : 35 min pour une double page.
-- Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot.
+- Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
 - La présentation du contexte du mot développée au point précédent facilite cette tache de validation des corrections proposées par le script **spellcheck_texts**. 
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Regrouper les dictionnaires produits dans un seul fichier</span>
 Cette opération se fait pour l'instant à la main, elle est facilement automatisable mais suppose de **faire attention** à ne pas effacer d'anciennes corrections par de nouvelles corrections : certaines formes mal reconnues seront ambiguës, car pouvant se résoudre dans des mots différents selon les contextes. Il faudra donc les neutraliser et conserver la mémoire de cette neutralisation.
 
-Lui consacrer un script permet de contrôler les nouvelles entrées du dictionnaire :
-- Si la clé existe (la forme est déjà référencée par le dicttionnaire) :
+Lui consacrer un script permet de contrôler les nouvelles entrées du dictionnaire et donc de sécuriser cette intégration. Les conditions à traiter dans le script sont :
+- Si la clé existe (ie la forme erronée du mot est déjà référencée par le dictionnaire) :
 	- Si le lemme est différent : c'est un conflit, on propose en sortie, pour l'utilisateur, une comparaison des lemmes et des contextes ; on lui indique ensuite la marche à suivre :
 		1. Ouvrir dictCDS ;
 		2. Changer le lemme en `None` ;
@@ -236,6 +236,7 @@ Lui consacrer un script permet de contrôler les nouvelles entrées du dictionna
 		4. Supprimer la clé du dictionnaire en cours d'intégration ;
 		5. Relancer le script.
 	- Si le lemme est identique : on intègre l'entrée au dictionnaire en remplaçant le contexte par le plus récent ;
+- Si la clé n'existe pas, on ajoute le couple clé-valeur au dictCDS.
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le dictionnaire de correction aux fichiers XML (text_correction_XML.py)</span>
 Développements effectués :
@@ -245,7 +246,6 @@ Développements effectués :
 - Attention, il faudrait transformer les **esperluettes** pour éviter des problèmes de lecture du XML.
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Corriger manuellement les résultats</span>
-- **J'en suis ici** : reprendre la correction du fichier [texte](./correctionManuelle/CdS02_Konv002-02_0066-corr-auto.txt), l. 40.
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Tester les performances du modèle entraîné par H. Souvay</span>
 
