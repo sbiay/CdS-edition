@@ -149,6 +149,12 @@ Un ensemble de [solutions d'encodage](https://github.com/FloChiff/DAHNProject/tr
 - \[..@extent..] : gap in the texts
 - XXX or more : crossed out word illegible
 
+Je me demande s'il ne vaudrait pas mieux ne pas encoder ces éléments dans la phase d'HTR, et les aborder dans la phase d'édition 
+1. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition TEI, de suivre la reproduction du manuscrit à éditer ;
+2. Introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités terrain.
+
+Proposition finale : **transcrire tout ce qui est lisible** (y compris les lettres biffées) en privilégiant le dernier état du texte (dans le cas et seulement dans le cas où la correction a été superposée à la première couche d'écriture.)
+
 - Des mots soulignés
 - Des rubriques : "autographe"
 - Des notes de bas de page ([en local](./img/main1/CdS02_Konv002-02_0066.jpg))
