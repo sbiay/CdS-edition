@@ -17,7 +17,7 @@ Plan :
 		1. Essais d'HTR
 	2. Constituer des sous-corpus paléographiquement homogènes
 		1. Main 1
-		2. Test de transcription de l'écriture CDS
+		2. CDS : test de transcription de l'écriture de l'auteur
 	3. Corriger les prédictions
 		1. Correction manuelle
 		2. Correction automatisée grâce aux scripts du projet DAHN
@@ -253,3 +253,4 @@ Développements effectués :
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Confronter les résultats avec ceux d'un autre modèle générique</span>
 On testera le modèle entraîné par le projet Lectaurep.
+
