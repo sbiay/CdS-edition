@@ -1,3 +1,6 @@
+import click
+
+@click.command()
 def dictCDStransform():
     """
     USAGE UNIQUE
@@ -7,23 +10,26 @@ def dictCDStransform():
     et "ctxt" pour contexte.
     """
     
-    from dictComplets.dictCDS import dictCDS
+    from dictComplets.dictCDScorr import dict
     
     nouveauDict = {}
     
-    for cle in dictCDS:
+    for cle in dict:
         nouveauDict[cle] = {
-            "lem": dictCDS[cle],
+            "lem": dict[cle],
             "ctxt": []
         }
     
     nouveauDict = str(nouveauDict).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
     
-    with open("./py/dictCDS.py", mode="w") as f:
+    with open("./py/dictCDScorr.py", mode="w") as f:
         f.write(
             f"dictCDS = {nouveauDict}"
         )
 
+
+@click.command()
+@click.argument("SOURCE")
 def dictCDSintegration(source):
     """
     Ce script prend comme paramètres une source consistant en un dictionnaire python d'entrée
@@ -32,4 +38,4 @@ def dictCDSintegration(source):
     :param source: dictionnaire python issu de la correction automatisée d'une page de transcription
     :type source: chemin de fichier
     """
-    
+
