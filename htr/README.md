@@ -133,10 +133,22 @@ Il faudrait ajouter :
 - `Note` (<span style="color: #626262">grey</span>) : pour les notes infrapaginales (utilisé dans SegmOnto pour les [imprimés](https://github.com/SegmOnto/examples/tree/main/sources/prints/BnF_cb120117553)).
 - `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
-Les types d'informations à traiter :
-- **Corrections** : CDS corrige certains mots de sa main. 
-	- En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Floriane ajoutait un symbole `££` au début de la correction, pour attirer l'attention de l'encodeur. C'est une bonne idée car de nombreux cas consistent en une simple lettre barrée ([en local](./img/main1/CdS02_Konv002-02_0065.jpg)) ; dans ce cas, le typage est impossible.
-	- En réécrivant dans l'interligne : il est alors pertinent d'utiliser le type de ligne eScriptorium `correction`.
+### Lignes et problèmes plus complexes
+
+#### Corrections
+CDS corrige certains mots de sa main :
+- En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée ([en local](./img/main1/CdS02_Konv002-02_0065.jpg)) ; le typage de la ligne est alors trop compliqué
+- En réécrivant dans l'interligne : il est alors pertinent d'utiliser le type de ligne eScriptorium `Correction`.
+
+Un ensemble de [solutions d'encodage](https://github.com/FloChiff/DAHNProject/tree/master/Project%20development/Texts) ont été proposées dans le cadre du projet DAHN :
+- ££word££ : handwritten word
+- €word€ : crossed out word
+- \*\*word\**: supplied word that usually can't be read from the page 
+- {word} : expanded version of an abbreviated word
+- \[word] : version corrected by a member of the project of an incorrect word in the text
+- \[..@extent..] : gap in the texts
+- XXX or more : crossed out word illegible
+
 - Des mots soulignés
 - Des rubriques : "autographe"
 - Des notes de bas de page ([en local](./img/main1/CdS02_Konv002-02_0066.jpg))
