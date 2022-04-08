@@ -101,21 +101,37 @@ Eléments TEI importants :
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Proposition d'ontologie de SegmOnto</span>
 F. Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle ({chiffoleauCorrespondanceLangueFrancaise2021}) :
-- `Main` (pink)
+- `Main` (<span style="color: #fc03ef">pink</span>)
 - `Title` (<span style="color: #00bc66">green</span>) : two kinds of title : 
 	1. one that numbers the letter 
 	2. one that gives the subject
 - `Signature` (<span style="color: #fc6f03">orange</span>) : salutation and signature of the sender (sometimes handwritten)
 - `Stamp` (yellow) : faded stamp presents in almost all the pages of this corpus
 - `Letterhead` (<span style="color: #910078">purple</span>) : printed letterhead
-- `Numbering` (<span style="color: #fc03ef">pink</span>/red?) : numbering at the top of the letter
+- `Numbering` (pink/red?) : numbering at the top of the letter
 - `Address` (light blue) : name and place of the recipient
-- `Salute` (red)
-- `Dateline` (dark blue) : place and date of writing for the letter
-- `Additions` (turquoise) : handwritten additions outside of the main text
+- `Salute` (<span style="color: #fc0303">red</span>)
+- `Dateline` (<span style="color: #0327fc">dark blue</span>) : place and date of writing for the letter
+- `Additions` (<span style="color: #03fcf5">turquoise</span>) : handwritten additions outside of the main text
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Applicabilité à un recueil de correspondance CDS</span>
-Cf. schéma **en cours de réalisation** ([dossier](./segmentation/)).
+![schema](./segmentation/essai-zones-CdS02_Konv002-02_0066.jpg)
+
+Régions reprises telles quelles :
+- `Main` (<span style="color: #fc03ef">pink</span>)
+- `Title` (<span style="color: #00bc66">green</span>)
+- `Signature` (<span style="color: #fc6f03">orange</span>)
+- `Letterhead` (<span style="color: #910078">purple</span>) : printed letterhead
+- `Numbering` (pink/red? **je propose plutôt** <span style="color: #055a00">dark green</span>)
+- `Salute` (<span style="color: #fc0303">red</span>)
+- `Dateline` (<span style="color: #0327fc">dark blue</span>)
+
+Il pourrait être pertinent de modifier l'usage de :
+- `Additions` (<span style="color: #03fcf5">turquoise</span>) : cette catégorie est utilisée ailleurs dans Segmonto, pour les [documents administratifs](https://github.com/SegmOnto/examples/tree/main/sources/administratif_XIXe) ; elle intervient dans le traitement du document **postérieurement à sa rédaction**, n'est-ce pas le cas pour l'élément que je signale en turquoise ?.
+
+Il faudrait ajouter :
+- `Note` (<span style="color: #626262">grey</span>) : pour les notes infrapaginales (utilisé dans SegmOnto pour les [imprimés](https://github.com/SegmOnto/examples/tree/main/sources/prints/BnF_cb120117553)).
+- `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
 Les types d'informations à traiter :
 - **Corrections** : CDS corrige certains mots de sa main. 
@@ -124,6 +140,7 @@ Les types d'informations à traiter :
 - Des mots soulignés
 - Des rubriques : "autographe"
 - Des notes de bas de page ([en local](./img/main1/CdS02_Konv002-02_0066.jpg))
+	- Penser à peut-être signaler l'appel de note dans la transcription ;
 - Une pagination à la mine.
 - Des passages en vers ([en local](./img/main1/CdS02_Konv002-02_0082.jpg))
 
