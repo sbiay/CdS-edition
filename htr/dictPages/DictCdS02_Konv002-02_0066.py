@@ -24,23 +24,23 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['A MR le Prince de Salm']},
  'Piois':
 	{'lem': 'Prous',
-	 'ctxt': 'sincares anctis Mr PROUS compondtre out cela.',
+	 'ctxt': 'sincares anctis Mr PROUS compondtre out cela',
 	 'deja utilisé': ['Mr PROUS comprendra ont cela. Je Lui fos mes sincères amitiés']},
  'compondtre':
 	{'lem': 'comprendra',
-	 'ctxt': 'anctis Mr Piois COMPRENDRA out cela. Je',
+	 'ctxt': 'anctis Mr Piois COMPRENDRA out cela ',
 	 'deja utilisé': ['Mr Prous COMPRENDRA ont cela. Je Lui fos mes sincères amitiés']},
  'out':
 	{'lem': 'ont',
-	 'ctxt': 'Mr Piois compondtre ONT cela. Je Lui',
+	 'ctxt': 'Mr Piois compondtre ONT cela  Je',
 	 'deja utilisé': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
  'Je':
 	{'lem': 'Je',
-	 'ctxt': 'préuses le 4. JE compte srvêtre frinte',
+	 'ctxt': 'le 4  JE compte srvêtre frinte',
 	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
  'Lui':
 	{'lem': 'Lui',
-	 'ctxt': 'out cela. Je LUI fos mes sincares',
+	 'ctxt': 'cela  Je LUI fos mes sincares',
 	 'deja utilisé': ['Mr Prous comprendra ont cela. Je LUI fos mes sincères amitiés']},
  'sincares':
 	{'lem': 'sincères',
@@ -52,15 +52,16 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['Mr Prous comprendra ont cela. Je Lui fos mes sincères AMITIÉS']},
  '(Sisgné)':
 	{'lem': '(Signé)',
-	 'ctxt': 'Couestanc de Salm. (SIGNÉ) Couestanc de Salm.',
+	 'ctxt': 'de Salm  (SIGNÉ) Couestanc de Salm',
 	 'deja utilisé': ['(SIGNÉ) Constance de Salm.']},
  'Couestanc':
 	{'lem': 'Constance',
-	 'ctxt': 'de Salm. (Sisgné) CONSTANCE de Salm.',
+	 'ctxt': 'Salm  (Sisgné) CONSTANCE de Salm ',
 	 'deja utilisé': ['(Signé) CONSTANCE de Salm.']},
- 'Salm.':
-	{'lem': 'calme',
-	 'ctxt': '(Sisgné) Couestanc de CALME'},
+ 'Salm':
+	{'lem': 'Salm',
+	 'ctxt': 'à Madame de SALM',
+	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
  'S':
 	{'lem': 'à',
 	 'ctxt': 'S 2246 de À 2246'},
@@ -74,37 +75,47 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['A Mr le Prince de Salm']},
  'Pronhaimaise':
 	{'lem': 'Prous (au chaateau de Liedberg',
-	 'ctxt': 'der. A Mr PROUS (AU CHAATEAU DE LIEDBERG der.',
+	 'ctxt': ' A Mr PROUS (AU CHAATEAU DE LIEDBERG der ',
 	 'deja utilisé': ['A Mr PROUS (AU CHAATEAU DE LIEDBERG der.']},
  'troune':
 	{'lem': 'trouve',
-	 'ctxt': 'deux Je vous TROUVE heureux, Monsaur, d être',
+	 'ctxt': 'deux Je vous TROUVE heureux  Monsaur',
 	 'deja utilisé': ['Je vous TROUVE heureux, Monsieur, d&#39;être le Chaperon de deux']},
- 'Monsaur,':
-	{'lem': 'Monsaur,',
-	 'ctxt': 'vous troune heureux, MONSAUR, d être le Mapern'},
+ 'Monsaur':
+	{'lem': 'Monsieur',
+	 'ctxt': 'troune heureux  MONSIEUR  d être',
+	 'deja utilisé': ['Je vous trouve heureux, MONSIEUR, d&#39;être le Chaperon de deux']},
  'Mapern':
 	{'lem': 'Chaperon',
-	 'ctxt': 'Monsaur, d être le CHAPERON de deux',
+	 'ctxt': 'd être le CHAPERON de deux',
 	 'deja utilisé': ['Je vous trouve heureux, Monsieur, d&#39;être le CHAPERON de deux']},
- 'Dyck,':
-	{'lem': 'wyck',
-	 'ctxt': '20 coût, 181. WYCK le 20 coût,'},
+ 'Dyck':
+	{'lem': 'Dyck',
+	 'ctxt': ' 181  DYCK  le 20',
+	 'deja utilisé': ['DYCK, le 20 coût, 181.']},
  'jeuies':
 	{'lem': 'jeunes',
-	 'ctxt': 'dirigr, elles ne JEUNES gimoiselues. Venez parre',
+	 'ctxt': ' elles ne JEUNES gimoiselues  Venez',
 	 'deja utilisé': ['JEUNES Demoiselles. Prenez parre p&#39;au lien de les diriger, elles ne']},
+ 'gimoiselues':
+	{'lem': 'Demoiselles',
+	 'ctxt': 'elles ne jeuies DEMOISELLES  Venez parre',
+	 'deja utilisé': ['jeunes DEMOISELLES. Prenez parre p&#39;au lien de les diriger, elles ne']},
  'Venez':
 	{'lem': 'Prenez',
-	 'ctxt': 'ne jeuies gimoiselues. PRENEZ parre p au lien',
+	 'ctxt': 'jeuies gimoiselues  PRENEZ parre p au',
 	 'deja utilisé': ['jeunes Demoiselles. PRENEZ parre p&#39;au lien de les diriger, elles ne']},
+ 'dirigr':
+	{'lem': 'diriger',
+	 'ctxt': 'lien de les DIRIGER  elles ne',
+	 'deja utilisé': ['jeunes Demoiselles. Prenez parre p&#39;au lien de les DIRIGER, elles ne']},
  'drigent':
 	{'lem': 'dirigent',
-	 'ctxt': 'véruité qu elle vous DIRIGENT la fatire et',
+	 'ctxt': 'qu elle vous DIRIGENT la fatire et',
 	 'deja utilisé': ['vous DIRIGENT la Nature et faible ; mais il fait à la vérité qu&#39;elle']},
  'fatire':
 	{'lem': 'Nature',
-	 'ctxt': 'vous drigent la NATURE et faible ;',
+	 'ctxt': 'vous drigent la NATURE et faible ',
 	 'deja utilisé': ['vous dirigent la NATURE et faible ; mais il fait à la vérité qu&#39;elle']},
  'véruité':
 	{'lem': 'vérité',
@@ -112,27 +123,32 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['vous dirigent la Nature et faible ; mais il fait à la VÉRITÉ qu&#39;elle']},
  'fuon':
 	{'lem': 'fier',
-	 'ctxt': 'mn pait s u FIER',
+	 'ctxt': 'pait s u FIER',
 	 'deja utilisé': ['sut forte pour être faille, et à vois er coure, mn pait s&#39;u FIER']},
  'sonbaite':
 	{'lem': 'souhaite',
-	 'ctxt': 'ne vous le SOUHAITE pas.',
+	 'ctxt': 'ne vous le SOUHAITE pas ',
 	 'deja utilisé': ['à vous. Je ne vous le SOUHAITE pas.']},
- 'Pétrre.':
-	{'lem': 'Pétrre.',
-	 'ctxt': 'demoisites. fou le PÉTRRE. Cille lecture ne'},
+ 'Pétrre':
+	{'lem': 'Pétrone',
+	 'ctxt': ' fou le PÉTRONE  Cille lecture',
+	 'deja utilisé': ['fou le PÉTRONE. Cette lecture ne va pas avec vos demoiselles.']},
  'Cille':
 	{'lem': 'Cette',
-	 'ctxt': 'fou le Pétrre. CETTE lecture ne va',
+	 'ctxt': 'le Pétrre  CETTE lecture ne va',
 	 'deja utilisé': ['fou le Pétrone. CETTE lecture ne va pas avec vos demoiselles.']},
  'avce':
 	{'lem': 'avec',
-	 'ctxt': 'ne va pas AVEC ves demoisites.',
+	 'ctxt': 'ne va pas AVEC ves demoisites ',
 	 'deja utilisé': ['fou le Pétrone. Cette lecture ne va pas AVEC vos demoiselles.']},
  'ves':
 	{'lem': 'vos',
-	 'ctxt': 'va pas avce VOS demoisites.',
+	 'ctxt': 'va pas avce VOS demoisites ',
 	 'deja utilisé': ['fou le Pétrone. Cette lecture ne va pas avec VOS demoiselles.']},
+ 'demoisites':
+	{'lem': 'demoiselles',
+	 'ctxt': 'pas avce ves DEMOISELLES ',
+	 'deja utilisé': ['fou le Pétrone. Cette lecture ne va pas avec vos DEMOISELLES.']},
  'Llle':
 	{'lem': 'Elle',
 	 'ctxt': 'le tone vour ELLE est boune pour',
@@ -143,7 +159,7 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['Elle est BONNE pour de vieux routiers comme nous ; gardez le tone vous']},
  'gurde':
 	{'lem': 'gardez',
-	 'ctxt': 'comme nous ; GARDEZ le tone vour',
+	 'ctxt': 'nous   GARDEZ le tone vour',
 	 'deja utilisé': ['Elle est bonne pour de vieux routiers comme nous ; GARDEZ le tone vous']},
  'vour':
 	{'lem': 'vous',
@@ -151,11 +167,11 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['Elle est bonne pour de vieux routiers comme nous ; gardez le tone VOUS']},
  'Il':
 	{'lem': 'il',
-	 'ctxt': 'seus aui vous IL n y a pas',
+	 'ctxt': 'seus aui vous IL n y a',
 	 'deja utilisé': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
  'grivé':
 	{'lem': 'arrivé',
-	 'ctxt': 'vous. Il m est ARRIVÉ hier une cergaison',
+	 'ctxt': 'Il m est ARRIVÉ hier une cergaison',
 	 'deja utilisé': ['vous. il m&#39;est ARRIVÉ hier une cargaison de vieux gardes boutiques']},
  'cergaison':
 	{'lem': 'cargaison',
@@ -191,59 +207,78 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['mais ce sont de bons bouche tons tuas ma BIBLIOTHÈQUE et dans moi']},
  'dons':
 	{'lem': 'dans',
-	 'ctxt': 'pour le mapar, DANS le seus aui',
+	 'ctxt': 'le mapar  DANS le seus aui',
 	 'deja utilisé': ['il n&#39;y a pas moyen de rien DANSier pour le major, DANS le sens aui vous']},
- "J'en":
-	{'lem': "m'en", 'ctxt': 'le veux teups. M EN ai pour dux'},
+ 'teups':
+	{'lem': 'temps',
+	 'ctxt': 'se le veux TEMPS  J en',
+	 'deja utilisé': ['TEMPS. J&#39;en ai pour dux vas à lire, sans d&#39;ébrider, si se le veux']},
+ 'J':
+	{'lem': 'J',
+	 'ctxt': 'C entandez  J airais fait que',
+	 'deja utilisé': []},
  'Vous':
 	{'lem': 'Vous',
 	 'ctxt': 'que les tore VOUS ni parlez plus',
 	 'deja utilisé': ['VOUS ni parlez plus de guerre, comme ces gens qui voyant que les tore']},
+ 'déguere':
+	{'lem': 'de guerre',
+	 'ctxt': 'ni parlez plus DE GUERRE  comme ces',
+	 'deja utilisé': ['Vous ni parlez plus DE GUERRE, comme ces gens qui voyant que les tore']},
  'avaier':
 	{'lem': 'avaient',
-	 'ctxt': 'comme i les AVAIENT annonciis, se tisest',
+	 'ctxt': 'comme i les AVAIENT annonciis  se',
 	 'deja utilisé': ['vont comme i les AVAIENT annoncées, se taisent par aiis de satisfac-']},
+ 'annonciis':
+	{'lem': 'annoncées',
+	 'ctxt': 'i les avaier ANNONCÉES  se tisest',
+	 'deja utilisé': ['vont comme i les avaient ANNONCÉES, se taisent par aiis de satisfac-']},
  'tisest':
 	{'lem': 'taisent',
-	 'ctxt': 'avaier annonciis, se TAISENT par aiis de',
+	 'ctxt': 'annonciis  se TAISENT par aiis de',
 	 'deja utilisé': ['vont comme i les avaient annoncées, se TAISENT par aiis de satisfac-']},
  'sarblnc-':
 	{'lem': 'satisfac-',
 	 'ctxt': 'par aiis de SATISFAC-',
 	 'deja utilisé': ['vont comme i les avaient annoncées, se taisent par aiis de SATISFAC-']},
- 'E!':
-	{'lem': 'Eh',
-	 'ctxt': 'et malgrié tion. EH bien, j ai pourtant',
-	 'deja utilisé': []},
+ 'E':
+	{'lem': 'à',
+	 'ctxt': 'malgrié tion  À  bien '},
  'envre':
 	{'lem': 'encore',
-	 'ctxt': 'bien, j ai pourtant ENCORE un fond d udrédulite',
+	 'ctxt': 'j ai pourtant ENCORE un fond d',
 	 'deja utilisé': ['tion. E! bien, j&#39;ai pourtant ENCORE un fond d&#39;incrédulité et malgré']},
+ 'udrédulite':
+	{'lem': 'incrédulité',
+	 'ctxt': 'un fond d INCRÉDULITÉ et malgrié',
+	 'deja utilisé': ['tion. E! bien, j&#39;ai pourtant encore un fond d&#39;INCRÉDULITÉ et malgré']},
  'malgrié':
 	{'lem': 'malgré',
-	 'ctxt': 'fond d udrédulite et MALGRÉ',
+	 'ctxt': 'd udrédulite et MALGRÉ',
 	 'deja utilisé': ['tion. E! bien, j&#39;ai pourtant encore un fond d&#39;incrédulité et MALGRÉ']},
  'slênce':
 	{'lem': 'silence',
-	 'ctxt': 'votre ans. aetre SILENCE jene puis ête',
+	 'ctxt': 'ans  aetre SILENCE jene puis ête',
 	 'deja utilisé': ['aetre SILENCE je ne puis ête de votre ans.']},
  'jene':
 	{'lem': 'je ne',
-	 'ctxt': 'ans. aetre slênce JE NE puis ête de',
+	 'ctxt': ' aetre slênce JE NE puis ête de',
 	 'deja utilisé': ['aetre silence JE NE puis ête de votre ans.']},
  'donsier':
 	{'lem': 'donner',
-	 'ctxt': 'moyen de rien DONNER pour le mapar,',
+	 'ctxt': 'moyen de rien DONNER pour le mapar',
 	 'deja utilisé': ['il n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
+ 'mapar':
+	{'lem': 'major',
+	 'ctxt': 'donsier pour le MAJOR  dons le',
+	 'deja utilisé': ['il n&#39;y a pas moyen de rien dansier pour le MAJOR, dans le sens aui vous']},
  'seus':
 	{'lem': 'sens',
-	 'ctxt': 'mapar, dons le SENS aui vous',
+	 'ctxt': ' dons le SENS aui vous',
 	 'deja utilisé': ['il n&#39;y a pas moyen de rien dansier pour le major, dans le SENS aui vous']},
- "C'entandez.":
-	{'lem': "C'entandez.", 'ctxt': 'pour sa rouvrsation C ENTANDEZ. J airais fait que'},
- "J'airais":
-	{'lem': 'plairais',
-	 'ctxt': 'sa rouvrsation C entandez. PLAIRAIS fait que ques'},
+ 'C':
+	{'lem': 'à',
+	 'ctxt': 'pour sa rouvrsation À entandez  J'},
  'poilesse':
 	{'lem': 'politesse',
 	 'ctxt': 'ques frais de POLITESSE pour sa rouvrsation',
@@ -254,45 +289,55 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['C&#39;entandez. J&#39;airais fait que ques frais de politesse pour sa CONVERSATION']},
  'souéte':
 	{'lem': 'société',
-	 'ctxt': '; et sa SOCIÉTÉ surtont dans l loignement',
+	 'ctxt': ' et sa SOCIÉTÉ surtont dans l',
 	 'deja utilisé': ['et sa SOCIÉTÉ surtout dans l&#39;éloignement de toute chose où je vis ;']},
  'surtont':
 	{'lem': 'surtout',
-	 'ctxt': 'et sa souéte SURTOUT dans l loignement de',
+	 'ctxt': 'et sa souéte SURTOUT dans l loignement',
 	 'deja utilisé': ['et sa société SURTOUT dans l&#39;éloignement de toute chose où je vis ;']},
+ 'loignement':
+	{'lem': 'éloignement',
+	 'ctxt': 'surtont dans l ÉLOIGNEMENT de toute chose',
+	 'deja utilisé': ['et sa société surtout dans l&#39;ÉLOIGNEMENT de toute chose où je vis ;']},
+ 'cxrrespendance':
+	{'lem': 'correspondance',
+	 'ctxt': 'mas por la CORRESPONDANCE  je me',
+	 'deja utilisé': ['mas por la CORRESPONDANCE, je me contente des mi&#39;ettes qui tombent']},
  'coutente':
 	{'lem': 'contente',
-	 'ctxt': 'cxrrespendance, je me CONTENTE des mi ettes quitombent',
+	 'ctxt': ' je me CONTENTE des mi ettes',
 	 'deja utilisé': ['mas por la correspondance, je me CONTENTE des mi&#39;ettes qui tombent']},
- "mi'ettes":
-	{'lem': 'miettes',
-	 'ctxt': 'me coutente des MIETTES quitombent',
-	 'deja utilisé': []},
  'quitombent':
 	{'lem': 'qui tombent',
-	 'ctxt': 'coutente des mi ettes QUI TOMBENT',
+	 'ctxt': 'des mi ettes QUI TOMBENT',
 	 'deja utilisé': ['mas por la correspondance, je me contente des mi&#39;ettes QUI TOMBENT']},
- 'Dames.':
-	{'lem': 'james.',
-	 'ctxt': 'table de ces JAMES.'},
+ 'Dames':
+	{'lem': 'james',
+	 'ctxt': 'table de ces JAMES ',
+	 'deja utilisé': ['de la table de ces JAMES.']},
  'pourvurc':
 	{'lem': 'pourquoi',
 	 'ctxt': 'Je ne sais POURQUOI vous me parlez',
 	 'deja utilisé': ['Je ne sais POURQUOI vous me parlez d&#39;oublis, je n&#39;y suis point']},
+ 'oubles':
+	{'lem': 'oublis',
+	 'ctxt': 'me parlez d OUBLIS  je n',
+	 'deja utilisé': ['Je ne sais pourquoi vous me parlez d&#39;OUBLIS, je n&#39;y suis point']},
  'pout':
 	{'lem': 'point',
-	 'ctxt': 'je n y suis POINT',
+	 'ctxt': 'n y suis POINT',
 	 'deja utilisé': ['Je ne sais pourquoi vous me parlez d&#39;oublis, je n&#39;y suis POINT']},
- 'Vpte,':
-	{'lem': 'apte',
-	 'ctxt': 'si veus voulle APTE Muitonit en amitre'},
+ 'Vpte':
+	{'lem': 'sujette',
+	 'ctxt': 'si veus voulle SUJETTE  Muitonit en',
+	 'deja utilisé': ['SUJETTE, surtout en amitié Mele moi sur la voie si vous voulue']},
  'Muitonit':
 	{'lem': 'surtout',
-	 'ctxt': 'veus voulle Vpte, SURTOUT en amitre Mele',
+	 'ctxt': 'voulle Vpte  SURTOUT en amitre Mele',
 	 'deja utilisé': ['sujette, SURTOUT en amitié Mele moi sur la voie si vous voulue']},
  'amitre':
 	{'lem': 'amitié',
-	 'ctxt': 'Vpte, Muitonit en AMITIÉ Mele moi sur',
+	 'ctxt': ' Muitonit en AMITIÉ Mele moi sur',
 	 'deja utilisé': ['sujette, surtout en AMITIÉ Mele moi sur la voie si vous voulue']},
  'Mele':
 	{'lem': 'tele',
@@ -309,6 +354,22 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'voulue',
 	 'ctxt': 'vures si veus VOULUE',
 	 'deja utilisé': ['sujette, surtout en amitié Mele moi sur la voie si vous VOULUE']},
+ '(doresp':
+	{'lem': '(Corresp.',
+	 'ctxt': ' l ) (CORRESP.  l )',
+	 'deja utilisé': ['(CORRESP.: l:)']},
+ 'entrde':
+	{'lem': 'entende',
+	 'ctxt': 'qu j y ENTENDE  pa qu',
+	 'deja utilisé': ['qu j y&#39;ENTENDE, pa qu la, est veous que j&#39;accuse de m&#39;accuser']},
+ 'auur':
+	{'lem': 'accuse',
+	 'ctxt': 'veous que j ACCUSE de m acuser',
+	 'deja utilisé': ['qu j y&#39;entende, pa qu la, est veous que j&#39;ACCUSE de m&#39;ACCUSEr']},
+ 'acuser':
+	{'lem': 'accuser',
+	 'ctxt': 'auur de m ACCUSER',
+	 'deja utilisé': ['qu j y&#39;entende, pa qu la, est veous que j&#39;accuse de m&#39;ACCUSER']},
  'Aimncté':
 	{'lem': 'Amitié',
 	 'ctxt': 'Aimncté et Etame AMITIÉ et Etame',
@@ -319,58 +380,66 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['Amitié et ESTIME']},
  'deluvrame':
 	{'lem': 'délivrance',
-	 'ctxt': 'charme de la DÉLIVRANCE de Bella.',
+	 'ctxt': 'charme de la DÉLIVRANCE de Bella ',
 	 'deja utilisé': ['Je suis charme de la DÉLIVRANCE de ella.']},
- 'Bella.':
+ 'Bella':
 	{'lem': 'ella',
-	 'ctxt': 'la deluvrame de ELLA'},
+	 'ctxt': 'la deluvrame de ELLA ',
+	 'deja utilisé': ['Je suis charme de la délivrance de ELLA.']},
  '(Sgné)':
 	{'lem': '(Signé)',
-	 'ctxt': 'tince de Slm. (SIGNÉ) Cous tince de',
+	 'ctxt': 'de Slm  (SIGNÉ) Cous tince de',
 	 'deja utilisé': ['(SIGNÉ) Cous tince de Salm.']},
  'Cous':
 	{'lem': 'vous',
-	 'ctxt': 'de Slm. (Sgné) VOUS tince de Slm.'},
- 'Slm.':
-	{'lem': 'm.',
-	 'ctxt': 'Cous tince de M.'},
+	 'ctxt': 'Slm  (Sgné) VOUS tince de Slm'},
+ 'Slm':
+	{'lem': 'Salm',
+	 'ctxt': 'Cous tince de SALM ',
+	 'deja utilisé': ['(Signé) Cous tince de SALM.']},
+ 'dout':
+	{'lem': 'dont',
+	 'ctxt': 'Mme de Sallu DONT elle est digne',
+	 'deja utilisé': ['completes de Mme de Salm DONT elle est digne d&#39;apprécier les']},
  'sgez':
 	{'lem': 'serez',
-	 'ctxt': 's dout voous SEREZ Den le pere.',
+	 'ctxt': 's dout voous SEREZ Den le pere',
 	 'deja utilisé': ['dout voous SEREZ Dieu le pere. que la grâce soit avec vous àe s']},
  'Den':
 	{'lem': 'Dieu',
-	 'ctxt': 'dout voous sgez DIEU le pere. que',
+	 'ctxt': 'dout voous sgez DIEU le pere ',
 	 'deja utilisé': ['dout voous serez DIEU le pere. que la grâce soit avec vous àe s']},
  'goce':
 	{'lem': 'grâce',
-	 'ctxt': 'pere. que la GRÂCE soit avec vous',
+	 'ctxt': ' que la GRÂCE soit avec vous',
 	 'deja utilisé': ['dout voous serez Dieu le pere. que la GRÂCE soit avec vous àe s']},
  'dnons':
 	{'lem': 'dinons',
-	 'ctxt': 'srvêtre frinte dous DINONS à 2 y préuses',
+	 'ctxt': 'srvêtre frinte dous DINONS à 2 y',
 	 'deja utilisé': ['dous DINONS à 2&#39;y précises le 4. Je compte sur votre trinité']},
  'préuses':
 	{'lem': 'précises',
-	 'ctxt': 'dnons à 2 y PRÉCISES le 4. Je',
+	 'ctxt': 'à 2 y PRÉCISES le 4 ',
 	 'deja utilisé': ['dous dinons à 2&#39;y PRÉCISES le 4. Je compte sur votre trinité']},
  'srvêtre':
 	{'lem': 'sur votre',
-	 'ctxt': '4. Je compte SUR VOTRE frinte',
+	 'ctxt': ' Je compte SUR VOTRE frinte',
 	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. Je compte SUR VOTRE trinité']},
  'frinte':
 	{'lem': 'trinité',
 	 'ctxt': 'Je compte srvêtre TRINITÉ',
 	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. Je compte sur votre TRINITÉ']},
- 'Lttrce.':
-	{'lem': 'Lttrce.',
-	 'ctxt': ''},
- 'Cre.':
-	{'lem': 'bref',
-	 'ctxt': '(n° 20)) ( BREF gr le (n°'},
+ 'Lttrce':
+	{'lem': 'Lettre',
+	 'ctxt': '',
+	 'deja utilisé': ['LETTRE.']},
+ 'Cre':
+	{'lem': 'Cor.',
+	 'ctxt': '(n° 20)) ( COR.  gr le',
+	 'deja utilisé': ['( COR.. gr le (n° 20))']},
  '(n°':
 	{'lem': '(n°',
-	 'ctxt': 'Cre. gr le (N° 20))',
+	 'ctxt': ' gr le (N° 20))',
 	 'deja utilisé': ['( Cor.. gr le (N° 20))']},
  '20))':
 	{'lem': '20))',
@@ -380,20 +449,13 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Prince',
 	 'ctxt': 'Prince  Mon PRINCE ',
 	 'deja utilisé': ['on PRINCE ']},
- 'Salm':
-	{'lem': 'Salm',
-	 'ctxt': 'à Madame de SALM',
-	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
- "n'chin":
-	{'lem': "qu'hier", 'ctxt': 'qu on le n est QU HIER à mon rétege',
-	 'deja utilisé': []},
  'rétege':
 	{'lem': 'retour',
-	 'ctxt': 'n chin à mon RETOUR de trestais à',
+	 'ctxt': 'chin à mon RETOUR de trestais à',
 	 'deja utilisé': ['le n&#39;est n&#39;chin à mon RETOUR de Griesbash à Carlsruhe qu&#39;on']},
  'trestais':
 	{'lem': 'Griesbash',
-	 'ctxt': 'mon rétege de GRIESBASH à Carlruve qu on',
+	 'ctxt': 'mon rétege de GRIESBASH à Carlruve qu',
 	 'deja utilisé': ['le n&#39;est n&#39;chin à mon retour de GRIESBASH à Carlsruhe qu&#39;on']},
  'Carlruve':
 	{'lem': 'Carlsruhe',
@@ -405,10 +467,11 @@ dictPage = {'inrpprgrtable':
 	 'deja utilisé': ['ON Prince ']},
  'Cerle':
 	{'lem': 'perle',
-	 'ctxt': 'le 7 Mtmle,181. PERLE ruhe, le 7'},
- 'Mtmle,181.':
-	{'lem': 'Mtmle,181.',
-	 'ctxt': 'ruhe, le 7 MTMLE,181.'},
+	 'ctxt': 'Mtmle 181  PERLE ruhe  le'},
+ 'Mtmle':
+	{'lem': 'Septembre',
+	 'ctxt': ' le 7 SEPTEMBRE 181 ',
+	 'deja utilisé': ['Cerle ruhe, le 7 SEPTEMBRE,181.']},
  'Mndane':
 	{'lem': 'Madame',
 	 'ctxt': 'posission les ravres MADAME la grande Dtuchse',
@@ -421,6 +484,9 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'charmée',
 	 'ctxt': 'grande Dtuchse est CHARMÉE davoir en nu',
 	 'deja utilisé': ['Madame la grande Duchesse est CHARMÉE davoir en nu possession les oeuvres']},
+ 'davoir':
+	{'lem': "d'avoir", 'ctxt': 'Dtuchse est charméz D AVOIR en nu posission',
+	 'deja utilisé': ['la grande Duchesse est charmée d avoir en']},
  'posission':
 	{'lem': 'possession',
 	 'ctxt': 'davoir en nu POSSESSION les ravres',
@@ -437,40 +503,49 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'Salm',
 	 'ctxt': 'de Mme de SALM dout elle est',
 	 'deja utilisé': ['completes de Mme de SALM dout elle est digne d&#39;apprécier les charmantes']},
+ 'apprécer':
+	{'lem': 'apprécier',
+	 'ctxt': 'est digne d APPRÉCIER les Mharnantes',
+	 'deja utilisé': ['completes de Mme de Salm dout elle est digne d&#39;APPRÉCIER les charmantes']},
  'Mharnantes':
 	{'lem': 'charmantes',
-	 'ctxt': 'digne d apprécer les CHARMANTES',
+	 'ctxt': 'd apprécer les CHARMANTES',
 	 'deja utilisé': ['completes de Mme de Salm dout elle est digne d&#39;apprécier les CHARMANTES']},
+ 'prodnctions':
+	{'lem': 'productions',
+	 'ctxt': 'qu ell se PRODUCTIONS  lle n',
+	 'deja utilisé': ['PRODUCTIONS. lle n&#39;en connaissait que quelques fragments qu&#39;ell se']},
  'frasments':
 	{'lem': 'fragments',
 	 'ctxt': 'connaissait que quelques FRAGMENTS qu ell se',
 	 'deja utilisé': ['productions. lle n&#39;en connaissait que quelques FRAGMENTS qu&#39;ell se']},
  'répéder':
 	{'lem': 'répéter',
-	 'ctxt': 'chonseur plaisait à RÉPÉTER ea Mantez. Son',
+	 'ctxt': 'chonseur plaisait à RÉPÉTER ea Mantez ',
 	 'deja utilisé': ['plaisait à RÉPÉTER ea chanter. Son Altesse Royale me charge, honneur']},
- 'Mantez.':
-	{'lem': 'vantez',
-	 'ctxt': 'à répéder ea VANTEZ Son Mltesse Furale'},
+ 'Mantez':
+	{'lem': 'chanter',
+	 'ctxt': 'à répéder ea CHANTER  Son Mltesse',
+	 'deja utilisé': ['plaisait à répéter ea CHANTER. Son Altesse Royale me charge, honneur']},
  'Son':
 	{'lem': 'Son',
-	 'ctxt': 'répéder ea Mantez. SON Mltesse Furale me',
+	 'ctxt': 'ea Mantez  SON Mltesse Furale me',
 	 'deja utilisé': ['plaisait à répéter ea chanter. SON Altesse Royale me charge, honneur']},
  'Mltesse':
 	{'lem': 'Altesse',
-	 'ctxt': 'ea Mantez. Son ALTESSE Furale me charge,',
+	 'ctxt': 'Mantez  Son ALTESSE Furale me charge',
 	 'deja utilisé': ['plaisait à répéter ea chanter. Son ALTESSE Royale me charge, honneur']},
  'Furale':
 	{'lem': 'Royale',
-	 'ctxt': 'Mantez. Son Mltesse ROYALE me charge, chonseur',
+	 'ctxt': ' Son Mltesse ROYALE me charge ',
 	 'deja utilisé': ['plaisait à répéter ea chanter. Son Altesse ROYALE me charge, honneur']},
  'chonseur':
-	{'lem': 'honneur',
-	 'ctxt': 'Furale me charge, HONNEUR',
-	 'deja utilisé': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, HONNEUR']},
+	{'lem': 'Monsieur',
+	 'ctxt': 'me charge  MONSIEUR',
+	 'deja utilisé': ['plaisait à répéter ea chanter. Son Altesse Royale me charge, MONSIEUR']},
  'Elle':
 	{'lem': 'elle',
-	 'ctxt': 'tous ses remerciments. ELLE vous en devra'},
+	 'ctxt': 'ses remerciments  ELLE vous en devra'},
  'davantie':
 	{'lem': 'davantage',
 	 'ctxt': 'vous en devra DAVANTAGE si vous lu',
@@ -479,6 +554,14 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'four-',
 	 'ctxt': 'si vous lu FOUR-',
 	 'deja utilisé': ['à de tous ses remerciments. Elle vous en devra davantage si vous lu FOUR-']},
+ 'ocaspion':
+	{'lem': 'occasion',
+	 'ctxt': 'Salm misse l OCCASION d en faire',
+	 'deja utilisé': ['misse l&#39;OCCASION d&#39;en faire ele meme à Bade à madame de Salm']},
+ 'meme':
+	{'lem': 'même',
+	 'ctxt': 'en faire ele MÊME à Grade à',
+	 'deja utilisé': ['elle même']},
  'Grade':
 	{'lem': 'Bade',
 	 'ctxt': 'ele meme à BADE à Madame de',
@@ -487,13 +570,21 @@ dictPage = {'inrpprgrtable':
 	{'lem': 'madame',
 	 'ctxt': 'à Grade à MADAME de Salm',
 	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à MADAME de Salm']},
+ 'honnene':
+	{'lem': 'honneur',
+	 'ctxt': 'j ai l HONNEUR d elle',
+	 'deja utilisé': ['(ue lle j&#39;ai l&#39;HONNEUR d&#39;elle']},
  'Mgrées':
 	{'lem': 'Agréez',
-	 'ctxt': 'distingue avec la- AGRÉEZ l assurane de le',
+	 'ctxt': 'distingue avec la- AGRÉEZ l assurane de',
 	 'deja utilisé': ['AGRÉEZ l&#39;assurance de le Considération la plus distingue avec la-']},
+ 'assurane':
+	{'lem': 'assurance',
+	 'ctxt': 'la- Mgrées l ASSURANCE de le Conndération',
+	 'deja utilisé': ['Agréez l&#39;ASSURANCE de le Considération la plus distingue avec la-']},
  'Conndération':
 	{'lem': 'Considération',
-	 'ctxt': 'l assurane de le CONSIDÉRATION la plus distingue',
+	 'ctxt': 'assurane de le CONSIDÉRATION la plus distingue',
 	 'deja utilisé': ['Agréez l&#39;assurance de le CONSIDÉRATION la plus distingue avec la-']},
  'Arince':
 	{'lem': 'Prince',
@@ -540,26 +631,31 @@ dictPage = {'inrpprgrtable':
 	 'ctxt': 'Prinesse Steshane A) ELLE Dame étar Dame'},
  'Dame':
 	{'lem': 'dame',
-	 'ctxt': 'Celle Dame étar DAME d houneur de la',
+	 'ctxt': 'Celle Dame étar DAME d houneur de',
 	 'deja utilisé': ['(1) Celle DAME était DAME d&#39;honneur de la princesse Stephanie']},
  'étar':
 	{'lem': 'était',
-	 'ctxt': 'A) Celle Dame ÉTAIT Dame d houneur de',
+	 'ctxt': 'A) Celle Dame ÉTAIT Dame d houneur',
 	 'deja utilisé': ['(1) Celle dame ÉTAIT dame d&#39;honneur de la princesse Stephanie']},
+ 'houneur':
+	{'lem': 'honneur',
+	 'ctxt': 'étar Dame d HONNEUR de la Prinesse',
+	 'deja utilisé': ['(1) Celle dame était dame d&#39;HONNEUR de la princesse Stephanie']},
  'Prinesse':
 	{'lem': 'princesse',
-	 'ctxt': 'd houneur de la PRINCESSE Steshane',
+	 'ctxt': 'houneur de la PRINCESSE Steshane',
 	 'deja utilisé': ['(1) Celle dame était dame d&#39;honneur de la PRINCESSE Stephanie']},
  'Steshane':
 	{'lem': 'Stephanie',
 	 'ctxt': 'de la Prinesse STEPHANIE',
 	 'deja utilisé': ['(1) Celle dame était dame d&#39;honneur de la princesse STEPHANIE']},
- 'Pade.':
-	{'lem': 'wade.',
-	 'ctxt': 'la Prines de WADE. de Priuce lui'},
+ 'Pade':
+	{'lem': 'Bade',
+	 'ctxt': 'la Prines de BADE  de Priuce',
+	 'deja utilisé': ['de BADE. de Prince lui avait envoyé les poésies de la Princesse']},
  'Priuce':
 	{'lem': 'Prince',
-	 'ctxt': 'de Pade. de PRINCE lui avait enoyécles',
+	 'ctxt': 'Pade  de PRINCE lui avait enoyécles',
 	 'deja utilisé': ['de Bade. de PRINCE lui avait envoyé les poésies de la PRINCEsse']},
  'enoyécles':
 	{'lem': 'envoyé les',

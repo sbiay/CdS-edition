@@ -1,64 +1,74 @@
 dictPage = {'noeis':
 	{'lem': 'nous en',
-	 'ctxt': 'me sont à NOUS EN cousolr en voyanst',
+	 'ctxt': 'me sont à NOUS EN es cousolr en',
 	 'deja utilisé': ['à NOUS EN es consoler en voyant que ceux qui vous ont mangis, me sont']},
  'cousolr':
 	{'lem': 'consoler',
-	 'ctxt': 'sont à es CONSOLER voyanst que cetxe',
+	 'ctxt': 'à noeis es CONSOLER en voyanst que',
 	 'deja utilisé': ['à nous en es CONSOLER en voyant que ceux qui vous ont mangis, me sont']},
  'voyanst':
 	{'lem': 'voyant',
-	 'ctxt': 'à es en VOYANT cetxe qui vours',
+	 'ctxt': 'es cousolr en VOYANT que cetxe qui',
 	 'deja utilisé': ['à nous en es consoler en VOYANT que ceux qui vous ont mangis, me sont']},
  'cetxe':
 	{'lem': 'ceux',
-	 'ctxt': 'es en que CEUX vours out mangis',
+	 'ctxt': 'en voyanst que CEUX qui vours out',
 	 'deja utilisé': ['à nous en es consoler en voyant que CEUX qui vous ont mangis, me sont']},
  'vours':
 	{'lem': 'vous',
-	 'ctxt': 'en que qui VOUS mangis me sont',
+	 'ctxt': 'que cetxe qui VOUS out mangis ',
 	 'deja utilisé': ['à nous en es consoler en voyant que ceux qui VOUS ont mangis, me sont']},
+ 'out':
+	{'lem': 'ont',
+	 'ctxt': 'cetxe qui vours ONT mangis  me',
+	 'deja utilisé': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
  'pes':
 	{'lem': 'pas',
-	 'ctxt': 'Chf (les Mglis PAS heureur que nous',
+	 'ctxt': 'Chf (les Mglis PAS pluis heureur que',
 	 'deja utilisé': ['PAS pluis heureux que nous et que es mangeurs en Chef (les Anglais']},
  'heureur':
 	{'lem': 'heureux',
-	 'ctxt': '(les Mglis pluis HEUREUX nous et que',
+	 'ctxt': 'Mglis pes pluis HEUREUX que nous et',
 	 'deja utilisé': ['pas pluis HEUREUX que nous et que es mangeurs en Chef (les Anglais']},
  'Chf':
 	{'lem': 'Chef',
-	 'ctxt': 'es mangeurs en CHEF Mglis',
+	 'ctxt': 'es mangeurs en CHEF (les Mglis',
 	 'deja utilisé': ['pas pluis heureux que nous et que es mangeurs en CHEF (les Anglais']},
+ '(les':
+	{'lem': '(les',
+	 'ctxt': 'mangeurs en Chf (LES Mglis',
+	 'deja utilisé': ['pas pluis heureux que nous et que es mangeurs en Chef (LES Anglais']},
  'Mglis':
 	{'lem': 'Anglais',
-	 'ctxt': 'mangeurs en (les ANGLAIS',
+	 'ctxt': 'en Chf (les ANGLAIS',
 	 'deja utilisé': ['pas pluis heureux que nous et que es mangeurs en Chef (les ANGLAIS']},
- '(les':
-	{'lem': 'les',
-	 'ctxt': 'es mangeurs en LES'},
  'nosition':
 	{'lem': 'position',
-	 'ctxt': 'd ans la POSITION plus fachiense Coume',
+	 'ctxt': 'd ans la POSITION la plus fachiense',
 	 'deja utilisé': ['sont d&#39;ans la POSITION la plus fâcheuse. Comme tout ce qui se passe']},
  'fachiense':
 	{'lem': 'fâcheuse',
-	 'ctxt': 'la la plus FÂCHEUSE tout ce qui',
+	 'ctxt': 'nosition la plus FÂCHEUSE  Coume tout',
 	 'deja utilisé': ['sont d&#39;ans la position la plus FÂCHEUSE. Comme tout ce qui se passe']},
+ 'Coume':
+	{'lem': 'Comme',
+	 'ctxt': 'plus fachiense  COMME tout ce qui',
+	 'deja utilisé': ['sont d&#39;ans la position la plus fâcheuse. COMME tout ce qui se passe']},
  'pase':
 	{'lem': 'passe',
 	 'ctxt': 'ce qui se PASSE',
 	 'deja utilisé': ['sont d&#39;ans la position la plus fâcheuse. Comme tout ce qui se PASSE']},
- 'Coume':
-	{'lem': 'boume',
-	 'ctxt': 'la la plus BOUME tout ce qui'},
  'quelires':
 	{'lem': 'quelques',
-	 'ctxt': 'la pronidence depuis QUELQUES commence à me',
+	 'ctxt': 'la pronidence depuis QUELQUES anmes commence à',
 	 'deja utilisé': ['depuis QUELQUES années commence à me faire croire à la providence']},
+ 'anmes':
+	{'lem': 'années',
+	 'ctxt': 'pronidence depuis quelires ANNÉES commence à me',
+	 'deja utilisé': ['depuis quelques ANNÉES commence à me faire croire à la providence']},
  'fadre':
 	{'lem': 'faire',
-	 'ctxt': 'commence à me FAIRE à la pronidence',
+	 'ctxt': 'commence à me FAIRE croire à la',
 	 'deja utilisé': ['depuis quelques années commence à me FAIRE croire à la providence']},
  'pronidence':
 	{'lem': 'providence',
@@ -66,174 +76,185 @@ dictPage = {'noeis':
 	 'deja utilisé': ['depuis quelques années commence à me faire croire à la PROVIDENCE']},
  'epère':
 	{'lem': 'espère',
-	 'ctxt': 'trapbe Erendnt j ESPÈRE al leur arrivera',
+	 'ctxt': 'trapbe Erendnt j ESPÈRE qu al leur',
 	 'deja utilisé': ['j&#39;ESPÈRE qu&#39;il leur arrivera quelqu grande Catas trapbe Cependant']},
  'al':
 	{'lem': 'il',
-	 'ctxt': 'Erendnt j qu IL arrivera quelqu grande',
+	 'ctxt': 'j epère qu IL leur arrivera quelqu',
 	 'deja utilisé': ['j&#39;espère qu&#39;IL leur arrivera quelqu grande Catas trapbe Cependant']},
+ 'Catas':
+	{'lem': 'tatas',
+	 'ctxt': 'arrivera quelqu grande TATAS trapbe Erendnt'},
  'Erendnt':
 	{'lem': 'Cependant',
 	 'ctxt': 'grande Catas trapbe CEPENDANT',
 	 'deja utilisé': ['j&#39;espère qu&#39;il leur arrivera quelqu grande Catas trapbe CEPENDANT']},
- 'Catas':
-	{'lem': 'tatas',
-	 'ctxt': 'arrivera quelqu grande TATAS trapbe'},
- 'trapbe':
-	{'lem': 'trappe',
-	 'ctxt': 'quelqu grande Catas TRAPPE'},
  'oomme':
 	{'lem': 'comme',
-	 'ctxt': 'péchear mais je COMME l Eangile sene',
+	 'ctxt': ' mais je COMME dit l Eangile',
 	 'deja utilisé': ['COMME dit l&#39;Evangile, sene veun pas la mort du pécheur, mais je']},
  'Eangile':
 	{'lem': 'Evangile',
-	 'ctxt': 'je dit l EVANGILE veun pas la',
+	 'ctxt': 'oomme dit l EVANGILE  sene veun',
 	 'deja utilisé': ['comme dit l&#39;EVANGILE, sene veun pas la mort du pécheur, mais je']},
  'péchear':
 	{'lem': 'pécheur',
-	 'ctxt': 'la mort du PÉCHEUR je',
+	 'ctxt': 'la mort du PÉCHEUR  mais je',
 	 'deja utilisé': ['comme dit l&#39;Evangile, sene veun pas la mort du PÉCHEUR, mais je']},
  'souhate':
 	{'lem': 'souhaite',
-	 'ctxt': 'connertire et leur SOUHAITE la leçon soit',
+	 'ctxt': ' et leur SOUHAITE que la leçon',
 	 'deja utilisé': ['SOUHAITE que la leçon soit assez forte pour les convertir, et leur']},
  'connertire':
 	{'lem': 'convertir',
-	 'ctxt': 'forte pour les CONVERTIR leur',
+	 'ctxt': 'forte pour les CONVERTIR  et leur',
 	 'deja utilisé': ['souhaite que la leçon soit assez forte pour les CONVERTIR, et leur']},
  'sentire':
 	{'lem': 'sentir',
-	 'ctxt': 'la mutie faire SENTIR leur intrêt est',
+	 'ctxt': 'la mutie faire SENTIR que leur intrêt',
 	 'deja utilisé': ['faire SENTIR que leur intérêt est le même que celui des peuples la conti-']},
  'intrêt':
 	{'lem': 'intérêt',
-	 'ctxt': 'faire que leur INTÉRÊT le mêmi que',
+	 'ctxt': 'sentire que leur INTÉRÊT est le mêmi',
 	 'deja utilisé': ['faire sentir que leur INTÉRÊT est le même que celui des peuples la conti-']},
  'mêmi':
 	{'lem': 'même',
-	 'ctxt': 'leur est le MÊME celu des uplis',
+	 'ctxt': 'intrêt est le MÊME que celu des',
 	 'deja utilisé': ['faire sentir que leur intérêt est le MÊME que celui des peuples la conti-']},
  'celu':
 	{'lem': 'celui',
-	 'ctxt': 'est le que CELUI uplis la mutie',
+	 'ctxt': 'le mêmi que CELUI des uplis la',
 	 'deja utilisé': ['faire sentir que leur intérêt est le même que CELUI des peuples la conti-']},
  'uplis':
 	{'lem': 'peuples',
-	 'ctxt': 'le que des PEUPLES mutie',
+	 'ctxt': 'que celu des PEUPLES la mutie',
 	 'deja utilisé': ['faire sentir que leur intérêt est le même que celui des PEUPLES la conti-']},
  'mutie':
 	{'lem': 'conti-',
-	 'ctxt': 'que des la CONTI-',
+	 'ctxt': 'des uplis la CONTI-',
 	 'deja utilisé': ['faire sentir que leur intérêt est le même que celui des peuples la CONTI-']},
+ 'M':
+	{'lem': 'à',
+	 'ctxt': 'à un ouvrage À de Gataubraand trapaile'},
  'Gataubraand':
 	{'lem': 'Chateaubriand',
-	 'ctxt': 'ouvrage M de CHATEAUBRIAND fauis ce momeae',
+	 'ctxt': 'ouvrage M de CHATEAUBRIAND trapaile fauis ce',
 	 'deja utilisé': ['M de CHATEAUBRIAND travaille dans ce moment eu à un ouvrage']},
+ 'trapaile':
+	{'lem': 'travaille',
+	 'ctxt': 'M de Gataubraand TRAVAILLE fauis ce momeae',
+	 'deja utilisé': ['M de Chateaubriand TRAVAILLE dans ce moment eu à un ouvrage']},
  'fauis':
 	{'lem': 'dans',
-	 'ctxt': 'M de trapaile DANS momeae eu à',
+	 'ctxt': 'de Gataubraand trapaile DANS ce momeae eu',
 	 'deja utilisé': ['M de Chateaubriand travaille DANS ce moment eu à un ouvrage']},
  'momeae':
 	{'lem': 'moment',
-	 'ctxt': 'de trapaile ce MOMENT à un ouvrage',
+	 'ctxt': 'trapaile fauis ce MOMENT eu à un',
 	 'deja utilisé': ['M de Chateaubriand travaille dans ce MOMENT eu à un ouvrage']},
- 'M':
-	{'lem': 'à',
-	 'ctxt': 'à un ouvrage À de trapaile ce'},
- 'trapaile':
-	{'lem': 'travaile',
-	 'ctxt': 'ouvrage M de TRAVAILE ce eu à'},
  'fneur':
 	{'lem': 'faveur',
-	 'ctxt': 'epèrent bien en FAVEUR la liberti de',
+	 'ctxt': 'epèrent bien en FAVEUR de la liberti',
 	 'deja utilisé': ['en FAVEUR de la liberté de la presse. Lui et son parti espèrent bien']},
  'liberti':
 	{'lem': 'liberté',
-	 'ctxt': 'en de la LIBERTÉ la presse Lui',
+	 'ctxt': 'fneur de la LIBERTÉ de la presse',
 	 'deja utilisé': ['en faveur de la LIBERTÉ de la presse. Lui et son parti espèrent bien']},
  'Lui':
 	{'lem': 'Lui',
-	 'ctxt': 'de la presse LUI son parti epèrent',
+	 'ctxt': 'la presse  LUI it son parti',
 	 'deja utilisé': ['Mr Prous comprendra ont cela. Je LUI fos mes sincères amitiés']},
+ 'it':
+	{'lem': 'et',
+	 'ctxt': 'presse  Lui ET son parti epèrent',
+	 'deja utilisé': ['en faveur de la liberté de la presse. Lui ET son parti espèrent bien']},
  'epèrent':
 	{'lem': 'espèrent',
-	 'ctxt': 'it son parti ESPÈRENT',
+	 'ctxt': 'it son parti ESPÈRENT bien',
 	 'deja utilisé': ['en faveur de la liberté de la presse. Lui et son parti ESPÈRENT bien']},
  'acordée':
 	{'lem': 'accordée',
-	 'ctxt': 'elle leur est ACCORDÉE on servrr poun',
+	 'ctxt': 'elle leur est ACCORDÉE  s on',
 	 'deja utilisé': ['si elle leur est ACCORDÉE, s&#39;on servir pour renverser la Ministère, la']},
  'servrr':
 	{'lem': 'servir',
-	 'ctxt': 'est s on SERVIR ienverger la srimstère',
+	 'ctxt': ' s on SERVIR poun ienverger la',
 	 'deja utilisé': ['si elle leur est accordée, s&#39;on SERVIR pour renverser la Ministère, la']},
+ 'poun':
+	{'lem': 'pour',
+	 'ctxt': 's on servrr POUR ienverger la srimstère',
+	 'deja utilisé': ['si elle leur est accordée, s&#39;on servir POUR renverser la Ministère, la']},
  'ienverger':
 	{'lem': 'renverser',
-	 'ctxt': 's on poun RENVERSER srimstère la',
+	 'ctxt': 'on servrr poun RENVERSER la srimstère ',
 	 'deja utilisé': ['si elle leur est accordée, s&#39;on servir pour RENVERSER la Ministère, la']},
  'srimstère':
 	{'lem': 'Ministère',
-	 'ctxt': 'on poun la MINISTÈRE',
+	 'ctxt': 'poun ienverger la MINISTÈRE  la',
 	 'deja utilisé': ['si elle leur est accordée, s&#39;on servir pour renverser la MINISTÈRE, la']},
  'oustitutionnelle':
 	{'lem': 'constitutionnelle',
-	 'ctxt': 'faire ange charte CONSTITUTIONNELLE et enpécher leuxs',
+	 'ctxt': 'faire ange charte CONSTITUTIONNELLE de et enpécher',
 	 'deja utilisé': ['charte CONSTITUTIONNELLE de et empêcher leurs adversaires d&#39;en faire ange']},
  'enpécher':
 	{'lem': 'empêcher',
-	 'ctxt': 'charte de et EMPÊCHER adpuisaves d en',
+	 'ctxt': 'oustitutionnelle de et EMPÊCHER leuxs adpuisaves d',
 	 'deja utilisé': ['charte constitutionnelle de et EMPÊCHER leurs adversaires d&#39;en faire ange']},
- 'adpuisaves':
-	{'lem': 'adversaires',
-	 'ctxt': 'de et leuxs ADVERSAIRES en faire ange',
-	 'deja utilisé': ['charte constitutionnelle de et empêcher leurs ADVERSAIRES d&#39;en faire ange']},
  'leuxs':
 	{'lem': 'leurs',
-	 'ctxt': 'charte de et LEURS d en faire'},
+	 'ctxt': 'de et enpécher LEURS adpuisaves d en',
+	 'deja utilisé': ['charte constitutionnelle de et empêcher LEURS adversaires d&#39;en faire ange']},
+ 'adpuisaves':
+	{'lem': 'adversaires',
+	 'ctxt': 'et enpécher leuxs ADVERSAIRES d en faire',
+	 'deja utilisé': ['charte constitutionnelle de et empêcher leurs ADVERSAIRES d&#39;en faire ange']},
  'Ma':
 	{'lem': 'Ma',
-	 'ctxt': 'vous dre bemcour MA se part tres',
+	 'ctxt': 'vous dre bemcour MA fainme se part',
 	 'deja utilisé': ['MA femme se part tres bien. ll me charge de vous dire beaucoup']},
+ 'fainme':
+	{'lem': 'femme',
+	 'ctxt': 'dre bemcour Ma FEMME se part tres',
+	 'deja utilisé': ['Ma FEMME se part tres bien. ll me charge de vous dire beaucoup']},
  'cauge':
 	{'lem': 'charge',
-	 'ctxt': 'bien ll me CHARGE vous dre bemcour',
+	 'ctxt': ' ll me CHARGE de vous dre',
 	 'deja utilisé': ['Ma femme se part tres bien. ll me CHARGE de vous dire beaucoup']},
  'dre':
 	{'lem': 'dire',
-	 'ctxt': 'me de vous DIRE',
+	 'ctxt': 'cauge de vous DIRE bemcour',
 	 'deja utilisé': ['Ma femme se part tres bien. ll me charge de vous DIRE beaucoup']},
- 'fainme':
-	{'lem': 'faine',
-	 'ctxt': 'de vous bemcour FAINE se part tres'},
  'bemcour':
-	{'lem': 'belcour',
-	 'ctxt': 'me de vous BELCOUR'},
+	{'lem': 'beaucoup',
+	 'ctxt': 'de vous dre BEAUCOUP',
+	 'deja utilisé': ['Ma femme se part tres bien. ll me charge de vous dire BEAUCOUP']},
  'chases':
 	{'lem': 'choses',
-	 'ctxt': 'Couraerni l d CHOSES deux fels vous',
+	 'ctxt': 'Couraerni l d CHOSES  Mres deux',
 	 'deja utilisé': ['d CHOSES. tres deux fels vous assurent de l&#39;leur respects Mme Couraerni&#39;l']},
- 'urgrespets':
-	{'lem': 'leur respects',
-	 'ctxt': 'assurent de l LEUR RESPECTS Couraerni l',
-	 'deja utilisé': ['d choses. tres deux fels vous assurent de l&#39;LEUR RESPECTS Mme Couraerni&#39;l']},
- 'Couraerni':
-	{'lem': 'Courier n a',
-	 'ctxt': 'de l Mme COURIER N A',
-	 'deja utilisé': []},
  'Mres':
 	{'lem': 'tres',
-	 'ctxt': 'Mme l d TRES deux fels vous'},
+	 'ctxt': 'd chases  TRES deux fels vous',
+	 'deja utilisé': ['d choses. TRES deux fels vous assurent de l&#39;leur respects Mme Couraerni&#39;l']},
+ 'urgrespets':
+	{'lem': 'leur respects',
+	 'ctxt': 'assurent de l LEUR RESPECTS Mme Couraerni l',
+	 'deja utilisé': ['d choses. tres deux fels vous assurent de l&#39;LEUR RESPECTS Mme Couraerni&#39;l']},
  'Mme':
-	{'lem': 'me',
-	 'ctxt': 'assurent de l ME l'},
+	{'lem': 'Mme',
+	 'ctxt': 'de l urgrespets MME Couraerni l',
+	 'deja utilisé': ['completes de MME de Salm dout elle est digne d&#39;apprécier les charmantes']},
+ 'Couraerni':
+	{'lem': 'Courier n a',
+	 'ctxt': 'l urgrespets Mme COURIER N A l',
+	 'deja utilisé': []},
  'entont':
 	{'lem': 'enfant',
-	 'ctxt': 'point encore d ENFANT aparène d en',
+	 'ctxt': 'point encore d ENFANT  ni aparène',
 	 'deja utilisé': ['point encore d&#39;ENFANT, ni apparence d&#39;en avoir. lla n&#39;est pas dine très']},
  'aparène':
 	{'lem': 'apparence',
-	 'ctxt': 'encore d ni APPARENCE en avoir lla',
+	 'ctxt': 'entont  ni APPARENCE d en avoir',
 	 'deja utilisé': ['point encore d&#39;enfant, ni APPARENCE d&#39;en avoir. lla n&#39;est pas dine très']},
  'trête':
 	{'lem': 'très',
@@ -241,124 +262,134 @@ dictPage = {'noeis':
 	 'deja utilisé': ['point encore d&#39;enfant, ni apparence d&#39;en avoir. lla n&#39;est pas dine TRÈS']},
  'Vome':
 	{'lem': 'bonne',
-	 'ctxt': 'elle sait ausse BONNE e le marage',
+	 'ctxt': 'elle sait ausse BONNE saité e le',
 	 'deja utilisé': ['BONNE santé e le mariage ne lu a pas réussi quoim&#39;elle sait aussi']},
+ 'saité':
+	{'lem': 'santé',
+	 'ctxt': 'sait ausse Vome SANTÉ e le marage',
+	 'deja utilisé': ['bonne SANTÉ e le mariage ne lu a pas réussi quoim&#39;elle sait aussi']},
  'marage':
 	{'lem': 'mariage',
-	 'ctxt': 'saité e le MARIAGE lu a pas',
+	 'ctxt': 'saité e le MARIAGE ne lu a',
 	 'deja utilisé': ['bonne santé e le MARIAGE ne lu a pas réussi quoim&#39;elle sait aussi']},
  'rélissi':
 	{'lem': 'réussi',
-	 'ctxt': 'lu a pas RÉUSSI elle sait ausse',
+	 'ctxt': 'lu a pas RÉUSSI quoim elle sait',
 	 'deja utilisé': ['bonne santé e le mariage ne lu a pas RÉUSSI quoim&#39;elle sait aussi']},
+ 'quoim':
+	{'lem': 'quoi',
+	 'ctxt': 'a pas rélissi QUOI elle sait ausse',
+	 'deja utilisé': []},
  'ausse':
 	{'lem': 'aussi',
 	 'ctxt': 'quoim elle sait AUSSI',
 	 'deja utilisé': ['bonne santé e le mariage ne lu a pas réussi quoim&#39;elle sait AUSSI']},
- 'saité':
-	{'lem': 'sait',
-	 'ctxt': 'quoim elle sait SAIT e le ne'},
- 'quoim':
-	{'lem': 'quoi',
-	 'ctxt': 'lu a pas QUOI elle sait'},
  'purense':
 	{'lem': 'heureuse',
-	 'ctxt': 'il tranoill au HEUREUSE ene pusse l',
+	 'ctxt': 'il tranoill au HEUREUSE qu ene pusse',
 	 'deja utilisé': ['HEUREUSE qu&#39;elle puisse l&#39;être. Courrier se porte bien ; il travaille au']},
  'ene':
 	{'lem': 'elle',
-	 'ctxt': 'tranoill au qu ELLE l être Caidraer',
+	 'ctxt': 'au purense qu ELLE pusse l être',
 	 'deja utilisé': ['heureuse qu&#39;ELLE puisse l&#39;être. Courrier se porte bien ; il travaille au']},
+ 'pusse':
+	{'lem': 'puisse',
+	 'ctxt': 'purense qu ene PUISSE l être ',
+	 'deja utilisé': ['heureuse qu&#39;elle PUISSE l&#39;être. Courrier se porte bien ; il travaille au']},
  'Caidraer':
 	{'lem': 'Courrier',
-	 'ctxt': 'pusse l être COURRIER porte bien il',
+	 'ctxt': 'l être  COURRIER se porte bien',
 	 'deja utilisé': ['heureuse qu&#39;elle puisse l&#39;être. COURRIER se porte bien ; il travaille au']},
  'tranoill':
 	{'lem': 'travaille',
-	 'ctxt': 'porte bien il TRAVAILLE',
+	 'ctxt': '  il TRAVAILLE au',
 	 'deja utilisé': ['heureuse qu&#39;elle puisse l&#39;être. Courrier se porte bien ; il TRAVAILLE au']},
  'ffaume':
 	{'lem': 'Paume',
-	 'ctxt': 'joue à la PAUME Je l avaus',
+	 'ctxt': 'joue à la PAUME de Je l',
 	 'deja utilisé': ['gue, joue à la PAUME de Je l&#39;avais mis sur les rangs pour biaém&#39;ien']},
  'Je':
 	{'lem': 'Je',
-	 'ctxt': 'que nous avons JE de votre exprès',
+	 'ctxt': 'que nous avons JE preble de votre',
 	 'deja utilisé': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
  'avaus':
 	{'lem': 'avais',
-	 'ctxt': 'la de l AVAIS sur les rangs',
+	 'ctxt': 'de Je l AVAIS mis sur les',
 	 'deja utilisé': ['gue, joue à la Paume de Je l&#39;AVAIS mis sur les rangs pour biaém&#39;ien']},
  'biaém':
 	{'lem': 'Académ',
-	 'ctxt': 'les rangs pour ACADÉM',
+	 'ctxt': 'les rangs pour ACADÉM ien',
 	 'deja utilisé': []},
  'Cibre':
 	{'lem': 'libre',
-	 'ctxt': 'prenraidreles Mhoses je LIBRE grand j ai',
+	 'ctxt': 'Mhoses  je LIBRE   mais',
 	 'deja utilisé': ['LIBRE ; mais grand j&#39;ai v la tournure que prenaient les choses, je']},
  'qe':
 	{'lem': 'que',
-	 'ctxt': 'v la tournure QUE Mhoses je',
+	 'ctxt': 'v la tournure QUE prenraidreles Mhoses ',
 	 'deja utilisé': ['libre ; mais grand j&#39;ai v la tournure QUE prenaient les choses, je']},
+ 'prenraidreles':
+	{'lem': 'prenaient les',
+	 'ctxt': 'la tournure qe PRENAIENT LES Mhoses  je',
+	 'deja utilisé': ['libre ; mais grand j&#39;ai v la tournure que PRENAIENT LES choses, je']},
  'Mhoses':
 	{'lem': 'choses',
-	 'ctxt': 'la tournure prenraidreles CHOSES',
+	 'ctxt': 'tournure qe prenraidreles CHOSES  je',
 	 'deja utilisé': ['libre ; mais grand j&#39;ai v la tournure que prenaient les CHOSES, je']},
- 'prenraidreles':
-	{'lem': 'prenraidreles',
-	 'ctxt': 'v la tournure PRENRAIDRELES je'},
  'domné':
 	{'lem': 'donné',
-	 'ctxt': 'visitie n ai DONNÉ suite à cela',
+	 'ctxt': 'visitie n ai DONNÉ auque suite à',
 	 'deja utilisé': ['n&#39;ai DONNÉ aucune suite à cela et il n&#39;a pas fait la moindre visite']},
+ 'auque':
+	{'lem': 'aucune',
+	 'ctxt': 'n ai domné AUCUNE suite à cela',
+	 'deja utilisé': ['n&#39;ai donné AUCUNE suite à cela et il n&#39;a pas fait la moindre visite']},
  'visitie':
 	{'lem': 'visite',
 	 'ctxt': 'fait la moindre VISITE',
 	 'deja utilisé': ['n&#39;ai donné aucune suite à cela et il n&#39;a pas fait la moindre VISITE']},
- 'auque':
-	{'lem': 'auquel',
-	 'ctxt': 'moindre n ai AUQUEL suite à cela'},
  'guiffonage':
 	{'lem': 'griffonnage',
-	 'ctxt': 'lre tout le GRIFFONNAGE poriers',
+	 'ctxt': 'lre tout le GRIFFONNAGE  Les poriers',
 	 'deja utilisé': ['Je ne sais si vous pourez lre tout le GRIFFONNAGE. Les papiers']},
- 'poriers':
-	{'lem': 'papiers',
-	 'ctxt': 'tout le Les PAPIERS',
-	 'deja utilisé': ['Je ne sais si vous pourez lre tout le griffonnage. Les PAPIERS']},
  'Les':
 	{'lem': 'les',
-	 'ctxt': 'lre tout le LES'},
+	 'ctxt': 'le guiffonage  LES poriers'},
+ 'poriers':
+	{'lem': 'papiers',
+	 'ctxt': 'guiffonage  Les PAPIERS',
+	 'deja utilisé': ['Je ne sais si vous pourez lre tout le griffonnage. Les PAPIERS']},
  'pulles':
 	{'lem': 'publics',
-	 'ctxt': 'Prince et par PUBLICS onc apprs que',
+	 'ctxt': 'Prince et par PUBLICS m onc apprs',
 	 'deja utilisé': ['PUBLICS m&#39;ont appris que votre époux était révérent Prince et par']},
  'onc':
 	{'lem': 'ont',
-	 'ctxt': 'et par m ONT que votre Goues',
+	 'ctxt': 'par pulles m ONT apprs que votre',
 	 'deja utilisé': ['publics m&#39;ONT appris que votre époux était révérent Prince et par']},
+ 'apprs':
+	{'lem': 'appris',
+	 'ctxt': 'pulles m onc APPRIS que votre Goues',
+	 'deja utilisé': ['publics m&#39;ont APPRIS que votre époux était révérent Prince et par']},
  'Goues':
 	{'lem': 'époux',
-	 'ctxt': 'apprs que votre ÉPOUX redsema Prince et',
+	 'ctxt': 'apprs que votre ÉPOUX était redsema Prince',
 	 'deja utilisé': ['publics m&#39;ont appris que votre ÉPOUX était révérent Prince et par']},
  'redsema':
 	{'lem': 'révérent',
-	 'ctxt': 'que votre était RÉVÉRENT et par',
+	 'ctxt': 'votre Goues était RÉVÉRENT Prince et par',
 	 'deja utilisé': ['publics m&#39;ont appris que votre époux était RÉVÉRENT Prince et par']},
- 'apprs':
-	{'lem': 'appris',
-	 'ctxt': 'et par m APPRIS que votre était'},
  'Prince':
-	{'lem': 'prince',
-	 'ctxt': 'que votre était PRINCE et par'},
+	{'lem': 'Prince',
+	 'ctxt': 'Goues était redsema PRINCE et par',
+	 'deja utilisé': ['on PRINCE ']},
  'Phincsse':
 	{'lem': 'Princesse',
-	 'ctxt': 'que vous êtes PRINCESSE Piuras d apre',
+	 'ctxt': 'que vous êtes PRINCESSE je Piuras d',
 	 'deja utilisé': ['conséquent que vous êtes PRINCESSE je devrais d&#39;apre cela terminer']},
  'Piuras':
 	{'lem': 'devrais',
-	 'ctxt': 'vous êtes je DEVRAIS apre cela termmer',
+	 'ctxt': 'êtes Phincsse je DEVRAIS d apre cela',
 	 'deja utilisé': ['conséquent que vous êtes Princesse je DEVRAIS d&#39;apre cela terminer']},
  'termmer':
 	{'lem': 'terminer',
@@ -366,202 +397,213 @@ dictPage = {'noeis':
 	 'deja utilisé': ['conséquent que vous êtes Princesse je devrais d&#39;apre cela TERMINER']},
  'lattre':
 	{'lem': 'lettre',
-	 'ctxt': 'de as ma LETTRE des formules de',
+	 'ctxt': 'de as ma LETTRE per des formules',
 	 'deja utilisé': ['ma LETTRE par des formules de respect & ; mai je fais trop de as']},
+ 'per':
+	{'lem': 'par',
+	 'ctxt': 'as ma lattre PAR des formules de',
+	 'deja utilisé': ['ma lettre PAR des formules de respect & ; mai je fais trop de as']},
  'resprt':
 	{'lem': 'respect',
-	 'ctxt': 'des formules de RESPECT mai je fais',
+	 'ctxt': 'des formules de RESPECT I  ',
 	 'deja utilisé': ['ma lettre par des formules de RESPECT & ; mai je fais trop de as']},
  'I':
-	{'lem': 'à',
-	 'ctxt': 'des formules de À mai je fais'},
+	{'lem': '&',
+	 'ctxt': 'formules de resprt &   mai',
+	 'deja utilisé': ['ma lettre par des formules de respect & ; mai je fais trop de as']},
  'vour':
 	{'lem': 'vous',
-	 'ctxt': 'finirai donc en VOUS de mon',
+	 'ctxt': 'finirai donc en VOUS surant de mon',
 	 'deja utilisé': ['Elle est bonne pour de vieux routiers comme nous ; gardez le tone VOUS']},
  'tenvire':
 	{'lem': 'sincère',
-	 'ctxt': 'pais abaecanent pais SINCÈRE',
+	 'ctxt': 'tenvire abaecanent pais SINCÈRE abaecanent',
 	 'deja utilisé': ['pais SINCÈRE attachement']},
  'abaecanent':
-	{'lem': 'abaecanent',
-	 'ctxt': 'pais abaecanent pais ABAECANENT'},
+	{'lem': 'attachement',
+	 'ctxt': 'abaecanent pais tenvire ATTACHEMENT',
+	 'deja utilisé': ['pais sincère ATTACHEMENT']},
  '(Signé)':
 	{'lem': '(Signé)',
-	 'ctxt': '',
+	 'ctxt': '(Signé) Ctavier  (SIGNÉ) Ctavier ',
 	 'deja utilisé': ['(SIGNÉ) Ag alh &amp; Walsh s8']},
  'Ctavier':
-	{'lem': 'tavier',
-	 'ctxt': ''},
+	{'lem': 'Clavier',
+	 'ctxt': 'Ctavier  (Signé) CLAVIER ',
+	 'deja utilisé': ['(Signé) CLAVIER.']},
  'Lettree':
 	{'lem': 'Lettre',
 	 'ctxt': '',
 	 'deja utilisé': ['LETTRE']},
  'A':
 	{'lem': 'A',
-	 'ctxt': 'Prouchae caere Liedrg) A Prouchae caere Liedrg)',
+	 'ctxt': 'Prouchae caere Liedrg) A Mr Prouchae caere',
 	 'deja utilisé': ['A Mr le Prince de Salm']},
- 'Prouhae':
-	{'lem': 'Prous',
-	 'ctxt': 'aehaude Lidbeg) Mr PROUS Lidbeg)',
-	 'deja utilisé': ['A Mr PROUS (au chateau de) Liedberg)']},
- 'Lidbeg)':
-	{'lem': 'Liedberg)',
-	 'ctxt': 'aehaude Mr aehaude LIEDBERG)',
-	 'deja utilisé': ['A Mr Prous (au chateau de) LIEDBERG)']},
  'Mr':
 	{'lem': 'Mr',
-	 'ctxt': 'sir complisent à MR et à sonaimable',
+	 'ctxt': 'Mla complisent à MR Prous et à',
 	 'deja utilisé': ['A MR le Prince de Salm']},
+ 'Prouhae':
+	{'lem': 'Prous',
+	 'ctxt': 'Lidbeg) A Mr PROUS aehaude Lidbeg)',
+	 'deja utilisé': ['A Mr PROUS (au chateau de) Liedberg)']},
  'aehaude':
-	{'lem': 'chaude',
-	 'ctxt': 'Mr aehaude Mr CHAUDE'},
+	{'lem': '(au chateau de)',
+	 'ctxt': 'A Mr Prouhae (AU CHATEAU DE) Lidbeg)',
+	 'deja utilisé': ['A Mr Prous (AU CHATEAU DE) Liedberg)']},
+ 'Lidbeg)':
+	{'lem': 'Liedberg)',
+	 'ctxt': 'Mr Prouhae aehaude LIEDBERG)',
+	 'deja utilisé': ['A Mr Prous (au chateau de) LIEDBERG)']},
  'Dyck':
 	{'lem': 'Dyck',
-	 'ctxt': '1a Mût 1824 DYCK 1a Mût 1824',
+	 'ctxt': ' 1824  DYCK  le 1a',
 	 'deja utilisé': ['DYCK, le 20 coût, 181.']},
  'Mût':
 	{'lem': 'Août',
-	 'ctxt': '1824 le 1a AOÛT',
+	 'ctxt': ' le 1a AOÛT  1824 ',
 	 'deja utilisé': ['Dyck, le 1a AOÛT, 1824.']},
  'vons':
 	{'lem': 'vous',
-	 'ctxt': 'votre exprès pour VOUS mon voi que',
+	 'ctxt': 'votre exprès pour VOUS due  mon',
 	 'deja utilisé': ['Je preble de votre exprès pour VOUS due, mon voi, que nous aVOUS']},
  'Dince':
 	{'lem': 'Prince',
-	 'ctxt': 'restent deman l PRINCE Salm Prausein et',
+	 'ctxt': 'restent deman l PRINCE de Salm Prausein',
 	 'deja utilisé': ['l PRINCE de Salm Krautein et sa famille. Ils restent demain']},
  'Salm':
 	{'lem': 'Salm',
-	 'ctxt': 'Cons tone de SALM',
+	 'ctxt': 'Cons tone de SALM ',
 	 'deja utilisé': ['misse l&#39;occasion d&#39;en faire ele meme à Bade à madame de SALM']},
+ 'Prausein':
+	{'lem': 'Krautein',
+	 'ctxt': 'Dince de Salm KRAUTEIN et sa fainille',
+	 'deja utilisé': ['l Prince de Salm KRAUTEIN et sa famille. Ils restent demain']},
  'fainille':
 	{'lem': 'famille',
-	 'ctxt': 'Prausein et sa FAMILLE restent deman',
+	 'ctxt': 'Prausein et sa FAMILLE  Ls restent',
 	 'deja utilisé': ['l Prince de Salm Krautein et sa FAMILLE. Ils restent demain']},
+ 'Ls':
+	{'lem': 'Ils',
+	 'ctxt': 'sa fainille  ILS restent deman',
+	 'deja utilisé': ['l Prince de Salm Krautein et sa famille. ILS restent demain']},
  'deman':
 	{'lem': 'demain',
-	 'ctxt': 'sa Ls restent DEMAIN',
+	 'ctxt': ' Ls restent DEMAIN',
 	 'deja utilisé': ['l Prince de Salm Krautein et sa famille. Ils restent DEMAIN']},
- 'Prausein':
-	{'lem': 'fraulein',
-	 'ctxt': 'restent l de FRAULEIN et sa Ls'},
- 'Ls':
-	{'lem': 'as',
-	 'ctxt': 'Prausein et sa AS restent'},
  'vouleu':
 	{'lem': 'voulez',
-	 'ctxt': 'vous si vous VOULEZ venir augmenter la',
+	 'ctxt': 'vous si vous VOULEZ tous venir augmenter',
 	 'deja utilisé': ['si vous VOULEZ tous venir augmenter la bonne société, vous vous']},
  'sgciété':
 	{'lem': 'société',
-	 'ctxt': 'augmenter la bonne SOCIÉTÉ vous',
+	 'ctxt': 'augmenter la bonne SOCIÉTÉ  vous vous',
 	 'deja utilisé': ['si vous voulez tous venir augmenter la bonne SOCIÉTÉ, vous vous']},
  'vrond':
 	{'lem': 'grand',
-	 'ctxt': 'à Lradbeng ferez GRAND Sa Me van',
+	 'ctxt': 'à Lradbeng ferez GRAND plaisir  Sa',
 	 'deja utilisé': ['ferez GRAND plaisir. Si Mme van der dein et encore demain à Liedberg']},
  'Sa':
 	{'lem': 'Si',
-	 'ctxt': 'Lradbeng ferez plaisir SI van der dein',
+	 'ctxt': 'vrond plaisir  SI Me van der',
 	 'deja utilisé': ['ferez grand plaisir. SI Mme van der dein et encore demain à Liedberg']},
+ 'Me':
+	{'lem': 'Mme',
+	 'ctxt': 'plaisir  Sa MME van der dein',
+	 'deja utilisé': ['ferez grand plaisir. Si MME van der dein et encore demain à Liedberg']},
  'enore':
 	{'lem': 'encore',
-	 'ctxt': 'der dein et ENCORE à Lradbeng',
+	 'ctxt': 'der dein et ENCORE demain à Lradbeng',
 	 'deja utilisé': ['ferez grand plaisir. Si Mme van der dein et ENCORE demain à Liedberg']},
  'Lradbeng':
 	{'lem': 'Liedberg',
-	 'ctxt': 'et demain à LIEDBERG',
+	 'ctxt': 'enore demain à LIEDBERG',
 	 'deja utilisé': ['ferez grand plaisir. Si Mme van der dein et encore demain à LIEDBERG']},
- 'Me':
-	{'lem': 'de',
-	 'ctxt': 'à ferez plaisir DE van der dein'},
  'engugeons':
 	{'lem': 'engageons',
-	 'ctxt': 'ciatre vous l ENGAGEONS venir et nouis',
+	 'ctxt': 'ciatre vous l ENGAGEONS à venir et',
 	 'deja utilisé': ['vous l&#39;ENGAGEONS à venir et nous vous chargeons de toutes les ne ga ciatre']},
  'nouis':
 	{'lem': 'nous',
-	 'ctxt': 'à venir et NOUS chergeons de toutes',
+	 'ctxt': 'à venir et NOUS vous chergeons de',
 	 'deja utilisé': ['vous l&#39;engageons à venir et NOUS vous chargeons de toutes les ne ga ciatre']},
  'chergeons':
 	{'lem': 'chargeons',
-	 'ctxt': 'venir et vous CHARGEONS toutes les ne',
+	 'ctxt': 'et nouis vous CHARGEONS de toutes les',
 	 'deja utilisé': ['vous l&#39;engageons à venir et nous vous CHARGEONS de toutes les ne ga ciatre']},
- 'ciatre':
-	{'lem': 'cintre',
-	 'ctxt': 'les ne ga CINTRE'},
  'Il':
 	{'lem': 'il',
-	 'ctxt': 'soir serait pofable IL un s beau',
+	 'ctxt': 'soir serait pofable IL fait un s',
 	 'deja utilisé': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
+ 'Muir':
+	{'lem': 'fuir',
+	 'ctxt': 'un s beau FUIR de lune que'},
  'pofable':
 	{'lem': 'possible',
 	 'ctxt': 'du soir serait POSSIBLE',
 	 'deja utilisé': ['il fait un s beau Muir de lune que le diner du soir serait POSSIBLE']},
- 'Muir':
-	{'lem': 'fuir',
-	 'ctxt': 'un s beau FUIR de lune que'},
  'leise':
 	{'lem': 'laisse',
-	 'ctxt': 'pourtant je vous LAISSE les maitres et',
+	 'ctxt': 'pourtant je vous LAISSE touis les maitres',
 	 'deja utilisé': ['ou y&#39;est mieux entre soi, pourtant je vous LAISSE tous les maitres et']},
  'touis':
 	{'lem': 'tous',
-	 'ctxt': 'pourtant je vous TOUS les maitres et'},
+	 'ctxt': 'je vous leise TOUS les maitres et',
+	 'deja utilisé': ['ou y&#39;est mieux entre soi, pourtant je vous laisse TOUS les maitres et']},
  'vrie':
 	{'lem': 'prie',
-	 'ctxt': 'journée le vous PRIE mon cher voisin',
+	 'ctxt': 'journée le vous PRIE sentement mon cher',
 	 'deja utilisé': ['vous PRIE seulement mon cher voisin de m&#39;envoyer dans la journée le']},
+ 'sentement':
+	{'lem': 'seulement',
+	 'ctxt': 'le vous vrie SEULEMENT mon cher voisin',
+	 'deja utilisé': ['vous prie SEULEMENT mon cher voisin de m&#39;envoyer dans la journée le']},
  'dons':
 	{'lem': 'dans',
-	 'ctxt': 'de m envoyer DANS journée le',
+	 'ctxt': 'de m envoyer DANS la journée le',
 	 'deja utilisé': ['il n&#39;y a pas moyen de rien DANSier pour le major, DANS le sens aui vous']},
- 'sentement':
-	{'lem': 'sentiment',
-	 'ctxt': 'journée le vous SENTIMENT mon cher voisin'},
  'repoise':
 	{'lem': 'réponse',
-	 'ctxt': 'à la tele RÉPONSE tous le moide',
+	 'ctxt': 'à la tele RÉPONSE de tous le',
 	 'deja utilisé': ['RÉPONSE de tous le monde et de vous à la tele']},
  'moide':
 	{'lem': 'monde',
-	 'ctxt': 'de tous le MONDE de vous à',
+	 'ctxt': 'de tous le MONDE et de vous',
 	 'deja utilisé': ['réponse de tous le MONDE et de vous à la tele']},
  'Milr':
 	{'lem': 'Mille',
-	 'ctxt': 'd amié sincère MILLE d amié sincère',
+	 'ctxt': 'amié sincère  MILLE afraandes d amié',
 	 'deja utilisé': ['MILLE assurances d&#39;amitié sincère.']},
+ 'afraandes':
+	{'lem': 'assurances',
+	 'ctxt': 'sincère  Milr ASSURANCES d amié sincère',
+	 'deja utilisé': ['Mille ASSURANCES d&#39;amitié sincère.']},
  'amié':
 	{'lem': 'amitié',
-	 'ctxt': 'sincère afraandes d AMITIÉ',
+	 'ctxt': 'Milr afraandes d AMITIÉ sincère ',
 	 'deja utilisé': ['Mille assurances d&#39;AMITIÉ sincère.']},
- 'afraandes':
-	{'lem': 'friandes',
-	 'ctxt': 'afraandes d sincère FRIANDES d sincère'},
  '(Siigne':
 	{'lem': '(Signé',
-	 'ctxt': 'tone de Salm (SIGNÉ tone de Salm',
+	 'ctxt': 'de Salm  (SIGNÉ Cons tone de',
 	 'deja utilisé': ['(SIGNÉ Cons tone de Salm.']},
  'Cons':
 	{'lem': 'bons',
-	 'ctxt': 'Cons tone de BONS tone de'},
+	 'ctxt': 'Salm  (Siigne BONS tone de Salm'},
  'rptioions':
 	{'lem': 'reflexions',
-	 'ctxt': 'à upresr coutes REFLEXIONS j a vore',
+	 'ctxt': 'à upresr coutes REFLEXIONS faios  j',
 	 'deja utilisé': ['coutes REFLEXIONS faios, j&#39;a vore le petit pire qui rapportera à réponse']},
  'selit':
 	{'lem': 'petit',
-	 'ctxt': 'a vore le PETIT qui rpparter à',
+	 'ctxt': 'a vore le PETIT pire qui rpparter',
 	 'deja utilisé': ['coutes reflexions faios, j&#39;a vore le PETIT pire qui rapportera à réponse']},
  'rpparter':
 	{'lem': 'rapportera',
-	 'ctxt': 'le pire qui RAPPORTERA upresr',
+	 'ctxt': 'selit pire qui RAPPORTERA à upresr',
 	 'deja utilisé': ['coutes reflexions faios, j&#39;a vore le petit pire qui RAPPORTERA à réponse']},
  'upresr':
 	{'lem': 'réponse',
-	 'ctxt': 'pire qui à RÉPONSE',
+	 'ctxt': 'qui rpparter à RÉPONSE',
 	 'deja utilisé': ['coutes reflexions faios, j&#39;a vore le petit pire qui rapportera à RÉPONSE']},
  'Letttre':
 	{'lem': 'Lettre',
@@ -569,146 +611,157 @@ dictPage = {'noeis':
 	 'deja utilisé': ['LETTRE']},
  'Prouchae':
 	{'lem': 'Prous',
-	 'ctxt': 'caere Liedrg) Mr PROUS Liedrg)',
+	 'ctxt': 'Liedrg) A Mr PROUS caere Liedrg)',
 	 'deja utilisé': ['A Mr PROUS (au chateau de Liedberg)']},
+ 'caere':
+	{'lem': '(au chateau de',
+	 'ctxt': 'A Mr Prouchae (AU CHATEAU DE Liedrg)',
+	 'deja utilisé': ['A Mr Prous (AU CHATEAU DE Liedberg)']},
  'Liedrg)':
 	{'lem': 'Liedberg)',
-	 'ctxt': 'caere Mr caere LIEDBERG)',
+	 'ctxt': 'Mr Prouchae caere LIEDBERG)',
 	 'deja utilisé': ['A Mr Prous (au chateau de LIEDBERG)']},
- 'caere':
-	{'lem': 'cadre',
-	 'ctxt': 'Mr caere Mr CADRE'},
  '(yack':
 	{'lem': 'Dyck',
-	 'ctxt': 'ja Aûet 1826 DYCK ja Aûet 1826',
+	 'ctxt': ' 1826  DYCK  ce ja',
 	 'deja utilisé': ['DYCK, ce ja Août, 1826.']},
  'Aûet':
 	{'lem': 'Août',
-	 'ctxt': '1826 ce ja AOÛT',
+	 'ctxt': ' ce ja AOÛT  1826 ',
 	 'deja utilisé': ['Dyck, ce ja AOÛT, 1826.']},
  'Mla':
 	{'lem': 'Mille',
-	 'ctxt': 'sonaimable selesses sir MILLE à Mr Prous',
+	 'ctxt': 'sonaimable selesses sir MILLE complisent à Mr',
 	 'deja utilisé': ['MILLE compliments à Mr Prous et à son aimable hotesse sir']},
+ 'complisent':
+	{'lem': 'compliments',
+	 'ctxt': 'selesses sir Mla COMPLIMENTS à Mr Prous',
+	 'deja utilisé': ['Mille COMPLIMENTS à Mr Prous et à son aimable hotesse sir']},
+ 'Prous':
+	{'lem': 'Prous',
+	 'ctxt': 'complisent à Mr PROUS et à sonaimable',
+	 'deja utilisé': ['Mille compliments à Mr PROUS et à son aimable hotesse sir']},
  'sonaimable':
 	{'lem': 'son aimable',
-	 'ctxt': 'Prous et à SON AIMABLE sir',
+	 'ctxt': 'Prous et à SON AIMABLE selesses sir',
 	 'deja utilisé': ['Mille compliments à Mr Prous et à SON AIMABLE hotesse sir']},
- 'complisent':
-	{'lem': 'compliment',
-	 'ctxt': 'à selesses sir COMPLIMENT à Prous et'},
- 'Prous':
-	{'lem': 'trous',
-	 'ctxt': 'sir complisent à TROUS et à selesses'},
  'selesses':
-	{'lem': 'blesses',
-	 'ctxt': 'Prous et à BLESSES sir'},
+	{'lem': 'hotesse',
+	 'ctxt': 'et à sonaimable HOTESSE sir',
+	 'deja utilisé': ['Mille compliments à Mr Prous et à son aimable HOTESSE sir']},
  'eneor':
 	{'lem': 'encore',
-	 'ctxt': 'faire l a ENCORE savoir de leurs',
+	 'ctxt': 'faire l a ENCORE  Jenvoie savoir',
 	 'deja utilisé': ["l&#39;a ENCORE. J'envoie savoir de leurs nouveles et les prie de me faire"]},
+ 'Jenvoie':
+	{'lem': "J'envoie", 'ctxt': 'a eneor  J ENVOIE savoir de leurs',
+	 'deja utilisé': ["l&#39;a encore. J'ENVOIE savoir de leurs nouveles et les prie de me faire"]},
  'nouveles':
 	{'lem': 'nouveles',
-	 'ctxt': 'savoir de leurs NOUVELES les prie de',
+	 'ctxt': 'savoir de leurs NOUVELES et les prie',
 	 'deja utilisé': ["l&#39;a encore. J'envoie savoir de leurs NOUVELES et les prie de me faire"]},
- 'Jenvoie':
-	{'lem': 'envoie',
-	 'ctxt': 'faire l a ENVOIE savoir de leurs'},
  'jauirai':
-	{'lem': "j'aurai", 'ctxt': "éaquele savoir si J'AURAI plaisir d avor", 'deja utilisé': ["savoir si J'AURAI le plaisir d&#39;avoir une de ces Dames Laquelle "]},
+	{'lem': "j'aurai", 'ctxt': ' savoir si J AURAI le plaisir d',
+	 'deja utilisé': ["savoir si J'AURAI le plaisir d&#39;avoir une de ces Dames Laquelle "]},
  'avor':
 	{'lem': 'avoir',
-	 'ctxt': 'le plaisir d AVOIR de ces Sames',
+	 'ctxt': 'le plaisir d AVOIR une de ces',
 	 'deja utilisé': ["sAVOIR si j'aurai le plaisir d&#39;AVOIR une de ces Dames Laquelle "]},
  'Sames':
 	{'lem': 'Dames',
-	 'ctxt': 'une de ces DAMES',
+	 'ctxt': 'une de ces DAMES éaquele ',
 	 'deja utilisé': ["savoir si j'aurai le plaisir d&#39;avoir une de ces DAMES Laquelle "]},
  'éaquele':
-	{'lem': 'laquelle',
-	 'ctxt': 'une de ces LAQUELLE'},
+	{'lem': 'Laquelle',
+	 'ctxt': 'de ces Sames LAQUELLE ',
+	 'deja utilisé': ["savoir si j'aurai le plaisir d&#39;avoir une de ces Dames LAQUELLE "]},
  'entin':
 	{'lem': 'enfin',
-	 'ctxt': 'tunuis a et ENFIN il ne viendra',
+	 'ctxt': 'tunuis a et ENFIN s il ne',
 	 'deja utilisé': ['et ENFIN s&#39;il ne viendra pas aussi me voir et dissiper ses ennuis a']},
  'dsape':
 	{'lem': 'dissiper',
-	 'ctxt': 'me voir et DISSIPER tunuis a',
+	 'ctxt': 'me voir et DISSIPER ses tunuis a',
 	 'deja utilisé': ['et enfin s&#39;il ne viendra pas aussi me voir et DISSIPER ses ennuis a']},
  'tunuis':
 	{'lem': 'ennuis',
-	 'ctxt': 'voir et ses ENNUIS',
+	 'ctxt': 'et dsape ses ENNUIS a',
 	 'deja utilisé': ['et enfin s&#39;il ne viendra pas aussi me voir et dissiper ses ENNUIS a']},
  'Dibaaic':
 	{'lem': 'dissipant',
-	 'ctxt': '',
+	 'ctxt': 'Dibaaic les viens DISSIPANT les viens',
 	 'deja utilisé': ['DISSIPANT les viens']},
  'Ie':
 	{'lem': 'Je',
-	 'ctxt': 'qulpu un ne JE toute en dair',
+	 'ctxt': 'un  ne JE suès toute en',
 	 'deja utilisé': ["JE suis toute en dair, attendant, n'attendant pas quelqu un; ne"]},
- 'atendant':
-	{'lem': 'attendant',
-	 'ctxt': 'toute en dair ATTENDANT pas qulpu un',
-	 'deja utilisé': ["Je suis toute en dair, ATTENDANT, n'ATTENDANT pas quelqu un; ne"]},
- 'qulpu':
-	{'lem': 'quelqu',
-	 'ctxt': 'dair pateudant pas QUELQU ne',
-	 'deja utilisé': ["Je suis toute en dair, attendant, n'attendant pas QUELQU un; ne"]},
  'suès':
 	{'lem': 'suis',
-	 'ctxt': 'pas un ne SUIS toute en dair'},
+	 'ctxt': ' ne Ie SUIS toute en dair',
+	 'deja utilisé': ["Je SUIS toute en dair, attendant, n'attendant pas quelqu un; ne"]},
+ 'atendant':
+	{'lem': 'attendant',
+	 'ctxt': 'en dair  ATTENDANT  pateudant pas',
+	 'deja utilisé': ["Je suis toute en dair, ATTENDANT, n'ATTENDANT pas quelqu un; ne"]},
  'pateudant':
-	{'lem': 'atendant',
-	 'ctxt': 'toute en dair ATENDANT pas un ne'},
+	{'lem': "n'attendant", 'ctxt': ' atendant  N ATTENDANT pas qulpu un',
+	 'deja utilisé': ["Je suis toute en dair, attendant, N'ATTENDANT pas quelqu un; ne"]},
+ 'qulpu':
+	{'lem': 'quelqu',
+	 'ctxt': ' pateudant pas QUELQU un  ne',
+	 'deja utilisé': ["Je suis toute en dair, attendant, n'attendant pas QUELQU un; ne"]},
  'sahaut':
 	{'lem': 'sachant',
-	 'ctxt': 'agresle compapie 8 SACHANT je piserai pule',
+	 'ctxt': 'compapie  8 SACHANT si je piserai',
 	 'deja utilisé': ['SACHANT si je resterai pule ou ri j&#39;aurai une agréable compagnie, 8']},
  'piserai':
 	{'lem': 'resterai',
-	 'ctxt': '8 si je RESTERAI ou ri j',
+	 'ctxt': 'sahaut si je RESTERAI pule ou ri',
 	 'deja utilisé': ['sachant si je RESTERAI pule ou ri j&#39;aurai une agréable compagnie, 8']},
  'aureni':
 	{'lem': 'aurai',
-	 'ctxt': 'ou ri j AURAI agresle compapie 8',
+	 'ctxt': 'ou ri j AURAI une agresle compapie',
 	 'deja utilisé': ['sachant si je resterai pule ou ri j&#39;AURAI une agréable compagnie, 8']},
  'agresle':
 	{'lem': 'agréable',
-	 'ctxt': 'ri j une AGRÉABLE 8',
+	 'ctxt': 'j aureni une AGRÉABLE compapie  8',
 	 'deja utilisé': ['sachant si je resterai pule ou ri j&#39;aurai une AGRÉABLE compagnie, 8']},
  'compapie':
-	{'lem': 'companie',
-	 'ctxt': 'ri j une COMPANIE 8'},
+	{'lem': 'compagnie',
+	 'ctxt': 'aureni une agresle COMPAGNIE  8',
+	 'deja utilisé': ['sachant si je resterai pule ou ri j&#39;aurai une agréable COMPAGNIE, 8']},
  'esin':
 	{'lem': 'enfin',
-	 'ctxt': 'ce qi 8et ENFIN de trut Mra',
+	 'ctxt': 'qi 8et  ENFIN  néontente de',
 	 'deja utilisé': ['ENFIN, mécontente de tout, Mra ge je ne suis sûre de rer, ce qui est.']},
+ 'néontente':
+	{'lem': 'mécontente',
+	 'ctxt': ' esin  MÉCONTENTE de trut ',
+	 'deja utilisé': ['enfin, MÉCONTENTE de tout, Mra ge je ne suis sûre de rer, ce qui est.']},
  'trut':
 	{'lem': 'tout',
-	 'ctxt': '8et néontente de TOUT ge je ne',
+	 'ctxt': ' néontente de TOUT  Mra ge',
 	 'deja utilisé': ['enfin, mécontente de TOUT, Mra ge je ne suis sûre de rer, ce qui est.']},
+ 'Mra':
+	{'lem': 'ira',
+	 'ctxt': 'de trut  IRA ge je ne'},
  'suire':
 	{'lem': 'sûre',
-	 'ctxt': 'je ne suis SÛRE rer ce qi',
+	 'ctxt': 'je ne suis SÛRE de rer ',
 	 'deja utilisé': ['enfin, mécontente de tout, Mra ge je ne suis SÛRE de rer, ce qui est.']},
  'qi':
 	{'lem': 'qui',
-	 'ctxt': 'de rer ce QUI',
+	 'ctxt': 'rer  ce QUI 8et ',
 	 'deja utilisé': ['enfin, mécontente de tout, Mra ge je ne suis sûre de rer, ce QUI est.']},
- 'néontente':
-	{'lem': 'contente',
-	 'ctxt': 'rer ce 8et CONTENTE de Mra ge'},
- 'Mra':
-	{'lem': 'ira',
-	 'ctxt': '8et néontente de IRA ge je ne'},
  '8et':
-	{'lem': 'et',
-	 'ctxt': 'de rer ce ET'},
+	{'lem': 'est',
+	 'ctxt': ' ce qi EST ',
+	 'deja utilisé': ['enfin, mécontente de tout, Mra ge je ne suis sûre de rer, ce qui EST.']},
  'Cain':
 	{'lem': 'Corresp.',
-	 'ctxt': '120) ( or CORRESP.',
+	 'ctxt': '120) ( or CORRESP. 120)',
 	 'deja utilisé': ['( or CORRESP.,120e']},
  '120)':
 	{'lem': '120e',
-	 'ctxt': '120) ( or 120E'}}
+	 'ctxt': '( or Cain 120E',
+	 'deja utilisé': ['( or Corresp.,120E']}}

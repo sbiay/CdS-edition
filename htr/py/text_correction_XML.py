@@ -20,7 +20,7 @@
 
 import os
 import sys
-from dictComplets.dictCDS import dictCDS
+from py.dictCDScorr import dict
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(sys.argv[1]):
@@ -62,8 +62,8 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
                     entreesMAJ = {}
                     # On boucle sur les formes du dictionnaire personnalisé
-                    for forme in dictCDS:
-                        lemme = dictCDS[forme]["lem"]
+                    for forme in dict:
+                        lemme = dict[forme]["lem"]
                         for index, mot in enumerate(ligne):
                             # Comme la liste des mots contient des vides, on pose une condition d'existence
                             if mot:
@@ -86,7 +86,7 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         ]
                         
                         # On met à jour le dictCDS avec les contextes actualisés
-                        dictCDS[entree] = entreesMAJ[entree]
+                        dict[entree] = entreesMAJ[entree]
                         
                     if "udrédulite" in ligneBrute:
                         print(ligneCorr)
@@ -94,10 +94,10 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     xml_corr.write(ligneCorr + "\n")
 
 # On transforme le dictCDS pour l'indenter
-dictCDS = str(dictCDS).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
+dictCDS = str(dict).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
 
 # On met à jour le dictCDS
-with open("./py/dictCDS.py", mode="w") as f:
+with open("./py/dictCDScorr.py", mode="w") as f:
     f.write(
         f"dictCDS = {dictCDS}"
     )

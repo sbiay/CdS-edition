@@ -36,7 +36,7 @@ def collectLemmes():
                         motsParses.append(mot)
 
     # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
-    return set(motsParses)
+    return motsParses
 
 if __name__ == '__main__':
     collectLemmes()

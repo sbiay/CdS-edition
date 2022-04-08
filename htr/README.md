@@ -11,10 +11,12 @@ Plan :
 	1. Typer les zones
 		1. Proposition d'ontologie de SegmOnto
 		2. Applicabilité à un recueil de correspondance CDS
+		3. Types de lignes
+		4. Phénomènes qui ne seraient pas traités par le typage des zones ou des lignes
+			1. Corrections
 	2. Résultats de la segmentation
 5. HTR : mise en oeuvre
 	1. Point de départ
-		1. Essais d'HTR
 	2. Constituer des sous-corpus paléographiquement homogènes
 		1. Main 1
 		2. CDS : test de transcription de l'écriture de l'auteur
@@ -134,17 +136,17 @@ Il faudrait ajouter :
 - `Note` (<span style="color: #626262">grey</span>) : pour les notes infrapaginales (utilisé dans SegmOnto pour les [imprimés](https://github.com/SegmOnto/examples/tree/main/sources/prints/BnF_cb120117553)).
 - `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
-### Types de lignes
+### <span style="color : rgb(000, 200, 100, 0.7)">Types de lignes</span>
 Types de lignes dont on propose l'utilisation :
 - `Main`
 - `Verse`, à créer, pour les passages en vers ([ici](./img/main1_bd/reduit_CdS02_Konv002-02_0082.jpg))
 - `Correction`, par défaut dans eScriptorium, uniquement pour les corrections appliquées dans l'interligne ([ici](./img/main1_bd/reduit_CdS02_Konv002-02_0070.jpg))
 
-### Phénomènes qui ne seraient pas traités par le typage des zones ou des lignes
+### <span style="color : rgb(000, 200, 100, 0.7)">Phénomènes qui ne seraient pas traités par le typage des zones ou des lignes</span>
 - Mots soulignés
 - Mots biffés
 
-#### Corrections
+#### <span style="color : rgb(050, 100, 060, 0.7)">Corrections</span>
 CDS corrige certains mots de sa main :
 - En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée ([en local](./img/main1/CdS02_Konv002-02_0065.jpg)) ; le typage de la ligne est alors trop compliqué
 - En réécrivant dans l'interligne : il est alors pertinent d'utiliser le type de ligne eScriptorium `Correction`.
@@ -174,7 +176,6 @@ Difficultés dans la reconnaissance des lignes :
 Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Point de départ</span>
-### <span style="color : rgb(000, 200, 100, 0.7)">Essais d'HTR</span>
 Le dépôt Github du DHI [Constance de Salm](https://github.com/dhi-digital-humanities/constance-de-salm) contient un [modèle d'entraînement](https://github.com/dhi-digital-humanities/constance-de-salm/tree/main/HTR/Training%20Models) avec des vérités de terrain en petite quantité et un modèle entraîné.
 
 Le rapport de stage d'H. Souvay a été consulté {souvayCorrespondanceConstanceSalm2021}.
@@ -249,7 +250,9 @@ Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédi
 Développement réalisés :
 1. On a donc développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine ; le contexte est en effet déterminant pour valider ou modifier une correction proposée automatiquement.
 
-2. On mobilise désormais les ressources du dictionnaire des corrections déjà validées (dictCDS) avant de parser le dictionnaire gloabl de la langue française (dictionnaireComplet). Cela permet de :
+2. On cherche les mots de la prédiction dans les vérités de terrain du projet grâce au script [lemmes.py](./py/lemmes.py), directement implémenté dans le script **spellcheck_texts**
+
+3. On mobilise désormais les ressources du dictionnaire des corrections déjà validées (dictCDS) avant de parser le dictionnaire global de la langue française (dictionnaireComplet). Cela permet de :
 	- Réduire le temps de calcul ;
 	- Ne pas travailler sur des corrections déjà identifiées comme ambiguës (*id est* ayant deux contextes différents en compétition).
 
@@ -290,4 +293,6 @@ Développements effectués :
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Confronter les résultats avec ceux d'un autre modèle générique</span>
 On testera le modèle entraîné par le projet Lectaurep.
+
+
 

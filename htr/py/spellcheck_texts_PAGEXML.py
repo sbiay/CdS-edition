@@ -16,12 +16,12 @@
     
 """
 
-
 import os
 import sys
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
-from dictComplets.dictCDS import dictCDS
+from constantes import XMLaCORRIGER, DICTPAGES
+from dictCDScorr import dict
 
 def suppress_punctuation(text):
     """ Suppress punctuation in a text
@@ -41,12 +41,12 @@ spell = SpellChecker(language=None, local_dictionary="./dictComplets/dictGeneral
 # This means that all the uppercase words will be considered wrong but that helps correct them
 # To use that technique, we have to call a local dictionary
 
-for root, dirs, files in os.walk(sys.argv[1]):
+for root, dirs, files in os.walk(XMLaCORRIGER):
     for filename in files:
         dictionary = {}
         # On ouvre le fichier XML d'entrée
-        with open(sys.argv[1] + filename, 'r') as xml_file:
-            print("reading from "+sys.argv[1] + filename)
+        with open(XMLaCORRIGER + filename, 'r') as xml_file:
+            print("reading from "+ XMLaCORRIGER + filename)
             soup = BeautifulSoup(xml_file, 'lxml')
         for unicode in soup.find_all('unicode'):
             content = unicode.string
@@ -55,17 +55,16 @@ for root, dirs, files in os.walk(sys.argv[1]):
             # On boucle sur chaque mot de l'élément Unicode courant
             for index, mot in enumerate(words):
                 # On cherche chaque mot dans le dictCDS
-                if dictCDS.get(mot):
-                    # On vérifie que la solution ne soit pas ambiguë (id est qu'il n'y ait pas deux contextes de
-                    # résolution concurrents et qu'il existe bien un lemme)
-                    if not len(dictCDS[mot]['contxt']) > 1 and dictCDS[mot]['lem']:
+                if dict.get(mot):
+                    # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
+                    if dict[mot].get('lem'):
                         # On initie le contexte comme une liste
                         contexte = []
                         try:
                             contexte.append(words[index - 3])
                             contexte.append(words[index - 2])
                             contexte.append(words[index - 1])
-                            contexte.append(dictCDS[mot]['lem'].upper())
+                            contexte.append(dict[mot]['lem'].upper())
                             contexte.append(words[index + 1])
                             contexte.append(words[index + 2])
                             contexte.append(words[index + 3])
@@ -74,9 +73,9 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         contexte = ' '.join(contexte)
                         # On écrit l'entrée du dictionnaire pour préciser le contexte
                         dictionary[mot] = {
-                            'lem': dictCDS[mot]['lem'],
+                            'lem': dict[mot]['lem'],
                             'ctxt': contexte.replace("'", ' '),
-                            'deja utilisé': dictCDS[mot]['ctxt']
+                            'deja utilisé': dict[mot]['ctxt']
                         }
                 else:
                     # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
@@ -105,8 +104,8 @@ for root, dirs, files in os.walk(sys.argv[1]):
         dictionary = str(dictionary).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
         
         # On écrit le résultat dans un fichier de sortie au format .py
-        with open(sys.argv[2].strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
-            print("writing to "+ sys.argv[2] + "/Dict" + filename.replace(".xml", ".py"))
+        with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
+            print("writing to "+ DICTPAGES + "/Dict" + filename.replace(".xml", ".py"))
             file_out.write("dictPage = ")
             file_out.write(dictionary)
 
