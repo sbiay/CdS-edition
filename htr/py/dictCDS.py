@@ -234,7 +234,7 @@ dict = {'out':
 	 'ctxt': ['gue, joue à la Paume de Je l&#39;AVAIS mis sur les rangs pour biaém&#39;ien']},
  'Je':
 	{'lem': 'Je',
-	 'ctxt': ['dous dinons à 2&#39;y précises le 4. JE compte sur votre trinité']},
+	 'ctxt': ['et nous aurons de la banguillité, Dieu merce JE l&#39;aime dens le monte']},
  'prenraidreles':
 	{'lem': 'prenaient les',
 	 'ctxt': ['libre ; mais grand j&#39;ai v la tournure que PRENAIENT LES choses, je']},
@@ -348,7 +348,7 @@ dict = {'out':
 	 'ctxt': ['ma lettre par des formules de respect & ; mai je fais trop de as']},
  'deman':
 	{'lem': 'demain',
-	 'ctxt': ['l Prince de Salm Krautein et sa famille. Ils restent DEMAIN']},
+	 'ctxt': ['A revoir hone à DEMAIN.']},
  'resprt':
 	{'lem': 'respect',
 	 'ctxt': ['ma lettre par des formules de RESPECT & ; mai je fais trop de as']},
@@ -363,13 +363,13 @@ dict = {'out':
 	 'ctxt': ['(Signé) CLAVIER.']},
  '(Signé)':
 	{'lem': '(Signé)',
-	 'ctxt': ['(SIGNÉ) Ag alh &amp; Walsh s8']},
+	 'ctxt': ['(SIGNÉ) J 2e 2.']},
  'Lettree':
 	{'lem': 'Lettre',
 	 'ctxt': ['LETTRE']},
  'A':
 	{'lem': 'A',
-	 'ctxt': ['A Mr le Prince de Salm']},
+	 'ctxt': ['A Mr Mr Prucs au (ataue de Liedberg)']},
  'Lidbeg)':
 	{'lem': 'Liedberg)',
 	 'ctxt': ['A Mr Prous (au chateau de) LIEDBERG)']},
@@ -378,7 +378,7 @@ dict = {'out':
 	 'ctxt': ['A Mr PROUS (au chateau de) Liedberg)']},
  'Mr':
 	{'lem': 'Mr',
-	 'ctxt': ['A MR le Prince de Salm']},
+	 'ctxt': ['A MR MR Prucs au (ataue de Liedberg)']},
  'aehaude':
 	{'lem': '(au chateau de)',
 	 'ctxt': ['A Mr Prous (AU CHATEAU DE) Liedberg)']},
@@ -387,7 +387,7 @@ dict = {'out':
 	 'ctxt': ['Dyck, le 1a AOÛT, 1824.']},
  'Dyck':
 	{'lem': 'Dyck',
-	 'ctxt': ['DYCK, le 20 coût, 181.']},
+	 'ctxt': ['DYCK, le je Septembre, 1816.']},
  'Dince':
 	{'lem': 'Prince',
 	 'ctxt': ['l PRINCE de Salm Krautein et sa famille. Ils restent demain']},
@@ -396,7 +396,7 @@ dict = {'out':
 	 'ctxt': ['l Prince de Salm Krautein et sa famille. ILS restent demain']},
  'Salm':
 	{'lem': 'Salm',
-	 'ctxt': ['misse l&#39;occasion d&#39;en faire ele même à Bade à madame de SALM']},
+	 'ctxt': ['de SALM']},
  'liberti':
 	{'lem': 'liberté',
 	 'ctxt': ['en faveur de la LIBERTÉ de la presse. Lui et son parti espèrent bien']},
@@ -420,13 +420,28 @@ dict = {'out':
 	 'ctxt': ['ferez GRAND plaisir. Si Mme van der dein et encore demain à Liedberg']},
  'Me':
 	{'lem': 'Mme',
-	 'ctxt': ['ferez grand plaisir. Si MME van der dein et encore demain à Liedberg']},
- 'Lradbeng':
-	{'lem': 'Liedberg',
-	 'ctxt': ['ferez grand plaisir. Si Mme van der dein et encore demain à LIEDBERG']},
+	 'ctxt': ['il fait si bain, Monsieur, que je peuse que MME papp, vers']},
+'peuse':
+	{'lem': 'pense',
+	 'ctxt': ['il fait si bain, Monsieur, que je PENSE que MME papp, vers']},
+ 'pourriuz':
+	{'lem': 'pourriez',
+	 'ctxt': []},
+	  'journé':
+	{'lem': 'journée',
+	 'ctxt': ['''la JOURNEE arec vous c'est dit ou la Kermesse, pois vrous promner''']},
+	'arec':
+	{'lem': 'avec',
+	 'ctxt': ['''la journée AVEC vous c'est dit ou la Kermesse, pois vrous promner''']},
+	 'promner':
+	{'lem': 'promener',
+	 'ctxt': ['''la journée vous c'est dit ou la Kermesse, pois vrous PROMENER''']},
  'Sa':
 	{'lem': 'Si',
 	 'ctxt': ['ferez grand plaisir. SI Mme van der dein et encore demain à Liedberg']},
+	'enteudrons':
+	{'lem': 'entendrons',
+	 'ctxt': ['''de ce côté ; nous ENTENDRONS les vuotous, et c'est toujours quelque''']},
  'ne ga ciatre':
 	{'lem': 'négociations',
 	 'ctxt': []},
@@ -713,7 +728,7 @@ dict = {'out':
 	 'ctxt': ['vous. il m&#39;est ARRIVÉ hier une cargaison de vieux gardes boutiques']},
  'Il':
 	{'lem': 'il',
-	 'ctxt': ['IL n&#39;y a pas moyen de rien dansier pour le major, dans le sens aui vous']},
+	 'ctxt': ['apres demain. IL n&#39;est gues tion ie que de Kermesse et en abant pag-']},
  'cergaison':
 	{'lem': 'cargaison',
 	 'ctxt': ['vous. il m&#39;est arrivé hier une CARGAISON de vieux gardes boutiques']},
@@ -743,7 +758,7 @@ dict = {'out':
 	 'ctxt': []},
  'J':
 	{'lem': 'J',
-	 'ctxt': []},
+	 'ctxt': ['(Signé) J 2e 2.']},
  'déguere':
 	{'lem': 'de guerre',
 	 'ctxt': ['Vous ni parlez plus DE GUERRE, comme ces gens qui voyant que les tore']},
@@ -802,7 +817,7 @@ dict = {'out':
 	 'ctxt': ['et sa société surtout dans l&#39;ÉLOIGNEMENT de toute chose où je vis ;']},
  'surtont':
 	{'lem': 'surtout',
-	 'ctxt': ['et sa société SURTOUT dans l&#39;éloignement de toute chose où je vis ;']},
+	 'ctxt': ['asn SURTOUT que ma ve puisse 2&#39;y agitez librement vous avrez']},
  'souéte':
 	{'lem': 'société',
 	 'ctxt': ['et sa SOCIÉTÉ surtout dans l&#39;éloignement de toute chose où je vis ;']},
@@ -880,7 +895,7 @@ dict = {'out':
 	 'ctxt': ['(Signé) Cous tince de SALM.']},
  '(Sgné)':
 	{'lem': '(Signé)',
-	 'ctxt': ['(SIGNÉ) Cous tince de Salm.']},
+	 'ctxt': ['(SIGNÉ) Cons tence de Salm']},
  'Cous tince':
 	{'lem': 'Constance',
 	 'ctxt': []},
@@ -1082,4 +1097,97 @@ dict = {'out':
 	 'ctxt': ['de BADE. de Prince lui avait envoyé les poésies de la Princesse']},
  'Prines':
 	{'lem': 'Princesse',
-	 'ctxt': ['de Bade. de Prince lui avait envoyé les poésies de la PRINCESSE']}}
+	 'ctxt': ['de Bade. de Prince lui avait envoyé les poésies de la PRINCESSE']},
+ 'Loutu':
+	{'lem': 'Louise',
+	 'ctxt': ['LOUISE et le grans fel pourriuz venir à pêed ou en voiture passer']},
+ 'Kermesse':
+	{'lem': 'Kermesse',
+	 'ctxt': ['la journé arec vous c&#39;est dit ou la KERMESSE, pois vrous promner']},
+ 'Louse':
+	{'lem': 'Louise',
+	 'ctxt': ['Je conterai vre commssions à LOUISE ; il me faut mille']},
+ 'Metles':
+	{'lem': 'petites',
+	 'ctxt': ['PETITES chosés de Crane1s.']},
+ 'Vene':
+	{'lem': 'Venez',
+	 'ctxt': ['VENEZ donc ous. J&#39;emtrgse les drmes et vplue les messours']},
+ 'Mor':
+	{'lem': 'Mr',
+	 'ctxt': ['A MR Prons ha aehae de Liedberg)']},
+ 'Pruu':
+	{'lem': 'Prons',
+	 'ctxt': ['A Mr PRONS ha aehae de Liedberg)']},
+ 'deLdberg)':
+	{'lem': 'de Liedberg)',
+	 'ctxt': ['A Mr Prons ha aehae DE LIEDBERG)']},
+ 'Salembiezt':
+	{'lem': 'Septembre',
+	 'ctxt': ['Dyck, le 15 SEPTEMBRE.']},
+'Cons tence':
+	{'lem': 'Constance',
+	 'ctxt': []},
+ 'Salm)':
+	{'lem': 'Salm)',
+	 'ctxt': ['d SALM)']},
+ 'Monseur':
+	{'lem': 'Monsieur',
+	 'ctxt': ['fnez vous ahez fon, MONSIEUR, nour remstes à le cier Louise le']},
+ 'Louire':
+	{'lem': 'Louise',
+	 'ctxt': ['fnez vous ahez fon, Monsieur, nour remstes à le cier LOUISE le']},
+ 'Brabant':
+	{'lem': 'Brabant',
+	 'ctxt': ['avoir une aune de BRABANT, de pareit ? Mais il faut qu&#39;il soit bien']},
+ 'Messortr':
+	{'lem': 'ressortir',
+	 'ctxt': ["semblable ; car il ne s'agit de rien mous que de RESSORTIR des manche, 8"]},
+ 'sagt':
+	{'lem': "s'agit", 'ctxt': ["semblable ; car il ne S'AGIT de rien mous que de ressortir des manche, 8"]},
+ 'Colague':
+	{'lem': 'Cologne',
+	 'ctxt': ['Je vais enfin, je crois, faire le fameux voy age de COLOGNE, et']},
+ 'voy age':
+	{'lem': 'voyage',
+	 'ctxt': 'Je vais enfin  je crois  faire le fameux voy age de COLAGUE  et'},
+ 'Keinete':
+	{'lem': 'Kermesse',
+	 'ctxt': ['apres demain. il n&#39;est gues tion ie que de KERMESSE et en abant pag-']},
+ 'Voite':
+	{'lem': 'Voilà',
+	 'ctxt': ['VOILÀ la puissance tuit a fait à la raison daus potre cher pairs']},
+ 'nuissance':
+	{'lem': 'puissance',
+	 'ctxt': ['Voilà la PUISSANCE tuit a fait à la raison daus potre cher pairs']},
+ 'Dien':
+	{'lem': 'Dieu',
+	 'ctxt': ['et nous aurons de la banguillité, DIEU merce Je l&#39;aime dens le monte']},
+ 'Mous':
+	{'lem': 'Nous',
+	 'ctxt': ['en bien tort de vous inallr la jour de notre monde. NOUS udoens']},
+ 'Vest':
+	{'lem': "C'est", 'ctxt': ["C'EST la sourre de tout ce qu&#39;il y &#39;a dé bon et de consolmnt dans lavdier"]},
+ 'Pai':
+	{'lem': "J'ai", 'ctxt': ["J'AI écrit des volumes ce matin, vous en êtes la dernière feuille"]},
+ 'Poris':
+	{'lem': 'Paris',
+	 'ctxt': ['vous savez a ris des marchandes de PARIS auc derners les bous.']},
+ 'éharchandes':
+	{'lem': 'marchandes',
+	 'ctxt': ['vous savez a ris des MARCHANDES de Paris auc derners les bous.']},
+ 'Liederg)':
+	{'lem': 'Liedberg)',
+	 'ctxt': ['A Mr Mr Prucs au (ataue de LIEDBERG)']},
+ 'Saroibre':
+	{'lem': 'Septembre',
+	 'ctxt': ['Dyck, le je SEPTEMBRE, 1816.']},
+ 'Arevor':
+	{'lem': 'A revoir',
+	 'ctxt': ['A REVOIR hone à demain.']},
+ 'Cons tence':
+	{'lem': 'Constance',
+	 'ctxt': '(Sgné) CONS tence de Sal'},
+ 'Sal':
+	{'lem': 'Salm',
+	 'ctxt': ['(Signé) Cons tence de SALM']}}
