@@ -52,35 +52,36 @@ for root, dirs, files in os.walk(XMLaCORRIGER):
         for unicode in soup.find_all('unicode'):
             content = unicode.string
             content = suppress_punctuation(content)
+            
             words = content.split(" ")
             # On boucle sur chaque mot de l'élément Unicode courant
             for index, mot in enumerate(words):
+                contexte = content.replace(mot, mot.upper())
                 # On cherche chaque mot dans les lemmes des vérités de terrain
                 if mot not in get_lemmes():
                     # On cherche chaque mot dans le dictCDS
                     if dict.get(mot):
                         # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
                         if dict[mot].get('lem'):
-                            # On initie le contexte comme une liste
-                            contexte = content.replace(mot, mot.upper())
                             # On écrit l'entrée du dictionnaire pour préciser le contexte
                             dictionary[mot] = {
                                 'lem': dict[mot]['lem'],
                                 'ctxt': contexte.replace("'", ' '),
                                 'deja utilisé': dict[mot]['ctxt']
                             }
+                    # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
+                    elif spell.unknown(mot):
+                        # On écrit l'entrée du dictionnaire pour préciser le contexte
+                        dictionary[mot] = {
+                            'lem': spell.correction(mot),
+                            'ctxt': contexte.replace("'", ' ')
+                        }
+                    # S'il n'a aucune proposition de correction identifiée
                     else:
-                        # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
-                        misspelled = spell.unknown(mot)
-                        # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
-                        if misspelled:
-                            # On initie le contexte comme une liste
-                            contexte = content.replace(mot, mot.upper())
-                            # On écrit l'entrée du dictionnaire pour préciser le contexte
-                            dictionary[mot] = {
-                                'lem': spell.correction(mot),
-                                'ctxt': contexte.replace("'", ' ')
-                            }
+                        dictionary[mot] = {
+                            'lem': None,
+                            'ctxt': contexte.replace("'", ' ')
+                        }
         # On re-type et indente le dictionnaire pour la sortie
         dictionary = str(dictionary).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
         
