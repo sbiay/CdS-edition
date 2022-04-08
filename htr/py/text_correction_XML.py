@@ -20,19 +20,20 @@
 
 import os
 import sys
-from py.dictCDS import dict
+from dictCDS import dict
+from constantes import XMLaCORRIGER, DICTPAGES, XMLCORRIGEES
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
-for root, dirs, files in os.walk(sys.argv[1]):
+for root, dirs, files in os.walk(XMLaCORRIGER):
     # On boucle sur chaque nom de fichier
     for filename in files:
         print(f"On lit le fichier {filename}")
         # On ouvre le fichier XML d'entrée et on récupère le contenu dans une list de lignes
-        with open(sys.argv[1] + filename, 'r') as xml_orig:
+        with open(XMLaCORRIGER + filename, 'r') as xml_orig:
             contenuXML = xml_orig.read().split("\n")
         
         # On ouvre le fichier XML de sortie
-        with open(sys.argv[2] + filename, 'w') as xml_corr:
+        with open(XMLCORRIGEES + filename, 'w') as xml_corr:
             # On boucle sur chaque ligne du contenuXML
             for ligneBrute in contenuXML:
                 # Si la ligne de code xml ne contient pas d'élément Unicode,
@@ -54,9 +55,6 @@ for root, dirs, files in os.walk(sys.argv[1]):
                     ligne = ligne.replace("</Unicode>", "")
                     # Et on découpe chaque mot selon les espaces restantes
                     ligne = ligne.split(" ")
-                    # Test sur un mot pour voir comment il est traité
-                    if "udrédulite" in ligneBrute:
-                        print(ligne)
                     # On initie la ligne corrigée
                     ligneCorr = ligneBrute
                     # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
@@ -87,9 +85,6 @@ for root, dirs, files in os.walk(sys.argv[1]):
                         
                         # On met à jour le dictCDS avec les contextes actualisés
                         dict[entree] = entreesMAJ[entree]
-                        
-                    if "udrédulite" in ligneBrute:
-                        print(ligneCorr)
                         
                     xml_corr.write(ligneCorr + "\n")
 

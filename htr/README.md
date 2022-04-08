@@ -252,7 +252,7 @@ Développement réalisés :
 
 2. On cherche les mots de la prédiction dans les vérités de terrain du projet grâce au script [lemmes.py](./py/lemmes.py), directement implémenté dans le script **spellcheck_texts**
 
-3. On mobilise désormais les ressources du dictionnaire des corrections déjà validées (dictCDS) avant de parser le dictionnaire global de la langue française (dictionnaireComplet). Cela permet de :
+3. On mobilise désormais les ressources du dictionnaire des corrections déjà validées ([dictCDS](./py/dictCDS.py)) avant de parser le dictionnaire global de la langue française (dictionnaireComplet). Cela permet de :
 	- Réduire le temps de calcul ;
 	- Ne pas travailler sur des corrections déjà identifiées comme ambiguës (*id est* ayant deux contextes différents en compétition).
 
@@ -270,13 +270,13 @@ Cette opération se fait pour l'instant à la main, elle est facilement automati
 Lui consacrer un script permet de contrôler les nouvelles entrées du dictionnaire et donc de sécuriser cette intégration. Les conditions à traiter dans le script sont :
 - Si la clé existe (ie la forme erronée du mot est déjà référencée par le dictionnaire) :
 	- Si le lemme est différent : c'est un conflit, on propose en sortie, pour l'utilisateur, une comparaison des lemmes et des contextes ; on lui indique ensuite la marche à suivre :
-		1. Ouvrir dictCDS ;
-		2. Changer le lemme en `None` ;
+		1. Ouvrir [dictCDS](./py/dictCDS.py) ;
+		2. Changer le lemme en `None` (**le plus important**) ;
 		3. Ajouter le contexte présent à la liste des contextes ;
 		4. Supprimer la clé du dictionnaire en cours d'intégration ;
 		5. Relancer le script.
 	- Si le lemme est identique : on intègre l'entrée au dictionnaire en remplaçant le contexte par le plus récent ;
-- Si la clé n'existe pas, on ajoute le couple clé-valeur au dictCDS.
+- Si la clé n'existe pas, on ajoute le couple clé-valeur au [dictCDS](./py/dictCDS.py).
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le dictionnaire de correction aux fichiers XML (text_correction_XML.py)</span>
 Développements effectués :
