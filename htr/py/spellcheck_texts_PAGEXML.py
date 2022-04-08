@@ -62,18 +62,7 @@ for root, dirs, files in os.walk(XMLaCORRIGER):
                         # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
                         if dict[mot].get('lem'):
                             # On initie le contexte comme une liste
-                            contexte = []
-                            try:
-                                contexte.append(words[index - 3])
-                                contexte.append(words[index - 2])
-                                contexte.append(words[index - 1])
-                                contexte.append(dict[mot]['lem'].upper())
-                                contexte.append(words[index + 1])
-                                contexte.append(words[index + 2])
-                                contexte.append(words[index + 3])
-                            except IndexError:
-                                True
-                            contexte = ' '.join(contexte)
+                            contexte = content.replace(mot, mot.upper())
                             # On écrit l'entrée du dictionnaire pour préciser le contexte
                             dictionary[mot] = {
                                 'lem': dict[mot]['lem'],
@@ -86,18 +75,7 @@ for root, dirs, files in os.walk(XMLaCORRIGER):
                         # On énumère les mots de la ligne afin de pouvoir inscrire le contexte dans l'entrée de dictionnaire
                         if misspelled:
                             # On initie le contexte comme une liste
-                            contexte = []
-                            try:
-                                contexte.append(words[index - 3])
-                                contexte.append(words[index - 2])
-                                contexte.append(words[index - 1])
-                                contexte.append(spell.correction(mot).upper())
-                                contexte.append(words[index + 1])
-                                contexte.append(words[index + 2])
-                                contexte.append(words[index + 3])
-                            except IndexError:
-                                True
-                            contexte = ' '.join(contexte)
+                            contexte = content.replace(mot, mot.upper())
                             # On écrit l'entrée du dictionnaire pour préciser le contexte
                             dictionary[mot] = {
                                 'lem': spell.correction(mot),
