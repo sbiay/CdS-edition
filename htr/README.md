@@ -134,6 +134,7 @@ Il faudrait ajouter :
 - `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
 ### Lignes et problèmes plus complexes
+- `Verse` pour les passages en vers ([ici](./img/main1_bd/CdS02_Konv002-02_0082.jpg))
 
 #### Corrections
 CDS corrige certains mots de sa main :
@@ -157,10 +158,7 @@ Proposition finale : **transcrire tout ce qui est lisible** (y compris les lettr
 
 - Des mots soulignés
 - Des rubriques : "autographe"
-- Des notes de bas de page ([en local](./img/main1/CdS02_Konv002-02_0066.jpg))
-	- Penser à peut-être signaler l'appel de note dans la transcription ;
-- Une pagination à la mine.
-- Des passages en vers ([en local](./img/main1/CdS02_Konv002-02_0082.jpg))
+
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Résultats de la segmentation</span>
 Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" sur la main1 font apparaître une bonne segmentation des doubles pages.
