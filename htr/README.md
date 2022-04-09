@@ -250,7 +250,7 @@ Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédi
 Développement réalisés :
 1. On a donc développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine ; le contexte est en effet déterminant pour valider ou modifier une correction proposée automatiquement.
 
-2. On cherche les mots de la prédiction dans les vérités de terrain du projet grâce au script [lemmes.py](./py/lemmes.py), directement implémenté dans le script **spellcheck_texts**
+2. On cherche les mots de la prédiction dans les vérités de terrain du projet grâce à la fonction [lemmes.py](./py/spellcheck_texts_PAGEXML.py), directement implémenté dans le script **spellcheck_texts**
 
 3. On mobilise désormais les ressources du dictionnaire des corrections déjà validées ([dictCDS](./py/dictCDS.py)) avant de parser le dictionnaire global de la langue française (dictionnaireComplet). Cela permet de :
 	- Réduire le temps de calcul ;
