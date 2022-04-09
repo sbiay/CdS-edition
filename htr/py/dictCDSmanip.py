@@ -29,8 +29,7 @@ def dictCDStransform():
 
 
 @click.command()
-@click.argument("SOURCE")
-def dictCDSintegration(source):
+def dictCDSintegration():
     """
     Ce script prend comme paramètres une source consistant en un dictionnaire python d'entrée
     le compare au contenu de dictCDS, intègre les entrées nouvelles et retourne des messages d'alertes
@@ -38,4 +37,4 @@ def dictCDSintegration(source):
     :param source: dictionnaire python issu de la correction automatisée d'une page de transcription
     :type source: chemin de fichier
     """
-
+    
