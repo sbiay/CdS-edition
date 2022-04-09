@@ -2,8 +2,8 @@ import os
 from lxml import etree
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
-from constantes import XMLaCORRIGER, DICTPAGES, VERITESTERRAIN as VT
-from dictCDS import dict
+from constantes import XMLaCORRIGER, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
+from dictComplets.dictCDS import dict
 
 
 def get_lemmes():
@@ -72,7 +72,7 @@ def spellcheck_texts_page_XML():
     
     """
     # On charge le dictionnaire local dans un fichier Json pour pouvoir le passer à SpellChecker
-    spell = SpellChecker(language=None, local_dictionary="./dictComplets/dictGeneral.json", case_sensitive=True)
+    spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True)
     # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
     # This means that all the uppercase words will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary

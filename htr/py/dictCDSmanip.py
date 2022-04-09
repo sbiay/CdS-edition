@@ -10,7 +10,7 @@ def dictCDStransform():
     et "ctxt" pour contexte.
     """
     
-    from py.dictCDS import dict
+    from py.dictComplets.dictCDS import dict
     
     nouveauDict = {}
     

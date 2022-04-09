@@ -19,9 +19,8 @@
 """
 
 import os
-import sys
-from dictCDS import dict
-from constantes import XMLaCORRIGER, DICTPAGES, XMLCORRIGEES
+from py.dictComplets.dictCDS import dict
+from constantes import XMLaCORRIGER, XMLCORRIGEES
 
 # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
 for root, dirs, files in os.walk(XMLaCORRIGER):
