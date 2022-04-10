@@ -1,3 +1,5 @@
+import json
+
 dictPage = {'18':
 	{'lem': None, 'ctxt': '18'},
  'bain':
@@ -444,3 +446,7 @@ dictPage = {'18':
 	{'lem': 'Salm',
 	 'ctxt': '(Sgné) Cons tence de SAL',
 	 'deja utilisé': ['(Signé) Cons tence de SALM']}}
+
+with open("./py/dictPages/DictCdS02_Konv002-02_0067.json", mode="w", encoding="UTF-8") as f:
+	json.dump(dictPage, f, indent=2, ensure_ascii=False)
+	print("Imprimé correctement")

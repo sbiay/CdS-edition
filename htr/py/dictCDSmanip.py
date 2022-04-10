@@ -46,5 +46,9 @@ def dictCDSintegration():
                 print("writing to " + DICTPAGES + "/Dict" + filename.replace(".xml", ".py"))
                 file_out.write("dictPage = ")
                 file_out.write(dictionary)
+    
+    #with open("./py/dictPages/DictCdS02_Konv002-02_0067.json", mode="w", encoding="UTF-8") as f:
+    #    On écrit le contenu du dictionnaire au format Jsonn en s'assurant d'encoder en UTF-8 et non en ASCII
+    #    json.dump(dictPage, f, indent=2, ensure_ascii=False)
 
 dictCDSintegration()

@@ -1,3 +1,4 @@
+import json
 dict = {'out':
 	{'lem': 'ont',
 	 'ctxt': ['Mr Prous comprendra ONT cela. Je Lui fos mes sincères amitiés']},
@@ -1191,3 +1192,7 @@ dict = {'out':
  'Sal':
 	{'lem': 'Salm',
 	 'ctxt': ['(Signé) Cons tence de SALM']}}
+
+with open("./py/dictPages/dictCDS.json", mode="w", encoding="UTF-8") as f:
+	json.dump(dict, f, indent=2, ensure_ascii=False)
+	print("Imprimé correctement")
