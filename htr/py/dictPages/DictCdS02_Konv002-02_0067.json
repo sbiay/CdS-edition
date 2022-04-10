@@ -1,0 +1,876 @@
+{
+   "18": {
+      "lem": null,
+      "ctxt": "18"
+   },
+   "S23)": {
+      "lem": "23h",
+      "ctxt": "de S23)"
+   },
+   "bain": {
+      "lem": null,
+      "ctxt": "Il fait si BAIN  Monsieur  que je peuse que Me papp  vers"
+   },
+   "": {
+      "lem": null,
+      "ctxt": "(rr p  p )"
+   },
+   "peuse": {
+      "lem": "pense",
+      "ctxt": "Il fait si bain  Monsieur  que je PEUSE que Me papp  vers",
+      "deja utilis\u00e9": [
+         "il fait si bain, Monsieur, que je PENSE que MME papp, vers"
+      ]
+   },
+   "Me": {
+      "lem": "Mme",
+      "ctxt": "Il fait si bain  Monsieur  que je peuse que ME papp  vers",
+      "deja utilis\u00e9": [
+         "il fait si bain, Monsieur, que je peuse que MME papp, vers"
+      ]
+   },
+   "papp": {
+      "lem": null,
+      "ctxt": "Il fait si bain  Monsieur  que je peuse que Me PAPP  vers"
+   },
+   "vers": {
+      "lem": null,
+      "ctxt": "Il fait si bain  Monsieur  que je peuse que Me papp  VERS"
+   },
+   "Loutu": {
+      "lem": "Louise",
+      "ctxt": "LOUTU et le grans fel pourriuz venir \u00e0 p\u00eaed ou en voiture passer",
+      "deja utilis\u00e9": [
+         "LOUISE et le grans fel pourriuz venir \u00e0 p\u00eaed ou en voiture passer"
+      ]
+   },
+   "grans": {
+      "lem": null,
+      "ctxt": "Loutu et le GRANS fel pourriuz venir \u00e0 p\u00eaed ou en voiture passer"
+   },
+   "fel": {
+      "lem": null,
+      "ctxt": "Loutu et le grans FEL pourriuz venir \u00e0 p\u00eaed ou en voiture passer"
+   },
+   "pourriuz": {
+      "lem": "pourriez",
+      "ctxt": "Loutu et le grans fel POURRIUZ venir \u00e0 p\u00eaed ou en voiture passer",
+      "deja utilis\u00e9": []
+   },
+   "p\u00eaed": {
+      "lem": null,
+      "ctxt": "Loutu et le grans fel pourriuz venir \u00e0 P\u00caED ou en voiture passer"
+   },
+   "voiture": {
+      "lem": null,
+      "ctxt": "Loutu et le grans fel pourriuz venir \u00e0 p\u00eaed ou en VOITURE passer"
+   },
+   "journ\u00e9": {
+      "lem": "journ\u00e9e",
+      "ctxt": "la JOURN\u00c9 arec vous c est dit ou la Kermesse  pois vrous promner",
+      "deja utilis\u00e9": [
+         "la JOURNEE arec vous c'est dit ou la Kermesse, pois vrous promner"
+      ]
+   },
+   "arec": {
+      "lem": "avec",
+      "ctxt": "la journ\u00e9 AREC vous c est dit ou la Kermesse  pois vrous promner",
+      "deja utilis\u00e9": [
+         "la journ\u00e9e AVEC vous c'est dit ou la Kermesse, pois vrous promner"
+      ]
+   },
+   "Kermesse": {
+      "lem": "Kermesse",
+      "ctxt": "la journ\u00e9 arec vous c est dit ou la KERMESSE  pois vrous promner",
+      "deja utilis\u00e9": [
+         "la journ\u00e9 arec vous c&#39;est dit ou la KERMESSE, pois vrous promner"
+      ]
+   },
+   "pois": {
+      "lem": null,
+      "ctxt": "la journ\u00e9 arec vous c est dit ou la Kermesse  POIS vrous promner"
+   },
+   "vrous": {
+      "lem": null,
+      "ctxt": "la journ\u00e9 arec vous c est dit ou la Kermesse  pois VROUS promner"
+   },
+   "promner": {
+      "lem": "promener",
+      "ctxt": "la journ\u00e9 arec vous c est dit ou la Kermesse  pois vrous PROMNER",
+      "deja utilis\u00e9": [
+         "la journ\u00e9e vous c'est dit ou la Kermesse, pois vrous PROMENER"
+      ]
+   },
+   "cot": {
+      "lem": null,
+      "ctxt": "de ce COT vuis enteudrons les vuotous  et c est toujours quelque"
+   },
+   "vuis": {
+      "lem": null,
+      "ctxt": "de ce cot VUIS enteudrons les vuotous  et c est toujours quelque"
+   },
+   "enteudrons": {
+      "lem": "entendrons",
+      "ctxt": "de ce cot vuis ENTEUDRONS les vuotous  et c est toujours quelque",
+      "deja utilis\u00e9": [
+         "de ce c\u00f4t\u00e9 ; nous ENTENDRONS les vuotous, et c'est toujours quelque"
+      ]
+   },
+   "vuotous": {
+      "lem": null,
+      "ctxt": "de ce cot vuis enteudrons les VUOTOUS  et c est toujours quelque"
+   },
+   "toujours": {
+      "lem": null,
+      "ctxt": "de ce cot vuis enteudrons les vuotous  et c est TOUJOURS quelque"
+   },
+   "(os": {
+      "lem": null,
+      "ctxt": "(OS que de vor la pie "
+   },
+   "vor": {
+      "lem": null,
+      "ctxt": "(os que de VOR la pie "
+   },
+   "pie": {
+      "lem": null,
+      "ctxt": "(os que de vor la PIE "
+   },
+   "conterai": {
+      "lem": null,
+      "ctxt": "Je CONTERAI vre commssions \u00e0 Louse   il me faut mille"
+   },
+   "vre": {
+      "lem": null,
+      "ctxt": "Je conterai VRE commssions \u00e0 Louse   il me faut mille"
+   },
+   "commssions": {
+      "lem": null,
+      "ctxt": "Je conterai vre COMMSSIONS \u00e0 Louse   il me faut mille"
+   },
+   "Louse": {
+      "lem": "Louise",
+      "ctxt": "Je conterai vre commssions \u00e0 LOUSE   il me faut mille",
+      "deja utilis\u00e9": [
+         "Je conterai vre commssions \u00e0 LOUISE ; il me faut mille"
+      ]
+   },
+   "Metles": {
+      "lem": "petites",
+      "ctxt": "METLES chos\u00e9s de Crane1s ",
+      "deja utilis\u00e9": [
+         "PETITES chos\u00e9s de Crane1s."
+      ]
+   },
+   "chos\u00e9s": {
+      "lem": null,
+      "ctxt": "Metles CHOS\u00c9S de Crane1s "
+   },
+   "Crane1s": {
+      "lem": "cranes",
+      "ctxt": "Metles chos\u00e9s de CRANE1S "
+   },
+   "Vene": {
+      "lem": "Venez",
+      "ctxt": "VENE donc ous  J emtrgse les drmes et vplue les messours",
+      "deja utilis\u00e9": [
+         "VENEZ donc ous. J&#39;emtrgse les drmes et vplue les messours"
+      ]
+   },
+   "ous": {
+      "lem": null,
+      "ctxt": "Vene donc OUS  J emtrgse les drmes et vplue les messours"
+   },
+   "emtrgse": {
+      "lem": null,
+      "ctxt": "Vene donc ous  J EMTRGSE les drmes et vplue les messours"
+   },
+   "drmes": {
+      "lem": null,
+      "ctxt": "Vene donc ous  J emtrgse les DRMES et vplue les messours"
+   },
+   "vplue": {
+      "lem": null,
+      "ctxt": "Vene donc ous  J emtrgse les drmes et VPLUE les messours"
+   },
+   "messours": {
+      "lem": null,
+      "ctxt": "Vene donc ous  J emtrgse les drmes et vplue les MESSOURS"
+   },
+   "Mor": {
+      "lem": "Mr",
+      "ctxt": "A MOR Pruu ha aehae deLdberg)",
+      "deja utilis\u00e9": [
+         "A MR Prons ha aehae de Liedberg)"
+      ]
+   },
+   "Pruu": {
+      "lem": "Prons",
+      "ctxt": "A Mor PRUU ha aehae deLdberg)",
+      "deja utilis\u00e9": [
+         "A Mr PRONS ha aehae de Liedberg)"
+      ]
+   },
+   "ha": {
+      "lem": null,
+      "ctxt": "A Mor Pruu HA aeHAe deLdberg)"
+   },
+   "aehae": {
+      "lem": null,
+      "ctxt": "A Mor Pruu ha AEHAE deLdberg)"
+   },
+   "deLdberg)": {
+      "lem": "de Liedberg)",
+      "ctxt": "A Mor Pruu ha aehae DELDBERG)",
+      "deja utilis\u00e9": [
+         "A Mr Prons ha aehae DE LIEDBERG)"
+      ]
+   },
+   "15": {
+      "lem": null,
+      "ctxt": "Dyck  le 15 Salembiezt "
+   },
+   "Salembiezt": {
+      "lem": "Septembre",
+      "ctxt": "Dyck  le 15 SALEMBIEZT ",
+      "deja utilis\u00e9": [
+         "Dyck, le 15 SEPTEMBRE."
+      ]
+   },
+   "(Sign\u00e9)": {
+      "lem": "(Sign\u00e9)",
+      "ctxt": "(SIGN\u00c9) J 2e 2 ",
+      "deja utilis\u00e9": [
+         "(SIGN\u00c9) J 2e 2."
+      ]
+   },
+   "2e": {
+      "lem": null,
+      "ctxt": "(Sign\u00e9) J 2E 2 "
+   },
+   "2": {
+      "lem": null,
+      "ctxt": "asn surtont que ma ve puisse 2 y agitez librement vous avrez"
+   },
+   "1816": {
+      "lem": null,
+      "ctxt": "Dyck  le je Saroibre  1816 "
+   },
+   "LdSalm4": {
+      "lem": "LdSalm4",
+      "ctxt": "LDSALM4"
+   },
+   "Salm)": {
+      "lem": "Salm)",
+      "ctxt": "d SALM)",
+      "deja utilis\u00e9": [
+         "d SALM)"
+      ]
+   },
+   "fnez": {
+      "lem": null,
+      "ctxt": "FNEZ vous ahez fon  Monseur  nour remstes \u00e0 le cier Louire le"
+   },
+   "ahez": {
+      "lem": null,
+      "ctxt": "fnez vous AHEZ fon  Monseur  nour remstes \u00e0 le cier Louire le"
+   },
+   "fon": {
+      "lem": null,
+      "ctxt": "fnez vous ahez FON  Monseur  nour remstes \u00e0 le cier Louire le"
+   },
+   "Monseur": {
+      "lem": "Monsieur",
+      "ctxt": "fnez vous ahez fon  MONSEUR  nour remstes \u00e0 le cier Louire le",
+      "deja utilis\u00e9": [
+         "fnez vous ahez fon, MONSIEUR, nour remstes \u00e0 le cier Louise le"
+      ]
+   },
+   "nour": {
+      "lem": null,
+      "ctxt": "fnez vous ahez fon  Monseur  NOUR remstes \u00e0 le cier Louire le"
+   },
+   "remstes": {
+      "lem": null,
+      "ctxt": "fnez vous ahez fon  Monseur  nour REMSTES \u00e0 le cier Louire le"
+   },
+   "cier": {
+      "lem": null,
+      "ctxt": "fnez vous ahez fon  Monseur  nour remstes \u00e0 le CIER Louire le"
+   },
+   "Louire": {
+      "lem": "Louise",
+      "ctxt": "fnez vous ahez fon  Monseur  nour remstes \u00e0 le cier LOUIRE le",
+      "deja utilis\u00e9": [
+         "fnez vous ahez fon, Monsieur, nour remstes \u00e0 le cier LOUISE le"
+      ]
+   },
+   "marieu": {
+      "lem": null,
+      "ctxt": "MARIEU de gros de saples jaune c jout j aui dire que je d\u00e9proais en"
+   },
+   "gros": {
+      "lem": null,
+      "ctxt": "marieu de GROS de saples jaune c jout j aui dire que je d\u00e9proais en"
+   },
+   "saples": {
+      "lem": null,
+      "ctxt": "marieu de gros de SAPLES jaune c jout j aui dire que je d\u00e9proais en"
+   },
+   "jaune": {
+      "lem": null,
+      "ctxt": "marieu de gros de saples JAUNE c jout j aui dire que je d\u00e9proais en"
+   },
+   "jout": {
+      "lem": null,
+      "ctxt": "marieu de gros de saples jaune c JOUT j aui dire que je d\u00e9proais en"
+   },
+   "aui": {
+      "lem": null,
+      "ctxt": "marieu de gros de saples jaune c jout j AUI dire que je d\u00e9proais en"
+   },
+   "d\u00e9proais": {
+      "lem": null,
+      "ctxt": "marieu de gros de saples jaune c jout j aui dire que je D\u00c9PROAIS en"
+   },
+   "aune": {
+      "lem": null,
+      "ctxt": "avoir une AUNE de Brabant  de pareit   Mais il faut qu il soit bien"
+   },
+   "Brabant": {
+      "lem": "Brabant",
+      "ctxt": "avoir une aune de BRABANT  de pareit   Mais il faut qu il soit bien",
+      "deja utilis\u00e9": [
+         "avoir une aune de BRABANT, de pareit ? Mais il faut qu&#39;il soit bien"
+      ]
+   },
+   "pareit": {
+      "lem": null,
+      "ctxt": "avoir une aune de Brabant  de PAREIT   Mais il faut qu il soit bien"
+   },
+   "semblable": {
+      "lem": null,
+      "ctxt": "SEMBLABLE   car il ne sagt de rien mous que de Messortr des manche  8"
+   },
+   "car": {
+      "lem": null,
+      "ctxt": "semblable   CAR il ne sagt de rien mous que de Messortr des manche  8"
+   },
+   "sagt": {
+      "lem": "s'agit",
+      "ctxt": "semblable   car il ne SAGT de rien mous que de Messortr des manche  8",
+      "deja utilis\u00e9": [
+         "semblable ; car il ne S'AGIT de rien mous que de ressortir des manche, 8"
+      ]
+   },
+   "mous": {
+      "lem": null,
+      "ctxt": "semblable   car il ne sagt de rien MOUS que de Messortr des manche  8"
+   },
+   "Messortr": {
+      "lem": "ressortir",
+      "ctxt": "semblable   car il ne sagt de rien mous que de MESSORTR des manche  8",
+      "deja utilis\u00e9": [
+         "semblable ; car il ne s'agit de rien mous que de RESSORTIR des manche, 8"
+      ]
+   },
+   "manche": {
+      "lem": null,
+      "ctxt": "semblable   car il ne sagt de rien mous que de Messortr des MANCHE  8"
+   },
+   "8": {
+      "lem": null,
+      "ctxt": "semblable   car il ne sagt de rien mous que de Messortr des manche  8"
+   },
+   "bagne": {
+      "lem": null,
+      "ctxt": "ou ne BAGNE pas avec cela   s il n y en a pas  je m en passerai"
+   },
+   "passerai": {
+      "lem": null,
+      "ctxt": "ou ne bagne pas avec cela   s il n y en a pas  je m en PASSERAI"
+   },
+   "vais": {
+      "lem": null,
+      "ctxt": "Je VAIS enfin  je crois  faire le fameux voy age de Colague  et"
+   },
+   "crois": {
+      "lem": null,
+      "ctxt": "Je vais enfin  je CROIS  faire le fameux voy age de Colague  et"
+   },
+   "fameux": {
+      "lem": null,
+      "ctxt": "Je vais enfin  je crois  faire le FAMEUX voy age de Colague  et"
+   },
+   "voy": {
+      "lem": null,
+      "ctxt": "Je vais enfin  je crois  faire le fameux VOY age de Colague  et"
+   },
+   "age": {
+      "lem": null,
+      "ctxt": "Je vais enfin  je crois  faire le fameux voy AGE de Colague  et"
+   },
+   "Colague": {
+      "lem": "Cologne",
+      "ctxt": "Je vais enfin  je crois  faire le fameux voy age de COLAGUE  et",
+      "deja utilis\u00e9": [
+         "Je vais enfin, je crois, faire le fameux voy age de COLOGNE, et"
+      ]
+   },
+   "hasard": {
+      "lem": null,
+      "ctxt": "\u00e0 tout HASARD  vous seriez bien amables de venir toruis deman ou"
+   },
+   "seriez": {
+      "lem": null,
+      "ctxt": "\u00e0 tout hasard  vous SERIEZ bien amables de venir toruis deman ou"
+   },
+   "amables": {
+      "lem": null,
+      "ctxt": "\u00e0 tout hasard  vous seriez bien AMABLES de venir toruis deman ou"
+   },
+   "toruis": {
+      "lem": null,
+      "ctxt": "\u00e0 tout hasard  vous seriez bien amables de venir TORUIS deman ou"
+   },
+   "deman": {
+      "lem": "demain",
+      "ctxt": "Arevor hone \u00e0 DEMAN ",
+      "deja utilis\u00e9": [
+         "A revoir hone \u00e0 DEMAIN."
+      ]
+   },
+   "apres": {
+      "lem": null,
+      "ctxt": "APRES demain  Il n est gues tion ie que de Keinete et en abant pag-"
+   },
+   "gues": {
+      "lem": null,
+      "ctxt": "apres demain  Il n est GUES tion ie que de Keinete et en abant pag-"
+   },
+   "ie": {
+      "lem": null,
+      "ctxt": "apres demain  Il n est gues tion IE que de Keinete et en abant pag-"
+   },
+   "Keinete": {
+      "lem": "Kermesse",
+      "ctxt": "apres demain  Il n est gues tion ie que de KEINETE et en abant pag-",
+      "deja utilis\u00e9": [
+         "apres demain. il n&#39;est gues tion ie que de KERMESSE et en abant pag-"
+      ]
+   },
+   "abant": {
+      "lem": null,
+      "ctxt": "apres demain  Il n est gues tion ie que de Keinete et en ABANT pag-"
+   },
+   "pag-": {
+      "lem": null,
+      "ctxt": "apres demain  Il n est gues tion ie que de Keinete et en abant PAG-"
+   },
+   "mener": {
+      "lem": null,
+      "ctxt": "MENER du cot\u00e9 des bieuse pabit\u00e9s nous verrions encore une quure "
+   },
+   "cot\u00e9": {
+      "lem": null,
+      "ctxt": "mener du COT\u00c9 des bieuse pabit\u00e9s nous verrions encore une quure "
+   },
+   "bieuse": {
+      "lem": null,
+      "ctxt": "mener du cot\u00e9 des BIEUSE pabit\u00e9s nous verrions encore une quure "
+   },
+   "pabit\u00e9s": {
+      "lem": null,
+      "ctxt": "mener du cot\u00e9 des bieuse PABIT\u00c9S nous verrions encore une quure "
+   },
+   "verrions": {
+      "lem": null,
+      "ctxt": "mener du cot\u00e9 des bieuse pabit\u00e9s nous VERRIONS encore une quure "
+   },
+   "quure": {
+      "lem": null,
+      "ctxt": "mener du cot\u00e9 des bieuse pabit\u00e9s nous verrions encore une QUURE "
+   },
+   "(dasle": {
+      "lem": null,
+      "ctxt": "(DASLE Prine  L)"
+   },
+   "Prine": {
+      "lem": "urine",
+      "ctxt": "(dasle PRINE  L)"
+   },
+   "L)": {
+      "lem": "de",
+      "ctxt": "(dasle Prine  L)"
+   },
+   "(eaer": {
+      "lem": null,
+      "ctxt": "(EAER  je pars perdi "
+   },
+   "pars": {
+      "lem": null,
+      "ctxt": "(eaer  je PARS perdi "
+   },
+   "perdi": {
+      "lem": null,
+      "ctxt": "(eaer  je pars PERDI "
+   },
+   "Voite": {
+      "lem": "Voil\u00e0",
+      "ctxt": "VOITE la nuissance tuit a fait \u00e0 la raison daus potre cher pairs",
+      "deja utilis\u00e9": [
+         "VOIL\u00c0 la puissance tuit a fait \u00e0 la raison daus potre cher pairs"
+      ]
+   },
+   "nuissance": {
+      "lem": "puissance",
+      "ctxt": "Voite la NUISSANCE tuit a fait \u00e0 la raison daus potre cher pairs",
+      "deja utilis\u00e9": [
+         "Voil\u00e0 la PUISSANCE tuit a fait \u00e0 la raison daus potre cher pairs"
+      ]
+   },
+   "tuit": {
+      "lem": null,
+      "ctxt": "Voite la nuissance TUIT a fait \u00e0 la raison daus potre cher pairs"
+   },
+   "raison": {
+      "lem": null,
+      "ctxt": "Voite la nuissance tuit a fait \u00e0 la RAISON daus potre cher pairs"
+   },
+   "daus": {
+      "lem": null,
+      "ctxt": "Voite la nuissance tuit a fait \u00e0 la raison DAUS potre cher pairs"
+   },
+   "potre": {
+      "lem": null,
+      "ctxt": "Voite la nuissance tuit a fait \u00e0 la raison daus POTRE cher pairs"
+   },
+   "pairs": {
+      "lem": null,
+      "ctxt": "Voite la nuissance tuit a fait \u00e0 la raison daus potre cher PAIRS"
+   },
+   "aurons": {
+      "lem": null,
+      "ctxt": "et nous AURONS de la banguillit\u00e9  Dien merce Je l aime dens le monte"
+   },
+   "banguillit\u00e9": {
+      "lem": null,
+      "ctxt": "et nous aurons de la BANGUILLIT\u00c9  Dien merce Je l aime dens le monte"
+   },
+   "Dien": {
+      "lem": "Dieu",
+      "ctxt": "et nous aurons de la banguillit\u00e9  DIEN merce Je l aime dens le monte",
+      "deja utilis\u00e9": [
+         "et nous aurons de la banguillit\u00e9, DIEU merce Je l&#39;aime dens le monte"
+      ]
+   },
+   "merce": {
+      "lem": null,
+      "ctxt": "et nous aurons de la banguillit\u00e9  Dien MERCE Je l aime dens le monte"
+   },
+   "dens": {
+      "lem": null,
+      "ctxt": "et nous aurons de la banguillit\u00e9  Dien merce Je l aime DENS le monte"
+   },
+   "monte": {
+      "lem": null,
+      "ctxt": "et nous aurons de la banguillit\u00e9  Dien merce Je l aime dens le MONTE"
+   },
+   "asn": {
+      "lem": null,
+      "ctxt": "ASN surtont que ma ve puisse 2 y agitez librement vous avrez"
+   },
+   "surtont": {
+      "lem": "surtout",
+      "ctxt": "asn SURTONT que ma ve puisse 2 y agitez librement vous avrez",
+      "deja utilis\u00e9": [
+         "asn SURTOUT que ma ve puisse 2&#39;y agitez librement vous avrez"
+      ]
+   },
+   "ve": {
+      "lem": null,
+      "ctxt": "asn surtont que ma VE puisse 2 y agitez librement vous avrez"
+   },
+   "agitez": {
+      "lem": null,
+      "ctxt": "asn surtont que ma ve puisse 2 y AGITEZ librement vous avrez"
+   },
+   "librement": {
+      "lem": null,
+      "ctxt": "asn surtont que ma ve puisse 2 y agitez LIBREMENT vous avrez"
+   },
+   "avrez": {
+      "lem": null,
+      "ctxt": "asn surtont que ma ve puisse 2 y agitez librement vous AVREZ"
+   },
+   "inallr": {
+      "lem": null,
+      "ctxt": "en bien tort de vous INALLR la jour de notre monde  Mous udoens"
+   },
+   "jour": {
+      "lem": null,
+      "ctxt": "en bien tort de vous inallr la JOUR de notre monde  Mous udoens"
+   },
+   "notre": {
+      "lem": null,
+      "ctxt": "en bien tort de vous inallr la jour de NOTRE monde  Mous udoens"
+   },
+   "Mous": {
+      "lem": "Nous",
+      "ctxt": "en bien tort de vous inallr la jour de notre monde  MOUS udoens",
+      "deja utilis\u00e9": [
+         "en bien tort de vous inallr la jour de notre monde. NOUS udoens"
+      ]
+   },
+   "udoens": {
+      "lem": null,
+      "ctxt": "en bien tort de vous inallr la jour de notre monde  Mous UDOENS"
+   },
+   "pas\u00e9": {
+      "lem": null,
+      "ctxt": "PAS\u00c9 de jelis moments la soir  J ai it\u00e9 heureuse comme une vraie"
+   },
+   "jelis": {
+      "lem": null,
+      "ctxt": "pas\u00e9 de JELIS moments la soir  J ai it\u00e9 heureuse comme une vraie"
+   },
+   "moments": {
+      "lem": null,
+      "ctxt": "pas\u00e9 de jelis MOMENTS la soir  J ai it\u00e9 heureuse comme une vraie"
+   },
+   "it\u00e9": {
+      "lem": null,
+      "ctxt": "pas\u00e9 de jelis moments la soir  J ai IT\u00c9 heureuse comme une vraie"
+   },
+   "vraie": {
+      "lem": null,
+      "ctxt": "pas\u00e9 de jelis moments la soir  J ai it\u00e9 heureuse comme une VRAIE"
+   },
+   "enfnt": {
+      "lem": null,
+      "ctxt": "ENFNT haunr me conorve cete pinesse d espouir \u00e0 d\u00e9fant de l autre"
+   },
+   "haunr": {
+      "lem": null,
+      "ctxt": "enfnt HAUNR me conorve cete pinesse d espouir \u00e0 d\u00e9fant de l autre"
+   },
+   "conorve": {
+      "lem": null,
+      "ctxt": "enfnt haunr me CONORVE cete pinesse d espouir \u00e0 d\u00e9fant de l autre"
+   },
+   "pinesse": {
+      "lem": null,
+      "ctxt": "enfnt haunr me conorve cete PINESSE d espouir \u00e0 d\u00e9fant de l autre"
+   },
+   "espouir": {
+      "lem": null,
+      "ctxt": "enfnt haunr me conorve cete pinesse d ESPOUIR \u00e0 d\u00e9fant de l autre"
+   },
+   "d\u00e9fant": {
+      "lem": null,
+      "ctxt": "enfnt haunr me conorve cete pinesse d espouir \u00e0 D\u00c9FANT de l autre"
+   },
+   "Vest": {
+      "lem": "C'est",
+      "ctxt": "VEST la sourre de tout ce qu il y  a d\u00e9 bon et de consolmnt dans lavdier",
+      "deja utilis\u00e9": [
+         "C'EST la sourre de tout ce qu&#39;il y &#39;a d\u00e9 bon et de consolmnt dans lavdier"
+      ]
+   },
+   "sourre": {
+      "lem": null,
+      "ctxt": "Vest la SOURRE de tout ce qu il y  a d\u00e9 bon et de consolmnt dans lavdier"
+   },
+   "d\u00e9": {
+      "lem": null,
+      "ctxt": "Vest la sourre de tout ce qu il y  a D\u00c9 bon et de consolmnt dans lavdier"
+   },
+   "consolmnt": {
+      "lem": null,
+      "ctxt": "Vest la sourre de tout ce qu il y  a d\u00e9 bon et de CONSOLMNT dans lavdier"
+   },
+   "lavdier": {
+      "lem": null,
+      "ctxt": "Vest la sourre de tout ce qu il y  a d\u00e9 bon et de consolmnt dans LAVDIER"
+   },
+   "Pai": {
+      "lem": "J'ai",
+      "ctxt": "PAI \u00e9crit des volumes ce matin  vous en \u00eates la derni\u00e8re feuille",
+      "deja utilis\u00e9": [
+         "J'AI \u00e9crit des volumes ce matin, vous en \u00eates la derni\u00e8re feuille"
+      ]
+   },
+   "\u00e9crit": {
+      "lem": null,
+      "ctxt": "Pai \u00c9CRIT des volumes ce matin  vous en \u00eates la derni\u00e8re feuille"
+   },
+   "volumes": {
+      "lem": null,
+      "ctxt": "Pai \u00e9crit des VOLUMES ce matin  vous en \u00eates la derni\u00e8re feuille"
+   },
+   "feuille": {
+      "lem": null,
+      "ctxt": "Pai \u00e9crit des volumes ce matin  vous en \u00eates la derni\u00e8re FEUILLE"
+   },
+   "savez": {
+      "lem": null,
+      "ctxt": "vous SAVEZ a ris des \u00e9harchandes de Poris auc derners les bous "
+   },
+   "ris": {
+      "lem": null,
+      "ctxt": "vous savez a RIS des \u00e9harchandes de PoRIS auc derners les bous "
+   },
+   "\u00e9harchandes": {
+      "lem": "marchandes",
+      "ctxt": "vous savez a ris des \u00c9HARCHANDES de Poris auc derners les bous ",
+      "deja utilis\u00e9": [
+         "vous savez a ris des MARCHANDES de Paris auc derners les bous."
+      ]
+   },
+   "Poris": {
+      "lem": "Paris",
+      "ctxt": "vous savez a ris des \u00e9harchandes de PORIS auc derners les bous ",
+      "deja utilis\u00e9": [
+         "vous savez a ris des marchandes de PARIS auc derners les bous."
+      ]
+   },
+   "auc": {
+      "lem": null,
+      "ctxt": "vous savez a ris des \u00e9harchandes de Poris AUC derners les bous "
+   },
+   "derners": {
+      "lem": null,
+      "ctxt": "vous savez a ris des \u00e9harchandes de Poris auc DERNERS les bous "
+   },
+   "bous": {
+      "lem": null,
+      "ctxt": "vous savez a ris des \u00e9harchandes de Poris auc derners les BOUS "
+   },
+   "apendant": {
+      "lem": null,
+      "ctxt": "APENDANT je ne veux vous rien dire d agr\u00e9able ausjourd hunit   cer il"
+   },
+   "ausjourd": {
+      "lem": null,
+      "ctxt": "apendant je ne veux vous rien dire d agr\u00e9able AUSJOURD hunit   cer il"
+   },
+   "hunit": {
+      "lem": null,
+      "ctxt": "apendant je ne veux vous rien dire d agr\u00e9able ausjourd HUNIT   cer il"
+   },
+   "cer": {
+      "lem": null,
+      "ctxt": "apendant je ne veux vous rien dire d agr\u00e9able ausjourd hunit   CER il"
+   },
+   "semble": {
+      "lem": null,
+      "ctxt": "me SEMBLE que vors m arez bouv\u00e9 massade la drni\u00e8re fois"
+   },
+   "vors": {
+      "lem": null,
+      "ctxt": "me semble que VORS m arez bouv\u00e9 massade la drni\u00e8re fois"
+   },
+   "arez": {
+      "lem": null,
+      "ctxt": "me semble que vors m AREZ bouv\u00e9 massade la drni\u00e8re fois"
+   },
+   "bouv\u00e9": {
+      "lem": null,
+      "ctxt": "me semble que vors m arez BOUV\u00c9 massade la drni\u00e8re fois"
+   },
+   "massade": {
+      "lem": null,
+      "ctxt": "me semble que vors m arez bouv\u00e9 MASSADE la drni\u00e8re fois"
+   },
+   "drni\u00e8re": {
+      "lem": null,
+      "ctxt": "me semble que vors m arez bouv\u00e9 massade la DRNI\u00c8RE fois"
+   },
+   "fois": {
+      "lem": null,
+      "ctxt": "me semble que vors m arez bouv\u00e9 massade la drni\u00e8re FOIS"
+   },
+   "Prucs": {
+      "lem": "trucs",
+      "ctxt": "A Mr Mr PRUCS au (ataue de Liederg)"
+   },
+   "(ataue": {
+      "lem": null,
+      "ctxt": "A Mr Mr Prucs au (ATAUE de Liederg)"
+   },
+   "Liederg)": {
+      "lem": "Liedberg)",
+      "ctxt": "A Mr Mr Prucs au (ataue de LIEDERG)",
+      "deja utilis\u00e9": [
+         "A Mr Mr Prucs au (ataue de LIEDBERG)"
+      ]
+   },
+   "(k": {
+      "lem": null,
+      "ctxt": "(K  (Cerrese p)"
+   },
+   "(Cerrese": {
+      "lem": "(Cerrese",
+      "ctxt": "(k  (CERRESE p)"
+   },
+   "p)": {
+      "lem": null,
+      "ctxt": "(k  (Cerrese P)"
+   },
+   "Saroibre": {
+      "lem": "Septembre",
+      "ctxt": "Dyck  le je SAROIBRE  1816 ",
+      "deja utilis\u00e9": [
+         "Dyck, le je SEPTEMBRE, 1816."
+      ]
+   },
+   "Arevor": {
+      "lem": "A revoir",
+      "ctxt": "AREVOR hone \u00e0 deman ",
+      "deja utilis\u00e9": [
+         "A REVOIR hone \u00e0 demain."
+      ]
+   },
+   "hone": {
+      "lem": null,
+      "ctxt": "Arevor HONE \u00e0 deman "
+   },
+   "(Sgn\u00e9)": {
+      "lem": "(Sign\u00e9)",
+      "ctxt": "(SGN\u00c9) Cons tence de Sal",
+      "deja utilis\u00e9": [
+         "(SIGN\u00c9) Cons tence de Salm"
+      ]
+   },
+   "Cons": {
+      "lem": "bons",
+      "ctxt": "(Sgn\u00e9) CONS tence de Sal"
+   },
+   "tence": {
+      "lem": null,
+      "ctxt": "(Sgn\u00e9) Cons TENCE de Sal"
+   },
+   "Sal": {
+      "lem": "Salm",
+      "ctxt": "(Sgn\u00e9) Cons tence de SAL",
+      "deja utilis\u00e9": [
+         "(Sign\u00e9) Cons tence de SALM"
+      ]
+   },
+   "184": {
+      "lem": null,
+      "ctxt": "184"
+   },
+   "(rr": {
+      "lem": null,
+      "ctxt": "(RR p  p )"
+   },
+   "p": {
+      "lem": null,
+      "ctxt": "(rr P  P )"
+   },
+   ")": {
+      "lem": null,
+      "ctxt": "(rr p  p )"
+   }
+}

@@ -1,4 +1,7 @@
 import click
+import importlib
+import os
+from constantes import DICTPAGES
 
 @click.command()
 def dictCDStransform():
@@ -28,7 +31,6 @@ def dictCDStransform():
         )
 
 
-@click.command()
 def dictCDSintegration():
     """
     Ce script prend comme paramètres une source consistant en un dictionnaire python d'entrée
@@ -37,4 +39,12 @@ def dictCDSintegration():
     :param source: dictionnaire python issu de la correction automatisée d'une page de transcription
     :type source: chemin de fichier
     """
-    
+    # On boucle sur les fichiers du dossier dictPages
+    for root, dirs, files in os.walk(DICTPAGES):
+        for filename in files:
+            with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
+                print("writing to " + DICTPAGES + "/Dict" + filename.replace(".xml", ".py"))
+                file_out.write("dictPage = ")
+                file_out.write(dictionary)
+
+dictCDSintegration()

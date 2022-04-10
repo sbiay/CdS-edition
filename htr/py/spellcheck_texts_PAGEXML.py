@@ -1,4 +1,5 @@
 import os
+import json
 from lxml import etree
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
@@ -117,13 +118,9 @@ def spellcheck_texts_page_XML():
                                 'lem': None,
                                 'ctxt': contexte.replace("'", ' ')
                             }
-            # On re-type et indente le dictionnaire pour la sortie
-            dictionary = str(dictionary).replace("},", "},\n").replace(": {", ":\n\t{").replace("', '", "',\n\t '")
             
             # On écrit le résultat dans un fichier de sortie au format .py
-            with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".py"), "w") as file_out:
-                print("writing to " + DICTPAGES + "/Dict" + filename.replace(".xml", ".py"))
-                file_out.write("dictPage = ")
-                file_out.write(dictionary)
+            with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".json"), "w") as jsonf:
+                json.dump(dictionary, jsonf, indent=3)
 
 spellcheck_texts_page_XML()
