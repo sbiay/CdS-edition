@@ -36,6 +36,9 @@
 % Images
 \usepackage{graphicx}
 
+% Citations
+\usepackage{csquotes}
+
 % DOCUMENT
 \begin{document}
 	
@@ -98,7 +101,7 @@
 					\centering
 					\includegraphics{img/reduit_CdS02_Konv002-02_0064_copie.jpg}
 					\caption{Rubrique "autographe".}
-					\label{fig: premFig}% Le label est le Fig. qui se place au début de la légende, le premFig est la clé d'appel de la figure.
+					\label{autographe}% Le label est le Fig. qui se place au début de la légende, le premFig est la clé d'appel de la figure.
 				\end{figure}
 			\end{itemize}
 
@@ -113,7 +116,7 @@
 			\end{itemize}
 			\selectlanguage{french}
 			
-			La figure \ref{typageRegions} propose une mise en oeuvre de ce typage des régions.	
+			La figure \ref{typageRegions} \hyperref[typageRegions]{ci-dessous} propose une mise en oeuvre de ce typage des régions.	
 
 	        \begin{figure}[!h]
 	        	% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
@@ -148,5 +151,30 @@
 			
 			En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
 			
+		\section{Mise en oeuvre de la reconnaissance d'écriture}
+			Dans le cadre de son stage, H.~Souvay a initié l'entraînement d'un modèle HTR à partir d'un petit volume de vérités de terrain \footcite{souvayCorrespondanceConstanceSalm2021}. La méthodologie employée était la suivante~:
+			\begin{quotation}
+				Nous avons décidé de tenter la transcription automatique sur un sous-ensemble du corpus composé de copies de lettres compilées dans des recueils. […] Les mains sont relativement constantes dans le temps dans ce sous-ensemble contrairement au reste du corpus. Même proches, ces mains demeurent différentes. Nous avons donc opté pour l’entraînement d’un modèle multi-mains, c’est à dire un modèle non-spécialisé capable de transcrire plusieurs mains représentées dans le corpus d’entraînement\footcite[p.~6-7]{souvayCorrespondanceConstanceSalm2021}
+			\end{quotation}
+
+			Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
+	
+		\section{Automatiser la correction des prédictions}
+			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet.
+					
+			\subsection{Analyser les mots}
+				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts-PAGEXML.py} à nos prédictions HTR. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. En outre, il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier~; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
+				
+				Afin de faciliter la correction des dictionnaires généré par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine~; le contexte est en effet déterminant pour valider ou modifier une correction proposée automatiquement.
+				
+				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{get-lemmes}, qui fouille les vérités terrains déjà constituées et permet de donc de valider rapidement les mots déjà rencontrées dans le traitement de la correspondance de \gls{cds} avant de devoir lancer leur recherche dans un dictionnaire généraliste plus vaste.
+				
+				Les corrections précédemment validées sont elle aussi mobilisées lors de l'analyse des prédictions, ce qui permet non seulement de réexploiter facilement des corrections déjà effectuées, mais aussi d'écarter des formes qui auraient précédemment identifiées comme ambiguës (pouvant être résolues de plusieurs façons selon le contexte, et donc à ne pas corriger automatiquement).
+				
+			\subsection{Constituer un dictionnaire personnalisé}
+
+			\subsection{Appliquer le dictionnaire personnalisé aux prédictions HTR}
+				Les corrections s'avérant particulièrement nombreuses, le script \textsf{text-correction-XML.py} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
+				
            	
 \end{document}
