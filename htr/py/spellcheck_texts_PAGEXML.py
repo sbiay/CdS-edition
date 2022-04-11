@@ -3,7 +3,7 @@ import json
 from lxml import etree
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
-from constantes import XMLaCORRIGER, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
+from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
 
 
 def get_lemmes():
@@ -77,12 +77,16 @@ def spellcheck_texts_page_XML():
     # This means that all the uppercase words will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary
     
+    # On charge le contenu du dictionnaire dictCDS
+    with open(DICTCDS) as jsonf:
+        dictCDS = json.load(jsonf)
+    
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
             dictionary = {}
             # On ouvre le fichier XML d'entrée
             with open(XMLaCORRIGER + filename, 'r') as xml_file:
-                print("reading from " + XMLaCORRIGER + filename)
+                print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
                 soup = BeautifulSoup(xml_file, 'lxml')
             for unicode in soup.find_all('unicode'):
                 content = unicode.string
@@ -95,14 +99,14 @@ def spellcheck_texts_page_XML():
                     # On cherche chaque mot dans les lemmes des vérités de terrain
                     if mot not in get_lemmes():
                         # On cherche chaque mot dans le dictCDS
-                        if dict.get(mot):
+                        if dictCDS.get(mot):
                             # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
-                            if dict[mot].get('lem'):
+                            if dictCDS[mot].get('lem'):
                                 # On écrit l'entrée du dictionnaire pour préciser le contexte
                                 dictionary[mot] = {
-                                    'lem': dict[mot]['lem'],
+                                    'lem': dictCDS[mot]['lem'],
                                     'ctxt': contexte.replace("'", ' '),
-                                    'deja utilisé': dict[mot]['ctxt']
+                                    'deja utilisé': dictCDS[mot]['ctxt']
                                 }
                         # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
                         elif spell.unknown(mot):
@@ -121,5 +125,7 @@ def spellcheck_texts_page_XML():
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3)
+                print(f"Le dictionnaire {DICTPAGES.strip() + 'Dict' + filename.replace('.xml', '.json')}"
+                      f" a été écrit correctement.")
 
 spellcheck_texts_page_XML()
