@@ -9,6 +9,8 @@
 
 %il faut mettre au moins une langue
 \usepackage[english,french]{babel}
+% Commande personnalisée pour la typographie des langues
+\newcommand{\langue}[1]{\emph{#1}}
 
 % configurer le document selon les normes de l'école
 \usepackage[margin=2.5cm]{geometry} %marges
@@ -31,6 +33,8 @@
 \makeglossaries
 \newacronym{cds}{CdS}{Constance de Salm}
 
+% Images
+\usepackage{graphicx}
 
 % DOCUMENT
 \begin{document}
@@ -56,15 +60,93 @@
 			\item Le deuxième volume\footcite{salmCorrespondanceGeneraleSeconde}  présente en revanche une meilleure cohérence paléographique : la même main peut se suivre sur un bon nombre de pages consécutives, facilitant l'entraînement d'un modèle sur une écriture particulière. En partie utilisé par H. Souvay pour ses tests, nous avons repris ce volume pour constituer un premier sous-corpus paléographiquement cohérent.
 		\end{enumerate}
 	
-		\subsection{Main 1}
-		Nous avons établi une liste de 47 images (soit 47 doubles pages) au sein du 2e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela arbitrairement découpé les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement\footnote{Des reproductions en qualité réduite de ces images ont été placées dans le dossier \textsf{./htr/img/main1bd}}.
+			\subsection{Main 1}
+			Nous avons établi une liste de 47 images (soit 47 doubles pages) au sein du 2e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela arbitrairement découpé les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement\footnote{Des reproductions en qualité réduite de ces images ont été placées dans le dossier \textsf{./htr/img/main1bd}}.
 		
-		\subsection{Écriture de \gls{cds}}
-		Le site ne publie aucune lettre originale de la main de \gls{cds}, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}.
+			\subsection{Écriture de \gls{cds}}
+			Le site ne publie aucune lettre originale de la main de \gls{cds}, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}.
 		
-		Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
+			Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
 		
 		\section{Segmentation et typage des zones d'écriture}
-		Nous 
+		Nous avons procédé à une première expérience de transcription sur le sous-corpus \textit{Main 1} avec le logiciel e-Scriptorium installé localement. 
+        
+            \subsection{Typer les régions d'écriture}
+            Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes selon leur type, afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
+            
+            Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F. Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} :
+				        
+	        Cetaines régions pourraient être directement appliquées :
+			\selectlanguage{english}
+			\begin{itemize}
+				\item \textbf{Main} (pink)
+				\item \textbf{Title} (green)
+				\item \textbf{Signature} (orange)
+				\item \textbf{Letterhead} (purple)
+				\item \textbf{Numbering} (dark green)
+				\item \textbf{Salute} (red)
+				\item \textbf{Dateline} (dark blue)
+			\end{itemize}
+			\selectlanguage{french}
+			
+			Il pourrait être pertinent de modifier l'usage de :
+			\selectlanguage{english}
+			\begin{itemize}
+				\item \textbf{Additions} (turquoise): \langue{cette catégorie est utilisée ailleurs dans Segmonto, pour les documents administratifs			\selectlanguage{french}\footcite{chagueDocumentsAdministratifsXIXe2021}~; elle intervient dans le traitement du document postérieurement à sa rédaction. Cette pertinence reste à confirmer. Cette catégorie pourrait également s'appliquer aux rubriques~:}
+				\begin{figure}[!h]
+					% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
+					\centering
+					\includegraphics{img/reduit_CdS02_Konv002-02_0064_copie.jpg}
+					\caption{Rubrique "autographe".}
+					\label{fig: premFig}% Le label est le Fig. qui se place au début de la légende, le premFig est la clé d'appel de la figure.
+				\end{figure}
+			\end{itemize}
+
+			
+			Il pourrait être pertinent de reprendre ou de créer d'autres concepts :
+			\selectlanguage{english}
+			\begin{itemize}
+				\item \textbf{Note} (turquoise): \langue{pour les notes infrapaginales (utilisé dans SegmOnto pour les imprimés\selectlanguage{french}\footcite{Imprimes2021}}
+				\selectlanguage{english}
+				\item \textbf{Postscritp} (yellow): \langue{cela repmplacerait le rôle à l'origine assigné à \langue{Additions}. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum}.
 				
+			\end{itemize}
+			\selectlanguage{french}
+			
+			La figure \ref{typageRegions} propose une mise en oeuvre de ce typage des régions.	
+
+	        \begin{figure}[!h]
+	        	% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
+	        	\centering
+				\rotatebox{90}{%
+					\includegraphics[scale=0.65]{img/essai-zones-CdS02_Konv002-02_0066.jpg}%
+				}%
+			\caption{Exemple de typage des zones de texte sur une double page.}%
+			\label{typageRegions}%
+	        \end{figure}
+        
+            \subsection{Typer les lignes d'écriture}
+            Les types de lignes dont on propose l'utilisation sont~:
+            
+            \begin{itemize}
+				\item \textbf{Main}
+				\item \textbf{Verse}: \langue{les passages en vers sont relativement nombreux}
+				\item \textbf{Correction}: catégorie existant par défaut dans e-Scriptorium, elle s'appliquerait uniquement pour les corrections appliquées dans l'interligne.
+            \end{itemize}
+        
+	        \subsection{Phénomènes graphiques particuliers}
+            \gls{cds} a corrigé certains mots de sa main~:
+ 
+				\begin{itemize}
+				 	\item En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée~; le typage de la ligne demanderait alors beaucoup d'effort pour un résultat minime~;
+				 	\item En réécrivant dans l'interligne~: il est alors pertinent d'utiliser le type de ligne e-Scriptorium \textbf{Correction}.
+				\end{itemize}
+			
+			Un ensemble de solutions d'encodage des corrections a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}.
+			
+			J'envisage plutôt \textbf{ne pas encoder ces éléments dans la phase d'HTR}, et de ne les aborder que la phase d'édition. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition TEI, de suivre la reproduction du manuscrit à éditer. En outre, introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités de terrain.
+			
+			En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
+			
+           	
 \end{document}

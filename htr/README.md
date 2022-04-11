@@ -31,37 +31,13 @@ Plan :
 
 ***
 
-# <span style="color : rgb(015, 005, 230, 0.8)">Analyse du corpus</span>
-## <span style="color : rgb(020, 080, 170, 0.8)">Paléographie</span>
-- Ecriture de l'A. difficile à lire et reconnaître ;
-- 4-5 mains : donc 4-5 algorithmes.
-- Une partie de manuscrit à la BNF qui pourrait être de sa main.
-
-## <span style="color : rgb(020, 080, 170, 0.8)">Organisation des sources</span>
-- Peut-on trouver une cohérence de main en prenant un **filtre chronologique** ?
-	- Par exemple l'année 1800, les lettres ayant pour auteur CDS : 29, soit 28 copies et 1 item sans type.
-
+# <span style="color : rgb(020, 080, 170, 0.8)">Organisation des sources</span>
 - On peut accéder aux **recueils complets** des lettres en format pdf sous le *Dokumenttyp* *band* :
 	1. [1er volume](../recueils/2e-copie-01-CdS-b2-007z-0.pdf)
 	2. [2e volume](../recueils/2e-copie-02-CdS-b2-0080-0.pdf) : La distribution des mains me paraît plus claire dans le 2e volume que dans le premier ;
 	6. [6e vol.](https://constance-de-salm.de/wp-content/themes/pukeko-child/app/assets/vimg/CdS-b2-0084-0.pdf) me paraît plutôt homogène
 
 Le **volume des recensions** est assez homogène sur le plan de l'écriture, mais ne concerne pas la correspondance [ici](https://constance-de-salm.de/archiv/#/document/11221).
-
-# <span style="color : rgb(015, 005, 230, 0.8)">Problématique</span>
-- Le problème des recueils est l'hétérogénéité des mains sur la même page ?
-- Peut-on regrouper des copies cohérentes de lettres ?
-- Faut-il trouver une méthode de **segmentation particulière** ? Il n'est pas possible d'éditer plusieurs textes dans le même export XML : on veut pouvoir associer un texte unique avec ses métadonnées.
-	- Comme on a déjà le début de la lettre, peut-être pourrait-on faire reconnaître la fin automatiquement ? car une lettre se termine toujours par une signature.
-- Y aurait-il des idées à prendre dans le projet DAHN ? (non, purement en OCR).
-
-Deux pistes méthodologiques se dessinent :
-1. Rassembler dans un premier temps des lettres qui sont de **la même main**, pour voir quels sont les résultats. Hyppolite a fait plein d'essais : 
-    - Comment les sources ont été sélectionnées et les 31 modèles entraînés ?
-    - Quels ont été les résultats ? 
-    - Quels sont après les expériences que l'on peut faire ?
-
-2. Reprendre un modèle déjà entraîné à travailler sur plusieurs mains (l'option privilégiée par Lectaurep, cf. {chagueCreationModelesTranscriptiona}).
 
 # <span style="color : rgb(015, 005, 230, 0.8)">Expériences comparables</span>
 ## <span style="color : rgb(020, 080, 170, 0.8)">Lectaurep</span>
@@ -102,21 +78,6 @@ Eléments TEI importants :
 	- `postscript`
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Proposition d'ontologie de SegmOnto</span>
-F. Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle ({chiffoleauCorrespondanceLangueFrancaise2021}) :
-- `Main` (<span style="color: #fc03ef">pink</span>)
-- `Title` (<span style="color: #00bc66">green</span>) : two kinds of title : 
-	1. one that numbers the letter 
-	2. one that gives the subject
-- `Signature` (<span style="color: #fc6f03">orange</span>) : salutation and signature of the sender (sometimes handwritten)
-- `Stamp` (yellow) : faded stamp presents in almost all the pages of this corpus
-- `Letterhead` (<span style="color: #910078">purple</span>) : printed letterhead
-- `Numbering` (pink/red?) : numbering at the top of the letter
-- `Address` (light blue) : name and place of the recipient
-- `Salute` (<span style="color: #fc0303">red</span>)
-- `Dateline` (<span style="color: #0327fc">dark blue</span>) : place and date of writing for the letter
-- `Additions` (<span style="color: #03fcf5">turquoise</span>) : handwritten additions outside of the main text
-
-### <span style="color : rgb(000, 200, 100, 0.7)">Applicabilité à un recueil de correspondance CDS</span>
 ![schema](./segmentation/essai-zones-CdS02_Konv002-02_0066.jpg)
 
 Régions reprises telles quelles :
@@ -134,7 +95,7 @@ Il pourrait être pertinent de modifier l'usage de :
 
 Il faudrait ajouter :
 - `Note` (<span style="color: #626262">grey</span>) : pour les notes infrapaginales (utilisé dans SegmOnto pour les [imprimés](https://github.com/SegmOnto/examples/tree/main/sources/prints/BnF_cb120117553)).
-- `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela repmplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
+- `Postscritp` (<span style="color: #fcf503">yellow</span>) : cela remplacerait le rôle à l'origine assigné à **Additions**. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum.
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">Types de lignes</span>
 Types de lignes dont on propose l'utilisation :
@@ -147,10 +108,6 @@ Types de lignes dont on propose l'utilisation :
 - Mots biffés
 
 #### <span style="color : rgb(050, 100, 060, 0.7)">Corrections</span>
-CDS corrige certains mots de sa main :
-- En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée ([en local](./img/main1/CdS02_Konv002-02_0065.jpg)) ; le typage de la ligne est alors trop compliqué
-- En réécrivant dans l'interligne : il est alors pertinent d'utiliser le type de ligne eScriptorium `Correction`.
-
 Un ensemble de [solutions d'encodage](https://github.com/FloChiff/DAHNProject/tree/master/Project%20development/Texts) ont été proposées dans le cadre du projet DAHN :
 - ££word££ : handwritten word
 - €word€ : crossed out word
@@ -159,12 +116,6 @@ Un ensemble de [solutions d'encodage](https://github.com/FloChiff/DAHNProject/tr
 - \[word] : version corrected by a member of the project of an incorrect word in the text
 - \[..@extent..] : gap in the texts
 - XXX or more : crossed out word illegible
-
-Je me demande s'il ne vaudrait pas mieux ne pas encoder ces éléments dans la phase d'HTR, et les aborder dans la phase d'édition 
-1. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition TEI, de suivre la reproduction du manuscrit à éditer ;
-2. Introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités terrain.
-
-Proposition finale : **transcrire tout ce qui est lisible** (y compris les lettres biffées) en privilégiant le dernier état du texte (dans le cas et seulement dans le cas où la correction a été superposée à la première couche d'écriture.)
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Résultats de la segmentation</span>
 Les tests effectés dans le projet eScriptorium "CDS-correspGale-copie2-vol2" sur la main1 font apparaître une bonne segmentation des doubles pages.
@@ -188,8 +139,6 @@ H. Souvay a utilisé la méthode d'entraînement dite *few shots* (à "peu d'ép
 ## <span style="color : rgb(020, 080, 170, 0.8)">Constituer des sous-corpus paléographiquement homogènes</span>
 ### <span style="color : rgb(000, 200, 100, 0.7)">Main 1</span>
 Les fichiers images sont issus de la même source que celle testée par H. Souvay : `CdS02_Konv002-02` (Corres. générale, 2e vol., 2e t. - [ici en local](../recueils/2e-copie-02-CdS-b2-0080-0.pdf)). La liste des images est contenue dans le fichier [main1-liste-images.txt](./main1-liste-images.txt).
-
-On ne s'est pas attaché à prendre des pièces entières mais à ne sélectionner que des doubles pages ne comportant qu'une seule main principale (quelques corrections de la main de CDS apparaissent ponctuellement).
 
 ### <span style="color : rgb(000, 200, 100, 0.7)">CDS : test de transcription de l'écriture de l'auteur</span>
 Je passe en revue les lettres de l'auteur de façon chronologique en commençant par les plus anciennes.
