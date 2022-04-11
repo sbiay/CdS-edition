@@ -16,78 +16,55 @@
 \onehalfspacing % interligne de 1.5
 \setlength\parindent{1cm} % indentation des paragraphes à 1 cm
 
+% Table des matières
+\addto\captionsfrench{
+\renewcommand*\contentsname{Contenu de la documentation}
+}
 
 % bibliographie
 \usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
 \addbibresource{biblio.bib}
 %\nocite{*}
 
+% Sigles et acronymes
+\usepackage[automake,acronym,toc]{glossaries}
+\makeglossaries
+\newacronym{cds}{CdS}{Constance de Salm}
+
 
 % DOCUMENT
 \begin{document}
 	
-	\part{HTR}
-	
-	\chapter{Un chapitre}
-	
-	\section{Présentation matérielle du mémoire}
-	
-	Recto verso. Taille 12, en police Time New Roman ou équivalent. Le texte doit être justifié ; les marges sont de 2.5 cm. L'interligne doit être fixé à 1.5 ; les paragraphes indentés à 1 cm. Toute citation longue, de plus de trois lignes, doit apparaître en retrait, sans guillemet (environnement \texttt{quotation} en \LaTeX ).
-	
-	\chapter{Un autre chapitre}
-	
-	\section{Structuration du mémoire}
-	
-	Le mémoire se structure en plusieurs parties :
-	\begin{enumerate}
-		\item tout d'abord, les pièces liminaires : page de titre, résumé, remerciements, bibliographie, introduction
-		\item ensuite, le corps du texte, suivi d'une conclusion
-		\item après, les annexes (documentation, extraits de code, etc.)
-		\item enfin, les pièces finales : index (si besoin), glossaire (si besoin) ; tables (des figures et des tables, si nécessaire) ; table des matières
-	\end{enumerate}
-	
-	Ce mémoire s'accompagne d'une autre partie très importante : les \textbf{données}.
-	
-	\section{Les données}
-	
-	Elles constituent une partie primordiale du travail à rendre. Ce sont :
-	\begin{itemize}
-		\item les données traitées (textes, images, vidéos, BDD, etc.)
-		\item les scripts de traitement
-		\item la documentation associée aux données et au script
-		\item tout autre document qui semble nécessaire au traitement du sujet.
-	\end{itemize}
-	
-	Ces données doivent être ordonnées et accompagnées d'un fichier \texttt{lisezMoi} (format \texttt{.txt} ou \texttt{.md}), présent à la racine du dossier contenant les données. Ce fichier doit décrire l'arborescence des fichiers et dossiers et la fonction de chacun des fichiers.
-	
-	Le principe important à retenir est celui de la \textbf{reproductibilité} du travail.
-	
-	\part{Une autre partie}
-	
-	%etc.
-	
-	
-	\chapter*{Conclusion}
-	\addcontentsline{toc}{chapter}{Conclusion}
-	
-	%les annexes
-	\appendix
-	\chapter{Première annexe}
-	
-	\backmatter
-	
-	% index à mettre ici si index	
-	%	\printindex
-	
-	%glossaire si glossaire
-	%	\printglossaries
-	
-	% si figures
-	%	\listoffigures
-	
-	%si tables
-	%	\listoftables
-	
 	\tableofcontents
 	
+	\chapter{HTR}
+		
+		\section{Problématique}
+		Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds}. Cette variété d'écritures peut sérieusement entraver les performances d'un modèle de reconnaissance.
+		
+		Deux pistes méthodologiques se dessinent :
+		\begin{enumerate}
+			\item Rassembler dans un premier temps des lettres qui sont de la même main, pour voir quels sont les résultats du modèle qu'H. Souvay a commencé à entraîner ;
+			\item Reprendre un modèle déjà entraîné à travailler sur plusieurs mains ; c'est l'option qui été privilégiée par le projet Lectaurep\footcite{chagueCreationModelesTranscriptiona}).
+		\end{enumerate}
+		
+				
+		\section{Choisir un corpus d'entraînement}
+		Les recueils de lettres constituent la part du corpus la plus normée sur le plan paléographique. La distribution des mains y est variable selon les tomes :
+		\begin{enumerate}
+			\item Le premier volume\footcite{salmCorrespondanceGeneraleSecondea} présente une grande variété de main s'enchaînant fréquemment les unes aux autres ;
+			\item Le deuxième volume\footcite{salmCorrespondanceGeneraleSeconde}  présente en revanche une meilleure cohérence paléographique : la même main peut se suivre sur un bon nombre de pages consécutives, facilitant l'entraînement d'un modèle sur une écriture particulière. En partie utilisé par H. Souvay pour ses tests, nous avons repris ce volume pour constituer un premier sous-corpus paléographiquement cohérent.
+		\end{enumerate}
+	
+		\subsection{Main 1}
+		Nous avons établi une liste de 47 images (soit 47 doubles pages) au sein du 2e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela arbitrairement découpé les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement\footnote{Des reproductions en qualité réduite de ces images ont été placées dans le dossier \textsf{./htr/img/main1bd}}.
+		
+		\subsection{Écriture de \gls{cds}}
+		Le site ne publie aucune lettre originale de la main de \gls{cds}, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}.
+		
+		Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
+		
+		\section{Segmentation et typage des zones d'écriture}
+		Nous 
+				
 \end{document}
