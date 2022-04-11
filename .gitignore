@@ -22,3 +22,12 @@ test.py
 reprendre-a.md
 .sync.ffs_db
 htr/.ipynb_checkpoints/
+*aux
+*log
+*out
+*synctex\.gz
+*toc
+*bbl
+*bcf
+*blg
+*run\.xml
