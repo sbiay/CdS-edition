@@ -1,0 +1,93 @@
+%package obligatoire : type de document
+\documentclass[a4paper,12pt,twoside]{book}
+
+% encodage
+\usepackage{fontspec}
+
+% le package hyperref avec des options, si en local
+\usepackage[pdfusetitle, pdfsubject ={Mémoire TNAH}, pdfkeywords={les mots-clés}]{hyperref}
+
+%il faut mettre au moins une langue
+\usepackage[english,french]{babel}
+
+% configurer le document selon les normes de l'école
+\usepackage[margin=2.5cm]{geometry} %marges
+\usepackage{setspace} % espacement qui permet ensuite de définir un interligne
+\onehalfspacing % interligne de 1.5
+\setlength\parindent{1cm} % indentation des paragraphes à 1 cm
+
+
+% bibliographie
+\usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
+\addbibresource{biblio.bib}
+%\nocite{*}
+
+
+% DOCUMENT
+\begin{document}
+	
+	\part{HTR}
+	
+	\chapter{Un chapitre}
+	
+	\section{Présentation matérielle du mémoire}
+	
+	Recto verso. Taille 12, en police Time New Roman ou équivalent. Le texte doit être justifié ; les marges sont de 2.5 cm. L'interligne doit être fixé à 1.5 ; les paragraphes indentés à 1 cm. Toute citation longue, de plus de trois lignes, doit apparaître en retrait, sans guillemet (environnement \texttt{quotation} en \LaTeX ).
+	
+	\chapter{Un autre chapitre}
+	
+	\section{Structuration du mémoire}
+	
+	Le mémoire se structure en plusieurs parties :
+	\begin{enumerate}
+		\item tout d'abord, les pièces liminaires : page de titre, résumé, remerciements, bibliographie, introduction
+		\item ensuite, le corps du texte, suivi d'une conclusion
+		\item après, les annexes (documentation, extraits de code, etc.)
+		\item enfin, les pièces finales : index (si besoin), glossaire (si besoin) ; tables (des figures et des tables, si nécessaire) ; table des matières
+	\end{enumerate}
+	
+	Ce mémoire s'accompagne d'une autre partie très importante : les \textbf{données}.
+	
+	\section{Les données}
+	
+	Elles constituent une partie primordiale du travail à rendre. Ce sont :
+	\begin{itemize}
+		\item les données traitées (textes, images, vidéos, BDD, etc.)
+		\item les scripts de traitement
+		\item la documentation associée aux données et au script
+		\item tout autre document qui semble nécessaire au traitement du sujet.
+	\end{itemize}
+	
+	Ces données doivent être ordonnées et accompagnées d'un fichier \texttt{lisezMoi} (format \texttt{.txt} ou \texttt{.md}), présent à la racine du dossier contenant les données. Ce fichier doit décrire l'arborescence des fichiers et dossiers et la fonction de chacun des fichiers.
+	
+	Le principe important à retenir est celui de la \textbf{reproductibilité} du travail.
+	
+	\part{Une autre partie}
+	
+	%etc.
+	
+	
+	\chapter*{Conclusion}
+	\addcontentsline{toc}{chapter}{Conclusion}
+	
+	%les annexes
+	\appendix
+	\chapter{Première annexe}
+	
+	\backmatter
+	
+	% index à mettre ici si index	
+	%	\printindex
+	
+	%glossaire si glossaire
+	%	\printglossaries
+	
+	% si figures
+	%	\listoffigures
+	
+	%si tables
+	%	\listoftables
+	
+	\tableofcontents
+	
+\end{document}
