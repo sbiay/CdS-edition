@@ -9,4 +9,4 @@ Objectifs :
 - Procéder à une reconnaissance automatique des écritures manuscrites (voir le [dossier dédié](./htr))
 - Transformer les transcriptions en édition XML-TEI
 
-Le fichier [documentation.pdf](./documentation.pdf) donne une description complète de la méthodologie adoptée et des travaux en cours.
+Le fichier [documentation.pdf](./documentation/documentation.pdf) donne une description complète de la méthodologie adoptée et des travaux en cours.
