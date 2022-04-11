@@ -8,3 +8,5 @@ Ce travail vise à la mise en place d'un flux de production pour l'édition éle
 Objectifs :
 - Procéder à une reconnaissance automatique des écritures manuscrites (voir le [dossier dédié](./htr))
 - Transformer les transcriptions en édition XML-TEI
+
+Le fichier [documentation.pdf](./documentation.pdf) donne une description complète de la méthodologie adoptée et des travaux en cours.
