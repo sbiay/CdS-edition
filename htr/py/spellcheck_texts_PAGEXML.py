@@ -4,7 +4,6 @@ from lxml import etree
 from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
 from constantes import XMLaCORRIGER, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
-from dictComplets.dictCDS import dict
 
 
 def get_lemmes():

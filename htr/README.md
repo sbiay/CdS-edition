@@ -63,10 +63,6 @@ Différentes méthodes employés :
 
 # <span style="color : rgb(015, 005, 230, 0.8)">Segmentation et typage des zones</span>
 ## <span style="color : rgb(020, 080, 170, 0.8)">Typer les zones</span>
-Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes selon leur type, afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
-
-Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les Guidelines de l'édition de correspondance du projet DAHN permettent de guider cette réflexion ({chiffoleauCorrespondenceGuidelines2022}).
-
 Eléments TEI importants :
 - `opener` : en-tête de la lettre, comprenant des éléments
 	- `dateline` : lieu et date
@@ -127,13 +123,6 @@ Difficultés dans la reconnaissance des lignes :
 Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Point de départ</span>
-Le dépôt Github du DHI [Constance de Salm](https://github.com/dhi-digital-humanities/constance-de-salm) contient un [modèle d'entraînement](https://github.com/dhi-digital-humanities/constance-de-salm/tree/main/HTR/Training%20Models) avec des vérités de terrain en petite quantité et un modèle entraîné.
-
-Le rapport de stage d'H. Souvay a été consulté {souvayCorrespondanceConstanceSalm2021}.
-
-Méthodologie employée :
-> Nous avons décidé de tenter la transcription automatique sur un sous-ensemble du corpus composé de copies de lettres compilées dans des recueils. […] Les mains sont relativement constantes dans le temps dans ce sous-ensemble contrairement au reste du corpus. Même proches, ces mains demeurent différentes. Nous avons donc opté pour l’**entraînement d’un modèle multi-mains**, c’est à dire un modèle non-spécialisé capable de transcrire plusieurs mains représentées dans le corpus d’entraînement [p. 6-7]{souvayCorrespondanceConstanceSalm2021}.
-
 H. Souvay a utilisé la méthode d'entraînement dite *few shots* (à "peu d'époques").
 
 ## <span style="color : rgb(020, 080, 170, 0.8)">Constituer des sous-corpus paléographiquement homogènes</span>
@@ -194,26 +183,10 @@ D'après la démarche expliquée dans la documentation du projet DAHN, plus part
 On a écarté le format texte, qui ne peut pas être réimporté dans eScriptorium.
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le script d'analyse de mots spellcheck_texts_PAGEXML.py</span>
-Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout en l'état actuel du modèle encore peu entraîné. La correction est donc un travail conséquent.
-
-Développement réalisés :
-1. On a donc développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine ; le contexte est en effet déterminant pour valider ou modifier une correction proposée automatiquement.
-
-2. On cherche les mots de la prédiction dans les vérités de terrain du projet grâce à la fonction [lemmes.py](./py/spellcheck_texts_PAGEXML.py), directement implémenté dans le script **spellcheck_texts**
-
-3. On mobilise désormais les ressources du dictionnaire des corrections déjà validées ([dictCDS](py/dictComplets/dictCDS.py)) avant de parser le dictionnaire global de la langue française (dictionnaireComplet). Cela permet de :
-	- Réduire le temps de calcul ;
-	- Ne pas travailler sur des corrections déjà identifiées comme ambiguës (*id est* ayant deux contextes différents en compétition).
-
-A faire :
-- Mobiliser les vérités de terrain afin de ne pas rechercher dans tout le **dictionnaireComplet** les formes déjà validées (c'est le point 11 de la démarche).
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Corriger à la main les entrées des dictionnaires pour chaque fichier</span>
-- Temps de correction initial : 35 min pour une double page.
-- Il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier ; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
-- La présentation du contexte du mot développée au point précédent facilite cette tache de validation des corrections proposées par le script **spellcheck_texts**. 
 
-##### <span style="color : rgb(080, 080, 050, 0.7)">Regrouper les dictionnaires produits dans un seul fichier</span>
+##### <span style="color : rgb(080, 080, 050, 0.7)">Constituer un dictionnaire personnalisé</span>
 Cette opération se fait pour l'instant à la main, elle est facilement automatisable mais suppose de **faire attention** à ne pas effacer d'anciennes corrections par de nouvelles corrections : certaines formes mal reconnues seront ambiguës, car pouvant se résoudre dans des mots différents selon les contextes. Il faudra donc les neutraliser et conserver la mémoire de cette neutralisation.
 
 Lui consacrer un script permet de contrôler les nouvelles entrées du dictionnaire et donc de sécuriser cette intégration. Les conditions à traiter dans le script sont :
@@ -226,10 +199,6 @@ Lui consacrer un script permet de contrôler les nouvelles entrées du dictionna
 		5. Relancer le script.
 	- Si le lemme est identique : on intègre l'entrée au dictionnaire en remplaçant le contexte par le plus récent ;
 - Si la clé n'existe pas, on ajoute le couple clé-valeur au [dictCDS](py/dictComplets/dictCDS.py).
-
-##### <span style="color : rgb(080, 080, 050, 0.7)">Appliquer le dictionnaire de correction aux fichiers XML (text_correction_XML.py)</span>
-Développements effectués :
-- Les modifications étant nombreuses, il a fallu adapter le script afin de *tokéniser* les mots à remplacer.
 
 ##### <span style="color : rgb(080, 080, 050, 0.7)">Réimporter les fichiers corrigés dans eScriptorium</span>
 - Attention, il faudrait transformer les **esperluettes** pour éviter des problèmes de lecture du XML.
