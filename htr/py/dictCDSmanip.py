@@ -2,7 +2,7 @@ import click
 import json
 import importlib
 import os
-from constantes import DICTPAGES
+from constantes import DICTPAGES, DICTCDS
 
 # On charge le dictionnaire Json global de la correspondance CDS
 with open(f"./py/dictComplets/dictCDS.json") as f:
@@ -40,7 +40,7 @@ def controleFormes(dictPage):
     return dictCDS
 
 @click.command()
-@click.option("-f", "--file", type=str, help="Nome de fichier contenu dans le dossier "
+@click.option("-f", "--file", type=str, help="Nom de fichier contenu dans le dossier "
                                                                 "./py/dictPages/")
 @click.option("-A", "--all", is_flag=True, default=False, help="Prend tous les fichiers du dossier ./py/dictPages/")
 def dictCDSintegration(file, all):
@@ -73,11 +73,8 @@ def dictCDSintegration(file, all):
         dictCDS = controleFormes(dictPage)
         print(f"Le fichier {file} a été traité avec succès.")
     
+    # On remplace le fichier dictCDS.json par la version enrichie
+    with open(DICTCDS, mode="w") as f:
+        json.dump(dictCDS, f, indent=3, ensure_ascii=False)
     
-    
-    # with open("./py/dictPages/DictCdS02_Konv002-02_0067.json", mode="w", encoding="UTF-8") as f:
-    #    On écrit le contenu du dictionnaire au format Jsonn en s'assurant d'encoder en UTF-8 et non en ASCII
-    #    json.dump(dictPage, f, indent=2, ensure_ascii=False)
-
-
 dictCDSintegration()
