@@ -1,6 +1,5 @@
 import click
 import json
-import importlib
 import os
 from constantes import DICTPAGES, DICTCDS
 
@@ -76,5 +75,6 @@ def dictCDSintegration(file, all):
     # On remplace le fichier dictCDS.json par la version enrichie
     with open(DICTCDS, mode="w") as f:
         json.dump(dictCDS, f, indent=3, ensure_ascii=False)
+    print("Le dictionnaire dictCDS.json est désormais à jour.")
     
 dictCDSintegration()
