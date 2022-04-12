@@ -4,7 +4,6 @@ compte-rendus/
 connexionFuD.txt
 dahn
 depotDHIcds
-donnees/
 evenements-a-suivre/
 fdr.md
 lexique-deu-fra.csv
@@ -38,3 +37,4 @@ htr/.ipynb_checkpoints/
 *glg
 *ist
 *gls
+*xlsx
