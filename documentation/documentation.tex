@@ -4,6 +4,9 @@
 % encodage
 \usepackage{fontspec}
 
+% Annexes (à déclarer avant hyperref)
+\usepackage{appendix}
+
 % le package hyperref avec des options, si en local
 \usepackage[pdfusetitle, pdfsubject ={Mémoire TNAH}, pdfkeywords={les mots-clés}]{hyperref}
 
@@ -61,10 +64,11 @@
 		\begin{enumerate}
 			\item Le premier volume\footcite{salmCorrespondanceGeneraleSecondea} présente une grande variété de main s'enchaînant fréquemment les unes aux autres ;
 			\item Le deuxième volume\footcite{salmCorrespondanceGeneraleSeconde}  présente en revanche une meilleure cohérence paléographique : la même main peut se suivre sur un bon nombre de pages consécutives, facilitant l'entraînement d'un modèle sur une écriture particulière. En partie utilisé par H. Souvay pour ses tests, nous avons repris ce volume pour constituer un premier sous-corpus paléographiquement cohérent.
+			\item Le troisième volume\footcite{salmCorrespondanceGeneraleSecondeb}, où les mains du deuxième volume se retrouvent largement.
 		\end{enumerate}
 	
 			\subsection{Main 1}
-			Nous avons établi une liste de 47 images (soit 47 doubles pages) au sein du 2e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela arbitrairement découpé les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement\footnote{Des reproductions en qualité réduite de ces images ont été placées dans le dossier \textsf{./htr/img/main1bd}}.
+			Nous avons établi une liste de 31 images (soit 31 doubles pages) au sein du 2e et du 3e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela sélectionné les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement.
 		
 			\subsection{Écriture de \gls{cds}}
 			Le site ne publie aucune lettre originale de la main de \gls{cds}, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}.
@@ -176,5 +180,20 @@
 			\subsection{Appliquer le dictionnaire personnalisé aux prédictions HTR}
 				Les corrections s'avérant particulièrement nombreuses, le script \textsf{text-correction-XML.py} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
 				
+	\appendix
+	
+	\renewcommand{\appendixpagename}{Annexes}
+	% Pour renommer en "Annexes" la page de titre "Appendices"
+	
+	\renewcommand{\appendixtocname}{Annexes}
+	% Pour renommer en "Annexes" le nom des annexes dans la table des matières
+	
+	\addappheadtotoc% Ajoute les annexes à la table des matières
+	
+	\appendixpage % Crée une page de titre pour les annexes
+	\chapter{Normes de transcription}
+	
+		\section{Accentuation}
+		L'usage des accents a été normalisé selon les règles modernes.
            	
 \end{document}
