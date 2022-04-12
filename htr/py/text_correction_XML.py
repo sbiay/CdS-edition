@@ -61,11 +61,12 @@ def textCorrectionXML():
                                 if mot:
                                     # Si le mot courant correspond à l'entrée de dictionnaire
                                     if forme == mot:
-                                        ligneCorr = ligneCorr.replace(forme, lemme)
+                                        ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
                                         entreesMAJ[forme] = {
                                             "lem": lemme,
                                             "ctxt": []
                                         }
+
                         # On effectue une nouvelle recherche pour les formes possédant une espace
                         # (ce sont les mots coupés en deux qu'il faut corriger en un seul mot)
                         for forme in dictCDS:
