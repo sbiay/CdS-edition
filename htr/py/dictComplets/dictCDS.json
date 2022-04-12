@@ -456,7 +456,7 @@
    "Je": {
       "lem": "Je",
       "ctxt": [
-         "et nous aurons de la banguillité, Dieu merce JE l&#39;aime dens le monte"
+         "et nous aurons de la tranquillité, Dieu merci JE l&#39;aime dans le monte"
       ]
    },
    "prenraidreles": {
@@ -710,7 +710,7 @@
    "A": {
       "lem": "A",
       "ctxt": [
-         "A Mr Mr Prucs au (ataue de Liedberg)"
+         "A Mr Mr Prons au château de Liedberg)"
       ]
    },
    "Lidbeg)": {
@@ -728,7 +728,7 @@
    "Mr": {
       "lem": "Mr",
       "ctxt": [
-         "A MR MR Prucs au (ataue de Liedberg)"
+         "A MR MR Prons au château de Liedberg)"
       ]
    },
    "aehaude": {
@@ -812,35 +812,37 @@
    "Me": {
       "lem": "Mme",
       "ctxt": [
-         "il fait si bain, Monsieur, que je peuse que MME papp, vers"
+         "il fait si bain, Monsieur, que je pense que MME papp, vers"
       ]
    },
    "peuse": {
       "lem": "pense",
       "ctxt": [
-         "il fait si bain, Monsieur, que je PENSE que MME papp, vers"
+         "il fait si bain, Monsieur, que je PENSE que Mme papp, vers"
       ]
    },
    "pourriuz": {
       "lem": "pourriez",
-      "ctxt": []
+      "ctxt": [
+         "Louise et le grand fils POURRIEZ venir à pied ou en voiture passer"
+      ]
    },
    "journé": {
       "lem": "journée",
       "ctxt": [
-         "la JOURNEE arec vous c'est dit ou la Kermesse, pois vrous promner"
+         "la JOURNÉE avec vous c&#39;est dit ou la Kermesse, pois vous promener"
       ]
    },
    "arec": {
       "lem": "avec",
       "ctxt": [
-         "la journée AVEC vous c'est dit ou la Kermesse, pois vrous promner"
+         "la journée AVEC vous c&#39;est dit ou la Kermesse, pois vous promener"
       ]
    },
    "promner": {
       "lem": "promener",
       "ctxt": [
-         "la journée vous c'est dit ou la Kermesse, pois vrous PROMENER"
+         "la journée avec vous c&#39;est dit ou la Kermesse, pois vous PROMENER"
       ]
    },
    "Sa": {
@@ -852,7 +854,7 @@
    "enteudrons": {
       "lem": "entendrons",
       "ctxt": [
-         "de ce côté ; nous ENTENDRONS les vuotous, et c'est toujours quelque"
+         "de ce cot vuis ENTENDRONS les violons, et c&#39;est toujours quelque"
       ]
    },
    "ne ga ciatre": {
@@ -1424,7 +1426,7 @@
    "Il": {
       "lem": "il",
       "ctxt": [
-         "apres demain. IL n&#39;est gues tion ie que de Kermesse et en abant pag-"
+         "après demain. IL n&#39;est question ie que de Kermesse et en allant pag-"
       ]
    },
    "cergaison": {
@@ -1598,7 +1600,7 @@
    "surtont": {
       "lem": "surtout",
       "ctxt": [
-         "asn SURTOUT que ma ve puisse 2&#39;y agitez librement vous avrez"
+         "asn SURTOUT que ma vie puisse 2&#39;y agitez librement vous avrez"
       ]
    },
    "souéte": {
@@ -1750,7 +1752,7 @@
    "(Sgné)": {
       "lem": "(Signé)",
       "ctxt": [
-         "(SIGNÉ) Cons tence de Salm"
+         "(SIGNÉ) Constance de Salm"
       ]
    },
    "Cous tince": {
@@ -2154,31 +2156,31 @@
    "Loutu": {
       "lem": "Louise",
       "ctxt": [
-         "LOUISE et le grans fel pourriuz venir à pêed ou en voiture passer"
+         "LOUISE et le grand fils pourriez venir à pied ou en voiture passer"
       ]
    },
    "Kermesse": {
       "lem": "Kermesse",
       "ctxt": [
-         "la journé arec vous c&#39;est dit ou la KERMESSE, pois vrous promner"
+         "la journée avec vous c&#39;est dit ou la KERMESSE, pois vous promener"
       ]
    },
    "Louse": {
       "lem": "Louise",
       "ctxt": [
-         "Je conterai vre commssions à LOUISE ; il me faut mille"
+         "Je conterai vre commissions à LOUISE ; il me faut mille"
       ]
    },
    "Metles": {
       "lem": "petites",
       "ctxt": [
-         "PETITES chosés de Crane1s."
+         "PETITES choses de Crane1s."
       ]
    },
    "Vene": {
       "lem": "Venez",
       "ctxt": [
-         "VENEZ donc ous. J&#39;emtrgse les drmes et vplue les messours"
+         "VENEZ donc ous. J&#39;emtrgse les dames et vplue les messieurs"
       ]
    },
    "Mor": {
@@ -2218,37 +2220,37 @@
    "Monseur": {
       "lem": "Monsieur",
       "ctxt": [
-         "fnez vous ahez fon, MONSIEUR, nour remstes à le cier Louise le"
+         "fnez vous assez bon, MONSIEUR, nour remettre à le cher Louise le"
       ]
    },
    "Louire": {
       "lem": "Louise",
       "ctxt": [
-         "fnez vous ahez fon, Monsieur, nour remstes à le cier LOUISE le"
+         "fnez vous assez bon, Monsieur, nour remettre à le cher LOUISE le"
       ]
    },
    "Brabant": {
       "lem": "Brabant",
       "ctxt": [
-         "avoir une aune de BRABANT, de pareit ? Mais il faut qu&#39;il soit bien"
+         "avoir une aune de BRABANT, de pareil ? Mais il faut qu&#39;il soit bien"
       ]
    },
    "Messortr": {
       "lem": "ressortir",
       "ctxt": [
-         "semblable ; car il ne s'agit de rien mous que de RESSORTIR des manche, 8"
+         "semblable ; car il ne s'agit de rien moins que de RESSORTIR des manche, 8"
       ]
    },
    "sagt": {
       "lem": "s'agit",
       "ctxt": [
-         "semblable ; car il ne S'AGIT de rien mous que de ressortir des manche, 8"
+         "semblable ; car il ne S'AGIT de rien moins que de ressortir des manche, 8"
       ]
    },
    "Colague": {
       "lem": "Cologne",
       "ctxt": [
-         "Je vais enfin, je crois, faire le fameux voy age de COLOGNE, et"
+         "Je vais enfin, je crois, faire le fameux voyage de COLOGNE, et"
       ]
    },
    "voy age": {
@@ -2258,37 +2260,37 @@
    "Keinete": {
       "lem": "Kermesse",
       "ctxt": [
-         "apres demain. il n&#39;est gues tion ie que de KERMESSE et en abant pag-"
+         "après demain. il n&#39;est question ie que de KERMESSE et en allant pag-"
       ]
    },
    "Voite": {
       "lem": "Voilà",
       "ctxt": [
-         "VOILÀ la puissance tuit a fait à la raison daus potre cher pairs"
+         "VOILÀ la puissance tout a fait à la raison dans notre cher pairs"
       ]
    },
    "nuissance": {
       "lem": "puissance",
       "ctxt": [
-         "Voilà la PUISSANCE tuit a fait à la raison daus potre cher pairs"
+         "Voilà la PUISSANCE tout a fait à la raison dans notre cher pairs"
       ]
    },
    "Dien": {
       "lem": "Dieu",
       "ctxt": [
-         "et nous aurons de la banguillité, DIEU merce Je l&#39;aime dens le monte"
+         "et nous aurons de la tranquillité, DIEU merci Je l&#39;aime dans le monte"
       ]
    },
    "Mous": {
       "lem": "Nous",
       "ctxt": [
-         "en bien tort de vous inallr la jour de notre monde. NOUS udoens"
+         "en bien tort de vous en aller la jour de notre monde. NOUS udoens"
       ]
    },
    "Vest": {
       "lem": "C'est",
       "ctxt": [
-         "C'EST la sourre de tout ce qu&#39;il y &#39;a dé bon et de consolmnt dans lavdier"
+         "C'EST la source de tout ce qu&#39;il y &#39;a de bon et de consolant dans lavdier"
       ]
    },
    "Pai": {
@@ -2300,19 +2302,19 @@
    "Poris": {
       "lem": "Paris",
       "ctxt": [
-         "vous savez a ris des marchandes de PARIS auc derners les bous."
+         "vous savez a cris des marchandes de Pacris auc derners les bous."
       ]
    },
    "éharchandes": {
       "lem": "marchandes",
       "ctxt": [
-         "vous savez a ris des MARCHANDES de Paris auc derners les bous."
+         "vous savez a cris des MARCHANDES de Pacris auc derners les bous."
       ]
    },
    "Liederg)": {
       "lem": "Liedberg)",
       "ctxt": [
-         "A Mr Mr Prucs au (ataue de LIEDBERG)"
+         "A Mr Mr Prons au château de LIEDBERG)"
       ]
    },
    "Saroibre": {
@@ -2330,88 +2332,128 @@
    "Sal": {
       "lem": "Salm",
       "ctxt": [
-         "(Signé) Cons tence de SALM"
+         "(Signé) Constance de SALM"
       ]
    },
    "grans": {
       "lem": "grand",
-      "ctxt": "Loutu et le GRANS fel pourriuz venir à pêed ou en voiture passer"
+      "ctxt": [
+         "Louise et le GRAND fils pourriez venir à pied ou en voiture passer"
+      ]
    },
    "fel": {
       "lem": "fils",
-      "ctxt": "Loutu et le grans FEL pourriuz venir à pêed ou en voiture passer"
+      "ctxt": [
+         "Louise et le grand FILS pourriez venir à pied ou en voiture passer"
+      ]
    },
    "pêed": {
       "lem": "pied",
-      "ctxt": "Loutu et le grans fel pourriuz venir à PÊED ou en voiture passer"
+      "ctxt": [
+         "Louise et le grand fils pourriez venir à PIED ou en voiture passer"
+      ]
    },
    "vrous": {
       "lem": "vous",
-      "ctxt": "la journé arec vous c est dit ou la Kermesse  pois VROUS promner"
+      "ctxt": [
+         "la journée avec VOUS c&#39;est dit ou la Kermesse, pois VOUS promener"
+      ]
    },
    "vuotous": {
       "lem": "violons",
-      "ctxt": "de ce cot vuis enteudrons les VUOTOUS  et c est toujours quelque"
+      "ctxt": [
+         "de ce cot vuis entendrons les VIOLONS, et c&#39;est toujours quelque"
+      ]
    },
    "commssions": {
       "lem": "commissions",
-      "ctxt": "Je conterai vre COMMSSIONS à Louse   il me faut mille"
+      "ctxt": [
+         "Je conterai vre COMMISSIONS à Louise ; il me faut mille"
+      ]
    },
    "chosés": {
       "lem": "choses",
-      "ctxt": "Metles CHOSÉS de Crane1s "
+      "ctxt": [
+         "petites CHOSES de Crane1s."
+      ]
    },
    "drmes": {
       "lem": "dames",
-      "ctxt": "Vene donc ous  J emtrgse les DRMES et vplue les messours"
+      "ctxt": [
+         "Venez donc ous. J&#39;emtrgse les DAMES et vplue les messieurs"
+      ]
    },
    "messours": {
       "lem": "messieurs",
-      "ctxt": "Vene donc ous  J emtrgse les drmes et vplue les MESSOURS"
+      "ctxt": [
+         "Venez donc ous. J&#39;emtrgse les dames et vplue les MESSIEURS"
+      ]
    },
    "LdSalm4": {
       "lem": "de Salm)",
-      "ctxt": "LDSALM4"
+      "ctxt": [
+         "DE SALM)"
+      ]
    },
    "ahez": {
       "lem": "assez",
-      "ctxt": "fnez vous AHEZ fon  Monseur  nour remstes à le cier Louire le"
+      "ctxt": [
+         "fnez vous ASSEZ bon, Monsieur, nour remettre à le cher Louise le"
+      ]
    },
    "fon": {
       "lem": "bon",
-      "ctxt": "fnez vous ahez FON  Monseur  nour remstes à le cier Louire le"
+      "ctxt": [
+         "fnez vous assez BON, Monsieur, nour remettre à le cher Louise le"
+      ]
    },
    "remstes": {
       "lem": "remettre",
-      "ctxt": "fnez vous ahez fon  Monseur  nour REMSTES à le cier Louire le"
+      "ctxt": [
+         "fnez vous assez bon, Monsieur, nour REMETTRE à le cher Louise le"
+      ]
    },
    "cier": {
       "lem": "cher",
-      "ctxt": "fnez vous ahez fon  Monseur  nour remstes à le CIER Louire le"
+      "ctxt": [
+         "fnez vous assez bon, Monsieur, nour remettre à le CHER Louise le"
+      ]
    },
    "saples": {
       "lem": "Naples",
-      "ctxt": "marieu de gros de SAPLES jaune c jout j aui dire que je déproais en"
+      "ctxt": [
+         "marieu de gros de NAPLES jaune c joint j aui dire que je déproais en"
+      ]
    },
    "jout": {
       "lem": "joint",
-      "ctxt": "marieu de gros de saples jaune c JOUT j aui dire que je déproais en"
+      "ctxt": [
+         "marieu de gros de Naples jaune c JOINT j aui dire que je déproais en"
+      ]
    },
    "pareit": {
       "lem": "pareil",
-      "ctxt": "avoir une aune de Brabant  de PAREIT   Mais il faut qu il soit bien"
+      "ctxt": [
+         "avoir une aune de Brabant, de PAREIL ? Mais il faut qu&#39;il soit bien"
+      ]
    },
    "mous": {
       "lem": "moins",
-      "ctxt": "semblable   car il ne sagt de rien MOUS que de Messortr des manche  8"
+      "ctxt": [
+         "semblable ; car il ne s'agit de rien MOINS que de ressortir des manche, 8"
+      ]
    },
    "amables": {
       "lem": "aimables",
-      "ctxt": "à tout hasard  vous seriez bien AMABLES de venir toruis deman ou"
+      "ctxt": [
+         "à tout hasard, vous seriez bien AIMABLES de venir toruis demain ou"
+      ]
    },
    "apres": {
       "lem": "après",
-      "ctxt": "APRES demain  Il n est gues tion ie que de Keinete et en abant pag-"
+      "ctxt": [
+         "APRÈS demain. il n&#39;est question ie que de Kermesse et en allant pag-"
+      ]
    },
    "gues tion": {
       "lem": "question",
@@ -2419,99 +2461,147 @@
    },
    "abant": {
       "lem": "allant",
-      "ctxt": "apres demain  Il n est gues tion ie que de Keinete et en ABANT pag-"
+      "ctxt": [
+         "après demain. il n&#39;est question ie que de Kermesse et en ALLANT pag-"
+      ]
    },
    "pabités": {
       "lem": "habités",
-      "ctxt": "mener du coté des bieuse PABITÉS nous verrions encore une quure "
+      "ctxt": [
+         "mener du coté des bieuse HABITÉS nous verrions encore une quure."
+      ]
    },
    "Prine": {
       "lem": "Prince",
-      "ctxt": "(dasle PRINE  L)"
+      "ctxt": [
+         "(dasle PRINCE, de"
+      ]
    },
    "L)": {
       "lem": "de",
-      "ctxt": "(dasle Prine  L)"
+      "ctxt": [
+         "(dasle Prince, DE"
+      ]
    },
    "tuit": {
       "lem": "tout",
-      "ctxt": "Voite la nuissance TUIT a fait à la raison daus potre cher pairs"
+      "ctxt": [
+         "Voilà la puissance TOUT a fait à la raison dans notre cher pairs"
+      ]
    },
    "daus": {
       "lem": "dans",
-      "ctxt": "Voite la nuissance tuit a fait à la raison DAUS potre cher pairs"
+      "ctxt": [
+         "Voilà la puissance tout a fait à la raison DANS notre cher pairs"
+      ]
    },
    "potre": {
       "lem": "notre",
-      "ctxt": "Voite la nuissance tuit a fait à la raison daus POTRE cher pairs"
+      "ctxt": [
+         "Voilà la puissance tout a fait à la raison dans NOTRE cher pairs"
+      ]
    },
    "banguillité": {
       "lem": "tranquillité",
-      "ctxt": "et nous aurons de la BANGUILLITÉ  Dien merce Je l aime dens le monte"
+      "ctxt": [
+         "et nous aurons de la TRANQUILLITÉ, Dieu merci Je l&#39;aime dans le monte"
+      ]
    },
    "merce": {
       "lem": "merci",
-      "ctxt": "et nous aurons de la banguillité  Dien MERCE Je l aime dens le monte"
+      "ctxt": [
+         "et nous aurons de la tranquillité, Dieu MERCI Je l&#39;aime dans le monte"
+      ]
    },
    "dens": {
       "lem": "dans",
-      "ctxt": "et nous aurons de la banguillité  Dien merce Je l aime DENS le monte"
+      "ctxt": [
+         "et nous aurons de la tranquillité, Dieu merci Je l&#39;aime DANS le monte"
+      ]
    },
    "ve": {
       "lem": "vie",
-      "ctxt": "asn surtont que ma VE puisse 2 y agitez librement vous avrez"
+      "ctxt": [
+         "asn surtout que ma VIE puisse 2&#39;y agitez librement vous avrez"
+      ]
    },
    "inallr": {
       "lem": "en aller",
-      "ctxt": "en bien tort de vous INALLR la jour de notre monde  Mous udoens"
+      "ctxt": [
+         "en bien tort de vous EN ALLER la jour de notre monde. Nous udoens"
+      ]
    },
    "pasé": {
       "lem": "passé",
-      "ctxt": "PASÉ de jelis moments la soir  J ai ité heureuse comme une vraie"
+      "ctxt": [
+         "PASSÉ de jolis moments la soir. J&#39;ai été heureuse comme une vraie"
+      ]
    },
    "jelis": {
       "lem": "jolis",
-      "ctxt": "pasé de JELIS moments la soir  J ai ité heureuse comme une vraie"
+      "ctxt": [
+         "passé de JOLIS moments la soir. J&#39;ai été heureuse comme une vraie"
+      ]
    },
    "ité": {
       "lem": "été",
-      "ctxt": "pasé de jelis moments la soir  J ai ITÉ heureuse comme une vraie"
+      "ctxt": [
+         "passé de jolis moments la soir. J&#39;ai ÉTÉ heureuse comme une vraie"
+      ]
    },
    "enfnt": {
       "lem": "enfant",
-      "ctxt": "ENFNT haunr me conorve cete pinesse d espouir à défant de l autre"
+      "ctxt": [
+         "ENFANT haunr me conserve cete jeunesse d&#39;espouir à défaut de l&#39;autre"
+      ]
    },
    "conorve": {
       "lem": "conserve",
-      "ctxt": "enfnt haunr me CONORVE cete pinesse d espouir à défant de l autre"
+      "ctxt": [
+         "enfant haunr me CONSERVE cete jeunesse d&#39;espouir à défaut de l&#39;autre"
+      ]
    },
    "pinesse": {
       "lem": "jeunesse",
-      "ctxt": "enfnt haunr me conorve cete PINESSE d espouir à défant de l autre"
+      "ctxt": [
+         "enfant haunr me conserve cete JEUNESSE d&#39;espouir à défaut de l&#39;autre"
+      ]
    },
    "défant": {
       "lem": "défaut",
-      "ctxt": "enfnt haunr me conorve cete pinesse d espouir à DÉFANT de l autre"
+      "ctxt": [
+         "enfant haunr me conserve cete jeunesse d&#39;espouir à DÉFAUT de l&#39;autre"
+      ]
    },
    "sourre": {
       "lem": "source",
-      "ctxt": "Vest la SOURRE de tout ce qu il y  a dé bon et de consolmnt dans lavdier"
+      "ctxt": [
+         "C'est la SOURCE de tout ce qu&#39;il y &#39;a de bon et de consolant dans lavdier"
+      ]
    },
    "dé": {
       "lem": "de",
-      "ctxt": "Vest la sourre de tout ce qu il y  a DÉ bon et de consolmnt dans lavdier"
+      "ctxt": [
+         "C'est la source DE tout ce qu&#39;il y &#39;a DE bon et DE consolant dans lavdier"
+      ]
    },
    "consolmnt": {
       "lem": "consolant",
-      "ctxt": "Vest la sourre de tout ce qu il y  a dé bon et de CONSOLMNT dans lavdier"
+      "ctxt": [
+         "C'est la source de tout ce qu&#39;il y &#39;a de bon et de CONSOLANT dans lavdier"
+      ]
    },
    "ris": {
       "lem": "cris",
-      "ctxt": "vous savez a RIS des éharchandes de PoRIS auc derners les bous "
+      "ctxt": [
+         "vous savez a CRIS des marchandes de PaCRIS auc derners les bous."
+      ]
    },
    "apendant": {
       "lem": "cependant",
-      "ctxt": "APENDANT je ne veux vous rien dire d agréable ausjourd hunit   cer il"
+      "ctxt": [
+         "CEPENDANT je ne veux vous rien dire d&#39;agréable ausjourd&#39;hunit ; car il"
+      ]
    },
    "ausjourd": {
       "lem": "aujourd'hui",
@@ -2519,30 +2609,44 @@
    },
    "cer": {
       "lem": "car",
-      "ctxt": "apendant je ne veux vous rien dire d agréable ausjourd hunit   CER il"
+      "ctxt": [
+         "cependant je ne veux vous rien dire d&#39;agréable ausjourd&#39;hunit ; CAR il"
+      ]
    },
    "vors": {
       "lem": "vous",
-      "ctxt": "me semble que VORS m arez bouvé massade la drnière fois"
+      "ctxt": [
+         "me semble que VOUS m&#39;avez bouvé maussade la dernière fois"
+      ]
    },
    "arez": {
       "lem": "avez",
-      "ctxt": "me semble que vors m AREZ bouvé massade la drnière fois"
+      "ctxt": [
+         "me semble que vous m&#39;AVEZ bouvé maussade la dernière fois"
+      ]
    },
    "massade": {
       "lem": "maussade",
-      "ctxt": "me semble que vors m arez bouvé MASSADE la drnière fois"
+      "ctxt": [
+         "me semble que vous m&#39;avez bouvé MAUSSADE la dernière fois"
+      ]
    },
    "drnière": {
       "lem": "dernière",
-      "ctxt": "me semble que vors m arez bouvé massade la DRNIÈRE fois"
+      "ctxt": [
+         "me semble que vous m&#39;avez bouvé maussade la DERNIÈRE fois"
+      ]
    },
    "Prucs": {
       "lem": "Prons",
-      "ctxt": "A Mr Mr PRUCS au (ataue de Liederg)"
+      "ctxt": [
+         "A Mr Mr PRONS au château de Liedberg)"
+      ]
    },
    "(ataue": {
       "lem": "château",
-      "ctxt": "A Mr Mr Prucs au (ATAUE de Liederg)"
+      "ctxt": [
+         "A Mr Mr Prons au CHÂTEAU de Liedberg)"
+      ]
    }
 }
