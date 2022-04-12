@@ -18,25 +18,27 @@ def get_lemmes():
     # On boucle sur chaque fichier contenu dans le dossier des vérités de terrain
     for root, dirs, files in os.walk(VT):
         for filename in files:
-            # On ouvre le fichier
-            with open(VT + filename) as f:
-                xml = etree.parse(f)
-            racine = xml.getroot()
-            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
-            textes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
-            for ligne in textes:
-                # On nettoie le texte de sa ponctuation
-                for signe in ponctuation:
-                    ligne = ligne.replace(signe, " ").replace("  ", " ")
-                # On nettoie le texte de sa ponctuation
-                for signe in chiffres:
-                    ligne = ligne.replace(signe, " ").replace("  ", " ")
-                mots = ligne.split(' ')
-                for mot in mots:
-                    # On verifie que le mot ne soit pas vide et pas césuré
-                    if mot and mot[-1] != '-':
-                        motsParses.append(mot)
-    
+            # On pose comme condition de ne traiter que des fichiers XML (le dossier contient aussi des images)
+            if filename[-3] == "xml":
+                # On ouvre le fichier
+                with open(VT + filename) as f:
+                    xml = etree.parse(f)
+                racine = xml.getroot()
+                nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+                textes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
+                for ligne in textes:
+                    # On nettoie le texte de sa ponctuation
+                    for signe in ponctuation:
+                        ligne = ligne.replace(signe, " ").replace("  ", " ")
+                    # On nettoie le texte de sa ponctuation
+                    for signe in chiffres:
+                        ligne = ligne.replace(signe, " ").replace("  ", " ")
+                    mots = ligne.split(' ')
+                    for mot in mots:
+                        # On verifie que le mot ne soit pas vide et pas césuré
+                        if mot and mot[-1] != '-':
+                            motsParses.append(mot)
+
     # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
     motsParses = set(motsParses)
     return motsParses
@@ -85,11 +87,14 @@ def spellcheck_texts_page_XML():
         for filename in files:
             dictionary = {}
             # On ouvre le fichier XML d'entrée
-            with open(XMLaCORRIGER + filename, 'r') as xml_file:
-                print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
-                soup = BeautifulSoup(xml_file, 'lxml')
-            for unicode in soup.find_all('unicode'):
-                content = unicode.string
+            
+            xml = etree.parse(XMLaCORRIGER + filename)
+            print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
+            nsmap = {'page': "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"}
+            tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
+            
+            for unicode in tous_unicode:
+                content = unicode.text
                 content = suppress_punctuation(content)
                 
                 words = content.split(" ")
@@ -101,7 +106,8 @@ def spellcheck_texts_page_XML():
                         # On cherche chaque mot dans le dictCDS
                         if dictCDS.get(mot):
                             # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
-                            if dictCDS[mot].get('lem'):
+                            # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
+                            if dictCDS[mot].get('lem') and mot not in dictionary.keys():
                                 # On écrit l'entrée du dictionnaire pour préciser le contexte
                                 dictionary[mot] = {
                                     'lem': dictCDS[mot]['lem'],
@@ -109,14 +115,14 @@ def spellcheck_texts_page_XML():
                                     'deja utilisé': dictCDS[mot]['ctxt']
                                 }
                         # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
-                        elif spell.unknown(mot):
+                        elif spell.unknown(mot) and mot not in dictionary.keys():
                             # On écrit l'entrée du dictionnaire pour préciser le contexte
                             dictionary[mot] = {
                                 'lem': spell.correction(mot),
                                 'ctxt': contexte.replace("'", ' ')
                             }
                         # S'il n'a aucune proposition de correction identifiée
-                        else:
+                        elif mot not in dictionary.keys():
                             dictionary[mot] = {
                                 'lem': None,
                                 'ctxt': contexte.replace("'", ' ')
@@ -124,7 +130,7 @@ def spellcheck_texts_page_XML():
             
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".json"), "w") as jsonf:
-                json.dump(dictionary, jsonf, indent=3, ensure_ascii=False)
+                json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
                 print(f"Le dictionnaire {DICTPAGES.strip() + 'Dict' + filename.replace('.xml', '.json')}"
                       f" a été écrit correctement.")
 
