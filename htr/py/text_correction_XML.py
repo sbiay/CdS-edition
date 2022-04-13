@@ -57,21 +57,23 @@ def textCorrectionXML():
                         # On boucle sur les formes du dictionnaire personnalisé
                         for forme in dictCDS:
                             lemme = dictCDS[forme]["lem"]
-                            for index, mot in enumerate(ligne):
-                                # Comme la liste des mots contient des vides, on pose une condition d'existence
-                                if mot:
-                                    # Si le mot courant correspond à l'entrée de dictionnaire
-                                    if forme == mot:
-                                        # Si le mot est en milieu de ligne
-                                        ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
-                                        # Si le mot est placé juste après la balise unicode
-                                        ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
-                                        # Si le mot est placé juste après une apostrophe
-                                        ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
-                                        entreesMAJ[forme] = {
-                                            "lem": lemme,
-                                            "ctxt": []
-                                        }
+                            # On pose comme condition que le lemme ne soit pas "None" (id est ambigu)
+                            if lemme:
+                                for index, mot in enumerate(ligne):
+                                    # Comme la liste des mots contient des vides, on pose une condition d'existence
+                                    if mot:
+                                        # Si le mot courant correspond à l'entrée de dictionnaire
+                                        if forme == mot:
+                                            # Si le mot est en milieu de ligne
+                                            ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
+                                            # Si le mot est placé juste après la balise unicode
+                                            ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
+                                            # Si le mot est placé juste après une apostrophe
+                                            ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
+                                            entreesMAJ[forme] = {
+                                                "lem": lemme,
+                                                "ctxt": []
+                                            }
 
                         # On effectue une nouvelle recherche pour les formes possédant une espace
                         # (ce sont les mots coupés en deux qu'il faut corriger en un seul mot)

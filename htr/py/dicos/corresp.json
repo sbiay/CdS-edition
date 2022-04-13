@@ -659,12 +659,6 @@
          "faire sentir que leur intérêt est le même que CELUI des peuples la conti-"
       ]
    },
-   "I": {
-      "lem": "&",
-      "ctxt": [
-         "& autres sur lesquels je compte comme sur moi même suffiront"
-      ]
-   },
    "deman": {
       "lem": "demain",
       "ctxt": [
@@ -2031,6 +2025,12 @@
       "lem": "Votre",
       "ctxt": [
          "VOTRE très humble et de"
+      ]
+   },
+   "&": {
+      "lem": "&amp;",
+      "ctxt": [
+         
       ]
    },
    "Walh": {
@@ -3688,9 +3688,9 @@
       ]
    },
    "reu": {
-      "lem": "rien",
+      "lem": "reçu",
       "ctxt": [
-         "où j&#39;ai RIEN la lettre mon mari m&#39;assurait que je reverrais encore"
+         "où j&#39;ai RECU la lettre mon mari m&#39;assurait que je reverrais encore"
       ]
    },
    "ui": {
@@ -4095,12 +4095,6 @@
          "fille tout était DISPOSÉ pour les premiers jours de Janvier, Je pensais"
       ]
    },
-   "pars": {
-      "lem": "jours",
-      "ctxt": [
-         "Je JOURS, Monsieur et ami, mon mari me rejoindra dans le"
-      ]
-   },
    "fandier": {
       "lem": "Janvier",
       "ctxt": [
@@ -4362,9 +4356,9 @@
       ]
    },
    "aour": {
-      "lem": "avant",
+      "lem": null,
       "ctxt": [
-         "partir le se et je devrai m&#39;arrêter à gros êtes jours AVANT un chose"
+         "avant / pour"
       ]
    },
    "inoispensable": {
@@ -5959,12 +5953,6 @@
       "lem": "sus",
       "ctxt": [
          "SUS"
-      ]
-   },
-   "Divement": {
-      "lem": "vivement",
-      "ctxt": [
-         "jours le triste VIVEMENT que vous savez ne me permet pas d&#39;attendre"
       ]
    },
    "Rranig": {
