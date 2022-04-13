@@ -3,10 +3,6 @@ import json
 import os
 from constantes import DICTPAGES, DICTCDS
 
-# On charge le dictionnaire Json global de la correspondance CDS
-with open(f"./py/dictComplets/dictCDS.json") as f:
-    dictCDS = json.load(f)
-
 def controleFormes(dictPage):
     """
     Cette fonction prend comme argument un dictionnaire de page, compare son contenu au dictCDS
@@ -16,6 +12,10 @@ def controleFormes(dictPage):
     :return: dictCDS enrichi par de nouvelles formes
     :return type: dict
     """
+    # On charge le dictionnaire Json global de la correspondance CDS
+    with open(f"./py/dictComplets/dictCDS.json") as f:
+        dictCDS = json.load(f)
+    
     # On boucle sur chaque clé du dictionnaire de page
     for forme in dictPage:
         # On ne traite les formes que si elles sont associés à un lemme qui les corrige
@@ -40,7 +40,7 @@ def controleFormes(dictPage):
 
 @click.command()
 @click.option("-f", "--file", type=str, help="Nom de fichier contenu dans le dossier "
-                                                                "./py/dictPages/")
+                                             "./py/dictPages/")
 @click.option("-A", "--all", is_flag=True, default=False, help="Prend tous les fichiers du dossier ./py/dictPages/")
 def dictCDSintegration(file, all):
     """
@@ -51,30 +51,37 @@ def dictCDSintegration(file, all):
     :type fichierdictpages: Json
     :returns: None
     """
-    
-    # Si l'option pour transformer tous les dictionnaires du dossier dictPages est active
-    if all:
-        # On boucle sur les fichiers du dossier dictPages
-        for root, dirs, files in os.walk(DICTPAGES):
-            for filename in files:
-                # On pose comme condition que le fichier est une extension .json
-                if filename[-4:] == "json":
-                    with open(DICTPAGES + filename) as f:
-                        dictPage = json.load(f)
-                    dictCDS = controleFormes(dictPage)
-                    print(f"Le fichier {filename} a été traité avec succès.")
-                    
-    # Si on ne transforme qu'un seul fichier passé en argument
+    if not file and not all:
+        print("Aucun argument n'a été passé !")
+        print("Pour plus d'information saisissez la commande :\npython3 py/dictCDSmanip.py --help")
     else:
-        # On charge le dictionnaire Json passé en argument
-        with open(f"./py/dictPages/{file}") as f:
-            dictPage = json.load(f)
-        dictCDS = controleFormes(dictPage)
-        print(f"Le fichier {file} a été traité avec succès.")
+        # On charge le dictionnaire Json global de la correspondance CDS
+        with open(f"./py/dictComplets/dictCDS.json") as f:
+            dictCDS = json.load(f)
     
-    # On remplace le fichier dictCDS.json par la version enrichie
-    with open(DICTCDS, mode="w") as f:
-        json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-    print("Le dictionnaire dictCDS.json est désormais à jour.")
-    
+        # Si l'option pour transformer tous les dictionnaires du dossier dictPages est active
+        if all:
+            # On boucle sur les fichiers du dossier dictPages
+            for root, dirs, files in os.walk(DICTPAGES):
+                for filename in files:
+                    # On pose comme condition que le fichier est une extension .json
+                    if filename[-4:] == "json":
+                        with open(DICTPAGES + filename) as f:
+                            dictPage = json.load(f)
+                        dictCDS = controleFormes(dictPage)
+                        print(f"Le fichier {filename} a été traité avec succès.")
+        
+        # Si on ne transforme qu'un seul fichier passé en argument
+        else:
+            # On charge le dictionnaire Json passé en argument
+            with open(f"./py/dictPages/{file}") as f:
+                dictPage = json.load(f)
+            dictCDS = controleFormes(dictPage)
+            print(f"Le fichier {file} a été traité avec succès.")
+        
+        # On remplace le fichier dictCDS.json par la version enrichie
+        with open(DICTCDS, mode="w") as f:
+            json.dump(dictCDS, f, indent=3, ensure_ascii=False)
+        print("Le dictionnaire dictCDS.json est désormais à jour.")
+
 dictCDSintegration()
