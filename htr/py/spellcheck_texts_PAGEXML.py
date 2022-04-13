@@ -135,9 +135,9 @@ def spellcheck_texts_page_XML():
                             }
             
             # On écrit le résultat dans un fichier de sortie au format .py
-            with open(DICTPAGES.strip() + "/Dict" + filename.replace(".xml", ".json"), "w") as jsonf:
+            with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
-                print(f"Le dictionnaire {DICTPAGES.strip() + 'Dict' + filename.replace('.xml', '.json')}"
-                      f" a été écrit correctement.")
+                print(f"=> Le dictionnaire {DICTPAGES.strip() + 'page_' + filename.replace('.xml', '.json')}"
+                      f" a été écrit correctement.\n")
 
 spellcheck_texts_page_XML()

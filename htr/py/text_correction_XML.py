@@ -101,9 +101,9 @@ def textCorrectionXML():
             
             print(f"Le fichier {filename} a été corrigé avec succès")
     
-    # On remplace le fichier dictCDS.json avec les contextes actualisés
+    # On remplace le fichier corresp.json avec les contextes actualisés
     with open(DICTCDS, mode="w") as f:
         json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-    print("Le dictionnaire dictCDS.json est désormais à jour.")
+    print("Le dictionnaire corresp.json est désormais à jour.")
 
 textCorrectionXML()

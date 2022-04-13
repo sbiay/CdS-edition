@@ -1,0 +1,1616 @@
+{
+   "Vpus": {
+      "lem": "Depuis",
+      "ctxt": "VPUS deur ans nous nous étous promis sans cesse de ne plus vous",
+      "deja utilisé": [
+         "DEPUIS deux ans nous nous None promis sans cesse de ne plus vous"
+      ]
+   },
+   "deur": {
+      "lem": "deux",
+      "ctxt": "Vpus DEUR ans nous nous étous promis sans cesse de ne plus vous",
+      "deja utilisé": [
+         "Depuis DEUX ans nous nous None promis sans cesse de ne plus vous"
+      ]
+   },
+   "ans": {
+      "lem": null,
+      "ctxt": "Vpus deur ANS nous nous étous promis sANS cesse de ne plus vous"
+   },
+   "nous": {
+      "lem": null,
+      "ctxt": "Vpus deur ans NOUS NOUS étous promis sans cesse de ne plus vous"
+   },
+   "étous": {
+      "lem": null,
+      "remarque": "déjà marqué comme AMBIGU"
+   },
+   "promis": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous PROMIS sans cesse de ne plus vous"
+   },
+   "sans": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous promis SANS cesse de ne plus vous"
+   },
+   "cesse": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous promis sans CESSE de ne plus vous"
+   },
+   "de": {
+      "lem": null,
+      "ctxt": "Vpus DEur ans nous nous étous promis sans cesse DE ne plus vous"
+   },
+   "ne": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous promis sans cesse de NE plus vous"
+   },
+   "plus": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous promis sans cesse de ne PLUS vous"
+   },
+   "vous": {
+      "lem": null,
+      "ctxt": "Vpus deur ans nous nous étous promis sans cesse de ne plus VOUS"
+   },
+   "guitles": {
+      "lem": "quitter",
+      "ctxt": "GUITLES  Cout était grrangé en conséquence  des raisons prans me",
+      "deja utilisé": [
+         "QUITTER. Tout était arrangé en conséquence. des raisons graves me"
+      ]
+   },
+   "": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé en conséquence  des raisons prans me"
+   },
+   "Cout": {
+      "lem": "Tout",
+      "ctxt": "guitles  COUT était grrangé en conséquence  des raisons prans me",
+      "deja utilisé": [
+         "quitter. TOUT était arrangé en conséquence. des raisons graves me"
+      ]
+   },
+   "était": {
+      "lem": null,
+      "ctxt": "guitles  Cout ÉTAIT grrangé en conséquence  des raisons prans me"
+   },
+   "grrangé": {
+      "lem": "arrangé",
+      "ctxt": "guitles  Cout était GRRANGÉ en conséquence  des raisons prans me",
+      "deja utilisé": [
+         "quitter. Tout était ARRANGÉ en conséquence. des raisons graves me"
+      ]
+   },
+   "en": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé EN conséquENce  des raisons prans me"
+   },
+   "conséquence": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé en CONSÉQUENCE  des raisons prans me"
+   },
+   "des": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé en conséquence  DES raisons prans me"
+   },
+   "raisons": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé en conséquence  des RAISONS prans me"
+   },
+   "prans": {
+      "lem": "graves",
+      "ctxt": "guitles  Cout était grrangé en conséquence  des raisons PRANS me",
+      "deja utilisé": [
+         "quitter. Tout était arrangé en conséquence. des raisons GRAVES me"
+      ]
+   },
+   "me": {
+      "lem": null,
+      "ctxt": "guitles  Cout était grrangé en conséquence  des raisons prans ME"
+   },
+   "sont": {
+      "lem": null,
+      "ctxt": "SONT même orandre ette séparation  et je m en fais un véritalle"
+   },
+   "même": {
+      "lem": null,
+      "ctxt": "sont MÊME orandre ette séparation  et je m en fais un véritalle"
+   },
+   "orandre": {
+      "lem": "craindre",
+      "ctxt": "sont même ORANDRE ette séparation  et je m en fais un véritalle",
+      "deja utilisé": [
+         "sont même CRAINDRE ette séparation, et je m&#39;en fais un véritable"
+      ]
+   },
+   "ette": {
+      "lem": null,
+      "ctxt": "sont même orandre ETTE séparation  et je m en fais un véritalle"
+   },
+   "séparation": {
+      "lem": null,
+      "ctxt": "sont même orandre ette SÉPARATION  et je m en fais un véritalle"
+   },
+   "et": {
+      "lem": null,
+      "ctxt": "sont même orandre ETte séparation  ET je m en fais un véritalle"
+   },
+   "je": {
+      "lem": null,
+      "ctxt": "sont même orandre ette séparation  et JE m en fais un véritalle"
+   },
+   "m": {
+      "lem": null,
+      "ctxt": "sont MêMe orandre ette séparation  et je M en fais un véritalle"
+   },
+   "fais": {
+      "lem": null,
+      "ctxt": "sont même orandre ette séparation  et je m en FAIS un véritalle"
+   },
+   "un": {
+      "lem": null,
+      "ctxt": "sont même orandre ette séparation  et je m en fais UN véritalle"
+   },
+   "véritalle": {
+      "lem": "véritable",
+      "ctxt": "sont même orandre ette séparation  et je m en fais un VÉRITALLE",
+      "deja utilisé": [
+         "sont même craindre ette séparation, et je m&#39;en fais un VÉRITABLE"
+      ]
+   },
+   "mootre": {
+      "lem": null,
+      "ctxt": "MOOTRE  Il partag ce sentmenr et nons sommes d aine tustesse"
+   },
+   "Il": {
+      "lem": "Il",
+      "ctxt": "mootre  IL partag ce sentmenr et nons sommes d aine tustesse",
+      "deja utilisé": [
+         "mootre. IL partage ce sentiment et nous sommes d&#39;une tristesse"
+      ]
+   },
+   "partag": {
+      "lem": "partage",
+      "ctxt": "mootre  Il PARTAG ce sentmenr et nons sommes d aine tustesse",
+      "deja utilisé": [
+         "mootre. Il PARTAGE ce sentiment et nous sommes d&#39;une tristesse"
+      ]
+   },
+   "ce": {
+      "lem": null,
+      "ctxt": "mootre  Il partag CE sentmenr et nons sommes d aine tustesse"
+   },
+   "sentmenr": {
+      "lem": "sentiment",
+      "ctxt": "mootre  Il partag ce SENTMENR et nons sommes d aine tustesse",
+      "deja utilisé": [
+         "mootre. Il partage ce SENTIMENT et nous sommes d&#39;une tristesse"
+      ]
+   },
+   "nons": {
+      "lem": "nous",
+      "ctxt": "mootre  Il partag ce sentmenr et NONS sommes d aine tustesse",
+      "deja utilisé": [
+         "mootre. Il partage ce sentiment et NOUS sommes d&#39;une tristesse"
+      ]
+   },
+   "sommes": {
+      "lem": null,
+      "ctxt": "mootre  Il partag ce sentmenr et nons SOMMES d aine tustesse"
+   },
+   "d": {
+      "lem": null,
+      "ctxt": "mootre  Il partag ce sentmenr et nons sommes D aine tustesse"
+   },
+   "aine": {
+      "lem": "une",
+      "ctxt": "mootre  Il partag ce sentmenr et nons sommes d AINE tustesse",
+      "deja utilisé": [
+         "mootre. Il partage ce sentiment et nous sommes d&#39;UNE tristesse"
+      ]
+   },
+   "tustesse": {
+      "lem": "tristesse",
+      "ctxt": "mootre  Il partag ce sentmenr et nons sommes d aine TUSTESSE",
+      "deja utilisé": [
+         "mootre. Il partage ce sentiment et nous sommes d&#39;une TRISTESSE"
+      ]
+   },
+   "montelle": {
+      "lem": "mutuelle",
+      "ctxt": "MONTELLE Vous avions bien irn que ce pauvre  Paron vrait",
+      "deja utilisé": [
+         "MUTUELLE Vous avions bien vu que ce pauvre. Baron irait"
+      ]
+   },
+   "Vous": {
+      "lem": "Vous",
+      "ctxt": "montelle VOUS avions bien irn que ce pauvre  Paron vrait",
+      "deja utilisé": [
+         "les dispositions que je fais pour mon départ VOUS ne vous figurez pur"
+      ]
+   },
+   "avions": {
+      "lem": null,
+      "ctxt": "montelle Vous AVIONS bien irn que ce pauvre  Paron vrait"
+   },
+   "bien": {
+      "lem": null,
+      "ctxt": "montelle Vous avions BIEN irn que ce pauvre  Paron vrait"
+   },
+   "irn": {
+      "lem": "vu",
+      "ctxt": "montelle Vous avions bien IRN que ce pauvre  Paron vrait",
+      "deja utilisé": [
+         "mutuelle Vous avions bien VU que ce pauvre. Baron irait"
+      ]
+   },
+   "que": {
+      "lem": null,
+      "ctxt": "montelle Vous avions bien irn QUE ce pauvre  Paron vrait"
+   },
+   "pauvre": {
+      "lem": null,
+      "ctxt": "montelle Vous avions bien irn que ce PAUVRE  Paron vrait"
+   },
+   "Paron": {
+      "lem": "Baron",
+      "ctxt": "montelle Vous avions bien irn que ce pauvre  PARON vrait",
+      "deja utilisé": [
+         "mutuelle Vous avions bien vu que ce pauvre. BARON irait"
+      ]
+   },
+   "vrait": {
+      "lem": "irait",
+      "ctxt": "montelle Vous avions bien irn que ce pauvre  Paron VRAIT",
+      "deja utilisé": [
+         "mutuelle Vous avions bien vu que ce pauvre. Baron IRAIT"
+      ]
+   },
+   "pasiu": {
+      "lem": null,
+      "ctxt": "PASIU an frintemps  Vais le besoin de partor des conselatons et"
+   },
+   "an": {
+      "lem": null,
+      "ctxt": "pasiu AN frintemps  Vais le besoin de partor des conselatons et"
+   },
+   "frintemps": {
+      "lem": "printemps",
+      "ctxt": "pasiu an FRINTEMPS  Vais le besoin de partor des conselatons et",
+      "deja utilisé": [
+         "pasiu&#39;an PRINTEMPS. Mais le besoin de partor des consolations et"
+      ]
+   },
+   "Vais": {
+      "lem": "Mais",
+      "ctxt": "pasiu an frintemps  VAIS le besoin de partor des conselatons et",
+      "deja utilisé": [
+         "pasiu&#39;an printemps. MAIS le besoin de partor des consolations et"
+      ]
+   },
+   "le": {
+      "lem": null,
+      "ctxt": "pasiu an frintemps  Vais LE besoin de partor des conselatons et"
+   },
+   "besoin": {
+      "lem": null,
+      "ctxt": "pasiu an frintemps  Vais le BESOIN de partor des conselatons et"
+   },
+   "partor": {
+      "lem": null,
+      "ctxt": "pasiu an frintemps  Vais le besoin de PARTOR des conselatons et"
+   },
+   "conselatons": {
+      "lem": "consolations",
+      "ctxt": "pasiu an frintemps  Vais le besoin de partor des CONSELATONS et",
+      "deja utilisé": [
+         "pasiu&#39;an printemps. Mais le besoin de partor des CONSOLATIONS et"
+      ]
+   },
+   "conseils": {
+      "lem": null,
+      "ctxt": "des CONSEILS à ma bille l emnporte incessament sur tout d"
+   },
+   "à": {
+      "lem": null,
+      "ctxt": "des conseils À ma bille l emnporte incessament sur tout d"
+   },
+   "ma": {
+      "lem": null,
+      "ctxt": "des conseils à MA bille l emnporte incessament sur tout d"
+   },
+   "bille": {
+      "lem": "fille",
+      "ctxt": "des conseils à ma BILLE l emnporte incessament sur tout d",
+      "deja utilisé": [
+         "des conseils à ma FILLE l&#39;emnporte incessament sur tout d"
+      ]
+   },
+   "l": {
+      "lem": null,
+      "ctxt": "des conseiLs à ma biLLe L emnporte incessament sur tout d"
+   },
+   "emnporte": {
+      "lem": null,
+      "ctxt": "des conseils à ma bille l EMNPORTE incessament sur tout d"
+   },
+   "incessament": {
+      "lem": null,
+      "ctxt": "des conseils à ma bille l emnporte INCESSAMENT sur tout d"
+   },
+   "sur": {
+      "lem": null,
+      "ctxt": "des conseils à ma bille l emnporte incessament SUR tout d"
+   },
+   "tout": {
+      "lem": null,
+      "ctxt": "des conseils à ma bille l emnporte incessament sur TOUT d"
+   },
+   "revoir": {
+      "lem": null,
+      "ctxt": "REVOIR Mouvent prles vous buin  et attadez moi  que de cones"
+   },
+   "Mouvent": {
+      "lem": "Monsieur",
+      "ctxt": "revoir MOUVENT prles vous buin  et attadez moi  que de cones",
+      "deja utilisé": [
+         "revoir MONSIEUR prles vous bien, et attendez moi. que de choses"
+      ]
+   },
+   "prles": {
+      "lem": null,
+      "ctxt": "revoir Mouvent PRLES vous buin  et attadez moi  que de cones"
+   },
+   "buin": {
+      "lem": "bien",
+      "ctxt": "revoir Mouvent prles vous BUIN  et attadez moi  que de cones",
+      "deja utilisé": [
+         "revoir Monsieur prles vous BIEN, et attendez moi. que de choses"
+      ]
+   },
+   "attadez": {
+      "lem": "attendez",
+      "ctxt": "revoir Mouvent prles vous buin  et ATTADEZ moi  que de cones",
+      "deja utilisé": [
+         "revoir Monsieur prles vous bien, et ATTENDEZ moi. que de choses"
+      ]
+   },
+   "moi": {
+      "lem": null,
+      "ctxt": "revoir Mouvent prles vous buin  et attadez MOI  que de cones"
+   },
+   "cones": {
+      "lem": "choses",
+      "ctxt": "revoir Mouvent prles vous buin  et attadez moi  que de CONES",
+      "deja utilisé": [
+         "revoir Monsieur prles vous bien, et attendez moi. que de CHOSES"
+      ]
+   },
+   "Pire": {
+      "lem": "dire",
+      "ctxt": "à PIRE au cour dez fau ",
+      "deja utilisé": [
+         "à DIRE au cour dez feu."
+      ]
+   },
+   "au": {
+      "lem": null,
+      "ctxt": "à Pire AU cour dez fAU "
+   },
+   "cour": {
+      "lem": null,
+      "ctxt": "à Pire au COUR dez fau "
+   },
+   "dez": {
+      "lem": null,
+      "ctxt": "à Pire au cour DEZ fau "
+   },
+   "fau": {
+      "lem": "feu",
+      "ctxt": "à Pire au cour dez FAU ",
+      "deja utilisé": [
+         "à dire au cour dez FEU."
+      ]
+   },
+   "(Signé)": {
+      "lem": "(Signé)",
+      "ctxt": "(SIGNÉ) du tane de Salm ",
+      "deja utilisé": [
+         "(SIGNÉ) Constance de Salm."
+      ]
+   },
+   "du": {
+      "lem": null,
+      "ctxt": "(Signé) DU tane de Salm "
+   },
+   "tane": {
+      "lem": null,
+      "ctxt": "(Signé) du TANE de Salm "
+   },
+   "Salm": {
+      "lem": "Salm",
+      "ctxt": "(Signé) du tane de SALM ",
+      "deja utilisé": [
+         "(Signé) Constance de SALM."
+      ]
+   },
+   "(dlrsa": {
+      "lem": null,
+      "ctxt": "(DLRSA vret "
+   },
+   "vret": {
+      "lem": null,
+      "ctxt": "(dlrsa VRET "
+   },
+   "1": {
+      "lem": null,
+      "ctxt": "de 1"
+   },
+   "Vifm": {
+      "lem": "Enfin",
+      "ctxt": "VIFM  Monsieur  je puis partre et atler consoler me frlle de la peate",
+      "deja utilisé": [
+         "ENFIN, Monsieur, je puis partir et aller consoler me fille de la perte"
+      ]
+   },
+   "Monsieur": {
+      "lem": "Monsieur",
+      "ctxt": "Vifm  MONSIEUR  je puis partre et atler consoler me frlle de la peate",
+      "deja utilisé": [
+         "A revoir don MONSIEUR et ami, mille choses tendres à votre famille"
+      ]
+   },
+   "puis": {
+      "lem": null,
+      "ctxt": "Vifm  Monsieur  je PUIS partre et atler consoler me frlle de la peate"
+   },
+   "partre": {
+      "lem": "partir",
+      "ctxt": "Vifm  Monsieur  je puis PARTRE et atler consoler me frlle de la peate",
+      "deja utilisé": [
+         "Enfin, Monsieur, je puis PARTIR et aller consoler me fille de la perte"
+      ]
+   },
+   "atler": {
+      "lem": "aller",
+      "ctxt": "Vifm  Monsieur  je puis partre et ATLER consoler me frlle de la peate",
+      "deja utilisé": [
+         "Enfin, Monsieur, je puis partir et ALLER consoler me fille de la perte"
+      ]
+   },
+   "consoler": {
+      "lem": null,
+      "ctxt": "Vifm  Monsieur  je puis partre et atler CONSOLER me frlle de la peate"
+   },
+   "frlle": {
+      "lem": "fille",
+      "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me FRLLE de la peate",
+      "deja utilisé": [
+         "Enfin, Monsieur, je puis partir et aller consoler me FILLE de la perte"
+      ]
+   },
+   "la": {
+      "lem": null,
+      "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me frlle de LA peate"
+   },
+   "peate": {
+      "lem": "perte",
+      "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me frlle de la PEATE",
+      "deja utilisé": [
+         "Enfin, Monsieur, je puis partir et aller consoler me fille de la PERTE"
+      ]
+   },
+   "anele": {
+      "lem": "cruelle",
+      "ctxt": "ANELE qu ete vint de faire sepur upan  nous avons u celle triste lu",
+      "deja utilisé": [
+         "CRUELLE qu&#39;elle vient de faire sepur unpan, nous avons un celle triste lu"
+      ]
+   },
+   "qu": {
+      "lem": null,
+      "ctxt": "anele QU ete vint de faire sepur upan  nous avons u celle triste lu"
+   },
+   "ete": {
+      "lem": "elle",
+      "ctxt": "anele qu ETE vint de faire sepur upan  nous avons u celle triste lu",
+      "deja utilisé": [
+         "cruELLE qu&#39;ELLE vient de faire sepur unpan, nous avons un cELLE triste lu"
+      ]
+   },
+   "vint": {
+      "lem": "vient",
+      "ctxt": "anele qu ete VINT de faire sepur upan  nous avons u celle triste lu",
+      "deja utilisé": [
+         "cruelle qu&#39;elle VIENT de faire sepur unpan, nous avons un celle triste lu"
+      ]
+   },
+   "faire": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de FAIRE sepur upan  nous avons u celle triste lu"
+   },
+   "sepur": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de faire SEPUR upan  nous avons u celle triste lu"
+   },
+   "upan": {
+      "lem": "un an",
+      "ctxt": "anele qu ete vint de faire sepur UPAN  nous avons u celle triste lu",
+      "deja utilisé": [
+         "cruelle qu&#39;elle vient de faire sepur unpan, nous avons un celle triste lu"
+      ]
+   },
+   "avons": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de faire sepur upan  nous AVONS u celle triste lu"
+   },
+   "u": {
+      "lem": "un",
+      "ctxt": "anele qU ete vint de faire sepUr Upan  noUs avons U celle triste lU",
+      "deja utilisé": [
+         "et qui nécessiteraient UN plus Coup Nour. Mais l nl a pas à hésiter"
+      ]
+   },
+   "celle": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de faire sepur upan  nous avons u CELLE triste lu"
+   },
+   "triste": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de faire sepur upan  nous avons u celle TRISTE lu"
+   },
+   "lu": {
+      "lem": null,
+      "ctxt": "anele qu ete vint de faire sepur upan  nous avons u celle triste LU"
+   },
+   "arruiveir": {
+      "lem": "arriver",
+      "ctxt": "ARRUIVEIR pas à pas  Nous en étions nanrles  et il n est pes de sous et",
+      "deja utilisé": [
+         "ARRIVER pas à pas. vous en étions navrés, et il n&#39;est pas de sous et"
+      ]
+   },
+   "pas": {
+      "lem": null,
+      "ctxt": "arruiveir PAS à PAS  Nous en étions nanrles  et il n est pes de sous et"
+   },
+   "Nous": {
+      "lem": "vous",
+      "ctxt": "arruiveir pas à pas  NOUS en étions nanrles  et il n est pes de sous et",
+      "deja utilisé": [
+         "arriver pas à pas. VOUS en étions navrés, et il n&#39;est pas de sous et"
+      ]
+   },
+   "étions": {
+      "lem": null,
+      "ctxt": "arruiveir pas à pas  Nous en ÉTIONS nanrles  et il n est pes de sous et"
+   },
+   "nanrles": {
+      "lem": "navrés",
+      "ctxt": "arruiveir pas à pas  Nous en étions NANRLES  et il n est pes de sous et",
+      "deja utilisé": [
+         "arriver pas à pas. vous en étions NAVRÉS, et il n&#39;est pas de sous et"
+      ]
+   },
+   "il": {
+      "lem": null,
+      "ctxt": "arruiveir pas à pas  Nous en étions nanrles  et IL n est pes de sous et"
+   },
+   "n": {
+      "lem": null,
+      "ctxt": "arruiveir pas à pas  Nous eN étioNs NaNrles  et il N est pes de sous et"
+   },
+   "est": {
+      "lem": null,
+      "ctxt": "arruiveir pas à pas  Nous en étions nanrles  et il n EST pes de sous et"
+   },
+   "pes": {
+      "lem": "pas",
+      "ctxt": "arruiveir pas à pas  Nous en étions nanrles  et il n est PES de sous et",
+      "deja utilisé": [
+         "arriver PAS à PAS. vous en étions navrés, et il n&#39;est PAS de sous et"
+      ]
+   },
+   "sous": {
+      "lem": null,
+      "ctxt": "arruiveir pas à pas  Nous en étions nanrles  et il n est pes de SOUS et"
+   },
+   "moyens": {
+      "lem": null,
+      "ctxt": "ce MOYENS qui m aient édté chnsées pour sauver ce ave homme "
+   },
+   "qui": {
+      "lem": null,
+      "ctxt": "ce moyens QUI m aient édté chnsées pour sauver ce ave homme "
+   },
+   "aient": {
+      "lem": null,
+      "ctxt": "ce moyens qui m AIENT édté chnsées pour sauver ce ave homme "
+   },
+   "édté": {
+      "lem": "été",
+      "ctxt": "ce moyens qui m aient ÉDTÉ chnsées pour sauver ce ave homme ",
+      "deja utilisé": [
+         "ce moyens qui m&#39;aient ÉTÉ chnsées pour sauver ce ave homme,"
+      ]
+   },
+   "chnsées": {
+      "lem": null,
+      "ctxt": "ce moyens qui m aient édté CHNSÉES pour sauver ce ave homme "
+   },
+   "pour": {
+      "lem": null,
+      "ctxt": "ce moyens qui m aient édté chnsées POUR sauver ce ave homme "
+   },
+   "sauver": {
+      "lem": null,
+      "ctxt": "ce moyens qui m aient édté chnsées pour SAUVER ce ave homme "
+   },
+   "ave": {
+      "lem": null,
+      "ctxt": "ce moyens qui m aient édté chnsées pour sauver ce AVE homme "
+   },
+   "homme": {
+      "lem": null,
+      "ctxt": "ce moyens qui m aient édté chnsées pour sauver ce ave HOMME "
+   },
+   "mais": {
+      "lem": null,
+      "ctxt": "MAIS son mal état incavrable et fai  dons de moment  le songtereguair"
+   },
+   "son": {
+      "lem": null,
+      "ctxt": "mais SON mal état incavrable et fai  dons de moment  le SONgtereguair"
+   },
+   "mal": {
+      "lem": null,
+      "ctxt": "mais son MAL état incavrable et fai  dons de moment  le songtereguair"
+   },
+   "état": {
+      "lem": null,
+      "ctxt": "mais son mal ÉTAT incavrable et fai  dons de moment  le songtereguair"
+   },
+   "incavrable": {
+      "lem": "incurable",
+      "ctxt": "mais son mal état INCAVRABLE et fai  dons de moment  le songtereguair",
+      "deja utilisé": [
+         "mais son mal état INCURABLE et j'ai, dans de moment, le double regret"
+      ]
+   },
+   "fai": {
+      "lem": "j'ai",
+      "ctxt": "mais son mal état incavrable et FAI  dons de moment  le songtereguair",
+      "deja utilisé": [
+         "vues doute la cause, j&#39;a J'AI par de l mlle fer plus oumme Sillgue"
+      ]
+   },
+   "dons": {
+      "lem": "dans",
+      "ctxt": "mais son mal état incavrable et fai  DONS de moment  le songtereguair",
+      "deja utilisé": [
+         "Je jours, Monsieur et ami, mon mari me rejoindra DANS le"
+      ]
+   },
+   "moment": {
+      "lem": null,
+      "ctxt": "mais son mal état incavrable et fai  dons de MOMENT  le songtereguair"
+   },
+   "songtereguair": {
+      "lem": "double regret",
+      "ctxt": "mais son mal état incavrable et fai  dons de moment  le SONGTEREGUAIR",
+      "deja utilisé": [
+         "mais son mal état incurable et j'ai, dans de moment, le DOUBLE REGRET"
+      ]
+   },
+   "avoir": {
+      "lem": null,
+      "ctxt": "de l AVOIR uu mourir  et de voir ma fats sauile ane turs pette esfanes"
+   },
+   "uu": {
+      "lem": "vu",
+      "ctxt": "de l avoir UU mourir  et de voir ma fats sauile ane turs pette esfanes",
+      "deja utilisé": [
+         "de l&#39;avoir VU mourir, et de voir ma fats seule ane turs pette enfans"
+      ]
+   },
+   "mourir": {
+      "lem": null,
+      "ctxt": "de l avoir uu MOURIR  et de voir ma fats sauile ane turs pette esfanes"
+   },
+   "voir": {
+      "lem": null,
+      "ctxt": "de l aVOIR uu mourir  et de VOIR ma fats sauile ane turs pette esfanes"
+   },
+   "fats": {
+      "lem": null,
+      "ctxt": "de l avoir uu mourir  et de voir ma FATS sauile ane turs pette esfanes"
+   },
+   "sauile": {
+      "lem": "seule",
+      "ctxt": "de l avoir uu mourir  et de voir ma fats SAUILE ane turs pette esfanes",
+      "deja utilisé": [
+         "de l&#39;avoir vu mourir, et de voir ma fats SEULE ane turs pette enfans"
+      ]
+   },
+   "ane": {
+      "lem": null,
+      "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ANE turs pette esfANEs"
+   },
+   "turs": {
+      "lem": null,
+      "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ane TURS pette esfanes"
+   },
+   "pette": {
+      "lem": null,
+      "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ane turs PETTE esfanes"
+   },
+   "esfanes": {
+      "lem": "enfans",
+      "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ane turs pette ESFANES",
+      "deja utilisé": [
+         "de l&#39;avoir vu mourir, et de voir ma fats seule ane turs pette ENFANS"
+      ]
+   },
+   "apris": {
+      "lem": "après",
+      "ctxt": "APRIS avoir pris taut de sains pours l étallur convenoblement lu verite",
+      "deja utilisé": [
+         "APRÈS avoir pris tant de sains pour l&#39;établir convenablement lu vérité"
+      ]
+   },
+   "pris": {
+      "lem": null,
+      "ctxt": "aPRIS avoir PRIS taut de sains pours l étallur convenoblement lu verite"
+   },
+   "taut": {
+      "lem": "tant",
+      "ctxt": "apris avoir pris TAUT de sains pours l étallur convenoblement lu verite",
+      "deja utilisé": [
+         "après avoir pris TANT de sains pour l&#39;établir convenablement lu vérité"
+      ]
+   },
+   "sains": {
+      "lem": null,
+      "ctxt": "apris avoir pris taut de SAINS pours l étallur convenoblement lu verite"
+   },
+   "pours": {
+      "lem": "pour",
+      "ctxt": "apris avoir pris taut de sains POURS l étallur convenoblement lu verite",
+      "deja utilisé": [
+         "après avoir pris tant de sains POUR l&#39;établir convenablement lu vérité"
+      ]
+   },
+   "étallur": {
+      "lem": "établir",
+      "ctxt": "apris avoir pris taut de sains pours l ÉTALLUR convenoblement lu verite",
+      "deja utilisé": [
+         "après avoir pris tant de sains pour l&#39;ÉTABLIR convenablement lu vérité"
+      ]
+   },
+   "convenoblement": {
+      "lem": "convenablement",
+      "ctxt": "apris avoir pris taut de sains pours l étallur CONVENOBLEMENT lu verite",
+      "deja utilisé": [
+         "après avoir pris tant de sains pour l&#39;établir CONVENABLEMENT lu vérité"
+      ]
+   },
+   "verite": {
+      "lem": "vérité",
+      "ctxt": "apris avoir pris taut de sains pours l étallur convenoblement lu VERITE",
+      "deja utilisé": [
+         "après avoir pris tant de sains pour l&#39;établir convenablement lu VÉRITÉ"
+      ]
+   },
+   "c": {
+      "lem": null,
+      "ctxt": "C est Cen mabseur réel pour nous tous "
+   },
+   "cen": {
+      "lem": null,
+      "ctxt": "c est CEN mabseur réel pour nous tous "
+   },
+   "mabseur": {
+      "lem": "malheur",
+      "ctxt": "c est cen MABSEUR réel pour nous tous ",
+      "deja utilisé": [
+         "c&#39;est cen MALHEUR réel pour nous tous."
+      ]
+   },
+   "réel": {
+      "lem": null,
+      "ctxt": "c est cen mabseur RÉEL pour nous tous "
+   },
+   "tous": {
+      "lem": null,
+      "ctxt": "c est cen mabseur réel pour nous TOUS "
+   },
+   "J": {
+      "lem": "J",
+      "ctxt": "J ai brin sousert de nepouvoir être à Vons dans cete quste arconstorc",
+      "deja utilisé": [
+         "(Signé) J 2e 2."
+      ]
+   },
+   "ai": {
+      "lem": null,
+      "ctxt": "J AI brin sousert de nepouvoir être à Vons dans cete quste arconstorc"
+   },
+   "brin": {
+      "lem": "bien",
+      "ctxt": "J ai BRIN sousert de nepouvoir être à Vons dans cete quste arconstorc",
+      "deja utilisé": [
+         "J&#39;ai BIEN souffert de ne pouvoir être à Vous dans cette quste circonstance"
+      ]
+   },
+   "sousert": {
+      "lem": "souffert",
+      "ctxt": "J ai brin SOUSERT de nepouvoir être à Vons dans cete quste arconstorc",
+      "deja utilisé": [
+         "J&#39;ai bien SOUFFERT de ne pouvoir être à Vous dans cette quste circonstance"
+      ]
+   },
+   "nepouvoir": {
+      "lem": "ne pouvoir",
+      "ctxt": "J ai brin sousert de NEPOUVOIR être à Vons dans cete quste arconstorc",
+      "deja utilisé": [
+         "J&#39;ai bien souffert de NE POUVOIR être à Vous dans cette quste circonstance"
+      ]
+   },
+   "être": {
+      "lem": null,
+      "ctxt": "J ai brin sousert de nepouvoir ÊTRE à Vons dans cete quste arconstorc"
+   },
+   "Vons": {
+      "lem": "Vous",
+      "ctxt": "J ai brin sousert de nepouvoir être à VONS dans cete quste arconstorc",
+      "deja utilisé": [
+         "J&#39;ai bien souffert de ne pouvoir être à VOUS dans cette quste circonstance"
+      ]
+   },
+   "dans": {
+      "lem": null,
+      "ctxt": "J ai brin sousert de nepouvoir être à Vons DANS cete quste arconstorc"
+   },
+   "cete": {
+      "lem": "cette",
+      "ctxt": "J ai brin sousert de nepouvoir être à Vons dans CETE quste arconstorc",
+      "deja utilisé": [
+         "J&#39;ai bien souffert de ne pouvoir être à Vous dans CETTE quste circonstance"
+      ]
+   },
+   "quste": {
+      "lem": null,
+      "ctxt": "J ai brin sousert de nepouvoir être à Vons dans cete QUSTE arconstorc"
+   },
+   "arconstorc": {
+      "lem": "circonstance",
+      "ctxt": "J ai brin sousert de nepouvoir être à Vons dans cete quste ARCONSTORC",
+      "deja utilisé": [
+         "J&#39;ai bien souffert de ne pouvoir être à Vous dans cette quste CIRCONSTANCE"
+      ]
+   },
+   "Sais": {
+      "lem": "mais",
+      "ctxt": "SAIS ele  Dait popquemait impossille  Je m ai me outer que",
+      "deja utilisé": [
+         "MAIS elle. Dait physiquement impossible. Je m&#39;ai me outer que"
+      ]
+   },
+   "ele": {
+      "lem": "elle",
+      "ctxt": "Sais ELE  Dait popquemait impossille  Je m ai me outer que",
+      "deja utilisé": [
+         "mais ELLE. Dait physiquement impossible. Je m&#39;ai me outer que"
+      ]
+   },
+   "Dait": {
+      "lem": "fait",
+      "ctxt": "Sais ele  DAIT popquemait impossille  Je m ai me outer que"
+   },
+   "popquemait": {
+      "lem": "physiquement",
+      "ctxt": "Sais ele  Dait POPQUEMAIT impossille  Je m ai me outer que",
+      "deja utilisé": [
+         "mais elle. Dait PHYSIQUEMENT impossible. Je m&#39;ai me outer que"
+      ]
+   },
+   "impossille": {
+      "lem": "impossible",
+      "ctxt": "Sais ele  Dait popquemait IMPOSSILLE  Je m ai me outer que",
+      "deja utilisé": [
+         "mais elle. Dait physiquement IMPOSSIBLE. Je m&#39;ai me outer que"
+      ]
+   },
+   "Je": {
+      "lem": "Je",
+      "ctxt": "Sais ele  Dait popquemait impossille  JE m ai me outer que",
+      "deja utilisé": [
+         "JE jours, Monsieur et ami, mon mari me rejoindra dans le"
+      ]
+   },
+   "outer": {
+      "lem": null,
+      "ctxt": "Sais ele  Dait popquemait impossille  Je m ai me OUTER que"
+   },
+   "Decembre": {
+      "lem": "Décembre",
+      "ctxt": "que le je DECEMBRE   et la nécssité de reenr chez moi  e de prendre",
+      "deja utilisé": [
+         "que le je DÉCEMBRE ; ett la nécessité de revenir chez moi, et de prendre"
+      ]
+   },
+   "nécssité": {
+      "lem": "nécessité",
+      "ctxt": "que le je Decembre   et la NÉCSSITÉ de reenr chez moi  e de prendre",
+      "deja utilisé": [
+         "que le je Décembre ; ett la NÉCESSITÉ de revenir chez moi, et de prendre"
+      ]
+   },
+   "reenr": {
+      "lem": "revenir",
+      "ctxt": "que le je Decembre   et la nécssité de REENR chez moi  e de prendre",
+      "deja utilisé": [
+         "que le je Décembre ; ett la nécessité de REVENIR chez moi, et de prendre"
+      ]
+   },
+   "chez": {
+      "lem": null,
+      "ctxt": "que le je Decembre   et la nécssité de reenr CHEZ moi  e de prendre"
+   },
+   "e": {
+      "lem": "et",
+      "ctxt": "quE lE jE DEcEmbrE   Et la nécssité dE rEEnr chEz moi  E dE prEndrE",
+      "deja utilisé": [
+         "de ET le ses sere gdinre la lalma le de dn srs s vorele se direna dire à de"
+      ]
+   },
+   "prendre": {
+      "lem": null,
+      "ctxt": "que le je Decembre   et la nécssité de reenr chez moi  e de PRENDRE"
+   },
+   "les": {
+      "lem": null,
+      "ctxt": "LES dispopitons nécfaires pour un voyage au sera long  n a retenre"
+   },
+   "dispopitons": {
+      "lem": "dispositions",
+      "ctxt": "les DISPOPITONS nécfaires pour un voyage au sera long  n a retenre",
+      "deja utilisé": [
+         "les DISPOSITIONS nécessaires pour un voyage au sera long, n&#39;a retenue"
+      ]
+   },
+   "nécfaires": {
+      "lem": "nécessaires",
+      "ctxt": "les dispopitons NÉCFAIRES pour un voyage au sera long  n a retenre",
+      "deja utilisé": [
+         "les dispositions NÉCESSAIRES pour un voyage au sera long, n&#39;a retenue"
+      ]
+   },
+   "voyage": {
+      "lem": null,
+      "ctxt": "les dispopitons nécfaires pour un VOYAGE au sera long  n a retenre"
+   },
+   "sera": {
+      "lem": null,
+      "ctxt": "les dispopitons nécfaires pour un voyage au SERA long  n a retenre"
+   },
+   "long": {
+      "lem": null,
+      "ctxt": "les dispopitons nécfaires pour un voyage au sera LONG  n a retenre"
+   },
+   "a": {
+      "lem": null,
+      "ctxt": "les dispopitons nécfAires pour un voyAge Au serA long  n A retenre"
+   },
+   "retenre": {
+      "lem": "retenue",
+      "ctxt": "les dispopitons nécfaires pour un voyage au sera long  n a RETENRE",
+      "deja utilisé": [
+         "les dispositions nécessaires pour un voyage au sera long, n&#39;a RETENUE"
+      ]
+   },
+   "jasu": {
+      "lem": "jusqu",
+      "ctxt": "JASU a preseut les distanes sont une horible cgse  Je ne sais  que dous",
+      "deja utilisé": "JASU a preseut les distanes sont une horible cgse  Je ne sais  que dous"
+   },
+   "preseut": {
+      "lem": "présent",
+      "ctxt": "jasu a PRESEUT les distanes sont une horible cgse  Je ne sais  que dous",
+      "deja utilisé": [
+         "jasu&#39;a PRÉSENT les distances sont une horrible chose. Je ne sais, que dont"
+      ]
+   },
+   "distanes": {
+      "lem": "distances",
+      "ctxt": "jasu a preseut les DISTANES sont une horible cgse  Je ne sais  que dous",
+      "deja utilisé": [
+         "jasu&#39;a présent les DISTANCES sont une horrible chose. Je ne sais, que dont"
+      ]
+   },
+   "une": {
+      "lem": null,
+      "ctxt": "jasu a preseut les distanes sont UNE horible cgse  Je ne sais  que dous"
+   },
+   "horible": {
+      "lem": "horrible",
+      "ctxt": "jasu a preseut les distanes sont une HORIBLE cgse  Je ne sais  que dous",
+      "deja utilisé": [
+         "jasu&#39;a présent les distances sont une HORRIBLE chose. Je ne sais, que dont"
+      ]
+   },
+   "cgse": {
+      "lem": "chose",
+      "ctxt": "jasu a preseut les distanes sont une horible CGSE  Je ne sais  que dous",
+      "deja utilisé": [
+         "jasu&#39;a présent les distances sont une horrible CHOSE. Je ne sais, que dont"
+      ]
+   },
+   "sais": {
+      "lem": null,
+      "ctxt": "jasu a preseut les distanes sont une horible cgse  Je ne SAIS  que dous"
+   },
+   "dous": {
+      "lem": "dont",
+      "ctxt": "jasu a preseut les distanes sont une horible cgse  Je ne sais  que DOUS",
+      "deja utilisé": [
+         "jasu&#39;a présent les distances sont une horrible chose. Je ne sais, que DONT"
+      ]
+   },
+   "I": {
+      "lem": "&",
+      "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu on conserne",
+      "deja utilisé": [
+         "& autres sur lesquels je compte comme sur moi même suffiront"
+      ]
+   },
+   "y": {
+      "lem": null,
+      "ctxt": "I à Y jours àa trstre chénemait  qu ane epérance qu on conserne"
+   },
+   "jours": {
+      "lem": null,
+      "ctxt": "I à y JOURS àa trstre chénemait  qu ane epérance qu on conserne"
+   },
+   "àa": {
+      "lem": null,
+      "ctxt": "I à y jours ÀA trstre chénemait  qu ane epérance qu on conserne"
+   },
+   "trstre": {
+      "lem": "triste",
+      "ctxt": "I à y jours àa TRSTRE chénemait  qu ane epérance qu on conserne",
+      "deja utilisé": [
+         "& à y jours àa TRISTE chénemait, qu&#39;ane espérance qu&#39;on conserve"
+      ]
+   },
+   "chénemait": {
+      "lem": null,
+      "ctxt": "I à y jours àa trstre CHÉNEMAIT  qu ane epérance qu on conserne"
+   },
+   "epérance": {
+      "lem": "espérance",
+      "ctxt": "I à y jours àa trstre chénemait  qu ane EPÉRANCE qu on conserne",
+      "deja utilisé": [
+         "& à y jours àa triste chénemait, qu&#39;ane ESPÉRANCE qu&#39;on conserve"
+      ]
+   },
+   "on": {
+      "lem": null,
+      "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu ON cONserne"
+   },
+   "conserne": {
+      "lem": "conserve",
+      "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu on CONSERNE",
+      "deja utilisé": [
+         "& à y jours àa triste chénemait, qu&#39;ane espérance qu&#39;on CONSERVE"
+      ]
+   },
+   "toijours": {
+      "lem": "toujours",
+      "ctxt": "TOIJOURS malgui l rndeme  me faisait roire llaigné daus le momeat",
+      "deja utilisé": [
+         "TOUJOURS malgré l&#39;évidence, me faisait croire éloigné dans le moment"
+      ]
+   },
+   "malgui": {
+      "lem": "malgré",
+      "ctxt": "toijours MALGUI l rndeme  me faisait roire llaigné daus le momeat",
+      "deja utilisé": [
+         "toujours MALGRÉ l&#39;évidence, me faisait croire éloigné dans le moment"
+      ]
+   },
+   "rndeme": {
+      "lem": "évidence",
+      "ctxt": "toijours malgui l RNDEME  me faisait roire llaigné daus le momeat",
+      "deja utilisé": [
+         "toujours malgré l&#39;ÉVIDENCE, me faisait croire éloigné dans le moment"
+      ]
+   },
+   "faisait": {
+      "lem": null,
+      "ctxt": "toijours malgui l rndeme  me FAISAIT roire llaigné daus le momeat"
+   },
+   "roire": {
+      "lem": "croire",
+      "ctxt": "toijours malgui l rndeme  me faisait ROIRE llaigné daus le momeat",
+      "deja utilisé": [
+         "toujours malgré l&#39;évidence, me faisait CROIRE éloigné dans le moment"
+      ]
+   },
+   "llaigné": {
+      "lem": "éloigné",
+      "ctxt": "toijours malgui l rndeme  me faisait roire LLAIGNÉ daus le momeat",
+      "deja utilisé": [
+         "toujours malgré l&#39;évidence, me faisait croire ÉLOIGNÉ dans le moment"
+      ]
+   },
+   "daus": {
+      "lem": "dans",
+      "ctxt": "toijours malgui l rndeme  me faisait roire llaigné DAUS le momeat",
+      "deja utilisé": [
+         "toujours malgré l&#39;évidence, me faisait croire éloigné DANS le moment"
+      ]
+   },
+   "momeat": {
+      "lem": "moment",
+      "ctxt": "toijours malgui l rndeme  me faisait roire llaigné daus le MOMEAT",
+      "deja utilisé": [
+         "toujours malgré l&#39;évidence, me faisait croire éloigné dans le MOMENT"
+      ]
+   },
+   "oni": {
+      "lem": "où",
+      "ctxt": "ONI j ai reu la tetre mon mari m asfurait que je revrrais eune",
+      "deja utilisé": [
+         "OÙ j&#39;ai rien la lettre mon mari m&#39;assurait que je reverrais encore"
+      ]
+   },
+   "j": {
+      "lem": null,
+      "ctxt": "oni J ai reu la tetre mon mari m asfurait que Je revrrais eune"
+   },
+   "reu": {
+      "lem": "rien",
+      "ctxt": "oni j ai REU la tetre mon mari m asfurait que je revrrais eune",
+      "deja utilisé": [
+         "où j&#39;ai RIEN la lettre mon mari m&#39;assurait que je reverrais encore"
+      ]
+   },
+   "tetre": {
+      "lem": "lettre",
+      "ctxt": "oni j ai reu la TETRE mon mari m asfurait que je revrrais eune",
+      "deja utilisé": [
+         "où j&#39;ai rien la LETTRE mon mari m&#39;assurait que je reverrais encore"
+      ]
+   },
+   "mon": {
+      "lem": null,
+      "ctxt": "oni j ai reu la tetre MON mari m asfurait que je revrrais eune"
+   },
+   "mari": {
+      "lem": null,
+      "ctxt": "oni j ai reu la tetre mon MARI m asfurait que je revrrais eune"
+   },
+   "asfurait": {
+      "lem": "assurait",
+      "ctxt": "oni j ai reu la tetre mon mari m ASFURAIT que je revrrais eune",
+      "deja utilisé": [
+         "où j&#39;ai rien la lettre mon mari m&#39;ASSURAIT que je reverrais encore"
+      ]
+   },
+   "revrrais": {
+      "lem": "reverrais",
+      "ctxt": "oni j ai reu la tetre mon mari m asfurait que je REVRRAIS eune",
+      "deja utilisé": [
+         "où j&#39;ai rien la lettre mon mari m&#39;assurait que je REVERRAIS encore"
+      ]
+   },
+   "eune": {
+      "lem": "encore",
+      "ctxt": "oni j ai reu la tetre mon mari m asfurait que je revrrais EUNE",
+      "deja utilisé": [
+         "où j&#39;ai rien la lettre mon mari m&#39;assurait que je reverrais ENCORE"
+      ]
+   },
+   "ee": {
+      "lem": "ce",
+      "ctxt": "EE trane homme Cafin  il fant plier le das ",
+      "deja utilisé": [
+         "rimior tritanée CEtte ate me s7 s l eprs tres bans CE lag tires"
+      ]
+   },
+   "trane": {
+      "lem": "brave",
+      "ctxt": "ee TRANE homme Cafin  il fant plier le das ",
+      "deja utilisé": [
+         "ce BRAVE homme Enfin, il faut plier le dos."
+      ]
+   },
+   "Cafin": {
+      "lem": "Enfin",
+      "ctxt": "ee trane homme CAFIN  il fant plier le das ",
+      "deja utilisé": [
+         "ce brave homme ENFIN, il faut plier le dos."
+      ]
+   },
+   "fant": {
+      "lem": "faut",
+      "ctxt": "ee trane homme Cafin  il FANT plier le das ",
+      "deja utilisé": [
+         "ce brave homme Enfin, il FAUT plier le dos."
+      ]
+   },
+   "plier": {
+      "lem": null,
+      "ctxt": "ee trane homme Cafin  il fant PLIER le das "
+   },
+   "das": {
+      "lem": "dos",
+      "ctxt": "ee trane homme Cafin  il fant plier le DAS ",
+      "deja utilisé": [
+         "ce brave homme Enfin, il faut plier le DOS."
+      ]
+   },
+   "Mon": {
+      "lem": "Mon",
+      "ctxt": "MON cher mari ne m ocompagnera pas  et l époir que vois avous",
+      "deja utilisé": [
+         "MON cher mari ne m&#39;accompagnera pas, et l&#39;espoir que vois avons"
+      ]
+   },
+   "cher": {
+      "lem": null,
+      "ctxt": "Mon CHER mari ne m ocompagnera pas  et l époir que vois avous"
+   },
+   "ocompagnera": {
+      "lem": "accompagnera",
+      "ctxt": "Mon cher mari ne m OCOMPAGNERA pas  et l époir que vois avous",
+      "deja utilisé": [
+         "Mon cher mari ne m&#39;ACCOMPAGNERA pas, et l&#39;espoir que vois avons"
+      ]
+   },
+   "époir": {
+      "lem": "espoir",
+      "ctxt": "Mon cher mari ne m ocompagnera pas  et l ÉPOIR que vois avous",
+      "deja utilisé": [
+         "Mon cher mari ne m&#39;accompagnera pas, et l&#39;ESPOIR que vois avons"
+      ]
+   },
+   "vois": {
+      "lem": null,
+      "ctxt": "Mon cher mari ne m ocompagnera pas  et l époir que VOIS avous"
+   },
+   "avous": {
+      "lem": "avons",
+      "ctxt": "Mon cher mari ne m ocompagnera pas  et l époir que vois AVOUS",
+      "deja utilisé": [
+         "Mon cher mari ne m&#39;accompagnera pas, et l&#39;espoir que vois AVONS"
+      ]
+   },
+   "congervé": {
+      "lem": "conservé",
+      "ctxt": "CONGERVÉ de partir enxemble  à emore returdé mon voxage de",
+      "deja utilisé": [
+         "CONSERVÉ de partir ensemble, à encore retardé mon voyage de"
+      ]
+   },
+   "partir": {
+      "lem": null,
+      "ctxt": "congervé de PARTIR enxemble  à emore returdé mon voxage de"
+   },
+   "enxemble": {
+      "lem": "ensemble",
+      "ctxt": "congervé de partir ENXEMBLE  à emore returdé mon voxage de",
+      "deja utilisé": [
+         "conservé de partir ENSEMBLE, à encore retardé mon voyage de"
+      ]
+   },
+   "emore": {
+      "lem": "encore",
+      "ctxt": "congervé de partir enxemble  à EMORE returdé mon voxage de",
+      "deja utilisé": [
+         "conservé de partir ensemble, à ENCORE retardé mon voyage de"
+      ]
+   },
+   "returdé": {
+      "lem": "retardé",
+      "ctxt": "congervé de partir enxemble  à emore RETURDÉ mon voxage de",
+      "deja utilisé": [
+         "conservé de partir ensemble, à encore RETARDÉ mon voyage de"
+      ]
+   },
+   "voxage": {
+      "lem": "voyage",
+      "ctxt": "congervé de partir enxemble  à emore returdé mon VOXAGE de",
+      "deja utilisé": [
+         "conservé de partir ensemble, à encore retardé mon VOYAGE de"
+      ]
+   },
+   "quelquis": {
+      "lem": "quelques",
+      "ctxt": "QUELQUIS joures   mais cela et imposible  Les affaires les plus pares",
+      "deja utilisé": [
+         "QUELQUES jours ; mais cela et impossible. le affaires les plus graves"
+      ]
+   },
+   "joures": {
+      "lem": "jours",
+      "ctxt": "quelquis JOURES   mais cela et imposible  Les affaires les plus pares",
+      "deja utilisé": [
+         "quelques JOURS ; mais cela et impossible. le affaires les plus graves"
+      ]
+   },
+   "cela": {
+      "lem": null,
+      "ctxt": "quelquis joures   mais CELA et imposible  Les affaires les plus pares"
+   },
+   "imposible": {
+      "lem": "impossible",
+      "ctxt": "quelquis joures   mais cela et IMPOSIBLE  Les affaires les plus pares",
+      "deja utilisé": [
+         "quelques jours ; mais cela et IMPOSSIBLE. le affaires les plus graves"
+      ]
+   },
+   "Les": {
+      "lem": "le",
+      "ctxt": "quelquis joures   mais cela et imposible  LES affaires les plus pares",
+      "deja utilisé": [
+         "quelques jours ; mais cela et impossibLE. LE affaires LEs plus graves"
+      ]
+   },
+   "affaires": {
+      "lem": null,
+      "ctxt": "quelquis joures   mais cela et imposible  Les AFFAIRES les plus pares"
+   },
+   "pares": {
+      "lem": "graves",
+      "ctxt": "quelquis joures   mais cela et imposible  Les affaires les plus PARES",
+      "deja utilisé": [
+         "quelques jours ; mais cela et impossible. le affaires les plus GRAVES"
+      ]
+   },
+   "réhiendront": {
+      "lem": "retiendront",
+      "ctxt": "le RÉHIENDRONT encorez chez lui  un mois enviror  et je ne puis attendre",
+      "deja utilisé": [
+         "le RETIENDRONT encore chez lui, un mois environ, et je ne puis attendre"
+      ]
+   },
+   "encorez": {
+      "lem": "encore",
+      "ctxt": "le réhiendront ENCOREZ chez lui  un mois enviror  et je ne puis attendre",
+      "deja utilisé": [
+         "le retiendront ENCORE chez lui, un mois environ, et je ne puis attendre"
+      ]
+   },
+   "lui": {
+      "lem": null,
+      "ctxt": "le réhiendront encorez chez LUI  un mois enviror  et je ne puis attendre"
+   },
+   "mois": {
+      "lem": null,
+      "ctxt": "le réhiendront encorez chez lui  un MOIS enviror  et je ne puis attendre"
+   },
+   "enviror": {
+      "lem": "environ",
+      "ctxt": "le réhiendront encorez chez lui  un mois ENVIROR  et je ne puis attendre",
+      "deja utilisé": [
+         "le retiendront encore chez lui, un mois ENVIRON, et je ne puis attendre"
+      ]
+   },
+   "attendre": {
+      "lem": null,
+      "ctxt": "le réhiendront encorez chez lui  un mois enviror  et je ne puis ATTENDRE"
+   },
+   "avantage": {
+      "lem": null,
+      "ctxt": "d AVANTAGE  j en tomberas malade Mous menerons  à la vernté"
+   },
+   "tomberas": {
+      "lem": null,
+      "ctxt": "d avantage  j en TOMBERAS malade Mous menerons  à la vernté"
+   },
+   "malade": {
+      "lem": null,
+      "ctxt": "d avantage  j en tomberas MALADE Mous menerons  à la vernté"
+   },
+   "Mous": {
+      "lem": "Nous",
+      "ctxt": "d avantage  j en tomberas malade MOUS menerons  à la vernté",
+      "deja utilisé": [
+         "d&#39;avantage, j&#39;en tomberas malade NOUS mènerons, à la vérité"
+      ]
+   },
+   "menerons": {
+      "lem": "mènerons",
+      "ctxt": "d avantage  j en tomberas malade Mous MENERONS  à la vernté",
+      "deja utilisé": [
+         "d&#39;avantage, j&#39;en tomberas malade Nous MÈNERONS, à la vérité"
+      ]
+   },
+   "vernté": {
+      "lem": "vérité",
+      "ctxt": "d avantage  j en tomberas malade Mous menerons  à la VERNTÉ",
+      "deja utilisé": [
+         "d&#39;avantage, j&#39;en tomberas malade Nous mènerons, à la VÉRITÉ"
+      ]
+   },
+   "vu": {
+      "lem": null,
+      "ctxt": "une VU fart tuste et reétirez à Paris  mais nous serons en fammille"
+   },
+   "fart": {
+      "lem": null,
+      "remarque": "déjà marqué comme AMBIGU"
+   },
+   "tuste": {
+      "lem": "triste",
+      "ctxt": "une vu fart TUSTE et reétirez à Paris  mais nous serons en fammille",
+      "deja utilisé": [
+         "une vu None TRISTE et retirée à Paris, mais nous serons en famille"
+      ]
+   },
+   "reétirez": {
+      "lem": "retirée",
+      "ctxt": "une vu fart tuste et REÉTIREZ à Paris  mais nous serons en fammille",
+      "deja utilisé": [
+         "une vu None triste et RETIRÉE à Paris, mais nous serons en famille"
+      ]
+   },
+   "Paris": {
+      "lem": "Paris",
+      "ctxt": "une vu fart tuste et reétirez à PARIS  mais nous serons en fammille",
+      "deja utilisé": [
+         "une vu None triste et retirée à PARIS, mais nous serons en famille"
+      ]
+   },
+   "serons": {
+      "lem": null,
+      "ctxt": "une vu fart tuste et reétirez à Paris  mais nous SERONS en fammille"
+   },
+   "fammille": {
+      "lem": "famille",
+      "ctxt": "une vu fart tuste et reétirez à Paris  mais nous serons en FAMMILLE",
+      "deja utilisé": [
+         "une vu None triste et retirée à Paris, mais nous serons en FAMILLE"
+      ]
+   },
+   "ns": {
+      "lem": "nos",
+      "ctxt": "et NS véritables amis nos vieux fidéles  vous  MoNSeur  et à a",
+      "deja utilisé": [
+         "et NOS véritables amis NOS vieux fidéles, vous, Monsieur, et à a"
+      ]
+   },
+   "véritables": {
+      "lem": null,
+      "ctxt": "et ns VÉRITABLES amis nos vieux fidéles  vous  Monseur  et à a"
+   },
+   "amis": {
+      "lem": null,
+      "ctxt": "et ns véritables AMIS nos vieux fidéles  vous  Monseur  et à a"
+   },
+   "nos": {
+      "lem": null,
+      "ctxt": "et ns véritables amis NOS vieux fidéles  vous  Monseur  et à a"
+   },
+   "vieux": {
+      "lem": null,
+      "ctxt": "et ns véritables amis nos VIEUX fidéles  vous  Monseur  et à a"
+   },
+   "fidéles": {
+      "lem": null,
+      "ctxt": "et ns véritables amis nos vieux FIDÉLES  vous  Monseur  et à a"
+   },
+   "Monseur": {
+      "lem": "Monsieur",
+      "ctxt": "et ns véritables amis nos vieux fidéles  vous  MONSEUR  et à a",
+      "deja utilisé": [
+         "et nos véritables amis nos vieux fidéles, vous, MONSIEUR, et à a"
+      ]
+   },
+   "autres": {
+      "lem": null,
+      "ctxt": "I AUTRES sur lesquels je compte comme sar moi meme sufsirerg"
+   },
+   "lesquels": {
+      "lem": null,
+      "ctxt": "I autres sur LESQUELS je compte comme sar moi meme sufsirerg"
+   },
+   "compte": {
+      "lem": null,
+      "ctxt": "I autres sur lesquels je COMPTE comme sar moi meme sufsirerg"
+   },
+   "comme": {
+      "lem": null,
+      "ctxt": "I autres sur lesquels je compte COMME sar moi meme sufsirerg"
+   },
+   "sar": {
+      "lem": "sur",
+      "ctxt": "I autres sur lesquels je compte comme SAR moi meme sufsirerg",
+      "deja utilisé": [
+         "& autres SUR lesquels je compte comme SUR moi même suffiront"
+      ]
+   },
+   "meme": {
+      "lem": "même",
+      "ctxt": "I autres sur lesquels je compte comme sar moi MEME sufsirerg",
+      "deja utilisé": [
+         "& autres sur lesquels je compte comme sur moi MÊME suffiront"
+      ]
+   },
+   "sufsirerg": {
+      "lem": "suffiront",
+      "ctxt": "I autres sur lesquels je compte comme sar moi meme SUFSIRERG",
+      "deja utilisé": [
+         "& autres sur lesquels je compte comme sur moi même SUFFIRONT"
+      ]
+   },
+   "passes": {
+      "lem": "passer",
+      "ctxt": "bien pour vous faire PASSES d agréables momens  surtout pour",
+      "deja utilisé": [
+         "bien pour vous faire PASSER d&#39;agréables momens, surtout pour"
+      ]
+   },
+   "agréables": {
+      "lem": null,
+      "ctxt": "bien pour vous faire passes d AGRÉABLES momens  surtout pour"
+   },
+   "momens": {
+      "lem": null,
+      "ctxt": "bien pour vous faire passes d agréables MOMENS  surtout pour"
+   },
+   "surtout": {
+      "lem": null,
+      "ctxt": "bien pour vous faire passes d agréables momens  SURTOUT pour"
+   },
+   "Letttre": {
+      "lem": "Lettre",
+      "ctxt": "LETTTRE",
+      "deja utilisé": [
+         "LETTRE"
+      ]
+   },
+   "A": {
+      "lem": "A",
+      "ctxt": "A Me Mmalur",
+      "deja utilisé": [
+         "A Mr Mallatlan"
+      ]
+   },
+   "Me": {
+      "lem": "Mme",
+      "ctxt": "A ME Mmalur",
+      "deja utilisé": [
+         "A MME malum"
+      ]
+   },
+   "Mmalur": {
+      "lem": "malum",
+      "ctxt": "A Me MMALUR",
+      "deja utilisé": [
+         "A Mme MALUM"
+      ]
+   },
+   "(Sck": {
+      "lem": "Dyck",
+      "ctxt": "(SCK  ce je hecembre pavr ",
+      "deja utilisé": [
+         "DYCK, ce je Décembre pavr."
+      ]
+   },
+   "hecembre": {
+      "lem": "Décembre",
+      "ctxt": "(Sck  ce je HECEMBRE pavr ",
+      "deja utilisé": [
+         "Dyck, ce je DÉCEMBRE pavr."
+      ]
+   },
+   "pavr": {
+      "lem": null,
+      "ctxt": "(Sck  ce je hecembre PAVR "
+   }
+}
