@@ -115,6 +115,11 @@ def spellcheck_texts_page_XML():
                                     'ctxt': contexte.replace("'", ' '),
                                     'deja utilisé': dictCDS[mot]['ctxt']
                                 }
+                            elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                                dictionary[mot] = {
+                                    'lem': dictCDS[mot]['lem'],
+                                    'remarque': "déjà marqué comme AMBIGU"
+                                }
                         # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
                         elif spell.unknown(mot) and mot not in dictionary.keys():
                             # On écrit l'entrée du dictionnaire pour préciser le contexte
