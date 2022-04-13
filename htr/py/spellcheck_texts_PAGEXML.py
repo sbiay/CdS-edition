@@ -38,7 +38,7 @@ def get_lemmes():
                         # On verifie que le mot ne soit pas vide et pas césuré
                         if mot and mot[-1] != '-':
                             motsParses.append(mot)
-
+    
     # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
     motsParses = set(motsParses)
     return motsParses
@@ -96,43 +96,45 @@ def spellcheck_texts_page_XML():
             
             for unicode in tous_unicode:
                 content = unicode.text
-                content = suppress_punctuation(content)
-                
-                words = content.split(" ")
-                # On boucle sur chaque mot de l'élément Unicode courant
-                for index, mot in enumerate(words):
-                    contexte = content.replace(mot, mot.upper())
-                    # On cherche chaque mot dans les lemmes des vérités de terrain
-                    if mot not in get_lemmes():
-                        # On cherche chaque mot dans le dictCDS
-                        if dictCDS.get(mot):
-                            # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
-                            # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
-                            if dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                # Les traitements ne peuvent avoir lieu que si le contenu n'est pas vide
+                if content:
+                    content = suppress_punctuation(content)
+                    
+                    words = content.split(" ")
+                    # On boucle sur chaque mot de l'élément Unicode courant
+                    for index, mot in enumerate(words):
+                        contexte = content.replace(mot, mot.upper())
+                        # On cherche chaque mot dans les lemmes des vérités de terrain
+                        if mot not in get_lemmes():
+                            # On cherche chaque mot dans le dictCDS
+                            if dictCDS.get(mot):
+                                # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
+                                # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
+                                if dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                                    # On écrit l'entrée du dictionnaire pour préciser le contexte
+                                    dictionary[mot] = {
+                                        'lem': dictCDS[mot]['lem'],
+                                        'ctxt': contexte.replace("'", ' '),
+                                        'deja utilisé': dictCDS[mot]['ctxt']
+                                    }
+                                elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                                    dictionary[mot] = {
+                                        'lem': dictCDS[mot]['lem'],
+                                        'remarque': "déjà marqué comme AMBIGU"
+                                    }
+                            # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
+                            elif spell.unknown(mot) and mot not in dictionary.keys():
                                 # On écrit l'entrée du dictionnaire pour préciser le contexte
                                 dictionary[mot] = {
-                                    'lem': dictCDS[mot]['lem'],
-                                    'ctxt': contexte.replace("'", ' '),
-                                    'deja utilisé': dictCDS[mot]['ctxt']
+                                    'lem': spell.correction(mot),
+                                    'ctxt': contexte.replace("'", ' ')
                                 }
-                            elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                            # S'il n'a aucune proposition de correction identifiée
+                            elif mot not in dictionary.keys():
                                 dictionary[mot] = {
-                                    'lem': dictCDS[mot]['lem'],
-                                    'remarque': "déjà marqué comme AMBIGU"
+                                    'lem': None,
+                                    'ctxt': contexte.replace("'", ' ')
                                 }
-                        # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
-                        elif spell.unknown(mot) and mot not in dictionary.keys():
-                            # On écrit l'entrée du dictionnaire pour préciser le contexte
-                            dictionary[mot] = {
-                                'lem': spell.correction(mot),
-                                'ctxt': contexte.replace("'", ' ')
-                            }
-                        # S'il n'a aucune proposition de correction identifiée
-                        elif mot not in dictionary.keys():
-                            dictionary[mot] = {
-                                'lem': None,
-                                'ctxt': contexte.replace("'", ' ')
-                            }
             
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
