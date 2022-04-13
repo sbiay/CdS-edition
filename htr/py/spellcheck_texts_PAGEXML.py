@@ -56,7 +56,7 @@ def suppress_punctuation(text):
         text = text.replace(sign, " ")
     return text
 
-
+# TODO poser un décorateur click
 def spellcheck_texts_page_XML():
     """
     - author: Floriane Chiffoleau
@@ -90,6 +90,7 @@ def spellcheck_texts_page_XML():
             
             xml = etree.parse(XMLaCORRIGER + filename)
             print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
+            # TODO renvoyer un message d'erreur explicite si le format de XML n'est pas Page (ou gérer aussi Alto)
             nsmap = {'page': "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"}
             tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
             
