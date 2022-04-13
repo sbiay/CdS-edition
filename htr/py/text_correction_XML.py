@@ -40,8 +40,6 @@ def textCorrectionXML():
                         # on tokénise cette ligne en commençant par éliminer les signes de ponctuation
                         ponctuation = ",;:!."
                         ligne = ligneBrute
-                        if "espot" in ligne:
-                            print(ligne)
                         for signe in ponctuation:
                             ligne = ligne.replace(signe, " ")
                         # Puis on supprime les éventuelles doubles espaces
@@ -68,8 +66,8 @@ def textCorrectionXML():
                                         ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
                                         # Si le mot est placé juste après la balise unicode
                                         ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
-                                        if "espot" in ligne:
-                                            print(ligneCorr)
+                                        # Si le mot est placé juste après une apostrophe
+                                        ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
                                         entreesMAJ[forme] = {
                                             "lem": lemme,
                                             "ctxt": []
