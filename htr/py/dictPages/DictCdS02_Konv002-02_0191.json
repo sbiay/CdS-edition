@@ -1,10 +1,10 @@
 {
    "Vpus": {
-      "lem": "vous",
+      "lem": "Depuis",
       "ctxt": "VPUS deur ans nous nous étous promis sans cesse de ne plus vous"
    },
    "deur": {
-      "lem": null,
+      "lem": "deux",
       "ctxt": "Vpus DEUR ans nous nous étous promis sans cesse de ne plus vous"
    },
    "ans": {
@@ -16,7 +16,7 @@
       "ctxt": "Vpus deur ans NOUS NOUS étous promis sans cesse de ne plus vous"
    },
    "étous": {
-      "lem": null,
+      "lem": "étions",
       "ctxt": "Vpus deur ans nous nous ÉTOUS promis sans cesse de ne plus vous"
    },
    "promis": {
@@ -48,7 +48,7 @@
       "ctxt": "Vpus deur ans nous nous étous promis sans cesse de ne plus VOUS"
    },
    "guitles": {
-      "lem": null,
+      "lem": "quitter",
       "ctxt": "GUITLES  Cout était grrangé en conséquence  des raisons prans me"
    },
    "": {
@@ -56,7 +56,7 @@
       "ctxt": "guitles  Cout était grrangé en conséquence  des raisons prans me"
    },
    "Cout": {
-      "lem": "tout",
+      "lem": "Tout",
       "ctxt": "guitles  COUT était grrangé en conséquence  des raisons prans me"
    },
    "était": {
@@ -64,7 +64,7 @@
       "ctxt": "guitles  Cout ÉTAIT grrangé en conséquence  des raisons prans me"
    },
    "grrangé": {
-      "lem": null,
+      "lem": "arrangé",
       "ctxt": "guitles  Cout était GRRANGÉ en conséquence  des raisons prans me"
    },
    "en": {
@@ -84,7 +84,7 @@
       "ctxt": "guitles  Cout était grrangé en conséquence  des RAISONS prans me"
    },
    "prans": {
-      "lem": null,
+      "lem": "graves",
       "ctxt": "guitles  Cout était grrangé en conséquence  des raisons PRANS me"
    },
    "me": {
@@ -100,7 +100,7 @@
       "ctxt": "sont MÊME orandre ette séparation  et je m en fais un véritalle"
    },
    "orandre": {
-      "lem": null,
+      "lem": "craindre",
       "ctxt": "sont même ORANDRE ette séparation  et je m en fais un véritalle"
    },
    "ette": {
@@ -132,7 +132,7 @@
       "ctxt": "sont même orandre ette séparation  et je m en fais UN véritalle"
    },
    "véritalle": {
-      "lem": null,
+      "lem": "véritable",
       "ctxt": "sont même orandre ette séparation  et je m en fais un VÉRITALLE"
    },
    "mootre": {
@@ -140,14 +140,14 @@
       "ctxt": "MOOTRE  Il partag ce sentmenr et nons sommes d aine tustesse"
    },
    "Il": {
-      "lem": "il",
+      "lem": "Il",
       "ctxt": "mootre  IL partag ce sentmenr et nons sommes d aine tustesse",
       "deja utilisé": [
          "apres demain. IL n&#39;est question ie que de Kermesse et en allant pag-"
       ]
    },
    "partag": {
-      "lem": null,
+      "lem": "partage",
       "ctxt": "mootre  Il PARTAG ce sentmenr et nons sommes d aine tustesse"
    },
    "ce": {
@@ -155,11 +155,11 @@
       "ctxt": "mootre  Il partag CE sentmenr et nons sommes d aine tustesse"
    },
    "sentmenr": {
-      "lem": null,
+      "lem": "sentiment",
       "ctxt": "mootre  Il partag ce SENTMENR et nons sommes d aine tustesse"
    },
    "nons": {
-      "lem": null,
+      "lem": "nous",
       "ctxt": "mootre  Il partag ce sentmenr et NONS sommes d aine tustesse"
    },
    "sommes": {
@@ -171,15 +171,15 @@
       "ctxt": "mootre  Il partag ce sentmenr et nons sommes D aine tustesse"
    },
    "aine": {
-      "lem": null,
+      "lem": "une",
       "ctxt": "mootre  Il partag ce sentmenr et nons sommes d AINE tustesse"
    },
    "tustesse": {
-      "lem": null,
+      "lem": "tristesse",
       "ctxt": "mootre  Il partag ce sentmenr et nons sommes d aine TUSTESSE"
    },
    "montelle": {
-      "lem": null,
+      "lem": "mutuelle",
       "ctxt": "MONTELLE Vous avions bien irn que ce pauvre  Paron vrait"
    },
    "Vous": {
@@ -198,7 +198,7 @@
       "ctxt": "montelle Vous avions BIEN irn que ce pauvre  Paron vrait"
    },
    "irn": {
-      "lem": null,
+      "lem": "vu",
       "ctxt": "montelle Vous avions bien IRN que ce pauvre  Paron vrait"
    },
    "que": {
@@ -210,11 +210,11 @@
       "ctxt": "montelle Vous avions bien irn que ce PAUVRE  Paron vrait"
    },
    "Paron": {
-      "lem": "pardon",
+      "lem": "Baron",
       "ctxt": "montelle Vous avions bien irn que ce pauvre  PARON vrait"
    },
    "vrait": {
-      "lem": null,
+      "lem": "irait",
       "ctxt": "montelle Vous avions bien irn que ce pauvre  Paron VRAIT"
    },
    "pasiu": {
@@ -226,11 +226,11 @@
       "ctxt": "pasiu AN frintemps  Vais le besoin de partor des conselatons et"
    },
    "frintemps": {
-      "lem": null,
+      "lem": "printemps",
       "ctxt": "pasiu an FRINTEMPS  Vais le besoin de partor des conselatons et"
    },
    "Vais": {
-      "lem": "mais",
+      "lem": "Mais",
       "ctxt": "pasiu an frintemps  VAIS le besoin de partor des conselatons et"
    },
    "le": {
@@ -246,7 +246,7 @@
       "ctxt": "pasiu an frintemps  Vais le besoin de PARTOR des conselatons et"
    },
    "conselatons": {
-      "lem": null,
+      "lem": "consolations",
       "ctxt": "pasiu an frintemps  Vais le besoin de partor des CONSELATONS et"
    },
    "conseils": {
@@ -262,7 +262,7 @@
       "ctxt": "des conseils à MA bille l emnporte incessament sur tout d"
    },
    "bille": {
-      "lem": null,
+      "lem": "fille",
       "ctxt": "des conseils à ma BILLE l emnporte incessament sur tout d"
    },
    "l": {
@@ -290,7 +290,7 @@
       "ctxt": "REVOIR Mouvent prles vous buin  et attadez moi  que de cones"
    },
    "Mouvent": {
-      "lem": "souvent",
+      "lem": "Monsieur",
       "ctxt": "revoir MOUVENT prles vous buin  et attadez moi  que de cones"
    },
    "prles": {
@@ -298,11 +298,11 @@
       "ctxt": "revoir Mouvent PRLES vous buin  et attadez moi  que de cones"
    },
    "buin": {
-      "lem": null,
+      "lem": "bien",
       "ctxt": "revoir Mouvent prles vous BUIN  et attadez moi  que de cones"
    },
    "attadez": {
-      "lem": null,
+      "lem": "attendez",
       "ctxt": "revoir Mouvent prles vous buin  et ATTADEZ moi  que de cones"
    },
    "moi": {
@@ -310,7 +310,7 @@
       "ctxt": "revoir Mouvent prles vous buin  et attadez MOI  que de cones"
    },
    "cones": {
-      "lem": null,
+      "lem": "choses",
       "ctxt": "revoir Mouvent prles vous buin  et attadez moi  que de CONES"
    },
    "Pire": {
@@ -330,7 +330,7 @@
       "ctxt": "à Pire au cour DEZ fau "
    },
    "fau": {
-      "lem": null,
+      "lem": "feu",
       "ctxt": "à Pire au cour dez FAU "
    },
    "(Signé)": {
@@ -340,13 +340,9 @@
          "(SIGNÉ) J 2e 2."
       ]
    },
-   "du": {
-      "lem": null,
+   "du tane": {
+      "lem": "Constance",
       "ctxt": "(Signé) DU tane de Salm "
-   },
-   "tane": {
-      "lem": null,
-      "ctxt": "(Signé) du TANE de Salm "
    },
    "Salm": {
       "lem": "Salm",
@@ -368,11 +364,11 @@
       "ctxt": "de 1"
    },
    "Vifm": {
-      "lem": "vif",
+      "lem": "Enfin",
       "ctxt": "VIFM  Monsieur  je puis partre et atler consoler me frlle de la peate"
    },
    "Monsieur": {
-      "lem": "monsieur",
+      "lem": "Monsieur",
       "ctxt": "Vifm  MONSIEUR  je puis partre et atler consoler me frlle de la peate"
    },
    "puis": {
@@ -380,11 +376,11 @@
       "ctxt": "Vifm  Monsieur  je PUIS partre et atler consoler me frlle de la peate"
    },
    "partre": {
-      "lem": null,
+      "lem": "partir",
       "ctxt": "Vifm  Monsieur  je puis PARTRE et atler consoler me frlle de la peate"
    },
    "atler": {
-      "lem": null,
+      "lem": "aller",
       "ctxt": "Vifm  Monsieur  je puis partre et ATLER consoler me frlle de la peate"
    },
    "consoler": {
@@ -392,7 +388,7 @@
       "ctxt": "Vifm  Monsieur  je puis partre et atler CONSOLER me frlle de la peate"
    },
    "frlle": {
-      "lem": null,
+      "lem": "fille",
       "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me FRLLE de la peate"
    },
    "la": {
@@ -400,11 +396,11 @@
       "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me frlle de LA peate"
    },
    "peate": {
-      "lem": null,
+      "lem": "perte",
       "ctxt": "Vifm  Monsieur  je puis partre et atler consoler me frlle de la PEATE"
    },
    "anele": {
-      "lem": null,
+      "lem": "cruelle",
       "ctxt": "ANELE qu ete vint de faire sepur upan  nous avons u celle triste lu"
    },
    "qu": {
@@ -412,11 +408,11 @@
       "ctxt": "anele QU ete vint de faire sepur upan  nous avons u celle triste lu"
    },
    "ete": {
-      "lem": null,
+      "lem": "elle",
       "ctxt": "anele qu ETE vint de faire sepur upan  nous avons u celle triste lu"
    },
    "vint": {
-      "lem": null,
+      "lem": "vient",
       "ctxt": "anele qu ete VINT de faire sepur upan  nous avons u celle triste lu"
    },
    "faire": {
@@ -428,7 +424,7 @@
       "ctxt": "anele qu ete vint de faire SEPUR upan  nous avons u celle triste lu"
    },
    "upan": {
-      "lem": null,
+      "lem": "un an",
       "ctxt": "anele qu ete vint de faire sepur UPAN  nous avons u celle triste lu"
    },
    "avons": {
@@ -452,7 +448,7 @@
       "ctxt": "anele qu ete vint de faire sepur upan  nous avons u celle triste LU"
    },
    "arruiveir": {
-      "lem": null,
+      "lem": "arriver",
       "ctxt": "ARRUIVEIR pas à pas  Nous en étions nanrles  et il n est pes de sous et"
    },
    "pas": {
@@ -468,7 +464,7 @@
       "ctxt": "arruiveir pas à pas  Nous en ÉTIONS nanrles  et il n est pes de sous et"
    },
    "nanrles": {
-      "lem": null,
+      "lem": "navrés",
       "ctxt": "arruiveir pas à pas  Nous en étions NANRLES  et il n est pes de sous et"
    },
    "il": {
@@ -507,7 +503,7 @@
       "ctxt": "ce moyens qui m AIENT édté chnsées pour sauver ce ave homme "
    },
    "édté": {
-      "lem": null,
+      "lem": "été",
       "ctxt": "ce moyens qui m aient ÉDTÉ chnsées pour sauver ce ave homme "
    },
    "chnsées": {
@@ -547,11 +543,11 @@
       "ctxt": "mais son mal ÉTAT incavrable et fai  dons de moment  le songtereguair"
    },
    "incavrable": {
-      "lem": null,
+      "lem": "incurable",
       "ctxt": "mais son mal état INCAVRABLE et fai  dons de moment  le songtereguair"
    },
    "fai": {
-      "lem": null,
+      "lem": "j'ai",
       "ctxt": "mais son mal état incavrable et FAI  dons de moment  le songtereguair"
    },
    "dons": {
@@ -566,7 +562,7 @@
       "ctxt": "mais son mal état incavrable et fai  dons de MOMENT  le songtereguair"
    },
    "songtereguair": {
-      "lem": null,
+      "lem": "double regret",
       "ctxt": "mais son mal état incavrable et fai  dons de moment  le SONGTEREGUAIR"
    },
    "avoir": {
@@ -574,7 +570,7 @@
       "ctxt": "de l AVOIR uu mourir  et de voir ma fats sauile ane turs pette esfanes"
    },
    "uu": {
-      "lem": null,
+      "lem": "vu",
       "ctxt": "de l avoir UU mourir  et de voir ma fats sauile ane turs pette esfanes"
    },
    "mourir": {
@@ -590,7 +586,7 @@
       "ctxt": "de l avoir uu mourir  et de voir ma FATS sauile ane turs pette esfanes"
    },
    "sauile": {
-      "lem": null,
+      "lem": "seule",
       "ctxt": "de l avoir uu mourir  et de voir ma fats SAUILE ane turs pette esfanes"
    },
    "ane": {
@@ -606,11 +602,11 @@
       "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ane turs PETTE esfanes"
    },
    "esfanes": {
-      "lem": null,
+      "lem": "enfans",
       "ctxt": "de l avoir uu mourir  et de voir ma fats sauile ane turs pette ESFANES"
    },
    "apris": {
-      "lem": null,
+      "lem": "après",
       "ctxt": "APRIS avoir pris taut de sains pours l étallur convenoblement lu verite"
    },
    "pris": {
@@ -618,7 +614,7 @@
       "ctxt": "aPRIS avoir PRIS taut de sains pours l étallur convenoblement lu verite"
    },
    "taut": {
-      "lem": null,
+      "lem": "tant",
       "ctxt": "apris avoir pris TAUT de sains pours l étallur convenoblement lu verite"
    },
    "sains": {
@@ -626,19 +622,19 @@
       "ctxt": "apris avoir pris taut de SAINS pours l étallur convenoblement lu verite"
    },
    "pours": {
-      "lem": null,
+      "lem": "pour",
       "ctxt": "apris avoir pris taut de sains POURS l étallur convenoblement lu verite"
    },
    "étallur": {
-      "lem": null,
+      "lem": "établir",
       "ctxt": "apris avoir pris taut de sains pours l ÉTALLUR convenoblement lu verite"
    },
    "convenoblement": {
-      "lem": null,
+      "lem": "convenablement",
       "ctxt": "apris avoir pris taut de sains pours l étallur CONVENOBLEMENT lu verite"
    },
    "verite": {
-      "lem": null,
+      "lem": "vérité",
       "ctxt": "apris avoir pris taut de sains pours l étallur convenoblement lu VERITE"
    },
    "c": {
@@ -650,7 +646,7 @@
       "ctxt": "c est CEN mabseur réel pour nous tous "
    },
    "mabseur": {
-      "lem": null,
+      "lem": "malheur",
       "ctxt": "c est cen MABSEUR réel pour nous tous "
    },
    "réel": {
@@ -673,15 +669,15 @@
       "ctxt": "J AI brin sousert de nepouvoir être à Vons dans cete quste arconstorc"
    },
    "brin": {
-      "lem": null,
+      "lem": "bien",
       "ctxt": "J ai BRIN sousert de nepouvoir être à Vons dans cete quste arconstorc"
    },
    "sousert": {
-      "lem": null,
+      "lem": "souffert",
       "ctxt": "J ai brin SOUSERT de nepouvoir être à Vons dans cete quste arconstorc"
    },
    "nepouvoir": {
-      "lem": null,
+      "lem": "ne pouvoir",
       "ctxt": "J ai brin sousert de NEPOUVOIR être à Vons dans cete quste arconstorc"
    },
    "être": {
@@ -689,7 +685,7 @@
       "ctxt": "J ai brin sousert de nepouvoir ÊTRE à Vons dans cete quste arconstorc"
    },
    "Vons": {
-      "lem": "vous",
+      "lem": "Vous",
       "ctxt": "J ai brin sousert de nepouvoir être à VONS dans cete quste arconstorc"
    },
    "dans": {
@@ -697,7 +693,7 @@
       "ctxt": "J ai brin sousert de nepouvoir être à Vons DANS cete quste arconstorc"
    },
    "cete": {
-      "lem": null,
+      "lem": "cette",
       "ctxt": "J ai brin sousert de nepouvoir être à Vons dans CETE quste arconstorc"
    },
    "quste": {
@@ -705,7 +701,7 @@
       "ctxt": "J ai brin sousert de nepouvoir être à Vons dans cete QUSTE arconstorc"
    },
    "arconstorc": {
-      "lem": null,
+      "lem": "circonstance",
       "ctxt": "J ai brin sousert de nepouvoir être à Vons dans cete quste ARCONSTORC"
    },
    "Sais": {
@@ -717,15 +713,15 @@
       "ctxt": "Sais ELE  Dait popquemait impossille  Je m ai me outer que"
    },
    "Dait": {
-      "lem": "fait",
+      "lem": null,
       "ctxt": "Sais ele  DAIT popquemait impossille  Je m ai me outer que"
    },
    "popquemait": {
-      "lem": null,
+      "lem": "physiquement",
       "ctxt": "Sais ele  Dait POPQUEMAIT impossille  Je m ai me outer que"
    },
    "impossille": {
-      "lem": null,
+      "lem": "impossible",
       "ctxt": "Sais ele  Dait popquemait IMPOSSILLE  Je m ai me outer que"
    },
    "Je": {
@@ -740,15 +736,15 @@
       "ctxt": "Sais ele  Dait popquemait impossille  Je m ai me OUTER que"
    },
    "Decembre": {
-      "lem": "décembre",
+      "lem": "Décembre",
       "ctxt": "que le je DECEMBRE   et la nécssité de reenr chez moi  e de prendre"
    },
    "nécssité": {
-      "lem": null,
+      "lem": "nécessité",
       "ctxt": "que le je Decembre   et la NÉCSSITÉ de reenr chez moi  e de prendre"
    },
    "reenr": {
-      "lem": null,
+      "lem": "revenir",
       "ctxt": "que le je Decembre   et la nécssité de REENR chez moi  e de prendre"
    },
    "chez": {
@@ -756,7 +752,7 @@
       "ctxt": "que le je Decembre   et la nécssité de reenr CHEZ moi  e de prendre"
    },
    "e": {
-      "lem": null,
+      "lem": "et",
       "ctxt": "quE lE jE DEcEmbrE   Et la nécssité dE rEEnr chEz moi  E dE prEndrE"
    },
    "prendre": {
@@ -768,11 +764,11 @@
       "ctxt": "LES dispopitons nécfaires pour un voyage au sera long  n a retenre"
    },
    "dispopitons": {
-      "lem": null,
+      "lem": "dispositions",
       "ctxt": "les DISPOPITONS nécfaires pour un voyage au sera long  n a retenre"
    },
    "nécfaires": {
-      "lem": null,
+      "lem": "nécessaires",
       "ctxt": "les dispopitons NÉCFAIRES pour un voyage au sera long  n a retenre"
    },
    "voyage": {
@@ -792,19 +788,19 @@
       "ctxt": "les dispopitons nécfAires pour un voyAge Au serA long  n A retenre"
    },
    "retenre": {
-      "lem": null,
+      "lem": "retenue",
       "ctxt": "les dispopitons nécfaires pour un voyage au sera long  n a RETENRE"
    },
    "jasu": {
-      "lem": null,
+      "lem": "jusqu",
       "ctxt": "JASU a preseut les distanes sont une horible cgse  Je ne sais  que dous"
    },
    "preseut": {
-      "lem": null,
+      "lem": "présent",
       "ctxt": "jasu a PRESEUT les distanes sont une horible cgse  Je ne sais  que dous"
    },
    "distanes": {
-      "lem": null,
+      "lem": "distances",
       "ctxt": "jasu a preseut les DISTANES sont une horible cgse  Je ne sais  que dous"
    },
    "une": {
@@ -812,11 +808,11 @@
       "ctxt": "jasu a preseut les distanes sont UNE horible cgse  Je ne sais  que dous"
    },
    "horible": {
-      "lem": null,
+      "lem": "horrible",
       "ctxt": "jasu a preseut les distanes sont une HORIBLE cgse  Je ne sais  que dous"
    },
    "cgse": {
-      "lem": null,
+      "lem": "chose",
       "ctxt": "jasu a preseut les distanes sont une horible CGSE  Je ne sais  que dous"
    },
    "sais": {
@@ -828,7 +824,7 @@
       "ctxt": "jasu a preseut les distanes sont une horible cgse  Je ne sais  que DOUS"
    },
    "I": {
-      "lem": "&",
+      "lem": null,
       "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu on conserne",
       "deja utilisé": [
          "ma lettre par des formules de respect & ; mai je fais trop de as"
@@ -847,7 +843,7 @@
       "ctxt": "I à y jours ÀA trstre chénemait  qu ane epérance qu on conserne"
    },
    "trstre": {
-      "lem": null,
+      "lem": "triste",
       "ctxt": "I à y jours àa TRSTRE chénemait  qu ane epérance qu on conserne"
    },
    "chénemait": {
@@ -855,7 +851,7 @@
       "ctxt": "I à y jours àa trstre CHÉNEMAIT  qu ane epérance qu on conserne"
    },
    "epérance": {
-      "lem": null,
+      "lem": "espérance",
       "ctxt": "I à y jours àa trstre chénemait  qu ane EPÉRANCE qu on conserne"
    },
    "on": {
@@ -863,19 +859,19 @@
       "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu ON cONserne"
    },
    "conserne": {
-      "lem": null,
+      "lem": "conserve",
       "ctxt": "I à y jours àa trstre chénemait  qu ane epérance qu on CONSERNE"
    },
    "toijours": {
-      "lem": null,
+      "lem": "toujours",
       "ctxt": "TOIJOURS malgui l rndeme  me faisait roire llaigné daus le momeat"
    },
    "malgui": {
-      "lem": null,
+      "lem": "malgré",
       "ctxt": "toijours MALGUI l rndeme  me faisait roire llaigné daus le momeat"
    },
    "rndeme": {
-      "lem": null,
+      "lem": "évidence",
       "ctxt": "toijours malgui l RNDEME  me faisait roire llaigné daus le momeat"
    },
    "faisait": {
@@ -883,11 +879,11 @@
       "ctxt": "toijours malgui l rndeme  me FAISAIT roire llaigné daus le momeat"
    },
    "roire": {
-      "lem": null,
+      "lem": "croire",
       "ctxt": "toijours malgui l rndeme  me faisait ROIRE llaigné daus le momeat"
    },
    "llaigné": {
-      "lem": null,
+      "lem": "éloigné",
       "ctxt": "toijours malgui l rndeme  me faisait roire LLAIGNÉ daus le momeat"
    },
    "daus": {
@@ -898,11 +894,11 @@
       ]
    },
    "momeat": {
-      "lem": null,
+      "lem": "moment",
       "ctxt": "toijours malgui l rndeme  me faisait roire llaigné daus le MOMEAT"
    },
    "oni": {
-      "lem": null,
+      "lem": "où",
       "ctxt": "ONI j ai reu la tetre mon mari m asfurait que je revrrais eune"
    },
    "j": {
@@ -910,11 +906,11 @@
       "ctxt": "oni J ai reu la tetre mon mari m asfurait que Je revrrais eune"
    },
    "reu": {
-      "lem": null,
+      "lem": "reçu",
       "ctxt": "oni j ai REU la tetre mon mari m asfurait que je revrrais eune"
    },
    "tetre": {
-      "lem": null,
+      "lem": "lettre",
       "ctxt": "oni j ai reu la TETRE mon mari m asfurait que je revrrais eune"
    },
    "mon": {
@@ -926,31 +922,31 @@
       "ctxt": "oni j ai reu la tetre mon MARI m asfurait que je revrrais eune"
    },
    "asfurait": {
-      "lem": null,
+      "lem": "assurait",
       "ctxt": "oni j ai reu la tetre mon mari m ASFURAIT que je revrrais eune"
    },
    "revrrais": {
-      "lem": null,
+      "lem": "reverrais",
       "ctxt": "oni j ai reu la tetre mon mari m asfurait que je REVRRAIS eune"
    },
    "eune": {
-      "lem": null,
+      "lem": "encore",
       "ctxt": "oni j ai reu la tetre mon mari m asfurait que je revrrais EUNE"
    },
    "ee": {
-      "lem": null,
+      "lem": "ce",
       "ctxt": "EE trane homme Cafin  il fant plier le das "
    },
    "trane": {
-      "lem": null,
+      "lem": "brave",
       "ctxt": "ee TRANE homme Cafin  il fant plier le das "
    },
    "Cafin": {
-      "lem": "afin",
+      "lem": "Enfin",
       "ctxt": "ee trane homme CAFIN  il fant plier le das "
    },
    "fant": {
-      "lem": null,
+      "lem": "faut",
       "ctxt": "ee trane homme Cafin  il FANT plier le das "
    },
    "plier": {
@@ -958,11 +954,11 @@
       "ctxt": "ee trane homme Cafin  il fant PLIER le das "
    },
    "das": {
-      "lem": null,
+      "lem": "dos",
       "ctxt": "ee trane homme Cafin  il fant plier le DAS "
    },
    "Mon": {
-      "lem": "on",
+      "lem": "Mon",
       "ctxt": "MON cher mari ne m ocompagnera pas  et l époir que vois avous",
       "deja utilisé": [
          "ON Prince "
@@ -973,11 +969,11 @@
       "ctxt": "Mon CHER mari ne m ocompagnera pas  et l époir que vois avous"
    },
    "ocompagnera": {
-      "lem": null,
+      "lem": "accompagnera",
       "ctxt": "Mon cher mari ne m OCOMPAGNERA pas  et l époir que vois avous"
    },
    "époir": {
-      "lem": null,
+      "lem": "espoir",
       "ctxt": "Mon cher mari ne m ocompagnera pas  et l ÉPOIR que vois avous"
    },
    "vois": {
@@ -985,11 +981,11 @@
       "ctxt": "Mon cher mari ne m ocompagnera pas  et l époir que VOIS avous"
    },
    "avous": {
-      "lem": null,
+      "lem": "avons",
       "ctxt": "Mon cher mari ne m ocompagnera pas  et l époir que vois AVOUS"
    },
    "congervé": {
-      "lem": null,
+      "lem": "conservé",
       "ctxt": "CONGERVÉ de partir enxemble  à emore returdé mon voxage de"
    },
    "partir": {
@@ -997,27 +993,27 @@
       "ctxt": "congervé de PARTIR enxemble  à emore returdé mon voxage de"
    },
    "enxemble": {
-      "lem": null,
+      "lem": "ensemble",
       "ctxt": "congervé de partir ENXEMBLE  à emore returdé mon voxage de"
    },
    "emore": {
-      "lem": null,
+      "lem": "encore",
       "ctxt": "congervé de partir enxemble  à EMORE returdé mon voxage de"
    },
    "returdé": {
-      "lem": null,
+      "lem": "retardé",
       "ctxt": "congervé de partir enxemble  à emore RETURDÉ mon voxage de"
    },
    "voxage": {
-      "lem": null,
+      "lem": "voyage",
       "ctxt": "congervé de partir enxemble  à emore returdé mon VOXAGE de"
    },
    "quelquis": {
-      "lem": null,
+      "lem": "quelques",
       "ctxt": "QUELQUIS joures   mais cela et imposible  Les affaires les plus pares"
    },
    "joures": {
-      "lem": null,
+      "lem": "jours",
       "ctxt": "quelquis JOURES   mais cela et imposible  Les affaires les plus pares"
    },
    "cela": {
@@ -1025,7 +1021,7 @@
       "ctxt": "quelquis joures   mais CELA et imposible  Les affaires les plus pares"
    },
    "imposible": {
-      "lem": null,
+      "lem": "impossible",
       "ctxt": "quelquis joures   mais cela et IMPOSIBLE  Les affaires les plus pares"
    },
    "Les": {
@@ -1037,15 +1033,15 @@
       "ctxt": "quelquis joures   mais cela et imposible  Les AFFAIRES les plus pares"
    },
    "pares": {
-      "lem": null,
+      "lem": "graves",
       "ctxt": "quelquis joures   mais cela et imposible  Les affaires les plus PARES"
    },
    "réhiendront": {
-      "lem": null,
+      "lem": "retiendront",
       "ctxt": "le RÉHIENDRONT encorez chez lui  un mois enviror  et je ne puis attendre"
    },
    "encorez": {
-      "lem": null,
+      "lem": "encore",
       "ctxt": "le réhiendront ENCOREZ chez lui  un mois enviror  et je ne puis attendre"
    },
    "lui": {
@@ -1057,7 +1053,7 @@
       "ctxt": "le réhiendront encorez chez lui  un MOIS enviror  et je ne puis attendre"
    },
    "enviror": {
-      "lem": null,
+      "lem": "environ",
       "ctxt": "le réhiendront encorez chez lui  un mois ENVIROR  et je ne puis attendre"
    },
    "attendre": {
@@ -1084,11 +1080,11 @@
       ]
    },
    "menerons": {
-      "lem": null,
+      "lem": "mènerons",
       "ctxt": "d avantage  j en tomberas malade Mous MENERONS  à la vernté"
    },
    "vernté": {
-      "lem": null,
+      "lem": "vérité",
       "ctxt": "d avantage  j en tomberas malade Mous menerons  à la VERNTÉ"
    },
    "vu": {
@@ -1096,19 +1092,19 @@
       "ctxt": "une VU fart tuste et reétirez à Paris  mais nous serons en fammille"
    },
    "fart": {
-      "lem": null,
+      "lem": "fort",
       "ctxt": "une vu FART tuste et reétirez à Paris  mais nous serons en fammille"
    },
    "tuste": {
-      "lem": null,
+      "lem": "triste",
       "ctxt": "une vu fart TUSTE et reétirez à Paris  mais nous serons en fammille"
    },
    "reétirez": {
-      "lem": null,
+      "lem": "retirée",
       "ctxt": "une vu fart tuste et REÉTIREZ à Paris  mais nous serons en fammille"
    },
    "Paris": {
-      "lem": "pris",
+      "lem": "Paris",
       "ctxt": "une vu fart tuste et reétirez à PARIS  mais nous serons en fammille"
    },
    "serons": {
@@ -1116,11 +1112,11 @@
       "ctxt": "une vu fart tuste et reétirez à Paris  mais nous SERONS en fammille"
    },
    "fammille": {
-      "lem": null,
+      "lem": "famille",
       "ctxt": "une vu fart tuste et reétirez à Paris  mais nous serons en FAMMILLE"
    },
    "ns": {
-      "lem": null,
+      "lem": "nos",
       "ctxt": "et NS véritables amis nos vieux fidéles  vous  MoNSeur  et à a"
    },
    "véritables": {
@@ -1167,7 +1163,7 @@
       "ctxt": "I autres sur lesquels je compte COMME sar moi meme sufsirerg"
    },
    "sar": {
-      "lem": null,
+      "lem": "sur",
       "ctxt": "I autres sur lesquels je compte comme SAR moi meme sufsirerg"
    },
    "meme": {
@@ -1178,11 +1174,11 @@
       ]
    },
    "sufsirerg": {
-      "lem": null,
+      "lem": "suffiront",
       "ctxt": "I autres sur lesquels je compte comme sar moi meme SUFSIRERG"
    },
    "passes": {
-      "lem": null,
+      "lem": "passer",
       "ctxt": "bien pour vous faire PASSES d agréables momens  surtout pour"
    },
    "agréables": {
@@ -1212,7 +1208,7 @@
       ]
    },
    "Me": {
-      "lem": "Mme",
+      "lem": null,
       "ctxt": "A ME Mmalur",
       "deja utilisé": [
          "Il fait si bain, Monsieur, que je pense que MME papp, vers"
@@ -1223,11 +1219,11 @@
       "ctxt": "A Me MMALUR"
    },
    "(Sck": {
-      "lem": "jack",
+      "lem": "Dyck",
       "ctxt": "(SCK  ce je hecembre pavr "
    },
    "hecembre": {
-      "lem": null,
+      "lem": "Décembre",
       "ctxt": "(Sck  ce je HECEMBRE pavr "
    },
    "pavr": {
