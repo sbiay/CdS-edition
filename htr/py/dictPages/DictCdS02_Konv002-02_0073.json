@@ -722,7 +722,7 @@
       "ctxt": "Jeu sais eore malude   mais cela NE s étous pas psgi à oubibier mes"
    },
    "étous": {
-      "lem": "étend",
+      "lem": null,
       "ctxt": "Jeu sais eore malude   mais cela ne s ÉTOUS pas psgi à oubibier mes"
    },
    "pas": {
@@ -817,7 +817,7 @@
       "ctxt": "fauté  paisios tristse  nouveles et comme di CONEILLE Vais une-"
    },
    "Vais": {
-      "lem": "mais",
+      "lem": null,
       "ctxt": "fauté  paisios tristse  nouveles et comme di coneille VAIS une-"
    },
    "une-": {

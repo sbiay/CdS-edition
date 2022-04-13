@@ -28,7 +28,7 @@ def controleFormes(dictPage):
                       f"{dictCDS[forme]['lem']}")
                 print("Veuillez corriger les dictionnaires et relancer le script (si les deux solutions sont "
                       "possibles, inscrivez null en tant que lemme dans les deux dictionnaires, la forme ne sera "
-                      "plus corrigée automatiquement).")
+                      "plus corrigée automatiquement).\n")
                 break
             # Si la forme est absente de dictCDS, on l'y inscrit
             elif forme not in dictCDS:
@@ -36,6 +36,7 @@ def controleFormes(dictPage):
                     "lem": dictPage[forme]["lem"],
                     "ctxt": dictPage[forme]["ctxt"],
                 }
+                
     return dictCDS
 
 @click.command()
@@ -68,16 +69,17 @@ def dictCDSintegration(file, all):
                     if filename[-4:] == "json":
                         with open(DICTPAGES + filename) as f:
                             dictPage = json.load(f)
+                        print(f"Traitement du fichier {filename}")
                         dictCDS = controleFormes(dictPage)
-                        print(f"Le fichier {filename} a été traité avec succès.")
+                        
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
             # On charge le dictionnaire Json passé en argument
             with open(f"./py/dictPages/{file}") as f:
                 dictPage = json.load(f)
+            print(f"Traitement du fichier {file}")
             dictCDS = controleFormes(dictPage)
-            print(f"Le fichier {file} a été traité avec succès.")
         
         # On remplace le fichier dictCDS.json par la version enrichie
         with open(DICTCDS, mode="w") as f:

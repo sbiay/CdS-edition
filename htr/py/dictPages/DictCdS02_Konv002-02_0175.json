@@ -127,7 +127,7 @@
       "ctxt": "(u aura le tomte de SONPESIS "
    },
    "den": {
-      "lem": "On",
+      "lem": null,
       "ctxt": "DEN fait ses compliments à M Pite "
    },
    "fait": {
@@ -259,7 +259,7 @@
       "ctxt": "( RRM)"
    },
    "Il": {
-      "lem": "il",
+      "lem": null,
       "ctxt": "IL y a bien louteups  Monvaier  que je prapele de vous évrires",
       "deja utilisé": [
          "apres demain. IL n&#39;est question ie que de Kermesse et en allant pag-"
@@ -789,7 +789,7 @@
       "ctxt": "se TERMMIER ui  je ne sais en vérité ou j en serais   Il me"
    },
    "ui": {
-      "lem": "ici",
+      "lem": null,
       "ctxt": "se termmier UI  je ne sais en vérité ou j en serais   Il me"
    },
    "sais": {
