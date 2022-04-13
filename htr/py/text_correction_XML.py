@@ -80,11 +80,13 @@ def textCorrectionXML():
                             # On inscrit dans le dictionnaire le contexte en sélectionnant le noeud texte de l'élément
                             # Unicode par une slice et en mettant en valeur le lemme dans le texte corrigé par une casse
                             # en capitales
-                            entreesMAJ[entree]["ctxt"] = [
-                                ligneCorr[19:-10].replace(
-                                    entreesMAJ[entree]["lem"], entreesMAJ[entree]["lem"].upper()
-                                )
-                            ]
+                            # On pose d'abord comme condition qu'il y ait un lemme
+                            if entreesMAJ[entree]["lem"]:
+                                entreesMAJ[entree]["ctxt"] = [
+                                    ligneCorr[19:-10].replace(
+                                        entreesMAJ[entree]["lem"], entreesMAJ[entree]["lem"].upper()
+                                    )
+                                ]
                             
                             # On met à jour le dictCDS avec les contextes actualisés
                             dictCDS[entree] = entreesMAJ[entree]
