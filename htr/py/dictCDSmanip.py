@@ -20,8 +20,11 @@ def controleFormes(dictPage):
     for forme in dictPage:
         # On ne traite les formes que si elles sont associés à un lemme qui les corrige
         if dictPage[forme]["lem"]:
+            # Si la forme existe déjà dans dictCDS mais que le lemme est vide (id est la correction est ambiguë)
+            if forme in dictCDS and not dictCDS[forme]["lem"]:
+                print(f"La forme {forme} a déjà été signalée comme ambiguë.")
             # Si la forme existe déjà dans dictCDS mais que les lemmes ne sont pas identiques
-            if forme in dictCDS and dictPage[forme]["lem"] != dictCDS[forme]["lem"]:
+            elif forme in dictCDS and dictPage[forme]["lem"] != dictCDS[forme]["lem"]:
                 # Alors on arrête le code et on délivre un message d'alerte
                 print(f"La forme {forme}, que l'on souhaite corriger en {dictPage[forme]['lem']}, "
                       f"possède déjà une correction de référence : "
@@ -36,7 +39,7 @@ def controleFormes(dictPage):
                     "lem": dictPage[forme]["lem"],
                     "ctxt": dictPage[forme]["ctxt"],
                 }
-                
+    
     return dictCDS
 
 @click.command()
@@ -56,10 +59,8 @@ def dictCDSintegration(file, all):
         print("Aucun argument n'a été passé !")
         print("Pour plus d'information saisissez la commande :\npython3 py/dictCDSmanip.py --help")
     else:
-        # On charge le dictionnaire Json global de la correspondance CDS
-        with open(f"./py/dictComplets/dictCDS.json") as f:
-            dictCDS = json.load(f)
-    
+        
+        
         # Si l'option pour transformer tous les dictionnaires du dossier dictPages est active
         if all:
             # On boucle sur les fichiers du dossier dictPages
@@ -67,23 +68,35 @@ def dictCDSintegration(file, all):
                 for filename in files:
                     # On pose comme condition que le fichier est une extension .json
                     if filename[-4:] == "json":
+                        # On charge le dictionnaire Json global de la correspondance CDS
+                        with open(f"./py/dictComplets/dictCDS.json") as f:
+                            dictCDS = json.load(f)
+                        
+                        # On charge le dictionnaire de la page
                         with open(DICTPAGES + filename) as f:
                             dictPage = json.load(f)
                         print(f"Traitement du fichier {filename}")
                         dictCDS = controleFormes(dictPage)
                         
+                        # On remplace le fichier dictCDS.json par la version enrichie
+                        with open(DICTCDS, mode="w") as f:
+                            json.dump(dictCDS, f, indent=3, ensure_ascii=False)
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
+            # On charge le dictionnaire Json global de la correspondance CDS
+            with open(f"./py/dictComplets/dictCDS.json") as f:
+                dictCDS = json.load(f)
+            
             # On charge le dictionnaire Json passé en argument
             with open(f"./py/dictPages/{file}") as f:
                 dictPage = json.load(f)
             print(f"Traitement du fichier {file}")
             dictCDS = controleFormes(dictPage)
         
-        # On remplace le fichier dictCDS.json par la version enrichie
-        with open(DICTCDS, mode="w") as f:
-            json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-        print("Le dictionnaire dictCDS.json est désormais à jour.")
+            # On remplace le fichier dictCDS.json par la version enrichie
+            with open(DICTCDS, mode="w") as f:
+                json.dump(dictCDS, f, indent=3, ensure_ascii=False)
+            print("Le dictionnaire dictCDS.json est désormais à jour.")
 
 dictCDSintegration()
