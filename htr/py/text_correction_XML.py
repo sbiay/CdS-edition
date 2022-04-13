@@ -53,6 +53,7 @@ def textCorrectionXML():
                         ligneCorr = ligneBrute
                         # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
                         entreesMAJ = {}
+                        
                         # On boucle sur les formes du dictionnaire personnalisé
                         for forme in dictCDS:
                             lemme = dictCDS[forme]["lem"]
@@ -61,7 +62,12 @@ def textCorrectionXML():
                                 if mot:
                                     # Si le mot courant correspond à l'entrée de dictionnaire
                                     if forme == mot:
+                                        # Si le mot est en milieu de ligne
                                         ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
+                                        # Si le mot est placé juste après la balise unicode
+                                        ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
+                                        if forme == "cer":
+                                            print(ligneCorr)
                                         entreesMAJ[forme] = {
                                             "lem": lemme,
                                             "ctxt": []
