@@ -167,13 +167,13 @@
 			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet.
 					
 			\subsection{Analyser les mots}
-				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts-PAGEXML.py} à nos prédictions HTR. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. En outre, il faut veiller à ne produire que des corrections dépourvues d'ambiguïtés et applicable en toutes circonstances. Si le modèle lit "celle" pour "cette", seule une correction manuelle peut y remédier~; le risque du dictionnaire est de remplacer automatiquement ailleurs des prédictions justes par le terme trouvé. Il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
+				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts-PAGEXML.py} à nos prédictions HTR. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. Il est en outre à mener avec prudence, car il faut veiller à ne produire que des corrections dépourvues d'ambiguïté et applicables en toutes circonstances. Si le modèle lit \textit{celle} pour \textit{cette}, seule une correction manuelle peut y remédier~; le risque de la correction automatique est de remplacer involontairement des prédictions justes~: il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
 				
-				Afin de faciliter la correction des dictionnaires généré par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine~; le contexte est en effet déterminant pour valider ou modifier une correction proposée automatiquement.
+				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé ce script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
-				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{get-lemmes}, qui fouille les vérités terrains déjà constituées et permet de donc de valider rapidement les mots déjà rencontrées dans le traitement de la correspondance de \gls{cds} avant de devoir lancer leur recherche dans un dictionnaire généraliste plus vaste.
+				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{get-lemmes}, qui fouille les vérités de terrains déjà constituées et permet de valider rapidement les mots déjà rencontrés dans le traitement de la correspondance de \gls{cds}, évitant ainsi une recherche plus coûteuse dans un dictionnaire généraliste de la langue française.
 				
-				Les corrections précédemment validées sont elle aussi mobilisées lors de l'analyse des prédictions, ce qui permet non seulement de réexploiter facilement des corrections déjà effectuées, mais aussi d'écarter des formes qui auraient précédemment identifiées comme ambiguës (pouvant être résolues de plusieurs façons selon le contexte, et donc à ne pas corriger automatiquement).
+				Les corrections précédemment validées sont elles aussi mobilisées lors de l'analyse des prédictions, ce qui permet non seulement de réexploiter facilement des corrections déjà effectuées, mais aussi d'écarter des formes qui auraient précédemment été identifiées comme ambiguës (pouvant être résolues de plusieurs façons selon le contexte, et donc à ne pas corriger automatiquement).
 				
 			\subsection{Constituer un dictionnaire personnalisé}
 
@@ -197,7 +197,7 @@
 		L'usage des accents a été normalisé selon les règles modernes.
 		
 		\section{Coupure des mots}
-		La coupure des mots a été respectée~: \textit{d'avantage}.
+		La coupure des mots a été respectée~: \textit{d'avantage, Ç'a été}.
 		
 		Nous n'avons pas restitué de trait d'union lorsque l'usage moderne l'imposerait~: \textit{portez vous bien}.
 				
