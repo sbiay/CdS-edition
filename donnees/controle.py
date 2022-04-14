@@ -44,7 +44,7 @@ def differenceZenodoFuD():
                 "Bearbeitungsstatus": ligne["Bearbeitungsstatus"]
             })
     
-    # On vérifie que l'export de la base Fud contienne bien tous les enregistrements publiés sur Zenodo
+    # On peut vérifier que l'export de la base Fud contienne bien tous les enregistrements publiés sur Zenodo
     zenodoSeulement = []
     for cle in zenodo:
         if cle not in fud:
@@ -57,11 +57,11 @@ def differenceZenodoFuD():
             # On pose comme condition que la valeur de l'enregistrement dans FuD (ie son statut de publication) commence
             # par 80 (ie publiable)
             if enregistrement["Bearbeitungsstatus"][:2] == "80":
-                difference1.append(enregistrement["idno"])
+                difference1.append(enregistrement)
     
     print(f"Le nombre d'enregistrements qualifiés de publiables dans FuD et qui sont absents du jeu Zenod"
           f"o est de {len(difference1)}.")
-    print(f"En voici la liste : {difference1}")
+    print(f"En voici la liste : {[enregistrement['Nr. der Digitalisate'] for enregistrement in difference1]}")
     
     # On compare avec la liste des documents que Florence de Peyronnet a vérifiés en décembre 2021
     floPeyr = [
@@ -80,27 +80,48 @@ def differenceZenodoFuD():
         "CdS/96/248-249",
         "CdS/96/250-251",
     ]
+    print(f"Le nombre d'enregistrements vérifiés par Florence de Peyronnet est de {len(floPeyr)}.")
+    
     difference2 = []
     for enregistrement in fud:
         # Si un enregistrement FUD est dans la liste floPeyr
         if enregistrement["Nr. der Digitalisate"] in floPeyr:
             # Et si cet enregistrement est aussi dans la liste difference1
-            if enregistrement["idno"] in difference1:
+            idnoDiff1 = [item['idno'] for item in difference1]
+            if enregistrement["idno"] in idnoDiff1:
                 difference2.append(enregistrement)
     
-    print(f"{len(difference2)} enregistrements parmi ceux vérifiés par Florence de Peyronnet correspondent bien "
-          f"à ceux qualifiés de publiables dans FuD et qui sont absents du jeu Zenodo.")
+    print(f"{len(difference2)} enregistrements parmi ceux vérifiés par Florence de Peyronnet sont bien présents dans "
+          f"FuD (et figurent parmi ceux absents du jeu Zenodo).")
     
     # On cherche quels enregistrements qualifiés de publiables dans FuD et absents du jeu Zenodo
     # n'ont pas été vérifiés par FdP
     difference3 = []
     for enregistrement in fud:
         # Si un enregistrement FUD est dans la liste difference1
-        if enregistrement["Nr. der Digitalisate"] not in floPeyr and enregistrement["idno"] in difference1:
+        if enregistrement["Nr. der Digitalisate"] not in floPeyr and enregistrement["idno"] in idnoDiff1:
             # Et si cet enregistrement est aussi dans la liste difference1
             difference3.append(enregistrement)
-    print(f"Les {len(difference3)} enregistrements qualifiés de publiables dans FuD, absents du jeu Zenodo"
-          f"et non vérifiés par Florence de Peyronnet sont : "
+    print(f"Il y a {len(difference3)} enregistrements, qualifiés de publiables dans FuD, absents du jeu Zenodo "
+          f"et non vérifiés par Florence de Peyronnet : "
           f"{[enregistrement['Nr. der Digitalisate'] for enregistrement in difference3]}")
+
+    # On charge les données de la liste correspSearch
+    correspSearch = []
+    with open("./donnees/correspSearch.csv") as csvf:
+        lecteur = csv.DictReader(csvf, delimiter=',', quotechar='"')
+        # On inscrit dans la liste des dictionnaires décrivant les attributs des enregistrements
+        for index, ligne in enumerate(lecteur):
+            correspSearch.append({
+                "Nr. der Digitalisate": ligne['edition'],
+            })
+    nrDigitCorresp = [item["Nr. der Digitalisate"] for item in correspSearch]
+    
+    # On cherche les enregistrements vérifiés par FdP qui aurait été enrichis pour correspSeach
+    floPeyrEnrichis = []
+    for item in floPeyr:
+        if item in nrDigitCorresp:
+            floPeyrEnrichis.append(item)
+    print(f"{len(floPeyrEnrichis)} enregistrements vérifiés par FdP ont été enrichis pour correspSeach.")
 
 differenceZenodoFuD()

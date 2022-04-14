@@ -16,7 +16,7 @@ Nous avons comparé ces listes grâce aux clés suivantes (au moyen du script [c
 Nous n'avons pris en compte pour cette comparaison que les enregistrements de l'export FuD ayant sous l'attribut `Bearbeitungsstatus` la valeur **"80 - Freigabe"** (*ie* publiable).
 
 Le nombre d'enregistrements qualifiés de publiables dans FuD et qui sont absents du jeu Zenodo est de **14**.
-En voici la liste : CdS-b2-008z, CdS-b2-0090, CdS-b2-0091, CdS-b2-0092, CdS-b2-0093, CdS-b2-0094, CdS-b2-0095, CdS-b2-0096, CdS-b2-0097, CdS-b2-0098, CdS-b2-0099, CdS-b2-009a, CdS-b2-009b, CdS-b2-009c.
+En voici la liste : ['CdS/96/250-251', 'CdS/96/248-249', 'CdS/96/245-246', 'CdS/96/240', 'CdS/96/238', 'CdS/96/234-236', 'CdS/96/154-155', 'CdS/96/142', 'CdS/96/104', 'CdS/96/081-082', 'CdS/95/056-058', 'CDS//012-014', 'CdS/96/016', 'CdS/96/034'].
 
 Ces enregistrements correspondent aux 14 dernières lignes du fichier **20220408_exportFuD_complement.csv**. Nous avons contrôlé que les enregistrements du même fichier :
 - Sont bien publiés sur le site https://constance-de-salm.de
@@ -25,3 +25,9 @@ Ces enregistrements correspondent aux 14 dernières lignes du fichier **20220408
 Par exemple, dans le tableau **20220408_exportFuD_complement.csv**, l'un des derniers de la liste à être commun au jeu Zenodo (**…_weitere_Quellen.csv**) et à avoir 80 est `CdS-b2-008i`; il a bien été enrichi ([notice](https://constance-de-salm.de/archiv/#/document/11375)).
 
 En revanche, les 14 enregistrements ayant le statut de **"80 - Freigabe"** et non présents dans l'inventaire publié sur Zenodo n'ont pas été enrichis.
+
+12 enregistrements parmi ceux vérifiés par **Florence de Peyronnet** correspondent bien à ceux qualifiés de publiables dans FuD et qui sont absents du jeu Zenodo.
+
+Les 2 enregistrements qualifiés de publiables dans FuD, absents du jeu Zenodoet non vérifiés par Florence de Peyronnet sont : ['CdS/95/056-058', 'CDS//012-014'].
+
+On vérifie que les enregistrements vérifiés par **Florence de Peyronnet** n'ont pas été enrichis en recherchant les `Nr. der Digitalisate` dans la liste [correspSearch.csv](./correspSearch.csv), qui correspond à celle déposée par H. Souvay sous le titre [Ready2CMI.csv](https://github.com/dhi-digital-humanities/constance-de-salm/blob/main/CorrespSearch/Ready2CMI.csv) : en effet **aucun** de ces enregistrements n'a été enrichi.
