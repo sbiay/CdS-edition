@@ -1,5 +1,6 @@
 import csv
 import click
+from fud import donneesFud
 
 
 @click.command()
@@ -22,30 +23,9 @@ def differenceZenodoFuD():
         for index, ligne in enumerate(lecteur):
             zenodo[ligne['FuD-Key']] = None
     
-    # On charge les données exportées de Fud
-    fud = []
-    with open("./donnees/20220408_exportFuD_principal.csv") as csvf:
-        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
-        # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
-        for index, ligne in enumerate(lecteur):
-            fud.append({
-                "idno": ligne['idno'],
-                "Nr. der Digitalisate": ligne["Nr. der Digitalisate"],
-                "Bearbeitungsstatus": ligne["Bearbeitungsstatus"]
-            })
-    
-    with open("./donnees/20220408_exportFuD_complement.csv") as csvf:
-        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
-        # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
-        for index, ligne in enumerate(lecteur):
-            fud.append({
-                "idno": ligne['idno'],
-                "Nr. der Digitalisate": ligne["Nr. der Digitalisate"],
-                "Bearbeitungsstatus": ligne["Bearbeitungsstatus"]
-            })
-    
     # On peut vérifier que l'export de la base Fud contienne bien tous les enregistrements publiés sur Zenodo
     zenodoSeulement = []
+    fud = donneesFud()
     for cle in zenodo:
         if cle not in fud:
             zenodoSeulement.append(cle)
