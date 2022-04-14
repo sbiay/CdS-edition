@@ -41,3 +41,6 @@ htr/.ipynb_checkpoints/
 htr/veriteTerrain/*jpg
 htr/correctionLettres.csv
 *ipynb_checkpoints*
+htr/xmlPage-aCorriger/*
+htr/xmlPage-corrigees/*
+htr/py/dicos/page*
