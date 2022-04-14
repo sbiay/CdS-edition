@@ -53,12 +53,17 @@ def textCorrectionXML():
                         ligneCorr = ligneBrute
                         # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
                         entreesMAJ = {}
-                        
-                        # On boucle sur les formes du dictionnaire personnalisé
+
+                        # On effectue une première recherche pour les formes possédant une espace
+                        # (ce sont les mots coupés en deux qu'il faut corriger en un seul mot)
                         for forme in dictCDS:
                             lemme = dictCDS[forme]["lem"]
+                            if len(forme.split(" ")) > 1:
+                                if forme in ligneCorr:
+                                    ligneCorr = ligneCorr.replace(forme, lemme)
+
                             # On pose comme condition que le lemme ne soit pas "None" (id est ambigu)
-                            if lemme:
+                            elif lemme:
                                 for index, mot in enumerate(ligne):
                                     # Comme la liste des mots contient des vides, on pose une condition d'existence
                                     if mot:
@@ -75,14 +80,6 @@ def textCorrectionXML():
                                                 "ctxt": []
                                             }
 
-                        # On effectue une nouvelle recherche pour les formes possédant une espace
-                        # (ce sont les mots coupés en deux qu'il faut corriger en un seul mot)
-                        for forme in dictCDS:
-                            if len(forme.split(" ")) > 1:
-                                if forme in ligneCorr:
-                                    lemme = dictCDS[forme]["lem"]
-                                    ligneCorr = ligneCorr.replace(forme, lemme)
-                        
                         # On renvoie le contexte du mot traité dans le dictionnaire global en reparsant la ligne corrigée
                         for entree in entreesMAJ:
                             # On inscrit dans le dictionnaire le contexte en sélectionnant le noeud texte de l'élément
