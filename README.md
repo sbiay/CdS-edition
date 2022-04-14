@@ -5,14 +5,14 @@
 
 Ce travail vise à la mise en place d'un flux de production pour l'édition électronique nativement numérique de la correspondance de Constance de Salm (1767-1845), dont [l'inventaire](https://constance-de-salm.de/) a été dressé par le département de l'Histoire numérique de l'[Institut historique allemand à Paris (DHIP/IHA)](http://www.dhi-paris.fr/fr/page-daccueil.html).
 
-Le fichier [documentation.pdf](./documentation/documentation.pdf) donne une description complète de la méthodologie adoptée et des travaux en cours.
+Le fichier [documentation.pdf](./documentation/documentation.pdf) donne une description complète de la méthodologie adoptée et du travail en cours.
 
 Objectifs :
 - Procéder à une reconnaissance automatique des écritures manuscrites (voir le [dossier dédié](./htr))
 - Transformer les transcriptions en édition XML-TEI
 
 # Installation
-Afin de pouvoir tester les scripts contenus dans ce dépôt, il est nécessaire de télécharger l'archive zip, disponible sur cette page via le bouton **Code**, puis de la dézipper localement.
+Afin de pouvoir consulter les Jupyter notebooks ou de tester les scripts contenus dans ce dépôt, il est nécessaire de télécharger l'archive zip, disponible sur cette page via le bouton **Code**, puis de la dézipper localement.
 
 ## Sous Windows
 L'installation de Python 3 est nécessaire pour faire tourner les scripts. Nous recommandons la distribution [Anaconda](https://www.anaconda.com/products/individual).
