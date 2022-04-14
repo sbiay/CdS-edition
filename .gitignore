@@ -40,3 +40,4 @@ htr/.ipynb_checkpoints/
 *xlsx
 htr/veriteTerrain/*jpg
 htr/correctionLettres.csv
+*ipynb_checkpoints*
