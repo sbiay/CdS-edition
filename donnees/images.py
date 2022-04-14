@@ -19,7 +19,7 @@ def noticeImage(image):
     fud = donneesFud()
     zenodo = donneesZenodo()
     for item in fud:
-        # On pose comme condition que l'item est une liste d'images
+        # On pose comme condition que l'item ait une liste d'images
         if item.get("Images"):
             # et que cette liste ne soit pas vide
             if item["Images"]:
@@ -58,11 +58,11 @@ def donneesImages(dossier):
                     'URL': None
                 }
             )
-    print(resultats)
+
     # On écrit les résultats dans un fichier CSV
     with open(f"{dossier}/donnees.csv", 'w', newline='') as csvfile:
         fieldnames = ['nom_image', 'Nr. der Digitalisate', 'URL']
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, quotechar="|", delimiter="\t")
         writer.writeheader()
         for resultat in resultats:
             writer.writerow(

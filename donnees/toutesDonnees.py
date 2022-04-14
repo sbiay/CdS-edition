@@ -19,7 +19,7 @@ def donneesFud():
     """
     # On charge les données exportées de Fud
     fud = []
-    with open("./donnees/20220408_exportFuD_principal.csv") as csvf:
+    with open("./20220408_exportFuD_principal.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -36,7 +36,7 @@ def donneesFud():
                 compteur += 1
             fud.append(enregistrement)
             
-    with open("./donnees/20220408_exportFuD_complement.csv") as csvf:
+    with open("./20220408_exportFuD_complement.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -57,7 +57,7 @@ def donneesFud():
 
 def donneesZenodo():
     zenodo = {}
-    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
+    with open("./20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         
         for index, ligne in enumerate(lecteur):
@@ -66,7 +66,7 @@ def donneesZenodo():
                 "URL": ligne['URL']
             }
             
-    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
+    with open("./20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
 
         for index, ligne in enumerate(lecteur):

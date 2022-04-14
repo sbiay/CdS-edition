@@ -1,6 +1,13 @@
-Contrôle des données
+Gestion des données
 ====
 
+# Outils
+- Le notebook [Obtenir_metadonnees_images.ipynb](./Obtenir_metadonnees_images.ipynb) permet de récupérer l'identifiant et l'URL de la notice à partir d'un nom de fichier image. Le script peut également être utilisé en ligne de commande de la façon suivante :
+    ```shell
+    python3 images.py CHEMIN-DOSSIER
+    ```
+
+# Contrôle des données
 Nous avons contrôlé le 11 avril 2022 la liste des données figurant dans les fichiers publiés sur [Zenodo](https://zenodo.org/record/5707822) avec un export de tous les enregistrements de la base **FuD**. Les fichiers concernés, contenus dans ce dossier, sont les suivants :
 - Fichiers publiés sur **Zenodo** :
     - 20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv
