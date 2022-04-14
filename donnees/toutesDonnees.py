@@ -27,12 +27,12 @@ def donneesFud():
             enregistrement["idno"] = ligne['idno']
             enregistrement["Nr. der Digitalisate"] = ligne["Nr. der Digitalisate"]
             enregistrement["Bearbeitungsstatus"] = ligne["Bearbeitungsstatus"]
-            enregistrement["Digitalisat 1"] = ligne["Digitalisat 1"]
+            enregistrement["Images"] = [ligne["Digitalisat 1"]]
 
             # Pour ajouter toutes les images, on pose comme condition qu'il existe une image avec un numéro au-dessus
             compteur = 1
             while ligne.get(f"Digitalisat {compteur + 1}"):
-                enregistrement[f"Digitalisat {compteur + 1}"] = ligne[f"Digitalisat {compteur + 1}"]
+                enregistrement["Images"].append(ligne[f"Digitalisat {compteur + 1}"])
                 compteur += 1
             fud.append(enregistrement)
             
@@ -54,3 +54,25 @@ def donneesFud():
             fud.append(enregistrement)
                 
     return fud
+
+def donneesZenodo():
+    zenodo = {}
+    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
+        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
+        
+        for index, ligne in enumerate(lecteur):
+            zenodo[ligne['FuD-Key']] = {
+                "Nr. der Digitalisate": ligne['Nr.'],
+                "URL": ligne['URL']
+            }
+            
+    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
+        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
+
+        for index, ligne in enumerate(lecteur):
+            zenodo[ligne['FuD-Key']] = {
+                "Nr. der Digitalisate": ligne['Nr.'],
+                "URL": ligne['URL']
+            }
+            
+    return zenodo

@@ -1,6 +1,6 @@
 import csv
 import click
-from fud import donneesFud
+from toutesDonnees import donneesFud, donneesZenodo
 
 
 @click.command()
@@ -11,17 +11,7 @@ def differenceZenodoFuD():
     mais qui ne sont pas présents dans les listes publiées sur Zenodo (et donc sur le site web).
     """
     # On charge les données publiées sur Zenodo
-    zenodo = {}
-    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
-        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
-        
-        for index, ligne in enumerate(lecteur):
-            zenodo[ligne['FuD-Key']] = None
-    with open("./donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
-        lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
-        
-        for index, ligne in enumerate(lecteur):
-            zenodo[ligne['FuD-Key']] = None
+    zenodo = donneesZenodo()
     
     # On peut vérifier que l'export de la base Fud contienne bien tous les enregistrements publiés sur Zenodo
     zenodoSeulement = []

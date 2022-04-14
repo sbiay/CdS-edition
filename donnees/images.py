@@ -1,4 +1,4 @@
-from fud import donneesFud
+from toutesDonnees import donneesFud, donneesZenodo
 
 
 def noticeImage(image):
@@ -11,7 +11,16 @@ def noticeImage(image):
     :return: dictionnaire de métadonnées sur l'image
     :return type: dict
     """
+    # On charge les données exportées de FuD et de Zenodo
     fud = donneesFud()
-    print(fud)
+    zenodo = donneesZenodo()
+    for item in fud:
+        # On pose comme condition que l'item est une liste d'images
+        if item.get("Images"):
+            # et que cette liste ne soit pas vide
+            if item["Images"]:
+                # On pose enfin comme condition que l'image recherchée soit dans la liste
+                if image in item["Images"]:
+                    print(zenodo[item["idno"]])
     
-noticeImage("CdS02_Konv002-02_0067")
+noticeImage("CdS02_Konv002-02_0067.jpg")
