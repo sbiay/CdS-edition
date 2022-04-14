@@ -32,7 +32,7 @@
    "vour": {
       "lem": "vous",
       "ctxt": [
-         "Elle est bonne pour de vieux routiers comme nous ; gardez le tone VOUS"
+         "Elle invite ces caves VOUS samedi et Dimanche, il y aura"
       ]
    },
    "per": {
@@ -56,7 +56,7 @@
    "pes": {
       "lem": "pas",
       "ctxt": [
-         "Sile margue mu mes tracs, aigdqu&#39;ellenes a vante PAS"
+         "fille marche su mes traces, qussqu&#39;elle ne s en vante PAS"
       ]
    },
    "mangés": {
@@ -330,7 +330,7 @@
    "Ma": {
       "lem": "Ma",
       "ctxt": [
-         "une visite de condoll&#39;amce. MA fetrez qui était seule à la maison"
+         "le séjour ce nos amis Hompesch ci, il y seront encore Dimanche. MA"
       ]
    },
    "bemcour": {
@@ -364,7 +364,7 @@
    "Mme": {
       "lem": "Mme",
       "ctxt": [
-         "A Mr Mrme la Princesse de Salm."
+         "instamment MME Lenders de vouloir bien m&#39;an procurer une"
       ]
    },
    "aparène": {
@@ -456,7 +456,7 @@
    "Je": {
       "lem": "Je",
       "ctxt": [
-         "à vois apprendre que ce que je rapporte de Paris et JE ne crois pas que"
+         "viendrez demain aveicies james et Mr Kopp. JE m&#39;ennuie fort de ne"
       ]
    },
    "prenraidreles": {
@@ -692,7 +692,7 @@
    "(Signé)": {
       "lem": "(Signé)",
       "ctxt": [
-         "(SIGNÉ) Cons tance de Salm."
+         "(SIGNÉ) l de de Francq."
       ]
    },
    "Lettree": {
@@ -704,7 +704,7 @@
    "A": {
       "lem": "A",
       "ctxt": [
-         "A Mr Mrmrene"
+         "A Mr Prons (au château de de Liedberg)"
       ]
    },
    "Lidbeg)": {
@@ -734,7 +734,7 @@
    "Dyck": {
       "lem": "Dyck",
       "ctxt": [
-         "DYCK, ce 1e Mai, 1824."
+         "DYCK, ce gai, 181."
       ]
    },
    "Dince": {
@@ -749,10 +749,16 @@
          "l Prince de Salm Krautein et sa famille. ILS restent demain"
       ]
    },
+   "constante": {
+      "lem": "Constance",
+      "ctxt": [
+         "(Signé) constante de SALM."
+      ]
+   },
    "Salm": {
       "lem": "Salm",
       "ctxt": [
-         "A Mr Mrme la Princesse de SALM."
+         "(Signé) constante de SALM."
       ]
    },
    "liberti": {
@@ -830,7 +836,7 @@
    "Sa": {
       "lem": "Si",
       "ctxt": [
-         "rende à votre aimable invitation, attendu que je dinerai à SI dans, drst"
+         "de SI mbes)"
       ]
    },
    "enteudrons": {
@@ -1294,7 +1300,7 @@
    "Venez": {
       "lem": "Prenez",
       "ctxt": [
-         "jeunes Demoiselles. PRENEZ parre p&#39;au lien de les diriger, elles ne"
+         "vous avez manqué la dernière fois. PRENEZ donc, ils restent jusqu&#39;à lundi"
       ]
    },
    "ene": {
@@ -1408,7 +1414,7 @@
    "Il": {
       "lem": "Il",
       "ctxt": [
-         "avez perdu ne poisre IL faut se lusser faire en lasant cmme en"
+         "IL n&#39;y a pas de maladie qui tienne il faut que vous venez pendant"
       ]
    },
    "cergaison": {
@@ -1478,7 +1484,7 @@
    "Vous": {
       "lem": "Vous",
       "ctxt": [
-         "VOUS m&#39;avez fait l&#39;honneur de m&#39;inver à diner pour demain, et ont"
+         "vateus faui parlent de son épitre eu porteur de cette lettre. VOUS"
       ]
    },
    "sarblnc-": {
@@ -1616,7 +1622,7 @@
    "Dames": {
       "lem": "james",
       "ctxt": [
-         "aiendrez denale aveicies JAMES et Mr Vopp. Je m&#39;emuce fort de ne"
+         "viendrez demain aveicies JAMES et Mr Kopp. Je m&#39;ennuie fort de ne"
       ]
    },
    "pourvurc": {
@@ -1662,9 +1668,9 @@
       ]
    },
    "veus": {
-      "lem": "vous",
+      "lem": null,
       "ctxt": [
-         "sujette, surtout en amitié Mele moi sur la voie si VOUS voulue"
+         "veux / vous"
       ]
    },
    "amitre": {
@@ -2194,7 +2200,7 @@
    "Salm)": {
       "lem": "Salm)",
       "ctxt": [
-         "Ld SALM)"
+         "de SALM)"
       ]
    },
    "Monseur": {
@@ -2472,7 +2478,7 @@
    "daus": {
       "lem": "dans",
       "ctxt": [
-         "toujours malgré l&#39;évidence, me faisait croire éloigné DANS le moment"
+         "faisant autre chose, sans quoi, on ne croirait plus a rien DANS le monde"
       ]
    },
    "potre": {
@@ -2764,7 +2770,7 @@
    "vout": {
       "lem": "vont",
       "ctxt": [
-         "toutes mes idées VONT la mais moi mari restera ici et je sens aussi"
+         "Engagez aussi la tante à venir demain. Mon mari et le Comte VONT à"
       ]
    },
    "Mais": {
@@ -2805,12 +2811,6 @@
       "lem": "routes",
       "ctxt": [
          "l'inconvénient des deux ROUTES. L&#39;etsprit vie ça et le, il n&#39;etst jamais"
-      ]
-   },
-   "L": {
-      "lem": "le",
-      "ctxt": [
-         "LE dl&#39;entendre se plaindre depuis LE mois.  tass se soten devait"
       ]
    },
    "epri": {
@@ -3034,7 +3034,7 @@
    "Monsieur": {
       "lem": "Monsieur",
       "ctxt": [
-         "A revoir don MONSIEUR et ami, mille choses tendres à votre famille"
+         "A revoir, MONSIEUR. Nous vous prions de recevoir les assu-"
       ]
    },
    "bréans": {
@@ -3198,7 +3198,7 @@
    "mai": {
       "lem": "n'ai",
       "ctxt": [
-         "undispensable Ecrivez N'AI un mot, je vous prie, au reçu de cette lettre"
+         "Dyck, ce 1 N'AI, 111219."
       ]
    },
    "aprrs": {
@@ -3210,7 +3210,7 @@
    "uu": {
       "lem": "vu",
       "ctxt": [
-         "ett Je denra vivement que vous nous l&#39;apportiez VU moss d&#39;et"
+         "et je de nra vivement que nous nous l&#39;assoor tez VU mois de"
       ]
    },
    "voule": {
@@ -3270,7 +3270,7 @@
    "avous": {
       "lem": "avons",
       "ctxt": [
-         "pas vous voir tous. vous AVONS notre jardiaier anglais qui est un"
+         "pas vous noir tous. vous AVONS notre jardinier anglais qui est un"
       ]
    },
    "arènée": {
@@ -3335,12 +3335,6 @@
       "lem": "carillonner",
       "ctxt": [
          "les vrai qu&#39;on n&#39;a cessé de CARILLONNER. le laune est près du château"
-      ]
-   },
-   "La": {
-      "lem": "le",
-      "ctxt": [
-         "pour partera aulsi de vos chers neveu et Miéce. LE tomtese de"
       ]
    },
    "pres": {
@@ -3508,13 +3502,13 @@
    "dle": {
       "lem": "de",
       "ctxt": [
-         "(Signé) Constance DE Salm"
+         "pour ne pas savoir qu&#39;il faut les prendre comme DE sont. S&#39;ai d&#39;auteurs"
       ]
    },
    "Mr": {
       "lem": "Mr",
       "ctxt": [
-         "A MR MRmrene"
+         "A MR Prons (au château de de Liedberg)"
       ]
    },
    "Bous": {
@@ -3916,7 +3910,7 @@
    "prèsque": {
       "lem": "presque",
       "ctxt": [
-         "qui à mis en danger PRESQUE le repos de toute ma vie. l vérité la"
+         "Vous savez le pel chanoine de Locquengheim est mort PRESQUE"
       ]
    },
    "répos": {
@@ -4706,7 +4700,7 @@
    "nons": {
       "lem": "nous",
       "ctxt": [
-         "mootre. Il partage ce sentiment et NOUS sommes d&#39;une tristesse"
+         "NOUS une échelle dans la voiture, préparez vous donc à NOUS vois"
       ]
    },
    "aine": {
@@ -4866,7 +4860,7 @@
    "Nous": {
       "lem": "vous",
       "ctxt": [
-         "pas VOUS voir tous. VOUS avons notre jardiaier anglais qui est un"
+         "pas VOUS noir tous. VOUS avons notre jardinier anglais qui est un"
       ]
    },
    "nanrles": {
@@ -4974,7 +4968,7 @@
    "cete": {
       "lem": "cette",
       "ctxt": [
-         "J&#39;ai bien souffert de ne pouvoir être à Vous dans CETTE quste circonstance"
+         "CETTE digne famille."
       ]
    },
    "arconstorc": {
@@ -5188,7 +5182,7 @@
    "Mon": {
       "lem": "Mon",
       "ctxt": [
-         "Cgagez ouss la tant à venir demain. MON mari et le lomte vont à"
+         "Engagez aussi la tante à venir demain. MON mari et le Comte vont à"
       ]
    },
    "ocompagnera": {
@@ -5306,7 +5300,7 @@
    "Paris": {
       "lem": "Paris",
       "ctxt": [
-         "modique somme de se l. divisée par suis, nous sommes partis de PARIS"
+         "pouvez garder le journal de PARIS. elle veut faire lue ces journaux"
       ]
    },
    "fammille": {
@@ -5360,7 +5354,7 @@
    "On": {
       "lem": "On",
       "ctxt": [
-         "ON vous regrette fort. ON drn chercher Louise à midi et sa"
+         "whist permanent de nous tous, et vous aussi entendez vous. ON"
       ]
    },
    "rgcelle": {
@@ -5866,7 +5860,7 @@
    "dous": {
       "lem": "dont",
       "ctxt": [
-         "à peu près DONT les mêmes termes, et je n&#39;ai pors le courage le les récrire"
+         "DONT, 1."
       ]
    },
    "Vobrule": {
@@ -6369,10 +6363,6 @@
          "une VISITE de condoll&#39;amce. Ma fetrez qui était seule à la maison"
       ]
    },
-   "condoll amce": {
-      "lem": "condoléance",
-      "ctxt": "une mipte de CONDOLL amce  Ma fetrez qui était seule à la maisoi"
-   },
    "maisoi": {
       "lem": "maison",
       "ctxt": [
@@ -6634,7 +6624,7 @@
    "Princese": {
       "lem": "Princesse",
       "ctxt": [
-         "A Mr la PRINCESSE de Salm."
+         "Agréez ; PRINCESSE, les respectueusses sa salutations, de votre"
       ]
    },
    "Pun cahe": {
@@ -6668,7 +6658,7 @@
    "pre": {
       "lem": "prie",
       "ctxt": [
-         "qu&#39;elle envoye chez lui à tout hasard, et dois tous les ces, ête le PRIE"
+         "Boulogne à publié pour le carême. le fougeux PRIE dicateur ne"
       ]
    },
    "voriour": {
@@ -6762,7 +6752,7 @@
    "Le": {
       "lem": "Le",
       "ctxt": [
-         "C&#39;occasion de l'assurer de nouveau du plaisir qu&#39;cela à eu à LE"
+         "oraison funèbre. LE prédicateur de la cour à révolté tout son"
       ]
    },
    "rencoutres": {
@@ -7272,7 +7262,7 @@
    "pen": {
       "lem": "peu",
       "ctxt": [
-         "à PEU près dont les mêmes termes, et je n&#39;ai pors le courage le les récrire"
+         "colique, cela est bien PEU poétique"
       ]
    },
    "memes": {
@@ -7388,5 +7378,1435 @@
       "ctxt": [
          "Dyck, ce 1e MAI, 1824."
       ]
+   },
+   "gationg": {
+      "lem": "Grafigny",
+      "ctxt": [
+         "de GRAFIGNY. S."
+      ]
+   },
+   "L": {
+      "lem": "L",
+      "ctxt": [
+         "L"
+      ]
+   },
+   "Dnec": {
+      "lem": "Duc",
+      "ctxt": [
+         "L&#39;assinat du DUC de goerris nous jette dans un affreux cahos je ne"
+      ]
+   },
+   "pent-": {
+      "lem": "peut-",
+      "ctxt": [
+         "PEUT- être les efforts d&#39;un parti extravagant. Il y a beaucoup de sagesse"
+      ]
+   },
+   "Msouts": {
+      "lem": "efforts",
+      "ctxt": [
+         "peut- être les EFFORTS d&#39;un parti extravagant. Il y a beaucoup de sagesse"
+      ]
+   },
+   "vanti": {
+      "lem": "parti",
+      "ctxt": [
+         "peut- être les efforts d&#39;un PARTI extravagant. Il y a beaucoup de sagesse"
+      ]
+   },
+   "estravagans": {
+      "lem": "extravagant",
+      "ctxt": [
+         "peut- être les efforts d&#39;un parti EXTRAVAGANT. Il y a beaucoup de sagesse"
+      ]
+   },
+   "sagsse": {
+      "lem": "sagesse",
+      "ctxt": [
+         "peut- être les efforts d&#39;un parti extravagant. Il y a beaucoup de SAGESSE"
+      ]
+   },
+   "hoi": {
+      "lem": "Roi",
+      "ctxt": [
+         "dans l&#39;ordonnance du ROI qui défend aux prêtres tout discours au"
+      ]
+   },
+   "défsenr": {
+      "lem": "défend",
+      "ctxt": [
+         "dans l&#39;ordonnance du Roi qui DÉFEND aux prêtres tout discours au"
+      ]
+   },
+   "disconvs": {
+      "lem": "discours",
+      "ctxt": [
+         "dans l&#39;ordonnance du Roi qui défend aux prêtres tout DISCOURS au"
+      ]
+   },
+   "creuison": {
+      "lem": "oraison",
+      "ctxt": [
+         "ORAISON funèbre. Le prédicateur de la cour à révolté tout son"
+      ]
+   },
+   "fuinèbre": {
+      "lem": "funèbre",
+      "ctxt": [
+         "oraison FUNÈBRE. Le prédicateur de la cour à révolté tout son"
+      ]
+   },
+   "prédicatenir": {
+      "lem": "prédicateur",
+      "ctxt": [
+         "oraison funèbre. Le PRÉDICATEUR de la cour à révolté tout son"
+      ]
+   },
+   "révottée": {
+      "lem": "révolté",
+      "ctxt": [
+         "oraison funèbre. Le prédicateur de la cour à RÉVOLTÉ tout son"
+      ]
+   },
+   "auditoie": {
+      "lem": "auditoire",
+      "ctxt": [
+         "AUDITOIRE en partant de l&#39;infortunée victime de Louvel, jugez ce que"
+      ]
+   },
+   "ensortunée": {
+      "lem": "infortunée",
+      "ctxt": [
+         "auditoire en partant de l&#39;INFORTUNÉE victime de Louvel, jugez ce que"
+      ]
+   },
+   "vêtme": {
+      "lem": "victime",
+      "ctxt": [
+         "auditoire en partant de l&#39;infortunée VICTIME de Louvel, jugez ce que"
+      ]
+   },
+   "Louvel": {
+      "lem": "Louvel",
+      "ctxt": [
+         "auditoire en partant de l&#39;infortunée victime de LOUVEL, jugez ce que"
+      ]
+   },
+   "puos": {
+      "lem": "jugez",
+      "ctxt": [
+         "auditoire en partant de l&#39;infortunée victime de Louvel, JUGEZ ce que"
+      ]
+   },
+   "aubres": {
+      "lem": "autres",
+      "ctxt": [
+         "d&#39;AUTRES auraient pu dire malheureusement l&#39;ordonnance ne nous"
+      ]
+   },
+   "ddce": {
+      "lem": "dire",
+      "ctxt": [
+         "d&#39;autres auraient pu DIRE malheureusement l&#39;ordonnance ne nous"
+      ]
+   },
+   "mathieureusement": {
+      "lem": "malheureusement",
+      "ctxt": [
+         "d&#39;autres auraient pu dire MALHEUREUSEMENT l&#39;ordonnance ne nous"
+      ]
+   },
+   "ordonnane": {
+      "lem": "ordonnance",
+      "ctxt": [
+         "d&#39;autres auraient pu dire malheureusement l&#39;ORDONNANCE ne nous"
+      ]
+   },
+   "mandemen": {
+      "lem": "mandemens",
+      "ctxt": [
+         "sauvera ner des MANDEMENS. Vous seriez indignée je celui que l'abbé"
+      ]
+   },
+   "indianes": {
+      "lem": "indignée",
+      "ctxt": [
+         "sauvera ner des mandemens. Vous seriez INDIGNÉE je celui que l'abbé"
+      ]
+   },
+   "cetui": {
+      "lem": "celui",
+      "ctxt": [
+         "sauvera ner des mandemens. Vous seriez indignée je CELUI que l'abbé"
+      ]
+   },
+   "laeft": {
+      "lem": "l'abbé",
+      "ctxt": [
+         "sauvera ner des mandemens. Vous seriez indignée je celui que L'ABBÉ"
+      ]
+   },
+   "soutuge": {
+      "lem": "Boulogne",
+      "ctxt": [
+         "BOULOGNE à publié pour le carême. le fougeux prie dicateur ne"
+      ]
+   },
+   "publé": {
+      "lem": "publié",
+      "ctxt": [
+         "Boulogne à PUBLIÉ pour le carême. le fougeux prie dicateur ne"
+      ]
+   },
+   "carêeme": {
+      "lem": "carême",
+      "ctxt": [
+         "Boulogne à publié pour le CARÊME. le fougeux prie dicateur ne"
+      ]
+   },
+   "pre dicateur": {
+      "lem": "prédicateur",
+      "ctxt": "soutuge à publé pour le carêeme  le fougeux PRE dicateur ne"
+   },
+   "Minide": {
+      "lem": "Madame",
+      "ctxt": [
+         "devrait plus ni parles, ni écrire, depuis que MADAME Staël l&#39;a rouvert"
+      ]
+   },
+   "Sael": {
+      "lem": "Staël",
+      "ctxt": [
+         "devrait plus ni parles, ni écrire, depuis que Madame STAËL l&#39;a rouvert"
+      ]
+   },
+   "uane": {
+      "lem": "une",
+      "ctxt": [
+         "d&#39;UNE si juste confusion."
+      ]
+   },
+   "juote": {
+      "lem": "juste",
+      "ctxt": [
+         "d&#39;une si JUSTE confusion."
+      ]
+   },
+   "contusii": {
+      "lem": "confusion",
+      "ctxt": [
+         "d&#39;une si juste CONFUSION."
+      ]
+   },
+   "langtées": {
+      "lem": "Langlès",
+      "ctxt": [
+         "LANGLÈS à été aussi malade pendant ja jours. J&#39;ai diné avec"
+      ]
+   },
+   "mabade": {
+      "lem": "malade",
+      "ctxt": [
+         "Langlès à été aussi MALADE pendant ja jours. J&#39;ai diné avec"
+      ]
+   },
+   "peivant": {
+      "lem": "pendant",
+      "ctxt": [
+         "Langlès à été aussi malade PENDANT ja jours. J&#39;ai diné avec"
+      ]
+   },
+   "fours": {
+      "lem": "jours",
+      "ctxt": [
+         "Langlès à été aussi malade pendant ja JOURS. J&#39;ai diné avec"
+      ]
+   },
+   "anec": {
+      "lem": "avec",
+      "ctxt": [
+         "Langlès à été aussi malade pendant ja jours. J&#39;ai diné AVEC"
+      ]
+   },
+   "lai": {
+      "lem": "lui",
+      "ctxt": [
+         "LUI jeudi dernier cher syé le conte de 27 ; qui conserve sa bonhomme"
+      ]
+   },
+   "milien": {
+      "lem": "milieu",
+      "ctxt": [
+         "au MILIEU de nos exagérations."
+      ]
+   },
+   "dipez": {
+      "lem": "disiez",
+      "ctxt": [
+         "Vous me DISIEZ dans votre avant dernière que vous aviez tou"
+      ]
+   },
+   "dernère": {
+      "lem": "dernière",
+      "ctxt": [
+         "Vous me disiez dans votre avant DERNIÈRE que vous aviez tou"
+      ]
+   },
+   "tromai": {
+      "lem": "Roman",
+      "ctxt": [
+         "muiné le ROMAN qui vous occupait à Paris, je vous en félicite"
+      ]
+   },
+   "oucunait": {
+      "lem": "occupait",
+      "ctxt": [
+         "muiné le Roman qui vous OCCUPAIT à Paris, je vous en félicite"
+      ]
+   },
+   "jauis": {
+      "lem": "Paris",
+      "ctxt": [
+         "muiné le Roman qui vous occupait à PARIS, je vous en félicite"
+      ]
+   },
+   "fllrele": {
+      "lem": "félicite",
+      "ctxt": [
+         "muiné le Roman qui vous occupait à Paris, je vous en FÉLICITE"
+      ]
+   },
+   "eet": {
+      "lem": "et",
+      "ctxt": [
+         "ET avoir deux lits."
+      ]
+   },
+   "ruivement": {
+      "lem": "vivement",
+      "ctxt": [
+         "et je de nra VIVEMENT que nous nous l&#39;assoor tez vu mois de"
+      ]
+   },
+   "moss": {
+      "lem": "mois",
+      "ctxt": [
+         "et je de nra vivement que nous nous l&#39;assoor tez vu MOIS de"
+      ]
+   },
+   "(grèz": {
+      "lem": "Agréez",
+      "ctxt": [
+         "AGRÉEZ ; Princesse, les respectueusses sa salutations, de votre"
+      ]
+   },
+   "autatidée": {
+      "lem": "salutations",
+      "ctxt": [
+         "Agréez ; Princesse, les respectueusses sa SALUTATIONS, de votre"
+      ]
+   },
+   "Sévonc": {
+      "lem": "dévoué",
+      "ctxt": [
+         "DÉVOUÉ Serviteur."
+      ]
+   },
+   "Soviteur": {
+      "lem": "Serviteur",
+      "ctxt": [
+         "dévoué SERVITEUR."
+      ]
+   },
+   "Carbien": {
+      "lem": "Barbier",
+      "ctxt": [
+         "(Signé) BARBIER."
+      ]
+   },
+   "detre": {
+      "lem": "Lettre",
+      "ctxt": [
+         "LETTRE"
+      ]
+   },
+   "Prang)": {
+      "lem": "Prons",
+      "ctxt": [
+         "A Mr PRONS"
+      ]
+   },
+   "Mars": {
+      "lem": "mais",
+      "ctxt": [
+         "Dyck, ce 10 MAIS, 1819."
+      ]
+   },
+   "absarbée": {
+      "lem": "absorbée",
+      "ctxt": [
+         "j&#39;ai été si ABSORBÉE par un petit ouvrage que je viens de publier à Paris"
+      ]
+   },
+   "Pase": {
+      "lem": "Paris",
+      "ctxt": [
+         "j&#39;ai été si absorbée par un petit ouvrage que je viens de publier à PARIS"
+      ]
+   },
+   "bis": {
+      "lem": "dix",
+      "ctxt": [
+         "Il y a DIX mille ans que je voulais vous écrire, Mon cher voisin ;mais"
+      ]
+   },
+   "aus": {
+      "lem": "ans",
+      "ctxt": [
+         "Il y a dix mille ANS que je voulais vous écrire, Mon cher voisin ;mais"
+      ]
+   },
+   "Muon": {
+      "lem": "Mon",
+      "ctxt": [
+         "Il y a dix mille ans que je voulais vous écrire, MON cher voisin ;mais"
+      ]
+   },
+   "vaisir": {
+      "lem": "voisin",
+      "ctxt": [
+         "Il y a dix mille ans que je voulais vous écrire, Mon cher VOISIN ;mais"
+      ]
+   },
+   "Vaus": {
+      "lem": "Vous",
+      "ctxt": [
+         "Je vis fâchée de ce que vous vous êtes roidi contre Dumont. VOUS y"
+      ]
+   },
+   "autauns": {
+      "lem": "auteurs",
+      "ctxt": [
+         "que je n&#39;ai écrit à personne. Vous connaissez trop les dames et les AUTEURS."
+      ]
+   },
+   "savaoir": {
+      "lem": "savoir",
+      "ctxt": [
+         "pour ne pas SAVOIR qu&#39;il faut les prendre comme de sont. S&#39;ai d&#39;auteurs"
+      ]
+   },
+   "fachée": {
+      "lem": "fâchée",
+      "ctxt": [
+         "Je vis FÂCHÉE de ce que vous vous êtes roidi contre Dumont. Vous y"
+      ]
+   },
+   "roid": {
+      "lem": "roidi",
+      "ctxt": [
+         "Je vis fâchée de ce que vous vous êtes ROIDI contre Dumont. Vous y"
+      ]
+   },
+   "poisir": {
+      "lem": "plaisir",
+      "ctxt": [
+         "avez perdu qu PLAISIR. Il faut se laisser faire en lisant comme en"
+      ]
+   },
+   "peus": {
+      "lem": "plus",
+      "ctxt": [
+         "faisant autre chose, sans quoi, on ne croirait PLUS a rien dans le monde"
+      ]
+   },
+   "bouves": {
+      "lem": "bonnes",
+      "ctxt": [
+         "et puis je suis de ces BONNES âmes qui ne savent plus douter quand un"
+      ]
+   },
+   "ames": {
+      "lem": "âmes",
+      "ctxt": [
+         "et puis je suis de ces bonnes ÂMES qui ne savent plus douter quand un"
+      ]
+   },
+   "doiter": {
+      "lem": "douter",
+      "ctxt": [
+         "et puis je suis de ces bonnes âmes qui ne savent plus DOUTER quand un"
+      ]
+   },
+   "dt": {
+      "lem": "dit",
+      "ctxt": [
+         "homme DIT J&#39;ai vu j&#39;ai DIT enfin ce Dumont m&#39;a presque autant"
+      ]
+   },
+   "Damont": {
+      "lem": "Dumont",
+      "ctxt": [
+         "homme dit J&#39;ai vu j&#39;ai dit enfin ce DUMONT m&#39;a presque autant"
+      ]
+   },
+   "autat": {
+      "lem": "autant",
+      "ctxt": [
+         "homme dit J&#39;ai vu j&#39;ai dit enfin ce Dumont m&#39;a presque AUTANT"
+      ]
+   },
+   "tonéhé": {
+      "lem": "touchée",
+      "ctxt": [
+         "TOUCHÉE que la Barbe bleue."
+      ]
+   },
+   "carhe": {
+      "lem": "Barbe",
+      "ctxt": [
+         "touchée que la BARBE bleue."
+      ]
+   },
+   "bleme": {
+      "lem": "bleue",
+      "ctxt": [
+         "touchée que la Barbe BLEUE."
+      ]
+   },
+   "trenve": {
+      "lem": "tienne",
+      "ctxt": [
+         "Il n&#39;y a pas de maladie qui TIENNE il faut que vous venez pendant"
+      ]
+   },
+   "sejour": {
+      "lem": "séjour",
+      "ctxt": [
+         "le SÉJOUR ce nos amis Hompesch ci, il y seront encore Dimanche. Ma"
+      ]
+   },
+   "nas": {
+      "lem": "nos",
+      "ctxt": [
+         "le séjour ce NOS amis Hompesch ci, il y seront encore Dimanche. Ma"
+      ]
+   },
+   "Hompesch": {
+      "lem": "Hompesch",
+      "ctxt": [
+         "le séjour ce nos amis HOMPESCH ci, il y seront encore Dimanche. Ma"
+      ]
+   },
+   "Dumanése": {
+      "lem": "Dimanche",
+      "ctxt": [
+         "le séjour ce nos amis Hompesch ci, il y seront encore DIMANCHE. Ma"
+      ]
+   },
+   "sauté": {
+      "lem": "santé",
+      "ctxt": [
+         "SANTÉ se remet, mais que Louise est changée !"
+      ]
+   },
+   "Lounise": {
+      "lem": "Louise",
+      "ctxt": [
+         "santé se remet, mais que LOUISE est changée !"
+      ]
+   },
+   "chanaée": {
+      "lem": "changée",
+      "ctxt": [
+         "santé se remet, mais que Louise est CHANGÉE !"
+      ]
+   },
+   "sensatious": {
+      "lem": "sensations",
+      "ctxt": [
+         "J&#39;ai compris toutes vos SENSATIONS pour charmante. Je m&#39;en promet"
+      ]
+   },
+   "charanaute": {
+      "lem": "charmante",
+      "ctxt": [
+         "J&#39;ai compris toutes vos sensations pour CHARMANTE. Je m&#39;en promet"
+      ]
+   },
+   "promel": {
+      "lem": "promet",
+      "ctxt": [
+         "J&#39;ai compris toutes vos sensations pour charmante. Je m&#39;en PROMET"
+      ]
+   },
+   "plaipr": {
+      "lem": "plaisir",
+      "ctxt": [
+         "bien du PLAISIR, quoique dans le fait ce ne sait que de l'eau claire, ma"
+      ]
+   },
+   "leau": {
+      "lem": "l'eau",
+      "ctxt": [
+         "bien du plaisir, quoique dans le fait ce ne sait que de L'EAU claire, ma"
+      ]
+   },
+   "caire": {
+      "lem": "claire",
+      "ctxt": [
+         "bien du plaisir, quoique dans le fait ce ne sait que de l'eau CLAIRE, ma"
+      ]
+   },
+   "marane": {
+      "lem": "marche",
+      "ctxt": [
+         "fille MARCHE su mes traces, qussqu&#39;elle ne s en vante pas"
+      ]
+   },
+   "qussqu": {
+      "lem": "quoiqu",
+      "ctxt": "fille marane su mes traces  QUSSQU ellenes eàn vante pes"
+   },
+   "ellenes": {
+      "lem": "elle ne s",
+      "ctxt": [
+         "fille marche su mes traces, qussqu&#39;ELLE NE S en vante pas"
+      ]
+   },
+   "eàn": {
+      "lem": "en",
+      "ctxt": [
+         "fille marche su mes traces, qussqu&#39;elle ne s EN vante pas"
+      ]
+   },
+   "lelle": {
+      "lem": "Elle",
+      "ctxt": [
+         "ELLE invite ces caves vous samedi et Dimanche, il y aura"
+      ]
+   },
+   "démanche": {
+      "lem": "Dimanche",
+      "ctxt": [
+         "Elle invite ces caves vous samedi et DIMANCHE, il y aura"
+      ]
+   },
+   "hofist": {
+      "lem": "whist",
+      "ctxt": [
+         "WHIST permanent de nous tous, et vous aussi entendez vous. On"
+      ]
+   },
+   "vaus": {
+      "lem": "vous",
+      "ctxt": [
+         "whist permanent de nous tous, et VOUS aussi entendez VOUS. On"
+      ]
+   },
+   "ausfsi": {
+      "lem": "aussi",
+      "ctxt": [
+         "whist permanent de nous tous, et vous AUSSI entendez vous. On"
+      ]
+   },
+   "tidane": {
+      "lem": "tisane",
+      "ctxt": [
+         "vous choiera j&#39;ai encore de la TISANE et un tas de drogues."
+      ]
+   },
+   "grvones": {
+      "lem": "drogues",
+      "ctxt": [
+         "vous choiera j&#39;ai encore de la tisane et un tas de DROGUES."
+      ]
+   },
+   "Prons(au": {
+      "lem": "Prons (au",
+      "ctxt": [
+         "A Mr PRONS (AU château de Liedberg)"
+      ]
+   },
+   "Liedbeg)": {
+      "lem": "Liedberg)",
+      "ctxt": [
+         "A Mr Prons (au château de LIEDBERG)"
+      ]
+   },
+   "Mille": {
+      "lem": "Mille",
+      "ctxt": [
+         "MILLE choses à ces james"
+      ]
+   },
+   "amitiées": {
+      "lem": "amitiés",
+      "ctxt": [
+         "fille AMITIÉS des meilleures et de tout Dyck."
+      ]
+   },
+   "Dychs": {
+      "lem": "Dyck",
+      "ctxt": [
+         "fille amitiés des meilleures et de tout DYCK."
+      ]
+   },
+   "Constance": {
+      "lem": "constante",
+      "ctxt": [
+         "(Signé) CONSTANTE de Salm."
+      ]
+   },
+   "(deMme": {
+      "lem": "(de Mme",
+      "ctxt": [
+         "(DE MME la tanbenr)"
+      ]
+   },
+   "Pamnbes)": {
+      "lem": "Pamnbes)",
+      "ctxt": [
+         "de PAMNBES)"
+      ]
+   },
+   "hâteu": {
+      "lem": "château",
+      "ctxt": [
+         "A Mr Prons au CHÂTEAU de Liedberg)"
+      ]
+   },
+   "Maman": {
+      "lem": "Maman",
+      "ctxt": [
+         "MAMAN nous prie de remettre le journal des modes et le conser"
+      ]
+   },
+   "enrhuimée": {
+      "lem": "enrhumée",
+      "ctxt": [
+         "Maman qui est toujours fort ENRHUMÉE me charge de vous écrire"
+      ]
+   },
+   "arire": {
+      "lem": "écrire",
+      "ctxt": [
+         "Maman qui est toujours fort enrhumée me charge de vous ÉCRIRE"
+      ]
+   },
+   "pani": {
+      "lem": "part",
+      "ctxt": [
+         "de sa PART. Monsieur, que le comte et la comtesse de Hompesch doivent"
+      ]
+   },
+   "coinesse": {
+      "lem": "comtesse",
+      "ctxt": [
+         "de sa part. Monsieur, que le comte et la COMTESSE de Hompesch doivent"
+      ]
+   },
+   "Sompeschs": {
+      "lem": "Hompesch",
+      "ctxt": [
+         "de sa part. Monsieur, que le comte et la comtesse de HOMPESCH doivent"
+      ]
+   },
+   "renir": {
+      "lem": "venir",
+      "ctxt": [
+         "VENIR aujourd&#39;hui et passeront quelques jours avec nous. elle dit que"
+      ]
+   },
+   "Elle": {
+      "lem": "elle",
+      "ctxt": [
+         "pouvez garder le journal de Paris. ELLE veut faire lue ces journaux"
+      ]
+   },
+   "jemain": {
+      "lem": "demain",
+      "ctxt": [
+         "vous seriez bien aimable d&#39;amener DEMAIN la famille Kopp et de"
+      ]
+   },
+   "troyp": {
+      "lem": "Kopp",
+      "ctxt": [
+         "vous seriez bien aimable d&#39;amener demain la famille KOPP et de"
+      ]
+   },
+   "jra": {
+      "lem": "fera",
+      "ctxt": [
+         "passer lei le journée, ou FERA le fameux whist, et si ces dames"
+      ]
+   },
+   "nhist": {
+      "lem": "whist",
+      "ctxt": [
+         "passer lei le journée, ou fera le fameux WHIST, et si ces dames"
+      ]
+   },
+   "veutent": {
+      "lem": "veulent",
+      "ctxt": [
+         "VEULENT rester à coucher leur chambre est prête."
+      ]
+   },
+   "chambire": {
+      "lem": "chambre",
+      "ctxt": [
+         "veulent rester à coucher leur CHAMBRE est prête."
+      ]
+   },
+   "priête": {
+      "lem": "prête",
+      "ctxt": [
+         "veulent rester à coucher leur chambre est PRÊTE."
+      ]
+   },
+   "vemettre": {
+      "lem": "remettre",
+      "ctxt": [
+         "Maman nous prie de REMETTRE le journal des modes et le conser"
+      ]
+   },
+   "journat": {
+      "lem": "journal",
+      "ctxt": [
+         "Maman nous prie de remettre le JOURNAL des modes et le conser"
+      ]
+   },
+   "conser vateus": {
+      "lem": "conservateur",
+      "ctxt": "Maman nous prie de vemettre le journat des modes et le CONSER"
+   },
+   "par ent": {
+      "lem": "parlent",
+      "ctxt": "vateus faui PAR ent de son épitre eu purteur de cette lettre  Vous"
+   },
+   "purteur": {
+      "lem": "porteur",
+      "ctxt": [
+         "vateus faui parlent de son épitre eu PORTEUR de cette lettre. Vous"
+      ]
+   },
+   "journaug": {
+      "lem": "journaux",
+      "ctxt": [
+         "pouvez garder le journal de Paris. elle veut faire lue ces JOURNAUX"
+      ]
+   },
+   "hompesch": {
+      "lem": "Hompesch",
+      "ctxt": [
+         "au Comte de HOMPESCH."
+      ]
+   },
+   "nségiterez": {
+      "lem": "n'éviterez",
+      "ctxt": [
+         "sous N'ÉVITEREZ pas notre visite, et s&#39;il le faut, nous empote"
+      ]
+   },
+   "visile": {
+      "lem": "visite",
+      "ctxt": [
+         "sous n'éviterez pas notre VISITE, et s&#39;il le faut, nous empote"
+      ]
+   },
+   "empote nons": {
+      "lem": "emporterons",
+      "ctxt": "sous nségiterez pas notre visile  et s il le faut  nous EMPOTE"
+   },
+   "voitire": {
+      "lem": "voiture",
+      "ctxt": [
+         "nous une échelle dans la VOITURE, préparez vous donc à nous vois"
+      ]
+   },
+   "danc": {
+      "lem": "donc",
+      "ctxt": [
+         "nous une échelle dans la voiture, préparez vous DONC à nous vois"
+      ]
+   },
+   "Nons": {
+      "lem": "Nous",
+      "ctxt": [
+         "A revoir, Monsieur. NOUS vous prions de recevoir les assu-"
+      ]
+   },
+   "recenoir": {
+      "lem": "recevoir",
+      "ctxt": [
+         "A revoir, Monsieur. Nous vous prions de RECEVOIR les assu-"
+      ]
+   },
+   "desrmne": {
+      "lem": "d'estime",
+      "ctxt": [
+         "rances D'ESTIME. bien sincère. de tout la famille et particulière"
+      ]
+   },
+   "ban": {
+      "lem": "bien",
+      "ctxt": [
+         "rances d'estime. BIEN sincère. de tout la famille et particulière"
+      ]
+   },
+   "parhiulière": {
+      "lem": "particulière",
+      "ctxt": [
+         "rances d'estime. bien sincère. de tout la famille et PARTICULIÈRE"
+      ]
+   },
+   "due": {
+      "lem": "du",
+      "ctxt": [
+         "ment DU secrétaire."
+      ]
+   },
+   "sécretare": {
+      "lem": "secrétaire",
+      "ctxt": [
+         "ment du SECRÉTAIRE."
+      ]
+   },
+   "Be": {
+      "lem": "de",
+      "ctxt": [
+         "(Signé) l DE DE Francq."
+      ]
+   },
+   "Prancg": {
+      "lem": "Francq",
+      "ctxt": [
+         "(Signé) l de de FRANCQ."
+      ]
+   },
+   "Mhainan": {
+      "lem": "Maman",
+      "ctxt": [
+         "MAMAN gardant la charmante qui est ici en ce moment, je prie"
+      ]
+   },
+   "sardant": {
+      "lem": "gardant",
+      "ctxt": [
+         "Maman GARDANT la charmante qui est ici en ce moment, je prie"
+      ]
+   },
+   "Sarmante": {
+      "lem": "charmante",
+      "ctxt": [
+         "Maman gardant la CHARMANTE qui est ici en ce moment, je prie"
+      ]
+   },
+   "Leviders": {
+      "lem": "Lenders",
+      "ctxt": [
+         "instamment Mme LENDERS de vouloir bien m&#39;an procurer une"
+      ]
+   },
+   "voueoir": {
+      "lem": "vouloir",
+      "ctxt": [
+         "instamment Mme Lenders de VOULOIR bien m&#39;an procurer une"
+      ]
+   },
+   "prsuver": {
+      "lem": "procurer",
+      "ctxt": [
+         "instamment Mme Lenders de vouloir bien m&#39;an PROCURER une"
+      ]
+   },
+   "denx": {
+      "lem": "deux",
+      "ctxt": [
+         "semblable de DEUX écus soc et une plus grande comme nous vous"
+      ]
+   },
+   "éeus": {
+      "lem": "écus",
+      "ctxt": [
+         "semblable de deux ÉCUS soc et une plus grande comme nous vous"
+      ]
+   },
+   "enande": {
+      "lem": "grande",
+      "ctxt": [
+         "semblable de deux écus soc et une plus GRANDE comme nous vous"
+      ]
+   },
+   "erpagué": {
+      "lem": "expliqué",
+      "ctxt": [
+         "l&#39;avons EXPLIQUÉ. Chacune de ces charmantes doit être dans une boîte."
+      ]
+   },
+   "Chouine": {
+      "lem": "Chacune",
+      "ctxt": [
+         "l&#39;avons expliqué. CHACUNE de ces charmantes doit être dans une boîte."
+      ]
+   },
+   "ête": {
+      "lem": "être",
+      "ctxt": [
+         "l&#39;avons expliqué. Chacune de ces charmantes doit ÊTRE dans une boîte."
+      ]
+   },
+   "boête": {
+      "lem": "boîte",
+      "ctxt": [
+         "l&#39;avons expliqué. Chacune de ces charmantes doit être dans une BOÎTE."
+      ]
+   },
+   "deng": {
+      "lem": "deux",
+      "ctxt": [
+         "et avoir DEUX lits."
+      ]
+   },
+   "voni": {
+      "lem": "moi",
+      "ctxt": [
+         "dites MOI, Monsieur, ce que vous devenez,; dites MOI aussi que vous"
+      ]
+   },
+   "Moudieur": {
+      "lem": "Monsieur",
+      "ctxt": [
+         "dites moi, MONSIEUR, ce que vous devenez,; dites moi aussi que vous"
+      ]
+   },
+   "divenez": {
+      "lem": "devenez",
+      "ctxt": [
+         "dites moi, Monsieur, ce que vous DEVENEZ,; dites moi aussi que vous"
+      ]
+   },
+   "Ditis": {
+      "lem": "dites",
+      "ctxt": [
+         "DITES moi, Monsieur, ce que vous devenez,; DITES moi aussi que vous"
+      ]
+   },
+   "voux": {
+      "lem": "vous",
+      "ctxt": [
+         "dites moi, Monsieur, ce que VOUS devenez,; dites moi aussi que VOUS"
+      ]
+   },
+   "aiendrez": {
+      "lem": "viendrez",
+      "ctxt": [
+         "VIENDREZ demain aveicies james et Mr Kopp. Je m&#39;ennuie fort de ne"
+      ]
+   },
+   "demair": {
+      "lem": "demain",
+      "ctxt": [
+         "viendrez DEMAIN aveicies james et Mr Kopp. Je m&#39;ennuie fort de ne"
+      ]
+   },
+   "hopp": {
+      "lem": "Kopp",
+      "ctxt": [
+         "viendrez demain aveicies james et Mr KOPP. Je m&#39;ennuie fort de ne"
+      ]
+   },
+   "emue": {
+      "lem": "ennuie",
+      "ctxt": [
+         "viendrez demain aveicies james et Mr Kopp. Je m&#39;ENNUIE fort de ne"
+      ]
+   },
+   "lnglais": {
+      "lem": "anglais",
+      "ctxt": [
+         "pas vous noir tous. vous avons notre jardinier ANGLAIS qui est un"
+      ]
+   },
+   "interessant": {
+      "lem": "intéressant",
+      "ctxt": [
+         "homme fort INTÉRESSANT même pour la conversation St vous fait mille."
+      ]
+   },
+   "convrsaton": {
+      "lem": "conversation",
+      "ctxt": [
+         "homme fort intéressant même pour la CONVERSATION St vous fait mille."
+      ]
+   },
+   "Prouns": {
+      "lem": "Prons",
+      "ctxt": [
+         "A Mr PRONS (au château de de Liedberg)"
+      ]
+   },
+   "(uchâteau": {
+      "lem": "(au château",
+      "ctxt": [
+         "A Mr Prons (AU CHÂTEAU de de Liedberg)"
+      ]
+   },
+   "dedberg)": {
+      "lem": "de Liedberg)",
+      "ctxt": [
+         "A Mr Prons (au château de DE LIEDBERG)"
+      ]
+   },
+   "Prou": {
+      "lem": "Prous",
+      "ctxt": [
+         "A Mr PROUS  au château de Liedberg)"
+      ]
+   },
+   "Liedberg)": {
+      "lem": "Liedberg)",
+      "ctxt": [
+         "A Mr Prons au château de LIEDBERG)"
+      ]
+   },
+   "Jalletrer": {
+      "lem": "Juillet",
+      "ctxt": [
+         "nici1) JUILLET."
+      ]
+   },
+   "emroie": {
+      "lem": "envoie",
+      "ctxt": [
+         "J&#39;ENVOIE chez Mme de Dorth, mon cher voisin, et je veus vous dure"
+      ]
+   },
+   "Darlle": {
+      "lem": "Dorth",
+      "ctxt": [
+         "J&#39;envoie chez Mme de DORTH, mon cher voisin, et je veus vous dure"
+      ]
+   },
+   "enmuye": {
+      "lem": "ennuye",
+      "ctxt": [
+         "un mot en passant. Je m&#39;ENNUYE de toutes façons de ne point entendre"
+      ]
+   },
+   "facons": {
+      "lem": "façons",
+      "ctxt": [
+         "un mot en passant. Je m&#39;ennuye de toutes FAÇONS de ne point entendre"
+      ]
+   },
+   "parter": {
+      "lem": "parler",
+      "ctxt": [
+         "PARLER de vous. Vous savez qu nous avons la famille de Hompesch que"
+      ]
+   },
+   "Hampescle": {
+      "lem": "Hompesch",
+      "ctxt": [
+         "parler de vous. Vous savez qu nous avons la famille de HOMPESCH que"
+      ]
+   },
+   "mangué": {
+      "lem": "manqué",
+      "ctxt": [
+         "vous avez MANQUÉ la dernière fois. Prenez donc, ils restent jusqu&#39;à lundi"
+      ]
+   },
+   "jus qu": {
+      "lem": "jusqu",
+      "ctxt": "vous avez mangué la dernière fois  Venez donc  ils restent JUS qu à lund"
+   },
+   "lund": {
+      "lem": "lundi",
+      "ctxt": [
+         "vous avez manqué la dernière fois. Prenez donc, ils restent jusqu&#39;à LUNDI"
+      ]
+   },
+   "Enoagez": {
+      "lem": "Engagez",
+      "ctxt": [
+         "ENGAGEZ aussi la tante à venir demain. Mon mari et le Comte vont à"
+      ]
+   },
+   "oussi": {
+      "lem": "aussi",
+      "ctxt": [
+         "Engagez AUSSI la tante à venir demain. Mon mari et le Comte vont à"
+      ]
+   },
+   "mani": {
+      "lem": "mari",
+      "ctxt": [
+         "Engagez aussi la tante à venir demain. Mon MARI et le Comte vont à"
+      ]
+   },
+   "Comite": {
+      "lem": "Comte",
+      "ctxt": [
+         "Engagez aussi la tante à venir demain. Mon mari et le COMTE vont à"
+      ]
+   },
+   "juisqu": {
+      "lem": "jusqu",
+      "ctxt": "cuss l donf  JUISQU au dinss nous serons en femmes  si vous l acon "
+   },
+   "dinss": {
+      "lem": "dîner",
+      "ctxt": [
+         "cuss l donf, juisqu&#39;au DÎNER nous serons en femmes, si vous l&#39;acon."
+      ]
+   },
+   "bin": {
+      "lem": "bien",
+      "ctxt": [
+         "pagiz, ce serait BIEN le cas. Vous savez comme un homme est BIEN avec"
+      ]
+   },
+   "auen": {
+      "lem": "avec",
+      "ctxt": [
+         "pagiz, ce serait bien le cas. Vous savez comme un homme est bien AVEC"
+      ]
+   },
+   "quade": {
+      "lem": "quatre",
+      "ctxt": [
+         "pou QUATRE femmes, enfin Dimanche est lé&#39;arald pour ordinaire ai toute"
+      ]
+   },
+   "entrie": {
+      "lem": "enfin",
+      "ctxt": [
+         "pou quatre femmes, ENFIN Dimanche est lé&#39;arald pour ordinaire ai toute"
+      ]
+   },
+   "Dinande": {
+      "lem": "Dimanche",
+      "ctxt": [
+         "pou quatre femmes, enfin DIMANCHE est lé&#39;arald pour ordinaire ai toute"
+      ]
+   },
+   "Prald": {
+      "lem": "arald",
+      "ctxt": [
+         "pou quatre femmes, enfin Dimanche est lé&#39;ARALD pour ordinaire ai toute"
+      ]
+   },
+   "gudimaire": {
+      "lem": "ordinaire",
+      "ctxt": [
+         "pou quatre femmes, enfin Dimanche est lé&#39;arald pour ORDINAIRE ai toute"
+      ]
+   },
+   "Si": {
+      "lem": "ai",
+      "ctxt": [
+         "pou quatre femmes, enfin Dimanche est lé&#39;arald pour ordinAIre AI toute"
+      ]
+   },
+   "pêotres": {
+      "lem": "nôtres",
+      "ctxt": [
+         "le chère et aimable famille pouvait être des NÔTRES, ce jour là indé"
+      ]
+   },
+   "seraite": {
+      "lem": "serait",
+      "ctxt": [
+         "pendamment des autres courses, ce SERAIT une chose fort agréable."
+      ]
+   },
+   "chos": {
+      "lem": "chose",
+      "ctxt": [
+         "pendamment des autres courses, ce serait une CHOSE fort agréable."
+      ]
+   },
+   "agréabale": {
+      "lem": "agréable",
+      "ctxt": [
+         "pendamment des autres courses, ce serait une chose fort AGRÉABLE."
+      ]
+   },
+   "tons": {
+      "lem": "tous",
+      "ctxt": [
+         "Vous voila bien au fait en TOUS points ; parler, répondez, venez. On"
+      ]
+   },
+   "répondes": {
+      "lem": "répondez",
+      "ctxt": [
+         "Vous voila bien au fait en tous points ; parler, RÉPONDEZ, venez. On"
+      ]
+   },
+   "Oa": {
+      "lem": "On",
+      "ctxt": [
+         "Vous voila bien au fait en tous points ; parler, répondez, venez. ON"
+      ]
+   },
+   "porlera": {
+      "lem": "parlera",
+      "ctxt": [
+         "nous PARLERA aussi de nos chers neveu et nièce, La Comtesse de"
+      ]
+   },
+   "aulsi": {
+      "lem": "aussi",
+      "ctxt": [
+         "nous parlera AUSSI de nos chers neveu et nièce, La Comtesse de"
+      ]
+   },
+   "nevau": {
+      "lem": "neveu",
+      "ctxt": [
+         "nous parlera aussi de nos chers NEVEU et nièce, La Comtesse de"
+      ]
+   },
+   "hièce": {
+      "lem": "nièce",
+      "ctxt": [
+         "nous parlera aussi de nos chers neveu et NIÈCE, La Comtesse de"
+      ]
+   },
+   "tomtetse": {
+      "lem": "Comtesse",
+      "ctxt": [
+         "nous parlera aussi de nos chers neveu et nièce, La COMTESSE de"
+      ]
+   },
+   "feompest": {
+      "lem": "Hompesch",
+      "ctxt": [
+         "HOMPESCH revient du pas de Liège ; elle sait tous leurs d&#39;ésardres"
+      ]
+   },
+   "revent": {
+      "lem": "revient",
+      "ctxt": [
+         "Hompesch REVIENT du pas de Liège ; elle sait tous leurs d&#39;ésardres"
+      ]
+   },
+   "Mdien": {
+      "lem": "Adieu",
+      "ctxt": [
+         "ADIEU, à revoir, je n&#39;en puis plus les pillules me tuent, en"
+      ]
+   },
+   "pillutes": {
+      "lem": "pillules",
+      "ctxt": [
+         "Adieu, à revoir, je n&#39;en puis plus les PILLULES me tuent, en"
+      ]
+   },
+   "atlndant": {
+      "lem": "attendant",
+      "ctxt": [
+         "ATTENDANT qu&#39;elles me rétablissent. Je vous quitte avec une grosse"
+      ]
+   },
+   "rétablessent": {
+      "lem": "rétablissent",
+      "ctxt": [
+         "attendant qu&#39;elles me RÉTABLISSENT. Je vous quitte avec une grosse"
+      ]
+   },
+   "quille": {
+      "lem": "quitte",
+      "ctxt": [
+         "attendant qu&#39;elles me rétablissent. Je vous QUITTE avec une grosse"
+      ]
+   },
+   "gresse": {
+      "lem": "grosse",
+      "ctxt": [
+         "attendant qu&#39;elles me rétablissent. Je vous quitte avec une GROSSE"
+      ]
+   },
+   "cotime": {
+      "lem": "colique",
+      "ctxt": [
+         "COLIQUE, cela est bien peu poétique"
+      ]
+   },
+   "cell": {
+      "lem": "cela",
+      "ctxt": [
+         "colique, CELA est bien peu poétique"
+      ]
+   },
+   "sandi": {
+      "lem": "savez",
+      "ctxt": [
+         "Vous SAVEZ le pel chanoine de Locquengheim est mort presque"
+      ]
+   },
+   "chanome": {
+      "lem": "chanoine",
+      "ctxt": [
+         "Vous savez le pel CHANOINE de Locquengheim est mort presque"
+      ]
+   },
+   "Lacguengheum": {
+      "lem": "Locquengheim",
+      "ctxt": [
+         "Vous savez le pel chanoine de LOCQUENGHEIM est mort presque"
+      ]
+   },
+   "paunre": {
+      "lem": "pauvre",
+      "ctxt": [
+         "subitement hier La PAUVRE mère est bien triste. La fille aimée est"
+      ]
+   },
+   "mêre": {
+      "lem": "mère",
+      "ctxt": [
+         "subitement hier La pauvre MÈRE est bien triste. La fille aimée est"
+      ]
+   },
+   "fola": {
+      "lem": "fille",
+      "ctxt": [
+         "subitement hier La pauvre mère est bien triste. La FILLE aimée est"
+      ]
+   },
+   "anssi": {
+      "lem": "aussi",
+      "ctxt": [
+         "AUSSI devenue malade de saisissement d&#39;est une vraie douleur dans"
+      ]
+   },
+   "denmce": {
+      "lem": "devenue",
+      "ctxt": [
+         "aussi DEVENUE malade de saisissement d&#39;est une vraie douleur dans"
+      ]
+   },
+   "saisssement": {
+      "lem": "saisissement",
+      "ctxt": [
+         "aussi devenue malade de SAISISSEMENT d&#39;est une vraie douleur dans"
+      ]
+   },
+   "dus": {
+      "lem": "dans",
+      "ctxt": [
+         "aussi devenue malade de saisissement d&#39;est une vraie douleur DANS"
+      ]
+   },
+   "condoll amce": {
+      "lem": "condoléance",
+      "ctxt": "une mipte de CONDOLL amce  Ma fetrez qui était seule à la maisoi"
    }
 }

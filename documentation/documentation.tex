@@ -174,6 +174,9 @@
 				Les corrections précédemment validées sont elles aussi mobilisées lors de l'analyse des prédictions, ce qui permet non seulement de réexploiter facilement des corrections déjà effectuées, mais aussi d'écarter des formes qui auraient précédemment été identifiées comme ambiguës (pouvant être résolues de plusieurs façons selon le contexte, et donc à ne pas corriger automatiquement).
 				
 			\subsection{Constituer un dictionnaire personnalisé}
+				Naturellement, toutes les propositions de corrections générées automatiquement doivent être contrôlées.
+				
+				Dans la mesure où les patronymes représentent une difficulté majeure dans la transcription du texte, il est nécessaire de se reporter aux notices du publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}. Afin de relier facilement les reproductions des numériques de la correspondance et les notices publiées sur le site, on a écrit un script intitulé \textsf{images.py} qui gère les images par dossiers en générant un tableau de données pour toutes les images du dossier désigné~; on a également mis en place un \href{https://github.com/sbiay/CdS-edition/blob/main/donnees/Obtenir_metadonnees_images.ipynb}{notebook} pour une utilisation simplifiée de ce script.
 
 			\subsection{Appliquer le dictionnaire personnalisé aux prédictions HTR}
 				Les corrections s'avérant particulièrement nombreuses, le script \textsf{text-correction-XML.py} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
@@ -200,12 +203,14 @@
 		Nous n'avons pas restitué de trait d'union lorsque l'usage moderne l'imposerait~: \textit{portez vous bien}.
 				
 		\section{Orthographe}
-		L'orthographe des mots a été respectée~: \textit{enfans, momens, sentimens}.
+		L'orthographe des mots a été respectée~: \textit{enfans, momens, sentimens, cahos}.
 		
 		\section{Abéviations}
 		Les abréviations ont été transcrites sans être résolues~: \textit{9bre} pour novembre.
 		
 		\section{Corrections}
 		On transcrit tout ce qui est lisible, y compris les lettres biffées, lorsque c'est possible. On privilégie le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
+		
+		Lorsque l'orthographe est erronée, on transcrit le mot sans le corriger~: \textit{Mr Prons} pour \textit{M. Prous}.
            	
 \end{document}
