@@ -19,7 +19,7 @@ def get_lemmes():
     for root, dirs, files in os.walk(VT):
         for filename in files:
             # On pose comme condition de ne traiter que des fichiers XML (le dossier contient aussi des images)
-            if filename[-3] == "xml":
+            if filename[-3:] == "xml":
                 # On ouvre le fichier
                 with open(VT + filename) as f:
                     xml = etree.parse(f)
@@ -41,6 +41,11 @@ def get_lemmes():
     
     # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
     motsParses = set(motsParses)
+    
+    # On exporte les lemmes pour les contrôler au besoin
+    with open("./py/dicos/lemmes.json", mode="w") as jsonf:
+        json.dump(list(motsParses), jsonf, ensure_ascii=False, indent=1)
+    
     return motsParses
 
 
@@ -79,9 +84,12 @@ def spellcheck_texts_page_XML():
     # This means that all the uppercase words will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary
     
-    # On charge le contenu du dictionnaire dictCDS
+    # On charge le contenu du dictionnaire de la correspondance
     with open(DICTCDS) as jsonf:
         dictCDS = json.load(jsonf)
+    
+    # On charge les lemmes des vérités de terrain
+    tous_lemmes = get_lemmes()
     
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
@@ -105,7 +113,7 @@ def spellcheck_texts_page_XML():
                     for index, mot in enumerate(words):
                         contexte = content.replace(mot, mot.upper())
                         # On cherche chaque mot dans les lemmes des vérités de terrain
-                        if mot not in get_lemmes():
+                        if mot not in tous_lemmes:
                             # On cherche chaque mot dans le dictCDS
                             if dictCDS.get(mot):
                                 # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
