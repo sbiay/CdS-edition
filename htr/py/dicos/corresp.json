@@ -364,7 +364,7 @@
    "Mme": {
       "lem": "Mme",
       "ctxt": [
-         "de MME la prioress."
+         "(de MME Mam)"
       ]
    },
    "aparène": {
@@ -456,7 +456,7 @@
    "Je": {
       "lem": "Je",
       "ctxt": [
-         "changé. elle m&#39;a dit que vous donniez du vin a ses enfans. JE vous en"
+         "deant beaucoup de soins et de repos. JE vous engage cependant à"
       ]
    },
    "prenraidreles": {
@@ -692,7 +692,7 @@
    "(Signé)": {
       "lem": "(Signé)",
       "ctxt": [
-         "(SIGNÉ) l de de Francq."
+         "(SIGNÉ) Constance de Salm."
       ]
    },
    "Lettree": {
@@ -704,7 +704,7 @@
    "A": {
       "lem": "A",
       "ctxt": [
-         "A Mr prof (au château de Liedbrg)"
+         "A Mr Vallant"
       ]
    },
    "Lidbeg)": {
@@ -758,7 +758,7 @@
    "Salm": {
       "lem": "Salm",
       "ctxt": [
-         "(Signé) constante de SALM."
+         "(Signé) Constance de SALM."
       ]
    },
    "liberti": {
@@ -1414,7 +1414,7 @@
    "Il": {
       "lem": "Il",
       "ctxt": [
-         "en ou élevé. J&#39;enfans que le vin leur est mortel. IL leur donne"
+         "me le dédier. IL est écrit avec force et concision. On pourrait cependant"
       ]
    },
    "cergaison": {
@@ -1472,7 +1472,7 @@
    "J": {
       "lem": "J",
       "ctxt": [
-         "J vous renvoie votre journal ce Monsieur etst traité comme d&#39;et"
+         "venir va vousionseur, le matin de midi à J heures."
       ]
    },
    "déguere": {
@@ -1484,7 +1484,7 @@
    "Vous": {
       "lem": "Vous",
       "ctxt": [
-         "VOUS allez dire que je suis bien grognon, mais je me faite de ce que"
+         "et je cris encore incommodé. VOUS pouvez garder votre pièce jusqu&#39;à mardi"
       ]
    },
    "sarblnc-": {
@@ -1656,9 +1656,9 @@
       ]
    },
    "voulle": {
-      "lem": "voulue",
+      "lem": "voulez",
       "ctxt": [
-         "sujette, surtout en amitié Mele moi sur la voie si vous VOULUE"
+         "V&#39;art poétique de pêtre grand maître. ai vous VOULEZ, Monsieur, vous donner"
       ]
    },
    "vures": {
@@ -1984,7 +1984,7 @@
    "Madame": {
       "lem": "Madame",
       "ctxt": [
-         "Veuillez agréer tous les remerciemens et les respects. MADAME,"
+         "Agréez, MADAME. l&#39;hommage un respectueux dévouement"
       ]
    },
    "ocaspion": {
@@ -2420,7 +2420,7 @@
    "pareit": {
       "lem": "pareil",
       "ctxt": [
-         "avoir une aune de Brabant, de PAREIL ? Mais il faut qu&#39;il soit bien"
+         "littérateur distingué gênerait en PAREIL cas l&#39;indépendance de mes idées"
       ]
    },
    "mous": {
@@ -2580,7 +2580,7 @@
    "ris": {
       "lem": "cris",
       "ctxt": [
-         "vous savez a CRIS des marchandes de Paris auc derners les bous."
+         "et je CRIS encore incommodé. Vous pouvez garder votre pièce jusqu&#39;à mardi"
       ]
    },
    "apendant": {
@@ -3034,7 +3034,7 @@
    "Monsieur": {
       "lem": "Monsieur",
       "ctxt": [
-         "J vous renvoie votre journal ce MONSIEUR etst traité comme d&#39;et"
+         "V&#39;art poétique de pêtre grand maître. ai vous voulez, MONSIEUR, vous donner"
       ]
    },
    "bréans": {
@@ -3502,13 +3502,13 @@
    "dle": {
       "lem": "de",
       "ctxt": [
-         "pour ne pas savoir qu&#39;il faut les prendre comme DE sont. S&#39;ai d&#39;auteurs"
+         "Quant à la lecture que vous me proposez DE faire chez moi DE"
       ]
    },
    "Mr": {
       "lem": "Mr",
       "ctxt": [
-         "A MR prof (au château de Liedbrg)"
+         "A MR Vallant"
       ]
    },
    "Bous": {
@@ -4012,7 +4012,7 @@
    "u": {
       "lem": "un",
       "ctxt": [
-         "et qui nécessiteraient UN plus coup pour. Mais l nl a pas à hésiter"
+         "Agréez, Madame. l&#39;hommage UN respectueux dévouement"
       ]
    },
    "Mas": {
@@ -5019,6 +5019,12 @@
          "J vous renvoie votre journal ce Monsieur ETst traité comme d&#39;ET"
       ]
    },
+   "el": {
+      "lem": "il",
+      "ctxt": [
+         
+      ]
+   },
    "dispopitons": {
       "lem": "dispositions",
       "ctxt": [
@@ -5354,7 +5360,7 @@
    "On": {
       "lem": "On",
       "ctxt": [
-         "whist permanent de nous tous, et vous aussi entendez vous. ON"
+         "me le dédier. Il est écrit avec force et concision. ON pourrait cependant"
       ]
    },
    "rgcelle": {
@@ -5408,7 +5414,7 @@
    "M": {
       "lem": "Mr",
       "ctxt": [
-         "A MR MRme la Princesse de Salm."
+         "(Signé) MR eassat."
       ]
    },
    "Pite": {
@@ -5438,7 +5444,7 @@
    "(Siné)": {
       "lem": "(Signé)",
       "ctxt": [
-         "(SIGNÉ) Constance de Salm."
+         "(SIGNÉ) Mr eassat."
       ]
    },
    "Corstcane": {
@@ -5860,7 +5866,7 @@
    "dous": {
       "lem": "dont",
       "ctxt": [
-         "DONT, 1."
+         "DONT la nouvelle édition que vous allez en faire paraître."
       ]
    },
    "Vobrule": {
@@ -6588,7 +6594,7 @@
    "intéret": {
       "lem": "intérêt",
       "ctxt": [
-         "sans doute avec INTÉRÊT les à Vol, ou il est question de Coulanges de"
+         "j&#39;ai lu avec beaucoup d&#39;INTÉRÊT, Monsieur, le nouvel ouvrage que vous"
       ]
    },
    "ques cion": {
@@ -7362,7 +7368,7 @@
    "mid": {
       "lem": "midi",
       "ctxt": [
-         "Ce vendredi à le après MIDI, et vous sommes arrivés le lundi à 2l."
+         "la peine de venir chez moi un des jours de la semaine prochaine, de MIDI"
       ]
    },
    "arrves": {
@@ -7392,7 +7398,7 @@
    "L": {
       "lem": "L",
       "ctxt": [
-         "L 1 de vous."
+         "L Lettre"
       ]
    },
    "Dnec": {
@@ -7630,7 +7636,7 @@
    "anec": {
       "lem": "avec",
       "ctxt": [
-         "Langlès à été aussi malade pendant ja jours. J&#39;ai diné AVEC"
+         "à une heure, j&#39;entrerai AVEC vous dans plus de détails à ce sujet je"
       ]
    },
    "lai": {
@@ -8058,7 +8064,7 @@
       ]
    },
    "Constance": {
-      "lem": "constante",
+      "lem": "Constance",
       "ctxt": [
          "(Signé) CONSTANTE de Salm."
       ]
@@ -8614,7 +8620,7 @@
    "Si": {
       "lem": "ai",
       "ctxt": [
-         "pou quatre femmes, enfin Dimanche est lé&#39;arald pour ordinAIre AI toute"
+         "V&#39;art poétique de pêtre grand maître. AI vous voulez, Monsieur, vous donner"
       ]
    },
    "pêotres": {
@@ -9096,7 +9102,7 @@
    "na": {
       "lem": "va",
       "ctxt": [
-         "et me le foie VA mieux le saVAis bien que c&#39;était d&#39;autre chose dont"
+         "venir VA vousionseur, le matin de midi à J heures."
       ]
    },
    "mieug": {
@@ -9160,7 +9166,7 @@
    "pêine": {
       "lem": "peine",
       "ctxt": [
-         "J&#39;ai appris avec bien de la PEINE que Mlle Lenders allait moins"
+         "notre discours sur la nécessité d&#39;abolir la PEINE de mort. Je l&#39;a bronnie"
       ]
    },
    "slle": {
@@ -9729,6 +9735,538 @@
       "lem": "accoutumée",
       "ctxt": [
          "comprendriez l&#39;excès de ce grifonnage, n'ai vous ne lirez, vous être ACCOUTUMÉE."
+      ]
+   },
+   "bieu": {
+      "lem": "bien",
+      "ctxt": [
+         "que vous voulez BIEN me faire de me servir de secrétaire. J&#39;ai près de"
+      ]
+   },
+   "seirétare": {
+      "lem": "secrétaire",
+      "ctxt": [
+         "que vous voulez bien me faire de me servir de SECRÉTAIRE. J&#39;ai près de"
+      ]
+   },
+   "mui": {
+      "lem": "moi",
+      "ctxt": [
+         "MOI plusieurs personnes qui depuis longtemps me rendent ce genre de"
+      ]
+   },
+   "bongtemps": {
+      "lem": "longtemps",
+      "ctxt": [
+         "moi plusieurs personnes qui depuis LONGTEMPS me rendent ce genre de"
+      ]
+   },
+   "geure": {
+      "lem": "genre",
+      "ctxt": [
+         "moi plusieurs personnes qui depuis longtemps me rendent ce GENRE de"
+      ]
+   },
+   "fermie": {
+      "lem": "service",
+      "ctxt": [
+         "SERVICE. Il me semble même, je dont vous l&#39;avouer que la présence d&#39;un"
+      ]
+   },
+   "mêmce": {
+      "lem": "même",
+      "ctxt": [
+         "service. Il me semble MÊME, je dont vous l&#39;avouer que la présence d&#39;un"
+      ]
+   },
+   "lillérateur": {
+      "lem": "littérateur",
+      "ctxt": [
+         "LITTÉRATEUR distingué gênerait en pareil cas l&#39;indépendance de mes idées"
+      ]
+   },
+   "distingqué": {
+      "lem": "distingué",
+      "ctxt": [
+         "littérateur DISTINGUÉ gênerait en pareil cas l&#39;indépendance de mes idées"
+      ]
+   },
+   "génerait": {
+      "lem": "gênerait",
+      "ctxt": [
+         "littérateur distingué GÊNERAIT en pareil cas l&#39;indépendance de mes idées"
+      ]
+   },
+   "indessendance": {
+      "lem": "indépendance",
+      "ctxt": [
+         "littérateur distingué gênerait en pareil cas l&#39;INDÉPENDANCE de mes idées"
+      ]
+   },
+   "accoutumél": {
+      "lem": "accoutumé",
+      "ctxt": [
+         "dont je suis ACCOUTUMÉ à être le seul juge."
+      ]
+   },
+   "auec": {
+      "lem": "avec",
+      "ctxt": [
+         "j&#39;ai lu AVEC beaucoup d&#39;intérêt, Monsieur, le nouvel ouvrage que vous"
+      ]
+   },
+   "ounvge": {
+      "lem": "ouvrage",
+      "ctxt": [
+         "j&#39;ai lu avec beaucoup d&#39;intérêt, Monsieur, le nouvel OUVRAGE que vous"
+      ]
+   },
+   "déder": {
+      "lem": "dédier",
+      "ctxt": [
+         "me le DÉDIER. Il est écrit avec force et concision. On pourrait cependant"
+      ]
+   },
+   "éait": {
+      "lem": "écrit",
+      "ctxt": [
+         "me le dédier. Il est ÉCRIT avec force et concision. On pourrait cependant"
+      ]
+   },
+   "fore": {
+      "lem": "force",
+      "ctxt": [
+         "me le dédier. Il est écrit avec FORCE et concision. On pourrait cependant"
+      ]
+   },
+   "cepeudant": {
+      "lem": "cependant",
+      "ctxt": [
+         "me le dédier. Il est écrit avec force et concision. On pourrait CEPENDANT"
+      ]
+   },
+   "lun": {
+      "lem": "lui",
+      "ctxt": [
+         "LUI faire un reproche, c&#39;est de rappeller quelquefois les expressions el"
+      ]
+   },
+   "quelqneffons": {
+      "lem": "quelquefois",
+      "ctxt": [
+         "lui faire un reproche, c&#39;est de rappeller QUELQUEFOIS les expressions el"
+      ]
+   },
+   "prêtique": {
+      "lem": "poétique",
+      "ctxt": [
+         "V&#39;art POÉTIQUE de pêtre grand maître. ai vous voulez, Monsieur, vous donner"
+      ]
+   },
+   "gruand": {
+      "lem": "grand",
+      "ctxt": [
+         "V&#39;art poétique de pêtre GRAND maître. ai vous voulez, Monsieur, vous donner"
+      ]
+   },
+   "mattre": {
+      "lem": "maître",
+      "ctxt": [
+         "V&#39;art poétique de pêtre grand MAÎTRE. ai vous voulez, Monsieur, vous donner"
+      ]
+   },
+   "dmer": {
+      "lem": "donner",
+      "ctxt": [
+         "V&#39;art poétique de pêtre grand maître. ai vous voulez, Monsieur, vous DONNER"
+      ]
+   },
+   "peme": {
+      "lem": "peine",
+      "ctxt": [
+         "la PEINE de venir chez moi un des jours de la semaine prochaine, de midi"
+      ]
+   },
+   "dertenirs": {
+      "lem": "des jours",
+      "ctxt": [
+         "la peine de venir chez moi un DES JOURS de la semaine prochaine, de midi"
+      ]
+   },
+   "prorhaine": {
+      "lem": "prochaine",
+      "ctxt": [
+         "la peine de venir chez moi un des jours de la semaine PROCHAINE, de midi"
+      ]
+   },
+   "entreran": {
+      "lem": "entrerai",
+      "ctxt": [
+         "à une heure, j&#39;ENTRERAI avec vous dans plus de détails à ce sujet je"
+      ]
+   },
+   "défails": {
+      "lem": "détails",
+      "ctxt": [
+         "à une heure, j&#39;entrerai avec vous dans plus de DÉTAILS à ce sujet je"
+      ]
+   },
+   "saft": {
+      "lem": "sujet",
+      "ctxt": [
+         "à une heure, j&#39;entrerai avec vous dans plus de détails à ce SUJET je"
+      ]
+   },
+   "Campage": {
+      "lem": "Campagne",
+      "ctxt": [
+         "je dois retourner à la CAMPAGNE"
+      ]
+   },
+   "hecevez": {
+      "lem": "Recevez",
+      "ctxt": [
+         "RECEVEZ avec mes nouveaux remerciements les assurances de ma bien"
+      ]
+   },
+   "Mousieur": {
+      "lem": "Monsieur",
+      "ctxt": [
+         "Recevez, MONSIEUR, les assurances de ma bien sincère considération"
+      ]
+   },
+   "sinière": {
+      "lem": "sincère",
+      "ctxt": [
+         "Recevez, Monsieur, les assurances de ma bien SINCÈRE considération"
+      ]
+   },
+   "conidérator": {
+      "lem": "considération",
+      "ctxt": [
+         "Recevez, Monsieur, les assurances de ma bien sincère CONSIDÉRATION"
+      ]
+   },
+   "ettre": {
+      "lem": "Lettre",
+      "ctxt": [
+         "L LETTRE"
+      ]
+   },
+   "Mmr": {
+      "lem": "Mme",
+      "ctxt": [
+         "de MME la Princesse de Salm."
+      ]
+   },
+   "Princele": {
+      "lem": "Princesse",
+      "ctxt": [
+         "de Mme la PRINCESSE de Salm."
+      ]
+   },
+   "Pck": {
+      "lem": "Paris",
+      "ctxt": [
+         "PARIS, ce 1 Jimver, 1819."
+      ]
+   },
+   "Madane": {
+      "lem": "Madame",
+      "ctxt": [
+         "MADAME."
+      ]
+   },
+   "pardan": {
+      "lem": "pardon",
+      "ctxt": [
+         "Mlle PARDON de ne pus vous avoir pas répondu des hier, mais j était"
+      ]
+   },
+   "repondu": {
+      "lem": "répondu",
+      "ctxt": [
+         "Mlle pardon de ne pus vous avoir pas RÉPONDU des hier, mais j était"
+      ]
+   },
+   "f": {
+      "lem": "j",
+      "ctxt": [
+         "Mlle pardon de ne pus vous avoir pas répondu des hier, mais J était"
+      ]
+   },
+   "fus qu": {
+      "lem": "jusqu",
+      "ctxt": "et je ris encore incommodé  Vous pouvez garder votre pièce FUS qu à parsi"
+   },
+   "parsi": {
+      "lem": "mardi",
+      "ctxt": [
+         "et je cris encore incommodé. Vous pouvez garder votre pièce jusqu&#39;à MARDI"
+      ]
+   },
+   "comaître": {
+      "lem": "connaître",
+      "ctxt": [
+         "malin et me l&#39;envoyer ensuite. Je m&#39;empresserai de la faire CONNAÎTRE"
+      ]
+   },
+   "Mrez": {
+      "lem": "Agréez",
+      "ctxt": [
+         "AGRÉEZ, Madame. l&#39;hommage un respectueux dévouement"
+      ]
+   },
+   "hamble": {
+      "lem": "humble",
+      "ctxt": [
+         "de votre très HUMBLE serviteur"
+      ]
+   },
+   "Pablonnt": {
+      "lem": "Vallant",
+      "ctxt": [
+         "A Mr VALLANT"
+      ]
+   },
+   "anc": {
+      "lem": "avec",
+      "ctxt": [
+         "J&#39;ai lu AVEC tout attention et tout l&#39;intérêt qu&#39;il mérite. Monsieur"
+      ]
+   },
+   "Altution": {
+      "lem": "attention",
+      "ctxt": [
+         "J&#39;ai lu avec tout ATTENTION et tout l&#39;intérêt qu&#39;il mérite. Monsieur"
+      ]
+   },
+   "tont": {
+      "lem": "tout",
+      "ctxt": [
+         "J&#39;ai lu avec TOUT attention et TOUT l&#39;intérêt qu&#39;il mérite. Monsieur"
+      ]
+   },
+   "lutérez": {
+      "lem": "intérêt",
+      "ctxt": [
+         "J&#39;ai lu avec tout attention et tout l&#39;INTÉRÊT qu&#39;il mérite. Monsieur"
+      ]
+   },
+   "mérte": {
+      "lem": "mérite",
+      "ctxt": [
+         "J&#39;ai lu avec tout attention et tout l&#39;intérêt qu&#39;il MÉRITE. Monsieur"
+      ]
+   },
+   "Mousans": {
+      "lem": "Monsieur",
+      "ctxt": [
+         "J&#39;ai lu avec tout attention et tout l&#39;intérêt qu&#39;il mérite. MONSIEUR"
+      ]
+   },
+   "corction": {
+      "lem": "correction",
+      "ctxt": [
+         "rempli d&#39;idées justes exprimées aveiciorction et je me disposais à"
+      ]
+   },
+   "remerier": {
+      "lem": "remercier",
+      "ctxt": [
+         "vous au REMERCIER lorsque j&#39;ai reçu votre dernière lettre contenant"
+      ]
+   },
+   "reçn": {
+      "lem": "reçu",
+      "ctxt": [
+         "vous au remercier lorsque j&#39;ai REÇU votre dernière lettre contenant"
+      ]
+   },
+   "continart": {
+      "lem": "contenant",
+      "ctxt": [
+         "vous au remercier lorsque j&#39;ai reçu votre dernière lettre CONTENANT"
+      ]
+   },
+   "pluisieur": {
+      "lem": "plusieurs",
+      "ctxt": [
+         "PLUSIEURS fragments qui ajoutent encore au mérite de cet ouvrage"
+      ]
+   },
+   "pagments": {
+      "lem": "fragments",
+      "ctxt": [
+         "plusieurs FRAGMENTS qui ajoutent encore au mérite de cet ouvrage"
+      ]
+   },
+   "gjoutnt": {
+      "lem": "ajoutent",
+      "ctxt": [
+         "plusieurs fragments qui AJOUTENT encore au mérite de cet ouvrage"
+      ]
+   },
+   "merite": {
+      "lem": "mérite",
+      "ctxt": [
+         "plusieurs fragments qui ajoutent encore au MÉRITE de cet ouvrage"
+      ]
+   },
+   "axétrèmement": {
+      "lem": "extrêment",
+      "ctxt": [
+         "Je ne puis que vous remercier EXTRÊMENT. Je n&#39;ai pas oublié que"
+      ]
+   },
+   "éitée": {
+      "lem": "citée",
+      "ctxt": [
+         "vous n&#39;avez CITÉE honorablement dans celui que vous avec publié"
+      ]
+   },
+   "ronorablement": {
+      "lem": "honorablement",
+      "ctxt": [
+         "vous n&#39;avez citée HONORABLEMENT dans celui que vous avec publié"
+      ]
+   },
+   "celi": {
+      "lem": "celui",
+      "ctxt": [
+         "vous n&#39;avez citée honorablement dans CELUI que vous avec publié"
+      ]
+   },
+   "pubié": {
+      "lem": "publié",
+      "ctxt": [
+         "vous n&#39;avez citée honorablement dans celui que vous avec PUBLIÉ"
+      ]
+   },
+   "aunées": {
+      "lem": "années",
+      "ctxt": [
+         "el y a quelques ANNÉES, et je sarais charmée d&#39;avoir le même avantage"
+      ]
+   },
+   "avontiogn": {
+      "lem": "avantage",
+      "ctxt": [
+         "el y a quelques années, et je sarais charmée d&#39;avoir le même AVANTAGE"
+      ]
+   },
+   "vouvelle": {
+      "lem": "nouvelle",
+      "ctxt": [
+         "dont la NOUVELLE édition que vous allez en faire paraître."
+      ]
+   },
+   "sant": {
+      "lem": "Quant",
+      "ctxt": [
+         "QUANT à la lecture que vous me proposez de faire chez moi de"
+      ]
+   },
+   "ciscours": {
+      "lem": "discours",
+      "ctxt": [
+         "votre DISCOURS, c&#39;est avec bien du regrêt que je me prive de cette"
+      ]
+   },
+   "prine": {
+      "lem": "prive",
+      "ctxt": [
+         "votre discours, c&#39;est avec bien du regrêt que je me PRIVE de cette"
+      ]
+   },
+   "matadie": {
+      "lem": "maladie",
+      "ctxt": [
+         "satisfaction ; mais une MALADIE de nerfs dont je souffre depuis"
+      ]
+   },
+   "versse": {
+      "lem": "nerfs",
+      "ctxt": [
+         "satisfaction ; mais une maladie de NERFS dont je souffre depuis"
+      ]
+   },
+   "sousse": {
+      "lem": "souffre",
+      "ctxt": [
+         "satisfaction ; mais une maladie de nerfs dont je SOUFFRE depuis"
+      ]
+   },
+   "depuns": {
+      "lem": "depuis",
+      "ctxt": [
+         "satisfaction ; mais une maladie de nerfs dont je souffre DEPUIS"
+      ]
+   },
+   "resler": {
+      "lem": "rester",
+      "ctxt": [
+         "quelque temps et qui ne me permet pas de RESTER longtemps esfire."
+      ]
+   },
+   "lonotemps": {
+      "lem": "longtemps",
+      "ctxt": [
+         "quelque temps et qui ne me permet pas de rester LONGTEMPS esfire."
+      ]
+   },
+   "refider": {
+      "lem": "refuser",
+      "ctxt": [
+         "m&#39;a fait REFUSER cette année plusieurs propositions de ce genre."
+      ]
+   },
+   "projostions": {
+      "lem": "propositions",
+      "ctxt": [
+         "m&#39;a fait refuser cette année plusieurs PROPOSITIONS de ce genre."
+      ]
+   },
+   "monient": {
+      "lem": "moment",
+      "ctxt": [
+         "Je vois d&#39;ailleurs peu de monde dans ce MOMENT, ma santé coi"
+      ]
+   },
+   "nouvaus": {
+      "lem": "nouveaux",
+      "ctxt": [
+         "Recevez avec mes NOUVEAUX remerciements les assurances de ma bien"
+      ]
+   },
+   "reneriments": {
+      "lem": "remerciements",
+      "ctxt": [
+         "Recevez avec mes nouveaux REMERCIEMENTS les assurances de ma bien"
+      ]
+   },
+   "bier": {
+      "lem": "bien",
+      "ctxt": [
+         "Recevez avec mes nouveaux remerciements les assurances de ma BIEN"
+      ]
+   },
+   "sincere": {
+      "lem": "sincère",
+      "ctxt": [
+         "SINCÈRE considération"
+      ]
+   },
+   "connideratton": {
+      "lem": "considération",
+      "ctxt": [
+         "sincère CONSIDÉRATION"
+      ]
+   },
+   "Cousane": {
+      "lem": "Constance",
+      "ctxt": [
+         "(Signé) CONSTANCE de Salm."
       ]
    }
 }
