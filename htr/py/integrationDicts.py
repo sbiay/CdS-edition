@@ -9,8 +9,8 @@ def controleFormes(dictPage):
     et retourne un dictCDS enrichi
     :param dictPage: dictionnaire de page
     :type dictPage: dict
-    :return: dictCDS enrichi par de nouvelles formes
-    :return type: dict
+    :return: dictCDS enrichi par de nouvelles formes, erreurs (dict), avertissements (list)
+    :return type: tuple
     """
     # On charge le dictionnaire Json global de la correspondance CDS
     with open(DICTCDS) as f:
@@ -20,19 +20,16 @@ def controleFormes(dictPage):
     for forme in dictPage:
         # On ne traite les formes que si elles sont associés à un lemme qui les corrige
         if dictPage[forme]["lem"]:
+            # On initie une liste d'erreurs d'intégration
+            avertissements = []
+            erreurs = {}
             # Si la forme existe déjà dans dictCDS mais que le lemme est vide (id est la correction est ambiguë)
             if forme in dictCDS and not dictCDS[forme]["lem"]:
-                print(f"La forme {forme} a déjà été signalée comme ambiguë.")
+                avertissements.append(forme)
             # Si la forme existe déjà dans dictCDS mais que les lemmes ne sont pas identiques
             elif forme in dictCDS and dictPage[forme]["lem"] != dictCDS[forme]["lem"]:
-                # Alors on arrête le code et on délivre un message d'alerte
-                print(f"La forme {forme}, que l'on souhaite corriger en {dictPage[forme]['lem']}, "
-                      f"possède déjà une correction de référence : "
-                      f"{dictCDS[forme]['lem']}")
-                print("Veuillez corriger les dictionnaires et relancer le script (si les deux solutions sont "
-                      "possibles, inscrivez null en tant que lemme dans les deux dictionnaires, la forme ne sera "
-                      "plus corrigée automatiquement).\n")
-                break
+                # Alors on renseigne un journal d'erreurs
+                erreurs[forme] = (dictPage[forme]["lem"], dictCDS[forme]["lem"])
             # Si la forme est absente de dictCDS, on l'y inscrit
             elif forme not in dictCDS:
                 dictCDS[forme] = {
@@ -40,7 +37,7 @@ def controleFormes(dictPage):
                     "ctxt": dictPage[forme]["ctxt"],
                 }
     
-    return dictCDS
+    return dictCDS, erreurs, avertissements
 
 @click.command()
 @click.option("-f", "--file", type=str, help="Nom de fichier contenu dans le dossier "
@@ -75,12 +72,25 @@ def dictCDSintegration(file, all):
                         with open(DICTPAGES + filename) as f:
                             dictPage = json.load(f)
                         print(f"Traitement du fichier {filename}")
-                        dictCDS = controleFormes(dictPage)
-                       
+                        
+                        # On traite le contenu du dictionnaire de page avec la fonction controleFormes()
+                        dictCDS = controleFormes(dictPage)[0]
+                        erreurs = controleFormes(dictPage)[1]
+                        avertissements = controleFormes(dictPage)[2]
+                        if avertissements:
+                            for forme in avertissements:
+                                print(f'''La forme "{forme}" a déjà été signalée comme ambiguë (elle a donc été '''
+                                f'''ignorée).''')
+                        if erreurs:
+                            for forme in erreurs:
+                                print(f'''La forme "{forme}" que l'on souhaite corriger en "{erreurs[forme][0]}"'''
+                                f'''possède déjà une correction en "{erreurs[forme][1]}". Veuillez corriger les '''
+                                f'''dictionnaires et relancer le script.''')
+                            break
                         # On remplace le fichier corresp.json par la version enrichie
                         with open(DICTCDS, mode="w") as f:
                             json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-            print("Le dictionnaire corresp.json est désormais à jour.")
+                            print("\nLe dictionnaire corresp.json est désormais à jour.")
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
