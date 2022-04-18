@@ -102,11 +102,24 @@ def dictCDSintegration(file, all):
             with open(f"./py/dicos/{file}") as f:
                 dictPage = json.load(f)
             print(f"Traitement du fichier {file}")
-            dictCDS = controleFormes(dictPage)
-        
+            
+            dictCDS = controleFormes(dictPage)[0]
+            erreurs = controleFormes(dictPage)[1]
+            avertissements = controleFormes(dictPage)[2]
+            if avertissements:
+                for forme in avertissements:
+                    print(f'''La forme "{forme}" a déjà été signalée comme ambiguë (elle a donc été '''
+                          f'''ignorée).''')
+            if erreurs:
+                for forme in erreurs:
+                    print(f'''La forme "{forme}" que l'on souhaite corriger en "{erreurs[forme][0]}"'''
+                          f'''possède déjà une correction en "{erreurs[forme][1]}". Veuillez corriger les '''
+                          f'''dictionnaires et relancer le script.''')
+                    break
+                    
             # On remplace le fichier corresp.json par la version enrichie
             with open(DICTCDS, mode="w") as f:
                 json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-            print("Le dictionnaire corresp.json est désormais à jour.")
+                print("Le dictionnaire corresp.json est désormais à jour.")
 
 dictCDSintegration()
