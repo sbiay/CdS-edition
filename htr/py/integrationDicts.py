@@ -76,10 +76,11 @@ def dictCDSintegration(file, all):
                             dictPage = json.load(f)
                         print(f"Traitement du fichier {filename}")
                         dictCDS = controleFormes(dictPage)
-                        
+                       
                         # On remplace le fichier corresp.json par la version enrichie
                         with open(DICTCDS, mode="w") as f:
                             json.dump(dictCDS, f, indent=3, ensure_ascii=False)
+            print("Le dictionnaire corresp.json est désormais à jour.")
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
