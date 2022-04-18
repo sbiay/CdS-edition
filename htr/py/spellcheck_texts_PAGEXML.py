@@ -107,8 +107,8 @@ def spellcheck_texts_page_XML():
                 # Les traitements ne peuvent avoir lieu que si le contenu n'est pas vide
                 if content:
                     content = suppress_punctuation(content)
-                    
                     words = content.split(" ")
+                    
                     # On boucle sur chaque mot de l'élément Unicode courant
                     for index, mot in enumerate(words):
                         contexte = content.replace(mot, mot.upper())
