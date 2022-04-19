@@ -46,7 +46,7 @@ def controleFormes(dictPage):
 def dictCDSintegration(file, all):
     """
     Ce script prend comme paramètres une source consistant en un fichier Json d'entrée contenu dans le dossier dicos
-    le compare au contenu de corresp.json, intègre les entrées nouvelles et retourne des messages d'alertes
+    le compare au contenu de correctionsCDS.json, intègre les entrées nouvelles et retourne des messages d'alertes
     pour les entrées générant un conflit d'intégration.
     :param fichierdictpages: fichier Json issu de la correction automatisée d'une page de transcription
     :type fichierdictpages: Json
@@ -87,10 +87,10 @@ def dictCDSintegration(file, all):
                                 f'''possède déjà une correction en "{erreurs[forme][1]}". Veuillez corriger les '''
                                 f'''dictionnaires et relancer le script.''')
                             break
-                        # On remplace le fichier corresp.json par la version enrichie
+                        # On remplace le fichier correctionsCDS.json par la version enrichie
                         with open(DICTCDS, mode="w") as f:
                             json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-                            print("\nLe dictionnaire corresp.json est désormais à jour.")
+                            print("\nLe dictionnaire correctionsCDS.json est désormais à jour.")
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
@@ -117,9 +117,9 @@ def dictCDSintegration(file, all):
                           f'''dictionnaires et relancer le script.''')
                     break
                     
-            # On remplace le fichier corresp.json par la version enrichie
+            # On remplace le fichier correctionsCDS.json par la version enrichie
             with open(DICTCDS, mode="w") as f:
                 json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-                print("Le dictionnaire corresp.json est désormais à jour.")
+                print("Le dictionnaire correctionsCDS.json est désormais à jour.")
 
 dictCDSintegration()

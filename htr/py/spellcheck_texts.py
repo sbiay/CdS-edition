@@ -6,7 +6,7 @@ from spellchecker import SpellChecker
 from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
 
 
-def get_lemmes():
+def collecte_mots():
     """
     Cette fonction parse le contenu des vérités de terrain et retourne un set des mots qu'elles contiennent.
     :returns: mots contenus dans les vérités de terrain.
@@ -43,7 +43,7 @@ def get_lemmes():
     motsParses = set(motsParses)
     
     # On exporte les lemmes pour les contrôler au besoin
-    with open("./py/dicos/lemmes.json", mode="w") as jsonf:
+    with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
         json.dump(list(motsParses), jsonf, ensure_ascii=False, indent=1)
     
     return motsParses
@@ -89,7 +89,7 @@ def spellcheck_texts_page_XML():
         dictCDS = json.load(jsonf)
     
     # On charge les lemmes des vérités de terrain
-    tous_lemmes = get_lemmes()
+    tous_lemmes = collecte_mots()
     
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
