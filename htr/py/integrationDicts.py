@@ -90,7 +90,7 @@ def dictCDSintegration(file, all):
                         # On remplace le fichier correctionsCDS.json par la version enrichie
                         with open(DICTCDS, mode="w") as f:
                             json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-                            print("\nLe dictionnaire correctionsCDS.json est désormais à jour.")
+            print("\n=> Le dictionnaire correctionsCDS.json est désormais à jour.")
         
         # Si on ne transforme qu'un seul fichier passé en argument
         else:
@@ -120,6 +120,8 @@ def dictCDSintegration(file, all):
             # On remplace le fichier correctionsCDS.json par la version enrichie
             with open(DICTCDS, mode="w") as f:
                 json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-                print("Le dictionnaire correctionsCDS.json est désormais à jour.")
+                print("=> Le dictionnaire correctionsCDS.json est désormais à jour.")
 
-dictCDSintegration()
+
+if __name__ == "__main__":
+    dictCDSintegration()
