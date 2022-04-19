@@ -2,6 +2,7 @@ import os
 import json
 import click
 
+from spellcheckTexts import suppress_punctuation
 from constantes import XMLaCORRIGER, XMLCORRIGEES, DICTCDS
 
 @click.command()
@@ -38,10 +39,9 @@ def textCorrectionXML():
                         # Si la ligne contient Unicode, il s'agit de la transcription à corriger
                         # Pour chercher si les mots de la ligne courante sont dans le dictionnaire,
                         # on tokénise cette ligne en commençant par éliminer les signes de ponctuation
-                        ponctuation = ",;:!."
                         ligne = ligneBrute
-                        for signe in ponctuation:
-                            ligne = ligne.replace(signe, " ")
+                        ligne = ligne.replace("&#39;", "'")
+                        ligne = suppress_punctuation(ligne)
                         # Puis on supprime les éventuelles doubles espaces
                         ligne = ligne.replace("  ", " ")
                         # On supprime également les balises collées au premier et au dernier mot
@@ -53,7 +53,7 @@ def textCorrectionXML():
                         ligneCorr = ligneBrute
                         # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
                         entreesMAJ = {}
-
+                        
                         # On effectue une première recherche pour les formes possédant une espace
                         # (ce sont les mots coupés en deux qu'il faut corriger en un seul mot)
                         for forme in dictCDS:
@@ -69,11 +69,12 @@ def textCorrectionXML():
                                     if mot:
                                         # Si le mot courant correspond à l'entrée de dictionnaire
                                         if forme == mot:
+                                            if "'" in forme:
+                                                forme = forme.replace("'", "&#39;")
                                             # Si le mot est en milieu de ligne
                                             ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
                                             # Si le mot est placé juste après la balise unicode
                                             ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
-                                            # Si le mot est placé juste après une apostrophe
                                             ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
                                             entreesMAJ[forme] = {
                                                 "lem": lemme,
@@ -96,6 +97,8 @@ def textCorrectionXML():
                             # On met à jour le dictCDS avec les contextes actualisés
                             dictCDS[entree] = entreesMAJ[entree]
                         
+                        # On réencode les apostrophes
+                        ligneCorr = ligneCorr.replace("'", "&#39;")
                         xml_corr.write(ligneCorr + "\n")
             
             print(f"Le fichier {filename} a été corrigé avec succès")
