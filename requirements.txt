@@ -4,7 +4,7 @@ Click==7.0
 jupyter
 lxml==4.6.4
 spellchecker~=0.4
-pyspellchecker==0.5.0
+pyspellchecker==0.5.6
 cffi~=1.15.0
 numpy~=1.22.3
 pip~=22.0.4
