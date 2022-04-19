@@ -25,10 +25,12 @@
 \addto\captionsfrench{
 \renewcommand*\contentsname{Contenu de la documentation}
 }
+\usepackage[nottoc]{tocbibind}% Pour ajouter la biblio à la TDM sans numérotation de chapitre
 
 % bibliographie
 \usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
 \addbibresource{biblio.bib}
+
 %\nocite{*}
 
 % Sigles et acronymes
@@ -52,12 +54,11 @@
 		\section{Problématique}
 		Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds}. Cette variété d'écritures peut sérieusement entraver les performances d'un modèle de reconnaissance.
 		
-		Deux pistes méthodologiques se dessinent :
+		Deux pistes méthodologiques se dessinent~:
 		\begin{enumerate}
 			\item Rassembler dans un premier temps des lettres qui sont de la même main, pour voir quels sont les résultats du modèle qu'H. Souvay a commencé à entraîner ;
-			\item Reprendre un modèle déjà entraîné à travailler sur plusieurs mains ; c'est l'option qui été privilégiée par le projet Lectaurep\footcite{chagueCreationModelesTranscriptiona}).
+			\item Reprendre un modèle déjà entraîné à travailler sur plusieurs mains~; c'est l'option qui été privilégiée par le projet Lectaurep\footcite{chagueCreationModelesTranscriptiona}).
 		\end{enumerate}
-		
 				
 		\section{Choisir un corpus d'entraînement}
 		Les recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page. La distribution des mains y est variable selon les tomes :
@@ -167,7 +168,7 @@
 			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet.
 					
 			\subsection{Analyser les mots}
-				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts-PAGEXML.py} à nos prédictions HTR. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. Il est en outre à mener avec prudence, car il faut veiller à ne produire que des corrections dépourvues d'ambiguïté et applicables en toutes circonstances. Si le modèle lit \textit{celle} pour \textit{cette}, seule une correction manuelle peut y remédier~; le risque de la correction automatique est de remplacer involontairement des prédictions justes~: il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
+				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts.py}\footcite{biaySpellcheckTextsPy2022} à nos prédictions HTR. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. Il est en outre à mener avec prudence, car il faut veiller à ne produire que des corrections dépourvues d'ambiguïté et applicables en toutes circonstances. Si le modèle lit \textit{celle} pour \textit{cette}, seule une correction manuelle peut y remédier~; le risque de la correction automatique est de remplacer involontairement des prédictions justes~: il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
 				
 				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé ce script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
@@ -178,10 +179,10 @@
 			\subsection{Constituer un dictionnaire personnalisé}
 				Naturellement, toutes les propositions de corrections générées automatiquement doivent être contrôlées.
 				
-				Dans la mesure où les patronymes représentent une difficulté majeure dans la transcription du texte, il est nécessaire de se reporter aux notices du publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}. Afin de relier facilement les reproductions des numériques de la correspondance et les notices publiées sur le site, on a écrit un script intitulé \textsf{images.py} qui gère les images par dossiers en générant un tableau de données pour toutes les images du dossier désigné~; on a également mis en place un \href{https://github.com/sbiay/CdS-edition/blob/main/donnees/Obtenir_metadonnees_images.ipynb}{notebook} pour une utilisation simplifiée de ce script.
+				Dans la mesure où les patronymes représentent une difficulté majeure dans la transcription du texte, il est nécessaire de se reporter aux notices du publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}. Afin de relier facilement les reproductions des numériques de la correspondance et les notices publiées sur le site, on a écrit un script intitulé \textsf{images.py}\footcite{biayImagesPy2022} qui gère les images par dossiers en générant un tableau de données pour toutes les images du dossier désigné~; on a également mis en place un \href{https://github.com/sbiay/CdS-edition/blob/main/donnees/Obtenir_metadonnees_images.ipynb}{notebook} pour une utilisation simplifiée de ce script.
 
 			\subsection{Appliquer le dictionnaire personnalisé aux prédictions HTR}
-				Les corrections s'avérant particulièrement nombreuses, le script \textsf{text-correction-XML.py} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
+				Les corrections s'avérant particulièrement nombreuses, le script \textsf{textCorrection.py}\footcite{biayTextCorrectionPy2022} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
 				
 	\appendix
 	
@@ -221,4 +222,8 @@
 		
 		Lorsque l'orthographe est erronée, on transcrit le mot sans le corriger~: \textit{Mr Prons} pour \textit{M. Prous}.
            	
+	% Bibliographie
+	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
+	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]
+
 \end{document}
