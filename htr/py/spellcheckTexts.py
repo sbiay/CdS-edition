@@ -76,7 +76,7 @@ def spellcheck_texts_page_XML():
     - date: February 2021.
     - URL: https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Scripts/Correction/spellcheck_texts_PAGEXML.py
     """
-    spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True)
+    spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True, distance=2)
     # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
     # This means that all the uppercase words will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary
@@ -105,10 +105,15 @@ def spellcheck_texts_page_XML():
                 if content:
                     content = suppress_punctuation(content)
                     words = content.split(" ")
+                    # On initie un dictionnaire pour les corrections de la ligne
+                    corrections = {}
+                    # On initie la liste des mots inconnus que l'on passera au SpellChecker
+                    motsrestants = []
                     
-                    # On boucle sur chaque mot de l'élément Unicode courant
-                    for index, mot in enumerate(words):
+                    # On boucle sur chaque mot
+                    for mot in words:
                         contexte = content.replace(mot, mot.upper())
+                        
                         # On cherche chaque mot dans les lemmes des vérités de terrain
                         if mot not in tous_lemmes:
                             # On cherche chaque mot dans le dictCDS
@@ -117,30 +122,44 @@ def spellcheck_texts_page_XML():
                                 # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
                                 if dictCDS[mot].get('lem') and mot not in dictionary.keys():
                                     # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                    dictionary[mot] = {
+                                    corrections[mot] = {
                                         'lem': dictCDS[mot]['lem'],
                                         'ctxt': contexte.replace("'", ' '),
                                         'deja utilisé': dictCDS[mot]['ctxt']
                                     }
                                 elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
-                                    dictionary[mot] = {
+                                    corrections[mot] = {
                                         'lem': dictCDS[mot]['lem'],
                                         'remarque': "déjà marqué comme AMBIGU"
                                     }
-                            # On cherche les mots dans dictionnaireComplet grâce à la fonction spell
-                            elif spell.unknown(mot) and mot not in dictionary.keys():
-                                # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                dictionary[mot] = {
-                                    'lem': spell.correction(mot),
-                                    'ctxt': contexte.replace("'", ' ')
-                                }
-                            # S'il n'a aucune proposition de correction identifiée
-                            elif mot not in dictionary.keys():
-                                dictionary[mot] = {
+                            # Si le mot n'est pas dans le dictCDS, on l'ajoute à la liste des mots restants à analyser
+                            else:
+                                if mot:
+                                    motsrestants.append(mot)
+                    
+                    # On analyse les mots restants
+                    if motsrestants:
+                        misspelled = spell.unknown(motsrestants)
+                        # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
+                        for mot in motsrestants:
+                            if mot not in misspelled:
+                                corrections[mot] = {
                                     'lem': None,
                                     'ctxt': contexte.replace("'", ' ')
                                 }
-            
+                        # On boucle sur les propositions de corrections
+                        for mot in misspelled:
+                            if "pubièes" in motsrestants:
+                                print(f"Spellcheck utilisé pour {mot} : {spell.correction(mot)}")
+                                print(f"Autres propositions : {spell.candidates(mot)}")
+                            corrections[mot] = {
+                                        'lem': spell.correction(mot),
+                                        'ctxt': contexte.replace("'", ' ')
+                                    }
+                    # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
+                    for mot in words:
+                        if corrections.get(mot):
+                            dictionary[mot] = corrections[mot]
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
