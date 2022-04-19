@@ -1,14 +1,14 @@
+import click
 import os
 import json
 from lxml import etree
-from bs4 import BeautifulSoup
 from spellchecker import SpellChecker
 from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
 
 
 def collecte_mots():
     """
-    Cette fonction parse le contenu des vérités de terrain et retourne un set des mots qu'elles contiennent.
+    Cette fonction parse le contenu des vérités de terrain et retourne un set avec les mots qu'elles contiennent.
     :returns: mots contenus dans les vérités de terrain.
     :return type: set
     """
@@ -61,24 +61,21 @@ def suppress_punctuation(text):
         text = text.replace(sign, " ")
     return text
 
-# TODO poser un décorateur click
+@click.command()
 def spellcheck_texts_page_XML():
     """
-    - author: Floriane Chiffoleau
-    - date: February 2021
-    - description: Recovering orthographic errors in PAGE XML files
-    - input: PAGE XML files
-    - output: Python dictionnaries
-    - usage :
-        ======
-        python name_of_this_script.py arg1 arg2 arg3
+    Ce script ouvre les fichiers XML-Page contenus dans un dossier défini (constante XMLaCORRIGER)
+    analyse chaque mot en le confrontant :
+    - à ceux contenus dans les vérités de terrain (constante VERITESTERRAIN).
+    - aux formes listées dans le dictionnaire de corrections de la correspondance (constante DICTCDS).
+    Il applique aux formes non identifiées précédemment le module SpellChecker.
+    En sortie, on écrit pour chaque fichier XML-Page un fichier Json contenant des propositions de correction.
     
-        arg1: folder of the PAGE XML files
-        arg2: folder for the Python dictionnaries
-        arg3: local dictionary adapted to the content's language of the PAGE XML
-    
+    Source :
+    - author: Floriane Chiffoleau.
+    - date: February 2021.
+    - URL: https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Scripts/Correction/spellcheck_texts_PAGEXML.py
     """
-    # On charge le dictionnaire local dans un fichier Json pour pouvoir le passer à SpellChecker
     spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True)
     # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
     # This means that all the uppercase words will be considered wrong but that helps correct them
@@ -98,7 +95,7 @@ def spellcheck_texts_page_XML():
             
             xml = etree.parse(XMLaCORRIGER + filename)
             print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
-            # TODO renvoyer un message d'erreur explicite si le format de XML n'est pas Page (ou gérer aussi Alto)
+            # TODO prévoir une gestion de plusieurs formats XML
             nsmap = {'page': "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"}
             tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
             
@@ -150,4 +147,6 @@ def spellcheck_texts_page_XML():
                 print(f"=> Le dictionnaire {DICTPAGES.strip() + 'page_' + filename.replace('.xml', '.json')}"
                       f" a été écrit correctement.\n")
 
-spellcheck_texts_page_XML()
+
+if __name__ == "__main__":
+    spellcheck_texts_page_XML()
