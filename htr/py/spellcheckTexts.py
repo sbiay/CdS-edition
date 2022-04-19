@@ -6,13 +6,25 @@ from spellchecker import SpellChecker
 from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
 
 
+def suppress_punctuation(text):
+    """ Suppress punctuation in a text
+
+    :param text str: Text to clean up
+    :returns: Text without punctuation
+    :rtype: str
+    """
+    punctuation = "!:;\",?’."
+    for sign in punctuation:
+        text = text.replace(sign, " ")
+    return text
+
+
 def collecte_mots():
     """
     Cette fonction parse le contenu des vérités de terrain et retourne un set avec les mots qu'elles contiennent.
     :returns: mots contenus dans les vérités de terrain.
     :return type: set
     """
-    ponctuation = ",;':!.()"
     chiffres = "1234567890"
     motsParses = []
     # On boucle sur chaque fichier contenu dans le dossier des vérités de terrain
@@ -28,8 +40,8 @@ def collecte_mots():
                 textes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
                 for ligne in textes:
                     # On nettoie le texte de sa ponctuation
-                    for signe in ponctuation:
-                        ligne = ligne.replace(signe, " ").replace("  ", " ")
+                    ligne = suppress_punctuation(ligne)
+                    ligne = ligne.replace("  ", " ")
                     # On nettoie le texte de sa ponctuation
                     for signe in chiffres:
                         ligne = ligne.replace(signe, " ").replace("  ", " ")
@@ -48,18 +60,6 @@ def collecte_mots():
     
     return motsParses
 
-
-def suppress_punctuation(text):
-    """ Suppress punctuation in a text
-    
-    :param text str: Text to clean up
-    :returns: Text without punctuation
-    :rtype: str
-    """
-    punctuation = "!:;\",?'’."
-    for sign in punctuation:
-        text = text.replace(sign, " ")
-    return text
 
 @click.command()
 def spellcheck_texts_page_XML():

@@ -11,6 +11,12 @@
          "publics m&#39;ONT appris que votre époux était révérent Prince et par"
       ]
    },
+   "d'ars": {
+      "lem": "Paris",
+      "ctxt": [
+         "vivement que l&#39;on put dire, dans les petites nouvelles de d&#39;ars."
+      ]
+   },
    "pase": {
       "lem": "passe",
       "ctxt": [
@@ -2478,7 +2484,7 @@
    "daus": {
       "lem": "dans",
       "ctxt": [
-         "vivement que l&#39;on put dire, DANS les petites nouvelles de d&#39;ars."
+         "vivement que l&#39;on put dire, DANS les petites nouvelles de Paris."
       ]
    },
    "potre": {
@@ -3034,7 +3040,7 @@
    "Monsieur": {
       "lem": "Monsieur",
       "ctxt": [
-         "MONSIEUR Bertin, plusieurs personnes l&#39;ont engage à s&#39;adresser"
+         "MONSIEUR Bertin, plusieurs personnes l&#39;ant engage à s&#39;adressers"
       ]
    },
    "bréans": {
@@ -6350,7 +6356,7 @@
    "lasse": {
       "lem": "laisse",
       "ctxt": [
-         "Hoffman qui se chargera de l&#39;article ; mais comme a politique LAISSE"
+         "Hoffman qui se chargera de l&#39;artile ; mais comme a politique LAISSE"
       ]
    },
    "fame": {
@@ -8130,7 +8136,7 @@
    "Elle": {
       "lem": "elle",
       "ctxt": [
-         "ELLE lui en aurait d&#39;autant plus d&#39;obligation que l&#39;ouvrage"
+         "ELLE lui en aurait d&#39;antaux plus d&#39;obligation que l&#39;ouvrage"
       ]
    },
    "jemain": {
@@ -10380,19 +10386,19 @@
    "Vossmau": {
       "lem": "Hoffman",
       "ctxt": [
-         "HOFFMAN qui se chargera de l&#39;article ; mais comme a politique laisse"
+         "HOFFMAN qui se chargera de l&#39;artile ; mais comme a politique laisse"
       ]
    },
    "artile": {
       "lem": "article",
       "ctxt": [
-         "Hoffman qui se chargera de l&#39;ARTICLE ; mais comme a politique laisse"
+         "Hoffman qui se chargera de l&#39;artile ; mais comme a politique laisse"
       ]
    },
    "poletique": {
       "lem": "politique",
       "ctxt": [
-         "Hoffman qui se chargera de l&#39;article ; mais comme a POLITIQUE laisse"
+         "Hoffman qui se chargera de l&#39;artile ; mais comme a POLITIQUE laisse"
       ]
    },
    "ploce": {
@@ -10448,37 +10454,37 @@
    "Quoi": {
       "lem": "quoi",
       "ctxt": [
-         "QUOI qu&#39;elle n&#39;ait aucunement l&#39;avantage de connaitre"
+         "QUOI qu&#39;elle n&#39;ait aucunement l&#39;avaintage de connaitre"
       ]
    },
    "avaintage": {
       "lem": "avantage",
       "ctxt": [
-         "quoi qu&#39;elle n&#39;ait aucunement l&#39;AVANTAGE de connaitre"
+         "quoi qu&#39;elle n&#39;ait aucunement l&#39;avaintage de connaitre"
       ]
    },
    "Prertin": {
       "lem": "Bertin",
       "ctxt": [
-         "Monsieur BERTIN, plusieurs personnes l&#39;ont engage à s&#39;adresser"
+         "Monsieur BERTIN, plusieurs personnes l&#39;ant engage à s&#39;adressers"
       ]
    },
    "personmes": {
       "lem": "personnes",
       "ctxt": [
-         "Monsieur Bertin, plusieurs PERSONNES l&#39;ont engage à s&#39;adresser"
+         "Monsieur Bertin, plusieurs PERSONNES l&#39;ant engage à s&#39;adressers"
       ]
    },
    "ant": {
       "lem": "ont",
       "ctxt": [
-         "Monsieur Bertin, plusieurs personnes l&#39;ONT engage à s&#39;adresser"
+         "Monsieur Bertin, plusieurs personnes l&#39;ant engage à s&#39;adressers"
       ]
    },
    "adressers": {
       "lem": "adresser",
       "ctxt": [
-         "Monsieur Bertin, plusieurs personnes l&#39;ont engage à s&#39;ADRESSER"
+         "Monsieur Bertin, plusieurs personnes l&#39;ant engage à s&#39;ADRESSERs"
       ]
    },
    "obleuir": {
@@ -10544,13 +10550,13 @@
    "antaux": {
       "lem": "autant",
       "ctxt": [
-         "elle lui en aurait d&#39;AUTANT plus d&#39;obligation que l&#39;ouvrage"
+         "elle lui en aurait d&#39;antaux plus d&#39;obligation que l&#39;ouvrage"
       ]
    },
    "pleis": {
       "lem": "plus",
       "ctxt": [
-         "elle lui en aurait d&#39;autant PLUS d&#39;obligation que l&#39;ouvrage"
+         "elle lui en aurait d&#39;antaux PLUS d&#39;obligation que l&#39;ouvrage"
       ]
    },
    "suicéès": {
@@ -10614,13 +10620,13 @@
    "Vour": {
       "lem": "pour",
       "ctxt": [
-         "POUR l&#39;assurer de sa considération distingué."
+         "POUR l&#39;assuver de sa considération distingué."
       ]
    },
    "assuver": {
       "lem": "assurer",
       "ctxt": [
-         "pour l&#39;ASSURER de sa considération distingué."
+         "pour l&#39;assuver de sa considération distingué."
       ]
    },
    "consioétra tion": {
@@ -10630,7 +10636,7 @@
    "dstingue": {
       "lem": "distingué",
       "ctxt": [
-         "pour l&#39;assurer de sa considération DISTINGUÉ."
+         "pour l&#39;assuver de sa considération DISTINGUÉ."
       ]
    },
    "(de": {
@@ -10688,5 +10694,11 @@
    "vousionseur": {
       "lem": "vousionseur",
       "ctxt": "venir na vousionseur  le matin de midi à J heures "
+   },
+   "d&#39;ars": {
+      "lem": "Paris",
+      "ctxt": [
+         "vivement que l&#39;on put dire, dans les petites nouvelles de PARIS."
+      ]
    }
 }
