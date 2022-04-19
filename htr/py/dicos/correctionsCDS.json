@@ -704,7 +704,7 @@
    "A": {
       "lem": "A",
       "ctxt": [
-         "A Mr Vallant"
+         "A Princesse de Salm à fait rmage eu oure ei un journal ces"
       ]
    },
    "Lidbeg)": {
@@ -1414,7 +1414,7 @@
    "Il": {
       "lem": "Il",
       "ctxt": [
-         "me le dédier. IL est écrit avec force et concision. On pourrait cependant"
+         "intitulé. IL heures d&#39;une femme sensible. Elle croit que ce sera as."
       ]
    },
    "cergaison": {
@@ -2478,7 +2478,7 @@
    "daus": {
       "lem": "dans",
       "ctxt": [
-         "faisant autre chose, sans quoi, on ne croirait plus a rien DANS le monde"
+         "vivement que l&#39;on put dire, DANS les petites nouvelles de d&#39;ars."
       ]
    },
    "potre": {
@@ -3034,7 +3034,7 @@
    "Monsieur": {
       "lem": "Monsieur",
       "ctxt": [
-         "V&#39;art poétique de pêtre grand maître. ai vous voulez, MONSIEUR, vous donner"
+         "MONSIEUR Bertin, plusieurs personnes l&#39;ont engage à s&#39;adresser"
       ]
    },
    "bréans": {
@@ -3508,7 +3508,7 @@
    "Mr": {
       "lem": "Mr",
       "ctxt": [
-         "A MR Vallant"
+         "A MR Bertin"
       ]
    },
    "Bous": {
@@ -4368,7 +4368,7 @@
    "in": {
       "lem": "un",
       "ctxt": [
-         "UNdispensable Ecrivez n'ai UN mot, je vous prie, au reçu de cette lettre"
+         "A Princesse de Salm à fait rmage eu oure ei UN journal ces"
       ]
    },
    "leltre": {
@@ -5016,7 +5016,7 @@
    "e": {
       "lem": "et",
       "ctxt": [
-         "J vous renvoie votre journal ce Monsieur ETst traité comme d&#39;ET"
+         "(e ET ETmeshe"
       ]
    },
    "el": {
@@ -6350,7 +6350,7 @@
    "lasse": {
       "lem": "laisse",
       "ctxt": [
-         "triste position il LAISSE sa femme et ses filles. J&#39;ai été leur faire"
+         "Hoffman qui se chargera de l&#39;article ; mais comme a politique LAISSE"
       ]
    },
    "fame": {
@@ -8130,7 +8130,7 @@
    "Elle": {
       "lem": "elle",
       "ctxt": [
-         "changé. ELLE m&#39;a dit que vous donniez du vin a ses enfans. Je vous en"
+         "ELLE lui en aurait d&#39;autant plus d&#39;obligation que l&#39;ouvrage"
       ]
    },
    "jemain": {
@@ -8184,7 +8184,7 @@
    "journat": {
       "lem": "journal",
       "ctxt": [
-         "Maman nous prie de remettre le JOURNAL des modes et le conser"
+         "avant quelque succès dans ce moment, l&#39;entier silence du JOURNAL"
       ]
    },
    "conser vateus": {
@@ -9930,7 +9930,7 @@
    "Mousieur": {
       "lem": "Monsieur",
       "ctxt": [
-         "Recevez, MONSIEUR, les assurances de ma bien sincère considération"
+         "MONSIEUR, Bertin et elle profite ave plaisir de cette occasion"
       ]
    },
    "sinière": {
@@ -10266,5 +10266,427 @@
       "ctxt": [
          "(Signé) CONSTANCE de Salm."
       ]
+   },
+   "Salms)": {
+      "lem": "Salm)",
+      "ctxt": [
+         "le SALM)."
+      ]
+   },
+   "Mresti": {
+      "lem": "Bertin",
+      "ctxt": [
+         "A Mr BERTIN"
+      ]
+   },
+   "Pris": {
+      "lem": "pris",
+      "ctxt": [
+         "PRIS ce 10 Avril 1829."
+      ]
+   },
+   "tomvil": {
+      "lem": "Avril",
+      "ctxt": [
+         "pris ce 10 AVRIL 1829."
+      ]
+   },
+   "Sali": {
+      "lem": "Salm",
+      "ctxt": [
+         "A Princesse de SALM à fait rmage eu oure ei un journal ces"
+      ]
+   },
+   "puit": {
+      "lem": "fait",
+      "ctxt": [
+         "A Princesse de Salm à FAIT rmage eu oure ei un journal ces"
+      ]
+   },
+   "jour mal": {
+      "lem": "journal",
+      "ctxt": "A PrinCESse de Sali à puit rmage eu oure ei in jour mal CES"
+   },
+   "jour nal": {
+      "lem": "journal",
+      "ctxt": "A PrinCESse de Sali à puit rmage eu oure ei in jour mal CES"
+   },
+   "déefaits": {
+      "lem": "débats",
+      "ctxt": [
+         "DÉBATS deux exemplaires L&#39;un petit roman qu&#39;elle vient de publier"
+      ]
+   },
+   "deuxs": {
+      "lem": "deux",
+      "ctxt": [
+         "débats DEUX exemplaires L&#39;un petit roman qu&#39;elle vient de publier"
+      ]
+   },
+   "epeuplaires": {
+      "lem": "exemplaires",
+      "ctxt": [
+         "débats deux EXEMPLAIRES L&#39;un petit roman qu&#39;elle vient de publier"
+      ]
+   },
+   "pubièes": {
+      "lem": "publier",
+      "ctxt": [
+         "débats deux exemplaires L&#39;un petit roman qu&#39;elle vient de PUBLIER"
+      ]
+   },
+   "antiuté": {
+      "lem": "intitulé",
+      "ctxt": [
+         "INTITULÉ. Il heures d&#39;une femme sensible. Elle croit que ce sera as."
+      ]
+   },
+   "finnée": {
+      "lem": "femme",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une FEMME sensible. Elle croit que ce sera as."
+      ]
+   },
+   "senible": {
+      "lem": "sensible",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une femme SENSIBLE. Elle croit que ce sera as."
+      ]
+   },
+   "Ele": {
+      "lem": "Elle",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une femme sensible. ELLE croit que ce sera as."
+      ]
+   },
+   "roit": {
+      "lem": "croit",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une femme sensible. Elle CROIT que ce sera as."
+      ]
+   },
+   "ser": {
+      "lem": "sera",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une femme sensible. Elle croit que ce SERA as."
+      ]
+   },
+   "Ms": {
+      "lem": "as",
+      "ctxt": [
+         "intitulé. Il heures d&#39;une femme sensible. Elle croit que ce sera AS."
+      ]
+   },
+   "Vossmau": {
+      "lem": "Hoffman",
+      "ctxt": [
+         "HOFFMAN qui se chargera de l&#39;article ; mais comme a politique laisse"
+      ]
+   },
+   "artile": {
+      "lem": "article",
+      "ctxt": [
+         "Hoffman qui se chargera de l&#39;ARTICLE ; mais comme a politique laisse"
+      ]
+   },
+   "poletique": {
+      "lem": "politique",
+      "ctxt": [
+         "Hoffman qui se chargera de l&#39;article ; mais comme a POLITIQUE laisse"
+      ]
+   },
+   "ploce": {
+      "lem": "place",
+      "ctxt": [
+         "bien peu de PLACE à la littérature, dans ce moment, elle désirerait"
+      ]
+   },
+   "Lans": {
+      "lem": "dans",
+      "ctxt": [
+         "bien peu de place à la littérature, DANS ce moment, elle désirerait"
+      ]
+   },
+   "desirerait": {
+      "lem": "désirerait",
+      "ctxt": [
+         "bien peu de place à la littérature, dans ce moment, elle DÉSIRERAIT"
+      ]
+   },
+   "d ars": {
+      "lem": "Paris",
+      "ctxt": "vivement que l on put dire  daus les petites nouvelles de d ars "
+   },
+   "ounon cant": {
+      "lem": "annonçant",
+      "ctxt": "quelques mots de son ouvrage  en ounon cant qu en es RENDA"
+   },
+   "es": {
+      "lem": "en",
+      "ctxt": [
+         "quelques mots de son ouvrage, EN annonçant qu&#39;EN EN rENdra"
+      ]
+   },
+   "renda": {
+      "lem": "rendra",
+      "ctxt": [
+         "quelques mots de son ouvrage, en annonçant qu&#39;en en RENDRA"
+      ]
+   },
+   "conste": {
+      "lem": "compte",
+      "ctxt": [
+         "COMPTE plus tard."
+      ]
+   },
+   "paus": {
+      "lem": "plus",
+      "ctxt": [
+         "compte PLUS tard."
+      ]
+   },
+   "Quoi": {
+      "lem": "quoi",
+      "ctxt": [
+         "QUOI qu&#39;elle n&#39;ait aucunement l&#39;avantage de connaitre"
+      ]
+   },
+   "avaintage": {
+      "lem": "avantage",
+      "ctxt": [
+         "quoi qu&#39;elle n&#39;ait aucunement l&#39;AVANTAGE de connaitre"
+      ]
+   },
+   "Prertin": {
+      "lem": "Bertin",
+      "ctxt": [
+         "Monsieur BERTIN, plusieurs personnes l&#39;ont engage à s&#39;adresser"
+      ]
+   },
+   "personmes": {
+      "lem": "personnes",
+      "ctxt": [
+         "Monsieur Bertin, plusieurs PERSONNES l&#39;ont engage à s&#39;adresser"
+      ]
+   },
+   "ant": {
+      "lem": "ont",
+      "ctxt": [
+         "Monsieur Bertin, plusieurs personnes l&#39;ONT engage à s&#39;adresser"
+      ]
+   },
+   "adressers": {
+      "lem": "adresser",
+      "ctxt": [
+         "Monsieur Bertin, plusieurs personnes l&#39;ont engage à s&#39;ADRESSER"
+      ]
+   },
+   "obleuir": {
+      "lem": "obtenir",
+      "ctxt": [
+         "à lui pour OBTENIR que cette petite, annonce fut insérée lers"
+      ]
+   },
+   "pretéte": {
+      "lem": "petite",
+      "ctxt": [
+         "à lui pour obtenir que cette PETITE, annonce fut insérée lers"
+      ]
+   },
+   "jut": {
+      "lem": "fut",
+      "ctxt": [
+         "à lui pour obtenir que cette petite, annonce FUT insérée lers"
+      ]
+   },
+   "inserée": {
+      "lem": "insérée",
+      "ctxt": [
+         "à lui pour obtenir que cette petite, annonce fut INSÉRÉE lers"
+      ]
+   },
+   "jourval": {
+      "lem": "journal",
+      "ctxt": [
+         "le JOURNAL, et c&#39;est ce qui l&#39;a décidée à lui an écrire un mot"
+      ]
+   },
+   "déidée": {
+      "lem": "décidée",
+      "ctxt": [
+         "le journal, et c&#39;est ce qui l&#39;a DÉCIDÉE à lui an écrire un mot"
+      ]
+   },
+   "Serait": {
+      "lem": "serait",
+      "ctxt": [
+         "SERAIT il donc assez complaisant pour lui rendre ce service!"
+      ]
+   },
+   "domc": {
+      "lem": "donc",
+      "ctxt": [
+         "serait il DONC assez complaisant pour lui rendre ce service!"
+      ]
+   },
+   "couplaisant": {
+      "lem": "complaisant",
+      "ctxt": [
+         "serait il donc assez COMPLAISANT pour lui rendre ce service!"
+      ]
+   },
+   "hendes": {
+      "lem": "rendre",
+      "ctxt": [
+         "serait il donc assez complaisant pour lui RENDRE ce service!"
+      ]
+   },
+   "antaux": {
+      "lem": "autant",
+      "ctxt": [
+         "elle lui en aurait d&#39;AUTANT plus d&#39;obligation que l&#39;ouvrage"
+      ]
+   },
+   "pleis": {
+      "lem": "plus",
+      "ctxt": [
+         "elle lui en aurait d&#39;autant PLUS d&#39;obligation que l&#39;ouvrage"
+      ]
+   },
+   "suicéès": {
+      "lem": "succès",
+      "ctxt": [
+         "avant quelque SUCCÈS dans ce moment, l&#39;entier silence du journal"
+      ]
+   },
+   "momert": {
+      "lem": "moment",
+      "ctxt": [
+         "avant quelque succès dans ce MOMENT, l&#39;entier silence du journal"
+      ]
+   },
+   "silente": {
+      "lem": "silence",
+      "ctxt": [
+         "avant quelque succès dans ce moment, l&#39;entier SILENCE du journal"
+      ]
+   },
+   "dui": {
+      "lem": "du",
+      "ctxt": [
+         "avant quelque succès dans ce moment, l&#39;entier silence DU journal"
+      ]
+   },
+   "lni": {
+      "lem": "lui",
+      "ctxt": [
+         "ses débats pourrait LUI de venir préjudiciable."
+      ]
+   },
+   "prépudiciable": {
+      "lem": "préjudiciable",
+      "ctxt": [
+         "ses débats pourrait lui de venir PRÉJUDICIABLE."
+      ]
+   },
+   "Sans": {
+      "lem": "dans",
+      "ctxt": [
+         "DANS tous les cas Mlle s&#39;empresse d&#39;envoyer son ouvrage à"
+      ]
+   },
+   "toux": {
+      "lem": "tous",
+      "ctxt": [
+         "dans TOUS les cas Mlle s&#39;empresse d&#39;envoyer son ouvrage à"
+      ]
+   },
+   "Brertin": {
+      "lem": "Bertin",
+      "ctxt": [
+         "Monsieur, BERTIN et elle profite ave plaisir de cette occasion"
+      ]
+   },
+   "duc avion": {
+      "lem": "occasion",
+      "ctxt": "Mousieur  Brertin et elle profite ave plaisir de cette duc AVION"
+   },
+   "Vour": {
+      "lem": "pour",
+      "ctxt": [
+         "POUR l&#39;assurer de sa considération distingué."
+      ]
+   },
+   "assuver": {
+      "lem": "assurer",
+      "ctxt": [
+         "pour l&#39;ASSURER de sa considération distingué."
+      ]
+   },
+   "consioétra tion": {
+      "lem": "considération",
+      "ctxt": "Vour l assuver de sa consioétra tion dstingue "
+   },
+   "dstingue": {
+      "lem": "distingué",
+      "ctxt": [
+         "pour l&#39;assurer de sa considération DISTINGUÉ."
+      ]
+   },
+   "(de": {
+      "lem": "de",
+      "ctxt": "(de Mmemr PRINCESSE"
+   },
+   "Mam)": {
+      "lem": "ami",
+      "ctxt": "(de Mme MAM)"
+   },
+   "V": {
+      "lem": "à",
+      "ctxt": "V art prêtique de pêtre gruand mattre  Si vous voulle  Monsieur  vous DMER"
+   },
+   "(n": {
+      "lem": "un",
+      "ctxt": "(a génle (n 21LS)"
+   },
+   "21ls)": {
+      "lem": "21st",
+      "ctxt": "(a génle (n 21LS)"
+   },
+   "(a": {
+      "lem": "la",
+      "ctxt": "(a génle (n 21LS)"
+   },
+   "Jimver": {
+      "lem": "aimer",
+      "ctxt": "Pck  ce 1 Jimver  1819 "
+   },
+   "eassat": {
+      "lem": "passat",
+      "ctxt": "(Siné) M eassat "
+   },
+   "Mmemr": {
+      "lem": "mer",
+      "ctxt": "(de Mmemr PRINCESSE"
+   },
+   "Jeier": {
+      "lem": "meier",
+      "ctxt": "Pis  ce Jeier  181 "
+   },
+   "Pis": {
+      "lem": "dis",
+      "ctxt": "Pis  ce Jeier  181 "
+   },
+   "bronnie": {
+      "lem": "bonnie",
+      "ctxt": "notre discours sur la nécessité d abolir la pêine de mort  Je l a BRONNIE"
+   },
+   "deant": {
+      "lem": "devant",
+      "ctxt": "deant beaucoup de soins et de repos  Je vous engage cependant À"
+   },
+   "vousionseur": {
+      "lem": "vousionseur",
+      "ctxt": "venir na vousionseur  le matin de midi à J heures "
    }
 }
