@@ -21,9 +21,10 @@ def suppress_punctuation(text):
 
 def collecte_mots():
     """
-    Cette fonction parse le contenu des vérités de terrain et retourne un set avec les mots qu'elles contiennent.
-    :returns: mots contenus dans les vérités de terrain.
-    :return type: set
+    Cette fonction parse le contenu des vérités de terrain et retourne dictionnaire
+    dont les clés sont les mots et les valeurs leur nombre d'ocurrences.
+    :returns: comptage des occurrences de mots dans les vérités de terrain
+    :return type: dict
     """
     chiffres = "1234567890"
     motsParses = []
@@ -51,16 +52,52 @@ def collecte_mots():
                         if mot and mot[-1] != '-':
                             motsParses.append(mot)
     
-    # On compte le nombre d'occurences de chaque mot
+    # On compte le nombre d'occurrences de chaque mot
     comptage = {}
     for mot in motsParses:
         comptage[mot] = motsParses.count(mot)
     
-    # On exporte les lemmes pour les contrôler au besoin
+    # On exporte le comptage des mots pour les contrôler au besoin
     with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
         json.dump(comptage, jsonf, ensure_ascii=False, indent=1)
     
     return comptage
+
+
+def ordreOccurrences(liste):
+    """
+    Cette fonction prend comme argument une liste de mot,
+    récupère le nombre d'occurrences de chacun parmi les vérités de terrain
+    et retourne la liste de ces mots classées par ordre descendant de nombres d'occurrences
+    :param liste: liste de mots
+    :type liste: list
+    :returns: liste classée
+    :type return: list
+    """
+    # On charge tous les mots des vérités de terrain
+    tousMots = collecte_mots()
+    
+    # On récupère le nombre d'occurrences des mots de la liste passée en argument
+    comptage = {}
+    for mot in liste:
+        comptage[mot] = tousMots[mot]
+    
+    # On détermine quel est le nombre maximal d'occurrences pour les mots de la liste
+    max = 0
+    for mot in comptage:
+        if comptage[mot] > max:
+            max = comptage[mot]
+    
+    # On écrit une nouvelle liste classée par nombre d'occurrences
+    nouvListe = []
+    compteur = max
+    while compteur > 0:
+        for mot in comptage:
+            if comptage[mot] == compteur:
+                nouvListe.append(mot)
+        compteur -= 1
+    
+    return nouvListe
 
 
 @click.command()
@@ -85,10 +122,13 @@ def spellcheck_texts_page_XML():
     
     # On charge le contenu du dictionnaire de la correspondance
     with open(DICTCDS) as jsonf:
-        dictCDS = json.load(jsonf)
+        correctionsCDS = json.load(jsonf)
     
     # On charge les lemmes des vérités de terrain
     tous_lemmes = collecte_mots()
+    
+    # TODO test
+    compteur = 1
     
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
@@ -103,60 +143,68 @@ def spellcheck_texts_page_XML():
             
             for unicode in tous_unicode:
                 content = unicode.text
-                # Les traitements ne peuvent avoir lieu que si le contenu n'est pas vide
+                # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
                 if content:
                     content = suppress_punctuation(content)
                     words = content.split(" ")
+                    # TODO attention, phrase test
+                    if compteur > 1:
+                        break
+                    words = ["nne", "fout", "asseu", "hometes"]
+                    compteur += 1
+                    
                     # On initie un dictionnaire pour les corrections de la ligne
                     corrections = {}
                     # On initie la liste des mots inconnus que l'on passera au SpellChecker
                     motsrestants = []
                     
                     # On boucle sur chaque mot
-                    for mot in words:
-                        contexte = content.replace(mot, mot.upper())
-
-                        # On cherche chaque mot dans le dictCDS
-                        if dictCDS.get(mot):
-                            # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
-                            # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
-                            if dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                    for forme in words:
+                        contexte = content.replace(forme, forme.upper())
+                        
+                        # On cherche chaque mot dans la liste personnalisée des corrections
+                        if correctionsCDS.get(forme):
+                            # Si le mot est ambigu (plusieurs propositions)
+                            if len(correctionsCDS[forme]['lem']) > 1:
+                                # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
+                                # grâce à la fonction ordreOccurrences()
+                                
                                 # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                corrections[mot] = {
-                                    'lem': dictCDS[mot]['lem'],
+                                corrections[forme] = {
+                                    'lem': correctionsCDS[forme]['lem'],
                                     'ctxt': contexte.replace("'", ' '),
-                                    'deja utilisé': dictCDS[mot]['ctxt']
+                                    'deja utilisé': correctionsCDS[forme]['ctxt']
                                 }
-                            elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
-                                corrections[mot] = {
-                                    'lem': dictCDS[mot]['lem'],
-                                    'remarque': "déjà marqué comme AMBIGU"
-                                }
-                        # Si le mot n'est pas dans le dictCDS, on l'ajoute à la liste des mots restants à analyser
+                            # Si le mot n'est pas ambigu
+                            else:
+                                True
+                        
+                        # Si le mot n'est pas dans dans la liste personnalisée des corrections
+                        # on l'ajoute à la liste des mots restants à analyser
                         else:
-                            if mot and mot not in dictionary.keys():
-                                motsrestants.append(mot)
+                            if forme and forme:
+                                motsrestants.append(forme)
                     
                     # On analyse les mots restants
                     if motsrestants:
                         misspelled = spell.unknown(motsrestants)
                         # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
-                        for mot in motsrestants:
-                            if mot not in misspelled and mot not in dictionary.keys():
-                                corrections[mot] = {
+                        for forme in motsrestants:
+                            if forme not in misspelled:
+                                corrections[forme] = {
                                     'lem': None,
                                     'ctxt': contexte.replace("'", ' ')
                                 }
                         # On boucle sur les propositions de corrections
-                        for mot in misspelled:
-                            corrections[mot] = {
-                                        'lem': spell.correction(mot),
-                                        'ctxt': contexte.replace("'", ' ')
-                                    }
+                        for forme in misspelled:
+                            corrections[forme] = {
+                                'lem': spell.correction(forme),
+                                'ctxt': contexte.replace("'", ' ')
+                            }
                     # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
-                    for mot in words:
-                        if corrections.get(mot) and mot not in dictionary.keys():
-                            dictionary[mot] = corrections[mot]
+                    for forme in words:
+                        if corrections.get(forme):
+                            dictionary[forme] = corrections[forme]
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
