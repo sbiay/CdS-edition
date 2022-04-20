@@ -39,8 +39,6 @@ def textCorrectionXML():
             
             # On ouvre le fichier XML de sortie
             with open(XMLCORRIGEES + filename, 'w') as xml_corr:
-                # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
-                entreesMAJ = {}
                 # On boucle sur chaque ligne du contenuXML
                 for ligneBrute in contenuXML:
                     # Si la ligne de code xml ne contient pas d'élément Unicode,
@@ -48,6 +46,8 @@ def textCorrectionXML():
                     if "Unicode" not in ligneBrute:
                         xml_corr.write(ligneBrute + "\n")
                     else:
+                        # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
+                        entreesMAJ = {}
                         # Si la ligne contient Unicode, il s'agit de la transcription à corriger
                         ligne = ligneBrute
                         # On remplace l'encodage XML des apostrophes
@@ -69,40 +69,43 @@ def textCorrectionXML():
                         for forme in dictPage:
                             # On n'intervient que si la valeur de lemme n'est pas "null"
                             if dictPage[forme]["lem"]:
-                                # La correction retenue ou "lemme"
-                                # est le premier item de la liste-valeur de la clé "lem"
-                                lemme = dictPage[forme]["lem"][0]
-                                # Si la forme contient une espace, on la traite en premier en appliquant la correction
-                                # à la ligne dans son ensemble (et non à un mot particulier)
-                                if len(forme.split(" ")) > 1:
-                                    if forme in ligneCorr:
-                                        ligneCorr = ligneCorr.replace(forme, lemme)
-                                # Si la forme ne contient pas d'espace
-                                else:
-                                    # On boucle sur chaque mot
-                                    for mot in ligne:
-                                        # Comme la liste des mots contient des vides, on pose une condition d'existence
-                                        if mot:
-                                            # Si le mot courant correspond à l'entrée de dictionnaire
-                                            if forme == mot:
-                                                if "'" in forme:
-                                                    forme = forme.replace("'", "&#39;")
-                                                # Si le mot est en milieu de ligne
-                                                ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
-                                                # Si le mot est placé juste après la balise unicode
-                                                ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
-                                                ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
-                                                if "&#39;" in forme:
-                                                    forme = forme.replace("&#39;", "'")
-                                                entreesMAJ[forme] = {
-                                                    "lem": lemme,
-                                                    "ctxt": []
-                                                }
+                                # On peut se retrouver avec une liste dont le seul élément est "null"
+                                if dictPage[forme]["lem"][0]:
+                                    # La correction retenue ou "lemme"
+                                    # est le premier item de la liste-valeur de la clé "lem"
+                                    lemme = dictPage[forme]["lem"][0]
+                                    # Si la forme contient une espace, on la traite en premier
+                                    # en appliquant la correction à la ligne dans son ensemble
+                                    # (et non à un mot particulier)
+                                    if len(forme.split(" ")) > 1:
+                                        if forme in ligneCorr:
+                                            ligneCorr = ligneCorr.replace(forme, lemme)
+                                    # Si la forme ne contient pas d'espace
+                                    else:
+                                        # On boucle sur chaque mot
+                                        for mot in ligne:
+                                            # Comme la liste des mots contient des vides,
+                                            # on pose une condition d'existence
+                                            if mot:
+                                                # Si le mot courant correspond à l'entrée de dictionnaire
+                                                if forme == mot:
+                                                    if "'" in forme:
+                                                        forme = forme.replace("'", "&#39;")
+                                                    # Si le mot est en milieu de ligne
+                                                    ligneCorr = ligneCorr.replace(f" {forme}", f" {lemme}")
+                                                    # Si le mot est placé juste après la balise unicode
+                                                    ligneCorr = ligneCorr.replace(f">{forme}", f">{lemme}")
+                                                    ligneCorr = ligneCorr.replace(f"&#39;{forme}", f"&#39;{lemme}")
+                                                    if "&#39;" in forme:
+                                                        forme = forme.replace("&#39;", "'")
+                                                    entreesMAJ[forme] = {
+                                                        "lem": lemme,
+                                                        "ctxt": []
+                                                    }
     
                         # On renvoie le contexte du mot traité dans le dictionnaire global
                         # en reparsant la ligne corrigée
                         for entree in entreesMAJ:
-                            print(entree)
                             # On inscrit dans le dictionnaire le contexte en sélectionnant le noeud texte de l'élément
                             # Unicode par une slice et en mettant en valeur le lemme dans le texte corrigé par une casse
                             # en capitales
@@ -113,7 +116,6 @@ def textCorrectionXML():
                                         entreesMAJ[entree]["lem"], entreesMAJ[entree]["lem"].upper()
                                     )
                                 ]
-                            
                             # On met à jour le dictCDS avec les contextes actualisés
                             # Si la forme n'existe pas déjà
                             if not dictCDS.get(entree):
