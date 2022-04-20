@@ -127,9 +127,7 @@ def spellcheck_texts_page_XML():
     # On charge les lemmes des vérités de terrain
     tous_lemmes = collecte_mots()
     
-    # TODO test
-    compteur = 1
-    
+    # On boucle sur chaque fichier du dossier défini par la constante XMLaCORRIGER
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
             # On initie le dictionnaire de page
@@ -149,12 +147,6 @@ def spellcheck_texts_page_XML():
                 if content:
                     content = suppress_punctuation(content)
                     words = content.split(" ")
-                    # TODO attention, phrase test
-                    if compteur > 1:
-                        break
-                    words = ["nne", "fout", "asseu", "hometes"]
-                    compteur += 1
-                    
                     # On initie un dictionnaire pour les corrections de la ligne
                     corrections = {}
                     # On initie la liste des mots inconnus que l'on passera au SpellChecker
@@ -188,7 +180,7 @@ def spellcheck_texts_page_XML():
                                         'deja utilisé': correctionsCDS[forme]['ctxt']
                                     }
                             
-                            # Si le mot n'est pas dans dans la liste personnalisée des corrections
+                            # Si le mot n'est pas dans la liste personnalisée des corrections
                             # on l'ajoute à la liste des mots restants à analyser
                             else:
                                 if forme and forme:
