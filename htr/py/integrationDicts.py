@@ -1,7 +1,7 @@
 import click
 import json
 import os
-from constantes import DICTPAGES, DICTCDS
+from constantes import DICTPAGESNONCORR, DICTCDS
 
 def controleFormes(dictPage):
     """
@@ -60,7 +60,7 @@ def dictCDSintegration(file, all):
         # Si l'option pour transformer tous les dictionnaires du dossier dicos est active
         if all:
             # On boucle sur les fichiers du dossier dicos qui commencent par "page"
-            for root, dirs, files in os.walk(DICTPAGES):
+            for root, dirs, files in os.walk(DICTPAGESNONCORR):
                 for filename in files:
                     # On pose comme condition que le fichier est une extension .json
                     if filename[-4:] == "json" and filename[:4] == "page":
@@ -69,7 +69,7 @@ def dictCDSintegration(file, all):
                             dictCDS = json.load(f)
                         
                         # On charge le dictionnaire de la page
-                        with open(DICTPAGES + filename) as f:
+                        with open(DICTPAGESNONCORR + filename) as f:
                             dictPage = json.load(f)
                         print(f"Traitement du fichier {filename}")
                         

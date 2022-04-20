@@ -16,7 +16,6 @@ py/__pycache__
 htr/correctionManuelle/
 htr/py/__pycache__
 *xcf
-test.py
 *test.py
 reprendre-a.md
 .sync.ffs_db
@@ -46,3 +45,5 @@ htr/xmlPage-corrigees/*
 htr/py/dicos/page*
 souvayCDS
 img/
+htr/py/dicos/aCorriger/*
+htr/py/dicos/corriges/*

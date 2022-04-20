@@ -120,12 +120,8 @@ def textCorrectionXML():
                                 dictCDS[entree] = entreesMAJ[entree]
                             # Si la forme existe déjà
                             else:
-                                # Si le lemme que l'on propose est déjà référencé
-                                if entreesMAJ[entree]["lem"] in dictCDS[entree]["lem"]:
-                                    # On met à jour le contexte
-                                    dictCDS[entree]["ctxt"] = entreesMAJ[entree]["ctxt"]
                                 # Si le lemme que l'on propose n'est pas encore référencé
-                                else:
+                                if not entreesMAJ[entree]["lem"] in dictCDS[entree]["lem"]:
                                     dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"])
                                     dictCDS[entree]["ctxt"] = "AMBIGU"
                         
