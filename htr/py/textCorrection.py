@@ -5,6 +5,7 @@ import click
 from spellcheckTexts import suppress_punctuation
 from constantes import XMLaCORRIGER, XMLCORRIGEES, DICTCDS
 
+# TODO Passer des arguments pour gérer tous les fichiers ou un seul
 @click.command()
 def textCorrectionXML():
     """

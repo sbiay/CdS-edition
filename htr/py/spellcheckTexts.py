@@ -47,10 +47,12 @@ def collecte_mots():
                     for signe in chiffres:
                         ligne = ligne.replace(signe, " ").replace("  ", " ")
                     mots = ligne.split(' ')
-                    for mot in mots:
-                        # On verifie que le mot ne soit pas vide et pas césuré
-                        if mot and mot[-1] != '-':
-                            motsParses.append(mot)
+                    for index, mot in enumerate(mots):
+                        # On verifie que le mot ne soit pas vide
+                        if mot:
+                            # On vérifie que le mot ne soit pas césuré et pas en début de ligne (potentiellement coupé)
+                            if index != 0 and mot[-1] != '-':
+                                motsParses.append(mot)
     
     # On compte le nombre d'occurrences de chaque mot
     comptage = {}
@@ -180,12 +182,19 @@ def spellcheck_texts_page_XML():
                                         'deja utilisé': correctionsCDS[forme]['ctxt']
                                     }
                             
-                            # Si le mot n'est pas dans la liste personnalisée des corrections
-                            # on l'ajoute à la liste des mots restants à analyser
-                            else:
-                                if forme and forme:
+                            # Si la forme n'est pas dans la liste personnalisée des corrections
+                            elif forme:
+                                # Si elle ne figure pas parmi les mots connus des vérités de terrain
+                                if forme in tous_lemmes.keys():
+                                    corrections[forme] = {
+                                        'lem': None,
+                                        'ctxt': contexte.replace("'", ' '),
+                                    }
+                                # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
+                                else:
+                                    # Alors on l'ajoute à la liste des mots restants à traiter
                                     motsrestants.append(forme)
-                        
+
                     # On analyse les mots restants
                     if motsrestants:
                         misspelled = spell.unknown(motsrestants)
