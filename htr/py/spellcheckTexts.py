@@ -54,7 +54,7 @@ def collecte_mots():
     # On compte le nombre d'occurences de chaque mot
     comptage = {}
     for mot in motsParses:
-        comptage[mot] = mot.count()
+        comptage[mot] = motsParses.count(mot)
     
     # On exporte les lemmes pour les contrôler au besoin
     with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
