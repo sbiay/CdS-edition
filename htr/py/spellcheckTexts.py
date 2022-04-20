@@ -134,7 +134,7 @@ def spellcheck_texts_page_XML():
                                     }
                             # Si le mot n'est pas dans le dictCDS, on l'ajoute à la liste des mots restants à analyser
                             else:
-                                if mot:
+                                if mot and mot not in dictionary.keys():
                                     motsrestants.append(mot)
                     
                     # On analyse les mots restants
@@ -142,23 +142,20 @@ def spellcheck_texts_page_XML():
                         misspelled = spell.unknown(motsrestants)
                         # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
                         for mot in motsrestants:
-                            if mot not in misspelled:
+                            if mot not in misspelled and mot not in dictionary.keys():
                                 corrections[mot] = {
                                     'lem': None,
                                     'ctxt': contexte.replace("'", ' ')
                                 }
                         # On boucle sur les propositions de corrections
                         for mot in misspelled:
-                            if "pubièes" in motsrestants:
-                                print(f"Spellcheck utilisé pour {mot} : {spell.correction(mot)}")
-                                print(f"Autres propositions : {spell.candidates(mot)}")
                             corrections[mot] = {
                                         'lem': spell.correction(mot),
                                         'ctxt': contexte.replace("'", ' ')
                                     }
                     # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
                     for mot in words:
-                        if corrections.get(mot):
+                        if corrections.get(mot) and mot not in dictionary.keys():
                             dictionary[mot] = corrections[mot]
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
