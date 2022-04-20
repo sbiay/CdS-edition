@@ -3,7 +3,7 @@ import os
 import json
 from lxml import etree
 from spellchecker import SpellChecker
-from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGES, VERITESTERRAIN as VT
+from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGESNONCORR, VERITESTERRAIN as VT
 
 
 def suppress_punctuation(text):
@@ -133,7 +133,7 @@ def spellcheck_texts_page_XML():
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
             # On initie le dictionnaire de page
-            dictionary = {"0000": None}
+            dictionary = {"0000": {'lem': [None]}}
             
             # On ouvre le fichier XML d'entrée
             xml = etree.parse(XMLaCORRIGER + filename)
@@ -208,7 +208,7 @@ def spellcheck_texts_page_XML():
                         # On boucle sur les propositions de corrections
                         for forme in misspelled:
                             corrections[forme] = {
-                                'lem': spell.correction(forme),
+                                'lem': [spell.correction(forme)],
                                 'ctxt': contexte.replace("'", ' ')
                             }
                     # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
@@ -217,9 +217,9 @@ def spellcheck_texts_page_XML():
                             dictionary[forme] = corrections[forme]
             
             # On écrit le résultat dans un fichier de sortie au format .py
-            with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
+            with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
-                print(f"=> Le dictionnaire {DICTPAGES.strip() + 'page_' + filename.replace('.xml', '.json')}"
+                print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
                       f" a été écrit correctement.\n")
 
 
