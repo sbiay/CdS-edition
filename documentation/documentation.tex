@@ -37,6 +37,7 @@
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
 \newacronym{cds}{CdS}{Constance de Salm}
+\newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 
 % Images
 \usepackage{graphicx}
@@ -76,13 +77,13 @@
 		
 			Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
 		
-		\section{Segmentation et typage des zones d'écriture}
-		Nous avons procédé à une première expérience de transcription sur le sous-corpus \textit{Main 1} avec le logiciel e-Scriptorium installé localement. 
+		\section{Segmentation et annotation des zones d'écriture}
+		Nous avons procédé à une première expérience de transcription sur le sous-corpus \textit{Main 1} avec le logiciel e-Scriptorium installé localement.
         
             \subsection{Typer les régions d'écriture}
             Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
             
-            Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F. Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021}.
+            Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}.
 				        
 	        Cetaines régions peuvent être directement appliquées :
 			\selectlanguage{english}
@@ -100,7 +101,7 @@
 			Il pourrait être pertinent de modifier l'usage de :
 			\selectlanguage{english}
 			\begin{itemize}
-				\item \textbf{Additions}: \langue{cette catégorie est utilisée ailleurs dans Segmonto, pour les documents administratifs			\selectlanguage{french}\footcite{chagueDocumentsAdministratifsXIXe2021}~; elle intervient dans le traitement du document postérieurement à sa rédaction. Cette pertinence reste cependant à confirmer. Cette catégorie pourrait également s'appliquer aux rubriques~:}
+				\item \textbf{Additions}: \langue{cette catégorie est utilisée ailleurs dans \gls{Segmonto}, pour les documents administratifs			\selectlanguage{french}\footcite{chagueDocumentsAdministratifsXIXe2021}~; elle intervient dans le traitement du document postérieurement à sa rédaction. Cette pertinence reste cependant à confirmer. Cette catégorie pourrait également s'appliquer aux rubriques~:}
 				\begin{figure}[!h]
 					% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
 					\centering
