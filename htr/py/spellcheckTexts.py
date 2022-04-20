@@ -187,7 +187,7 @@ def spellcheck_texts_page_XML():
                                 # Si elle ne figure pas parmi les mots connus des vérités de terrain
                                 if forme in tous_lemmes.keys():
                                     corrections[forme] = {
-                                        'lem': None,
+                                        'lem': [None],
                                         'ctxt': contexte.replace("'", ' '),
                                     }
                                 # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
@@ -202,7 +202,7 @@ def spellcheck_texts_page_XML():
                         for forme in motsrestants:
                             if forme not in misspelled:
                                 corrections[forme] = {
-                                    'lem': None,
+                                    'lem': [None],
                                     'ctxt': contexte.replace("'", ' ')
                                 }
                         # On boucle sur les propositions de corrections
