@@ -51,14 +51,16 @@ def collecte_mots():
                         if mot and mot[-1] != '-':
                             motsParses.append(mot)
     
-    # On convertit les mots récoltés en set pour éliminer les doublons et on ajoute les nouveaux au set lemmes
-    motsParses = set(motsParses)
+    # On compte le nombre d'occurences de chaque mot
+    comptage = {}
+    for mot in motsParses:
+        comptage[mot] = mot.count()
     
     # On exporte les lemmes pour les contrôler au besoin
     with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
-        json.dump(list(motsParses), jsonf, ensure_ascii=False, indent=1)
+        json.dump(comptage, jsonf, ensure_ascii=False, indent=1)
     
-    return motsParses
+    return comptage
 
 
 @click.command()
@@ -113,29 +115,27 @@ def spellcheck_texts_page_XML():
                     # On boucle sur chaque mot
                     for mot in words:
                         contexte = content.replace(mot, mot.upper())
-                        
-                        # On cherche chaque mot dans les lemmes des vérités de terrain
-                        if mot not in tous_lemmes:
-                            # On cherche chaque mot dans le dictCDS
-                            if dictCDS.get(mot):
-                                # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
-                                # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
-                                if dictCDS[mot].get('lem') and mot not in dictionary.keys():
-                                    # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                    corrections[mot] = {
-                                        'lem': dictCDS[mot]['lem'],
-                                        'ctxt': contexte.replace("'", ' '),
-                                        'deja utilisé': dictCDS[mot]['ctxt']
-                                    }
-                                elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
-                                    corrections[mot] = {
-                                        'lem': dictCDS[mot]['lem'],
-                                        'remarque': "déjà marqué comme AMBIGU"
-                                    }
-                            # Si le mot n'est pas dans le dictCDS, on l'ajoute à la liste des mots restants à analyser
-                            else:
-                                if mot and mot not in dictionary.keys():
-                                    motsrestants.append(mot)
+
+                        # On cherche chaque mot dans le dictCDS
+                        if dictCDS.get(mot):
+                            # On vérifie que la solution ne soit pas ambiguë (id est qu'il existe bien un lemme)
+                            # et qu'il n'ait pas déjà été ajouté au dictionnaire de page
+                            if dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                                # On écrit l'entrée du dictionnaire pour préciser le contexte
+                                corrections[mot] = {
+                                    'lem': dictCDS[mot]['lem'],
+                                    'ctxt': contexte.replace("'", ' '),
+                                    'deja utilisé': dictCDS[mot]['ctxt']
+                                }
+                            elif not dictCDS[mot].get('lem') and mot not in dictionary.keys():
+                                corrections[mot] = {
+                                    'lem': dictCDS[mot]['lem'],
+                                    'remarque': "déjà marqué comme AMBIGU"
+                                }
+                        # Si le mot n'est pas dans le dictCDS, on l'ajoute à la liste des mots restants à analyser
+                        else:
+                            if mot and mot not in dictionary.keys():
+                                motsrestants.append(mot)
                     
                     # On analyse les mots restants
                     if motsrestants:
