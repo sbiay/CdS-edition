@@ -132,15 +132,17 @@ def spellcheck_texts_page_XML():
     
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
-            dictionary = {}
-            # On ouvre le fichier XML d'entrée
+            # On initie le dictionnaire de page
+            dictionary = {"0000": None}
             
+            # On ouvre le fichier XML d'entrée
             xml = etree.parse(XMLaCORRIGER + filename)
             print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
             # TODO prévoir une gestion de plusieurs formats XML
             nsmap = {'page': "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"}
             tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
             
+            # On parse les lignes de transcription du fichier XML-Page
             for unicode in tous_unicode:
                 content = unicode.text
                 # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
@@ -160,31 +162,38 @@ def spellcheck_texts_page_XML():
                     
                     # On boucle sur chaque mot
                     for forme in words:
-                        contexte = content.replace(forme, forme.upper())
-                        
-                        # On cherche chaque mot dans la liste personnalisée des corrections
-                        if correctionsCDS.get(forme):
-                            # Si le mot est ambigu (plusieurs propositions)
-                            if len(correctionsCDS[forme]['lem']) > 1:
-                                # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
-                                # grâce à la fonction ordreOccurrences()
-                                
-                                # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                corrections[forme] = {
-                                    'lem': correctionsCDS[forme]['lem'],
-                                    'ctxt': contexte.replace("'", ' '),
-                                    'deja utilisé': correctionsCDS[forme]['ctxt']
-                                }
-                            # Si le mot n'est pas ambigu
+                        # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
+                        # résolutions différentes seraient souhaitables)
+                        if forme and not dictionary.get(forme):
+                            # On récupère le contexte de la forme en l'y inscrivant en capitales
+                            contexte = content.replace(forme, forme.upper())
+                            # On cherche chaque mot dans la liste personnalisée des corrections
+                            if correctionsCDS.get(forme):
+                                # Si le mot est ambigu (plusieurs propositions)
+                                if len(correctionsCDS[forme]['lem']) > 1:
+                                    # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
+                                    # grâce à la fonction ordreOccurrences()
+                                    propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
+                                    # On écrit l'entrée du dictionnaire pour préciser le contexte
+                                    corrections[forme] = {
+                                        'lem': propositions,
+                                        'ctxt': contexte.replace("'", ' '),
+                                        'deja utilisé': correctionsCDS[forme]['ctxt']
+                                    }
+                                # Si le mot n'est pas ambigu
+                                else:
+                                    corrections[forme] = {
+                                        'lem': correctionsCDS[forme]['lem'],
+                                        'ctxt': contexte.replace("'", ' '),
+                                        'deja utilisé': correctionsCDS[forme]['ctxt']
+                                    }
+                            
+                            # Si le mot n'est pas dans dans la liste personnalisée des corrections
+                            # on l'ajoute à la liste des mots restants à analyser
                             else:
-                                True
+                                if forme and forme:
+                                    motsrestants.append(forme)
                         
-                        # Si le mot n'est pas dans dans la liste personnalisée des corrections
-                        # on l'ajoute à la liste des mots restants à analyser
-                        else:
-                            if forme and forme:
-                                motsrestants.append(forme)
-                    
                     # On analyse les mots restants
                     if motsrestants:
                         misspelled = spell.unknown(motsrestants)
@@ -205,6 +214,7 @@ def spellcheck_texts_page_XML():
                     for forme in words:
                         if corrections.get(forme):
                             dictionary[forme] = corrections[forme]
+            
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGES.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
                 json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
