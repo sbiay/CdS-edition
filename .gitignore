@@ -8,7 +8,6 @@ evenements-a-suivre/
 fdr.md
 lexique-deu-fra.csv
 recueils/
-htr/brouillonsCDSimg
 .idea
 htr/img/main1/
 __pycache__
@@ -44,6 +43,6 @@ htr/xmlPage-aCorriger/*
 htr/xmlPage-corrigees/*
 htr/py/dicos/page*
 souvayCDS
-img/
 htr/py/dicos/aCorriger/*
 htr/py/dicos/corriges/*
+documentation/img/
