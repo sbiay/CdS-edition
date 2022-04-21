@@ -31,6 +31,7 @@ def textCorrectionXML():
                 with open(DICTPAGESCORR + "page_" + filename.replace(".xml", ".json")) as dico:
                     dictPage = json.load(dico)
             except:
+                # TODO vérifier pourquoi ce print ne marche pas
                 print(f"Le dictionnaire de page page_{filename.replace('.xml', '.json')} n'a pas été chargé " \
                                                                                    "correctement.")
                 break
