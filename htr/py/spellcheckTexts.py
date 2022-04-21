@@ -82,7 +82,8 @@ def ordreOccurrences(liste):
     # On récupère le nombre d'occurrences des mots de la liste passée en argument
     comptage = {}
     for mot in liste:
-        comptage[mot] = tousMots[mot]
+        if tousMots.get(mot):
+            comptage[mot] = tousMots[mot]
     
     # On détermine quel est le nombre maximal d'occurrences pour les mots de la liste
     max = 0
@@ -133,7 +134,7 @@ def spellcheck_texts_page_XML():
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
             # On initie le dictionnaire de page
-            dictionary = {"0000": {'lem': [None]}}
+            dictPage = {}
             
             # On ouvre le fichier XML d'entrée
             xml = etree.parse(XMLaCORRIGER + filename)
@@ -143,14 +144,14 @@ def spellcheck_texts_page_XML():
             tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
             
             # On parse les lignes de transcription du fichier XML-Page
-            for unicode in tous_unicode:
+            for index, unicode in enumerate(tous_unicode):
                 content = unicode.text
                 # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
                 if content:
                     content = suppress_punctuation(content)
                     words = content.split(" ")
                     # On initie un dictionnaire pour les corrections de la ligne
-                    corrections = {}
+                    dictLigne = {}
                     # On initie la liste des mots inconnus que l'on passera au SpellChecker
                     motsrestants = []
                     
@@ -158,7 +159,7 @@ def spellcheck_texts_page_XML():
                     for forme in words:
                         # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
                         # résolutions différentes seraient souhaitables)
-                        if forme and not dictionary.get(forme):
+                        if forme and not dictPage.get(forme):
                             # On récupère le contexte de la forme en l'y inscrivant en capitales
                             contexte = content.replace(forme, forme.upper())
                             # On cherche chaque mot dans la liste personnalisée des corrections
@@ -169,14 +170,14 @@ def spellcheck_texts_page_XML():
                                     # grâce à la fonction ordreOccurrences()
                                     propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
                                     # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                    corrections[forme] = {
+                                    dictLigne[forme] = {
                                         'lem': propositions,
                                         'ctxt': contexte.replace("'", ' '),
                                         'deja utilisé': correctionsCDS[forme]['ctxt']
                                     }
                                 # Si le mot n'est pas ambigu
                                 else:
-                                    corrections[forme] = {
+                                    dictLigne[forme] = {
                                         'lem': correctionsCDS[forme]['lem'],
                                         'ctxt': contexte.replace("'", ' '),
                                         'deja utilisé': correctionsCDS[forme]['ctxt']
@@ -186,7 +187,7 @@ def spellcheck_texts_page_XML():
                             elif forme:
                                 # Si elle ne figure pas parmi les mots connus des vérités de terrain
                                 if forme in tous_lemmes.keys():
-                                    corrections[forme] = {
+                                    dictLigne[forme] = {
                                         'lem': [None],
                                         'ctxt': contexte.replace("'", ' '),
                                     }
@@ -201,24 +202,27 @@ def spellcheck_texts_page_XML():
                         # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
                         for forme in motsrestants:
                             if forme not in misspelled:
-                                corrections[forme] = {
+                                dictLigne[forme] = {
                                     'lem': [None],
                                     'ctxt': contexte.replace("'", ' ')
                                 }
                         # On boucle sur les propositions de corrections
                         for forme in misspelled:
-                            corrections[forme] = {
+                            dictLigne[forme] = {
                                 'lem': [spell.correction(forme)],
                                 'ctxt': contexte.replace("'", ' ')
                             }
                     # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
+                    dictLigneOrd = {}
                     for forme in words:
-                        if corrections.get(forme):
-                            dictionary[forme] = corrections[forme]
+                        if dictLigne.get(forme):
+                            dictLigneOrd[forme] = dictLigne[forme]
+                    # On ajoute le dictionnaire ligne ordonné au dictionnaire page
+                    dictPage[index] = dictLigneOrd
             
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
-                json.dump(dictionary, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
+                json.dump(dictPage, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
                 print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
                       f" a été écrit correctement.\n")
 
