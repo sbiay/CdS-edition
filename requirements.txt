@@ -9,3 +9,5 @@ cffi~=1.15.0
 numpy~=1.22.3
 pip~=22.0.4
 setuptools~=60.2.0
+spacy==3.2.4
+fr-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.2.0/fr_core_news_sm-3.2.0-py3-none-any.whl
