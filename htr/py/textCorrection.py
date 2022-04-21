@@ -63,7 +63,6 @@ def textCorrectionXML():
                         # TODO avant de tokéniser on doit procéder au remplacement des formes avec apostrophe
                         # TODO et des formes avec espace au milieu
                         # TODO Condition utile seulement pour les tests
-                        print(f"Ligne avant modif : {ligne}")
                         if dictPage.get(str(index)):
                             for forme in dictPage[str(index)]:
                                 lemme = None
@@ -92,7 +91,7 @@ def textCorrectionXML():
                         for mot in ligne:
                             # On initie le lemme ou correction
                             lemme = None
-                            # TODO Condition utile seulement pour les tests
+                            # TODO Condition utile seulement pour les tests (voir si on peut la retirer plus tard)
                             if dictPage.get(str(index)):
                                 for forme in dictPage[str(index)]:
                                     # On n'intervient que si la valeur de lemme n'est pas "null"
@@ -102,16 +101,17 @@ def textCorrectionXML():
                                             # La correction retenue ou "lemme"
                                             # est le premier item de la liste-valeur de la clé "lem"
                                             lemme = dictPage[str(index)][forme]["lem"][0]
+                            # S'il y a bien une correction proposée
                             if lemme:
+                                # On ajoute le mot corrigé à la ligne
                                 ligneCorr.append(lemme)
+                                entreesMAJ[forme] = {
+                                    "lem": lemme,
+                                    "ctxt": []
+                                }
                             # Si le lemme est resté None, il n'y a pas de correction à appliquer
                             else:
                                 ligneCorr.append(mot)
-                            
-                            entreesMAJ[forme] = {
-                                "lem": lemme,
-                                "ctxt": []
-                            }
                             
                         # On recompose la ligne en tant que chaîne
                         ligneCorr = ' '.join(ligneCorr)
@@ -119,7 +119,6 @@ def textCorrectionXML():
                         ligneCorr = ligneCorr.replace(' ,', ',').replace(' .', '.')\
                             .replace('( ', '(').replace(' )', ')') \
                             .replace("' ", "'")
-                        print(f"Ligne après modif : {ligneCorr}")
                         # On renvoie le contexte du mot traité dans le dictionnaire global
                         # en reparsant la ligne corrigée
                         for entree in entreesMAJ:
