@@ -40,6 +40,7 @@
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
+\newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 
 % Images
@@ -187,22 +188,51 @@
 			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet.
 					
 			\subsection{Analyser les mots}
-				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts.py}\footcite{biaySpellcheckTextsPy2022} à nos prédictions HTR\footnote{Ce script est fondé sur l'utilisation du module publié par  \cite{barrusPyspellcheckerPurePython}. Celui-ci procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence en procédant à des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes. Il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux} (une faute), mais n'est pas capable d'associer la forme \textit{pubièes} aux mots de la famille de \textit{publier}}. Les corrections sont plus nombreuses sur des prédictions HTR que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. Il est en outre à mener avec prudence, car il faut veiller à ne produire que des corrections dépourvues d'ambiguïté et applicables en toutes circonstances. Si le modèle lit \textit{celle} pour \textit{cette}, seule une correction manuelle peut y remédier~; le risque de la correction automatique est de remplacer involontairement des prédictions justes~: il ne faut pas oublier que le remplacement des mots par le dictionnaire est indépendant du contexte du mot en question.
+				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts.py}\footcite{biaySpellcheckTextsPy2022} à nos prédictions HTR\footnote{Ce script est fondé sur l'utilisation du module publié par  \cite{barrusPyspellcheckerPurePython}. Celui-ci procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence en procédant à des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot\footnote{Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, mais n'est pas capable d'associer la forme \textit{pubièes} aux mots de la famille de \textit{publier}}}.
+				
+				Les corrections sont plus nombreuses sur des prédictions \gls{htr} que sur des prédictions OCR, surtout avec un modèle encore peu entraîné. La correction est donc un travail conséquent. Il est en outre à mener avec prudence. Le risque de la correction automatique est de remplacer involontairement des prédictions justes.
 				
 				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé ce script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite les allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
-				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{get-lemmes}, qui fouille les vérités de terrains déjà constituées et permet de valider rapidement les mots déjà rencontrés dans le traitement de la correspondance de \gls{cds}, évitant ainsi une recherche plus coûteuse dans un dictionnaire généraliste de la langue française.
+				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{collecte-mots}, qui fouille les vérités de terrain déjà constituées et permet de valider rapidement les mots déjà rencontrés dans le traitement de la correspondance de \gls{cds}, évitant ainsi une recherche plus coûteuse dans un dictionnaire généraliste de la langue française.
 				
-				Les corrections précédemment validées sont elles aussi mobilisées lors de l'analyse des prédictions, ce qui permet non seulement de réexploiter facilement des corrections déjà effectuées, mais aussi d'écarter des formes qui auraient précédemment été identifiées comme ambiguës (pouvant être résolues de plusieurs façons selon le contexte, et donc à ne pas corriger automatiquement).
+				Les corrections précédemment validées sont, elles aussi, mobilisées lors de l'analyse des prédictions, ce qui permet de réexploiter facilement des corrections.
 				
-			\subsection{Constituer un dictionnaire personnalisé}
-				Naturellement, toutes les propositions de corrections générées automatiquement doivent être contrôlées.
-				
-				Dans la mesure où les patronymes représentent une difficulté majeure dans la transcription du texte, il est nécessaire de se reporter aux notices du publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}. Afin de relier facilement les reproductions des numériques de la correspondance et les notices publiées sur le site, on a écrit un script intitulé \textsf{images.py}\footcite{biayImagesPy2022} qui gère les images par dossiers en générant un tableau de données pour toutes les images du dossier désigné~; on a également mis en place un \href{https://github.com/sbiay/CdS-edition/blob/main/donnees/Obtenir_metadonnees_images.ipynb}{notebook} pour une utilisation simplifiée de ce script.
+				Les corrections s'avérant nombreuses, le script \textsf{textCorrection.py}\footcite{biayTextCorrectionPy2022} écrit par F.~Chiffoleau a dû en outre être perfectionné afin de procéder à une tokénisation des mots, pour corriger avec exactitude les formes erronées présentes dans le texte.
+						
+			\subsection{Résoudre les difficultés de lecture~: le cas des noms propres}
+				Dans la mesure où les patronymes représentent une difficulté majeure dans la transcription du texte, il est nécessaire de se reporter aux notices du publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}. Afin de relier facilement les reproductions numériques de la correspondance et les notices publiées sur le site, on a écrit un script intitulé \textsf{images.py}\footcite{biayImagesPy2022} qui gère les images par dossiers en générant un tableau de données pour toutes les images du dossier désigné~; on a également mis en place un \href{https://github.com/sbiay/CdS-edition/blob/main/donnees/Obtenir_metadonnees_images.ipynb}{notebook} pour une utilisation simplifiée de ce script.
+			
+			\subsection{Gérer les résolutions ambiguës}
+				Appliquer des scripts de correction automatique, on l'a signalé plus haut comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose dans deux cas de figure~:
 
-			\subsection{Appliquer le dictionnaire personnalisé aux prédictions HTR}
-				Les corrections s'avérant particulièrement nombreuses, le script \textsf{textCorrection.py}\footcite{biayTextCorrectionPy2022} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots avant de mobiliser les entrées du dictionnaire pour corriger les formes erronées présentes dans le texte.
+				\begin{itemize}
+					\item Lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple \textit{cele}, qui peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela})~;
+					\item Lorsque les erreurs d'une prédiction donnent naissance à une orthographe attestée par un autre mot~: \textit{Dans \textbf{vu} siècle où tous les talens}.
+
+				\end{itemize}
+							
+				Dans un premier temps nous avons procédé selon une méthode d'automatisation qui neutralisait les corrections ambiguë (\textit{cele} était intégré à la liste globale des corrections avec une absence de lemme afin d'être exclu de la correction automatique) et l'on excluait du processus de correction toutes les orthographes attestées, comme \textit{vu}.
 				
+				Cette méthode présentait plusieurs inconvénients~:
+
+				\begin{itemize}
+					\item Une fois que l'on avait procédé à des corrections pour les mots d'une page, le script qui les intégrait au fichier rassemblant toutes les corrections contrôlait qu'une forme ne puisse pas être associée à plusieurs corrections. Lorsqu'une ambiguïté était repérée, il fallait intervenir sur les deux fichiers pour neutraliser la correction. Devenu fréquent, ce processus diminuait le bénéfice de temps attendu de la correction automatique~;
+
+					\item D'autre part, il s'est avéré que les corrections ambiguës sont nombreuses, car il suffit d'une faute sur un petit mot pour le rendre ambigu avec un autre mot~: \textit{uue} peut être corrigé en \textit{rue} ou en \textit{une}~; \textit{veus} peut être corrigé en \textit{veux} ou en \textit{vous}~; \textit{ceste} peut être corrigé en \textit{cesse} ou en \textit{cette}~;
+
+					\item Enfin, les prédictions proposant un mot attesté à la place d'un autre ne sont pas rares non plus, car elles peuvent concerner des mots très fréquents~: \textit{le} confondu avec \textit{la}, \textit{nous} confondu avec \textit{vous}.
+					
+				\end{itemize}
+				
+				Plutôt que de neutraliser la correction de ces mots, il s'est donc avéré nécessaire de prendre en charge ces ambiguïtés.
+				
+				Il fallait pour cela résoudre une nouvelle difficulté~: opérer des corrections automatiques sur de petits mots très fréquents (\textit{un, une, le, la}) a rendu nécessaire l'application des corrections au niveau de chaque ligne d'écriture, car les appliquer à une page entière aurait fatalement entraîné des corrections erronnées. La probabilité que les mots \textit{le} et \textit{la} soient tous les deux présents dans une ligne d'écriture avec l'un juste et l'autre faux est en effet très faible~: on peut sans grand dommage changer tous les \textit{le} d'une ligne en \textit{la}. En revanche, modifier tous les \textit{le} en \textit{la} à l'échelle d'une page produirait à l'évidence un résultat catastrophique.
+				
+				Conserver en mémoire les différentes résolutions possibles d'une forme pour les proposer à la correction d'une prochaine page risque en outre d'ajouter au travail du correcteur celui de sélectionner la bonne lecture d'un mot… déjà juste~!
+				
+				On a par conséquent écrit une nouvelle fonction (\textsf{ordreOccurrences}) dont le rôle est de classer les mots attestés dans les vérités de terrain par ordre décroissant de nombre d'occurrences. Ainsi, le mot le plus fréquent est toujours proposé comme premier choix au correcteur afin de faciliter le travail de sélection.
+			
 	\appendix
 	
 	\renewcommand{\appendixpagename}{Annexes}
