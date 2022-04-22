@@ -78,7 +78,7 @@ def textCorrectionXML():
                                 if lemme:
                                     ligne = ligne.replace(forme, lemme)
                                     entreesMAJ[forme] = {
-                                        "lem": lemme,
+                                        "lem": [lemme],
                                         "ctxt": []
                                     }
                         
@@ -106,8 +106,8 @@ def textCorrectionXML():
                             if lemme:
                                 # On ajoute le mot corrigé à la ligne
                                 ligneCorr.append(lemme)
-                                entreesMAJ[forme] = {
-                                    "lem": lemme,
+                                entreesMAJ[mot] = {
+                                    "lem": [lemme],
                                     "ctxt": []
                                 }
                             # Si le lemme est resté None, il n'y a pas de correction à appliquer
@@ -127,17 +127,17 @@ def textCorrectionXML():
                             if entreesMAJ[entree]["lem"]:
                                 # On inscrit la ligne corrigée comme contexte de l'entrée du dictionnaire
                                 entreesMAJ[entree]["ctxt"] = ligneCorr.replace(
-                                    entreesMAJ[entree]["lem"], entreesMAJ[entree]["lem"].upper()
+                                    entreesMAJ[entree]["lem"][0], entreesMAJ[entree]["lem"][0].upper()
                                 )
                                 # On met à jour le dictCDS avec les contextes actualisés
                                 # Si la forme n'existe pas déjà
                                 if not dictCDS.get(entree):
-                                    dictCDS[entree] = [entreesMAJ[entree]]
+                                    dictCDS[entree] = entreesMAJ[entree]
                                 # Si la forme existe déjà
                                 else:
                                     # Si le lemme que l'on propose n'est pas encore référencé
-                                    if not entreesMAJ[entree]["lem"] in dictCDS[entree]["lem"]:
-                                        dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"])
+                                    if not entreesMAJ[entree]["lem"][0] in dictCDS[str(entree)]["lem"]:
+                                        dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"][0])
                                         dictCDS[entree]["ctxt"] = "AMBIGU"
 
                         # On réencode les apostrophes et le balisage Unicode
