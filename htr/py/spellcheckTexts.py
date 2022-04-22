@@ -128,7 +128,7 @@ def spellcheck_texts_page_XML():
         correctionsCDS = json.load(jsonf)
     
     # On charge les lemmes des vérités de terrain
-    tous_lemmes = collecte_mots()
+    tousMots = collecte_mots()
     
     # On boucle sur chaque fichier du dossier défini par la constante XMLaCORRIGER
     for root, dirs, files in os.walk(XMLaCORRIGER):
@@ -157,50 +157,51 @@ def spellcheck_texts_page_XML():
                     
                     # On boucle sur chaque mot
                     for forme in words:
-                        # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
-                        # résolutions différentes seraient souhaitables)
-                        if forme and not dictPage.get(forme):
-                            # On récupère le contexte de la forme en l'y inscrivant en capitales
-                            contexte = content.replace(forme, forme.upper())
-                            # On cherche chaque mot dans la liste personnalisée des corrections
-                            if correctionsCDS.get(forme):
-                                # Si le mot est ambigu (plusieurs propositions)
-                                if len(correctionsCDS[forme]['lem']) > 1:
-                                    # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
-                                    # grâce à la fonction ordreOccurrences()
-                                    propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
-                                    # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                    dictLigne[forme] = {
-                                        'lem': propositions,
-                                        'ctxt': contexte.replace("'", ' '),
-                                        'deja utilisé': correctionsCDS[forme]['ctxt']
-                                    }
-                                # Si le mot n'est pas ambigu
-                                else:
-                                    dictLigne[forme] = {
-                                        'lem': correctionsCDS[forme]['lem'],
-                                        'ctxt': contexte.replace("'", ' '),
-                                        'deja utilisé': correctionsCDS[forme]['ctxt']
-                                    }
-                            
-                            # Si la forme n'est pas dans la liste personnalisée des corrections
-                            elif forme:
-                                # Si elle ne figure pas parmi les mots connus des vérités de terrain
-                                if forme in tous_lemmes.keys():
-                                    dictLigne[forme] = {
-                                        'lem': [None],
-                                        'ctxt': contexte.replace("'", ' '),
-                                    }
-                                # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
-                                else:
-                                    # Alors on l'ajoute à la liste des mots restants à traiter
-                                    motsrestants.append(forme)
-
+                        # TODO on teste en éliminant les mots des VT
+                        if forme not in tousMots.keys():
+                            # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
+                            # résolutions différentes seraient souhaitables)
+                            if forme and not dictPage.get(forme):
+                                # On récupère le contexte de la forme en l'y inscrivant en capitales
+                                contexte = content.replace(forme, forme.upper())
+                                # On cherche chaque mot dans la liste personnalisée des corrections
+                                if correctionsCDS.get(forme):
+                                    # Si le mot est ambigu (plusieurs propositions)
+                                    if len(correctionsCDS[forme]['lem']) > 1:
+                                        # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
+                                        # grâce à la fonction ordreOccurrences()
+                                        propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
+                                        # On écrit l'entrée du dictionnaire pour préciser le contexte
+                                        dictLigne[forme] = {
+                                            'lem': propositions,
+                                            'ctxt': contexte.replace("'", ' '),
+                                        }
+                                    # Si le mot n'est pas ambigu
+                                    else:
+                                        dictLigne[forme] = {
+                                            'lem': correctionsCDS[forme]['lem'],
+                                            'ctxt': contexte.replace("'", ' '),
+                                        }
+                                
+                                # Si la forme n'est pas dans la liste personnalisée des corrections
+                                elif forme:
+                                    # Si elle ne figure pas parmi les mots connus des vérités de terrain
+                                    if forme in tousMots.keys():
+                                        dictLigne[forme] = {
+                                            'lem': [None],
+                                            'ctxt': contexte.replace("'", ' '),
+                                        }
+                                    # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
+                                    else:
+                                        # Alors on l'ajoute à la liste des mots restants à traiter
+                                        motsrestants.append(forme)
+    
                     # On analyse les mots restants
                     if motsrestants:
                         misspelled = spell.unknown(motsrestants)
                         # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
                         for forme in motsrestants:
+                            contexte = content.replace(forme, forme.upper())
                             if forme not in misspelled:
                                 dictLigne[forme] = {
                                     'lem': [None],
@@ -208,6 +209,7 @@ def spellcheck_texts_page_XML():
                                 }
                         # On boucle sur les propositions de corrections
                         for forme in misspelled:
+                            contexte = content.replace(forme, forme.upper())
                             dictLigne[forme] = {
                                 'lem': [spell.correction(forme)],
                                 'ctxt': contexte.replace("'", ' ')
