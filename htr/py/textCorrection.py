@@ -132,7 +132,7 @@ def textCorrectionXML():
                                 # On met à jour le dictCDS avec les contextes actualisés
                                 # Si la forme n'existe pas déjà
                                 if not dictCDS.get(entree):
-                                    dictCDS[entree] = entreesMAJ[entree]
+                                    dictCDS[entree] = [entreesMAJ[entree]]
                                 # Si la forme existe déjà
                                 else:
                                     # Si le lemme que l'on propose n'est pas encore référencé
