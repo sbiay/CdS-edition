@@ -37,6 +37,9 @@
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
 \newacronym{cds}{CdS}{Constance de Salm}
+\newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
+\newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
+\newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 
 % Images
@@ -50,19 +53,34 @@
 	
 	\tableofcontents
 	
+	\chapter*{Présentation}
+	\addcontentsline{toc}{chapter}{Présentation}% Ajoute à la table des matières sans numérotation
+	
+		\section*{Contexte}
+		\addcontentsline{toc}{section}{Contexte}
+		Constance de Salm (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
+
+		Le projet de publier numériquement sa correspondance est né de l'intérêt pour les relations entre noblesses française et allemande au sein du \gls{dhi}. Il en a résulté la production d'un site \textit{Wordpress} adossé au système de base de données \href{https://fud.uni-trier.de/}{\gls{fud}}. Les notices des plus de 11000 lettres déjà publiées y associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre.
+
+		\section*{Objectifs}
+		\addcontentsline{toc}{section}{Objectifs}
+		L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format XML-TEI. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
+		
+		Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format TEI. Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
+			
 	\chapter{HTR}
 		
 		\section{Problématique}
-		Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds}. Cette variété d'écritures peut sérieusement entraver les performances d'un modèle de reconnaissance.
+		Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds} (mais aucune enquête paléographique complète n'a été menée). Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions.
 		
 		Deux pistes méthodologiques se dessinent~:
 		\begin{enumerate}
-			\item Rassembler dans un premier temps des lettres qui sont de la même main, pour voir quels sont les résultats du modèle qu'H. Souvay a commencé à entraîner ;
+			\item Rassembler dans un premier temps des lettres qui sont de la même main, pour voir quels sont les résultats du modèle entraîné par H.~Souvay lors d'un précédent stage\footcite{souvayCorrespondanceConstanceSalm2021}~;
 			\item Reprendre un modèle déjà entraîné à travailler sur plusieurs mains~; c'est l'option qui été privilégiée par le projet Lectaurep\footcite{chagueCreationModelesTranscriptiona}).
 		\end{enumerate}
 				
 		\section{Choisir un corpus d'entraînement}
-		Les recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page. La distribution des mains y est variable selon les tomes :
+		Les recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. La distribution des mains y est variable selon les tomes :
 		\begin{enumerate}
 			\item Le premier volume\footcite{salmCorrespondanceGeneraleSecondea} présente une grande variété de mains s'enchaînant fréquemment les unes aux autres~;
 			\item Le deuxième volume\footcite{salmCorrespondanceGeneraleSeconde}  présente en revanche une meilleure cohérence paléographique : la même main peut se suivre sur un bon nombre de pages consécutives, facilitant l'entraînement d'un modèle sur une écriture particulière. Nous avons repris ce volume, en partie utilisé par H. Souvay pour ses tests, afin de constituer un premier sous-corpus paléographiquement cohérent~;
