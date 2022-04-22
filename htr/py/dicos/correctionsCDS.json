@@ -9810,11 +9810,10 @@
    },
    "sus": {
       "lem": [
-         "suis"
+         "suis",
+         "sur"
       ],
-      "ctxt": [
-         "Je SUIS assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
-      ]
+      "ctxt": "AMBIGU"
    },
    "modigne": {
       "lem": [
@@ -14729,11 +14728,10 @@
    },
    "faule": {
       "lem": [
-         "foule"
+         "foule",
+         "facile"
       ],
-      "ctxt": [
-         "français, ; j'espère me sauver à la faveur de la FOULE."
-      ]
+      "ctxt": "AMBIGU"
    },
    "Mhonneur": {
       "lem": [
@@ -15262,845 +15260,2124 @@
       ]
    },
    "cessamnaent": {
-      "lem": ["cessamnaent"],
+      "lem": [
+         "cessamnaent"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "araei": {
-      "lem": ["arai"],
+      "lem": [
+         "arai"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "amons": {
-      "lem": ["avons"],
+      "lem": [
+         "avons"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "fsance": {
-      "lem": ["france"],
+      "lem": [
+         "france"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "(or": {
-      "lem": ["or"],
+      "lem": [
+         "or"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "étoure": {
-      "lem": ["étoupe"],
+      "lem": [
+         "étoupe"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "àe": {
-      "lem": ["de"],
+      "lem": [
+         "de"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "caupiez": {
-      "lem": ["coupiez"],
+      "lem": [
+         "coupiez"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "Letr": {
-      "lem": ["petr"],
+      "lem": [
+         "petr"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "d8l)": {
-      "lem": ["dale"],
+      "lem": [
+         "dale"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "noisé": {
-      "lem": ["boisé"],
+      "lem": [
+         "boisé"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "Con": {
-      "lem": ["on"],
+      "lem": [
+         "on"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "182)": {
-      "lem": ["182e"],
+      "lem": [
+         "182e"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "amce": {
-      "lem": ["amie"],
+      "lem": [
+         "amie"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "pourre": {
-      "lem": ["pourra"],
+      "lem": [
+         "pourra"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "tionnaires": {
-      "lem": ["tionnaire"],
+      "lem": [
+         "tionnaire"
+      ],
       "ctxt": [
          "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
       ]
    },
    "d'ume": {
-      "lem": ["d'une"],
+      "lem": [
+         "d'une"
+      ],
       "ctxt": [
          "production D'UNE dame dont tous les écrits, portent l'empreinte d&#39;un"
       ]
    },
    "l'empreinte": {
-      "lem": ["l'empreinte"],
+      "lem": [
+         "l'empreinte"
+      ],
       "ctxt": [
          "production d'une dame dont tous les écrits, portent L'EMPREINTE d&#39;un"
       ]
    },
    "lalent": {
-      "lem": ["talent"],
+      "lem": [
+         "talent"
+      ],
       "ctxt": [
          "vrai TALENT et n'ont rien à craindre des circonstances."
       ]
    },
    "n'ont": {
-      "lem": ["n'ont"],
+      "lem": [
+         "n'ont"
+      ],
       "ctxt": [
          "vrai talent et N'ONT rien à craindre des circonstances."
       ]
    },
    "d'agrer": {
-      "lem": ["d'agréer"],
+      "lem": [
+         "d'agréer"
+      ],
       "ctxt": [
          "Je vous prie D'AGRÉER, Madame,"
       ]
    },
    "Commage": {
-      "lem": ["l'hommage"],
+      "lem": [
+         "l'hommage"
+      ],
       "ctxt": [
          "L'HOMMAGE de mon r."
       ]
    },
    "maoc": {
-      "lem": ["mon"],
+      "lem": [
+         "mon"
+      ],
       "ctxt": [
          "l'hommage de MON r."
       ]
    },
    "repect": {
-      "lem": ["r"],
+      "lem": [
+         "r"
+      ],
       "ctxt": [
          "l'hommage de mon R."
       ]
    },
    "Pabien": {
-      "lem": ["Fabien"],
+      "lem": [
+         "Fabien"
+      ],
       "ctxt": [
          "(Signé) FABIEN Pillet."
       ]
    },
    "Iillet": {
-      "lem": ["Pillet"],
+      "lem": [
+         "Pillet"
+      ],
       "ctxt": [
          "(Signé) Fabien PILLET."
       ]
    },
    "le": {
-      "lem": ["la"],
-      "ctxt": [
-         "LA femme sensible alLAit au coeur du solitaire de LA rue Chante"
-      ]
+      "lem": [
+         "la",
+         "le"
+      ],
+      "ctxt": "AMBIGU"
    },
    "foume": {
-      "lem": ["femme"],
+      "lem": [
+         "femme"
+      ],
       "ctxt": [
          "la FEMME sensible allait au coeur du solitaire de la rue Chante"
       ]
    },
    "solltaire": {
-      "lem": ["solitaire"],
+      "lem": [
+         "solitaire"
+      ],
       "ctxt": [
          "la femme sensible allait au coeur du SOLITAIRE de la rue Chante"
       ]
    },
    "Mand": {
-      "lem": ["Chante"],
+      "lem": [
+         "Chante"
+      ],
       "ctxt": [
          "la femme sensible allait au coeur du solitaire de la rue CHANTE"
       ]
    },
    "sente": {
-      "lem": ["senti"],
+      "lem": [
+         "senti"
+      ],
       "ctxt": [
          "reine. Il a compris. il a SENTI parfois ses yeux mouillés de marmes"
       ]
    },
    "parfais": {
-      "lem": ["parfois"],
+      "lem": [
+         "parfois"
+      ],
       "ctxt": [
          "reine. Il a compris. il a senti PARFOIS ses yeux mouillés de marmes"
       ]
    },
    "veux": {
-      "lem": ["yeux"],
+      "lem": [
+         "yeux"
+      ],
       "ctxt": [
          "reine. Il a compris. il a senti parfois ses YEUX mouillés de marmes"
       ]
    },
    "ovouillez": {
-      "lem": ["mouillés"],
+      "lem": [
+         "mouillés"
+      ],
       "ctxt": [
          "reine. Il a compris. il a senti parfois ses yeux MOUILLÉS de marmes"
       ]
    },
    "Carmes": {
-      "lem": ["larmes"],
+      "lem": [
+         "larmes"
+      ],
       "ctxt": [
          "reine. Il a compris. il a senti parfois ses yeux mouillés de MARMES"
       ]
    },
    "Masfiupal": {
-      "lem": ["MM. Dupaty"],
+      "lem": [
+         "MM. Dupaty"
+      ],
       "ctxt": [
          "Il fera de suite las envois à MM. DUPATY, Merville de la Mésangère."
       ]
    },
    "Morville": {
-      "lem": ["Merville"],
+      "lem": [
+         "Merville"
+      ],
       "ctxt": [
          "Il fera de suite las envois à MM. Dupaty, MERVILLE de la Mésangère."
       ]
    },
    "Médangire": {
-      "lem": ["Mésangère"],
+      "lem": [
+         "Mésangère"
+      ],
       "ctxt": [
          "Il fera de suite las envois à MM. Dupaty, Merville de la MÉSANGÈRE."
       ]
    },
    "pent": {
-      "lem": ["peut"],
+      "lem": [
+         "peut"
+      ],
       "ctxt": [
          "La Princesse PEUT adresser la Sapho à Mr la peintre, rue des"
       ]
    },
    "aditesser": {
-      "lem": ["adresser"],
+      "lem": [
+         "adresser"
+      ],
       "ctxt": [
          "La Princesse peut ADRESSER la Sapho à Mr la peintre, rue des"
       ]
    },
    "sapby": {
-      "lem": ["Sapho"],
+      "lem": [
+         "Sapho"
+      ],
       "ctxt": [
          "La Princesse peut adresser la SAPHO à Mr la peintre, rue des"
       ]
    },
    "feuitre": {
-      "lem": ["peintre"],
+      "lem": [
+         "peintre"
+      ],
       "ctxt": [
          "La Princesse peut adresser la Sapho à Mr la PEINTRE, rue des"
       ]
    },
    "fossis": {
-      "lem": ["fossés"],
+      "lem": [
+         "fossés"
+      ],
       "ctxt": [
          "FOSSÉS St Germain. il insérera ce bel ouvrage dans se bibliothèque"
       ]
    },
    "germain": {
-      "lem": ["Germain"],
+      "lem": [
+         "Germain"
+      ],
       "ctxt": [
          "fossés St GERMAIN. il insérera ce bel ouvrage dans se bibliothèque"
       ]
    },
    "bisaitique": {
-      "lem": ["bibliothèque"],
+      "lem": [
+         "bibliothèque"
+      ],
       "ctxt": [
          "fossés St Germain. il insérera ce bel ouvrage dans se BIBLIOTHÈQUE"
       ]
    },
    "duempalique": {
-      "lem": ["dramatique"],
+      "lem": [
+         "dramatique"
+      ],
       "ctxt": [
          "DRAMATIQUE, et il m&#39;a paru qu&#39;il serait flatté qu &#39;elle s'abonnât"
       ]
    },
    "saru": {
-      "lem": ["paru"],
+      "lem": [
+         "paru"
+      ],
       "ctxt": [
          "dramatique, et il m&#39;a PARU qu&#39;il serait flatté qu &#39;elle s'abonnât"
       ]
    },
    "seranit": {
-      "lem": ["serait"],
+      "lem": [
+         "serait"
+      ],
       "ctxt": [
          "dramatique, et il m&#39;a paru qu&#39;il SERAIT flatté qu &#39;elle s'abonnât"
       ]
    },
    "flaesse": {
-      "lem": ["flatté"],
+      "lem": [
+         "flatté"
+      ],
       "ctxt": [
          "dramatique, et il m&#39;a paru qu&#39;il serait FLATTÉ qu &#39;elle s'abonnât"
       ]
    },
    "ay": {
-      "lem": ["qu"],
+      "lem": [
+         "qu"
+      ],
       "ctxt": [
          "dramatiQUe, et il m&#39;a paru QU&#39;il serait flatté QU &#39;elle s'abonnât"
       ]
    },
    "s'abonneri": {
-      "lem": ["s'abonnât"],
+      "lem": [
+         "s'abonnât"
+      ],
       "ctxt": [
          "dramatique, et il m&#39;a paru qu&#39;il serait flatté qu &#39;elle S'ABONNÂT"
       ]
    },
    "grament": {
-      "lem": ["vraiment"],
+      "lem": [
+         "vraiment"
+      ],
       "ctxt": [
          "à ce répertoire dont l&#39;entre prise est VRAIMENT française. Il désire"
       ]
    },
    "Jancaise": {
-      "lem": ["française"],
+      "lem": [
+         "française"
+      ],
       "ctxt": [
          "à ce répertoire dont l&#39;entre prise est vraiment FRANÇAISE. Il désire"
       ]
    },
    "oblenir": {
-      "lem": ["obtenir"],
+      "lem": [
+         "obtenir"
+      ],
       "ctxt": [
          "OBTENIR, en présent, les Il heures."
       ]
    },
    "L'actonnaire": {
-      "lem": ["L'actionnaire"],
+      "lem": [
+         "L'actionnaire"
+      ],
       "ctxt": [
          "L'ACTIONNAIRE des Ponts à vu la trésorier qui se met en campagne"
       ]
    },
    "donts": {
-      "lem": ["Ponts"],
+      "lem": [
+         "Ponts"
+      ],
       "ctxt": [
          "L'actionnaire des PONTS à vu la trésorier qui se met en campagne"
       ]
    },
    "un": {
-      "lem": ["vu"],
-      "ctxt": [
-         "L'actionnaire des Ponts à VU la trésorier qui se met en campagne"
-      ]
+      "lem": [
+         "vu",
+         "un"
+      ],
+      "ctxt": "AMBIGU"
    },
    "mel": {
-      "lem": ["met"],
+      "lem": [
+         "met"
+      ],
       "ctxt": [
          "L'actionnaire des Ponts à vu la trésorier qui se MET en campagne"
       ]
    },
    "campage": {
-      "lem": ["campagne"],
+      "lem": [
+         "campagne"
+      ],
       "ctxt": [
          "L'actionnaire des Ponts à vu la trésorier qui se met en CAMPAGNE"
       ]
    },
    "prégiendra": {
-      "lem": ["préviendra"],
+      "lem": [
+         "préviendra"
+      ],
       "ctxt": [
          "et qui PRÉVIENDRA de ce qu&#39;il pourrait avoir. d&#39;un autre coté veut"
       ]
    },
    "aubre": {
-      "lem": ["autre"],
+      "lem": [
+         "autre"
+      ],
       "ctxt": [
          "et qui préviendra de ce qu&#39;il pourrait avoir. d&#39;un AUTRE coté veut"
       ]
    },
    "on": {
-      "lem": ["ou"],
-      "ctxt": [
-         "OU prêter à une grande maison de librairie à la 20 sur effets endossés"
-      ]
+      "lem": [
+         "ou",
+         "on"
+      ],
+      "ctxt": "AMBIGU"
    },
    "prèter": {
-      "lem": ["prêter"],
+      "lem": [
+         "prêter"
+      ],
       "ctxt": [
          "ou PRÊTER à une grande maison de librairie à la 20 sur effets endossés"
       ]
    },
    "esfels": {
-      "lem": ["effets"],
+      "lem": [
+         "effets"
+      ],
       "ctxt": [
          "ou prêter à une grande maison de librairie à la 20 sur EFFETS endossés"
       ]
    },
    "entisses": {
-      "lem": ["endossés"],
+      "lem": [
+         "endossés"
+      ],
       "ctxt": [
          "ou prêter à une grande maison de librairie à la 20 sur effets ENDOSSÉS"
       ]
    },
    "connnes": {
-      "lem": ["connues"],
+      "lem": [
+         "connues"
+      ],
       "ctxt": [
          "par des personnes CONNUES peut être à si Ia sur hypothéque "
       ]
    },
    "hppolhéque": {
-      "lem": ["hypothéque"],
+      "lem": [
+         "hypothéque"
+      ],
       "ctxt": [
          "par des personnes connues peut être à si Ia sur HYPOTHÉQUE "
       ]
    },
    "l'heureux": {
-      "lem": ["l'heureux"],
+      "lem": [
+         "l'heureux"
+      ],
       "ctxt": [
          "Mille hommages bien sincères pour LHEUREUX couple de la"
       ]
    },
    "cousle": {
-      "lem": ["couple"],
+      "lem": [
+         "couple"
+      ],
       "ctxt": [
          "Mille hommages bien sincères pour lheureux COUPLE de la"
       ]
    },
    "Que": {
-      "lem": ["rue"],
+      "lem": [
+         "rue"
+      ],
       "ctxt": [
          "RUE du Bac ; mais plus tendres pour la Princesse"
       ]
    },
    "Bou": {
-      "lem": ["Bac"],
+      "lem": [
+         "Bac"
+      ],
       "ctxt": [
          "rue du BAC ; mais plus tendres pour la Princesse"
       ]
    },
    "(Sigé)": {
-      "lem": ["(Signé)"],
+      "lem": [
+         "(Signé)"
+      ],
       "ctxt": [
          "(SIGNÉ) Bm de la Doucette."
       ]
    },
    "doncelle": {
-      "lem": ["Doucette"],
+      "lem": [
+         "Doucette"
+      ],
       "ctxt": [
          "(Signé) Bm de la DOUCETTE."
       ]
    },
    "Prncssede": {
-      "lem": ["Princesse de"],
+      "lem": [
+         "Princesse de"
+      ],
       "ctxt": [
          "A Mme la PRINCESSE DE Salm."
       ]
    },
    "grit": {
-      "lem": ["avril"],
+      "lem": [
+         "avril"
+      ],
       "ctxt": [
          "Paris, ce 20 AVRIL, 18 20."
       ]
    },
    "dique": {
-      "lem": ["digne"],
+      "lem": [
+         "digne"
+      ],
       "ctxt": [
          "Princesse DIGNE de tous nos hommages,"
       ]
    },
    "hammaves": {
-      "lem": ["hommages"],
+      "lem": [
+         "hommages"
+      ],
       "ctxt": [
          "Princesse digne de tous nos HOMMAGES,"
       ]
    },
    "torujours": {
-      "lem": ["toujours"],
+      "lem": [
+         "toujours"
+      ],
       "ctxt": [
          "J&#39;ai lu avec la même plaisir que j&#39;ai TOUJOURS éprouvé, en"
       ]
    },
    "éhrouvé": {
-      "lem": ["éprouvé"],
+      "lem": [
+         "éprouvé"
+      ],
       "ctxt": [
          "J&#39;ai lu avec la même plaisir que j&#39;ai toujours ÉPROUVÉ, en"
       ]
    },
    "Sances": {
-      "lem": ["Stances"],
+      "lem": [
+         "Stances"
+      ],
       "ctxt": [
          "recevant vos divers ouvrages, les STANCES ingénieuses. dans lesquelles"
       ]
    },
    "ingendeuses": {
-      "lem": ["ingénieuses"],
+      "lem": [
+         "ingénieuses"
+      ],
       "ctxt": [
          "recevant vos divers ouvrages, les Stances INGÉNIEUSES. dans lesquelles"
       ]
    },
    "Vans": {
-      "lem": ["dans"],
+      "lem": [
+         "dans"
+      ],
       "ctxt": [
          "recevant vos divers ouvrages, les Stances ingénieuses. DANS lesquelles"
       ]
    },
    "déconomie": {
-      "lem": ["économie"],
+      "lem": [
+         "économie"
+      ],
       "ctxt": [
          "avec vue prudente ÉCONOMIE, vous prodiguez des éloges à vu genre"
       ]
    },
    "prodiquez": {
-      "lem": ["prodiguez"],
+      "lem": [
+         "prodiguez"
+      ],
       "ctxt": [
          "avec vue prudente économie, vous PRODIGUEZ des éloges à vu genre"
       ]
    },
    "nouveain": {
-      "lem": ["nouveau"],
+      "lem": [
+         "nouveau"
+      ],
       "ctxt": [
          "NOUVEAU, où mille beautés qui se perdent dans les nues, y restent"
       ]
    },
    "muies": {
-      "lem": ["nues"],
+      "lem": [
+         "nues"
+      ],
       "ctxt": [
          "nouveau, où mille beautés qui se perdent dans les NUES, y restent"
       ]
    },
    "innisibles": {
-      "lem": ["invisibles"],
+      "lem": [
+         "invisibles"
+      ],
       "ctxt": [
          "même INVISIBLES, et dont il paraît que l'éclat n&#39;est qu&#39;une"
       ]
    },
    "l'é'clat": {
-      "lem": ["l'éclat"],
+      "lem": [
+         "l'éclat"
+      ],
       "ctxt": [
          "même invisibles, et dont il paraît que L'ÉCLAT n&#39;est qu&#39;une"
       ]
    },
    "nourit": {
-      "lem": ["nourrit"],
+      "lem": [
+         "nourrit"
+      ],
       "ctxt": [
          "et NOURRIT la sentiment  dans un siécle où tous las talens"
       ]
    },
    "sentimient": {
-      "lem": ["sentiment"],
+      "lem": [
+         "sentiment"
+      ],
       "ctxt": [
          "et nourrit la SENTIMENT  dans un siécle où tous las talens"
       ]
    },
    "vu": {
-      "lem": ["un"],
+      "lem": [
+         "un"
+      ],
       "ctxt": [
          "et nourrit la sentiment  dans UN siécle où tous las talens"
       ]
    },
    "s'écle": {
-      "lem": ["siécle"],
+      "lem": [
+         "siécle"
+      ],
       "ctxt": [
          "et nourrit la sentiment  dans un SIÉCLE où tous las talens"
       ]
    },
    "taleus": {
-      "lem": ["talens"],
+      "lem": [
+         "talens"
+      ],
       "ctxt": [
          "et nourrit la sentiment  dans un siécle où tous las TALENS"
       ]
    },
    "prélendent": {
-      "lem": ["prétendent"],
+      "lem": [
+         "prétendent"
+      ],
       "ctxt": [
          "PRÉTENDENT à la supériorité, vous consentiriez même à faire alliance."
       ]
    },
    "supérigrité": {
-      "lem": ["supériorité"],
+      "lem": [
+         "supériorité"
+      ],
       "ctxt": [
          "prétendent à la SUPÉRIORITÉ, vous consentiriez même à faire alliance."
       ]
    },
    "nous": {
-      "lem": ["vous"],
+      "lem": [
+         "vous"
+      ],
       "ctxt": [
          "prétendent à la supériorité, VOUS consentiriez même à faire alliance."
       ]
    },
    "abfane": {
-      "lem": ["alliance"],
+      "lem": [
+         "alliance"
+      ],
       "ctxt": [
          "prétendent à la supériorité, vous consentiriez même à faire ALLIANCE."
       ]
    },
    "Loignée": {
-      "lem": ["éloignée"],
+      "lem": [
+         "éloignée"
+      ],
       "ctxt": [
          "avec une nouvelle école qui paraît si fort ÉLOIGNÉE de la nature"
       ]
    },
    "Migioer": {
-      "lem": ["Origine"],
+      "lem": [
+         "Origine"
+      ],
       "ctxt": [
          "par son ORIGINE comme par ses resultats l C&#39;est pousser bien"
       ]
    },
    "qes": {
-      "lem": ["ses"],
+      "lem": [
+         "ses"
+      ],
       "ctxt": [
          "par son Origine comme par SES resultats l C&#39;est pousser bien"
       ]
    },
    "Coin": {
-      "lem": ["loin"],
+      "lem": [
+         "loin"
+      ],
       "ctxt": [
          "LOIN la générosité. ."
       ]
    },
    "Quand": {
-      "lem": ["quand"],
+      "lem": [
+         "quand"
+      ],
       "ctxt": [
          "QUAND la modeste et singuliérement actif Lycée des arts si"
       ]
    },
    "sinquliérement": {
-      "lem": ["singuliérement"],
+      "lem": [
+         "singuliérement"
+      ],
       "ctxt": [
          "quand la modeste et SINGULIÉREMENT actif Lycée des arts si"
       ]
    },
    "aeti": {
-      "lem": ["actif"],
+      "lem": [
+         "actif"
+      ],
       "ctxt": [
          "quand la modeste et singuliérement ACTIF Lycée des arts si"
       ]
    },
    "Mcée": {
-      "lem": ["Lycée"],
+      "lem": [
+         "Lycée"
+      ],
       "ctxt": [
          "quand la modeste et singuliérement actif LYCÉE des arts si"
       ]
    },
    "mibieu": {
-      "lem": ["milieu"],
+      "lem": [
+         "milieu"
+      ],
       "ctxt": [
          "courageux au MILIEU des lâches doctrines auxquelles il à cons-.-"
       ]
    },
    "lachses": {
-      "lem": ["lâches"],
+      "lem": [
+         "lâches"
+      ],
       "ctxt": [
          "courageux au milieu des LÂCHES doctrines auxquelles il à cons-.-"
       ]
    },
    "Cous": {
-      "lem": ["cons-"],
+      "lem": [
+         "cons-"
+      ],
       "ctxt": [
          "courageux au milieu des lâches doctrines auxquelles il à CONS-.-"
       ]
    },
    "beinment": {
-      "lem": ["tamment"],
+      "lem": [
+         "tamment"
+      ],
       "ctxt": [
          "TAMMENT résisté (sans écarter de la vieille école, s'enorgueilis."
       ]
    },
    "réesisté": {
-      "lem": ["résisté"],
+      "lem": [
+         "résisté"
+      ],
       "ctxt": [
          "tamment RÉSISTÉ (sans écarter de la vieille école, s'enorgueilis."
       ]
    },
    "lans": {
-      "lem": ["(sans"],
+      "lem": [
+         "(sans"
+      ],
       "ctxt": [
          "tamment résisté (SANS écarter de la vieille école, s'enorgueilis."
       ]
    },
    "s'écarter": {
-      "lem": ["écarter"],
+      "lem": [
+         "écarter"
+      ],
       "ctxt": [
          "tamment résisté (sans ÉCARTER de la vieille école, s'enorgueilis."
       ]
    },
    "mieille": {
-      "lem": ["vieille"],
+      "lem": [
+         "vieille"
+      ],
       "ctxt": [
          "tamment résisté (sans écarter de la VIEILLE école, s'enorgueilis."
       ]
    },
    "écote": {
-      "lem": ["école"],
+      "lem": [
+         "école"
+      ],
       "ctxt": [
          "tamment résisté (sans écarter de la vieille ÉCOLE, s'enorgueilis."
       ]
    },
    "j'enorqueilis": {
-      "lem": ["s'enorgueilis"],
+      "lem": [
+         "s'enorgueilis"
+      ],
       "ctxt": [
          "tamment résisté (sans écarter de la vieille école, S'ENORGUEILIS."
       ]
    },
    "vois": {
-      "lem": ["vos"],
+      "lem": [
+         "vos"
+      ],
       "ctxt": [
          "sait de VOS aimables productions, notre âme s'y ouvrait aux"
       ]
    },
    "s'a": {
-      "lem": ["s'y"],
+      "lem": [
+         "s'y"
+      ],
       "ctxt": [
          "sait de vos aimables productions, notre âme S'Y ouvrait aux"
       ]
    },
    "sous": {
-      "lem": ["sons"],
+      "lem": [
+         "sons"
+      ],
       "ctxt": [
          "doux SONS de votre voix touchante, s&#39;y élevait aux idées les plus"
       ]
    },
    "voiux": {
-      "lem": ["voix"],
+      "lem": [
+         "voix"
+      ],
       "ctxt": [
          "doux sons de votre VOIX touchante, s&#39;y élevait aux idées les plus"
       ]
    },
    "dess": {
-      "lem": ["idées"],
+      "lem": [
+         "idées"
+      ],
       "ctxt": [
          "doux sons de votre voix touchante, s&#39;y élevait aux IDÉES les plus"
       ]
    },
    "lespluis": {
-      "lem": ["les plus"],
+      "lem": [
+         "les plus"
+      ],
       "ctxt": [
          "doux sons de votre voix touchante, s&#39;y élevait aux idées LES PLUS"
       ]
    },
    "consalanten": {
-      "lem": ["consolantes"],
+      "lem": [
+         "consolantes"
+      ],
       "ctxt": [
          "CONSOLANTES l cette voix n&#39;était pas modulée sur la ton éclatant"
       ]
    },
    "modulé": {
-      "lem": ["modulée"],
+      "lem": [
+         "modulée"
+      ],
       "ctxt": [
          "consolantes l cette voix n&#39;était pas MODULÉE sur la ton éclatant"
       ]
    },
    "homantique": {
-      "lem": ["romantique"],
+      "lem": [
+         "romantique"
+      ],
       "ctxt": [
          "du ROMANTIQUE. l et cependant tout la monde vous comprenait"
       ]
    },
    "admrait": {
-      "lem": ["admirait"],
+      "lem": [
+         "admirait"
+      ],
       "ctxt": [
          "vous ADMIRAIT, vous applaudissait. Vous n'étiez pas montée"
       ]
    },
    "applaudessait": {
-      "lem": ["applaudissait"],
+      "lem": [
+         "applaudissait"
+      ],
       "ctxt": [
          "vous admirait, vous APPLAUDISSAIT. Vous n'étiez pas montée"
       ]
    },
    "n'etdez": {
-      "lem": ["n'étiez"],
+      "lem": [
+         "n'étiez"
+      ],
       "ctxt": [
          "vous admirait, vous applaudissait. Vous N'ÉTIEZ pas montée"
       ]
    },
    "surprenda": {
-      "lem": ["surprendre"],
+      "lem": [
+         "surprendre"
+      ],
       "ctxt": [
          "sur des échasses. Vous ne cherchiez pas à SURPRENDRE l'attention."
       ]
    },
    "l'altatie": {
-      "lem": ["l'attention"],
+      "lem": [
+         "l'attention"
+      ],
       "ctxt": [
          "sur des échasses. Vous ne cherchiez pas à surprendre L'ATTENTION."
       ]
    },
    "sure": {
-      "lem": ["sûre"],
+      "lem": [
+         "sûre"
+      ],
       "ctxt": [
          "vous étiez SÛRE de plaire et d'intéresser, vous saviez vous mettre"
       ]
    },
    "d'intéresser": {
-      "lem": ["d'intéresser"],
+      "lem": [
+         "d'intéresser"
+      ],
       "ctxt": [
          "vous étiez sûre de plaire et D'INTÉRESSER, vous saviez vous mettre"
       ]
    },
    "an": {
-      "lem": ["au"],
+      "lem": [
+         "au"
+      ],
       "ctxt": [
          "AU niveAU de toutes les sensibilités. S plus d&#39;une couronne vous"
       ]
    },
    "sensibiités": {
-      "lem": ["sensibilités"],
+      "lem": [
+         "sensibilités"
+      ],
       "ctxt": [
          "au niveau de toutes les SENSIBILITÉS. S plus d&#39;une couronne vous"
       ]
    },
    "conronne": {
-      "lem": ["couronne"],
+      "lem": [
+         "couronne"
+      ],
       "ctxt": [
          "au niveau de toutes les sensibilités. S plus d&#39;une COURONNE vous"
       ]
    },
    "boeur": {
-      "lem": ["coeur"],
+      "lem": [
+         "coeur"
+      ],
       "ctxt": [
          "et surtout votre COEUR, dans la compte rendu que je m'occupe de"
       ]
    },
    "hendue": {
-      "lem": ["rendu"],
+      "lem": [
+         "rendu"
+      ],
       "ctxt": [
          "et surtout votre coeur, dans la compte RENDU que je m'occupe de"
       ]
    },
    "m'oucupe": {
-      "lem": ["m'occupe"],
+      "lem": [
+         "m'occupe"
+      ],
       "ctxt": [
          "et surtout votre coeur, dans la compte rendu que je M'OCCUPE de"
       ]
    },
    "e mpoir": {
-      "lem": ["recevoir"],
+      "lem": [
+         "recevoir"
+      ],
       "ctxt": "Vous devez RECEVOIR aujourd'hui Samedi à votre arrivée à"
    },
    "anjoniès Vui": {
-      "lem": ["aujourd'hui"],
+      "lem": [
+         "aujourd'hui"
+      ],
       "ctxt": "Vous devez recevoir AUJOURD'HUI Samedi à votre arrivée à"
    },
    "j'oi": {
-      "lem": ["j'ai"],
+      "lem": [
+         "j'ai"
+      ],
       "ctxt": "Dyck la lettre que J'AI eu l'Io, nons. des vous écrire. Mardi matin"
    },
    "l'Io nons": {
-      "lem": ["l'honneur"],
+      "lem": [
+         "l'honneur"
+      ],
       "ctxt": "Dyck la lettre que j'ai eu l'Io, nons. des vous écrire. Mardi matin"
    },
    "ootir": {
-      "lem": ["matin"],
+      "lem": [
+         "matin"
+      ],
       "ctxt": "Dyck la lettre que j'ai eu l'Io, nons. des vous écrire. Mardi MATIN"
+   },
+   "soivaute": {
+      "lem": [
+         "soixante"
+      ],
+      "ctxt": "faire imprimer, de ses SOIXANTE et deux séances publiques, tenues"
+   },
+   "daux": {
+      "lem": [
+         "deux"
+      ],
+      "ctxt": "faire imprimer, de ses soixante et DEUX séances publiques, tenues"
+   },
+   "séauies": {
+      "lem": [
+         "séances"
+      ],
+      "ctxt": "faire imprimer, de ses soixante et deux SÉANCES publiques, tenues"
+   },
+   "Cenies": {
+      "lem": [
+         "tenues"
+      ],
+      "ctxt": "faire imprimer, de ses soixante et deux séances publiques, TENUES"
+   },
+   "l'épouvantable": {
+      "lem": [
+         "l'épouvantable"
+      ],
+      "ctxt": "avec le plus grand éclat au milieu des échaffauds et de L'ÉPOUVANTABLE"
+   },
+   "écat": {
+      "lem": [
+         "éclat"
+      ],
+      "ctxt": "avec le plus grand ÉCLAT au milieu des échaffauds et de l'épouvantable"
+   },
+   "mitien": {
+      "lem": [
+         "milieu"
+      ],
+      "ctxt": "avec le plus grand éclat au MILIEU des échaffauds et de l'épouvantable"
+   },
+   "échaffauds": {
+      "lem": [
+         "échaffauds"
+      ],
+      "ctxt": "avec le plus grand éclat au milieu des ÉCHAFFAUDS et de l'épouvantable"
+   },
+   "grage": {
+      "lem": [
+         "orage"
+      ],
+      "ctxt": "ORAGE qui grondait autour de lui. (Je joins ici une copie du rapport"
+   },
+   "I": {
+      "lem": [
+         "("
+      ],
+      "ctxt": "orage qui grondait autour de lui. (Je joins ici une copie du rapport"
+   },
+   "vrins": {
+      "lem": [
+         "joins"
+      ],
+      "ctxt": "orage qui grondait autour de lui. (Je JOINS ici une copie du rapport"
+   },
+   "copce": {
+      "lem": [
+         "copie"
+      ],
+      "ctxt": "orage qui grondait autour de lui. (Je joins ici une COPIE du rapport"
+   },
+   "reppat": {
+      "lem": [
+         "rapport"
+      ],
+      "ctxt": "orage qui grondait autour de lui. (Je joins ici une copie du RAPPORT"
+   },
+   "ftait": {
+      "lem": [
+         "fait"
+      ],
+      "ctxt": "qui a été FAIT sur son étonnante existence et qui est inséré dans"
+   },
+   "étonnaute": {
+      "lem": [
+         "étonnante"
+      ],
+      "ctxt": "qui a été fait sur son ÉTONNANTE existence et qui est inséré dans"
+   },
+   "éxistence": {
+      "lem": [
+         "existence"
+      ],
+      "ctxt": "qui a été fait sur son étonnante EXISTENCE et qui est inséré dans"
+   },
+   "danr": {
+      "lem": [
+         "dans"
+      ],
+      "ctxt": "qui a été fait sur son étonnante existence et qui est inséré DANS"
+   },
+   "bubétin": {
+      "lem": [
+         "bulletin"
+      ],
+      "ctxt": "le BULLETIN des Loix ;"
+   },
+   "Lous": {
+      "lem": [
+         "Loix"
+      ],
+      "ctxt": "le bulletin des LOIX ;"
+   },
+   "Vourgioi": {
+      "lem": [
+         "Pourquoi"
+      ],
+      "ctxt": "POURQUOI donc chercher à vous allier aujourd'hui aux pratiques d'un"
+   },
+   "bonc": {
+      "lem": [
+         "donc"
+      ],
+      "ctxt": "Pourquoi DONC chercher à vous allier aujourd'hui aux pratiques d'un"
+   },
+   "cerhier": {
+      "lem": [
+         "chercher"
+      ],
+      "ctxt": "Pourquoi donc CHERCHER à vous allier aujourd'hui aux pratiques d'un"
+   },
+   "aller": {
+      "lem": [
+         "allier"
+      ],
+      "ctxt": "Pourquoi donc chercher à vous ALLIER aujourd'hui aux pratiques d'un"
+   },
+   "aujarolhui": {
+      "lem": [
+         "aujourd'hui"
+      ],
+      "ctxt": "Pourquoi donc chercher à vous allier AUJOURD'HUI aux pratiques d'un"
+   },
+   "n'exitent": {
+      "lem": [
+         "n'excitent"
+      ],
+      "ctxt": "nouvel art dont les beautés N'EXCITENT. l'enthousiasme qu'en pré-"
+   },
+   "l'inttiuasiasme": {
+      "lem": [
+         "l'enthousiasme"
+      ],
+      "ctxt": "nouvel art dont les beautés n'excitent. L'ENTHOUSIASME qu'en pré-"
+   },
+   "qu'en": {
+      "lem": [
+         "qu'en"
+      ],
+      "ctxt": "nouvel art dont les beautés n'excitent. l'enthousiasme QU'EN pré-"
+   },
+   "brautés": {
+      "lem": [
+         "beautés"
+      ],
+      "ctxt": "nouvel art dont les BEAUTÉS n'excitent. l'enthousiasme qu'en pré-"
+   },
+   "suntant": {
+      "lem": [
+         "sentant"
+      ],
+      "ctxt": "SENTANT la difficulté de les bien comprendre ? Restez, Princesse aimée"
+   },
+   "dopsintté": {
+      "lem": [
+         "difficulté"
+      ],
+      "ctxt": "sentant la DIFFICULTÉ de les bien comprendre ? Restez, Princesse aimée"
+   },
+   "s": {
+      "lem": [
+         "?"
+      ],
+      "ctxt": "sentant la difficulté de les bien comprendre ? Restez, Princesse aimée"
+   },
+   "Sastez": {
+      "lem": [
+         "Restez"
+      ],
+      "ctxt": "sentant la difficulté de les bien comprendre ? RESTEZ, Princesse aimée"
+   },
+   "Pricesse": {
+      "lem": [
+         "Princesse"
+      ],
+      "ctxt": "sentant la difficulté de les bien comprendre ? Restez, PRINCESSE aimée"
+   },
+   "aimice": {
+      "lem": [
+         "aimée"
+      ],
+      "ctxt": "sentant la difficulté de les bien comprendre ? Restez, Princesse AIMÉE"
+   },
+   "conslammient": {
+      "lem": [
+         "constamment"
+      ],
+      "ctxt": "ce que vous avez été si CONSTAMMENT, demeurez dans les limites"
+   },
+   "Lemeurez": {
+      "lem": [
+         "demeurez"
+      ],
+      "ctxt": "ce que vous avez été si constamment, DEMEUREZ dans les limites"
+   },
+   "limitées": {
+      "lem": [
+         "limites"
+      ],
+      "ctxt": "ce que vous avez été si constamment, demeurez dans les LIMITES"
+   },
+   "dcole": {
+      "lem": [
+         "école"
+      ],
+      "ctxt": "de cette vieille ÉCOLE qui vous a suffisamment illustrée !"
+   },
+   "à": {
+      "lem": [
+         "a"
+      ],
+      "ctxt": "de cette vieille école qui vous A suffisAmment illustrée !"
+   },
+   "suffivamnment": {
+      "lem": [
+         "suffisamment"
+      ],
+      "ctxt": "de cette vieille école qui vous a SUFFISAMMENT illustrée !"
+   },
+   "iunstrée": {
+      "lem": [
+         "illustrée"
+      ],
+      "ctxt": "de cette vieille école qui vous a suffisamment ILLUSTRÉE !"
+   },
+   "étégant": {
+      "lem": [
+         "élégant"
+      ],
+      "ctxt": "Votre facile et ÉLÉGANT. langage sera assez paré des grâces du natu-"
+   },
+   "Engage": {
+      "lem": [
+         "langage"
+      ],
+      "ctxt": "Votre facile et élégant. LANGAGE sera assez paré des grâces du natu-"
+   },
+   "paié": {
+      "lem": [
+         "paré"
+      ],
+      "ctxt": "Votre facile et élégant. langage sera assez PARÉ des grâces du natu-"
+   },
+   "graies": {
+      "lem": [
+         "grâces"
+      ],
+      "ctxt": "Votre facile et élégant. langage sera assez paré des GRÂCES du natu-"
+   },
+   "da": {
+      "lem": [
+         "du"
+      ],
+      "ctxt": "Votre facile et élégant. langage sera assez paré des grâces DU natu-"
+   },
+   "matie": {
+      "lem": [
+         "natu-"
+      ],
+      "ctxt": "Votre facile et élégant. langage sera assez paré des grâces du NATU-"
+   },
+   "l'axpression": {
+      "lem": [
+         "l'expression"
+      ],
+      "ctxt": "rel et de L'EXPRESSION pure et vive des sentimens élevés, seuls"
+   },
+   "del": {
+      "lem": [
+         "rel"
+      ],
+      "ctxt": "REL et de l'expression pure et vive des sentimens élevés, seuls"
+   },
+   "éevris": {
+      "lem": [
+         "élevés"
+      ],
+      "ctxt": "rel et de l'expression pure et vive des sentimens ÉLEVÉS, seuls"
+   },
+   "altuifuts": {
+      "lem": [
+         "attributs"
+      ],
+      "ctxt": "ATTRIBUTS. du bon esprit et véritables indices du génie ;"
+   },
+   "aparit": {
+      "lem": [
+         "esprit"
+      ],
+      "ctxt": "attributs. du bon ESPRIT et véritables indices du génie ;"
+   },
+   "dugénie": {
+      "lem": [
+         "du génie"
+      ],
+      "ctxt": "attributs. du bon esprit et véritables indices DU GÉNIE ;"
+   },
+   "Caquelte": {
+      "lem": [
+         "laquelle"
+      ],
+      "ctxt": "Je ne vous ai point parlé de la position difficile à LAQUELLE"
+   },
+   "d'êtte": {
+      "lem": [
+         "d'être"
+      ],
+      "ctxt": "je suis amené par les circonstances, et dont je cesserais DETTE"
+   },
+   "crconstances": {
+      "lem": [
+         "circonstances"
+      ],
+      "ctxt": "je suis amené par les CIRCONSTANCES, et dont je cesserais dette"
+   },
+   "j'auille": {
+      "lem": [
+         "famille"
+      ],
+      "ctxt": "la victime, ainsi que ma FAMILLE, si la loi qui est en ma faveur"
+   },
+   "davair": {
+      "lem": [
+         "faveur"
+      ],
+      "ctxt": "la victime, ainsi que ma famille, si la loi qui est en ma FAVEUR"
+   },
+   "Sait": {
+      "lem": [
+         "était"
+      ],
+      "ctxt": "ÉTAIT executée. Afin d'en rendre le tableau plus fidèle et plus"
+   },
+   "avecutée": {
+      "lem": [
+         "executée"
+      ],
+      "ctxt": "était EXECUTÉE. Afin d'en rendre le tableau plus fidèle et plus"
+   },
+   "Oon": {
+      "lem": [
+         "Afin"
+      ],
+      "ctxt": "était executée. AFIN d'en rendre le tableau plus fidèle et plus"
+   },
+   "Sabliau": {
+      "lem": [
+         "tableau"
+      ],
+      "ctxt": "était executée. Afin d'en rendre le TABLEAU plus fidèle et plus"
+   },
+   "fidêle": {
+      "lem": [
+         "fidèle"
+      ],
+      "ctxt": "était executée. Afin d'en rendre le tableau plus FIDÈLE et plus"
+   },
+   "Myappant": {
+      "lem": [
+         "frappant"
+      ],
+      "ctxt": "FRAPPANT, j'ai imaginé de le traduire en vers ; qand ce ne serait,"
+   },
+   "qreui": {
+      "lem": [
+         "quand"
+      ],
+      "ctxt": "frappant, j'ai imaginé de le traduire en vers ; QAND ce ne serait,"
+   },
+   "curigétité": {
+      "lem": [
+         "curiosité"
+      ],
+      "ctxt": "que par CURIOSITÉ, au moins on la lira, et justice me sera rendue"
+   },
+   "mnoins": {
+      "lem": [
+         "moins"
+      ],
+      "ctxt": "que par curiosité, au MOINS on la lira, et justice me sera rendue"
+   },
+   "Cira": {
+      "lem": [
+         "lira"
+      ],
+      "ctxt": "que par curiosité, au moins on la LIRA, et justice me sera rendue"
+   },
+   "justie": {
+      "lem": [
+         "justice"
+      ],
+      "ctxt": "que par curiosité, au moins on la lira, et JUSTICE me sera rendue"
+   },
+   "sre": {
+      "lem": [
+         "me"
+      ],
+      "ctxt": "que par curiosité, au moins on la lira, et justice ME sera rendue"
+   },
+   "tera": {
+      "lem": [
+         "sera"
+      ],
+      "ctxt": "que par curiosité, au moins on la lira, et justice me SERA rendue"
+   },
+   "renire": {
+      "lem": [
+         "rendue"
+      ],
+      "ctxt": "que par curiosité, au moins on la lira, et justice me sera RENDUE"
+   },
+   "Vieuillez": {
+      "lem": [
+         "Veuillez"
+      ],
+      "ctxt": "VEUILLEZ y jetter les yeux et accorder quelque souvenir, Après moi"
+   },
+   "jetter": {
+      "lem": [
+         "jetter"
+      ],
+      "ctxt": "Veuillez y JETTER les yeux et accorder quelque souvenir, Après moi"
+   },
+   "qeux": {
+      "lem": [
+         "yeux"
+      ],
+      "ctxt": "Veuillez y jetter les YEUX et accorder quelque souvenir, Après moi"
+   },
+   "Eprès": {
+      "lem": [
+         "Après"
+      ],
+      "ctxt": "Veuillez y jetter les yeux et accorder quelque souvenir, APRÈS moi"
+   },
+   "noi": {
+      "lem": [
+         "moi"
+      ],
+      "ctxt": "Veuillez y jetter les yeux et accorder quelque souvenir, Après MOI"
+   },
+   "J'comme": {
+      "lem": [
+         "(comme"
+      ],
+      "ctxt": "à la meilleure des femmes. (COMME vous) mon épouse qui à mérité"
+   },
+   "miéilleure": {
+      "lem": [
+         "meilleure"
+      ],
+      "ctxt": "à la MEILLEURE des femmes. (comme vous) mon épouse qui à mérité"
+   },
+   "flimies": {
+      "lem": [
+         "femmes"
+      ],
+      "ctxt": "à la meilleure des FEMMES. (comme vous) mon épouse qui à mérité"
+   },
+   "j": {
+      "lem": [
+         ")",
+         "je"
+      ],
+      "ctxt": "AMBIGU"
+   },
+   "frès": {
+      "lem": [
+         "près"
+      ],
+      "ctxt": "PRÈS de moi et mérite encore le nom, non pas de belle et bonne"
+   },
+   "mei": {
+      "lem": [
+         "moi"
+      ],
+      "ctxt": "près de MOI et mérite encore le nom, non pas de belle et bonne"
+   },
+   "pais": {
+      "lem": [
+         "pas"
+      ],
+      "ctxt": "près de moi et mérite encore le nom, non PAS de belle et bonne"
+   },
+   "Celle": {
+      "lem": [
+         "belle"
+      ],
+      "ctxt": "près de moi et mérite encore le nom, non pas de BELLE et bonne"
+   },
+   "cng": {
+      "lem": [
+         "cinq"
+      ],
+      "ctxt": "mais de toute bonne, depuis trente CINQ années."
+   },
+   "annés": {
+      "lem": [
+         "années"
+      ],
+      "ctxt": "mais de toute bonne, depuis trente cinq ANNÉES."
+   },
+   "eutre": {
+      "lem": [
+         "entre"
+      ],
+      "ctxt": "Mon sort est dans le moment, ENTRE les mains du ministre des"
+   },
+   "pinistre": {
+      "lem": [
+         "ministre"
+      ],
+      "ctxt": "Mon sort est dans le moment, entre les mains du MINISTRE des"
+   },
+   "l'exrcution": {
+      "lem": [
+         "l'exécution"
+      ],
+      "ctxt": "affaires étrangéres, et je ne réclame que L'EXÉCUTION de la loi, Pouais"
+   },
+   "affadres": {
+      "lem": [
+         "affaires"
+      ],
+      "ctxt": "AFFAIRES étrangéres, et je ne réclame que l'exécution de la loi, Pouais"
+   },
+   "St": {
+      "lem": [
+         "et"
+      ],
+      "ctxt": "affaires étrangéres, ET je ne réclame que l'exécution de la loi, Pouais"
+   },
+   "Coi": {
+      "lem": [
+         "loi"
+      ],
+      "ctxt": "affaires étrangéres, et je ne réclame que l'exécution de la LOI, Pouais"
+   },
+   "C'assurance": {
+      "lem": [
+         "l'assurance"
+      ],
+      "ctxt": "Veuillez présenter au Prince L'ASSURANCE de mon dévouement et"
+   },
+   "Vouilla": {
+      "lem": [
+         "Veuillez"
+      ],
+      "ctxt": "VEUILLEZ présenter au Prince l'assurance de mon dévouement et"
+   },
+   "présentir": {
+      "lem": [
+         "présenter"
+      ],
+      "ctxt": "Veuillez PRÉSENTER au Prince l'assurance de mon dévouement et"
+   },
+   "Prime": {
+      "lem": [
+         "Prince"
+      ],
+      "ctxt": "Veuillez présenter au PRINCE l'assurance de mon dévouement et"
+   },
+   "mou": {
+      "lem": [
+         "mon"
+      ],
+      "ctxt": "Veuillez présenter au Prince l'assurance de MON dévouement et"
+   },
+   "ingrier": {
+      "lem": [
+         "agréer"
+      ],
+      "ctxt": "AGRÉER pour vous nos voeux pour votre constant bonheur."
+   },
+   "consant": {
+      "lem": [
+         "constant"
+      ],
+      "ctxt": "agréer pour vous nos voeux pour votre CONSTANT bonheur."
+   },
+   "bonsieur": {
+      "lem": [
+         "bonheur"
+      ],
+      "ctxt": "agréer pour vous nos voeux pour votre constant BONHEUR."
+   },
+   "de": {
+      "lem": [
+         "Le",
+         "se"
+      ],
+      "ctxt": "AMBIGU"
+   },
+   "Bcnérol": {
+      "lem": [
+         "Général"
+      ],
+      "ctxt": "(Signé) Le GÉNÉRAL A. I. I Desaudrai"
+   },
+   "Dessudonc": {
+      "lem": [
+         "Desaudrai"
+      ],
+      "ctxt": "(Signé) Le Général A. I. I DESAUDRAI"
+   },
+   "naréchai": {
+      "lem": [
+         "maréchal"
+      ],
+      "ctxt": "MARÉCHAL de camp châde It Souis avcien"
+   },
+   "tampe": {
+      "lem": [
+         "camp"
+      ],
+      "ctxt": "maréchal de CAMP châde It Souis avcien"
+   },
+   "l'idée": {
+      "lem": [
+         "l'idée"
+      ],
+      "ctxt": "il surpasse L'IDÉE que je m'en étais formée et j'avoue que je ne"
+   },
+   "p'avoue": {
+      "lem": [
+         "j'avoue"
+      ],
+      "ctxt": "il surpasse l'idée que je m'en étais formée et J'AVOUE que je ne"
+   },
+   "Al": {
+      "lem": [
+         "il"
+      ],
+      "ctxt": "IL surpasse l'idée que je m'en étais formée et j'avoue que je ne"
+   },
+   "hurpasse": {
+      "lem": [
+         "surpasse"
+      ],
+      "ctxt": "il SURPASSE l'idée que je m'en étais formée et j'avoue que je ne"
+   },
+   "fâitegce": {
+      "lem": [
+         "formée"
+      ],
+      "ctxt": "il surpasse l'idée que je m'en étais FORMÉE et j'avoue que je ne"
+   },
+   "Jangis": {
+      "lem": [
+         "J'avais"
+      ],
+      "ctxt": "J'AVAIS terminé à 2 heures le la lecture de votre charmant ouvrage."
+   },
+   "trriné": {
+      "lem": [
+         "terminé"
+      ],
+      "ctxt": "J'avais TERMINÉ à 2 heures le la lecture de votre charmant ouvrage."
+   },
+   "hour": {
+      "lem": [
+         "heures"
+      ],
+      "ctxt": "J'avais terminé à 2 HEURES le la lecture de votre charmant ouvrage."
+   },
+   "lutire": {
+      "lem": [
+         "lecture"
+      ],
+      "ctxt": "J'avais terminé à 2 heures le la LECTURE de votre charmant ouvrage."
+   },
+   "charemant": {
+      "lem": [
+         "charmant"
+      ],
+      "ctxt": "J'avais terminé à 2 heures le la lecture de votre CHARMANT ouvrage."
+   },
+   "gravage": {
+      "lem": [
+         "ouvrage"
+      ],
+      "ctxt": "J'avais terminé à 2 heures le la lecture de votre charmant OUVRAGE."
+   },
+   "d'intéret": {
+      "lem": [
+         "d'intéret"
+      ],
+      "ctxt": "croyais pas qu'il fut possible de répandre. tant D'INTÉRET sur un"
+   },
+   "J'y": {
+      "lem": [
+         "'y"
+      ],
+      "ctxt": "sujet de il heures. 'Y ai remarqué aussi plus de variété que dans"
+   },
+   "remargué": {
+      "lem": [
+         "remarqué"
+      ],
+      "ctxt": "sujet de il heures. 'y ai REMARQUÉ aussi plus de variété que dans"
+   },
+   "plur": {
+      "lem": [
+         "plus"
+      ],
+      "ctxt": "sujet de il heures. 'y ai remarqué aussi PLUS de variété que dans"
+   },
+   "vriété": {
+      "lem": [
+         "variété"
+      ],
+      "ctxt": "sujet de il heures. 'y ai remarqué aussi plus de VARIÉTÉ que dans"
+   },
+   "J'ésère": {
+      "lem": [
+         "J'éspère"
+      ],
+      "ctxt": "de gros volumes. J'ÉSPÈRE que vous trouverez de justes appréciateurs"
+   },
+   "quors": {
+      "lem": [
+         "gros"
+      ],
+      "ctxt": "de GROS volumes. J'éspère que vous trouverez de justes appréciateurs"
+   },
+   "volunes": {
+      "lem": [
+         "volumes"
+      ],
+      "ctxt": "de gros VOLUMES. J'éspère que vous trouverez de justes appréciateurs"
+   },
+   "hrouverec": {
+      "lem": [
+         "trouverez"
+      ],
+      "ctxt": "de gros volumes. J'éspère que vous TROUVEREZ de justes appréciateurs"
+   },
+   "jistes": {
+      "lem": [
+         "justes"
+      ],
+      "ctxt": "de gros volumes. J'éspère que vous trouverez de JUSTES appréciateurs"
+   },
+   "asprécialeurs": {
+      "lem": [
+         "appréciateurs"
+      ],
+      "ctxt": "de gros volumes. J'éspère que vous trouverez de justes APPRÉCIATEURS"
+   },
+   "sontiments": {
+      "lem": [
+         "sentiments"
+      ],
+      "ctxt": "des SENTIMENTS et du style qui brillent dans cet opuscule. ai je"
+   },
+   "Sole": {
+      "lem": [
+         "style"
+      ],
+      "ctxt": "des sentiments et du STYLE qui brillent dans cet opuscule. ai je"
+   },
+   "bribient": {
+      "lem": [
+         "brillent"
+      ],
+      "ctxt": "des sentiments et du style qui BRILLENT dans cet opuscule. ai je"
+   },
+   "n'eussi": {
+      "lem": [
+         "n'eusse"
+      ],
+      "ctxt": "N'EUSSE pas reçu votre billet je n'aurais pas attendu votre billet"
+   },
+   "trittet": {
+      "lem": [
+         "billet"
+      ],
+      "ctxt": "n'eusse pas reçu votre BILLET je n'aurais pas attendu votre BILLET"
+   },
+   "bilez": {
+      "lem": [
+         "billet"
+      ],
+      "ctxt": "n'eusse pas reçu votre BILLET je n'aurais pas attendu votre BILLET"
+   },
+   "l'impression": {
+      "lem": [
+         "l'impression"
+      ],
+      "ctxt": "pour vous faire part de L'IMPRESSION qu'une première. lecture"
+   },
+   "Cécture": {
+      "lem": [
+         "lecture"
+      ],
+      "ctxt": "pour vous faire part de l'impression qu'une première. LECTURE"
+   },
+   "l'aspère": {
+      "lem": [
+         "l'espère"
+      ],
+      "ctxt": "m'a faite. Une seconde dans la journée me fera, je L'ESPÈRE découvrir"
+   },
+   "One": {
+      "lem": [
+         "Une"
+      ],
+      "ctxt": "m'a faite. UNE seconde dans la journée me fera, je l'espère découvrir"
+   },
+   "fira": {
+      "lem": [
+         "fera"
+      ],
+      "ctxt": "m'a faite. Une seconde dans la journée me FERA, je l'espère découvrir"
+   },
+   "decouvis": {
+      "lem": [
+         "découvrir"
+      ],
+      "ctxt": "m'a faite. Une seconde dans la journée me fera, je l'espère DÉCOUVRIR"
+   },
+   "cemerciments": {
+      "lem": [
+         "remerciments"
+      ],
+      "ctxt": "Je vous dois donc de grands REMERCIMENTS pour ce petit ouv-"
+   },
+   "ll": {
+      "lem": [
+         "ce"
+      ],
+      "ctxt": "Je vous dois donc de grands remerciments pour CE petit ouv-"
+   },
+   "aux": {
+      "lem": [
+         "ouv-"
+      ],
+      "ctxt": "Je vous dois donc de grands remerciments pour ce petit OUV-"
+   },
+   "c igrez": {
+      "lem": [
+         "Agréez"
+      ],
+      "ctxt": "rage AGRÉEZ en la sincère expression."
+   },
+   "eepression": {
+      "lem": [
+         "expression"
+      ],
+      "ctxt": "rage Agréez en la sincère EXPRESSION."
+   },
+   "devoné": {
+      "lem": [
+         "dévoué"
+      ],
+      "ctxt": "Votre très DÉVOUÉ Serviteur."
+   },
+   "oûil": {
+      "lem": [
+         "Avril"
+      ],
+      "ctxt": "Paris, ce 1 AVRIL, 1818."
+   },
+   "Madance": {
+      "lem": [
+         "Madame"
+      ],
+      "ctxt": "MADAME."
+   },
+   "scoui": {
+      "lem": [
+         "second"
+      ],
+      "ctxt": "Le SECOND volume Le mes fables qui va bientôt paraître contiendra"
+   },
+   "cotume": {
+      "lem": [
+         "volume"
+      ],
+      "ctxt": "Le second VOLUME Le mes fables qui va bientôt paraître contiendra"
+   },
+   "ya": {
+      "lem": [
+         "va"
+      ],
+      "ctxt": "Le second volume Le mes fables qui VA bientôt paraître contiendra"
+   },
+   "brentet": {
+      "lem": [
+         "bientôt"
+      ],
+      "ctxt": "Le second volume Le mes fables qui va BIENTÔT paraître contiendra"
+   },
+   "paraitre": {
+      "lem": [
+         "paraître"
+      ],
+      "ctxt": "Le second volume Le mes fables qui va bientôt PARAÎTRE contiendra"
+   },
+   "contienon": {
+      "lem": [
+         "contiendra"
+      ],
+      "ctxt": "Le second volume Le mes fables qui va bientôt paraître CONTIENDRA"
+   },
+   "poisies": {
+      "lem": [
+         "poësies"
+      ],
+      "ctxt": "aussi quelques POËSIES diverses, parmi lesquelles se trouve un petit"
+   },
+   "poême": {
+      "lem": [
+         "poëme"
+      ],
+      "ctxt": "POËME intitulé. Clémence Isaure ou la renaissance des jeux floraux"
+   },
+   "inblolé": {
+      "lem": [
+         "intitulé"
+      ],
+      "ctxt": "poëme INTITULÉ. Clémence Isaure ou la renaissance des jeux floraux"
+   },
+   "Témince": {
+      "lem": [
+         "Clémence"
+      ],
+      "ctxt": "poëme intitulé. CLÉMENCE Isaure ou la renaissance des jeux floraux"
+   },
+   "houre": {
+      "lem": [
+         "Isaure"
+      ],
+      "ctxt": "poëme intitulé. Clémence ISAURE ou la renaissance des jeux floraux"
+   },
+   "renossance": {
+      "lem": [
+         "renaissance"
+      ],
+      "ctxt": "poëme intitulé. Clémence Isaure ou la RENAISSANCE des jeux floraux"
+   },
+   "teux": {
+      "lem": [
+         "jeux"
+      ],
+      "ctxt": "poëme intitulé. Clémence Isaure ou la renaissance des JEUX floraux"
+   },
+   "foraux": {
+      "lem": [
+         "floraux"
+      ],
+      "ctxt": "poëme intitulé. Clémence Isaure ou la renaissance des jeux FLORAUX"
+   },
+   "d'ani": {
+      "lem": [
+         "J'ai"
+      ],
+      "ctxt": "J'AI pris la liberté de faire précéder ce poëme par les vers suivans"
+   },
+   "foire": {
+      "lem": [
+         "faire"
+      ],
+      "ctxt": "J'ai pris la liberté de FAIRE précéder ce poëme par les vers suivans"
+   },
+   "préceder": {
+      "lem": [
+         "précéder"
+      ],
+      "ctxt": "J'ai pris la liberté de faire PRÉCÉDER ce poëme par les vers suivans"
+   },
+   "lCestutut": {
+      "lem": [
+         "les vers suivans"
+      ],
+      "ctxt": "J'ai pris la liberté de faire précéder ce poëme par LES VERS SUIVANS"
    }
 }
