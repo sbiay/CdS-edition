@@ -39,12 +39,12 @@ htr/.ipynb_checkpoints/
 htr/veriteTerrain/*jpg
 htr/correctionLettres.csv
 *ipynb_checkpoints*
-htr/xmlPage-aCorriger/*
-htr/xmlPage-corrigees/*
+htr/xmlPage-aCorriger/*xml
+htr/xmlPage-corrigees/*xml
 htr/py/dicos/page*
 souvayCDS
-htr/py/dicos/aCorriger/*
-htr/py/dicos/corriges/*
+htr/py/dicos/aCorriger/*json
+htr/py/dicos/corriges/*json
 documentation/img/
 htr/img/brouillonsCDSimg/
 admin/
