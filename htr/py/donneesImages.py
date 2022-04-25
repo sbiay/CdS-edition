@@ -3,7 +3,7 @@ import json
 import click
 import os
 
-from htr.py.toutesDonnees import donneesFud, donneesZenodo
+from toutesDonnees import donneesFud, donneesZenodo
 
 
 def noticeImage(image):
@@ -38,6 +38,7 @@ def noticeImage(image):
     
     return notices
 
+
 @click.command()
 @click.argument("SOURCE")
 @click.argument("SORTIE")
@@ -66,10 +67,10 @@ def donneesImages(source, sortie):
             # On boucle sur les notices renvoyées par la fonction
             for notice in noticeImage(image):
                 avecNotice[notice["Nr. der Digitalisate"]] = {
-                        "URL": notice["URL"],
-                        "Images": notice["Images"]
-                    }
-                
+                    "URL": notice["URL"],
+                    "Images": notice["Images"]
+                }
+        
         else:
             sansNotice.append(image)
     
@@ -84,4 +85,8 @@ def donneesImages(source, sortie):
     with open(f"{sortie}/donnees.json", mode="w") as jsonf:
         json.dump(resultats, jsonf)
     
-donneesImages()
+    print(f"le fichier {sortie}/donnees.json a été écrit avec succès.")
+
+
+if __name__ == "__main__":
+    donneesImages()

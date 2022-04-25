@@ -1,5 +1,6 @@
 import csv
 
+
 def donneesFud():
     """
     Cette fonction ouvre les fichiers CSV contenant les données exportées de la base FuD
@@ -19,7 +20,7 @@ def donneesFud():
     """
     # On charge les données exportées de Fud
     fud = []
-    with open("../../donnees/20220408_exportFuD_principal.csv") as csvf:
+    with open("../donnees/20220408_exportFuD_principal.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -28,15 +29,15 @@ def donneesFud():
             enregistrement["Nr. der Digitalisate"] = ligne["Nr. der Digitalisate"]
             enregistrement["Bearbeitungsstatus"] = ligne["Bearbeitungsstatus"]
             enregistrement["Images"] = [ligne["Digitalisat 1"]]
-
-            # Pour ajouter toutes les images, on pose comme condition qu'il existe une image avec un numéro au-dessus
-            compteur = 1
-            while ligne.get(f"Digitalisat {compteur + 1}"):
-                enregistrement["Images"].append(ligne[f"Digitalisat {compteur + 1}"])
-                compteur += 1
-            fud.append(enregistrement)
             
-    with open("../../donnees/20220408_exportFuD_complement.csv") as csvf:
+            # Pour ajouter toutes les images, on pose comme condition qu'il existe une image avec un numéro au-dessus
+            compteur = 1
+            while ligne.get(f"Digitalisat {compteur + 1}"):
+                enregistrement["Images"].append(ligne[f"Digitalisat {compteur + 1}"])
+                compteur += 1
+            fud.append(enregistrement)
+    
+    with open("../donnees/20220408_exportFuD_complement.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -45,19 +46,20 @@ def donneesFud():
             enregistrement["Nr. der Digitalisate"] = ligne["Nr. der Digitalisate"]
             enregistrement["Bearbeitungsstatus"] = ligne["Bearbeitungsstatus"]
             enregistrement["Images"] = [ligne["Digitalisat 1"]]
-    
+            
             # Pour ajouter toutes les images, on pose comme condition qu'il existe une image avec un numéro au-dessus
             compteur = 1
             while ligne.get(f"Digitalisat {compteur + 1}"):
                 enregistrement["Images"].append(ligne[f"Digitalisat {compteur + 1}"])
                 compteur += 1
             fud.append(enregistrement)
-                
+    
     return fud
+
 
 def donneesZenodo():
     zenodo = {}
-    with open("../../donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
+    with open("../donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         
         for index, ligne in enumerate(lecteur):
@@ -65,14 +67,14 @@ def donneesZenodo():
                 "Nr. der Digitalisate": ligne['Nr.'],
                 "URL": ligne['URL']
             }
-            
-    with open("../../donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
+    
+    with open("../donnees/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
-
+        
         for index, ligne in enumerate(lecteur):
             zenodo[ligne['FuD-Key']] = {
                 "Nr. der Digitalisate": ligne['Nr.'],
                 "URL": ligne['URL']
             }
-            
+    
     return zenodo
