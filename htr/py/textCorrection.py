@@ -48,7 +48,7 @@ def textCorrectionXML():
                 for ligneBrute in contenuXML:
                     # Si la ligne de code xml ne contient pas d'élément Unicode,
                     # on écrit telle quelle cette ligne dans la sortie
-                    if "Unicode" not in ligneBrute:
+                    if "String CONTENT" not in ligneBrute:
                         xml_corr.write(ligneBrute + "\n")
                     else:
                         # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
@@ -59,10 +59,10 @@ def textCorrectionXML():
                         # On supprime l'indentation
                         ligne = ligne.replace("          ", "")
                         # On supprime également les balises collées au premier et au dernier mot
-                        ligne = ligne.replace("<Unicode>", "").replace("</Unicode>", "")
+                        ligne = ligne.replace('''<String CONTENT=''', "").replace('"', '')
                         
-                        # TODO avant de tokéniser on doit procéder au remplacement des formes avec apostrophe
-                        # TODO et des formes avec espace au milieu
+                        # Avant de tokéniser on doit procéder au remplacement des formes avec apostrophe
+                        # et des formes avec espace au milieu
                         # TODO Condition utile seulement pour les tests
                         if dictPage.get(str(index)):
                             for forme in dictPage[str(index)]:
@@ -142,7 +142,7 @@ def textCorrectionXML():
 
                         # On réencode les apostrophes et le balisage Unicode
                         ligneCorr = ligneCorr.replace("' ", "&#39;")
-                        ligneCorr = f"<Unicode>{ligneCorr}</Unicode>"
+                        ligneCorr = f'''<String CONTENT="{ligneCorr}"'''
                         # On écrit la ligne dans le fichier XML de sortie
                         xml_corr.write(ligneCorr + "\n")
                 

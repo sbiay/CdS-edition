@@ -106,12 +106,12 @@ def ordreOccurrences(liste):
 @click.command()
 def spellcheck_texts_page_XML():
     """
-    Ce script ouvre les fichiers XML-Page contenus dans un dossier défini (constante XMLaCORRIGER)
+    Ce script ouvre les fichiers XML-Alto contenus dans un dossier défini (constante XMLaCORRIGER)
     analyse chaque mot en le confrontant :
     - à ceux contenus dans les vérités de terrain (constante VERITESTERRAIN).
     - aux formes listées dans le dictionnaire de corrections de la correspondance (constante DICTCDS).
     Il applique aux formes non identifiées précédemment le module SpellChecker.
-    En sortie, on écrit pour chaque fichier XML-Page un fichier Json contenant des propositions de correction.
+    En sortie, on écrit pour chaque fichier XML-Alto un fichier Json contenant des propositions de correction.
     
     Source :
     - author: Floriane Chiffoleau.
@@ -119,8 +119,8 @@ def spellcheck_texts_page_XML():
     - URL: https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Scripts/Correction/spellcheck_texts_PAGEXML.py
     """
     spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True, distance=2)
-    # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
-    # This means that all the uppercase words will be considered wrong but that helps correct them
+    # With 'case_sensitive=True', we precise that all the mots are processed as they are written in the text
+    # This means that all the uppercase mots will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary
     
     # On charge le contenu du dictionnaire de la correspondance
@@ -139,31 +139,30 @@ def spellcheck_texts_page_XML():
             # On ouvre le fichier XML d'entrée
             xml = etree.parse(XMLaCORRIGER + filename)
             print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
-            # TODO prévoir une gestion de plusieurs formats XML
-            nsmap = {'page': "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15"}
-            tous_unicode = xml.xpath("//page:Unicode", namespaces=nsmap)
+            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+            toutesLignes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
             
             # On parse les lignes de transcription du fichier XML-Page
-            for index, unicode in enumerate(tous_unicode):
-                content = unicode.text
+            for index, ligne in enumerate(toutesLignes):
+                contenu = ligne.text
                 # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
-                if content:
-                    content = suppress_punctuation(content)
-                    words = content.split(" ")
+                if contenu:
+                    contenu = suppress_punctuation(contenu)
+                    mots = contenu.split(" ")
                     # On initie un dictionnaire pour les corrections de la ligne
                     dictLigne = {}
                     # On initie la liste des mots inconnus que l'on passera au SpellChecker
                     motsrestants = []
                     
                     # On boucle sur chaque mot
-                    for forme in words:
-                        # TODO on teste en éliminant les mots des VT
+                    for forme in mots:
+                        # On écarte les mots présents dans les vérités de terrain
                         if forme not in tousMots.keys():
                             # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
                             # résolutions différentes seraient souhaitables)
                             if forme and not dictPage.get(forme):
                                 # On récupère le contexte de la forme en l'y inscrivant en capitales
-                                contexte = content.replace(forme, forme.upper())
+                                contexte = contenu.replace(forme, forme.upper())
                                 # On cherche chaque mot dans la liste personnalisée des corrections
                                 if correctionsCDS.get(forme):
                                     # Si le mot est ambigu (plusieurs propositions)
@@ -201,7 +200,7 @@ def spellcheck_texts_page_XML():
                         misspelled = spell.unknown(motsrestants)
                         # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
                         for forme in motsrestants:
-                            contexte = content.replace(forme, forme.upper())
+                            contexte = contenu.replace(forme, forme.upper())
                             if forme not in misspelled:
                                 dictLigne[forme] = {
                                     'lem': [None],
@@ -209,14 +208,14 @@ def spellcheck_texts_page_XML():
                                 }
                         # On boucle sur les propositions de corrections
                         for forme in misspelled:
-                            contexte = content.replace(forme, forme.upper())
+                            contexte = contenu.replace(forme, forme.upper())
                             dictLigne[forme] = {
                                 'lem': [spell.correction(forme)],
                                 'ctxt': contexte.replace("'", ' ')
                             }
                     # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
                     dictLigneOrd = {}
-                    for forme in words:
+                    for forme in mots:
                         if dictLigne.get(forme):
                             dictLigneOrd[forme] = dictLigne[forme]
                     # On ajoute le dictionnaire ligne ordonné au dictionnaire page
