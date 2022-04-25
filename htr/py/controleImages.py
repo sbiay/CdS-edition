@@ -1,10 +1,9 @@
 import json
 
 import click
-import csv
 import os
 
-from toutesDonnees import donneesFud, donneesZenodo
+from htr.py.toutesDonnees import donneesFud, donneesZenodo
 
 
 def noticeImage(image):
