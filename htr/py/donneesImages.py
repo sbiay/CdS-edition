@@ -79,13 +79,17 @@ def donneesImages(source, sortie):
         "results": {
             "records": avecNotice,
             "no-record": sansNotice
+        },
+        "stats": {
+            "records": len(listeImages) - len(sansNotice),
+            "no-record": len(sansNotice),
+            "total": len(listeImages)
         }
     }
     
-    with open(f"{sortie}/donnees.json", mode="w") as jsonf:
+    with open(f"{sortie}donnees.json", mode="w") as jsonf:
         json.dump(resultats, jsonf)
-    
-    print(f"le fichier {sortie}/donnees.json a été écrit avec succès.")
+    print(f"Le fichier {sortie}donnees.json a été écrit avec succès.")
 
 
 if __name__ == "__main__":
