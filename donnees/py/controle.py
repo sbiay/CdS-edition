@@ -1,6 +1,6 @@
 import csv
 import click
-from htr.py.toutesDonnees import donneesFud, donneesZenodo
+from toutesDonnees import donneesFud, donneesZenodo
 
 
 @click.command()
@@ -78,7 +78,7 @@ def differenceZenodoFuD():
 
     # On charge les données de la liste correspSearch
     correspSearch = []
-    with open("./donnees/correspSearch.csv") as csvf:
+    with open("./tables/correspSearch.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter=',', quotechar='"')
         # On inscrit dans la liste des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):

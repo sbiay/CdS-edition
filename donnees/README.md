@@ -16,7 +16,7 @@ Nous avons contrôlé le 11 avril 2022 la liste des données figurant dans les f
     - 20220408_exportFuD_principal.csv
     - 20220408_exportFuD_complement.csv
 
-Nous avons comparé ces listes grâce aux clés suivantes (au moyen du script [controle.py](./controle.py)]) :
+Nous avons comparé ces listes grâce aux clés suivantes (au moyen du script [controle.py](py/controle.py)]) :
 - Jeu Zenodo : `FuD-Key`
 - Export FuD : `idno`
 
@@ -37,4 +37,4 @@ En revanche, les 14 enregistrements ayant le statut de **"80 - Freigabe"** et no
 
 Les 2 enregistrements qualifiés de publiables dans FuD, absents du jeu Zenodoet non vérifiés par Florence de Peyronnet sont : ['CdS/95/056-058', 'CDS//012-014'].
 
-On vérifie que les enregistrements vérifiés par **Florence de Peyronnet** n'ont pas été enrichis en recherchant les `Nr. der Digitalisate` dans la liste [correspSearch.csv](./correspSearch.csv), qui correspond à celle déposée par H. Souvay sous le titre [Ready2CMI.csv](https://github.com/dhi-digital-humanities/constance-de-salm/blob/main/CorrespSearch/Ready2CMI.csv) : en effet **aucun** de ces enregistrements n'a été enrichi.
+On vérifie que les enregistrements vérifiés par **Florence de Peyronnet** n'ont pas été enrichis en recherchant les `Nr. der Digitalisate` dans la liste [correspSearch.csv](tables/correspSearch.csv), qui correspond à celle déposée par H. Souvay sous le titre [Ready2CMI.csv](https://github.com/dhi-digital-humanities/constance-de-salm/blob/main/CorrespSearch/Ready2CMI.csv) : en effet **aucun** de ces enregistrements n'a été enrichi.
