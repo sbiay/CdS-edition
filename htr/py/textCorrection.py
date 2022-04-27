@@ -2,10 +2,10 @@ import os
 import json
 import click
 import spacy
-from spacy.lang.fr.examples import sentences
 # Installation de Spacy https://spacy.io/usage#quickstart
 # module linguistique fr_core_news_sm
 from constantes import XMLaCORRIGER, XMLCORRIGEES, DICTPAGESCORR, DICTCDS
+
 
 # TODO Passer des arguments pour gérer tous les fichiers ou un seul
 @click.command()
@@ -21,7 +21,7 @@ def textCorrectionXML():
     # On charge le dictionnaire complet de la correspondance
     with open(DICTCDS) as f:
         dictCDS = json.load(f)
-        
+    
     # On dézippe l'objet os.walk pour obtenir la racine, les dossiers et les fichiers du chemin passé en premier argument
     for root, dirs, files in os.walk(XMLaCORRIGER):
         # On boucle sur chaque nom de fichier
@@ -33,9 +33,9 @@ def textCorrectionXML():
             except:
                 # TODO vérifier pourquoi ce print ne marche pas
                 print(f"Le dictionnaire de page page_{filename.replace('.xml', '.json')} n'a pas été chargé " \
-                                                                                   "correctement.")
+                      "correctement.")
                 break
-    
+            
             # On ouvre le fichier XML d'entrée et on récupère le contenu dans une list de lignes
             with open(XMLaCORRIGER + filename, 'r') as xml_orig:
                 contenuXML = xml_orig.read().split("\n")
@@ -113,11 +113,11 @@ def textCorrectionXML():
                             # Si le lemme est resté None, il n'y a pas de correction à appliquer
                             else:
                                 ligneCorr.append(mot)
-                            
+                        
                         # On recompose la ligne en tant que chaîne
                         ligneCorr = ' '.join(ligneCorr)
                         # On élimine les espaces en trop
-                        ligneCorr = ligneCorr.replace(' ,', ',').replace(' .', '.')\
+                        ligneCorr = ligneCorr.replace(' ,', ',').replace(' .', '.') \
                             .replace('( ', '(').replace(' )', ')') \
                             .replace("' ", "'")
                         # On renvoie le contexte du mot traité dans le dictionnaire global
@@ -139,13 +139,13 @@ def textCorrectionXML():
                                     if not entreesMAJ[entree]["lem"][0] in dictCDS[str(entree)]["lem"]:
                                         dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"][0])
                                         dictCDS[entree]["ctxt"] = "AMBIGU"
-
+                        
                         # On réencode les apostrophes et le balisage Unicode
                         ligneCorr = ligneCorr.replace("' ", "&#39;")
                         ligneCorr = f'''<String CONTENT="{ligneCorr}"'''
                         # On écrit la ligne dans le fichier XML de sortie
                         xml_corr.write(ligneCorr + "\n")
-                
+                        
                         # On implémente l'index pour la ligne suivante
                         index += 1
             
@@ -154,6 +154,7 @@ def textCorrectionXML():
             # On remplace le fichier correctionsCDS.json avec les contextes actualisés
             with open(DICTCDS, mode="w") as f:
                 json.dump(dictCDS, f, indent=3, ensure_ascii=False)
-    
 
-textCorrectionXML()
+
+if __name__ == "__main__":
+    textCorrectionXML()

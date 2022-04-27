@@ -19,7 +19,7 @@ def suppress_punctuation(text):
     return text
 
 
-def collecte_mots():
+def collecteMots():
     """
     Cette fonction parse le contenu des vérités de terrain et retourne dictionnaire
     dont les clés sont les mots et les valeurs leur nombre d'ocurrences.
@@ -77,7 +77,7 @@ def ordreOccurrences(liste):
     :type return: list
     """
     # On charge tous les mots des vérités de terrain
-    tousMots = collecte_mots()
+    tousMots = collecteMots()
     
     # On récupère le nombre d'occurrences des mots de la liste passée en argument
     comptage = {}
@@ -104,7 +104,7 @@ def ordreOccurrences(liste):
 
 
 @click.command()
-def spellcheck_texts_page_XML():
+def spellcheckTexts():
     """
     Ce script ouvre les fichiers XML-Alto contenus dans un dossier défini (constante XMLaCORRIGER)
     analyse chaque mot en le confrontant :
@@ -128,7 +128,7 @@ def spellcheck_texts_page_XML():
         correctionsCDS = json.load(jsonf)
     
     # On charge les lemmes des vérités de terrain
-    tousMots = collecte_mots()
+    tousMots = collecteMots()
     
     # On boucle sur chaque fichier du dossier défini par la constante XMLaCORRIGER
     for root, dirs, files in os.walk(XMLaCORRIGER):
@@ -229,4 +229,4 @@ def spellcheck_texts_page_XML():
 
 
 if __name__ == "__main__":
-    spellcheck_texts_page_XML()
+    spellcheckTexts()
