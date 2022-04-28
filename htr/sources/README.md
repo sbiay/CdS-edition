@@ -2,8 +2,9 @@ Sources
 === 
 Ce dossier est destiné au test et à l'entraînement des modèles de reconnaissance d'écriture.
 
-Il contient :
+Il contient notamment :
 - La table d'identification des mains : [mains.csv](./mains.csv)
+- Le journal comptabilisant les scores d'acuité des entraînements de modèles : [journal-rec.json](./journal-rec.json)
 - La liste des modèles de reconnaissance d'écriture : [modeles-rec/](./modeles-rec/)
 
 Les mains sur lesquels on procède actuellement à l'entraînement des modèles sont listées ci-dessous.
