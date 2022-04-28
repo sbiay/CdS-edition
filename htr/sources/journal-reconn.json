@@ -42,5 +42,27 @@
             }
          ]
       }
+   ],
+   "cm_ft_mrs15_11.mlmodel": [
+      {
+         "date": "2022.4.28 12:48",
+         "mains": [
+            {
+               "nom_main": "mainCdS02_Konv019_01",
+               "nb_VT": 0,
+               "accuracy": 88.57
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_02",
+               "nb_VT": 0,
+               "accuracy": 0
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_01",
+               "nb_VT": 0,
+               "accuracy": 80.42
+            }
+         ]
+      }
    ]
 }

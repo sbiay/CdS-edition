@@ -7,7 +7,9 @@ from datetime import datetime
 
 @click.command()
 @click.argument("MODELE")
-def journalReconn(modele):
+@click.option("-v", "--veriteterrain", is_flag=True, default=False,
+              help="Prend en compte le contenu du dossier ./sources/veriteTerrain")
+def journalReconn(modele, veriteterrain):
     """
     Cette fonction prend comme argument le nom d'un modèle de reconnaissance d'écriture,
     si l'option -v est active, elle analyse les données d'entraînement fournies dans le dossier ./sources/veriteTerrain/
@@ -36,11 +38,12 @@ def journalReconn(modele):
     # On analyse le contenu du dossier ./sources/veriteTerrain
     fichiersVT = []
     # Si l'option -v est active, on analyse le contenu du dossier ./sources/veriteTerrain
-    for root, dirs, files in os.walk("./sources/veriteTerrain"):
-        for fichier in files:
-            # On ne sélectionne que les fichiers .jpg
-            if fichier[-3:] == "jpg":
-                fichiersVT.append(fichier)
+    if veriteterrain:
+        for root, dirs, files in os.walk("./sources/veriteTerrain"):
+            for fichier in files:
+                # On ne sélectionne que les fichiers .jpg
+                if fichier[-3:] == "jpg":
+                    fichiersVT.append(fichier)
     
     # On récupère le nombre de fichiers pour chaque main
     donneesMains = []
