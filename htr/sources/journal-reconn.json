@@ -1,1 +1,46 @@
-{}
+{
+   "souvay.mlmodel": [
+      {
+         "date": "2022.4.28 12:6",
+         "mains": [
+            {
+               "nom_main": "mainCdS02_Konv019_01",
+               "nb_VT": 0,
+               "accuracy": 58.66
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_02",
+               "nb_VT": 0,
+               "accuracy": 0
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_01",
+               "nb_VT": 0,
+               "accuracy": 80.43
+            }
+         ]
+      }
+   ],
+   "generic_lectaurep_26.mlmodel": [
+      {
+         "date": "2022.4.28 12:14",
+         "mains": [
+            {
+               "nom_main": "mainCdS02_Konv019_01",
+               "nb_VT": 0,
+               "accuracy": 87.24
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_02",
+               "nb_VT": 0,
+               "accuracy": 0
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_01",
+               "nb_VT": 0,
+               "accuracy": 73.72
+            }
+         ]
+      }
+   ]
+}
