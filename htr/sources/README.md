@@ -14,5 +14,11 @@ Il s'agit de la main principale de la série de recueils intitulée "2e copie", 
 ![exemple-mainCdS02_Konv002_01](./img-extrait/mainCdS02_Konv002_01-02_0065.jpg)
 
 # mainCdS02_Konv019_01
+Il s'agit de la main attestée au début du recueil de la correspondance adressée par [J.P.E. Martini](https://viaf.org/viaf/19866122/) à Constance de Salm.
+
+![exemple-mainCdS02_Konv019_01](./img-extrait/mainCdS02_Konv019_01-0002.jpg)
 
 # mainCdS02_Konv019_02
+Il s'agit de la seconde main attestée dans la correspondance adressée par [J.P.E. Martini](https://viaf.org/viaf/19866122/) à Constance de Salm.
+
+![exemple-mainCdS02_Konv019_02](./img-extrait/mainCdS02_Konv019_02-0036.jpg)
