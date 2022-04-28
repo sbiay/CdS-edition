@@ -1,13 +1,54 @@
 {
-    "souvay.mlmodel": {
-        "date": {
-            "type": "initial",
-            "mains": [
-                {
-                    "nom_main": "NOM",
-                    "accuracy": 90
-                }
-            ]
+    "souvay.mlmodel":  [
+        {
+            "2022-04-28 10:19:44.475228": {
+                "type": "initial",
+                "mains": [
+                    {
+                        "nom_main": "mainCdS02_Konv002_01",
+                        "accuracy": 80.43
+                    }
+                ]
+            }
         }
-    }
+    ],
+    "cdsMain1.mlmodel":  [
+        {
+            "2022-04-28 10:19:44.475228": {
+                "type": "initial",
+                "mains": [
+                    {
+                        "nom_main": "mainCdS02_Konv002_01",
+                        "accuracy": 95.43
+                    }
+                ]
+            }
+        }
+    ],
+    "cm_ft_mrs15_11.mlmodel":  [
+        {
+            "2022-04-28 10:19:44.475228": {
+                "type": "initial",
+                "mains": [
+                    {
+                        "nom_main": "mainCdS02_Konv002_01",
+                        "accuracy": 80.42
+                    }
+                ]
+            }
+        }
+    ],
+    "generic_lectaurep_26.mlmodel": [
+        {
+            "2022-04-28 10:19:44.475228": {
+                "type": "initial",
+                "mains": [
+                    {
+                        "nom_main": "mainCdS02_Konv002_01",
+                        "accuracy": 90
+                    }
+                ]
+            }
+        }
+    ]
 }
