@@ -1,0 +1,13 @@
+{
+    "souvay.mlmodel": {
+        "date": {
+            "type": "initial",
+            "mains": [
+                {
+                    "nom_main": "NOM",
+                    "accuracy": 90
+                }
+            ]
+        }
+    }
+}
