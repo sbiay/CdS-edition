@@ -26,6 +26,8 @@ Cette main est sporadiquement attestée dans les volumes de recueils de la "2e c
 
 ![exemple-mainCdS02_Konv002_03](./img-extrait/mainCdS02_Konv002_03-01_0006.jpg)
 
+Les témoins ont été précisément relevé dans les trois premiers volumes.
+
 # mainCdS02_Konv019_01
 Il s'agit de la main attestée au début du recueil de la correspondance adressée par [J.P.E. Martini](https://viaf.org/viaf/19866122/) à Constance de Salm.
 
