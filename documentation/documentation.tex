@@ -41,6 +41,7 @@
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
+\newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 
 % Images
@@ -67,44 +68,54 @@
 		\addcontentsline{toc}{section}{Objectifs}
 		L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format XML-TEI. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
 		
-		Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format TEI. Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
+		Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format TEI. 
+		
+		Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
 			
 	\chapter{Reconnaissance automatique des écritures manuscrites}
 		
 		\section{Problématique}
-		Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds} (mais aucune enquête paléographique complète n'a été menée). Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions.
+			Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds} (mais aucune enquête paléographique complète n'a été menée). Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions.
+			
+			Les choix effectués dans le cadre du projet \gls{lectaurep} ont permis de guider notre démarche. L'alternative méthodologique a été décrite ainsi par A.~Chagué~:
+			
+			\begin{quotation}
+				Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)~?\footcite{chagueCreationModelesTranscription}
+			\end{quotation}
 		
-		Deux pistes méthodologiques se dessinent~:
-		\begin{enumerate}
-			\item Rassembler dans un premier temps des lettres qui sont de la même main, pour voir quels sont les résultats du modèle entraîné par H.~Souvay lors d'un précédent stage\footcite{souvayCorrespondanceConstanceSalm2021}~;
-			\item Reprendre un modèle déjà entraîné à travailler sur plusieurs mains~; c'est l'option qui été privilégiée par le projet Lectaurep\footcite{chagueCreationModelesTranscriptiona}).
-		\end{enumerate}
+			Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voix.
+		
+			Deux séries de tests méritaient dès lors d'être effectuées~:
+	
+			\begin{enumerate}
+				\item Reprendre les tests sur le modèle entraîné de zéro par H.~Souvay lors d'un précédent stage consacré à la correspondance de \gls{cds}\footcite{souvayCorrespondanceConstanceSalm2021}~;
+				\item Reprendre un modèle générique entraîné pour le projet \gls{lectaurep} .
+			\end{enumerate}
 				
 		\section{Choisir un corpus d'entraînement}
-			Les recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. La distribution des mains y est variable selon les tomes :
-		\begin{enumerate}
-			\item Le premier volume\footcite{salmCorrespondanceGeneraleSecondea} présente une grande variété de mains s'enchaînant fréquemment les unes aux autres~;
-			\item Le deuxième volume\footcite{salmCorrespondanceGeneraleSeconde}  présente en revanche une meilleure cohérence paléographique : la même main peut se suivre sur un bon nombre de pages consécutives, facilitant l'entraînement d'un modèle sur une écriture particulière. Nous avons repris ce volume, en partie utilisé par H. Souvay pour ses tests, afin de constituer un premier sous-corpus paléographiquement cohérent~;
-			\item Le troisième volume\footcite{salmCorrespondanceGeneraleSecondeb}, où les mains du deuxième volume se retrouvent largement et a pu être joint au précédent.
-		\end{enumerate}
-	
-			\subsection{Main 1}
-			Nous avons établi une liste de 30 images (soit 30 doubles pages) au sein du 2e et du 3e volume attestant une écriture homogène que nous dénommons \textit{Main 1}. Nous avons pour cela sélectionné les lettres afin de ne travailler que sur un seul type d'écriture, sachant que les changements de main interviennent souvent en milieu de page. Quelques corrections de la main de \gls{cds} apparaissent ponctuellement.
+			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. 
+			
+			Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
+			
+			La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenu pour les tests.
+			
+			Nous avons également analysé les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} afin d'élargir la variété de notre corpus de tests. Nous y avons distingué deux mains\footnote{Une présentation des mains peut être parcourue sur le \href{https://github.com/sbiay/CdS-edition/tree/main/htr/sources}{dépôt du projet}}.
+					
+			Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}. Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
 		
-			\subsection{Écriture de \gls{cds}}
-			Le site ne publie aucune lettre originale de la main de \gls{cds}, mais 52 brouillons (\textit{Entwurf})\footnote{Le dépouillement se trouve dans le fichier \textsf{./htr/mains/brouillonsCDS.md}}.
+		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
+			\textbf{Cette section est à écrire.}
 		
-			Entraîner un modèle de reconnaissance sur cette écriture supposerait un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages), mais l'investissement peut en valoir la peine.
-		
-		\section{Segmentation et annotation des zones d'écriture}
-			Nous avons procédé à une première expérience de transcription sur le sous-corpus \textit{Main 1} avec le logiciel e-Scriptorium installé localement.
-        
+		\section{Entraîner des modèles de segmentation des pages}
+       
             \subsection{Typer les régions d'écriture}
             Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
             
             Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}.
-				        
-	        Cetaines régions peuvent être directement appliquées :
+			
+			\textbf{La suite de cette partie est dépassée.}
+	        
+	        Certaines régions peuvent être directement appliquées :
 			\selectlanguage{english}
 			\begin{itemize}
 				\item \textbf{Main}
@@ -174,18 +185,10 @@
 			
 			En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées, lorsque c'est possible), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
 			
-		\section{Mise en oeuvre de la reconnaissance d'écriture}
-			Dans le cadre de son stage, H.~Souvay a initié l'entraînement d'un modèle HTR à partir d'un petit volume de vérités de terrain \footcite{souvayCorrespondanceConstanceSalm2021}. La méthodologie employée était la suivante~:
-			\begin{quotation}
-				Nous avons décidé de tenter la transcription automatique sur un sous-ensemble du corpus composé de copies de lettres compilées dans des recueils. […] Les mains sont relativement constantes dans le temps dans ce sous-ensemble contrairement au reste du corpus. Même proches, ces mains demeurent différentes. Nous avons donc opté pour l’entraînement d’un modèle multi-mains, c’est à dire un modèle non-spécialisé capable de transcrire plusieurs mains représentées dans le corpus d’entraînement\footcite[p.~6-7]{souvayCorrespondanceConstanceSalm2021}
-			\end{quotation}
-
-			Il s'agit dans un premier temps d'augmenter le volume des vérités de terrain pour améliorer les performances du modèle entraînés par H. Souvay.
-			
-			L'objectif visé est de dépasser un taux de précision de reconnaissance de 90\% pour chaque main.
-	
 		\section{Automatiser la correction des prédictions}
-			Les corrections à appliquer aux prédictions \gls{htr} sont nombreuses. Il s'agit d'un travail conséquent à mener avec prudence. Le risque de son automatisation est notamment de remplacer involontairement des prédictions justes ou de remplacer des prédictions fausses par d'autres prédictions fausses. Le contrôle des propositions automatiques de correction est donc nécessaire, bien qu'un trop grand nombre de données à contrôler puisse nuire gravement à la rentabilité du processus.
+			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
+			
+			Les corrections à appliquer à ces prédictions \gls{htr} restent nombreuses, ce qui appelle à trouver des solutions d'automatisation. Cette tâche requiert néanmoins de la prudence. Le risque de son automatisation est notamment de remplacer involontairement des prédictions justes ou de remplacer des prédictions fausses par d'autres prédictions fausses. Le contrôle des propositions automatiques de correction est donc nécessaire, bien qu'un trop grand nombre de données à contrôler puisse nuire gravement à la rentabilité du processus.
 			
 			L'automatisation de la correction des prédictions a pour objectif d'accélérer le passage de la prédiction au format XML-TEI. Le résultat de cette correction est imparfait~; par conséquent cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr} qui dépend de transcriptions les plus justes possibles. Une fois les modèles \gls{htr} correctement entraînés, la correction automatique permet de résoudre rapidement un certains nombres d'erreurs en amont la transformation au format TEI, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
 			
@@ -266,7 +269,7 @@
 		Lorsque l'orthographe est erronée, on transcrit le mot sans le corriger~: \textit{Mr Prons} pour \textit{M. Prous}.
 		
 		\section{Lettres illisibles}
-		On remplace chaque lettre illisible par le caractère #.
+		On remplace chaque lettre illisible par le caractère \#.
            	
 	% Bibliographie
 	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
