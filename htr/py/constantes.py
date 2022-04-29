@@ -1,6 +1,6 @@
 VERITESTERRAIN = "./veriteTerrain/"
-XMLaCORRIGER = "./xmlPage-aCorriger/"
-XMLCORRIGEES = "./xmlPage-corrigees/"
+XMLaCORRIGER = "./predic-a-corriger/"
+XMLCORRIGEES = "./predic-corrigees/"
 DICTCDS = "./py/dicos/correctionsCDS.json"
 DICTPAGESNONCORR = "./py/dicos/aCorriger/"
 DICTPAGESCORR = "./py/dicos/corriges/"

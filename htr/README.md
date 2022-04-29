@@ -12,3 +12,8 @@ La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier : :
 La consultation de ces *notebooks* suppose d'avoir suivi les consignes d'[installation](https://github.com/sbiay/CdS-edition#installation).
 
 Pour une documentation plus détaillée, on consultera le fichier [documentation.pdf](../documentation/documentation.pdf).
+
+Contenu des dossiers :
+- [demo/](./demo/) : contient les illustrations de démonstration des *notebooks*
+- [py/](./py/) : contient les scripts Python exploités dans les *notebooks*
+- [sources/](./sources/) : où sont importées et traitées les images
