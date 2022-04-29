@@ -37,7 +37,7 @@ htr/py/__pycache__
 htr/py/dicos/aCorriger/
 htr/py/dicos/corriges/
 htr/py/dicos/page*
-htr/sources/img-complet/
+htr/sources/img-complet*
 htr/sources/main*/*jpg
 htr/sources/main*/test/*jpg
 htr/sources/main*/train/*jpg
