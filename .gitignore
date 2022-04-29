@@ -38,7 +38,10 @@ htr/py/dicos/aCorriger/
 htr/py/dicos/corriges/
 htr/py/dicos/page*
 htr/sources/img-complet/
-htr/sources/main*
+htr/sources/main*/*jpg
+htr/sources/main*/test/*jpg
+htr/sources/main*/train/*jpg
+htr/sources/main*/VTsuppl/*jpg
 htr/xmlPage-aCorriger/
 htr/xmlPage-corrigees/
 lexique-deu-fra.csv
@@ -46,3 +49,4 @@ py/__pycache__
 recueils/
 reprendre-a.md
 souvayCDS
+sync.ffs_lock
