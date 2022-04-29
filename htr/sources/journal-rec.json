@@ -17,6 +17,11 @@
                "nom_main": "mainCdS02_Konv002_01",
                "nb_VT": 0,
                "accuracy": 80.43
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_03",
+               "nb_VT": 0,
+               "accuracy": 43.73
             }
          ]
       }
@@ -39,6 +44,11 @@
                "nom_main": "mainCdS02_Konv002_01",
                "nb_VT": 0,
                "accuracy": 73.72
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_03",
+               "nb_VT": 0,
+               "accuracy": 80.43
             }
          ]
       }
@@ -61,6 +71,11 @@
                "nom_main": "mainCdS02_Konv002_01",
                "nb_VT": 0,
                "accuracy": 80.42
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_03",
+               "nb_VT": 0,
+               "accuracy": 81.89
             }
          ]
       }
