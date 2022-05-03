@@ -1,0 +1,52 @@
+Adresse de l’image	Type de signe	Nature	Majuscule ou minucule ?	Commentaire	Problème	Encodage
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f18/1540,4025,55,73/max/0/default.jpg	signe tironien	et		privilégié sur le et tironien barré (&etslash;)		&#x204A;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f19/2781,2942,104,91/max/0/default.jpg	lettre	M	min			m
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f19/2909,2863,93,98/max/0/default.jpg	lettre	M	maj			M
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f20/1694,3549,100,137/max/0/default.jpg	lettre	S long				&#x017F;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f20/3026,2835,535,240/max/0/default.jpg	ponctuation	pied de mouche		coupure forte		&#x00B6;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f23/1654,4025,177,129/max/0/default.jpg	abréviation	-oient				'
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f23/1733,3274,98,103/max/0/default.jpg	lettre	S	suscrit			e&#x1DE4;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f24/1487,1838,302,174/max/0/default.jpg	abréviation	-er/-re				'
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f24/3172,3965,195,179/max/0/default.jpg	abréviation	pro				&#xA753;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f24/3259,3870,123,149/max/0/default.jpg	abréviation	que				q&#x0303;
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7100018t/f25/2921,3884,215,105/max/0/default.jpg	abréviation	-sieurs				&#x1E9C;
+img/caracteres/abbrPer.jpg	abréviation	per				&#xA751;
+img/caracteres/abbrQue.jpg	abréviation	-us				&#xA770;
+img/caracteres/abbrVostre.jpg	abréviation	u(ost)re				ur&#x0303;e
+img/caracteres/Amin.jpg	lettre	A	min			
+img/caracteres/Bmin.jpg	lettre	B	min			
+img/caracteres/Cmaj.jpg	lettre	C	maj			
+img/caracteres/Cmin.jpg	lettre	C	min			
+img/caracteres/Dmin.jpg	lettre	D	min			
+img/caracteres/Dmin2.jpg	lettre	D	min			
+img/caracteres/Dmin3.jpg	lettre	D	min			
+img/caracteres/Emaj.jpg	lettre	E	maj			
+img/caracteres/Emin.jpg	lettre	E	min			
+img/caracteres/EminTild.jpg	abréviation	e tildé pour -en- ou -em-				&#x0303;
+img/caracteres/EminTild.jpg	lettre	E	min	tildé		e&#x0303;
+img/caracteres/Fmin.jpg	lettre	F	min			
+img/caracteres/Gmin.jpg	lettre	G	min			
+img/caracteres/Iini.jpg	lettre	I	min	initial		
+img/caracteres/Imin.jpg	lettre	I	min			
+img/caracteres/Jmin.jpg	lettre	J	min	intial		i
+img/caracteres/Lmin.jpg	lettre	L	min			
+img/caracteres/Nmin.jpg	lettre	N	min			
+img/caracteres/OminTild.jpg	abréviation	o tildé pour -on- ou -om-				o&#x0303;
+img/caracteres/Pmin.jpg	lettre	P	min			
+img/caracteres/point.jpg	ponctuation	point médian		coupure forte		&#x00B7;
+img/caracteres/ponct01.jpg	ponctuation	virgule		coupure faible ; signe apparemment composé ; une seule occurrence repérée f. 2v 		,
+img/caracteres/ponct02.jpg	ponctuation	punctus elevatus 		coupure forte		;
+img/caracteres/ponctTraitUnion.jpg	ponctuation	trait d’union		fin de ligne		-
+img/caracteres/Qmin.jpg	lettre	Q	min			
+img/caracteres/Rmin.jpg	lettre	R	min			
+img/caracteres/Rmin2.jpg	lettre	R	min			
+img/caracteres/RminIni.jpg	lettre	R	min	initial		
+img/caracteres/Smaj.jpg	lettre	S	maj			
+img/caracteres/Smin3.jpg	lettre	S	min rond			
+img/caracteres/Tmin.jpg	lettre	T	min			
+img/caracteres/Umin.jpg	lettre	U	min			
+img/caracteres/virga.jpg	ponctuation	virgule		coupure faible		,
+img/caracteres/VminIni.jpg	lettre	V ou U	min	initial		u
+img/caracteres/Xmni.jpg	lettre	X	min			
+img/caracteres/Ymin.jpg	lettre	Y	min			
+img/caracteres/Zmin.jpg	lettre	Z	min			
