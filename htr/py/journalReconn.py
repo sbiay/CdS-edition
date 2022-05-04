@@ -10,16 +10,18 @@ from constantes import JOURNALREC
 @click.argument("MODELE")
 @click.option("-v", "--veriteterrain", is_flag=True, default=False,
               help="Prend en compte le contenu du dossier ./sources/veriteTerrain")
-def journalReconn(modele, veriteterrain):
+@click.option("-i", "--ignore", default=False, multiple=True,
+              help="Prend comme argument une liste de noms de modèles à ignorer")
+def journalReconn(modele, veriteterrain, ignore):
     """
     Cette fonction prend comme argument le nom d'un modèle de reconnaissance d'écriture,
     si l'option -v est active, elle analyse les données d'entraînement fournies dans le dossier ./sources/veriteTerrain/
     puis inscrit avec la date courante, les données collectées, dans le fichier journal-reconn.json
     :param modele: nom de modèle HTR
+    :param ignore: liste des collections que l'on ne souhaite pas ajouter au journal
     :type modele: str
     :return: None
     """
-    
     # On récupère la liste des fichiers correspondant à chaque main
     mains = {}
     with open("./sources/mains.csv") as csvf:
@@ -49,16 +51,18 @@ def journalReconn(modele, veriteterrain):
     # On récupère le nombre de fichiers pour chaque main
     donneesMains = []
     for main in mains:
-        nb = 0
-        for fichier in fichiersVT:
-            if fichier in mains[main]:
-                nb += 1
-        dico = {
-            "nom_main": main,
-            "nb_VT": nb,
-            "accuracy": 0
-        }
-        donneesMains.append(dico)
+        # On prend en compte la liste des mains à ignorer
+        if main not in ignore:
+            nb = 0
+            for fichier in fichiersVT:
+                if fichier in mains[main]:
+                    nb += 1
+            dico = {
+                "nom_main": main,
+                "nb_VT": nb,
+                "accuracy": 0
+            }
+            donneesMains.append(dico)
     
     # On écrit l'entrée du journal
     date = f"{datetime.now().year}.{datetime.now().month}.{datetime.now().day} {datetime.now().hour}:" \
