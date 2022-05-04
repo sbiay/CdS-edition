@@ -3,6 +3,7 @@ import click
 import json
 import os
 from datetime import datetime
+from constantes import JOURNALREC
 
 
 @click.command()
@@ -68,8 +69,8 @@ def journalReconn(modele, veriteterrain):
         "mains": donneesMains
     }
     
-    # On récupère le contenu du fichier journal-reconn.json
-    with open("./sources/journal-reconn.json") as f:
+    # On récupère le contenu du fichier de journal
+    with open(JOURNALREC) as f:
         journal = json.load(f)
     
     # On initie le modèle s'il n'existe pas dans le journal
@@ -79,7 +80,7 @@ def journalReconn(modele, veriteterrain):
     journal[modele].append(entree)
     
     # On écrit le résultat dans un fichier de sortie au format .py
-    with open("./sources/journal-reconn.json", mode="w") as jsonf:
+    with open(JOURNALREC, mode="w") as jsonf:
         json.dump(journal, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
 
 
