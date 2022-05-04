@@ -58,16 +58,6 @@
          "date": "2022.4.28 12:48",
          "mains": [
             {
-               "nom_main": "mainCdS02_Konv019_01",
-               "nb_VT": 0,
-               "accuracy": 88.57
-            },
-            {
-               "nom_main": "mainCdS02_Konv019_02",
-               "nb_VT": 0,
-               "accuracy": 83.80
-            },
-            {
                "nom_main": "mainCdS02_Konv002_01",
                "nb_VT": 0,
                "accuracy": 80.42
@@ -76,6 +66,41 @@
                "nom_main": "mainCdS02_Konv002_03",
                "nb_VT": 0,
                "accuracy": 81.89
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_01",
+               "nb_VT": 0,
+               "accuracy": 88.57
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_02",
+               "nb_VT": 0,
+               "accuracy": 83.8
+            }
+         ]
+      },
+      {
+         "date": "2022.5.4 9:50",
+         "mains": [
+            {
+               "nom_main": "mainCdS02_Konv002_01",
+               "nb_VT": 10,
+               "accuracy": 98.68
+            },
+            {
+               "nom_main": "mainCdS02_Konv002_03",
+               "nb_VT": 8,
+               "accuracy": 96.31
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_01",
+               "nb_VT": 8,
+               "accuracy": 97.88
+            },
+            {
+               "nom_main": "mainCdS02_Konv019_02",
+               "nb_VT": 11,
+               "accuracy": 96.27
             }
          ]
       }
