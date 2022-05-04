@@ -49,6 +49,11 @@
                "nom_main": "mainCdS02_Konv002_03",
                "nb_VT": 0,
                "accuracy": 80.43
+            },
+            {
+               "nom_main": "mainAuteur",
+               "nb_VT": 0,
+               "accuracy": 43.20
             }
          ]
       }
@@ -76,6 +81,12 @@
                "nom_main": "mainCdS02_Konv019_02",
                "nb_VT": 0,
                "accuracy": 83.8
+            }
+            ,
+            {
+               "nom_main": "mainAuteur",
+               "nb_VT": 0,
+               "accuracy": 44.77
             }
          ]
       },
