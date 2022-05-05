@@ -11,8 +11,8 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT6" LABEL="Signature" DESCRIPTION="block type Signature"/><OtherTag ID="BT7" LABEL="Letterhead" DESCRIPTION="block type Letterhead"/><OtherTag ID="BT8" LABEL="Numbering" DESCRIPTION="block type Numbering"/><OtherTag ID="BT9" LABEL="Salute" DESCRIPTION="block type Salute"/><OtherTag ID="BT10" LABEL="Dateline" DESCRIPTION="block type Dateline"/><OtherTag ID="BT11" LABEL="Additions" DESCRIPTION="block type Additions"/><OtherTag ID="BT12" LABEL="Note" DESCRIPTION="block type Note"/><OtherTag ID="BT13" LABEL="Postscript" DESCRIPTION="block type Postscript"/>
-    <OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="Correction" DESCRIPTION="line type Correction"/><OtherTag ID="LT5" LABEL="Verse" DESCRIPTION="line type Verse"/>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT6" LABEL="CustomLine:signature" DESCRIPTION="block type Signature"/><OtherTag ID="BT7" LABEL="Letterhead" DESCRIPTION="block type Letterhead"/><OtherTag ID="BT8" LABEL="NumberingZone" DESCRIPTION="block type Numbering"/><OtherTag ID="BT9" LABEL="CustomLine:salute" DESCRIPTION="block type Salute"/><OtherTag ID="BT10" LABEL="CustomLine:dateline" DESCRIPTION="block type Dateline"/><OtherTag ID="BT11" LABEL="Additions" DESCRIPTION="block type Additions"/><OtherTag ID="BT12" LABEL="Note" DESCRIPTION="block type Note"/><OtherTag ID="BT13" LABEL="CustomLine:postscript" DESCRIPTION="block type Postscript"/>
+    <OtherTag ID="LT1" LABEL="DefaultLine" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="InterlinearLine" DESCRIPTION="line type Correction"/><OtherTag ID="LT5" LABEL="CustomLine:verse" DESCRIPTION="line type Verse"/>
   </Tags>
   
   <Layout>
@@ -970,3 +970,4 @@
     </Page>
   </Layout>
 </alto>
+

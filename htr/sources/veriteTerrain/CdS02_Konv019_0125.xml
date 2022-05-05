@@ -11,8 +11,8 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT30" LABEL="Opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT31" LABEL="Closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT32" LABEL="RunningTitle" DESCRIPTION="block type RunningTitle"/><OtherTag ID="BT33" LABEL="Page" DESCRIPTION="block type Page"/>
-    <OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="Correction" DESCRIPTION="line type Correction"/><OtherTag ID="LT4" LABEL="Signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT11" LABEL="Verse" DESCRIPTION="line type Verse"/><OtherTag ID="LT12" LABEL="Dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT13" LABEL="Title" DESCRIPTION="line type Title"/><OtherTag ID="LT14" LABEL="Salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT15" LABEL="Postscript" DESCRIPTION="line type Postscript"/>
+    <OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT30" LABEL="CustomZone:opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT31" LABEL="CustomZone:closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT32" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitle"/><OtherTag ID="BT33" LABEL="CustomZone:page" DESCRIPTION="block type Page"/>
+    <OtherTag ID="LT1" LABEL="DefaultLine" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="InterlinearLine" DESCRIPTION="line type Correction"/><OtherTag ID="LT4" LABEL="CustomLine:signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT11" LABEL="CustomLine:verse" DESCRIPTION="line type Verse"/><OtherTag ID="LT12" LABEL="CustomLine:dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT13" LABEL="HeadingLine:title" DESCRIPTION="line type Title"/><OtherTag ID="LT14" LABEL="CustomLine:salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT15" LABEL="CustomLine:postscript" DESCRIPTION="line type Postscript"/>
   </Tags>
   
   <Layout>
@@ -442,3 +442,4 @@
     </Page>
   </Layout>
 </alto>
+

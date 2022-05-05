@@ -11,8 +11,8 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT23" LABEL="Opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT24" LABEL="Closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT25" LABEL="Page" DESCRIPTION="block type Page"/><OtherTag ID="BT26" LABEL="RunningTitle" DESCRIPTION="block type RunningTitle"/>
-    <OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="Correction" DESCRIPTION="line type Correction"/><OtherTag ID="LT7" LABEL="Salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT8" LABEL="Dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT9" LABEL="Signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT10" LABEL="Title" DESCRIPTION="line type Title"/>
+    <OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT23" LABEL="CustomZone:opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT24" LABEL="CustomZone:closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT25" LABEL="CustomZone:page" DESCRIPTION="block type Page"/><OtherTag ID="BT26" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitle"/>
+    <OtherTag ID="LT1" LABEL="DefaultLine" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="InterlinearLine" DESCRIPTION="line type Correction"/><OtherTag ID="LT7" LABEL="CustomLine:salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT8" LABEL="CustomLine:dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT9" LABEL="CustomLine:signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT10" LABEL="HeadingLine:title" DESCRIPTION="line type Title"/>
   </Tags>
   
   <Layout>
@@ -652,3 +652,4 @@
     </Page>
   </Layout>
 </alto>
+

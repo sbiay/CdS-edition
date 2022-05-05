@@ -11,8 +11,8 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT16" LABEL="Letterhead" DESCRIPTION="block type Letterhead"/><OtherTag ID="BT17" LABEL="Dateline" DESCRIPTION="block type Dateline"/><OtherTag ID="BT18" LABEL="Salute" DESCRIPTION="block type Salute"/><OtherTag ID="BT19" LABEL="Signature" DESCRIPTION="block type Signature"/><OtherTag ID="BT20" LABEL="Postscript" DESCRIPTION="block type Postscript"/><OtherTag ID="BT21" LABEL="Note" DESCRIPTION="block type Note"/>
-    <OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="Correction" DESCRIPTION="line type Correction"/><OtherTag ID="LT6" LABEL="Verse" DESCRIPTION="line type Verse"/>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT16" LABEL="Letterhead" DESCRIPTION="block type Letterhead"/><OtherTag ID="BT17" LABEL="CustomLine:dateline" DESCRIPTION="block type Dateline"/><OtherTag ID="BT18" LABEL="CustomLine:salute" DESCRIPTION="block type Salute"/><OtherTag ID="BT19" LABEL="CustomLine:signature" DESCRIPTION="block type Signature"/><OtherTag ID="BT20" LABEL="CustomLine:postscript" DESCRIPTION="block type Postscript"/><OtherTag ID="BT21" LABEL="Note" DESCRIPTION="block type Note"/>
+    <OtherTag ID="LT1" LABEL="DefaultLine" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="InterlinearLine" DESCRIPTION="line type Correction"/><OtherTag ID="LT6" LABEL="CustomLine:verse" DESCRIPTION="line type Verse"/>
   </Tags>
   
   <Layout>
@@ -608,3 +608,4 @@
     </Page>
   </Layout>
 </alto>
+

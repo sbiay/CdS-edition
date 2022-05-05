@@ -11,7 +11,7 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT27" LABEL="Closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT28" LABEL="Opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT29" LABEL="RunningTitle" DESCRIPTION="block type RunningTitle"/>
+    <OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT27" LABEL="CustomZone:closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT28" LABEL="CustomZone:opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT29" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitle"/>
     
   </Tags>
   
@@ -520,3 +520,4 @@
     </Page>
   </Layout>
 </alto>
+

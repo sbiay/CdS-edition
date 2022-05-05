@@ -11,8 +11,8 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="Main" DESCRIPTION="block type Main"/><OtherTag ID="BT34" LABEL="Opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT35" LABEL="Closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT36" LABEL="Page" DESCRIPTION="block type Page"/><OtherTag ID="BT37" LABEL="Note" DESCRIPTION="block type Note"/>
-    <OtherTag ID="LT1" LABEL="Main" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="Correction" DESCRIPTION="line type Correction"/><OtherTag ID="LT16" LABEL="Verse" DESCRIPTION="line type Verse"/><OtherTag ID="LT17" LABEL="Dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT18" LABEL="Salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT19" LABEL="Signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT20" LABEL="Title" DESCRIPTION="line type Title"/><OtherTag ID="LT21" LABEL="Postscript" DESCRIPTION="line type Postscript"/>
+    <OtherTag ID="BT1" LABEL="Title" DESCRIPTION="block type Title"/><OtherTag ID="BT2" LABEL="MainZone" DESCRIPTION="block type Main"/><OtherTag ID="BT34" LABEL="CustomZone:opener" DESCRIPTION="block type Opener"/><OtherTag ID="BT35" LABEL="CustomZone:closer" DESCRIPTION="block type Closer"/><OtherTag ID="BT36" LABEL="CustomZone:page" DESCRIPTION="block type Page"/><OtherTag ID="BT37" LABEL="Note" DESCRIPTION="block type Note"/>
+    <OtherTag ID="LT1" LABEL="DefaultLine" DESCRIPTION="line type Main"/><OtherTag ID="LT3" LABEL="InterlinearLine" DESCRIPTION="line type Correction"/><OtherTag ID="LT16" LABEL="CustomLine:verse" DESCRIPTION="line type Verse"/><OtherTag ID="LT17" LABEL="CustomLine:dateline" DESCRIPTION="line type Dateline"/><OtherTag ID="LT18" LABEL="CustomLine:salute" DESCRIPTION="line type Salute"/><OtherTag ID="LT19" LABEL="CustomLine:signature" DESCRIPTION="line type Signature"/><OtherTag ID="LT20" LABEL="HeadingLine:title" DESCRIPTION="line type Title"/><OtherTag ID="LT21" LABEL="CustomLine:postscript" DESCRIPTION="line type Postscript"/>
   </Tags>
   
   <Layout>
@@ -1135,3 +1135,4 @@
     </Page>
   </Layout>
 </alto>
+
