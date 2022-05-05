@@ -37,6 +37,7 @@
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
 \newacronym{cds}{CdS}{Constance de Salm}
+\newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
@@ -177,7 +178,7 @@
             Les types de lignes dont on propose l'utilisation sont~:
             
             \begin{itemize}
-				\item \textbf{Main}
+				\item \textbf{Default}
 				\item \textbf{Verse}: \langue{les passages en vers sont relativement nombreux}
 				\item \textbf{Correction}: \langue{catégorie existant par défaut dans e-Scriptorium, elle s'appliquerait uniquement pour les corrections appliquées dans l'interligne.}
             \end{itemize}
@@ -265,6 +266,8 @@
 				
 		\section{Orthographe}
 			L'orthographe des mots a été respectée~: \textit{enfans, momens, sentimens, cahos}.
+			
+			Lorsque l'orthographe était erronée et changait la prononciation du mot, on a transcrit le mot sans le corriger~: \textit{Mr. Prons} pour \textit{Mr. Prous}.
 		
 		\section{Abréviations}
 			Les abréviations ont été transcrites sans être résolues~: \textit{9bre} pour novembre, \textit{Mr.} pour Monsieur.
@@ -274,13 +277,15 @@
 		\section{Ponctuation}
 			Les signes de ponctuation ont été transcrits fidèlement, y compris les points marquant une pause de la plume sans articulation syntaxique~: \textit{je ne sais pas . si vous en serez bien aise}. Les tirets ont été transcrits par le caractère ‒.
 		
-		\section{Corrections}
-			On transcrit tout ce qui est lisible, y compris les lettres biffées, lorsque c'est possible. On privilégie le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
+		\section{Passages biffés, palimpsestes}
+			Pour la transcription des phénomènes complexes tels que les passages biffés ou les palimpsestes, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
+			
+			On a transcrit tout ce qui était lisible, y compris les lettres biffées, lorsque c'était possible, privilégiant le dernier état du texte et en plaçant le passage corrigé entre crochets~: [abc].
 		
-			Lorsque l'orthographe est erronée, on transcrit le mot sans le corriger~: \textit{Mr Prons} pour \textit{M. Prous}.
+			On a remplacé chaque lettre biffée illisible par un point et placé l'ensemble des lettres concernées entre crochets~: [..] \textit{(pour deux lettres illisibles)}.
 		
-		\section{Lettres illisibles}
-			On remplace chaque lettre illisible par le caractère \#.
+		\section{Passages illisibles}
+			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}
            	
 	% Bibliographie
 	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
