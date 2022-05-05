@@ -75,22 +75,31 @@
 	\chapter{Reconnaissance automatique des écritures manuscrites}
 		
 		\section{Problématique}
-			Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds} (mais aucune enquête paléographique complète n'a été menée). Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions.
 			
-			Les choix effectués dans le cadre du projet \gls{lectaurep} ont permis de guider notre démarche. L'alternative méthodologique a été décrite ainsi par A.~Chagué~:
+			\subsection{Des sources écrites par plusieurs mains}
+				Quatre à cinq mains différentes ont été repérées jusqu'à présent dans la correspondance de \gls{cds} (mais aucune enquête paléographique complète n'a été menée). Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions.
+				
+				Les choix effectués dans le cadre du projet \gls{lectaurep} ont permis de guider notre démarche. L'alternative méthodologique a été décrite ainsi par A.~Chagué~:
+				
+				\begin{quotation}
+					Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)~?\footcite{chagueCreationModelesTranscription}
+				\end{quotation}
 			
-			\begin{quotation}
-				Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)~?\footcite{chagueCreationModelesTranscription}
-			\end{quotation}
+				Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voix.
+			
+				Deux séries de tests méritaient dès lors d'être effectuées~:
 		
-			Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voix.
+				\begin{enumerate}
+					\item Reprendre les tests sur le modèle entraîné de zéro par H.~Souvay lors d'un précédent stage consacré à la correspondance de \gls{cds}\footcite{souvayCorrespondanceConstanceSalm2021}~;
+					\item Reprendre un modèle générique entraîné pour le projet \gls{lectaurep} .
+				\end{enumerate}
 		
-			Deux séries de tests méritaient dès lors d'être effectuées~:
-	
-			\begin{enumerate}
-				\item Reprendre les tests sur le modèle entraîné de zéro par H.~Souvay lors d'un précédent stage consacré à la correspondance de \gls{cds}\footcite{souvayCorrespondanceConstanceSalm2021}~;
-				\item Reprendre un modèle générique entraîné pour le projet \gls{lectaurep} .
-			\end{enumerate}
+			\subsection{Objectif~: éditer}
+				Il faut prendre en considération dans les choix méthodologiques du processus d'\gls{htr} les objectifs à atteindre. Il s'agit d'éditer le texte en restant proche de l'usage scribal, sans donc le corriger~:
+				
+				\begin{enumerate}
+					\item La transcription ne résout pas les abréviations~;
+				\end{enumerate}
 				
 		\section{Choisir des collections d'entraînement}
 			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. 	 Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
@@ -109,7 +118,7 @@
 		\section{Entraîner des modèles de segmentation des pages}
        
             \subsection{Typer les régions d'écriture}
-            Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire.
+            Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
             
             Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}.
 			
