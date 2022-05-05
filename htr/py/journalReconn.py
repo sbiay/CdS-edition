@@ -10,7 +10,7 @@ from constantes import JOURNALREC
 @click.argument("MODELE")
 @click.option("-v", "--veriteterrain", is_flag=True, default=False,
               help="Prend en compte le contenu du dossier ./sources/veriteTerrain")
-@click.option("-i", "--ignore", default=False, multiple=True,
+@click.option("-i", "--ignore", default=list, multiple=True,
               help="Prend comme argument une liste de noms de modèles à ignorer")
 def journalReconn(modele, veriteterrain, ignore):
     """
