@@ -17,4 +17,3 @@ Pour une documentation plus détaillée, on consultera le fichier [documentation
 Contenu des dossiers :
 - [demo/](./demo/) : contient les illustrations de démonstration des *notebooks*
 - [py/](./py/) : contient les scripts Python exploités dans les *notebooks*
-- [sources/](./sources/) : où sont importées et traitées les images
