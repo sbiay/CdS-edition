@@ -2,25 +2,25 @@
    "souvay.mlmodel": [
       {
          "date": "2022.4.28 12:6",
-         "mains": [
+         "items": [
             {
-               "nom_main": "mainCdS02_Konv019_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
                "accuracy": 58.66
             },
             {
-               "nom_main": "mainCdS02_Konv019_02",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
                "accuracy": 44.61
             },
             {
-               "nom_main": "mainCdS02_Konv002_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
                "accuracy": 80.43
             },
             {
-               "nom_main": "mainCdS02_Konv002_03",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
                "accuracy": 43.73
             }
          ]
@@ -29,30 +29,30 @@
    "generic_lectaurep_26.mlmodel": [
       {
          "date": "2022.4.28 12:14",
-         "mains": [
+         "items": [
             {
-               "nom_main": "mainCdS02_Konv019_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
                "accuracy": 87.24
             },
             {
-               "nom_main": "mainCdS02_Konv019_02",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
                "accuracy": 81.19
             },
             {
-               "nom_main": "mainCdS02_Konv002_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
                "accuracy": 73.72
             },
             {
-               "nom_main": "mainCdS02_Konv002_03",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
                "accuracy": 80.43
             },
             {
-               "nom_main": "mainAuteur",
-               "nb_VT": 0,
+               "label": "mainAuteur",
+               "gt_nb": 0,
                "accuracy": 43.20
             }
          ]
@@ -61,56 +61,56 @@
    "cm_ft_mrs15_11": [
       {
          "date": "2022.4.28 12:48",
-         "mains": [
+         "items": [
             {
-               "nom_main": "mainCdS02_Konv002_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
                "accuracy": 80.42
             },
             {
-               "nom_main": "mainCdS02_Konv002_03",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
                "accuracy": 81.89
             },
             {
-               "nom_main": "mainCdS02_Konv019_01",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
                "accuracy": 88.57
             },
             {
-               "nom_main": "mainCdS02_Konv019_02",
-               "nb_VT": 0,
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
                "accuracy": 83.8
             }
             ,
             {
-               "nom_main": "mainAuteur",
-               "nb_VT": 0,
+               "label": "mainAuteur",
+               "gt_nb": 0,
                "accuracy": 44.77
             }
          ]
       },
       {
          "date": "2022.5.4 9:50",
-         "mains": [
+         "items": [
             {
-               "nom_main": "mainCdS02_Konv002_01",
-               "nb_VT": 10,
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 10,
                "accuracy": 98.68
             },
             {
-               "nom_main": "mainCdS02_Konv002_03",
-               "nb_VT": 8,
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 8,
                "accuracy": 96.31
             },
             {
-               "nom_main": "mainCdS02_Konv019_01",
-               "nb_VT": 8,
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 8,
                "accuracy": 97.88
             },
             {
-               "nom_main": "mainCdS02_Konv019_02",
-               "nb_VT": 11,
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 11,
                "accuracy": 96.27
             }
          ]
