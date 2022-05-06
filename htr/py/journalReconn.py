@@ -15,8 +15,11 @@ from constantes import TRAITNTENCOURS, JOURNALREC
 def journalReconn(modele, no_ground_truth, ignore):
     """
     Cette fonction prend comme argument le nom d'un modèle de reconnaissance d'écriture,
-    elle écrit un dans un fichier la liste des images n'appartenant ni aux dossiers test/ ni au dossiers train/,
-    elle inscrit dans un journal d'entraînement au format Json, sous le nom du modèle passé en argument,
+    elle écrit dans différents fichiers :
+    - la liste des images n'appartenant ni aux dossiers test/ ni aux dossiers train/
+    - la liste des images appartenant à ces dossiers
+    - la liste des images classées dans chaque dossier de mains
+    puis elle inscrit dans un journal d'entraînement au format Json, sous le nom du modèle passé en argument,
     et sous la date courante, les données collectées caractéristiques de l'entraînement
     (notamment la liste des mains avec le nombre des fichiers pour chacune) ;
     si l'option -n est active, elle n'analyse pas les données d'entraînement classées dans les dossiers train/.
@@ -27,12 +30,14 @@ def journalReconn(modele, no_ground_truth, ignore):
     :type modele: str
     :type ignore: list
     """
-    # On initie une liste des fichiers d'entraînement et une liste de tous les fichiers
+    # On initie des listes de fichiers
     testOUtrain = []
+    cheminsTestOUtrain = []
     tousFichiers = []
     
-    # On récupère la liste des fichiers correspondant à chaque main
+    # On initie le dictionnaire des fichiers correspondant à chaque main
     mains = {}
+    
     # On analyse l'arborescence courante
     for racine, dossiers, fichiers in os.walk(TRAITNTENCOURS):
         # On boucle sur les fichiers
@@ -44,7 +49,7 @@ def journalReconn(modele, no_ground_truth, ignore):
                 # Si la main est déjà référencée dans le dict mains, on ajoute l'image à la liste-valeur
                 if mains.get(main):
                     mains[main]["all_files"].append(fichier)
-                # Si la main n'est pas encore référencée dans le dict mains, on l'ajoute
+                # Si la main n'est pas encore référencée dans le dict mains, on l'ajoute comme clé
                 else:
                     mains[main] = {
                         "gt_files": [],
@@ -56,24 +61,41 @@ def journalReconn(modele, no_ground_truth, ignore):
                 if len(racine.split("/")) > 3:
                     if racine.split("/")[3] == "train":
                         mains[main]["gt_files"].append(fichier)
+                        # On ajoute le nom du fichier et son chemin aux listes initiées en début de script
+                        testOUtrain.append(fichier)
+                        cheminsTestOUtrain.append(racine + "/" + fichier)
                     if racine.split("/")[3] == "test":
                         mains[main]["test_files"].append(fichier)
-                    # On ajoute aussi le nom du fichier à la liste fichiersVT
-                    testOUtrain.append(fichier)
-                    
+                        testOUtrain.append(fichier)
+                        cheminsTestOUtrain.append(racine + "/" + fichier)
+            
+            # On récupère la liste de tous les fichiers images du traitement
             elif fichier[-3:] == "jpg" and racine[:29] == "./traitnt-encours/img-complet":
                 tousFichiers.append(fichier)
     
+    # ECRITURE DES LISTES DE FICHIERS
     # On initie la liste des fichiers n'appartenant ni aux tests ni aux entraînements
     autresFichiers = []
+    # On boucle sur tous les fichiers
     for fichier in tousFichiers:
         if fichier not in testOUtrain:
             autresFichiers.append(fichier)
+    # On écrit cette liste dans un fichier (en prévision de la copie de ces fichiers vers une nouvelle destination)
     with open(TRAITNTENCOURS + "/img-complet/sansVT.txt", mode="w") as f:
         for fichier in autresFichiers:
             f.write(fichier + "\n")
     
-    # On trie les mains par ordre alpanumérique
+    # On écrit la liste des fichiers appartenant aux dossiers test/ et train/
+    with open(TRAITNTENCOURS + "/testOUtrain.txt", mode="w") as f:
+        for fichier in cheminsTestOUtrain:
+            f.write(fichier + "\n")
+        
+    # On écrit dans un fichier Json la liste des fichiers classés dans chaque dossier de mains
+    with open(TRAITNTENCOURS + "mains.json", mode="w") as jsonf:
+        json.dump(mains, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
+    
+    # ECRITURE DU JOURNAL D'ENTRAINEMENT
+    # On trie les mains par ordre alpa-numérique
     labelsMains = []
     for main in mains:
         labelsMains.append(main)
