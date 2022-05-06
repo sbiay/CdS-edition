@@ -61,6 +61,7 @@
    "cm_ft_mrs15_11": [
       {
          "date": "2022.4.28 12:48",
+         "total_item": 4,
          "items": [
             {
                "label": "mainCdS02_Konv002_01",
@@ -92,6 +93,8 @@
       },
       {
          "date": "2022.5.4 9:50",
+         "total_item": 4,
+         "output": "cds_lectcm_04_mains_02.mlmodel",
          "items": [
             {
                "label": "mainCdS02_Konv002_01",
