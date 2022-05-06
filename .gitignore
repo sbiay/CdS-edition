@@ -52,9 +52,9 @@ souvayCDS
 sync.ffs_lock
 htr/traitnt-encours/brouillonsCDS/*jpg
 htr/traitnt-encours/veriteTerrain/*jpg
-htr/traitnt-encours/mainAuteur/csv/
-htr/traitnt-encours/mainAuteur/py/
-htr/traitnt-encours/mainAuteur/exemples-paleo/
-htr/traitnt-encours/mainAuteur/css/
-htr/traitnt-encours/mainAuteur/test/*jpg
+htr/mainAuteur/csv/
+htr/mainAuteur/py/
+htr/mainAuteur/exemples-paleo/
+htr/mainAuteur/css/
+htr/mainAuteur/test/*jpg
 htr/traitnt-encours/segmentation-test/
