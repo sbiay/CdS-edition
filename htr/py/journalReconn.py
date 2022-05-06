@@ -15,18 +15,21 @@ from constantes import TRAITNTENCOURS, JOURNALREC
 def journalReconn(modele, no_ground_truth, ignore):
     """
     Cette fonction prend comme argument le nom d'un modèle de reconnaissance d'écriture,
-    si l'option -v est active, elle analyse les données d'entraînement fournies dans le dossier ./sources/veriteTerrain/
-    puis inscrit avec la date courante, les données collectées, dans le fichier journal-reconn.json
-    :param no_ground_truth: définit si l'on doit ignorer le contenu des dossiers train/
+    elle écrit un dans un fichier la liste des images n'appartenant ni aux dossiers test/ ni au dossiers train/,
+    elle inscrit dans un journal d'entraînement au format Json, sous le nom du modèle passé en argument,
+    et sous la date courante, les données collectées caractéristiques de l'entraînement
+    (notamment la liste des mains avec le nombre des fichiers pour chacune) ;
+    si l'option -n est active, elle n'analyse pas les données d'entraînement classées dans les dossiers train/.
     :param modele: nom de modèle HTR
+    :param no_ground_truth: définit si l'on doit ignorer le contenu des dossiers train/
     :param ignore: liste des collections que l'on ne souhaite pas ajouter au journal
     :type no_ground_truth: bool
     :type modele: str
     :type ignore: list
     """
-    
-    # On initie la liste des vérités de terrain
-    fichiersVT = []
+    # On initie une liste des fichiers d'entraînement et une liste de tous les fichiers
+    testOUtrain = []
+    tousFichiers = []
     
     # On récupère la liste des fichiers correspondant à chaque main
     mains = {}
@@ -49,14 +52,28 @@ def journalReconn(modele, no_ground_truth, ignore):
                         "all_files": [fichier]
                     }
                 
-                # On recherche les chemins de dossiers se terminant pas train ou test
+                # On recherche les chemins de dossiers se terminant par train ou test
                 if len(racine.split("/")) > 3:
                     if racine.split("/")[3] == "train":
                         mains[main]["gt_files"].append(fichier)
                     if racine.split("/")[3] == "test":
                         mains[main]["test_files"].append(fichier)
+                    # On ajoute aussi le nom du fichier à la liste fichiersVT
+                    testOUtrain.append(fichier)
+                    
+            elif fichier[-3:] == "jpg" and racine[:29] == "./traitnt-encours/img-complet":
+                tousFichiers.append(fichier)
     
-    # On trie les mains par ordre alpanuémrique
+    # On initie la liste des fichiers n'appartenant ni aux tests ni aux entraînements
+    autresFichiers = []
+    for fichier in tousFichiers:
+        if fichier not in testOUtrain:
+            autresFichiers.append(fichier)
+    with open(TRAITNTENCOURS + "/img-complet/sansVT.txt", mode="w") as f:
+        for fichier in autresFichiers:
+            f.write(fichier + "\n")
+    
+    # On trie les mains par ordre alpanumérique
     labelsMains = []
     for main in mains:
         labelsMains.append(main)
