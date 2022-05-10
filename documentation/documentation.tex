@@ -36,10 +36,12 @@
 % Sigles et acronymes
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
+\newacronym{bnf}{BnF}{Bibliothèque nationale de France}
 \newacronym{cds}{CdS}{Constance de Salm}
 \newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
+\newacronym{enc}{ENC}{École nationale des chartes}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
@@ -102,7 +104,7 @@
 					\item La transcription ne résout pas les abréviations~;
 				\end{enumerate}
 				
-		\section{Choisir des collections d'entraînement}
+		\section{Choisir des collections d'évaluation}
 			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. 	 Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
 			
 			La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenu pour les tests.
@@ -113,6 +115,22 @@
 					
 			Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages).
 		
+		\section{Préparer le traitement d'une source}
+			\textbf{Cette section est à écrire.}
+			
+		\section{Choisir une application~: Transkribus ou eScriptorium~?}
+			Au moment de notre stage, les deux principales applications permettant de procéder à la transcription automatique des écritures manuscrites sont eScriptorium et Transkribus.
+			
+			Différentes considérations peuvent conduire à opter pour l'une ou l'autre de ces applications\footnote{Nous avons assisté le 9 mai 2022 à l'atelier organisé au sein du Data-Lab de la \gls{bnf} et dont le programme est détaillé dans le billet d'\cite{jacquotTranskribusEScriptoriumTranscrire}.}. Le facteur nous apparaissant comme le plus déterminant a trait aux compétences d'ingénierie des personnes chargées de mener la campagne de transcription.
+			
+			L'écosystème applicatif Transkribus est celui qui propose le plus grand choix de services, tant pour les utilisateurs ayant des compétences d'ingénierie élevées (logiciel Expert Client) que pour les néophytes (Transkribus Lite). Conjuguées à la facilité de prise en main de Transkribus Lite, les fonctionnalités de gestion des versions de transcription offertes par Transkribus Expert Client rendent cet écosystème le mieux à même d'héberger des campagnes de transcription de grande ampleur, faisant appel à de multiples transcripteurs, voire à de la production participative (ou \textit{crowdsourcing}).
+			
+			L'application eScriptorium, à un stade de développement moins avancé, avec une interface dotée de moins de fonctionnalités que Transkribus (gestion des versions de transcription, annotation du texte), mobilise davantage de compétences d'ingénierie. En revanche, la gratuité totale de son utilisation et qui plus est la culture \textit{open-source} portée par la communauté qui développe et utilise eScriptorium (ouverture des données de modèles, de vérités de terrain, développement d'outils auxiliaires à la transcription, à la gestion de fichiers, propositions de standards d'annotation) rendent cette application tout à fait adéquate aux projets impliquant un petit nombre de transcripteurs ayant une bonne culture d'ingénierie au préalable, notamment au sein d'institutions désireuses de promouvoir la science ouverte.
+			
+			Nous avons opté pour eScriptorium dans le cadre de ce stage en raison du dynamisme de la communauté eScriptorium au sein de l'\gls{enc} (à travers le projet \gls{cremma}).
+
+			Nous avons testé son utilisation à partir d'une installation locale, faisant appel aux seules ressources d'un ordinateur portable, à savoir sans serveur ni carte graphique externe. Cette méthode nous a permis de procéder à des entraînements de modèle à partir de petits volumes de vérités de terrain. Si des entraînements plus massifs s'avéraient nécessaires, il serait alors impératif de se tourner vers une infrastructure dotée de plus grandes capacités de calcul, ce que, par exemple, un partenariat entre le \gls{dhi} et le projet \gls{cremma} rendrait possible.
+				
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
 			\textbf{Cette section est à écrire.}
 		
