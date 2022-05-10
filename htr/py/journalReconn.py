@@ -15,19 +15,19 @@ from constantes import TRAITNTENCOURS, JOURNALREC
 def journalReconn(modele, no_ground_truth, ignore):
     """
     Cette fonction prend comme argument le nom d'un modèle de reconnaissance d'écriture,
-    elle écrit dans différents fichiers :
+    et écrit dans différents fichiers :
     - la liste des images n'appartenant ni aux dossiers test/ ni aux dossiers train/
     - la liste des images appartenant à ces dossiers
     - la liste des images classées dans chaque dossier de mains
-    puis elle inscrit dans un journal d'entraînement au format Json, sous le nom du modèle passé en argument,
+    De plus la fonction inscrit dans un journal d'entraînement au format Json, sous le nom du modèle passé en argument
     et sous la date courante, les données collectées caractéristiques de l'entraînement
     (notamment la liste des mains avec le nombre des fichiers pour chacune) ;
     si l'option -n est active, elle n'analyse pas les données d'entraînement classées dans les dossiers train/.
     :param modele: nom de modèle HTR
     :param no_ground_truth: définit si l'on doit ignorer le contenu des dossiers train/
     :param ignore: liste des collections que l'on ne souhaite pas ajouter au journal
-    :type no_ground_truth: bool
     :type modele: str
+    :type no_ground_truth: bool
     :type ignore: list
     """
     # On initie des listes de fichiers
@@ -81,18 +81,26 @@ def journalReconn(modele, no_ground_truth, ignore):
         if fichier not in testOUtrain:
             autresFichiers.append(fichier)
     # On écrit cette liste dans un fichier (en prévision de la copie de ces fichiers vers une nouvelle destination)
-    with open(TRAITNTENCOURS + "/img-complet/sansVT.txt", mode="w") as f:
-        for fichier in autresFichiers:
-            f.write(fichier + "\n")
-    
-    # On écrit la liste des fichiers appartenant aux dossiers test/ et train/
-    with open(TRAITNTENCOURS + "/testOUtrain.txt", mode="w") as f:
-        for fichier in cheminsTestOUtrain:
-            f.write(fichier + "\n")
+    if not no_ground_truth:
+        with open(TRAITNTENCOURS + "/img-complet/sansVT.txt", mode="w") as f:
+            for fichier in autresFichiers:
+                f.write(fichier + "\n")
+            print(f"La liste des images n'appartenant ni aux dossiers test/ ni aux dossiers train/ a été correctement "
+                      f"écrite dans le fichier {TRAITNTENCOURS}img-complet/sansVT.txt.\n")
         
+    # On écrit la liste des fichiers appartenant aux dossiers test/ et train/
+    if not no_ground_truth:
+        with open(TRAITNTENCOURS + "/testOUtrain.txt", mode="w") as f:
+            for fichier in cheminsTestOUtrain:
+                f.write(fichier + "\n")
+            print(f"La liste des images appartenant aux dossiers test/ et train/ a été correctement "
+                  f"écrite dans le fichier {TRAITNTENCOURS}testOUtrain.txt.\n")
+    
     # On écrit dans un fichier Json la liste des fichiers classés dans chaque dossier de mains
     with open(TRAITNTENCOURS + "mains.json", mode="w") as jsonf:
         json.dump(mains, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
+        print(f"La liste des images classées dans chaque dossier de mains a été correctement écrite dans le fichier "
+              f"{TRAITNTENCOURS}mains.json.\n")
     
     # ECRITURE DU JOURNAL D'ENTRAINEMENT
     # On trie les mains par ordre alpa-numérique
