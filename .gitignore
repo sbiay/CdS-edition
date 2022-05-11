@@ -51,7 +51,8 @@ reprendre-a.md
 souvayCDS
 sync.ffs_lock
 htr/traitnt-encours/brouillonsCDS/*jpg
-htr/veriteTerrain/*jpg
+htr/test-rec/*jpg
+htr/verite-terrain/*jpg
 htr/mainAuteur/csv/
 htr/mainAuteur/py/
 htr/mainAuteur/exemples-paleo/
