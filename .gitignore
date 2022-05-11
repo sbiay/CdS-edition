@@ -59,3 +59,4 @@ htr/mainAuteur/css/
 htr/mainAuteur/test/*jpg
 htr/traitnt-encours/segmentation-test/
 *zip
+htr/traitnt-encours/train-seg*
