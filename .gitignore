@@ -37,11 +37,11 @@ htr/py/__pycache__
 htr/py/dicos/aCorriger/
 htr/py/dicos/corriges/
 htr/py/dicos/page*
-htr/traitnt-encours/img-complet*
-htr/traitnt-encours/main*/*jpg
-htr/traitnt-encours/main*/test/*jpg
-htr/traitnt-encours/main*/train/*jpg
-htr/traitnt-encours/main*/VTsuppl/*jpg
+htr/entrainements/img-complet*
+htr/entrainements/main*/*jpg
+htr/entrainements/main*/test/*jpg
+htr/entrainements/main*/train/*jpg
+htr/entrainements/main*/VTsuppl/*jpg
 htr/xmlPage-aCorriger/
 htr/xmlPage-corrigees/
 lexique-deu-fra.csv
@@ -50,7 +50,7 @@ recueils/
 reprendre-a.md
 souvayCDS
 sync.ffs_lock
-htr/traitnt-encours/brouillonsCDS/*jpg
+htr/entrainements/brouillonsCDS/*jpg
 htr/test-rec/*jpg
 htr/verite-terrain/*jpg
 htr/mainAuteur/csv/
@@ -58,9 +58,9 @@ htr/mainAuteur/py/
 htr/mainAuteur/exemples-paleo/
 htr/mainAuteur/css/
 htr/mainAuteur/test/*jpg
-htr/traitnt-encours/segmentation-test/
+htr/entrainements/segmentation-test/
 *zip
-htr/traitnt-encours/train-seg*
+htr/entrainements/train-seg*
 visuel-dh/
 *.ppt*
 *.pdf
