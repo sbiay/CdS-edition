@@ -3,6 +3,7 @@ HTR
 
 Ce dossier contient les fichiers et scripts nécessaires à la réalisation du processus de reconnaissance automatique d'écriture et à la correction des prédictions.
 
+# Documentation fonctionnelle
 La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
 1. [Préparer le traitement d'une source](./Preparer_le_traitement_dune_source.ipynb)
 2. [Importer un dossier dans eScriptorium](./Importer_dossier_dans_eScriptorium.ipynb)
@@ -11,10 +12,13 @@ La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
 5. [Tutoriel Kami pour tester un modèle de reconnaissance d'écriture avec des statistiques riches](./Tutoriel_Kami.ipynb)
 6. [Corriger une prédiction](./Corriger_une_prediction.ipynb)
 
+# Aide
 La consultation de ces *notebooks* suppose d'avoir suivi les consignes d'[installation](https://github.com/sbiay/CdS-edition#installation).
 
 Pour une documentation plus détaillée, on consultera le fichier [documentation.pdf](../documentation/documentation.pdf).
 
-Contenu des dossiers :
+En cas de doute sur l'avancement dans le traitement d'un dossier [ce script]() permet d'obtenir de comparer les listes de fichiers de deux dossiers.
+
+# Contenu des dossiers :
 - [demo/](./demo/) : contient les illustrations de démonstration des *notebooks*
 - [py/](./py/) : contient les scripts Python exploités dans les *notebooks*
