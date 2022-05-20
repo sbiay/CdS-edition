@@ -27,9 +27,9 @@
 }
 \usepackage[nottoc]{tocbibind}% Pour ajouter la biblio à la TDM sans numérotation de chapitre
 
-% bibliographie
+% Bibliographie
 \usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
-\addbibresource{biblio.bib}
+\addbibresource{./biblio.bib}
 
 %\nocite{*}
 
@@ -134,84 +134,58 @@
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
 			\textbf{Cette section est à écrire.}
 		
-		\section{Entraîner des modèles de segmentation des pages}
-       
-            \subsection{Typer les régions d'écriture}
-            Le typage est utile en ce qu'il permet de traiter de manière différentielle des régions et des lignes afin de les affecter à des éléments distincts de l'arborescence XML-TEI qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
-            
-            Il faut donc réfléchir aux besoins de cette transformation vers le format TEI. Les \textit{Guidelines} de l'édition de correspondance du projet DAHN permettent de guider cette réflexion\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}.
+		\section{Annoter les régions et les lignes d'écriture}
+			L'annotation des régions et des lignes d'écritures répond à deux fonctions distinctes~:
 			
-			\textbf{La suite de cette partie est dépassée.}
-	        
-	        Certaines régions peuvent être directement appliquées :
-			\selectlanguage{english}
 			\begin{itemize}
-				\item \textbf{Main}
-				\item \textbf{Title}
-				\item \textbf{Signature}: salutation and signature of the sender;
-				\item \textbf{Letterhead}
-				\item \textbf{Numbering}
-				\item \textbf{Salute}
-				\item \textbf{Dateline}: place and date of writing for the letter.
-			\end{itemize}
-			\selectlanguage{french}
-			
-			Il pourrait être pertinent de modifier l'usage de :
-			\selectlanguage{english}
-			\begin{itemize}
-				\item \textbf{Additions}: \langue{cette catégorie est utilisée ailleurs dans \gls{Segmonto}, pour les documents administratifs			\selectlanguage{french}\footcite{chagueDocumentsAdministratifsXIXe2021}~; elle intervient dans le traitement du document postérieurement à sa rédaction. Cette pertinence reste cependant à confirmer. Cette catégorie pourrait également s'appliquer aux rubriques~:}
-				\begin{figure}[!h]
-					% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
-					\centering
-					\includegraphics{img/CdS02_Konv002-02_0064_detail.jpg}
-					\caption{Rubrique "autographe".}
-					\label{autographe}% Le label est le Fig. qui se place au début de la légende, le premFig est la clé d'appel de la figure.
-				\end{figure}
+				\item Permettre l'entraînement d'un modèle de segmentation~;
+				\item Transformer leur contenu afin de l'affecter à des éléments déterminés de l'arborescence XML-TEI qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
 			\end{itemize}
 
-			
-			Il pourrait être pertinent de reprendre ou de créer d'autres concepts :
-			\selectlanguage{english}
-			\begin{itemize}
-				\item \textbf{Note}: \langue{pour les notes infrapaginales (utilisé dans SegmOnto pour les imprimés\selectlanguage{french}\footcite{Imprimes2021}}
-				\selectlanguage{english}
-				\item \textbf{Postscritp}: \langue{cela repmplacerait le rôle à l'origine assigné à \langue{Additions}. J'opterais bien pour le jaune car il ne va pas me servir par ailleurs, et qu'on ne risque guère d'avoir un tampon proche du post-scriptum}.
+				Cette réflexion sur les besoins de la transformation vers le format TEI a été nourrie par les \textit{Guidelines} de l'édition de correspondance du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Afin de rendre notre propre typologique générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
+
+			\subsection{Régions}
+				L'entraînement d'un modèle de segmentation à reconnaître et annoter automatiquement des types de régions d'écritures est un travail complexe. La mise en page des lettres répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. Le meilleur exemple de ces variations se trouve dans les recueils~: les lettres ont été transcrites les unes à la suite des autres~; un début de lettre peut dès lors se trouver à n'importe quelle hauteur de la page. La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre.
 				
-			\end{itemize}
-			\selectlanguage{french}
+				En raison de cette complexité, nous avons opté pour une typologie de régions resserrée. Tandis que l'ontologie de F.~Chiffoleau proposait un type de région pour chaque élément significatif de l'écrit de correspondance\footcite{chiffoleauCorrespondanceLangueFrancaise2021}, nous n'avons retenu que trois types de régions principaux pour annoter la structure des lettres~:
+				
+				\begin{itemize}
+					\item \textbf{MainZone}~: pour le corps du texte~;
+					\item \textbf{CustomZone:opener}~: pour l'en-tête des lettres~;
+					\item \textbf{CustomZone:closer}~: pour la clôture des lettres.
+				\end{itemize}
+			
+				\textbf{la définition des régions est formelle, visuelle}
 			
 			La figure \ref{typageRegions} \hyperref[typageRegions]{ci-dessous} propose une mise en oeuvre de ce typage des régions.	
-
-	        \begin{figure}[!h]
-	        	% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
-	        	\centering
+			
+			\begin{figure}[!h]
+				% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
+				\centering
 				\rotatebox{90}{%
-					\includegraphics[scale=0.65]{img/essai-zones-CdS02_Konv002-02_0066.jpg}%
+					\includegraphics[scale=0.65]{../htr/demo/annotation-CdS02_Konv002-02_0066.png}%
 				}%
-			\caption{Exemple de typage des zones de texte sur une double page.}%
-			\label{typageRegions}%
-	        \end{figure}
-        
-            \subsection{Typer les lignes d'écriture}
-            Les types de lignes dont on propose l'utilisation sont~:
-            
-            \begin{itemize}
-				\item \textbf{Default}
-				\item \textbf{Verse}: \langue{les passages en vers sont relativement nombreux}
-				\item \textbf{Correction}: \langue{catégorie existant par défaut dans e-Scriptorium, elle s'appliquerait uniquement pour les corrections appliquées dans l'interligne.}
-            \end{itemize}
-        
-	        \subsection{Phénomènes graphiques particuliers}
-            \gls{cds} a corrigé certains mots de sa main~:
- 
-				\begin{itemize}
-				 	\item En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée~; le typage de la ligne demanderait alors beaucoup d'effort pour un résultat minime~;
-				 	\item En réécrivant dans l'interligne~: il est alors pertinent d'utiliser le type de ligne e-Scriptorium \textbf{Correction}.
-				\end{itemize}
+				\caption{Exemple de typage des zones de texte sur une double page.}%
+				\label{typageRegions}%
+			\end{figure}
+			
+			\subsection{Typer les lignes d'écriture}
+				Les types de lignes dont on propose l'utilisation sont~:
+						
+			\subsection{Phénomènes graphiques particuliers}
+			\gls{cds} a corrigé certains mots de sa main~:
+			
+			\begin{itemize}
+				\item En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée~; le typage de la ligne demanderait alors beaucoup d'effort pour un résultat minime~;
+				\item En réécrivant dans l'interligne~: il est alors pertinent d'utiliser le type de ligne e-Scriptorium \textbf{Correction}.
+			\end{itemize}
 			
 			Un ensemble de solutions d'encodage des corrections a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}. J'envisage plutôt \textbf{ne pas encoder ces éléments dans la phase d'HTR}, et de ne les aborder que la phase d'édition. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition TEI, de suivre la reproduction du manuscrit à éditer. En outre, introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités de terrain.
 			
 			En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées, lorsque c'est possible), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
+		
+		\section{Entraîner des modèles de segmentation des pages}
+       		\textbf{Cette section est à écrire.}
 			
 		\section{Automatiser la correction des prédictions}
 			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
