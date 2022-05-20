@@ -38,6 +38,7 @@
 \makeglossaries
 \newacronym{bnf}{BnF}{Bibliothèque nationale de France}
 \newacronym{cds}{CdS}{Constance de Salm}
+\newacronym{cg2c2v}{Corr.~g., 2e copie, 2e vol.}{long}
 \newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
@@ -145,7 +146,27 @@
 				Cette réflexion sur les besoins de la transformation vers le format TEI a été nourrie par les \textit{Guidelines} de l'édition de correspondance du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Afin de rendre notre propre typologique générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
 
 			\subsection{Régions}
-				L'entraînement d'un modèle de segmentation à reconnaître et annoter automatiquement des types de régions d'écritures est un travail complexe. La mise en page des lettres répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. Le meilleur exemple de ces variations se trouve dans les recueils~: les lettres ont été transcrites les unes à la suite des autres~; un début de lettre peut dès lors se trouver à n'importe quelle hauteur de la page. La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre.
+				L'entraînement d'un modèle de segmentation à reconnaître et annoter automatiquement des types de régions d'écritures est un travail complexe. La mise en page des lettres répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. Le meilleur exemple de ces variations se trouve dans les recueils~: les lettres ont été transcrites les unes à la suite des autres~; un début de lettre peut dès lors se trouver à n'importe quelle hauteur de la page. 
+				
+				\textbf{Ajouter un commentaire sur l'espacement des lignes de l'en-tête}
+				
+				\begin{figure}[!h]
+					% !h ancre l'image dans le flux de texte
+					\centering
+					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0193-detail-01.jpg}%
+					\caption{Début d'une lettre présentant une disposition aérée des éléments (\cite{salmCorrespondanceGeneraleSeconde}).}%
+					\label{}%
+				\end{figure}
+			
+				\begin{figure}[!h]
+					% !h ancre l'image dans le flux de texte
+					\centering
+					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0046-detail.jpg}%
+					\caption{Début d'une lettre présentant une disposition resserrée des éléments (\cite{salmCorrespondanceGeneraleSeconde}).}%
+					\label{}%
+				\end{figure}
+				
+				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre.
 				
 				En raison de cette complexité, nous avons opté pour une typologie de régions resserrée. Tandis que l'ontologie de F.~Chiffoleau proposait un type de région pour chaque élément significatif de l'écrit de correspondance\footcite{chiffoleauCorrespondanceLangueFrancaise2021}, nous n'avons retenu que trois types de régions principaux pour annoter la structure des lettres~:
 				
