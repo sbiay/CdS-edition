@@ -64,3 +64,4 @@ htr/entrainements/train-seg*
 visuel-dh/
 *.ppt*
 *.pdf
+htr/demo/*.tif
