@@ -3,7 +3,7 @@ HTR
 
 Ce dossier contient les fichiers et scripts nécessaires à la réalisation du processus de reconnaissance automatique d'écriture et à la correction des prédictions.
 
-La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier : :
+La mise en oeuvre concrète est expliquée dans les *notebooks* du dossier [documentation](./documentation) :
 1. [Comment préparer le traitement d'une source](documentation/Preparer_le_traitement_dune_source.ipynb)
 2. [Comment segmenter et annoter une page](documentation/Segmenter_et_annoter_une_page.ipynb)
 3. [Comment tester et entraîner un modèle de reconnaissance d'écriture](documentation/Tester_et_entrainer_un_modele_HTR_avec_Kraken.ipynb)
