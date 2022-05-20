@@ -17,7 +17,15 @@ La consultation de ces *notebooks* suppose d'avoir suivi les consignes d'[instal
 
 Pour une documentation plus détaillée, on consultera le fichier [documentation.pdf](../documentation/documentation.pdf).
 
-En cas de doute sur l'avancement dans le traitement d'un dossier [ce script]() permet d'obtenir de comparer les listes de fichiers de deux dossiers.
+En cas de doute sur l'**avancement du traitement d'une source**, on peut comparer la liste des fichiers de deux dossiers à l'aide de la commande :
+```shell
+diff -r <directory1> <directory2> > diff.txt
+```
+
+Et pour obtenir la liste des fichiers exclusivement présents dans le dossier courant :
+```shell
+grep "Seulement dans ./" diff.txt > exclu.txt
+```
 
 # Contenu des dossiers :
 - [demo/](./demo/) : contient les illustrations de démonstration des *notebooks*
