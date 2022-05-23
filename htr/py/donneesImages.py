@@ -77,8 +77,8 @@ def donneesImages(source, sortie):
     # On écrit l'objet final
     resultats = {
         "results": {
-            "records": avecNotice,
-            "no-record": sansNotice
+            "records": dict(sorted(avecNotice.items())),
+            "no-record": sansNotice.sort()
         },
         "stats": {
             "records": len(listeImages) - len(sansNotice),
