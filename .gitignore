@@ -66,3 +66,4 @@ visuel-dh/
 *.pdf
 htr/demo/*.tif
 htr/entrainements/modeles-seg/sortie/
+htr/traitnts.md
