@@ -116,8 +116,12 @@
 					
 			Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages).
 		
-		\section{Préparer le traitement d'une source}
-			\textbf{Cette section est à écrire.}
+		\section{Préparer le traitement d'un dossier}
+			L'archive photographique de la corrspondance de Constance de Salm comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
+			
+			Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste, pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice. Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire.
+			
+			Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire.
 			
 		\section{Choisir une application~: Transkribus ou eScriptorium~?}
 			Au moment de notre stage, les deux principales applications permettant de procéder à la transcription automatique des écritures manuscrites sont eScriptorium et Transkribus.

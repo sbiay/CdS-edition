@@ -5,7 +5,7 @@ Ce dossier contient les fichiers et scripts nécessaires à la réalisation du p
 
 # Documentation fonctionnelle
 La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
-1. [Préparer le traitement d'une source](./Preparer_le_traitement_dune_source.ipynb)
+1. [Préparer le traitement d'un dossier](./Preparer_le_traitement_dun_dossier.ipynb)
 2. [Importer un dossier dans eScriptorium](./Importer_dossier_dans_eScriptorium.ipynb)
 3. [Segmenter et annoter une page](./Segmenter_et_annoter_une_page.ipynb)
 4. [Tester et entraîner un modèle de reconnaissance d'écriture](./Tester_et_entrainer_un_modele_HTR_avec_Kraken.ipynb)

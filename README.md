@@ -1,4 +1,4 @@
-Éditer la correspondance de<br>Constance de Salm (1767-1845)
+Éditer la correspondance de <br>Constance de Salm (1767-1845)
 ====
 
 ![accueil](./accueil.jpg)
