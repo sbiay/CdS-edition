@@ -1,4 +1,32 @@
 
+@unpublished{albertiLabelingCuttingGrouping2019,
+  title = {Labeling, {{Cutting}}, {{Grouping}}: An {{Efficient Text Line Segmentation Method}} for {{Medieval Manuscripts}}},
+  shorttitle = {Labeling, {{Cutting}}, {{Grouping}}},
+  author = {Alberti, Michele and Vögtlin, Lars and Pondenkandath, Vinaychandran and Seuret, Mathias and Ingold, Rolf and Liwicki, Marcus},
+  date = {2019-07-01},
+  number = {arXiv:1906.11894},
+  eprint = {1906.11894},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1906.11894},
+  url = {http://arxiv.org/abs/1906.11894},
+  urldate = {2022-05-24},
+  abstract = {This paper introduces a new way for text-line extraction by integrating deep-learning based pre-classification and state-of-the-art segmentation methods. Text-line extraction in complex handwritten documents poses a significant challenge, even to the most modern computer vision algorithms. Historical manuscripts are a particularly hard class of documents as they present several forms of noise, such as degradation, bleed-through, interlinear glosses, and elaborated scripts. In this work, we propose a novel method which uses semantic segmentation at pixel level as intermediate task, followed by a text-line extraction step. We measured the performance of our method on a recent dataset of challenging medieval manuscripts and surpassed state-of-the-art results by reducing the error by 80.7\%. Furthermore, we demonstrate the effectiveness of our approach on various other datasets written in different scripts. Hence, our contribution is two-fold. First, we demonstrate that semantic pixel segmentation can be used as strong denoising pre-processing step before performing text line extraction. Second, we introduce a novel, simple and robust algorithm that leverages the high-quality semantic segmentation to achieve a text-line extraction performance of 99.42\% line IU on a challenging dataset.},
+  archiveprefix = {arXiv}
+}
+
+@inproceedings{antonacopoulosICDAR2015CompetitionRecognition2015,
+  title = {{{ICDAR2015}} Competition on Recognition of Documents with Complex Layouts - {{RDCL2015}}},
+  booktitle = {2015 13th {{International Conference}} on {{Document Analysis}} and {{Recognition}} ({{ICDAR}})},
+  author = {Antonacopoulos, A. and Clausner, C. and Papadopoulos, C. and Pletschacher, S.},
+  date = {2015-08},
+  pages = {1151--1155},
+  doi = {10.1109/ICDAR.2015.7333941},
+  abstract = {This paper presents an objective comparative evaluation of page segmentation and region classification methods for documents with complex layouts. It describes the competition (modus operandi, dataset and evaluation methodology) held in the context of ICDAR2015, presenting the results of the evaluation of eight methods - four submitted, two state-of-the-art systems (one commercial and one open-source) and their two immediately previous versions. Three scenarios are reported in this paper, one evaluating the ability of methods to accurately segment regions and two evaluating both segmentation and region classification (one with emphasis on text and the other focusing only on text). The results indicate that an innovative approach has a clear advantage but there is still a considerable need to develop robust methods that deal with layout challenges, especially with the non-text content.},
+  eventtitle = {2015 13th {{International Conference}} on {{Document Analysis}} and {{Recognition}} ({{ICDAR}})}
+}
+
 @software{barrusPyspellcheckerPurePython,
   title = {Pyspellchecker~: {{Pure}} Python Spell Checker Based on Work by {{Peter Norvig}}},
   shorttitle = {Pyspellchecker},
@@ -215,6 +243,17 @@
   urldate = {2022-04-20}
 }
 
+@inproceedings{gabaySegmOntoVocabulaireControle2021,
+  title = {{{SegmOnto}}~: Un Vocabulaire Contrôlé Pour Décrire La Page Manuscrite et Imprimée},
+  booktitle = {Création de Modèle(s) {{HTR}} Pour Les Documents Médiévaux En Ancien Français et Moyen Français Entre Le {{Xe-XIVe}} Siècle},
+  author = {Gabay, Simon and Camps, Jean-Baptiste and Pinche, Ariane},
+  date = {2021-11},
+  publisher = {{Ecole nationale des chartes | PSL}},
+  location = {{Paris, France}},
+  url = {https://hal.archives-ouvertes.fr/hal-03481089},
+  urldate = {2022-05-24}
+}
+
 @article{granaAutomaticSegmentationDigitalized2010,
   title = {Automatic Segmentation of Digitalized Historical Manuscripts},
   author = {Grana, Costantino and Borghesani, Daniele and Cucchiara, Rita},
@@ -267,6 +306,16 @@
   abstract = {L’initiative Digit\_Hum et le BnF Datalab organisent les 9 et 10 mai prochain une journée de présentation et d’échange entre les plateformes Transkribus et eScriptorium, suivie d’une journée d’ateliers de mise en pratique. Ces plateformes, utilisées par de plus en plus de projets à travers le monde, ont pour but de fournir un ensemble d’outils … Continuer la lecture de Transkribus / eScriptorium : Transcrire, annoter et éditer numériquement des documents d’archives, ateliers à la BnF  →},
   langid = {french},
   organization = {{Carnet de la recherche à la Bibliothèque nationale de France}}
+}
+
+@unpublished{kiesslingBADAMPublicDataset2019,
+  title = {{{BADAM}}: {{A Public Dataset}} for {{Baseline Detection}} in {{Arabic-script Manuscripts}}},
+  shorttitle = {{{BADAM}}},
+  author = {Kiessling, Benjamin and Stökl Ben Ezra, Daniel and Miller, Matthew Thomas},
+  date = {2019-07},
+  url = {https://hal.archives-ouvertes.fr/hal-02167164},
+  urldate = {2022-05-24},
+  abstract = {The application of handwritten text recognition to historical works is highly dependant on accurate text line retrieval. A number of systems utilizing a robust baseline detection paradigm have emerged recently but the advancement of layout analysis methods for challenging scripts is held back by the lack of well-established datasets including works in non-Latin scripts. We present a dataset of 400 annotated document images from different domains and time periods. A short elaboration on the particular challenges posed by handwriting in Arabic script for layout analysis and subsequent processing steps is given. Lastly, we propose a method based on a fully convolutional encoder-decoder network to extract arbitrarily shaped text line images from manuscripts.}
 }
 
 @online{KrakenModelsTranscription,
@@ -333,6 +382,19 @@
   abstract = {Segmentation~et représentation des signes diacritiques des manuscrits~:~prendre en compte la mise en page du manuscrit, noter les insertions et les informations interlinéaires, représenter les correctionsMardi~9~novembre~— 16~h-18~h~ En présence de~Vera Schwarz-Ricci,~Jean-Baptiste Camps, Prunelle Deleville, Lucien Dugaz, Frédéric Duval, Simon Gabay, Lucence Ing,~Vincent Jolivet,~Marco Maulu, Mariotti Viola, Ariane Pinche, Anne Rochebouet, Aurélia Rostaing, Benedetta Salvati, Peter Stokes, […]},
   langid = {french},
   organization = {{CREMMALAB}}
+}
+
+@thesis{sakhiSegmentationHeterogeneousDocument2012,
+  type = {phdthesis},
+  title = {Segmentation of Heterogeneous Document Images : An Approach Based on Machine Learning, Connected Components Analysis, and Texture Analysis},
+  shorttitle = {Segmentation of Heterogeneous Document Images},
+  author = {Sakhi, Omid Bonakdar},
+  date = {2012-12-06},
+  institution = {{Université Paris-Est}},
+  url = {https://tel.archives-ouvertes.fr/tel-00912566},
+  urldate = {2022-05-24},
+  abstract = {Document page segmentation is one of the most crucial steps in document image analysis. It ideally aims to explain the full structure of any document page, distinguishing text zones, graphics, photographs, halftones, figures, tables, etc. Although to date, there have been made several attempts of achieving correct page segmentation results, there are still many difficulties. The leader of the project in the framework of which this PhD work has been funded (*) uses a complete processing chain in which page segmentation mistakes are manually corrected by human operators. Aside of the costs it represents, this demands tuning of a large number of parameters; moreover, some segmentation mistakes sometimes escape the vigilance of the operators. Current automated page segmentation methods are well accepted for clean printed documents; but, they often fail to separate regions in handwritten documents when the document layout structure is loosely defined or when side notes are present inside the page. Moreover, tables and advertisements bring additional challenges for region segmentation algorithms. Our method addresses these problems. The method is divided into four parts:1. Unlike most of popular page segmentation methods, we first separate text and graphics components of the page using a boosted decision tree classifier.2. The separated text and graphics components are used among other features to separate columns of text in a two-dimensional conditional random fields framework.3. A text line detection method, based on piecewise projection profiles is then applied to detect text lines with respect to text region boundaries.4. Finally, a new paragraph detection method, which is trained on the common models of paragraphs, is applied on text lines to find paragraphs based on geometric appearance of text lines and their indentations. Our contribution over existing work lies in essence in the use, or adaptation, of algorithms borrowed from machine learning literature, to solve difficult cases. Indeed, we demonstrate a number of improvements : on separating text columns when one is situated very close to the other; on preventing the contents of a cell in a table to be merged with the contents of other adjacent cells; on preventing regions inside a frame to be merged with other text regions around, especially side notes, even when the latter are written using a font similar to that the text body. Quantitative assessment, and comparison of the performances of our method with competitive algorithms using widely acknowledged metrics and evaluation methodologies, is also provided to a large extend.(*) This PhD thesis has been funded by Conseil Général de Seine-Saint-Denis, through the FUI6 project Demat-Factory, lead by Safig SA},
+  langid = {english}
 }
 
 @unpublished{salmCorrespondanceGeneraleSeconde,
