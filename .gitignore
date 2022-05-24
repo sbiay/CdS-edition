@@ -60,7 +60,7 @@ htr/mainAuteur/css/
 htr/mainAuteur/test/*jpg
 htr/entrainements/segmentation-test/
 *zip
-htr/entrainements/train-seg*
+htr/entrainements/train-seg*/*jpg
 visuel-dh/
 *.ppt*
 *.pdf
