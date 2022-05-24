@@ -1,8 +1,14 @@
 Modèles de segmentation
 ===
 
+# Modèles importés
+
 - **blla.mlmodel** : modèle de base de blla de Kraken (cf. GitHub de Kraken)
 - **lineandregionscomplexefinetune__49.mlmodel** : premier modèle entrainé par A. Pinche avec des données segmOnto sur des manuscrits et des incunables
+
+# Modèles entraînés
+
 - **martini-01.mlmodel** : entraîné de 0  avec 21 p. de la correspondance Martini (échec de reconnaissance des lignes)
 - **martini-02.mlmodel** : entraîné à partir de blla.mlmodel  avec 21 p. de la correspondance Martini (échec de reconnaissance des lignes)
 - **martini-03.mlmodel** : personnalisation de lineandregionscomplexefinetune__49.mlmodel avec 21 p. de la correspondance Martini (succès)
+- **copie-deux-01.mlmodel** : personnalisation de lineandregionscomplexefinetune__49.mlmodel avec 36 p. des recueils (2nde copie)
