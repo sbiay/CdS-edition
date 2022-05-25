@@ -26,7 +26,7 @@ def importImages(source, destination):
     
     # On initie la liste des images du dossier source
     contenuSource = []
-    # On analyse l'arborescence du chemin de dossier source content les images
+    # On analyse l'arborescence du chemin de dossier source contenant les images
     for racineSource, dirs, fichiers in os.walk(source):
         # On boucle sur chaque fichier
         for fichier in fichiers:
