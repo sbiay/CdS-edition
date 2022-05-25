@@ -12,3 +12,4 @@ Modèles de segmentation
 - **martini-02.mlmodel** : entraîné à partir de blla.mlmodel  avec 21 p. de la correspondance Martini (échec de reconnaissance des lignes)
 - **martini-03.mlmodel** : personnalisation de lineandregionscomplexefinetune__49.mlmodel avec 21 p. de la correspondance Martini (succès)
 - **copie-deux-01.mlmodel** : personnalisation de lineandregionscomplexefinetune__49.mlmodel avec 36 p. des recueils (2nde copie)
+- **copie-deux-02.mlmodel** : personnalisation de blla.mlmodel avec 54 d.p. des recueils (2nde copie)
