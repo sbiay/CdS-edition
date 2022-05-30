@@ -19,6 +19,11 @@
                "accuracy": 80.43
             },
             {
+               "label": "mainCdS02_Konv002_02",
+               "gt_nb": 0,
+               "accuracy": 35.50
+            },
+            {
                "label": "mainCdS02_Konv002_03",
                "gt_nb": 0,
                "accuracy": 43.73
@@ -69,6 +74,11 @@
                "accuracy": 80.42
             },
             {
+               "label": "mainCdS02_Konv002_02",
+               "gt_nb": 0,
+               "accuracy": 73.09
+            },
+            {
                "label": "mainCdS02_Konv002_03",
                "gt_nb": 0,
                "accuracy": 81.89
@@ -100,6 +110,11 @@
                "label": "mainCdS02_Konv002_01",
                "gt_nb": 10,
                "accuracy": 98.68
+            },
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
+               "accuracy": 91.54
             },
             {
                "label": "mainCdS02_Konv002_03",
