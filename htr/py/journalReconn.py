@@ -64,6 +64,7 @@ def journalReconn(modele, no_ground_truth, ignore):
               f"{TRAITNTENCOURS}mains.json.\n")
     
     # ECRITURE DU JOURNAL D'ENTRAINEMENT
+    
     # On trie les mains par ordre alpa-numérique
     labelsMains = []
     for main in mains:
@@ -84,13 +85,13 @@ def journalReconn(modele, no_ground_truth, ignore):
                 dico["gt_nb"] = len(mains[main]["gt_files"])
             donneesMains.append(dico)
     
-    # On écrit l'entrée du journal
+    # On écrit l'entrée du journal (date du jour et heure)
     date = f"{datetime.now().year}.{datetime.now().month}.{datetime.now().day} {datetime.now().hour}:" \
            f"{datetime.now().minute}"
-    
     entree = {
         "date": date
     }
+    
     # Si l'option -n n'est pas active, on propose un nom pour le fichier du modèle entraîné
     if not no_ground_truth:
         # Si le modèle concerné est le principal modèle du projet, son nom est du type "cds_lectcm_04_mains_01.mlmodel"
@@ -116,16 +117,16 @@ def journalReconn(modele, no_ground_truth, ignore):
                 noVersion = "0" + str(noVersion)
             else:
                 noVersion = str(noVersion)
-            entree["output"] = f"cds_lectcm_{noMains}_mains_{noVersion}.mlmodel"
+            entree["label_next_training"] = f"cds_lectcm_{noMains}_mains_{noVersion}.mlmodel"
         
         # Si le modèle concerné n'est pas le principal modèle du projet
         else:
             modele = modele.replace(".mlmodel", "")
-            entree["output"] = f"{modele}_custom.mlmodel"
+            entree["label_next_training"] = f"{modele}_custom.mlmodel"
     
     # On ajoute en dernier les données des mains
-    entree["total_item"] = len(donneesMains)
-    entree["items"] = donneesMains
+    entree["total_hands"] = len(donneesMains)
+    entree["hands"] = donneesMains
     
     # On récupère le contenu du fichier de journal, s'il existe
     try:
