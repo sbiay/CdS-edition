@@ -36,7 +36,7 @@ def journalReconn(modele, no_ground_truth, ignore):
         # On boucle sur les fichiers
         for fichier in fichiers:
             # On ne sélectionne que les fichiers .jpg et les fichiers rangés dans des dossiers de main
-            if fichier[-3:] == "jpg" and racine[:22] == f"{TRAITNTENCOURS}main":
+            if fichier[-3:] == "jpg" and racine[:int(len(TRAITNTENCOURS)+4)] == f"{TRAITNTENCOURS}main":
                 # On récupère le nom de la main en découpant la racine
                 main = racine.split("/")[2]
                 # Si la main est déjà référencée dans le dict mains, on ajoute l'image à la liste-valeur
