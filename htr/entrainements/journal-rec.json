@@ -103,7 +103,7 @@
       {
          "date": "2022.5.4 9:50",
          "total_hands": 5,
-         "output": "cds_lectcm_04_mains_02.mlmodel",
+         "label_next_training": "cds_lectcm_04_mains_02.mlmodel",
          "hands": [
             {
                "label": "mainCdS02_Konv002_01",
