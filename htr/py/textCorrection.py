@@ -36,7 +36,7 @@ def textCorrectionXML():
                       "correctement.")
                 break
             
-            # On ouvre le fichier XML d'entrée et on récupère le contenu dans une list de lignes
+            # On ouvre le fichier XML d'entrée et on récupère le contenu dans une liste de lignes
             with open(XMLaCORRIGER + filename, 'r') as xml_orig:
                 contenuXML = xml_orig.read().split("\n")
             
