@@ -54,9 +54,8 @@ def injectTranscript():
     """
     
     # RECUPERATION DES TRANSCRIPTIONS MANUELLES
-    
-    # On récupère les transcriptions manuelles à l'aide de la fonction recupTranscriptions(dossier)
     transcriptions = {}
+    # On récupère les transcriptions manuelles à l'aide de la fonction recupTranscriptions(dossier)
     transcrVT = recupTranscriptions(VT)
     transcrTest = recupTranscriptions(TESTREC)
     
@@ -73,9 +72,8 @@ def injectTranscript():
             transcriptions[cle] = transcrTest[cle]
     
     # REMPLACEMENT DES PREDICTIONS PAR LES TRANSCRIPTIONS MANUELLES
-    
-    # On analyse le contenu du dossier contenant les prédictions
     for root, dirs, files in os.walk(XMLaCORRIGER):
+        # On boucle sur chaque fichier contenant les prédictions
         for filename in files:
             # On pose comme condition de ne traiter que du XML et que le fichier aient une transcription manuelle
             if filename[-3:] == "xml" and transcriptions.get(filename):
