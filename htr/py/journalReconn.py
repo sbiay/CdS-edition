@@ -65,7 +65,7 @@ def journalReconn(modele, no_ground_truth, ignore):
     
     # ECRITURE DU JOURNAL D'ENTRAINEMENT
     
-    # On trie les mains par ordre alpa-numérique
+    # On trie les mains par ordre alpha-numérique
     labelsMains = []
     for main in mains:
         labelsMains.append(main)
