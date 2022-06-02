@@ -133,6 +133,10 @@ def spellcheckTexts():
     # On charge les lemmes des vérités de terrain
     tousMots = collecteMots()
     
+    # On charge les mots du dictionnaire généraliste de la langue française
+    with open(DICTGENERAL) as jsonf:
+        dictgeneral = json.load(jsonf)
+    
     # On boucle sur chaque fichier du dossier défini par la constante XMLaCORRIGER
     for root, dirs, files in os.walk(XMLaCORRIGER):
         for filename in files:
@@ -164,8 +168,9 @@ def spellcheckTexts():
                         for carac in forme:
                             if carac in chiffres:
                                 nombre = True
-                        # On écarte les mots présents dans les vérités de terrain
-                        if forme not in tousMots.keys() and not nombre:
+                        # On écarte les mots présents dans les vérités de terrain, ainsi que les nombre
+                        # et toutes les formes attestées dans le dictionnaire général du français en bas de casse
+                        if forme not in tousMots.keys() and not nombre and forme.lower() not in dictgeneral.keys():
                             # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
                             if forme and not dictLigne.get(forme):
                                 # On récupère le contexte de la forme en l'y inscrivant en capitales
