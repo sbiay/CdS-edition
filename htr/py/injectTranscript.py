@@ -1,6 +1,5 @@
 import click
 import os
-import json
 from lxml import etree
 from constantes import XMLaCORRIGER, VERITESTERRAIN as VT, TESTREC
 
@@ -73,10 +72,6 @@ def injectTranscript():
         else:
             transcriptions[cle] = transcrTest[cle]
     
-    # TODO export test
-    with open("./transcriptions.json", mode="w") as f:
-        json.dump(transcriptions, f)
-    
     # REMPLACEMENT DES PREDICTIONS PAR LES TRANSCRIPTIONS MANUELLES
     
     # On analyse le contenu du dossier contenant les prédictions
@@ -103,8 +98,6 @@ def injectTranscript():
                 
                 # On boucle sur chaque ligne du fichier
                 for id in transcrFichier:
-                    if id == "eSc_line_7d5a2fa7":
-                        print("trouvé")
                     # On vérifie que l'identifiant existe aussi dans le dictionnaire des transcriptions manuelles
                     if transcriptions[filename].get(id):
                         # On récupère l'élément String pour chaque ligne de la prédiction
@@ -114,7 +107,8 @@ def injectTranscript():
                         prediction.attrib['CONTENT'] = transcriptions[filename][id]
                 
                 # On écrit l'arbre dans un fichier de sortie du même nom que le fichier d'entrée
-                xml.write(XMLaCORRIGER + filename)
+                xml.write(XMLaCORRIGER + filename, method="xml", pretty_print=True, xml_declaration=True,
+                          encoding="UTF-8")
 
 
 if __name__ == "__main__":
