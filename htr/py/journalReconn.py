@@ -61,7 +61,7 @@ def journalReconn(modele, no_ground_truth, ignore):
     with open(TRAITNTENCOURS + "mains.json", mode="w") as jsonf:
         json.dump(mains, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
         print(f"La liste des images classées dans chaque dossier de mains a été correctement écrite dans le fichier "
-              f"{TRAITNTENCOURS}mains.json.\n")
+              f"{TRAITNTENCOURS}mains.json.")
     
     # ECRITURE DU JOURNAL D'ENTRAINEMENT
     
@@ -83,6 +83,8 @@ def journalReconn(modele, no_ground_truth, ignore):
             # Si l'option no_ground_truth n'est pas valide, on traite les vérités de terrain
             if not no_ground_truth:
                 dico["gt_nb"] = len(mains[main]["gt_files"])
+            else:
+                dico["gt_nb"] = 0
             donneesMains.append(dico)
     
     # On écrit l'entrée du journal (date du jour et heure)
@@ -100,9 +102,15 @@ def journalReconn(modele, no_ground_truth, ignore):
             nom = nom.split("_")
             noMains = int(nom[2])
             noVersion = int(nom[-1])
+            # On compte le nombre de mains de l'entraînement courant
+            mainsEntrainees = 0
+            for main in donneesMains:
+                if main['gt_nb'] > 0:
+                    mainsEntrainees += 1
+            print(mainsEntrainees)
             # Si le nombre de mains est différent de celui indiqué dans le nom du modèle
-            if noMains != len(donneesMains):
-                noMains = len(donneesMains)
+            if noMains != mainsEntrainees:
+                noMains = mainsEntrainees
                 noVersion = 1
             # Si le nombre de mains n'est pas différent de celui indiqué dans le nom du modèle
             else:
@@ -117,15 +125,19 @@ def journalReconn(modele, no_ground_truth, ignore):
                 noVersion = "0" + str(noVersion)
             else:
                 noVersion = str(noVersion)
-            entree["label_next_training"] = f"cds_lectcm_{noMains}_mains_{noVersion}.mlmodel"
+            entree["label_output"] = f"cds_lectcm_{noMains}_mains_{noVersion}.mlmodel"
         
         # Si le modèle concerné n'est pas le principal modèle du projet
         else:
             modele = modele.replace(".mlmodel", "")
-            entree["label_next_training"] = f"{modele}_custom.mlmodel"
+            entree["label_output"] = f"{modele}_custom.mlmodel"
     
     # On ajoute en dernier les données des mains
     entree["total_hands"] = len(donneesMains)
+    if no_ground_truth:
+        entree["trained_hands"] = 0
+    else:
+        entree["trained_hands"] = mainsEntrainees
     entree["hands"] = donneesMains
     
     # On récupère le contenu du fichier de journal, s'il existe
@@ -144,6 +156,7 @@ def journalReconn(modele, no_ground_truth, ignore):
     # On écrit le résultat dans un fichier de sortie au format .py
     with open(JOURNALREC, mode="w") as jsonf:
         json.dump(journal, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
+        print(f"Le journal de test et d'entraînement a été correctement écrit dans le fichier {JOURNALREC}")
 
 
 if __name__ == "__main__":

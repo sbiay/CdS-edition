@@ -355,8 +355,7 @@
    "mainCdS02_Konv002_02": {
       "gt_files": [],
       "test_files": [
-         "CdS02_Konv002-01_0031.jpg",
-         "CdS02_Konv002-01_0032.jpg"
+         "CdS02_Konv002-01_0031.jpg"
       ],
       "all_files": [
          "CdS02_Konv002-01_0111.jpg",
@@ -431,6 +430,7 @@
          "CdS02_Konv002-01_0069.jpg",
          "CdS02_Konv002-01_0052.jpg",
          "CdS02_Konv002-01_0038.jpg",
+         "CdS02_Konv002-01_0032.jpg",
          "CdS02_Konv002-01_0115.jpg",
          "CdS02_Konv002-01_0051.jpg",
          "CdS02_Konv002-01_0043.jpg",
@@ -453,8 +453,7 @@
          "CdS02_Konv002-01_0088.jpg",
          "CdS02_Konv002-01_0105.jpg",
          "CdS02_Konv002-01_0103.jpg",
-         "CdS02_Konv002-01_0031.jpg",
-         "CdS02_Konv002-01_0032.jpg"
+         "CdS02_Konv002-01_0031.jpg"
       ]
    },
    "mainCdS02_Konv002_01": {
