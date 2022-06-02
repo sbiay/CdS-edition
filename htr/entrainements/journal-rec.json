@@ -2,6 +2,8 @@
    "souvay.mlmodel": [
       {
          "date": "2022.4.28 12:6",
+         "trained_hands": 0,
+         "total_hands": 5,
          "hands": [
             {
                "label": "mainCdS02_Konv019_01",
@@ -34,6 +36,8 @@
    "generic_lectaurep_26.mlmodel": [
       {
          "date": "2022.4.28 12:14",
+         "trained_hands": 0,
+         "total_hands": 5,
          "hands": [
             {
                "label": "mainCdS02_Konv019_01",
@@ -66,6 +70,7 @@
    "cm_ft_mrs15_11": [
       {
          "date": "2022.4.28 12:48",
+         "trained_hands": 0,
          "total_hands": 5,
          "hands": [
             {
@@ -102,8 +107,9 @@
       },
       {
          "date": "2022.5.4 9:50",
+         "trained_hands": 4,
          "total_hands": 5,
-         "label_next_training": "cds_lectcm_04_mains_02.mlmodel",
+         "label_output": "cds_lectcm_04_mains_01.mlmodel",
          "hands": [
             {
                "label": "mainCdS02_Konv002_01",
