@@ -13,7 +13,7 @@ def suppress_punctuation(text):
     :returns: Text without punctuation
     :rtype: str
     """
-    punctuation = "!:;\",?’."
+    punctuation = "!:;\",?’.)("
     for sign in punctuation:
         text = text.replace(sign, " ")
     return text
@@ -58,6 +58,9 @@ def collecteMots():
     comptage = {}
     for mot in motsParses:
         comptage[mot] = motsParses.count(mot)
+        
+    # Certains mots sont toujours en début de ligne et ne sont donc pas automatiquement pris en compte
+    comptage["Lettre"] = 100
     
     # On exporte le comptage des mots pour les contrôler au besoin
     with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
@@ -143,8 +146,7 @@ def spellcheckTexts():
             toutesLignes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
             
             # On parse les lignes de transcription du fichier XML-Page
-            for index, ligne in enumerate(toutesLignes):
-                contenu = ligne.text
+            for index, contenu in enumerate(toutesLignes):
                 # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
                 if contenu:
                     contenu = suppress_punctuation(contenu)
@@ -156,18 +158,24 @@ def spellcheckTexts():
                     
                     # On boucle sur chaque mot
                     for forme in mots:
+                        # On élimine les nombres
+                        chiffres = "0123456789"
+                        nombre = False
+                        for carac in forme:
+                            if carac in chiffres:
+                                nombre = True
                         # On écarte les mots présents dans les vérités de terrain
-                        if forme not in tousMots.keys():
-                            # On n'ajoute qu'une seule fois chaque forme au dictionnaire de page (même si plusieurs
-                            # résolutions différentes seraient souhaitables)
-                            if forme and not dictPage.get(forme):
+                        if forme not in tousMots.keys() and not nombre:
+                            # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
+                            if forme and not dictLigne.get(forme):
                                 # On récupère le contexte de la forme en l'y inscrivant en capitales
                                 contexte = contenu.replace(forme, forme.upper())
                                 # On cherche chaque mot dans la liste personnalisée des corrections
                                 if correctionsCDS.get(forme):
                                     # Si le mot est ambigu (plusieurs propositions)
                                     if len(correctionsCDS[forme]['lem']) > 1:
-                                        # On ordonne les propositions de correction de la plus fréquente à la moins fréquente
+                                        # On ordonne les propositions de correction
+                                        # de la plus fréquente à la moins fréquente
                                         # grâce à la fonction ordreOccurrences()
                                         propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
                                         # On écrit l'entrée du dictionnaire pour préciser le contexte
@@ -219,7 +227,8 @@ def spellcheckTexts():
                         if dictLigne.get(forme):
                             dictLigneOrd[forme] = dictLigne[forme]
                     # On ajoute le dictionnaire ligne ordonné au dictionnaire page
-                    dictPage[index] = dictLigneOrd
+                    if dictLigneOrd:
+                        dictPage[index] = dictLigneOrd
             
             # On écrit le résultat dans un fichier de sortie au format .py
             with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
