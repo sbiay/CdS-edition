@@ -186,9 +186,11 @@ def spellcheckTexts():
                     else:
                         sansElision = sansElision[0]
                     
-                    # On écarte les mots présents dans les vérités de terrain, ainsi que les nombres
+                    # On écarte les mots présents dans les vérités de terrain, ainsi que les nombres,
+                    # les mots tronqués (commençant ou finissant par "-"),
                     # et toutes les formes attestées dans le dictionnaire général du français en bas de casse
                     if sansElision and sansElision not in tousMots.keys() and not nombre \
+                        and not sansElision[-1] == "-" and not sansElision[0] == "-" \
                         and sansElision.lower() not in dictgeneral.keys():
                         # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
                         if not dictLigne.get(forme):
@@ -248,7 +250,7 @@ def spellcheckTexts():
         with open(DICTPAGESNONCORR.strip() + "page_" + fichier[len(XMLaCORRIGER):].replace(".xml", ".json"),
                   "w") as jsonf:
             json.dump(dictPage, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
-            print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
+            print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + fichier[len(XMLaCORRIGER):].replace('.xml', '.json')}"
                   f" a été écrit correctement.\n")
 
 
