@@ -3,6 +3,7 @@ import os
 import json
 from lxml import etree
 from spellchecker import SpellChecker
+from outils import triFichiers
 from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGESNONCORR, VERITESTERRAIN as VT
 
 
@@ -137,16 +138,8 @@ def spellcheckTexts():
     with open(DICTGENERAL) as jsonf:
         dictgeneral = json.load(jsonf)
     
-    # On trie alpha-numériquement les fichiers, en commençant par initier la liste triée
-    tri = []
-    # On analyse l'arborescence du dossier des prédictions
-    for root, dirs, files in os.walk(XMLaCORRIGER):
-        # On boucle sur chaque fichier
-        for filename in files:
-            # On ajoute la liste le chemin relatif de chaque fichier
-            tri.append(root + filename)
-    # On trie la liste
-    tri = sorted(tri)
+    # On trie la liste des fichiers contenus dans le dossier de prédictions
+    tri = triFichiers(XMLaCORRIGER)
     
     # On boucle sur chaque fichier
     for fichier in tri:
