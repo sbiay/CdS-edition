@@ -43,113 +43,118 @@ def textCorrectionXML():
             xml = etree.parse(f)
         # On implémente l'espace de nom alto
         nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+        # On récupère tous les id des lignes de texte
+        ids = xml.xpath("//alto:TextLine/@ID", namespaces=nsmap)
         # On récupère tous les contenus des lignes de texte
         contenuXML = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
         
         # On ouvre le fichier XML de sortie
-        with open(XMLCORRIGEES + fichier[len(XMLaCORRIGER):], 'w') as xml_corr:
-            print(f"Le fichier {fichier[len(XMLaCORRIGER):]} est en cours de correction.")
-            # On initie l'index des lignes d'écriture
-            index = 1
-            # On boucle sur chaque ligne du contenuXML
-            for ligne in contenuXML:
-                # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
-                entreesMAJ = {}
-                # On convertit la valeur ligne en str
-                ligne = str(ligne)
-                # TODO Test
-                if "auchateau" in ligne:
-                    print(ligne)
-                
-                # Avant de tokéniser on doit procéder au remplacement des formes avec apostrophe
-                # et des formes avec espace au milieu
-                # TODO Condition utile seulement pour les tests
-                if dictPage.get(str(index)):
-                    for forme in dictPage[str(index)]:
-                        lemme = None
-                        if " " in forme or "'" in forme:
-                            # On n'intervient que si la valeur de lemme n'est pas "null"
-                            if dictPage[str(index)][forme]["lem"]:
-                                # On peut se retrouver avec une liste dont le seul élément est "null"
-                                if dictPage[str(index)][forme]["lem"][0]:
-                                    # La correction retenue ou "lemme"
-                                    # est le premier item de la liste-valeur de la clé "lem"
-                                    lemme = dictPage[str(index)][forme]["lem"][0]
-                        if lemme:
-                            ligne = ligne.replace(forme, lemme)
-                            entreesMAJ[forme] = {
-                                "lem": [lemme],
-                                "ctxt": []
-                            }
-                
-                # On tokénise la ligne
-                nlp = spacy.load("fr_core_news_sm")
-                doc = nlp(ligne)
-                ligne = [token.text for token in doc]
-                # On initie la ligne corrigée
-                ligneCorr = []
-                # On boucle sur chaque mot
-                for mot in ligne:
-                    # On initie le lemme ou correction
+        print(f"Le fichier {fichier[len(XMLaCORRIGER):]} est en cours de correction.")
+        # On initie l'index des lignes d'écriture
+        index = 1
+        # On boucle sur chaque ligne du contenuXML
+        for ligne in contenuXML:
+            # On initie la liste des entrées dont on actualisera le contexte dans le dictCDS
+            entreesMAJ = {}
+            # On convertit la valeur ligne en str
+            ligne = str(ligne)
+            
+            # Avant de tokéniser on doit procéder au remplacement des formes avec apostrophe
+            # et des formes avec espace au milieu
+            # On pose d'abord comme condition que la ligne du texte soit référencée dans le dictionnaire de page
+            if dictPage.get(str(index)):
+                # On boucle sur chaque forme possédant une correction
+                for forme in dictPage[str(index)]:
                     lemme = None
-                    # TODO Condition utile seulement pour les tests (voir si on peut la retirer plus tard)
-                    if dictPage.get(str(index)):
-                        for forme in dictPage[str(index)]:
-                            # On n'intervient que si la valeur de lemme n'est pas "null"
-                            if forme == mot and dictPage[str(index)][forme]["lem"]:
-                                # On peut se retrouver avec une liste dont le seul élément est "null"
-                                if dictPage[str(index)][forme]["lem"][0]:
-                                    # La correction retenue ou "lemme"
-                                    # est le premier item de la liste-valeur de la clé "lem"
-                                    lemme = dictPage[str(index)][forme]["lem"][0]
-                    # S'il y a bien une correction proposée
+                    if " " in forme or "'" in forme:
+                        # On n'intervient que si la valeur de lemme n'est pas "null"
+                        if dictPage[str(index)][forme]["lem"]:
+                            # On peut se retrouver avec une liste dont le seul élément est "null"
+                            if dictPage[str(index)][forme]["lem"][0]:
+                                # La correction retenue ou "lemme"
+                                # est le premier item de la liste-valeur de la clé "lem"
+                                lemme = dictPage[str(index)][forme]["lem"][0]
                     if lemme:
-                        # On ajoute le mot corrigé à la ligne
-                        ligneCorr.append(lemme)
-                        entreesMAJ[mot] = {
+                        ligne = ligne.replace(forme, lemme)
+                        entreesMAJ[forme] = {
                             "lem": [lemme],
                             "ctxt": []
                         }
-                    # Si le lemme est resté None, il n'y a pas de correction à appliquer
+            
+            # On tokénise la ligne
+            nlp = spacy.load("fr_core_news_sm")
+            doc = nlp(ligne)
+            ligne = [token.text for token in doc]
+            # On initie la ligne corrigée
+            ligneCorr = []
+            # On boucle sur chaque mot
+            for mot in ligne:
+                # On initie le lemme ou correction
+                lemme = None
+                # On pose d'abord comme condition que la ligne du texte soit référencée dans le dictionnaire de page
+                if dictPage.get(str(index)):
+                    for forme in dictPage[str(index)]:
+                        # On n'intervient que si la valeur de lemme n'est pas "null"
+                        if forme == mot and dictPage[str(index)][forme]["lem"]:
+                            # On peut se retrouver avec une liste dont le seul élément est "null"
+                            if dictPage[str(index)][forme]["lem"][0]:
+                                # La correction retenue ou "lemme"
+                                # est le premier item de la liste-valeur de la clé "lem"
+                                lemme = dictPage[str(index)][forme]["lem"][0]
+                # S'il y a bien une correction proposée
+                if lemme:
+                    # On ajoute le mot corrigé à la ligne
+                    ligneCorr.append(lemme)
+                    entreesMAJ[mot] = {
+                        "lem": [lemme],
+                        "ctxt": []
+                    }
+                # Si le lemme est resté None, il n'y a pas de correction à appliquer
+                else:
+                    ligneCorr.append(mot)
+            
+            # On recompose la ligne en tant que chaîne
+            ligneCorr = ' '.join(ligneCorr)
+            # On élimine les espaces en trop
+            ligneCorr = ligneCorr.replace(' ,', ',').replace(' .', '.') \
+                .replace('( ', '(').replace(' )', ')') \
+                .replace("' ", "'")
+            # On renvoie le contexte du mot traité dans le dictionnaire global
+            # en reparsant la ligne corrigée
+            for entree in entreesMAJ:
+                # On pose d'abord comme condition qu'il y ait un lemme
+                if entreesMAJ[entree]["lem"]:
+                    # On inscrit la ligne corrigée comme contexte de l'entrée du dictionnaire
+                    entreesMAJ[entree]["ctxt"] = ligneCorr.replace(
+                        entreesMAJ[entree]["lem"][0], entreesMAJ[entree]["lem"][0].upper()
+                    )
+                    # On met à jour le dictCDS avec les contextes actualisés
+                    # Si la forme n'existe pas déjà
+                    if not dictCDS.get(entree):
+                        dictCDS[entree] = entreesMAJ[entree]
+                    # Si la forme existe déjà
                     else:
-                        ligneCorr.append(mot)
-                
-                # On recompose la ligne en tant que chaîne
-                ligneCorr = ' '.join(ligneCorr)
-                # On élimine les espaces en trop
-                ligneCorr = ligneCorr.replace(' ,', ',').replace(' .', '.') \
-                    .replace('( ', '(').replace(' )', ')') \
-                    .replace("' ", "'")
-                # On renvoie le contexte du mot traité dans le dictionnaire global
-                # en reparsant la ligne corrigée
-                for entree in entreesMAJ:
-                    # On pose d'abord comme condition qu'il y ait un lemme
-                    if entreesMAJ[entree]["lem"]:
-                        # On inscrit la ligne corrigée comme contexte de l'entrée du dictionnaire
-                        entreesMAJ[entree]["ctxt"] = ligneCorr.replace(
-                            entreesMAJ[entree]["lem"][0], entreesMAJ[entree]["lem"][0].upper()
-                        )
-                        # On met à jour le dictCDS avec les contextes actualisés
-                        # Si la forme n'existe pas déjà
-                        if not dictCDS.get(entree):
-                            dictCDS[entree] = entreesMAJ[entree]
-                        # Si la forme existe déjà
-                        else:
-                            # Si le lemme que l'on propose n'est pas encore référencé
-                            if not entreesMAJ[entree]["lem"][0] in dictCDS[str(entree)]["lem"]:
-                                dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"][0])
-                                dictCDS[entree]["ctxt"] = "AMBIGU"
-                
-                # On réencode les apostrophes et le balisage Unicode
-                ligneCorr = ligneCorr.replace("' ", "&#39;")
-                ligneCorr = f'''<String CONTENT="{ligneCorr}"'''
-                # On écrit la ligne dans le fichier XML de sortie
-                xml_corr.write(ligneCorr + "\n")
-                
-                # On implémente l'index pour la ligne suivante
-                index += 1
+                        # Si le lemme que l'on propose n'est pas encore référencé
+                        if not entreesMAJ[entree]["lem"][0] in dictCDS[str(entree)]["lem"]:
+                            dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"][0])
+                            dictCDS[entree]["ctxt"] = "AMBIGU"
+            
+            # TODO on écrit le fichier de sortie
+            # TODO Test
+            # On récupère l'élément XML contenant la ligne en cours de correction
+            prediction = xml.xpath(f"//alto:TextLine[@ID='{ids[index - 1]}']/alto:String", namespaces=nsmap)
+            prediction = prediction[0]
+            # On remplace la valeur de l'attribut @CONTENT par la ligne corrigée
+            prediction.attrib['CONTENT'] = ligneCorr
+            
+            # On écrit l'arbre dans un fichier de sortie
+            xml.write(XMLCORRIGEES + fichier[len(XMLaCORRIGER):], method="xml", pretty_print=True, xml_declaration=True,
+                      encoding="UTF-8")
+            
+            # On implémente l'index pour la ligne suivante
+            index += 1
         
-        print(f"Le fichier {filename} a été corrigé avec succès")
+        print(f"Le fichier {fichier[len(XMLaCORRIGER):]} a été corrigé avec succès")
         
         # On remplace le fichier correctionsCDS.json avec les contextes actualisés
         with open(DICTCDS, mode="w") as f:
