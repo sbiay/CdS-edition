@@ -58,7 +58,7 @@ def collecteMots():
     comptage = {}
     for mot in motsParses:
         comptage[mot] = motsParses.count(mot)
-        
+    
     # Certains mots sont toujours en début de ligne et ne sont donc pas automatiquement pris en compte
     comptage["Lettre"] = 100
     
@@ -137,109 +137,119 @@ def spellcheckTexts():
     with open(DICTGENERAL) as jsonf:
         dictgeneral = json.load(jsonf)
     
-    # On boucle sur chaque fichier du dossier défini par la constante XMLaCORRIGER
+    # On trie alpha-numériquement les fichiers, en commençant par initier la liste triée
+    tri = []
+    # On analyse l'arborescence du dossier des prédictions
     for root, dirs, files in os.walk(XMLaCORRIGER):
+        # On boucle sur chaque fichier
         for filename in files:
-            # On initie le dictionnaire de page
-            dictPage = {}
-            
-            # On ouvre le fichier XML d'entrée
-            xml = etree.parse(XMLaCORRIGER + filename)
-            print("Le fichier " + XMLaCORRIGER + filename + " est en cours de lecture.")
-            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
-            toutesLignes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
-            
-            # On parse les lignes de transcription du fichier XML-Page
-            for index, contenu in enumerate(toutesLignes):
-                # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
-                if contenu:
-                    contenu = suppress_punctuation(contenu)
-                    mots = contenu.split(" ")
-                    # On initie un dictionnaire pour les corrections de la ligne
-                    dictLigne = {}
-                    # On initie la liste des mots inconnus que l'on passera au SpellChecker
-                    motsrestants = []
-                    
-                    # On boucle sur chaque mot
-                    for forme in mots:
-                        # On élimine les nombres
-                        chiffres = "0123456789"
-                        nombre = False
-                        for carac in forme:
-                            if carac in chiffres:
-                                nombre = True
-                        # On écarte les mots présents dans les vérités de terrain, ainsi que les nombre
-                        # et toutes les formes attestées dans le dictionnaire général du français en bas de casse
-                        if forme not in tousMots.keys() and not nombre and forme.lower() not in dictgeneral.keys():
-                            # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
-                            if forme and not dictLigne.get(forme):
-                                # On récupère le contexte de la forme en l'y inscrivant en capitales
-                                contexte = contenu.replace(forme, forme.upper())
-                                # On cherche chaque mot dans la liste personnalisée des corrections
-                                if correctionsCDS.get(forme):
-                                    # Si le mot est ambigu (plusieurs propositions)
-                                    if len(correctionsCDS[forme]['lem']) > 1:
-                                        # On ordonne les propositions de correction
-                                        # de la plus fréquente à la moins fréquente
-                                        # grâce à la fonction ordreOccurrences()
-                                        propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
-                                        # On écrit l'entrée du dictionnaire pour préciser le contexte
-                                        dictLigne[forme] = {
-                                            'lem': propositions,
-                                            'ctxt': contexte.replace("'", ' '),
-                                        }
-                                    # Si le mot n'est pas ambigu
-                                    else:
-                                        dictLigne[forme] = {
-                                            'lem': correctionsCDS[forme]['lem'],
-                                            'ctxt': contexte.replace("'", ' '),
-                                        }
-                                
-                                # Si la forme n'est pas dans la liste personnalisée des corrections
-                                elif forme:
-                                    # Si elle ne figure pas parmi les mots connus des vérités de terrain
-                                    if forme in tousMots.keys():
-                                        dictLigne[forme] = {
-                                            'lem': [None],
-                                            'ctxt': contexte.replace("'", ' '),
-                                        }
-                                    # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
-                                    else:
-                                        # Alors on l'ajoute à la liste des mots restants à traiter
-                                        motsrestants.append(forme)
+            # On ajoute la liste le chemin relatif de chaque fichier
+            tri.append(root + filename)
+    # On trie la liste
+    tri = sorted(tri)
     
-                    # On analyse les mots restants
-                    if motsrestants:
-                        misspelled = spell.unknown(motsrestants)
-                        # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
-                        for forme in motsrestants:
+    # On boucle sur chaque fichier
+    for fichier in tri:
+        # On initie le dictionnaire de page
+        dictPage = {}
+        
+        # On ouvre le fichier XML d'entrée
+        xml = etree.parse(fichier)
+        print("Le fichier " + fichier + " est en cours de lecture.")
+        nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+        toutesLignes = xml.xpath("//alto:String/@CONTENT", namespaces=nsmap)
+        
+        # On parse les lignes de transcription du fichier XML-Page
+        for index, contenu in enumerate(toutesLignes):
+            # Les traitements ne peuvent avoir lieu que si le contenu de la ligne n'est pas vide
+            if contenu:
+                contenu = suppress_punctuation(contenu)
+                mots = contenu.split(" ")
+                # On initie un dictionnaire pour les corrections de la ligne
+                dictLigne = {}
+                # On initie la liste des mots inconnus que l'on passera au SpellChecker
+                motsrestants = []
+                
+                # On boucle sur chaque mot
+                for forme in mots:
+                    # On élimine les nombres
+                    chiffres = "0123456789"
+                    nombre = False
+                    for carac in forme:
+                        if carac in chiffres:
+                            nombre = True
+                    # On écarte les mots présents dans les vérités de terrain, ainsi que les nombre
+                    # et toutes les formes attestées dans le dictionnaire général du français en bas de casse
+                    if forme not in tousMots.keys() and not nombre and forme.lower() not in dictgeneral.keys():
+                        # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
+                        if forme and not dictLigne.get(forme):
+                            # On récupère le contexte de la forme en l'y inscrivant en capitales
                             contexte = contenu.replace(forme, forme.upper())
-                            if forme not in misspelled:
-                                dictLigne[forme] = {
-                                    'lem': [None],
-                                    'ctxt': contexte.replace("'", ' ')
-                                }
-                        # On boucle sur les propositions de corrections
-                        for forme in misspelled:
-                            contexte = contenu.replace(forme, forme.upper())
+                            # On cherche chaque mot dans la liste personnalisée des corrections
+                            if correctionsCDS.get(forme):
+                                # Si le mot est ambigu (plusieurs propositions)
+                                if len(correctionsCDS[forme]['lem']) > 1:
+                                    # On ordonne les propositions de correction
+                                    # de la plus fréquente à la moins fréquente
+                                    # grâce à la fonction ordreOccurrences()
+                                    propositions = ordreOccurrences(correctionsCDS[forme]['lem'])
+                                    # On écrit l'entrée du dictionnaire pour préciser le contexte
+                                    dictLigne[forme] = {
+                                        'lem': propositions,
+                                        'ctxt': contexte.replace("'", ' '),
+                                    }
+                                # Si le mot n'est pas ambigu
+                                else:
+                                    dictLigne[forme] = {
+                                        'lem': correctionsCDS[forme]['lem'],
+                                        'ctxt': contexte.replace("'", ' '),
+                                    }
+                            
+                            # Si la forme n'est pas dans la liste personnalisée des corrections
+                            elif forme:
+                                # Si elle ne figure pas parmi les mots connus des vérités de terrain
+                                if forme in tousMots.keys():
+                                    dictLigne[forme] = {
+                                        'lem': [None],
+                                        'ctxt': contexte.replace("'", ' '),
+                                    }
+                                # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
+                                else:
+                                    # Alors on l'ajoute à la liste des mots restants à traiter
+                                    motsrestants.append(forme)
+                
+                # On analyse les mots restants
+                if motsrestants:
+                    misspelled = spell.unknown(motsrestants)
+                    # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
+                    for forme in motsrestants:
+                        contexte = contenu.replace(forme, forme.upper())
+                        if forme not in misspelled:
                             dictLigne[forme] = {
-                                'lem': [spell.correction(forme)],
+                                'lem': [None],
                                 'ctxt': contexte.replace("'", ' ')
                             }
-                    # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
-                    dictLigneOrd = {}
-                    for forme in mots:
-                        if dictLigne.get(forme):
-                            dictLigneOrd[forme] = dictLigne[forme]
-                    # On ajoute le dictionnaire ligne ordonné au dictionnaire page
-                    if dictLigneOrd:
-                        dictPage[index] = dictLigneOrd
-            
-            # On écrit le résultat dans un fichier de sortie au format .py
-            with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
-                json.dump(dictPage, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
-                print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
-                      f" a été écrit correctement.\n")
+                    # On boucle sur les propositions de corrections
+                    for forme in misspelled:
+                        contexte = contenu.replace(forme, forme.upper())
+                        dictLigne[forme] = {
+                            'lem': [spell.correction(forme)],
+                            'ctxt': contexte.replace("'", ' ')
+                        }
+                # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
+                dictLigneOrd = {}
+                for forme in mots:
+                    if dictLigne.get(forme):
+                        dictLigneOrd[forme] = dictLigne[forme]
+                # On ajoute le dictionnaire ligne ordonné au dictionnaire page
+                if dictLigneOrd:
+                    dictPage[index + 1] = dictLigneOrd
+        
+        # On écrit le résultat dans un fichier de sortie au format .py
+        with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
+            json.dump(dictPage, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
+            print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
+                  f" a été écrit correctement.\n")
 
 
 if __name__ == "__main__":

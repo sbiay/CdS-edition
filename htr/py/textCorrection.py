@@ -47,7 +47,7 @@ def textCorrectionXML():
             # On ouvre le fichier XML de sortie
             with open(XMLCORRIGEES + filename, 'w') as xml_corr:
                 # On initie l'index des lignes d'écriture
-                index = 0
+                index = 1
                 # On boucle sur chaque ligne du contenuXML
                 for ligneBrute in contenuXML:
                     print(ligneBrute)
