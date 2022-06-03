@@ -178,11 +178,20 @@ def spellcheckTexts():
                     for carac in forme:
                         if carac in chiffres:
                             nombre = True
-                    # On écarte les mots présents dans les vérités de terrain, ainsi que les nombre
+                    
+                    # On élimine les cas d'élision
+                    sansElision = forme.split("'")
+                    if len(sansElision) > 1:
+                        sansElision = sansElision[1]
+                    else:
+                        sansElision = sansElision[0]
+                    
+                    # On écarte les mots présents dans les vérités de terrain, ainsi que les nombres
                     # et toutes les formes attestées dans le dictionnaire général du français en bas de casse
-                    if forme not in tousMots.keys() and not nombre and forme.lower() not in dictgeneral.keys():
+                    if sansElision and sansElision not in tousMots.keys() and not nombre \
+                        and sansElision.lower() not in dictgeneral.keys():
                         # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
-                        if forme and not dictLigne.get(forme):
+                        if not dictLigne.get(forme):
                             # On récupère le contexte de la forme en l'y inscrivant en capitales
                             contexte = contenu.replace(forme, forme.upper())
                             # On cherche chaque mot dans la liste personnalisée des corrections
@@ -204,19 +213,9 @@ def spellcheckTexts():
                                         'lem': correctionsCDS[forme]['lem'],
                                         'ctxt': contexte.replace("'", ' '),
                                     }
-                            
                             # Si la forme n'est pas dans la liste personnalisée des corrections
                             elif forme:
-                                # Si elle ne figure pas parmi les mots connus des vérités de terrain
-                                if forme in tousMots.keys():
-                                    dictLigne[forme] = {
-                                        'lem': [None],
-                                        'ctxt': contexte.replace("'", ' '),
-                                    }
-                                # Si elle ne figure pas non plus parmi les mots connus des vérités de terrain
-                                else:
-                                    # Alors on l'ajoute à la liste des mots restants à traiter
-                                    motsrestants.append(forme)
+                                motsrestants.append(forme)
                 
                 # On analyse les mots restants
                 if motsrestants:
@@ -246,7 +245,8 @@ def spellcheckTexts():
                     dictPage[index + 1] = dictLigneOrd
         
         # On écrit le résultat dans un fichier de sortie au format .py
-        with open(DICTPAGESNONCORR.strip() + "page_" + filename.replace(".xml", ".json"), "w") as jsonf:
+        with open(DICTPAGESNONCORR.strip() + "page_" + fichier[len(XMLaCORRIGER):].replace(".xml", ".json"),
+                  "w") as jsonf:
             json.dump(dictPage, jsonf, indent=3, ensure_ascii=False, sort_keys=False)
             print(f"=> Le dictionnaire {DICTPAGESNONCORR.strip() + 'page_' + filename.replace('.xml', '.json')}"
                   f" a été écrit correctement.\n")
