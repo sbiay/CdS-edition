@@ -1,22 +1,22 @@
-%package obligatoire : type de document
+% Package obligatoire : type de document
 \documentclass[a4paper,12pt,twoside]{book}
 
-% encodage
+% Encodage
 \usepackage{fontspec}
 
 % Annexes (à déclarer avant hyperref)
 \usepackage{appendix}
 
-% le package hyperref avec des options, si en local
+% Le package hyperref avec des options, si en local
 \usepackage[pdfusetitle, pdfsubject ={Mémoire TNAH}, pdfkeywords={les mots-clés}]{hyperref}
 
-%il faut mettre au moins une langue
+% Langues
 \usepackage[english,french]{babel}
 % Commande personnalisée pour la typographie des langues
 \newcommand{\langue}[1]{\emph{#1}}
 
-% configurer le document selon les normes de l'école
-\usepackage[margin=2.5cm]{geometry} %marges
+% Configurer le document selon les normes de l'école
+\usepackage[margin=2.5cm]{geometry} % marges
 \usepackage{setspace} % espacement qui permet ensuite de définir un interligne
 \onehalfspacing % interligne de 1.5
 \setlength\parindent{1cm} % indentation des paragraphes à 1 cm
@@ -212,6 +212,8 @@
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
 			\textbf{Cette section est à écrire.}
 			
+			Une partie de cette méthodologie a été présentée dans le cadre de la réunion mensuelle du \gls{dhi}\footcite{biayIntelligenceArtificelleIHA2022}.
+			
 		\section{Injecter les transcriptions manuelles dans les prédictions}
 			Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
 			
@@ -313,6 +315,8 @@
            	
 	% Bibliographie
 	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
-	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]
+	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]%Pour les scripts
+    \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]%Pour les scripts
+    
 
 \end{document}
