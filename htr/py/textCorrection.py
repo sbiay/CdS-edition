@@ -33,9 +33,8 @@ def textCorrectionXML():
             with open(DICTPAGESCORR + "page_" + fichier[len(XMLaCORRIGER):].replace(".xml", ".json")) as dico:
                 dictPage = json.load(dico)
         except:
-            # TODO vérifier pourquoi ce print ne marche pas
-            print(f"Le dictionnaire de page page_{fichier[len(XMLaCORRIGER):].replace('.xml', '.json')} n'a pas été chargé " \
-                  "correctement.")
+            print(f"Le dictionnaire de page page_{fichier[len(XMLaCORRIGER):].replace('.xml', '.json')} "
+                  f"n'a pas été chargé correctement (existe-t-il ?).")
             break
         
         # On ouvre le fichier XML d'entrée
@@ -139,8 +138,6 @@ def textCorrectionXML():
                             dictCDS[entree]["lem"].append(entreesMAJ[entree]["lem"][0])
                             dictCDS[entree]["ctxt"] = "AMBIGU"
             
-            # TODO on écrit le fichier de sortie
-            # TODO Test
             # On récupère l'élément XML contenant la ligne en cours de correction
             prediction = xml.xpath(f"//alto:TextLine[@ID='{ids[index - 1]}']/alto:String", namespaces=nsmap)
             prediction = prediction[0]
