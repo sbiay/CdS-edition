@@ -10,7 +10,7 @@ from constantes import FRANTEXT, DICTGENERAL
 def dictGenerateur():
     tousMots = []
     fichiersTraites = []
-    # On analyse l'arborescence du dossier des prédictions
+    # On analyse l'arborescence du dossier des fichiers exportés de Frantext
     for root, dirs, files in os.walk(FRANTEXT):
         # On boucle sur chaque fichier
         for fichier in files:
@@ -23,17 +23,19 @@ def dictGenerateur():
                 mots = xml.xpath("//x:wf/@word", namespaces=nsmap)
                 for mot in mots:
                     tousMots.append(mot)
-                
+                # On délivre un message de fin de lecture du fichier
                 print(f"Le fichier {fichier} a été lu correctement.")
         
     print("Le comptage des occurrences a commencé, cela peut plusieurs minutes…")
     
+    # On renseigne un dictionnaire pour le comptage de tous les mots du corpus
     dictMots = {}
     for mot in tousMots:
-        if mot[:15] == "               ":
-            mot = mot[16:]
+        mot = mot.replace(' ', '')
         if not dictMots.get(mot) and mot[0] not in "0123456789":
-            dictMots[mot] = tousMots.count(mot)
+            comptage = tousMots.count(mot)
+            if comptage > 0:
+                dictMots[mot] = comptage
     
     with open(DICTGENERAL, mode="w") as f:
         json.dump(dictMots, f, indent=3, ensure_ascii=False, sort_keys=True)
