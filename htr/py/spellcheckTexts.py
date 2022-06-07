@@ -3,7 +3,7 @@ import os
 import json
 from lxml import etree
 from spellchecker import SpellChecker
-from outils import triFichiers
+from outils import triFichiers, supprElision
 from constantes import XMLaCORRIGER, DICTCDS, DICTGENERAL, DICTPAGESNONCORR, VERITESTERRAIN as VT
 
 
@@ -173,11 +173,7 @@ def spellcheckTexts():
                             nombre = True
                     
                     # On élimine les cas d'élision
-                    sansElision = forme.split("'")
-                    if len(sansElision) > 1:
-                        sansElision = sansElision[1]
-                    else:
-                        sansElision = sansElision[0]
+                    sansElision = supprElision(forme)
                     
                     # On écarte les mots présents dans les vérités de terrain, ainsi que les nombres,
                     # les mots tronqués (commençant ou finissant par "-"),
@@ -213,24 +209,46 @@ def spellcheckTexts():
                             elif forme:
                                 motsrestants.append(forme)
                 
-                # On analyse les mots restants
+                # On initie un dictionnaire pour associer aux formes restantes une forme sans élision
+                dictMotsRestant = {}
+                # On boucle sur chaque mot
+                for mot in motsrestants:
+                    sansElision = supprElision(mot)
+                    dictMotsRestant[mot] = sansElision
                 if motsrestants:
-                    misspelled = spell.unknown(motsrestants)
+                    # On applique la recherche de faute sur les mots sans élision
+                    listSansElision = [dictMotsRestant[forme] for forme in dictMotsRestant]
+                    misspelled = spell.unknown(listSansElision)
                     # On boucle sur les mots pour chercher ceux ne faisant l'objet d'aucune proposition
                     for forme in motsrestants:
                         contexte = contenu.replace(forme, forme.upper())
-                        if forme not in misspelled:
+                        # Si la forme sans élision n'a pas reçu de proposition de correction
+                        if dictMotsRestant[forme] not in misspelled:
                             dictLigne[forme] = {
                                 'lem': [None],
                                 'ctxt': contexte.replace("'", ' ')
                             }
                     # On boucle sur les propositions de corrections
-                    for forme in misspelled:
-                        contexte = contenu.replace(forme, forme.upper())
-                        dictLigne[forme] = {
-                            'lem': [spell.correction(forme)],
+                    for faute in misspelled:
+                        # On initie une chaîne vide pour reconstituer l'éventuelle élision
+                        elision = ""
+                        # On récupère la forme correspondant à la faute (traitée sans élision)
+                        for forme in dictMotsRestant:
+                            if faute == dictMotsRestant[forme]:
+                                entree = forme
+                                # On reconstitue l'élision éventuelle
+                                if "'" in entree:
+                                    tokenisation = entree.split("'")
+                                    elision = tokenisation[0]
+                                    elision = elision + "'"
+                        # On définit le contexte de la correction en mettant la forme en capitales
+                        contexte = contenu.replace(faute, faute.upper())
+                        # On écrit l'entrée de dictionnaire la correction
+                        dictLigne[entree] = {
+                            'lem': [elision + spell.correction(faute)],
                             'ctxt': contexte.replace("'", ' ')
                         }
+                        
                 # On boucle à nouveau sur chaque mot pour ajouter les propositions de correction dans l'ordre
                 dictLigneOrd = {}
                 for forme in mots:

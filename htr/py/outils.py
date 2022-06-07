@@ -23,3 +23,12 @@ def triFichiers(dossier):
     tri = sorted(tri)
     
     return tri
+
+def supprElision(mot):
+    sansElision = mot.split("'")
+    if len(sansElision) > 1:
+        sansElision = sansElision[1]
+    else:
+        sansElision = sansElision[0]
+     
+    return sansElision
