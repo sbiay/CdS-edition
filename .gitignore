@@ -70,3 +70,6 @@ htr/entrainements/modeles-seg/img/
 valorisation/
 htr/transcriptions.json
 documentation/*csv
+htr/py/dicos/ancien-general.json
+htr/py/evalutionDictGen.py
+consignes-rapport.md
