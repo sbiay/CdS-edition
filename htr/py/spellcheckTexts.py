@@ -185,6 +185,7 @@ def spellcheckTexts():
                     if sansElision and sansElision not in tousMots.keys() and not nombre \
                         and not sansElision[-1] == "-" and not sansElision[0] == "-" \
                         and sansElision.lower() not in dictgeneral.keys():
+    
                         # On n'ajoute qu'une seule fois chaque forme au dictionnaire de ligne
                         if not dictLigne.get(forme):
                             # On récupère le contexte de la forme en l'y inscrivant en capitales
