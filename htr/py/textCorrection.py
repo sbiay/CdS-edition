@@ -10,7 +10,9 @@ from constantes import XMLaCORRIGER, XMLCORRIGEES, DICTPAGESCORR, DICTCDS
 
 
 @click.command()
-def textCorrectionXML():
+@click.option("-n", "--no-update", is_flag=True, default=False, help="Ne réapplique pas les corrections aux fichiers "
+                                                                     "déjà créés")
+def textCorrectionXML(no_update):
     """
     Ce script ouvre les fichiers contenus dans le dossier des prédictions XML-Alto à corriger
     
@@ -25,9 +27,17 @@ def textCorrectionXML():
     
     # On trie la liste des fichiers contenus dans le dossier de prédictions
     tri = triFichiers(XMLaCORRIGER)
+    # On récupère la liste des fichiers XML déjà corrigés
+    corriges = triFichiers(XMLCORRIGEES)
+    # On définit la liste des fichiers à traiter en fonction de l'option --no-update
+    atraiter = []
+    if no_update:
+        for fichier in tri:
+            if fichier not in corriges:
+                atraiter.append(fichier)
     
     # On boucle sur chaque nom de fichier
-    for fichier in tri:
+    for fichier in atraiter:
         # On charge le dictionnaire Json corrigé de la page
         try:
             with open(DICTPAGESCORR + "page_" + fichier[len(XMLaCORRIGER):].replace(".xml", ".json")) as dico:

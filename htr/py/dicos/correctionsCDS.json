@@ -3070,11 +3070,10 @@
    },
    "ve": {
       "lem": [
-         "vie"
+         "vie",
+         "ne"
       ],
-      "ctxt": [
-         "passer la journée avec nous. Nous mènerons joyeuse VIE et vous mettrons"
-      ]
+      "ctxt": "AMBIGU"
    },
    "inallr": {
       "lem": [
@@ -7062,11 +7061,10 @@
    },
    "quu": {
       "lem": [
-         "que"
+         "que",
+         "qui"
       ],
-      "ctxt": [
-         "semble QUE ce coup serait bien plus terrible et qu'a Paris dans"
-      ]
+      "ctxt": "AMBIGU"
    },
    "conppséerait": {
       "lem": [
@@ -8048,11 +8046,10 @@
    },
    "auc": {
       "lem": [
-         "avec"
+         "avec",
+         "aux"
       ],
-      "ctxt": [
-         "tous AVEC d'autant plus de plaisir que j'ai appris par la renommée"
-      ]
+      "ctxt": "AMBIGU"
    },
    "intéret": {
       "lem": [
@@ -10993,11 +10990,10 @@
    },
    "maii": {
       "lem": [
-         "main"
+         "main",
+         "mari"
       ],
-      "ctxt": [
-         "Je ne puis pas vous écrire de ma MAIN, mon cher voisin, souffrant"
-      ]
+      "ctxt": "AMBIGU"
    },
    "voisn": {
       "lem": [
@@ -14105,11 +14101,10 @@
    },
    "pourre": {
       "lem": [
-         "pourra"
+         "pourra",
+         "pourrez"
       ],
-      "ctxt": [
-         "Je suis assuré d'avance du plaisir avec lequel je tirai cette nouvelle"
-      ]
+      "ctxt": "AMBIGU"
    },
    "tionnaires": {
       "lem": [
@@ -15334,5 +15329,497 @@
          "Gouter"
       ],
       "ctxt": "GOUTER enfin la paix de l'existence"
+   },
+   "réviendra": {
+      "lem": [
+         "reviendra"
+      ],
+      "ctxt": "aux femmes, et mon mari me REVIENDRA, s'il plait à Dieu Heureuse pourtant"
+   },
+   "lleureue": {
+      "lem": [
+         "Heureuse"
+      ],
+      "ctxt": "aux femmes, et mon mari me reviendra, s'il plait à Dieu HEUREUSE pourtant"
+   },
+   "jalonsie": {
+      "lem": [
+         "jalousie"
+      ],
+      "ctxt": "s'il n'y manque rien. J suis dans mon jour de JALOUSIE. Cela me prend par"
+   },
+   "accis": {
+      "lem": [
+         "accès"
+      ],
+      "ctxt": "ACCÈS - La Nature est sage, Si ces sentiments violents devaient durer, ils"
+   },
+   "tentiments": {
+      "lem": [
+         "sentiments"
+      ],
+      "ctxt": "accès - La Nature est sage, Si ces SENTIMENTS violents devaient durer, ils"
+   },
+   "santer": {
+      "lem": [
+         "sauter"
+      ],
+      "ctxt": "tueraient ; mais ou recule pour mieux SAUTER."
+   },
+   "cesjours": {
+      "lem": [
+         "ces jours"
+      ],
+      "ctxt": "Je raye CES JOURS de ma vie et je cherche a les employer dé mon mieux"
+   },
+   "sos": {
+      "lem": [
+         "sans"
+      ],
+      "ctxt": "pourrait être heureux SANS cela. Je ne suis pas très contente de la"
+   },
+   "qralques": {
+      "lem": [
+         "quelques"
+      ],
+      "ctxt": "situation de notre cher pays et je pense comme vous qu'il y a QUELQUES"
+   },
+   "courtoisies": {
+      "lem": [
+         "courtoisies"
+      ],
+      "ctxt": "craintes a avoir. Les miennes portent sur les COURTOISIES aux troupes"
+   },
+   "Systeême": {
+      "lem": [
+         "systême"
+      ],
+      "ctxt": "aux généraux, aux maréchaux ; j'ai pour SYSTÊME constant, e société"
+   },
+   "cir constantes": {
+      "lem": [
+         "circonstances"
+      ],
+      "ctxt": "des gens ou dans la droite ligne des CIRCONSTANCES, tient a des desseins on"
+   },
+   "geus": {
+      "lem": [
+         "gens"
+      ],
+      "ctxt": "des GENS ou dans la droite ligne des circonstances, tient a des desseins on"
+   },
+   "lique": {
+      "lem": [
+         "ligne"
+      ],
+      "ctxt": "des gens ou dans la droite LIGNE des circonstances, tient a des desseins on"
+   },
+   "predire": {
+      "lem": [
+         "prédire"
+      ],
+      "ctxt": "trompée, m'a fait PRÉDIRE, pressentir ou éviter mille inconvéniens"
+   },
+   "onille": {
+      "lem": [
+         "mille"
+      ],
+      "ctxt": "trompée, m'a fait prédire, pressentir ou éviter MILLE inconvéniens"
+   },
+   "predis": {
+      "lem": [
+         "prédis"
+      ],
+      "ctxt": "Or je PRÉDIS d'après cela dans ce moment qu'on a des idées ou des craintes"
+   },
+   "souhaile": {
+      "lem": [
+         "souhaite"
+      ],
+      "ctxt": "Je finis sur cette belle chose, et vous SOUHAITE un prompt"
+   },
+   "l'espéren": {
+      "lem": [
+         "l'espérer"
+      ],
+      "ctxt": "rétablissement. Sans mentir je commence à L'ESPÉRER sérieusement"
+   },
+   "hétablissement": {
+      "lem": [
+         "rétablissement"
+      ],
+      "ctxt": "RÉTABLISSEMENT. Sans mentir je commence à l'espérer sérieusement"
+   },
+   "commeute": {
+      "lem": [
+         "commence"
+      ],
+      "ctxt": "rétablissement. Sans mentir je COMMENCE à l'espérer sérieusement"
+   },
+   "sériensement": {
+      "lem": [
+         "sérieusement"
+      ],
+      "ctxt": "rétablissement. Sans mentir je commence à l'espérer SÉRIEUSEMENT"
+   },
+   "cheses": {
+      "lem": [
+         "choses"
+      ],
+      "ctxt": "moins qu'ils ne viennent pour des CHOSES si claires que tout le"
+   },
+   "d'amitie": {
+      "lem": [
+         "d'amitié"
+      ],
+      "ctxt": "Assurances sincères D'AMITIÉ et d'estime. Mille choses à ces Dame,"
+   },
+   "d'estiine": {
+      "lem": [
+         "d'estime"
+      ],
+      "ctxt": "Assurances sincères d'amitié et D'ESTIME. Mille choses à ces Dame,"
+   },
+   "Asurances": {
+      "lem": [
+         "Assurances"
+      ],
+      "ctxt": "ASSURANCES sincères d'amitié et d'estime. Mille choses à ces Dame,"
+   },
+   "àces": {
+      "lem": [
+         "à ces"
+      ],
+      "ctxt": "Assurances sincères d'amitié et d'estime. Mille choses À CES Dame,"
+   },
+   "dde": {
+      "lem": [
+         "(de"
+      ],
+      "ctxt": "((DE Mme la Princesse"
+   },
+   "Prnicesse": {
+      "lem": [
+         "Princesse"
+      ],
+      "ctxt": "((de Mme la PRINCESSE"
+   },
+   "senir": {
+      "lem": [
+         "venir"
+      ],
+      "ctxt": "ce triste état vous force à ne plus VENIR voisiner et je vous engage abso-"
+   },
+   "voisiner": {
+      "lem": [
+         "voisiner"
+      ],
+      "ctxt": "ce triste état vous force à ne plus venir VOISINER et je vous engage abso-"
+   },
+   "péuibles": {
+      "lem": [
+         "pénibles"
+      ],
+      "ctxt": "Croyez que votre mal vient de cette suite d'affections PÉNIBLES que vous"
+   },
+   "suison": {
+      "lem": [
+         "saison"
+      ],
+      "ctxt": "des mois d'hiver, cette épouvantable solitude, cette SAISON déplorable"
+   },
+   "mnienne": {
+      "lem": [
+         "mienne"
+      ],
+      "ctxt": "tout cela est trop fort pour nos pauvres machines La MIENNE toute"
+   },
+   "aigoureuse": {
+      "lem": [
+         "vigoureuse"
+      ],
+      "ctxt": "VIGOUREUSE en a cruellement souffert et en souffre encore. La votre"
+   },
+   "remide": {
+      "lem": [
+         "remède"
+      ],
+      "ctxt": "s'il vous est possible ; c'est votre meilleur REMÈDE. Il y a ici un aie"
+   },
+   "enfn": {
+      "lem": [
+         "enfin"
+      ],
+      "ctxt": "du pays qui vous fera grand bien ; ENFIN je vous en presse extrême-"
+   },
+   "ya": {
+      "lem": [
+         "y a"
+      ],
+      "ctxt": "il Y A quelque temps. Le Comte de Hompesch est venu comme un dieu"
+   },
+   "Von": {
+      "lem": [
+         "Son"
+      ],
+      "ctxt": "pour m'en guérir. SON aimable gaité ne m'a jamais fait plus grand"
+   },
+   "matri": {
+      "lem": [
+         "mari"
+      ],
+      "ctxt": "que mon MARI a mis à son retour. Ces queues sont épouvantables"
+   },
+   "nour": {
+      "lem": [
+         "pour"
+      ],
+      "ctxt": "POUR 8 jours, et quand j'ai vu qu'il m'en fallait encore quinze, je me"
+   },
+   "raisoi": {
+      "lem": [
+         "raison"
+      ],
+      "ctxt": "suis trouvée comme un faible enfant sans force et sans RAISON"
+   },
+   "femume": {
+      "lem": [
+         "femme"
+      ],
+      "ctxt": "Voila l'homme et aussi la FEMME a fortiori"
+   },
+   "fortiori": {
+      "lem": [
+         "fortiori"
+      ],
+      "ctxt": "Voila l'homme et aussi la femme a FORTIORI"
+   },
+   "Mayor": {
+      "lem": [
+         "Major"
+      ],
+      "ctxt": "Je pensais bien que le cher MAJOR ne pourrait pas venir, et je ne"
+   },
+   "sout": {
+      "lem": [
+         "sont"
+      ],
+      "ctxt": "m'attendais pas à le voir. Ces départs SONT terribles Je suis comme"
+   },
+   "que ques": {
+      "lem": [
+         "quelques"
+      ],
+      "ctxt": "françaises a faire avec vous. J'ai aussi éte QUELQUES jours sans rece-"
+   },
+   "fancaises": {
+      "lem": [
+         "françaises"
+      ],
+      "ctxt": "FRANÇAISES a faire avec vous. J'ai aussi éte quelques jours sans rece-"
+   },
+   "d'hien": {
+      "lem": [
+         "d'hier"
+      ],
+      "ctxt": "noir mes journaux. Je vous en envoye à tout hasard un paquet D'HIER"
+   },
+   "paqet": {
+      "lem": [
+         "paquet"
+      ],
+      "ctxt": "noir mes journaux. Je vous en envoye à tout hasard un PAQUET d'hier"
+   },
+   "c'lièce": {
+      "lem": [
+         "Nièce"
+      ],
+      "ctxt": "Vous y verrez le mariage de votre NIÈCE."
+   },
+   "let": {
+      "lem": [
+         "Cet"
+      ],
+      "ctxt": "La politique n'y a pas grand mine. CET étalage de Maréchaux"
+   },
+   "étaluge": {
+      "lem": [
+         "étalage"
+      ],
+      "ctxt": "La politique n'y a pas grand mine. Cet ÉTALAGE de Maréchaux"
+   },
+   "fontoince": {
+      "lem": [
+         "fantôme"
+      ],
+      "ctxt": "un FANTÔME ; je parlerai au Roi, je sauverai la France. Cela me"
+   },
+   "francais": {
+      "lem": [
+         "français"
+      ],
+      "ctxt": "c'est la vie des FRANÇAIS. J'en ris encore et le rire fait tant de bien."
+   },
+   "sérien": {
+      "lem": [
+         "sérieu-"
+      ],
+      "ctxt": "sans lui ou a ce qui s'appelle la maladie du pays et se crois SÉRIEU-"
+   },
+   "cest": {
+      "lem": [
+         "c'est"
+      ],
+      "ctxt": "sement que C'EST votre véritable mal qui en amène mille autres."
+   },
+   "héras": {
+      "lem": [
+         "héros"
+      ],
+      "ctxt": "Mon HÉROS revient au plus tard dans cinq jours. Je compte"
+   },
+   "tand": {
+      "lem": [
+         "tard"
+      ],
+      "ctxt": "Mon héros revient au plus TARD dans cinq jours. Je compte"
+   },
+   "bieulot": {
+      "lem": [
+         "bientôt"
+      ],
+      "ctxt": "A BIENTÔT donc, Monsieur. Soignez vous, distrayez vous, et"
+   },
+   "sortout": {
+      "lem": [
+         "surtout"
+      ],
+      "ctxt": "n'oubliez pas vos voisins et SURTOUT vos voisines"
+   },
+   "Sillm": {
+      "lem": [
+         "Salm"
+      ],
+      "ctxt": "de SALM"
+   },
+   "quime": {
+      "lem": [
+         "qui me"
+      ],
+      "ctxt": "ensemble est -ce vous QUI ME devez une réponse ? on est -ce moi qui"
+   },
+   "caleule": {
+      "lem": [
+         "calcule"
+      ],
+      "ctxt": "vous en dois une ? Je n'en sais rien, et ce n'est pas cela que je CALCULE"
+   },
+   "caluile": {
+      "lem": [
+         "calcule"
+      ],
+      "ctxt": "quand je vous écris : pour mieux dire je ne CALCULE rien et je cède tout"
+   },
+   "moncher": {
+      "lem": [
+         "mon cher"
+      ],
+      "ctxt": "que je peux l'être : MON CHER Prince est revenu avant hier, après"
+   },
+   "hècles": {
+      "lem": [
+         "siècles"
+      ],
+      "ctxt": "une absence de 5 mois, qui me paraissent S SIÈCLES dans mes souve-"
+   },
+   "virs": {
+      "lem": [
+         "nirs"
+      ],
+      "ctxt": "NIRS. Ils m'avaient tellement enfoncée dans. la mélancolie que"
+   },
+   "corp": {
+      "lem": [
+         "coup"
+      ],
+      "ctxt": "dans 5 jours, et tout à COUP, j'entends un roulis de voiture des"
+   },
+   "rouliz": {
+      "lem": [
+         "roulis"
+      ],
+      "ctxt": "dans 5 jours, et tout à coup, j'entends un ROULIS de voiture des"
+   },
+   "satis faction": {
+      "lem": [
+         "satisfaction"
+      ],
+      "ctxt": "SATISFACTION comme je la sens aujourd'hui : En lui avait prépare une belle"
+   },
+   "aujourd'luii": {
+      "lem": [
+         "aujourd'hui"
+      ],
+      "ctxt": "satisfaction comme je la sens AUJOURD'HUI : En lui avait prépare une belle"
+   },
+   "reception": {
+      "lem": [
+         "réception"
+      ],
+      "ctxt": "RÉCEPTION, 40 de ses fermiers devaient aller au devant de lui, 20 officiers du"
+   },
+   "colouel": {
+      "lem": [
+         "colonel"
+      ],
+      "ctxt": "bataillon de la milice, dont il est COLONEL, lui avaient aussi arrangé un"
+   },
+   "d'appsi": {
+      "lem": [
+         "d'appa-"
+      ],
+      "ctxt": "compliment, des amis devaient se rendre ici, pour un grand diner D'APPA-"
+   },
+   "duer": {
+      "lem": [
+         "diner"
+      ],
+      "ctxt": "compliment, des amis devaient se rendre ici, pour un grand DINER d'appa-"
+   },
+   "traversde": {
+      "lem": [
+         "travers de"
+      ],
+      "ctxt": "rat, et le dérangement de tout cela se mettait aussi en TRAVERS DE la"
+   },
+   "desi": {
+      "lem": [
+         "desir"
+      ],
+      "ctxt": "joie que j'avais à le revoir ; mais nous sommes accomodants ; le DESIR"
+   },
+   "rétourne": {
+      "lem": [
+         "retourne"
+      ],
+      "ctxt": "qui l'appellent a Cologne ; il y RETOURNE demain et en revient Dimanche"
+   },
+   "révient": {
+      "lem": [
+         "revient"
+      ],
+      "ctxt": "qui l'appellent a Cologne ; il y retourne demain et en REVIENT Dimanche"
+   },
+   "Dimancles": {
+      "lem": [
+         "Dimanche"
+      ],
+      "ctxt": "qui l'appellent a Cologne ; il y retourne demain et en revient DIMANCHE"
+   },
+   "incognits": {
+      "lem": [
+         "incognito"
+      ],
+      "ctxt": "INCOGNITO Voila le biais que nous avons trouvé et qui me fait rire ;"
    }
 }
