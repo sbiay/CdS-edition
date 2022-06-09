@@ -1,0 +1,103 @@
+{
+   "results": {
+      "images": {
+         "CdS02_Konv002-03_0056.jpg": {
+            "record_nb": 3,
+            "records": [
+               {
+                  "idno": "CdS-b1-06p8",
+                  "incipit": "La Princesse de Salm, qui doit partir incessamment, engage Monsieur le comte Orloff à venir la voir ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8884"
+               },
+               {
+                  "idno": "CdS-b1-06p9",
+                  "incipit": "Madame, c’est sous les auspices de Monsieur Amaury Duval que je viens vous faire hommage d’un recueil de fables ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8885"
+               },
+               {
+                  "idno": "CdS-b1-06pa",
+                  "incipit": "Madame, je me suis empressé d’envoyer à Monsieur le rédacteur en chef du Journal de Paris l’annonce préliminaire ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8886"
+               }
+            ]
+         },
+         "CdS02_Konv002-03_0057.jpg": {
+            "record_nb": 2,
+            "records": [
+               {
+                  "idno": "CdS-b1-06pa",
+                  "incipit": "Madame, je me suis empressé d’envoyer à Monsieur le rédacteur en chef du Journal de Paris l’annonce préliminaire ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8886"
+               },
+               {
+                  "idno": "CdS-b1-06pb",
+                  "incipit": "Princesse digne de tous nos hommages, j’ai lu, avec le même plaisir que j’ai toujours éprouvé ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8887"
+               }
+            ]
+         },
+         "CdS02_Konv002-03_0058.jpg": {
+            "record_nb": 2,
+            "records": [
+               {
+                  "idno": "CdS-b1-06pb",
+                  "incipit": "Princesse digne de tous nos hommages, j’ai lu, avec le même plaisir que j’ai toujours éprouvé ",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8887"
+               },
+               {
+                  "idno": "CdS-b1-06pc",
+                  "incipit": "Madame, le second volume de mes fables qui va bientôt paraître, contiendra",
+                  "URL": "https://constance-de-salm.de/archiv/#/document/8888"
+               }
+            ]
+         }
+      },
+      "records": {
+         "CdS-b1-06p8": {
+            "incipit": "La Princesse de Salm, qui doit partir incessamment, engage Monsieur le comte Orloff à venir la voir ",
+            "URL": "https://constance-de-salm.de/archiv/#/document/8884",
+            "Images": [
+               "CdS02_Konv002-03_0056.jpg"
+            ]
+         },
+         "CdS-b1-06p9": {
+            "incipit": "Madame, c’est sous les auspices de Monsieur Amaury Duval que je viens vous faire hommage d’un recueil de fables ",
+            "URL": "https://constance-de-salm.de/archiv/#/document/8885",
+            "Images": [
+               "CdS02_Konv002-03_0056.jpg"
+            ]
+         },
+         "CdS-b1-06pa": {
+            "incipit": "Madame, je me suis empressé d’envoyer à Monsieur le rédacteur en chef du Journal de Paris l’annonce préliminaire ",
+            "URL": "https://constance-de-salm.de/archiv/#/document/8886",
+            "Images": [
+               "CdS02_Konv002-03_0056.jpg",
+               "CdS02_Konv002-03_0057.jpg"
+            ]
+         },
+         "CdS-b1-06pb": {
+            "incipit": "Princesse digne de tous nos hommages, j’ai lu, avec le même plaisir que j’ai toujours éprouvé ",
+            "URL": "https://constance-de-salm.de/archiv/#/document/8887",
+            "Images": [
+               "CdS02_Konv002-03_0057.jpg",
+               "CdS02_Konv002-03_0058.jpg"
+            ]
+         },
+         "CdS-b1-06pc": {
+            "incipit": "Madame, le second volume de mes fables qui va bientôt paraître, contiendra",
+            "URL": "https://constance-de-salm.de/archiv/#/document/8888",
+            "Images": [
+               "CdS02_Konv002-03_0058.jpg",
+               "CdS02_Konv002-03_0059.jpg"
+            ]
+         }
+      },
+      "no-record": null
+   },
+   "stats": {
+      "images": 3,
+      "records": 3,
+      "no-record": 0,
+      "total": 3
+   }
+}
