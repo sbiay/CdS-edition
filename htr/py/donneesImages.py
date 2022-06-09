@@ -1,10 +1,9 @@
 import json
-
 import click
 import os
-
 from toutesDonnees import donneesFud, donneesZenodo
-
+from constantes import XMLaCORRIGER
+from lxml import etree
 
 def noticeImage(image):
     """
@@ -33,7 +32,8 @@ def noticeImage(image):
     
     # On boucle sur les notices recueillies
     for item in notices:
-        # On récupère les URL des notices publiées dans le jeu de données Zenodo
+        # On récupère les débuts de lettres et URL des notices publiées dans le jeu de données Zenodo
+        item["incipit"] = zenodo[item["idno"]]["incipit"]
         item["URL"] = zenodo[item["idno"]]["URL"]
     
     return notices
@@ -50,6 +50,9 @@ def donneesImages(source, sortie):
     :param sortie: chemin du dossier où placer le fichier de résultat
     :return: None
     """
+    # On charge les données fud
+    fud = donneesFud()
+    
     listeImages = []
     # On analyse l'arborescence du chemin de dossier passée en argument
     for racine, dirs, fichiers in os.walk(source):
@@ -58,29 +61,66 @@ def donneesImages(source, sortie):
             if fichier[-3:] == "jpg":
                 listeImages.append(fichier)
     
-    # On initie la liste des résultats
-    avecNotice = {}
+    # On trie les images dans l'ordre alpha-numérique
+    listeImages = sorted(listeImages)
+    
+    # On initie la liste des résultats pour le classement des images par notices ou sans notice
+    parNotice = {}
     sansNotice = []
+    # On initie la liste des résultats pour le classement des notices par image
+    parImages = {}
     for image in listeImages:
         # On récupère les données relatives à l'image grâce à la fonction noticeImage()
         if noticeImage(image):
             # On boucle sur les notices renvoyées par la fonction
             for notice in noticeImage(image):
-                avecNotice[notice["Nr. der Digitalisate"]] = {
+                # On écrit le dictionnaire organisant les images par notices
+                parNotice[notice["Nr. der Digitalisate"]] = {
+                    "incipit": notice["incipit"],
                     "URL": notice["URL"],
                     "Images": notice["Images"]
                 }
-        
+            # On écrit le dictionnaire organisant les notices par images
+            notices = noticeImage(image)
+            # On sélectionne une partie des donnees des notices
+            selection = []
+            for notice in notices:
+                donnees = {
+                    "idno": notice["idno"],
+                    "incipit": notice["incipit"],
+                    "URL": notice["URL"]
+                }
+                selection.append(donnees)
+            
+            parImages[image] = {
+                "nb_lettres_inventoriees": len(notices),
+                "notices": selection
+            }
+            """
+            # TODO à placer dans un autre script
+            # On récupère les identifiants des zones ayant un titre
+            xml = etree.parse("/home/sbiay/telechargments/test/" + image[:-4] + ".xml") #TODO on prendra les
+            # XMLCORRIGEES
+            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+            regionAvecTitre = xml.xpath("//alto:TextBlock[descendant::alto:TextLine[@TAGREFS=//alto:OtherTag["
+                           "@LABEL='HeadingLine:title']/@ID]]/@ID",
+                              namespaces=nsmap)
+            for region in regionAvecTitre:
+                print(region)
+            """
+        # Si l'image n'a pas de notice
         else:
             sansNotice.append(image)
     
     # On écrit l'objet final
     resultats = {
         "results": {
-            "records": dict(sorted(avecNotice.items())),
+            "images": parImages,
+            "records": dict(sorted(parNotice.items())),
             "no-record": sansNotice.sort()
         },
         "stats": {
+            "images": len(parImages),
             "records": len(listeImages) - len(sansNotice),
             "no-record": len(sansNotice),
             "total": len(listeImages)

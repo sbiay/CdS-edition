@@ -72,6 +72,7 @@ def donneesZenodo():
         for index, ligne in enumerate(lecteur):
             zenodo[ligne['FuD-Key']] = {
                 "Nr. der Digitalisate": ligne['Nr.'],
+                "incipit": ligne['Anfang des Briefes'],
                 "URL": ligne['URL']
             }
     
