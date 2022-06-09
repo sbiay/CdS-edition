@@ -24,6 +24,9 @@ def distributionFichiers(source, sortie):
     # On initie les erreurs pour les prédictions manquantes par rapport aux données de l'inventaire
     erreurs = []
     
+    # On initie la liste des titres de pièces (qui permettra d'associer titre et notice par position dans une image)
+    donneesImages["titles"] = {}
+    
     # Lire le fichier de données et distribuer les images dans les dossiers par notice
     for record in donneesImages["results"]["records"]:
         try:
@@ -31,14 +34,27 @@ def distributionFichiers(source, sortie):
         except FileExistsError:
             True
         
-        for image in donneesImages["results"]["records"][record]["Images"]:
+        # On boucle sur les images de chaque notice
+        for index, image in enumerate(donneesImages["results"]["records"][record]["Images"]):
             try:
+                # On copie le fichier image vers la destination, dans le dossier de notice courant
                 shutil.copy(f"{source}{image[:-4]}.xml", sortie + record)
+                
+                # Si l'index de l'image est 0
+                # elle est en début de lettre (le titre se trouve donc dans l'image)
+                if index == 0:
+                    if donneesImages["titles"].get(record):
+                        donneesImages["titles"][record] = [image]
+                    else:
+                        donneesImages["titles"][record].append(image)
             except:
                 erreurs.append(image[:-4] + ".xml")
-    
+        
     # On délivre le message d'erreur
     print(f"Les fichiers suivants n'ont pas été trouvés : {erreurs}")
+
+    with open(source + "donnees.json", mode="w") as jsonf:
+        json.dump(donneesImages, jsonf)
     
     # On initie une liste d'erreur pour le contrôle des fichiers de prédiction
     erreurs = []
