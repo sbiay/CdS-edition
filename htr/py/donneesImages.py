@@ -50,6 +50,12 @@ def donneesImages(source, sortie):
     :param sortie: chemin du dossier où placer le fichier de résultat
     :return: None
     """
+    # On contrôle l'écriture des chemins de dossiers
+    if source[-1] != "/":
+        source = source + "/"
+    if sortie[-1] != "/":
+        sortie = sortie + "/"
+    
     # On charge les données fud
     fud = donneesFud()
     
@@ -93,8 +99,8 @@ def donneesImages(source, sortie):
                 selection.append(donnees)
             
             parImages[image] = {
-                "nb_lettres_inventoriees": len(notices),
-                "notices": selection
+                "record_nb": len(notices),
+                "records": selection
             }
             """
             # TODO à placer dans un autre script
@@ -128,7 +134,7 @@ def donneesImages(source, sortie):
     }
     
     with open(f"{sortie}donnees.json", mode="w") as jsonf:
-        json.dump(resultats, jsonf)
+        json.dump(resultats, jsonf, ensure_ascii=False, indent=3)
     print(f"Le fichier {sortie}donnees.json a été écrit avec succès.")
 
 
