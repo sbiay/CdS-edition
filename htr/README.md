@@ -30,5 +30,12 @@ grep "Seulement dans ./" diff.txt > exclu.txt
 ```
 
 # Contenu des dossiers :
-- [demo/](./demo/) : contient les illustrations de démonstration des *notebooks*
+- [demo/](./demo/) contient les illustrations de démonstration des *notebooks*
+- [entrainements/](./entrainements/) est le dossier dédié à la méthodologie de test et d'entraînement des modèles de segmentation et de reconnaissance d'écriture
+- [mainAuteur/](./mainAuteur/) contient des données permettant de tester des modèles de reconnaissance d'écriture sur l'écriture personnelle de Constance de Salm
+- [mains/](./mains/) contient de brèves descriptions illustrées des écritures sur lesquelles des tests ou des entraînements ont été pratiqués
+- [modeles-rec/](./modeles-rec/) contient les différents modèles de reconnaissance d'écriture entraînés ; les données chiffrées rendant compte des tests et des résultats des entraînements sont consultables dans le fichier [journal-rec.json](./entrainements/journal-rec.json)
+- [predic-a-corriger/](./predic-a-corriger/) est destiné à recevoir les fichiers XML-Alto exporté d'e-Scriptorium et contenant les transcriptions
+- [predic-corrigees/](./predic-corrigees/) est le dossier de destination des fichiers XML-Alto à la sortie du traintement semi-automatisé des corrections
 - [py/](./py/) : contient les scripts Python exploités dans les *notebooks*
+- [verite-terrain](./verite-terrain/) contient les images et les transcriptions consitutées en vérités de terrain pour le test et l'entraînement des modèles de reconnaissance d'écriture. Le fichier [mains.json](./mains/mains.json) donne la liste de ces fichiers par mains et précise quels fichiers ont été utilisés pour les tests et quels fichiers ont été utilisés pour les entraînements

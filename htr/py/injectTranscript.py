@@ -1,7 +1,7 @@
 import click
 import os
 from lxml import etree
-from constantes import XMLaCORRIGER, VERITESTERRAIN as VT, TESTREC
+from constantes import XMLaCORRIGER, VERITESTERRAIN as VT
 
 
 def recupTranscriptions(dossier):
@@ -57,19 +57,10 @@ def injectTranscript():
     transcriptions = {}
     # On récupère les transcriptions manuelles à l'aide de la fonction recupTranscriptions(dossier)
     transcrVT = recupTranscriptions(VT)
-    transcrTest = recupTranscriptions(TESTREC)
     
     # On réunit les transcriptions dans un seul dict
     for cle in transcrVT:
         transcriptions[cle] = transcrVT[cle]
-    for cle in transcrTest:
-        # On vérifie que les id de lignes soient bien uniques
-        if transcriptions.get(cle):
-            print(f"Attention ! l'id. {cle} est utilisé deux fois !")
-            return None
-        # Si l'id est unique, on inscrit le couple clé-valeur dans le dict "transcriptions"
-        else:
-            transcriptions[cle] = transcrTest[cle]
     
     # REMPLACEMENT DES PREDICTIONS PAR LES TRANSCRIPTIONS MANUELLES
     for root, dirs, files in os.walk(XMLaCORRIGER):
