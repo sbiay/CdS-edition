@@ -3,6 +3,8 @@ HTR
 
 Ce dossier contient les fichiers et scripts nécessaires à la réalisation du processus de reconnaissance automatique d'écriture et à la correction des prédictions.
 
+Cette chaîne de traitement a été conçue pour être mise en oeuvre avec les logiciels [Kraken](https://kraken.re/master/index.html) et [e-Scriptorium](https://escriptorium.fr/). Ces deux applications bénéficient de leur propre documentation. Par conséquent, les *notebooks* suivants ne contiennent pas d'aide à la prise en main de ces logiciels. On pourra se reporter à cet [article pour prendre en main e-Scriptorium](https://lectaurep.hypotheses.org/documentation/prendre-en-main-escriptorium) ainsi qu'à la [documentation de Kraken](https://kraken.re/master/training.html), que le *notebook* n<sup>o</sup> 3 permet d'utiliser sans requérir une connaissance de son fonctionnemment.
+
 # Documentation fonctionnelle
 La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
 1. [Préparer le traitement d'un dossier](./Preparer_le_traitement_dun_dossier.ipynb)
