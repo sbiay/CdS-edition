@@ -54,6 +54,11 @@
 % Citations
 \usepackage{csquotes}
 
+% Blocs de code
+%\usepackage{minted}% [cache=false] fait disparaître le message d'erreur mais le contenu ne s'affiche plus
+\usepackage{colortbl}
+
+
 % DOCUMENT
 \begin{document}
 	
@@ -106,7 +111,7 @@
 				\end{enumerate}
 				
 		\section{Choisir des collections d'évaluation}
-			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. 	 Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
+			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
 			
 			La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenu pour les tests.
 			
@@ -191,7 +196,7 @@
 				\label{typageRegions}%
 			\end{figure}
 			
-			\subsection{Typer les lignes d'écriture}
+			\subsection{Lignes d'écriture}
 				Les types de lignes dont on propose l'utilisation sont~:
 						
 			\subsection{Phénomènes graphiques particuliers}
@@ -218,9 +223,29 @@
        		Afin de faciliter ce travail de contrôle, le script en question délivre pour chaque image les informations nécessaires~: le nombre de lettres inventoriées dans l'image (qui permet de contrôler rapidement, en comptant le nombre de titres, si certaines parties de l'image seraient à exclure), ainsi que des informations détaillées sur chaque notice de l'inventaire concerné, dans le but de permettre un contrôle précis en cas d'ambiguïté possible. Par exemple, le cas s'est présenté d'une image contenant quatre lettres dont une seule est inventoriée~; dans ce cas heuresuement rare, c'est la récupération de l'incipit de chaque lettre inventoriée par le script qui permet de repérer précisément dans l'image la ou les lettres pertinentes.
 			
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
-			\textbf{Cette section est à écrire.}
+			Comme énoncé plus haut, les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte pour l'ensemble des écritures (plutôt qu'une série de modèles propres à une seule main) ont orienté notre démarche \footcite{chagueCreationModelesTranscriptiona}.
 			
-			Une partie de cette méthodologie a été présentée dans le cadre de la réunion mensuelle du \gls{dhi}\footcite{biayIntelligenceArtificelleIHA2022}.
+			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage appportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de Constance de Salm réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture
+			
+			Aucun modèle de reconnaissance d'écriture préexistant ne permettait d'atteindre une acuité satisfaisante sur aucune des écritures que l'on a pu identifier. La reconnaissance automatique de l'écriture supposait donc la mise en place d'une méthodologie d'entraînement d'un modèle multiple, dont le \textit{notebook} intitulé \textit{Tester et entraîner un modèle de reconnaissance d'écriture} explique la marche à suivre\footnote{\cite{biayTesterEntrainerModele2022}. Une partie de cette méthodologie a été présentée dans le cadre de la réunion mensuelle du \gls{dhi}~: \cite{biayIntelligenceArtificelleIHA2022}.}.
+			
+			\subsection{Sélection des échantillons et organisation des fichiers}
+				Entraîner des modèles à reconnaître les écritures de plusieurs mains différentes, suppose non seulement un regard attentif à la paléographie, mais aussi une grande rigueur de gestion des fichiers et de leurs données, car il s'agit de classer par type d'écriture les reproductions photographiques d'un dossier de la correspondance puis de sélectionner au sein de chaque classe des échantillons pour réaliser des tests de performance de modèles de reconnaissance et des échantillons pour réaliser d'éventuels  entraînements des mêmes modèles. Il est en effet essentiel de pouvoir tester les performances de modèles sur chaque main de manière isolée, afin de cibler les écritures pour lesquelles des données d'entraînements doivent être apportées.
+							
+				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance du même modèle, car il ne s'agit pas d'évaluer la capacité du modèle de reconnaissance à transcrire un texte qu'il aura déjà transcrit une première fois, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'a pas encore transcrit. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
+				
+				Une méthode de nommage et de classement des fichiers a été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement. Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}. Le modèle d'arborescence que l'on a adopté est schématisé dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})}.
+				
+				Même si une image peut attester plusieurs écritures, il est fortement déconseillé de dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles seront ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque\footnote{Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions.}.
+							
+			\subsection{Comparaison de modèles déjà entraînés}
+				\textbf{Cette section est à écrire}
+				
+				Le modèle entraîné de zéro par H.~Souvay\footcite{souvayCorrespondanceConstanceSalm2021} a été comparé à d'autres modèles
+				
+			\subsection{Tenir un journal de tests}
+				\label{journal-test}
+				\textbf{Cette section est à écrire}
 			
 		\section{Injecter les transcriptions manuelles dans les prédictions}
 			Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
