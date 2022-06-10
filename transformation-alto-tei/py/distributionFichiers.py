@@ -24,9 +24,6 @@ def distributionFichiers(source, sortie):
     # On initie les erreurs pour les prédictions manquantes par rapport aux données de l'inventaire
     erreurs = []
     
-    # On initie la liste des titres de pièces (qui permettra d'associer titre et notice par position dans une image)
-    enchainTitres = {}
-    
     # Lire le fichier de données et distribuer les images dans les dossiers par notice
     for record in donneesImages["results"]["records"]:
         try:
@@ -42,33 +39,12 @@ def distributionFichiers(source, sortie):
             except:
                 erreurs.append(image[:-4] + ".xml")
                 
-            # Si l'index de l'image est 0
-            # elle est en début de lettre (le titre se trouve donc dans l'image)
-            if index == 0:
-                if not enchainTitres.get(image):
-                    enchainTitres[image] = [record]
-                else:
-                    enchainTitres[image].append(record)
-    
-    # On boucle sur l'enchainement des titres pour chaque image
-    # afin de récupérer la position de chaque titre dans chaque image
-    donneesImages["titles"] = {}
-    for image in enchainTitres:
-        for index, item in enumerate(enchainTitres[image]):
-            donneesImages["titles"][item] = {
-                "init_file": image,
-                "position": index + 1
-            }
-    
     # On délivre le message d'erreur
     print(f"Les fichiers suivants n'ont pas été trouvés : {erreurs}")
-
-    with open(source + "donnees.json", mode="w") as jsonf:
-        json.dump(donneesImages, jsonf)
     
+    # TODO Purger les fichiers des Textblock non pertinents
     # On initie une liste d'erreur pour le contrôle des fichiers de prédiction
     erreurs = []
-    # TODO à placer dans un autre script
     # On récupère les identifiants des zones ayant un titre
     regionAvecTitre = None
     # On récupère l'arbre XML correspondant à l'image courante
