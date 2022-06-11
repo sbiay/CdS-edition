@@ -24,7 +24,7 @@ def textCorrectionXML(no_update):
     # On charge le dictionnaire complet de la correspondance
     with open(DICTCDS) as f:
         dictCDS = json.load(f)
-    
+
     # On trie la liste des fichiers contenus dans le dossier de prédictions
     tri = triFichiers(XMLaCORRIGER)
     # On récupère la liste des fichiers XML déjà corrigés
@@ -35,6 +35,8 @@ def textCorrectionXML(no_update):
         for fichier in tri:
             if fichier not in corriges:
                 atraiter.append(fichier)
+    else:
+        atraiter = tri
     
     # On boucle sur chaque nom de fichier
     for fichier in atraiter:

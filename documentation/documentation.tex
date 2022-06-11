@@ -275,39 +275,63 @@
 							
 				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance du même modèle, car il ne s'agit pas d'évaluer la capacité du modèle de reconnaissance à transcrire un texte qu'il aura déjà transcrit une première fois, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'a pas encore transcrit. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
 				
-				Une méthode de nommage et de classement des fichiers a été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement. Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}. Le modèle d'arborescence que l'on a adopté est schématisé dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})}.
+				Une méthode de nommage et de classement des fichiers a été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement (voir le schéma suivant). Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}.}.
+				
+				%AVOIR comment placer les paragraphes pour une bonne articulation avec le saut de page suivant.
+				
+				\pagebreak
 				
 				\begin{forest}
 					pic dir tree,
 					where level=0{}{% folder icons by default; override using file for file icons
 						directory,
 					},
-					[system
-					[\fname{config}{A comment about this folder}
-					]
-					[lib
-					[Access
-					]
-					[Plugin
-					]
-					[\fname{file.txt}{A comment about this file}, file
-					]
-					]
-					[templates
-					]
-					[tests
-					]
+					[entrainements
+					 [\fname{img\_complet\_CdS02\_Konv019}{}
+ 					  [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+					  [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+					  [\fname{…}{}, file]
+ 					 ]
+ 					 [mainCdS02\_Konv019\_01
+ 					  [test
+ 					   [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+ 					   [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+ 					  ]
+ 					  [train
+ 					  ]
+ 					  [\fname{CdS02\_Konv019\_0013.jpg}{}, file]
+ 					  [\fname{…}{}, file]
+					 ]
+					 [mainCdS02\_Konv019\_02
+					  [test
+					  [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+					  [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+					  ]
+					  [train
+					  ]
+ 					  [\fname{CdS02\_Konv019\_0033.jpg}{}, file]
+					  [\fname{CdS02\_Konv019\_0037.jpg}{}, file]
+					  [\fname{CdS02\_Konv019\_0039.jpg}{}, file]
+					  [\fname{…}{}, file]
+					 ]
 					]
 				\end{forest}
+			
+				\pagebreak
 				
-				Même si une image peut attester plusieurs écritures, il est fortement déconseillé de dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles seront ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque\footnote{Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions.}.
-							
+				Même si une image peut attester plusieurs écritures, on a retenu l'option de ne pas dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles seront ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque. Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions\footnote{Le script Python d'examen des doublons était suffisamment bref pour être écrit nativement dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})~; on le trouve sous le titre \textit{Classer les images par mains}}.
+
+			\subsection{Établir des normes de transcription}
+				Il faut évoquer brièvement ici les principes généraux de la transcription des textes, les normes détaillées étant reportées en annexe\footnote{Cf.~\ref{normes-trans}, p.~\pageref{normes-trans}.}.
+				
+				\textbf{Cette section est à écrire}
+				
 			\subsection{Comparaison de modèles déjà entraînés}
 				\textbf{Cette section est à écrire}
 				
 				Le modèle entraîné de zéro par H.~Souvay\footcite{souvayCorrespondanceConstanceSalm2021} a été comparé à d'autres modèles
 				
-			\subsection{Tenir un journal de tests}
+			\subsection{Tenir un journal des résultats de tests et d'entraînements}
 				\label{journal-test}
 				\textbf{Cette section est à écrire}
 			
@@ -373,6 +397,7 @@
 	
 	\appendixpage % Crée une page de titre pour les annexes
 	\chapter{Normes de transcription}
+		\label{normes-trans}
 	
 		\section{Accentuation}
 			L'usage scribal a été respecté sans normalisation~: en cas d'oubli de l'accent sur la préposition \textit{à} on a transcit \textit{a}.
