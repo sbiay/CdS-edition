@@ -100,6 +100,9 @@
 }
 \newcommand{\fname}[2]{\begin{tabular}{m{1cm}@{\quad}m{4cm}}#1 & \normalfont#2\end{tabular}}
 
+% Typographie des siècles
+\newcommand{\siecle}[1]{\textsc{#1}\ieme}
+
 % DOCUMENT
 \begin{document}
 	
@@ -165,7 +168,7 @@
 		\section{Préparer le traitement d'un dossier}
 			L'archive photographique de la correspondance de Constance de Salm comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
 			
-			Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire ainsi, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
+			Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
 			
 			Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire.
 			
@@ -225,18 +228,6 @@
 			
 				\textbf{la définition des régions est formelle, visuelle}
 			
-			La figure \ref{typageRegions} \hyperref[typageRegions]{ci-dessous} propose une mise en oeuvre de ce typage des régions.	
-			
-			\begin{figure}[!h]
-				% !h ancre l'image dans le flux de texte, sinon elle va n'importe où !
-				\centering
-				\rotatebox{90}{%
-					\includegraphics[scale=0.65]{../htr/demo/annotation-CdS02_Konv002-02_0066.png}%
-				}%
-				\caption{Exemple de typage des zones de texte sur une double page.}%
-				\label{typageRegions}%
-			\end{figure}
-			
 			\subsection{Lignes d'écriture}
 				Les types de lignes dont on propose l'utilisation sont~:
 						
@@ -266,14 +257,14 @@
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
 			Comme énoncé plus haut, les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte pour l'ensemble des écritures (plutôt qu'une série de modèles propres à une seule main) ont orienté notre démarche \footcite{chagueCreationModelesTranscriptiona}.
 			
-			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage appportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de Constance de Salm réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture
+			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage apportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de Constance de Salm réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture et découpant les dossiers par grandes zones.
 			
 			Aucun modèle de reconnaissance d'écriture préexistant ne permettait d'atteindre une acuité satisfaisante sur aucune des écritures que l'on a pu identifier. La reconnaissance automatique de l'écriture supposait donc la mise en place d'une méthodologie d'entraînement d'un modèle multiple, dont le \textit{notebook} intitulé \textit{Tester et entraîner un modèle de reconnaissance d'écriture} explique la marche à suivre\footnote{\cite{biayTesterEntrainerModele2022}. Une partie de cette méthodologie a été présentée dans le cadre de la réunion mensuelle du \gls{dhi}~: \cite{biayIntelligenceArtificelleIHA2022}.}.
 			
 			\subsection{Sélectionner des échantillons d'écriture et organiser les fichiers}
 				Entraîner des modèles à reconnaître les écritures de plusieurs mains différentes, suppose non seulement un regard attentif à la paléographie, mais aussi une grande rigueur de gestion des fichiers et de leurs données, car il s'agit de classer par type d'écriture les reproductions photographiques d'un dossier de la correspondance puis de sélectionner au sein de chaque classe des échantillons pour réaliser des tests de performance de modèles de reconnaissance et des échantillons pour réaliser d'éventuels  entraînements des mêmes modèles. Il est en effet essentiel de pouvoir tester les performances de modèles sur chaque main de manière isolée, afin de cibler les écritures pour lesquelles des données d'entraînements doivent être apportées.
 							
-				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance du même modèle, car il ne s'agit pas d'évaluer la capacité du modèle de reconnaissance à transcrire un texte qu'il aura déjà transcrit une première fois, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'a pas encore transcrit. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
+				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance du même modèle, car il ne s'agit pas d'évaluer la capacité du modèle de reconnaissance à transcrire un texte qu'il aura déjà transcrit une première fois au cours de la phase d'entraînement, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'a pas encore transcrits. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
 				
 				Une méthode de nommage et de classement des fichiers a été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement (voir le schéma suivant). Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}.}.
 				
@@ -319,22 +310,110 @@
 			
 				\pagebreak
 				
-				Même si une image peut attester plusieurs écritures, on a retenu l'option de ne pas dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles seront ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque. Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions\footnote{Le script Python d'examen des doublons était suffisamment bref pour être écrit nativement dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})~; on le trouve sous le titre \textit{Classer les images par mains}}.
+				Même si une image peut attester plusieurs écritures, on a retenu l'option de ne pas dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles sont ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque. Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions\footnote{Le script Python d'examen des doublons était suffisamment bref pour être écrit nativement dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})~; on le trouve sous le titre \textit{Classer les images par mains}}.
 
 			\subsection{Établir des normes de transcription}
 				Il faut évoquer brièvement ici les principes généraux de la transcription des textes, les normes détaillées étant reportées en annexe\footnote{Cf.~\ref{normes-trans}, p.~\pageref{normes-trans}.}.
 				
-				\textbf{Cette section est à écrire}
+				Il est primordial pour l'établissement de ces principes de rappeler que la reconnaissance automatique des écritures procède caractère par caractère. Elle ne tient compte ni du contexte syntaxique ni du contexte sémantique. Il n'est donc pas possible d'apprendre à un algorithme de reconnaissance à appliquer un accent sur la lettre \textit{a} lorsqu'il s'agit d'une préposition, ni de lui apprendre à reconnaître la lettre \textit{é} avec accent aigu dans le mot \textit{décoration}. Si l'accent a été omis par le scribe, transcrire \textit{é} à la place de \textit{e} consiste à apprendre à l'algorithme que, par ailleurs, le mot \textit{vie} devrait être transcrit \textit{vié}.
 				
-			\subsection{Comparaison de modèles déjà entraînés}
-				\textbf{Cette section est à écrire}
+				La démarche de reconnaissance automatique de l'écriture peut être envisagée de plusieurs manières, soit comme une imitation des caractères écrits de la sources (où l'on respecte les abréviations sans les développer et où l'on imite la forme des lettres\footnote{Cette méthode de transcription est généralement dénommée allographétique~; cf.~\cite[p.~250 \textit{et passim}]{stutzmannPaleographieStatistiquePour2011a}}), soit comme une transcription déjà interprétative de la source qui uniformise les allographes et restitue les abréviations\footnote{C'est le cas de la transcription dite diplomatique~; cf.~\cite{guyotjeanninDiplomatiqueMedievale2006}}. En réalité, aucune de ces options ne peut être appliquée de façon radicale de bout en bout d'une transcription, chacune rencontrant des limites dans son applicabilité.
 				
-				Le modèle entraîné de zéro par H.~Souvay\footcite{souvayCorrespondanceConstanceSalm2021} a été comparé à d'autres modèles
+				Par exemple, le projet Notre-Dame de Paris et son cloître (e-NDP) aborde l'entraînement des algorithmes de reconnaissance d'écriture dans l'optique de leur apprendre à restituer les abréviations des scribes des sources du chapitre\footcite{torresaguilarENDPNotreDameParis2022}. Cette démarche, qui permet de faire l'économie d'une phase de développement des abréviations, utile à l'interrogation du texte par un moteur de recherche, trouve néanmoins une limite dans la capacité des modèles de reconnaissance d'écriture à restituer plusieurs lettres pour un seul caractère abrégé\footnote{Le constat d'une incapacité des modèles à restituer plus de deux ou trois lettres a été formulé dans la discussion consécutive à la présentation citée dans la note précédente.}.
 				
+				A contrario, la volonté d'imiter au plus près les usages scribaux se heurte notamment aux difficultés des modèles à reconnaître les espaces. La tendance de certains scribes à coller certains mots les uns aux autres, ou plus encore à détacher quelque peu les parties d'un même mot entraîne l'omission ou la transcription d'espaces erronée du point de vue de la lecture interprétative du texte. Une stricte imitation des usages scribaux devrait conduire à respecter ces phénomènes lors de l'établissement des transcriptions de test et d'entraînement, et ce avec deux inconvénients de taille~: la difficulté d'apprécier la réalité dimensionnelle d'une espace (à partir de quelle quantité de blanc une espace doit être transcrite) et le travail fastidieux mais indispensable de restituer ultérieurement le juste espacement du texte pour en permettre une restitution propre à la lecture ou à l'analyse.
+				
+				L'indispensable compromis à trouver sur ce point a été guidé par les réflexions menées dans le cadre du séminaire \textit{Création de modèle(s) HTR pour les documents médiévaux en ancien français et moyen français entre le \siecle{x}-\siecle{xiv}~siècle}\footcite{pincheSeminaireCreationModele2021b}. On s'est donc efforcé de définir le degré d'imitation de la source manuscrite conforme aux besoins spécifiques de l'édition de la correspondance de Constance de Salm, en suivant autant que possible les choix génériques prônés par la communauté scientifique consistuée autour du projet \gls{cremma} et qui correspondent de manière tendantielle au concept de transcription \textit{graphématique} traduit et expliqué par D.~Stutzmann\footcite[p.~251]{stutzmannPaleographieStatistiquePour2011a}.
+				
+				Ainsi, la restitution des allographes a été écartée dans la mesure où le seul exemple d'allographe contenu dans les documents du projet est le \textit{s} long. D'autre part, la difficulté et le coût impliqué par l'imitation de l'espacement des mots a été tranchée par la restitution de l'espacement moderne des mots dès lors que l'usage scribal ne caractérisait pas un usage établi~; en revanche, les élisions, agglutinations ou encore les lexicalisations (consacrées ou fautives) ont été respectées~: \textit{d'avantage, Ç'a été, tédeum}. L'usage scribal a également été respecté dans l'accentuation des caractères, l'abréviation des mots, l'usage des majuscules, l'orthographe et la ponctuation.
+				
+				Ces choix se justifient d'une part en ce qu'ils permettent un bon entraînement de la reconnaissance d'écriture caractère par caractère, d'autre part en raison de leur correspondance avec les critères de l'édition finale du texte, qui respecte les usages scribaux jusque dans l'application non systématique des règles d'accentuation des mots.
+				
+				Enfin, concernant les passages biffés, les palimpsestes ou encore les passages illisibles, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
+				
+			\subsection{Comparer les performances des modèles}
+				On a procédé à la comparaison des performances de plusieurs modèles en utilisant le logiciel libre Kraken en ligne de commande\footcite{KrakenDocumentation} (les entraînements ont été également effectués à l'aide de ce logiciel).
+				
+				Afin d'éviter une surévaluation des performances du modèle entraîné de zéro par H.~Souvay\footcite{souvayCorrespondanceConstanceSalm2021}, les performances de ce dernier ont été évaluées à partir de transcriptions nouvellemement produites. L'acuité de reconnaissance de l'écriture sur l'unique main attestée dans le corpus d'entraînement de ce dernier a atteint 77,25\% seulement. 
+				
+				\begin{figure}[!h]
+					% !h ancre l'image dans le flux de texte
+					\centering
+					\includegraphics[scale=1]{./img/CdS02_Konv002-03_0056_detail.jpg}%
+					\caption{Copie d'une lettre de Pierre-Augustin Rigaud à C.~de Salm, le 13 avril 1824.}%
+					\label{lettre-rigaud}%
+				\end{figure}
+				
+				Voici la prédiction correspondante~:
+				
+				\begin{quote}
+					% Pour mettre une lettre en rouge \textcolor{red}{[i]}
+					\textsf{cet ju le gusaires de Mr touaauz ctral ne ; qus venes tat\\
+					bonmage Liu rececit de fables que j'li puslié il y a quelsurs mos\\
+					L ronde partie est sous presse. et je me prapose de vous l'affrir\\
+					auissi. Je dhrre qe cet ouvrage sait digne de votre atenson
+					\footnote{Notice d'inventaire~: \cite{CdS02056}.}}
+				\end{quote}
+				
+				Cette acuité était supérieure à celle atteinte par le modèle générique du projet \gls{lectaurep}, entraîné sur des écritures administratives du \siecle{xix}~siècle (73,12\%), mais elle était en revanche inférieure à celle atteinte par le modèle affiné sur les contrats de mariage à partir d'un premier modèle mixte dans le cadre du même projet, qui atteignait quant à lui une acuité de 80,42\%\footnote{Les modèles hérités de ce projet sont disponibles sur un dépôt ouvert~: \cite{KrakenModelsTranscription}. Les versions utilisées sont~: \textsf{generic\_lectaurep\_26} et \textsf{cm\_ft\_mrs15\_11}.}~:
+				
+				\begin{quote}
+					\textsf{Cest saus les Auopices de M\^r Amaury Duval rue je vieus mous favre
+					hommage dem recueit de lables que ai publie et \& a quetques mais
+					la secoude partie est sons prepe, et se me propose de nans l'apnis
+					aufri. Je désire que et auvrage soit sique de nobre attention -}
+				\end{quote}
+				
+				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'oeil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de Constance de Salm.
+				
+				En procédant à la constitution d'une vérité de terrain d'une dizaine de pages pour chacune des mains sélectionnées, des scores supérieurs à 95\% d'acuité ont été atteints dès le premier entraînement~:
+				
+				\begin{itemize}
+					\item 1re main de la seconde copie des lettres\footnote{Dénommée \textsf{mainCdS02\_Konv002\_01}.}~: 98,68\%
+					\item 3e main de la seconde copie des lettres\footnote{Dénommée \textsf{mainCdS02\_Konv002\_03}.}~: 96,31\%
+					\item 1re main de la correspondance Martini\footnote{Dénommée \textsf{mainCdS02\_Konv019\_01}.}~: 97,88\%
+					\item 2e main de la correspondance Martini\footnote{Dénommée \textsf{mainCdS02\_Konv019\_02}.}~: 96,27\%
+				\end{itemize}
+			
+				Voici la prédiction, où les quelques fautes rémanentes ont été colorées en rouge~:
+				
+				\begin{quote}
+					% Pour mettre une lettre en rouge \textcolor{red}{i}
+					\textsf{C'est sous les Auspices de Mr Amaury Duval que je viens vous faire\\
+					hommage d'\textcolor{red}{em} recueil de \textcolor{red}{l}ables que j'ai publié il y a quelques mois\\
+					La seconde partie est sous presse, et je me propose de vaus l'\textcolor{red}{ass}rir\\
+					aussi. Je désire que cet ouvrage soit digne de votre attention.}
+				\end{quote}
+			
+				La 2e main de la seconde copie des lettres (\textsf{mainCdS02\_Konv002\_02}) a été écartée des entraînements afin de constituer un témoin complémentaire des performances du modèle. On a ainsi pu constater le gain de souplesse du modèle entraîné, c'est-à-dire l'amélioration de sa capacité à reconnaître des écritures pour lesquelles il n'a pas été entraîné. L'acuité sur cette main a progressé de 73,09\% avant l'entraînement sur les quatre autres mains à 91,54\% après cet entraînement.
+				
+				\begin{figure}[!h]
+					% !h ancre l'image dans le flux de texte
+					\centering
+					\includegraphics[scale=1]{./img/CdS02_Konv002-01_0031_detail.jpg}%
+					\caption{Copie d'une lettre adressée par C.~de Salm à Jean-François Thurot, le 21 février 1794.}%
+					\label{}%
+				\end{figure}
+				
+				\begin{quote}
+					\scriptsize \textsf{Que j vous parle d'abord le ma Saphe ; j'en suis toute occuple je pourrais drie\\
+					êvre j'y travaille nuit et jour. Jecrogais avoir terminé mon second acte, mais toet à-coup\\
+					Ima paru que je pouvais y faire une grande amélisration, c'est à Pire, mettre en actionce\\
+					qui n'était qu'en récit-Cette dée m'a saisie, envuhie, et après devoir laifst quelque tempps}\footnote{Notice d'inventaire~: \cite{CdS02031032}.}
+				\end{quote}
+			
+				Comme on peut le constater avec cette prédiction précédente, une acuité même de 91\% laisse une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
+			
 			\subsection{Tenir un journal des résultats de tests et d'entraînements}
 				\label{journal-test}
-				\textbf{Cette section est à écrire}
-			
+				Les performances du nouveau modèle, dénommé \textsf{cds\_lectcm\_04\_mains\_01}\footnote{Cette dénomination signifie~: Constance de Salm~; \gls{lectaurep}, contrats de mariage~; quatre mains~; version~1.}, n'avaient pas été espérées aussi bonnes. La démarche de tenue d'un journal de test et d'entraînement avait donc été développée en prévision de la nécessité de répéter les entraînements et de suivre la progression des performances. Dans cette optique, un script Python a été écrit pour pré-remplir un journal de résultats\footcite{biayJournalReconnPy2022}. 
+				
+				Ce script analyse le contenu des dossiers de test et d'entraînement pour lesquels des préconisation de nommage et d'organisation ont été formulées plus haut~; il enregistre la date et l'heure du moment, dénombre les dossiers de mains et récupère leurs labels, il dénombre également le nombre de fichiers contenus dans les vérités de terrain (dossiers \textit{train}) de chaque main et permet ainsi de suivre l'accroissement de tel ou tel sous-corpus d'entraînement au fil des opérations. Les résultats de tests du nouveau modèle sur les différentes mains doivent ensuite être inscrits manuellement dans le fichier.
+				
+				Ce script permet également de conserver une trace de la distribution des fichiers où les mains sont attestés et de la liste de ceux qui constituent les corpus de test et d'entraînement. Ces listes consituent ainsi l'archive détaillée des entraînements que l'on a effectués, autorisant la suppression de l'arborescence du dossier d'entraînement que l'on a élaboré, et ce sans perte d'information.
+				
+				Pour autant, il serait plus indiqué de poursuivre l'entraînement de modèle par l'enrichissement du corpus déjà constitué et la réitération des entraînements que l'on a effectués plutôt que de repartir du modèle que l'on a produit et de l'affiner~: une plus grande généricité de modèle sera vraisemblablement obtenue par l'entraînement simultané sur un grand nombre de mains, tandis que des entraînements successifs sur quelques mains donneraient sans doute des résultats moins intéressants.
+							
 		\section{Injecter les transcriptions manuelles dans les prédictions}
 			Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
 			
@@ -420,7 +499,7 @@
 		\section{Abréviations}
 			Les abréviations ont été transcrites sans être résolues~: \textit{9bre} pour novembre, \textit{Mr.} pour Monsieur.
 		
-			L'abréviation \textit{ll} pour livres (unité monétaire) a été transcrite par le caractère \href{https://mufi.info/m.php?p=muficharinfo&i=4088}{ỻ}.
+			L'abréviation \textit{ll} pour livres (unité monétaire) a été transcrite par le caractère Unicode \href{https://mufi.info/m.php?p=muficharinfo&i=4088}{U + 1EFB}.
 
 		\section{Ponctuation}
 			Les signes de ponctuation ont été transcrits fidèlement, y compris les points marquant une pause de la plume sans articulation syntaxique~: \textit{je ne sais pas . si vous en serez bien aise}. Les tirets ont été transcrits par le caractère ‒.
@@ -433,7 +512,7 @@
 			On a remplacé chaque lettre biffée illisible par un point et placé l'ensemble des lettres concernées entre crochets~: [..] \textit{(pour deux lettres illisibles)}.
 		
 		\section{Passages illisibles}
-			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}
+			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
            	
 	% Bibliographie
 	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
