@@ -37,7 +37,7 @@
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
 \newacronym{bnf}{BnF}{Bibliothèque nationale de France}
-\newacronym{cds}{CdS}{Constance de Salm}
+\newacronym{cds}{C.~de Salm}{gls{cds}}
 \newacronym{cg2c2v}{Corr.~g., 2e copie, 2e vol.}{long}
 \newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
@@ -47,6 +47,7 @@
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
+\newacronym{tei}{TEI}{Text Encoding Initiative}
 
 % Images
 \usepackage{graphicx}
@@ -113,7 +114,7 @@
 	
 		\section*{Contexte}
 		\addcontentsline{toc}{section}{Contexte}
-		Constance de Salm (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
+		gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
 
 		Le projet de publier numériquement sa correspondance est né de l'intérêt pour les relations entre noblesses française et allemande au sein du \gls{dhi}. Il en a résulté la production d'un site \textit{Wordpress} adossé au système de base de données \href{https://fud.uni-trier.de/}{\gls{fud}}. Les notices de plus de 11000 lettres, publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}, associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre.
 
@@ -138,21 +139,21 @@
 					Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)~?\footcite{chagueCreationModelesTranscription}
 				\end{quotation}
 			
-				Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voix.
+				Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voie.
 			
-				Deux séries de tests méritaient dès lors d'être effectuées~:
+				Deux séries de tests méritaient dès lors d'être effectués~:
 		
 				\begin{enumerate}
 					\item Reprendre les tests sur le modèle entraîné de zéro par H.~Souvay lors d'un précédent stage consacré à la correspondance de \gls{cds}\footcite{souvayCorrespondanceConstanceSalm2021}~;
-					\item Reprendre un modèle générique entraîné pour le projet \gls{lectaurep} .
+					\item Reprendre un modèle générique entraîné dans le cadre du projet \gls{lectaurep}.
 				\end{enumerate}
 		
-			\subsection{Objectif~: éditer}
-				Il faut prendre en considération dans les choix méthodologiques du processus d'\gls{htr} les objectifs à atteindre. Il s'agit d'éditer le texte en restant proche de l'usage scribal, sans donc le corriger~:
+			\subsection{Objectif~: éditer le texte des lettres}
+				Il est nécessaire d'aborder cette phase de la reconnaissance automatique d'écriture en pleine conscience de l'objectif à atteindre~: en l'occurrence, l'édition du texte des lettres.
 				
-				\begin{enumerate}
-					\item La transcription ne résout pas les abréviations~;
-				\end{enumerate}
+				À la différence de l'analyse textométrique ou de l'interrogation du texte brut qui sont des finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription demeurent dans la production finale. Théoriquement, le texte doit être établi à la perfection (abstraction faite de l'erreur humaine). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite sont toujours la cause d'erreurs dans la reconnaissance automatique, même avec le meilleur modèle qui soit.
+				
+				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
 		\section{Choisir des collections d'évaluation}
 			Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
@@ -166,7 +167,7 @@
 			Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages).
 		
 		\section{Préparer le traitement d'un dossier}
-			L'archive photographique de la correspondance de Constance de Salm comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
+			L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
 			
 			Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
 			
@@ -232,7 +233,7 @@
 				Les types de lignes dont on propose l'utilisation sont~:
 						
 			\subsection{Phénomènes graphiques particuliers}
-				\gls{cds} a corrigé certains mots de sa main~:
+				 \gls{cds} a corrigé certains mots de sa main~:
 			
 				\begin{itemize}
 					\item En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée~; le typage de la ligne demanderait alors beaucoup d'effort pour un résultat minime~;
@@ -244,29 +245,31 @@
 				En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées, lorsque c'est possible), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
 		
 		\section{Entraîner des modèles de segmentation des pages}
-       		\textbf{Cette section est à écrire.}
-       		
-       	\section{Contrôler la pertinence de la segmentation}
-	       	\label{controle-segmentation-lettres-inventoriees}
-       		Le script python écrit pour permettre l'importation sélective des images inventoriées \footcite{biayDonneesImagesPy2022} permet en outre de contrôler l'association entre les images sélectionnées et les notices de l'inventaire. Plusieurs lettres peuvent en effet être inventoriées pour la même image, mais surtout une image peut contenir un mélange de lettres inventoriées et de lettres non inventoriées.
-       		
-       		Or, il est crucial de pouvoir contrôler le statut de chaque lettre présente dans l'image. Les lettres non-inventoriées étant par définition absentes des données de l'inventaire, il n'existe aucun moyen, en aval de la transcription automatisée des textes pour sélectionner les transcriptions pertinentes (celles des lettres inventoriées) des transcriptions non pertinentes (lettres non inventoriées). Ainsi, il n'est possible de gérer correctement la transformation des transcriptions en édition qu'en ayant préalablement exclu toutes les parties de texte non pertinentes, un travail qui ne peut être automatisé.
-       		
-       		Afin de faciliter ce travail de contrôle, le script en question délivre pour chaque image les informations nécessaires~: le nombre de lettres inventoriées dans l'image (qui permet de contrôler rapidement, en comptant le nombre de titres, si certaines parties de l'image seraient à exclure), ainsi que des informations détaillées sur chaque notice de l'inventaire concerné, dans le but de permettre un contrôle précis en cas d'ambiguïté possible. Par exemple, le cas s'est présenté d'une image contenant quatre lettres dont une seule est inventoriée~; dans ce cas heuresuement rare, c'est la récupération de l'incipit de chaque lettre inventoriée par le script qui permet de repérer précisément dans l'image la ou les lettres pertinentes.
+    		\textbf{Cette section est à écrire.}
+    		
+    	\section{Contrôler la pertinence de la segmentation}
+	    	\label{controle-segmentation-lettres-inventoriees}
+    		Le script python écrit pour permettre l'importation sélective des images inventoriées \footcite{biayDonneesImagesPy2022} permet en outre de contrôler l'association entre les images sélectionnées et les notices de l'inventaire. Plusieurs lettres peuvent en effet être inventoriées pour la même image, mais surtout une image peut contenir un mélange de lettres inventoriées et de lettres non inventoriées.
+    		
+    		Or, il est crucial de pouvoir contrôler le statut de chaque lettre présente dans l'image. Les lettres non-inventoriées étant par définition absentes des données de l'inventaire, il n'existe aucun moyen, en aval de la transcription automatisée des textes pour sélectionner les transcriptions pertinentes (celles des lettres inventoriées) des transcriptions non pertinentes (lettres non inventoriées). Ainsi, il n'est possible de gérer correctement la transformation des transcriptions en édition qu'en ayant préalablement exclu toutes les parties de texte non pertinentes, un travail qui ne peut être automatisé.
+    		
+    		Afin de faciliter ce travail de contrôle, le script en question délivre pour chaque image les informations nécessaires~: le nombre de lettres inventoriées dans l'image (qui permet de contrôler rapidement, en comptant le nombre de titres, si certaines parties de l'image seraient à exclure), ainsi que des informations détaillées sur chaque notice de l'inventaire concerné, dans le but de permettre un contrôle précis en cas d'ambiguïté possible. Par exemple, le cas s'est présenté d'une image contenant quatre lettres dont une seule est inventoriée~; dans ce cas heuresuement rare, c'est la récupération de l'incipit de chaque lettre inventoriée par le script qui permet de repérer précisément dans l'image la ou les lettres pertinentes.
 			
 		\section{Tester et entraîner des modèles de reconnaissance d'écriture}
 			Comme énoncé plus haut, les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte pour l'ensemble des écritures (plutôt qu'une série de modèles propres à une seule main) ont orienté notre démarche \footcite{chagueCreationModelesTranscriptiona}.
 			
-			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage apportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de Constance de Salm réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture et découpant les dossiers par grandes zones.
+			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage apportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de \gls{cds} réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture en découpant les dossiers par grandes zones.
 			
 			Aucun modèle de reconnaissance d'écriture préexistant ne permettait d'atteindre une acuité satisfaisante sur aucune des écritures que l'on a pu identifier. La reconnaissance automatique de l'écriture supposait donc la mise en place d'une méthodologie d'entraînement d'un modèle multiple, dont le \textit{notebook} intitulé \textit{Tester et entraîner un modèle de reconnaissance d'écriture} explique la marche à suivre\footnote{\cite{biayTesterEntrainerModele2022}. Une partie de cette méthodologie a été présentée dans le cadre de la réunion mensuelle du \gls{dhi}~: \cite{biayIntelligenceArtificelleIHA2022}.}.
 			
 			\subsection{Sélectionner des échantillons d'écriture et organiser les fichiers}
-				Entraîner des modèles à reconnaître les écritures de plusieurs mains différentes, suppose non seulement un regard attentif à la paléographie, mais aussi une grande rigueur de gestion des fichiers et de leurs données, car il s'agit de classer par type d'écriture les reproductions photographiques d'un dossier de la correspondance puis de sélectionner au sein de chaque classe des échantillons pour réaliser des tests de performance de modèles de reconnaissance et des échantillons pour réaliser d'éventuels  entraînements des mêmes modèles. Il est en effet essentiel de pouvoir tester les performances de modèles sur chaque main de manière isolée, afin de cibler les écritures pour lesquelles des données d'entraînements doivent être apportées.
-							
-				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance du même modèle, car il ne s'agit pas d'évaluer la capacité du modèle de reconnaissance à transcrire un texte qu'il aura déjà transcrit une première fois au cours de la phase d'entraînement, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'a pas encore transcrits. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
+				Entraîner des modèles à reconnaître les écritures de plusieurs mains différentes suppose un regard attentif aux variations paléographiques, mais aussi une grande rigueur de gestion des fichiers et de leurs données, car il s'agit d'abord de classer par type d'écriture les reproductions photographiques d'un dossier de la correspondance. Il est en effet essentiel de pouvoir tester les performances de modèles sur chaque main de manière isolée, afin de cibler les écritures pour lesquelles des données d'entraînements (des transcriptions manuelles) doivent être apportées. Apporter des données d'entraînements pour une main qui serait déjà reconnue par un modèle avec plus de 95\% d'acuité ne serait qu'une perte de temps.
 				
-				Une méthode de nommage et de classement des fichiers a été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement (voir le schéma suivant). Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}.}.
+				Une fois les reproductions photographiques classées par mains, il s'agit de sélectionner, pour chaque main, des échantillons pour réaliser des tests de performance de modèles de reconnaissance d'une part et des échantillons pour réaliser d'éventuels entraînements des mêmes modèles d'autre part.
+				
+				Un point d'attention doit être porté à la distinction des échantillons de test et des échantillons d'entraînement. Il est en effet important que l'entraînement du modèle ne porte pas sur les mêmes échantillons que le test final de performance, car il ne s'agit pas d'évaluer la capacité du modèle à transcrire un texte qu'il aura déjà transcrit une première fois au cours de la phase d'entraînement, mais bien d'évaluer sa capacité à transcrire des textes qu'il n'aura pas encore croisés. Il est donc nécessaire de ne jamais insérer dans un échantillon d'entraînement une transcription qui servira plus tard à évaluer les bénéfices de cet entraînement.
+				
+				Une méthode de nommage et de classement des fichiers a ainsi été établie afin d'uniformiser les noms et les emplacements des échantillons de test et d'entraînement (voir le schéma suivant). Ce classement permet d'une part de cibler les échantillons de manière efficace lorsqu'il s'agit de procéder à un test ou à un entraînement~; il permet d'autre part de faire analyser les dossiers de fichiers pour collecter des données sur ces mêmes opérations, comme on le verra plus loin\footnote{Cf. \textit{infra} \ref{journal-test}, p.~\pageref{journal-test}.}.
 				
 				%AVOIR comment placer les paragraphes pour une bonne articulation avec le saut de page suivant.
 				
@@ -279,38 +282,38 @@
 					},
 					[entrainements
 					 [\fname{img\_complet\_CdS02\_Konv019}{}
- 					  [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
-					  [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
-					  [\fname{…}{}, file]
+ 					 [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+					 [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+					 [\fname{…}{}, file]
  					 ]
  					 [mainCdS02\_Konv019\_01
- 					  [test
- 					   [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
- 					   [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
- 					  ]
- 					  [train
- 					  ]
- 					  [\fname{CdS02\_Konv019\_0013.jpg}{}, file]
- 					  [\fname{…}{}, file]
+ 					 [test
+ 					  [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+ 					  [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+ 					 ]
+ 					 [train
+ 					 ]
+ 					 [\fname{CdS02\_Konv019\_0013.jpg}{}, file]
+ 					 [\fname{…}{}, file]
 					 ]
 					 [mainCdS02\_Konv019\_02
-					  [test
-					  [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
-					  [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
-					  ]
-					  [train
-					  ]
- 					  [\fname{CdS02\_Konv019\_0033.jpg}{}, file]
-					  [\fname{CdS02\_Konv019\_0037.jpg}{}, file]
-					  [\fname{CdS02\_Konv019\_0039.jpg}{}, file]
-					  [\fname{…}{}, file]
+					 [test
+					 [\fname{CdS02\_Konv019\_0011.jpg}{}, file]
+					 [\fname{CdS02\_Konv019\_0012.jpg}{}, file]
+					 ]
+					 [train
+					 ]
+ 					 [\fname{CdS02\_Konv019\_0033.jpg}{}, file]
+					 [\fname{CdS02\_Konv019\_0037.jpg}{}, file]
+					 [\fname{CdS02\_Konv019\_0039.jpg}{}, file]
+					 [\fname{…}{}, file]
 					 ]
 					]
 				\end{forest}
 			
 				\pagebreak
 				
-				Même si une image peut attester plusieurs écritures, on a retenu l'option de ne pas dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles sont ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Ainsi, un script Pyhton a été écrit pour vérifier que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, et ainsi prévenir ce risque. Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions\footnote{Le script Python d'examen des doublons était suffisamment bref pour être écrit nativement dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})~; on le trouve sous le titre \textit{Classer les images par mains}}.
+				Même si une image peut attester plusieurs écritures, on a retenu l'option de ne pas dupliquer l'image en question dans plusieurs dossiers de mains. En effet, les transcriptions produites à l'occasion des tests et des entraînements ont vocation à constituer une \textbf{vérité de terrain} unique~: une fois ces transcriptions effectuées, elles sont ainsi rassemblées dans un seul dossier réunissant toutes les écritures (la distinction des mains n'ayant pas d'intérêt en dehors du cadre strict des tests et des entraînements). Or, si l'on transcrivait différents passages d'une même reproduction photographique pour tester ou entraîner un modèle sur plusieurs mains à partir de la même image (qu'il aura d'abord fallu dupliquer en plusieurs dossiers de mains), la réunion des fichiers dupliqués dans un dossier commun aura pour effet d'écraser les transcriptions d'une main par l'autre. Un script a donc été dédié à la vérification que l'on n'avait pas dupliqué par inadvertance un fichier dans plusieurs dossiers de mains, prévenant ainsi le risque de conflit entre les transcriptions manuelles. Il eut été également possible de prévoir la réunion des transcriptions de ces éventuels doublons en un seul fichier de synthèse, mais considérant que chaque main digne d'être testée et entraînée est attestée dans de nombreuses pages, il a semblé bien plus économique en termes d'ingénierie d'éviter le doublonnement des fichiers plutôt que de travailler à la réconciliation des transcriptions\footnote{Le script Python d'examen des doublons était suffisamment bref pour être écrit nativement dans le \textit{notebook} \textit{Tester et entraîner un modèle de reconnaissance d'écriture} (\cite{biayTesterEntrainerModele2022})~; on le trouve sous le titre \textit{Classer les images par mains}}.
 
 			\subsection{Établir des normes de transcription}
 				Il faut évoquer brièvement ici les principes généraux de la transcription des textes, les normes détaillées étant reportées en annexe\footnote{Cf.~\ref{normes-trans}, p.~\pageref{normes-trans}.}.
@@ -323,13 +326,18 @@
 				
 				A contrario, la volonté d'imiter au plus près les usages scribaux se heurte notamment aux difficultés des modèles à reconnaître les espaces. La tendance de certains scribes à coller certains mots les uns aux autres, ou plus encore à détacher quelque peu les parties d'un même mot entraîne l'omission ou la transcription d'espaces erronée du point de vue de la lecture interprétative du texte. Une stricte imitation des usages scribaux devrait conduire à respecter ces phénomènes lors de l'établissement des transcriptions de test et d'entraînement, et ce avec deux inconvénients de taille~: la difficulté d'apprécier la réalité dimensionnelle d'une espace (à partir de quelle quantité de blanc une espace doit être transcrite) et le travail fastidieux mais indispensable de restituer ultérieurement le juste espacement du texte pour en permettre une restitution propre à la lecture ou à l'analyse.
 				
-				L'indispensable compromis à trouver sur ce point a été guidé par les réflexions menées dans le cadre du séminaire \textit{Création de modèle(s) HTR pour les documents médiévaux en ancien français et moyen français entre le \siecle{x}-\siecle{xiv}~siècle}\footcite{pincheSeminaireCreationModele2021b}. On s'est donc efforcé de définir le degré d'imitation de la source manuscrite conforme aux besoins spécifiques de l'édition de la correspondance de Constance de Salm, en suivant autant que possible les choix génériques prônés par la communauté scientifique consistuée autour du projet \gls{cremma} et qui correspondent de manière tendantielle au concept de transcription \textit{graphématique} traduit et expliqué par D.~Stutzmann\footcite[p.~251]{stutzmannPaleographieStatistiquePour2011a}.
+				L'indispensable compromis à trouver sur ce point a été guidé par les réflexions menées dans le cadre du séminaire \textit{Création de modèle(s) HTR pour les documents médiévaux en ancien français et moyen français entre le \siecle{x}-\siecle{xiv}~siècle}\footcite{pincheSeminaireCreationModele2021b}. On s'est donc efforcé de définir le degré d'imitation de la source manuscrite conforme aux besoins spécifiques de l'édition de la correspondance de \gls{cds}, en suivant autant que possible les choix génériques prônés par la communauté scientifique consistuée autour du projet \gls{cremma} et qui correspondent de manière tendantielle au concept de transcription \textit{graphématique} traduit et expliqué par D.~Stutzmann\footcite[p.~251]{stutzmannPaleographieStatistiquePour2011a}.
 				
 				Ainsi, la restitution des allographes a été écartée dans la mesure où le seul exemple d'allographe contenu dans les documents du projet est le \textit{s} long. D'autre part, la difficulté et le coût impliqué par l'imitation de l'espacement des mots a été tranchée par la restitution de l'espacement moderne des mots dès lors que l'usage scribal ne caractérisait pas un usage établi~; en revanche, les élisions, agglutinations ou encore les lexicalisations (consacrées ou fautives) ont été respectées~: \textit{d'avantage, Ç'a été, tédeum}. L'usage scribal a également été respecté dans l'accentuation des caractères, l'abréviation des mots, l'usage des majuscules, l'orthographe et la ponctuation.
 				
 				Ces choix se justifient d'une part en ce qu'ils permettent un bon entraînement de la reconnaissance d'écriture caractère par caractère, d'autre part en raison de leur correspondance avec les critères de l'édition finale du texte, qui respecte les usages scribaux jusque dans l'application non systématique des règles d'accentuation des mots.
 				
 				Enfin, concernant les passages biffés, les palimpsestes ou encore les passages illisibles, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
+				
+			\subsection{Éliminer d'une transcription les lignes attestant des écritures parasites}
+				La présence de plusieurs écritures dans la même image est problématique pour évaluer la capacité d'un modèle à reconnaître une écriture particulière, car la présence d'une écriture différente dans la même page est de nature à parasiter cette évaluation. Or la phase de segmentation de la page, qui permet la reconnaissance de toutes les lignes d'écriture, ne peut pas être paramétrée pour ignorer une ou plusieurs écritures déterminées. Une fois toutes les lignes de l'image reconnue, il est donc nécessaire de supprimer les lignes que l'on juge parasites.
+				
+				Si l'on veut procéder de façon manuelle en supprimant les lignes une par une dans l'interface eScriptorium, l'opération peut se révéler fastidieuse~: supprimer une page entière consistera à cliquer sur un minimum de trente lignes… Un script a donc été développé pour faciliter ce travail\footcite{biaySupprLignesVidesPy2022}. La transcription manuelle que l'on effectue sur les seules lignes attestant l'écriture que l'on souhaite tester laisse toutes les autres lignes de la page vides. Le script transforme l'export de cette transcription (format XML-Alto) et supprime de celle-ci toutes les lignes laissées vides. On peut dès lors tester un modèle de reconnaissance d'écriture avec la certitude que celui-ci ne tentera pas de reconnaître une écriture dans des zones de l'image où on ne le souhaite pas.
 				
 			\subsection{Comparer les performances des modèles}
 				On a procédé à la comparaison des performances de plusieurs modèles en utilisant le logiciel libre Kraken en ligne de commande\footcite{KrakenDocumentation} (les entraînements ont été également effectués à l'aide de ce logiciel).
@@ -364,7 +372,7 @@
 					aufri. Je désire que et auvrage soit sique de nobre attention -}
 				\end{quote}
 				
-				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'oeil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de Constance de Salm.
+				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'oeil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de \gls{cds}.
 				
 				En procédant à la constitution d'une vérité de terrain d'une dizaine de pages pour chacune des mains sélectionnées, des scores supérieurs à 95\% d'acuité ont été atteints dès le premier entraînement~:
 				
@@ -402,11 +410,11 @@
 					qui n'était qu'en récit-Cette dée m'a saisie, envuhie, et après devoir laifst quelque tempps}\footnote{Notice d'inventaire~: \cite{CdS02031032}.}
 				\end{quote}
 			
-				Comme on peut le constater avec cette prédiction précédente, une acuité même de 91\% laisse une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
+				Comme on peut le constater avec cette prédiction, une acuité de 91\% laisse encore une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
 			
 			\subsection{Tenir un journal des résultats de tests et d'entraînements}
 				\label{journal-test}
-				Les performances du nouveau modèle, dénommé \textsf{cds\_lectcm\_04\_mains\_01}\footnote{Cette dénomination signifie~: Constance de Salm~; \gls{lectaurep}, contrats de mariage~; quatre mains~; version~1.}, n'avaient pas été espérées aussi bonnes. La démarche de tenue d'un journal de test et d'entraînement avait donc été développée en prévision de la nécessité de répéter les entraînements et de suivre la progression des performances. Dans cette optique, un script Python a été écrit pour pré-remplir un journal de résultats\footcite{biayJournalReconnPy2022}. 
+				Les performances du nouveau modèle, dénommé \textsf{cds\_lectcm\_04\_mains\_01}\footnote{Cette dénomination signifie~: \gls{cds}~; \gls{lectaurep}, contrats de mariage~; quatre mains~; version~1.}, n'avaient pas été espérées aussi bonnes. La démarche de tenue d'un journal de test et d'entraînement avait donc été développée en prévision de la nécessité de répéter les entraînements et de suivre la progression des performances. Dans cette optique, un script Python a été écrit pour pré-remplir un journal de résultats\footcite{biayJournalReconnPy2022}. 
 				
 				Ce script analyse le contenu des dossiers de test et d'entraînement pour lesquels des préconisation de nommage et d'organisation ont été formulées plus haut~; il enregistre la date et l'heure du moment, dénombre les dossiers de mains et récupère leurs labels, il dénombre également le nombre de fichiers contenus dans les vérités de terrain (dossiers \textit{train}) de chaque main et permet ainsi de suivre l'accroissement de tel ou tel sous-corpus d'entraînement au fil des opérations. Les résultats de tests du nouveau modèle sur les différentes mains doivent ensuite être inscrits manuellement dans le fichier.
 				
@@ -415,6 +423,7 @@
 				Pour autant, il serait plus indiqué de poursuivre l'entraînement de modèle par l'enrichissement du corpus déjà constitué et la réitération des entraînements que l'on a effectués plutôt que de repartir du modèle que l'on a produit et de l'affiner~: une plus grande généricité de modèle sera vraisemblablement obtenue par l'entraînement simultané sur un grand nombre de mains, tandis que des entraînements successifs sur quelques mains donneraient sans doute des résultats moins intéressants.
 							
 		\section{Injecter les transcriptions manuelles dans les prédictions}
+			\label{injection}
 			Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
 			
 			La méthode la plus simple pour joindre les fichiers XML-Alto contenant les transcriptions manuelles aux fichiers contenant la prédiction automatique du texte des autres pages d'un même dossier est de regrouper ces fichiers ensemble. Or, nous avons voulu tenir compte de la possibilité que les transcriptions manuelles ne recouvrent pas toutes les lignes d'écriture d'une page ‒ le cas n'est pas très fréquent, mais nous y avons été confronté. Certaines mains n'étant attestées que de manière sporadique, en compagnie d'autres écritures, la méthodologie d'entraînement impose de ne transcrire que l'écriture propre au test ou à l'entraînement, laissant les écritures voisines de côté. Il résulte de cette nécessité que les fichiers XML-Alto contenant les transcriptions manuelles peuvent être lacunaires~: ils ne peuvent donc pas se substituer aux fichiers contenant la prédiction complète des lignes d'écriture d'une page au risque de remplacer une partie des prédictions par du vide. 
@@ -424,28 +433,34 @@
 		\section{Automatiser la correction des prédictions}
 			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
 			
-			Les corrections à appliquer à ces prédictions \gls{htr} restent nombreuses, ce qui appelle à trouver des solutions d'automatisation. Cette tâche requiert néanmoins de la prudence. Le risque de son automatisation est notamment de remplacer involontairement des prédictions justes ou de remplacer des prédictions fausses par d'autres prédictions fausses. Le contrôle des propositions automatiques de correction est donc nécessaire, bien qu'un trop grand nombre de données à contrôler puisse nuire gravement à la rentabilité du processus.
+			Même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps~; elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son oeil pourrait les laisser échapper.
 			
-			L'automatisation de la correction des prédictions a pour objectif d'accélérer le passage de la prédiction au format XML-TEI. Le résultat de cette correction est imparfait~; par conséquent cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr} qui dépend de transcriptions les plus justes possibles. Une fois les modèles \gls{htr} correctement entraînés, la correction automatique permet de résoudre rapidement un certains nombres d'erreurs en amont la transformation au format TEI, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
+			Mais automatiser la correction des prédictions requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des prédictions justes, et comme les règles d'édition que l'on applique suivent de près les usages scribaux, la graphie des mots ne saurait être uniformisée. La notion de justesse doit donc être élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
 			
-			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet.
+			L'automatisation des corrections ne consiste donc pas à remplacer automatiquement le contenu des prédictions mais à analyser ce contenu et à signaler les mots représentant un problème, et si possible à proposer une correction que l'éditeur sera libre d'appliquer ou non.
 			
-			\subsection{Champ d'application et limites}	
-				La correction automatisée se concentre sur l'orthographe des mots. Elle n'aborde pas la ponctuation et s'appuie sur des dictionnaires où l'accentuation des mots est normalisée selon l'usage moderne (alors que l'édition finale doit respecter l'usage scribal), et ce afin de ne pas multiplier les corrections pour un même lemme. Enfin, elle ne traite pas le problème des mots mal prédits dont l'orthographe est attestée ailleurs dans les vérités de terrain~; par exemple, dans la prédiction \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas corrigée, car le mot \textit{vu} est attesté ailleurs. Nous avions tenter l'automatisation de ce type de correction, mais considérant qu'il impose de passer en revue tous les mots dont l'orthographe est déjà attestée ailleurs dans nos vérités de terrain, cette opération faisait perdre plus de temps qu'elle n'en faisait gagner.
+			Le résultat de cette opération est imparfait ‒ ses limites sont discutées ci-après. On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vértité de terrain ou de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions au format Alto vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
+			
+			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet\footnote{Le script principal porte le nom de \textit{spellcheckTexts}~: \cite{biaySpellcheckTextsPy2022}. Ce script est fondé sur l'utilisation du module publié par \cite{barrusPyspellcheckerPurePython}.}.
+					
+			\subsection{Compromis entre granularité et performance}
+				Les qualités respectives de plusieurs méthodes ont été évaluées afin de d'établir les paramètres les plus intéressants pour cette phase du travail. On a évoqué précédemment l'impossibilité d'un résultat parfait. L'automatisation des corrections ne permet absolument pas de faire l'économie d'une révision approfondie du texte par l'éditeur. Elle doit par conséquent faire preuve d'un haut degré de performance~: son but est d'abord et avant tout de faire gagner du temps. Or, chaque forme signalée au cours de cette phase requiert une décision de l'éditeur~: ces formes doivent donc être très pertinentes afin de ne pas gaspiller le temps de ce dernier. Contrôler chaque mot dans son contexte serait largement contre productif.
+				
+				Il est donc très vite apparu nécessaire de ne pas signaler à l'éditeur les mots dont la graphie a été validée par ailleurs. Pour cela, on s'est appuyé d'une part sur un dictionnaire généraliste de la langue française et d'autre part sur les mots de la correspondance-même de \gls{cds}, à savoir les mots contenus dans les vérités de terrain que l'on a produites pour le test et l'entraînement des modèles de reconnaissance d'écriture\footnote{Pour exploiter ce second réservoir de mots, une fonction appelée \textit{collecteMots} a été ajoutée au script principal.}.
+			
+				En résumé, la correction automatisée se concentre sur l'orthographe des mots. Elle ne traite pas la ponctuation. De plus, elle considère qu'une forme présente dans les vérités de terrain ou dans le dictionnaire de référence de la langue française est en soi valide. Ainsi, elle ne signale pas les mots mal prédits dont l'orthographe est attestée ailleurs dans les vérités de terrain~; par exemple, dans la prédiction \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas signalée, car le mot \textit{vu} est attesté ailleurs.
 					
 			\subsection{Analyser les mots}
-				Nous avons appliqué le script d'analyse de mots \textsf{spellcheck-texts.py}\footcite{biaySpellcheckTextsPy2022} à nos prédictions HTR\footnote{Ce script est fondé sur l'utilisation du module publié par  \cite{barrusPyspellcheckerPurePython}. Celui-ci procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence par des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot. Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, mais n'est pas capable d'associer la forme \textit{pubièes} aux mots de la famille de \textit{publier}}.
+				Le script procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence par des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot. Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, mais n'est pas capable d'associer la forme \textit{pubièes} aux mots de la famille de \textit{publier}.
 						
-				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (chaque proposition de correction doit en effet être contrôlée), on a développé ce script initialement écrit par F.~Chiffoleau pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
+				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
-				Dans le but d'optimiser la performance de l'analyse des mots on a développé une fonction appelée \textsf{collecteMots}, qui fouille les vérités de terrain déjà constituées et permet de valider automatiquement les mots déjà rencontrés dans le traitement de la correspondance de \gls{cds}, évitant de proposer systématiquement les corrections à partir de l'orthographe française modernisée pour les mots à l'orthographe ancienne déjà rencontrée et validée~; cette méthode permet en outre d'enregistrer les formes graphiques des noms propres, qui dès lors ne sont plus non plus considérées comme erronnées.
+				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînerait la création d'une faute : \textit{naturellement} deviendrait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot\footnote{Pour l'application mot par mot, on a utilisé le module Spacy\cite{SpaCyIndustrialstrengthNatural}.}
 				
-				Les corrections s'avérant nombreuses, le script \textsf{textCorrection.py}\footcite{biayTextCorrectionPy2022} écrit par F.~Chiffoleau a dû être perfectionné afin de procéder à une tokénisation des mots, pour corriger avec exactitude (de manière spécifique pour chaque ligne) les formes erronées présentes dans le texte. Nous avons pour cela utilisé le module Spacy\footcite{SpaCyIndustrialstrengthNatural}.
-				
-				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers XML-Alto des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans l'état du fichier que nous avons repris. En effet, l'injection des transcriptions manuelles en lieu et place des prédictions dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture entraîne une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.
+				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers XML-Alto des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
 								
 			\subsection{Gérer les résolutions ambiguës}
-				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple \textit{cele}, qui peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
+				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple la forme \textit{cele} peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
 							
 				Dans un premier temps nous avons procédé selon une méthode d'automatisation qui neutralisait les corrections ambiguës~: \textit{cele} était intégré à la liste globale des corrections avec une absence de lemme afin d'être exclu de la correction automatique.
 				
@@ -458,11 +473,10 @@
 				
 				\end{itemize}
 				
-				Plutôt que de neutraliser la correction de ces mots, il s'est donc avéré nécessaire de prendre en charge ces ambiguïtés.
+				Plutôt que neutraliser la correction de ces mots, il s'est donc avéré nécessaire de prendre en charge ces ambiguïtés. Mais se contenter de lister des propositions de correction de manière indiscriminée aurait pu là encore nuire aux performances de l'opération. Afin de faciliter la sélection de la bonne correction parmi une liste de propositions, une nouvelle fonction a été écrite\footnote{Il s'agit de la fonction dénommée \textit{ordreOccurrences}~; cf.~\cite{biaySpellcheckTextsPy2022}.} dont le rôle est de classer les mots attestés dans les vérités de terrain par ordre décroissant de nombre d'occurrences. Ainsi, le mot le plus fréquent est toujours proposé comme premier choix au correcteur, ce qui maximise les chances qu'il n'ait pas à intervenir sur la correction à effectuer.
+			
+			\subsection{Élaborer et enrichir un nouveau dictionnaire de la langue française}
 				
-				Il fallait pour cela résoudre une nouvelle difficulté~: opérer des corrections automatiques sur de petits mots fréquents a rendu nécessaire l'application des corrections au niveau de chaque ligne d'écriture, car les appliquer à une page entière aurait sans doute entraîné des corrections erronnées.
-						
-				Afin de faciliter la sélection de la bonne correction parmi une liste de propositions, on a par écrit une nouvelle fonction (\textsf{ordreOccurrences}) dont le rôle est de classer les mots attestés dans les vérités de terrain par ordre décroissant de nombre d'occurrences. Ainsi, le mot le plus fréquent est toujours proposé comme premier choix au correcteur.
 			
 	\appendix
 	
@@ -489,7 +503,7 @@
 		
 			Nous n'avons pas restitué de trait d'union lorsque l'usage moderne l'imposerait~: \textit{portez vous bien}.
 	
-			Dans le cas particulier de l'écriture personnelle de Constance de Salm, les mots sont très souvent écrits dans un même mouvement de la plume. Dans ce cas seulement, ils ont été transcrits sans espace séparatrice.
+			Dans le cas particulier de l'écriture personnelle de \gls{cds}, les mots sont très souvent écrits dans un même mouvement de la plume. Dans ce cas seulement, ils ont été transcrits sans espace séparatrice.
 				
 		\section{Orthographe}
 			L'orthographe des mots a été respectée~: \textit{enfans, momens, sentimens, cahos}.
@@ -513,11 +527,11 @@
 		
 		\section{Passages illisibles}
 			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
-           	
+      	
 	% Bibliographie
 	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
 	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]%Pour les scripts
-    \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]%Pour les scripts
-    
+  \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]%Pour les scripts
+  
 
 \end{document}
