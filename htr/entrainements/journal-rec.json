@@ -1,0 +1,142 @@
+{
+   "souvay.mlmodel": [
+      {
+         "date": "2022.4.28 12:6",
+         "trained_hands": 0,
+         "total_hands": 5,
+         "hands": [
+            {
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
+               "accuracy": 58.66
+            },
+            {
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
+               "accuracy": 44.61
+            },
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
+               "accuracy": 77.25
+            },
+            {
+               "label": "mainCdS02_Konv002_02",
+               "gt_nb": 0,
+               "accuracy": 35.50
+            },
+            {
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
+               "accuracy": 43.73
+            }
+         ]
+      }
+   ],
+   "generic_lectaurep_26.mlmodel": [
+      {
+         "date": "2022.4.28 12:14",
+         "trained_hands": 0,
+         "total_hands": 5,
+         "hands": [
+            {
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
+               "accuracy": 87.24
+            },
+            {
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
+               "accuracy": 81.19
+            },
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
+               "accuracy": 73.72
+            },
+            {
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
+               "accuracy": 80.43
+            },
+            {
+               "label": "mainAuteur",
+               "gt_nb": 0,
+               "accuracy": 43.20
+            }
+         ]
+      }
+   ],
+   "cm_ft_mrs15_11": [
+      {
+         "date": "2022.4.28 12:48",
+         "trained_hands": 0,
+         "total_hands": 5,
+         "hands": [
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
+               "accuracy": 80.42
+            },
+            {
+               "label": "mainCdS02_Konv002_02",
+               "gt_nb": 0,
+               "accuracy": 73.09
+            },
+            {
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 0,
+               "accuracy": 81.89
+            },
+            {
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 0,
+               "accuracy": 88.57
+            },
+            {
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 0,
+               "accuracy": 83.8
+            },
+            {
+               "label": "mainAuteur",
+               "gt_nb": 0,
+               "accuracy": 44.77
+            }
+         ]
+      },
+      {
+         "date": "2022.5.4 9:50",
+         "trained_hands": 4,
+         "total_hands": 5,
+         "label_output": "cds_lectcm_04_mains_01.mlmodel",
+         "hands": [
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 10,
+               "accuracy": 98.68
+            },
+            {
+               "label": "mainCdS02_Konv002_01",
+               "gt_nb": 0,
+               "accuracy": 91.54
+            },
+            {
+               "label": "mainCdS02_Konv002_03",
+               "gt_nb": 8,
+               "accuracy": 96.31
+            },
+            {
+               "label": "mainCdS02_Konv019_01",
+               "gt_nb": 8,
+               "accuracy": 97.88
+            },
+            {
+               "label": "mainCdS02_Konv019_02",
+               "gt_nb": 11,
+               "accuracy": 96.27
+            }
+         ]
+      }
+   ]
+}
