@@ -1,0 +1,1 @@
+Ce dossier est destiné à accueillir les fichiers XML-TEI exportés depuis la base Frantext.
