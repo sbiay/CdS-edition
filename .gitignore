@@ -41,6 +41,7 @@ htr/demo/*.tif
 htr/entrainements/*/*jpg
 htr/entrainements/*/train/*jpg
 htr/entrainements/*/test/*jpg
+htr/entrainements/*/VTsuppl/*jpg
 htr/entrainements/img-complet*
 htr/entrainements/modeles-seg/sortie/
 htr/entrainements/modeles-seg/img/
