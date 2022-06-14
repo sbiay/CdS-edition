@@ -73,4 +73,6 @@ transformation-alto-tei/*jpg
 valorisation/
 visuel-dh/
 htr/py/dicos/frantext/*xml
-bot
+htr/modeles-rec/cm_ft_mrs15_11.mlmodel
+htr/modeles-rec/souvay.mlmodel
+htr/modeles-rec/generic_lectaurep_26.mlmodel
