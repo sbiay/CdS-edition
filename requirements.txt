@@ -1,3 +1,4 @@
+wheel
 bs4~=0.0.1
 beautifulsoup4==4.11.1
 Click==7.1.1
