@@ -36,8 +36,10 @@
 % Sigles et acronymes
 \usepackage[automake,acronym,toc]{glossaries}
 \makeglossaries
+% Acronymes
+\newacronym{alto}{ALTO}{\textit{Analyzed Layout and Text Object}}
 \newacronym{bnf}{BnF}{Bibliothèque nationale de France}
-\newacronym{cds}{C.~de Salm}{gls{cds}}
+\newacronym{cds}{C.~de Salm}{Constance de Salm}
 \newacronym{cg2c2v}{Corr.~g., 2e copie, 2e vol.}{long}
 \newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
 \newacronym{dahn}{DAHN}{Digital Edition of historical manuscripts}
@@ -129,22 +131,37 @@
 				
 	\chapter[HTR]{Reconnaissance automatique des écritures manuscrites \\ \large (\gls{htr})}
 		
-		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (sous-entendus imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et eScriptorium)\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
+		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (sous-entendus imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et eScriptorium)
+		\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
 		
-		Comme pour le traitement des écritures imprimées, la reconnaissance automatique des écritures manuscrites recouvre deux phases indissociables et complémentaires~:
+		\section{Principes généraux}
 		
-		\begin{enumerate}
-			\item La segmentation des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont repérées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
-			\item La reconnaissance des écritures proprement dite, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées.
-		\end{enumerate}
-		% On peut ajouter les deux autres étapes indiquées dans \cite{stokesEScriptoriumVREManuscript2021} :
-			% 1. Importing the images into the system, including preprocessing such as PDF import and other format conversions.
-			% 4. Compiling the lines of text into a coherent document and exporting the result for markup, publication, etc.
+			La reconnaissance automatique des écritures manuscrites recouvre quatre phases indissociables et complémentaires~:
 			
-		% Repose sur le machine learning et donc sur la constitution de vérités de terrain ou ground truth.
-		% Il en découle que la pertinence de cette méthode doit être évaluée à la lumière de sa rentabilité : dans quelle mesure cela ne serait pas mieux de faire tout à la main.
-	
-		Avant de mettre en place une méthode de travail, il est primordial d'évaluer les caractéristiques paléographiques des sources d'une part, et de définir les finalités du travail d'autre part. En outre, on discutera dans ce chapitre du choix de l'application à utiliser pour y procéder, et l'on justifiera le choix que nous avons fait quant aux sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage.
+			\begin{enumerate}
+				\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
+				\item La segmentation des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont repérées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
+				\item La reconnaissance des écritures proprement dite, ou transcription, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
+				\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022}, a été retenu\footcite{stokesEScriptoriumVREManuscript2021}.
+			\end{enumerate}
+				
+			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode repose sur la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase qualifiée d'entraînement est produit un modèle capable, avec un taux d'acuité exprimé en pourcentage, de reproduire l'opération d'abord effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (segmentation) ou de la transcription des caractères.
+			
+			Ce processus comporte deux phases longues et consommatrices d'énergie~:
+			
+			\begin{enumerate}
+				\item La constitution des données d'entraînement par l'homme~: segmenter et transcrire à la main un nombre de page suffisamment important pour un entraînement efficace~;
+				\item L'entraînement par la machine, qui demande une puissance de calcul très importante (selon le matériel utilisé et la quantité de données, un entraînement peut durer de quelques heures à… quelques semaines) et donc une forte consommation d'électricité.
+			\end{enumerate}
+			
+			Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitée par un modèle est grande, plus l'opération dans son ensemble est rentable.
+			
+			Fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés~: il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages.
+			
+			Il faut aussitôt mettre un bémol à cet état de fait encourageant~: les deux phases de la segmentation et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles déjà performants. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de segmentation, comme on aura l'occasion de le voir plus loin
+			\footnote{Voir \textit{infra} \ref{segmentation}, p.~\pageref{segmentation}.}.
+			
+			En résumé, évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage, et enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
 		
 		\section{Enjeux et tâches préliminaires}
 			
@@ -167,7 +184,8 @@
 			\subsection{Objectif~: éditer le texte des lettres}
 				Il est nécessaire d'aborder cette phase de la reconnaissance automatique d'écriture en pleine conscience de l'objectif à atteindre~: en l'occurrence, l'édition du texte des lettres.
 				
-				À la différence de l'analyse textométrique ou de l'interrogation du texte brut, finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription persistent dans la production finale. Théoriquement, le texte doit être établi à la perfection (bien que l'erreur humaine soit toujours possible). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite entraînent fatalement des erreurs de reconnaissance, même avec un modèle particulièrement adapté à l'écriture en question.
+				À la différence de l'analyse textométrique ou de l'interrogation du texte brut, finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription persistent dans la production finale. Théoriquement, le texte doit être établi à la perfection (bien que l'erreur humaine soit toujours possible). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite entraînent fatalement des erreurs de reconnaissance, même avec un modèle particulièrement adapté à l'écriture en question
+				\footnote{Une acuité de 99\% est atteignable (\cite{stokesEScriptoriumVREManuscript2021}), mais il a semblé plus raisonnable de ne pas investir trop de temps dans l'entraînement du modèle et de se contenter des excellents résultats atteints.}.
 				
 				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
@@ -217,6 +235,10 @@
 			Dans ce genre de configuration, une assistance pourra être requise pour l'étape la plus délicate en termes d'ingénierie~: l'installation des applications nécessaires à la conduite du projet, celle d'eScriptorium étant le point le plus critique et l'installation des applications en langage Python pouvant également poser quelques difficultés. Nous avons en effet utilisé eScriptorium à partir d'une installation locale\footnote{La démarche est expliquée sur la page suivante~: \cite{DockerInstallInstallation}.}, faisant appel aux seules ressources d'un ordinateur portable, à savoir sans serveur ni carte graphique externe\footnote{L'ordinateur utilisé est doté d'un processeur 11th Gen Intel Core i7-1165G7 @ 2.80GHz × 8 et d'une mémoire vive de 15,4 GiB.}. Cette méthode nous a permis de procéder à des entraînements de modèle à partir de petits volumes de vérités de terrain. Si des entraînements plus massifs s'avéraient nécessaires, il serait alors impératif de se tourner vers une infrastructure dotée de plus grandes capacités de calcul, ce que, par exemple, un partenariat entre le \gls{dhi} et le projet \gls{cremma} rendrait possible.
 						
 		\section[La segmentation]{La segmentation~: reconnaissance des zones de texte et des lignes d'écriture}
+			\label{segmentation}
+			% Principe général (cf. stokesEScriptoriumVREManuscript2021) :
+			% - "line-wise text recognizers" et lignes suivantes.
+			
 			L'annotation des régions et des lignes d'écritures répond à deux fonctions distinctes~:
 			
 			\begin{itemize}
@@ -276,6 +298,29 @@
 		
 			\subsection{Entraîner des modèles de segmentation des pages}
 	    		\textbf{Cette section est à écrire.}
+	    		
+	    		% La méthode progressive et la méthode récursive
+	    		\label{recursive}
+	    		Constituter des données d'entraînement peut faire appel à deux méthodes principales~: la méthode progressive ou la méthode récursive.
+	    		
+	    		On entend par méthode progressive le simple fait de fabriquer à la main ses données d'entraînement de A à Z. La méthode récursive fait quant à elle appel à l'outil informatique et ce en suivant plusieurs étapes (par exemple pour un modèle dévolu à la transcription, mais la démarche serait la même pour un modèle de segmentation)~:
+	    		
+	    		\begin{enumerate}
+	    			\item Segmenter à la main quelques pages~;
+	    			\item Entraîner un premier modèle~;
+	    			\item Effectuer une segmentation automatique sur quelques autres pages~;
+	    			\item Corriger cette segmentation~;
+	    			\item Entraîner un second modèle, etc.\footcite{stokesEScriptoriumVREManuscript2021}
+	    		\end{enumerate}
+    			
+    			\begin{figure}[!h]
+    				\centering
+    				\includegraphics[width=15cm]{./img/entrainement-recursif.jpg}
+    				\caption{Schéma d'entraînement récursif appliqué à la transcription (\cite{pincheHTRPresentationProblematiques2021}).}
+    				\label{fig}
+    			\end{figure}
+    			
+    			On a fait appel à la méthode récursive pour l'entraînement des modèles de segmentation~; en revanche la transcription manuelle a été privilégiée pour l'entraînement des modèles de transcription, comme expliqué plus loin\footnote{Voir \textit{infra} \ref{progressive}, p.~\pageref{progressive}.}.
 	    		
 	    	\subsection{Contrôler la pertinence de la segmentation}
 		    	\label{controle-segmentation-lettres-inventoriees}
@@ -364,10 +409,16 @@
 				
 				Enfin, concernant les passages biffés, les palimpsestes ou encore les passages illisibles, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
 				
+			\subsection{Transcription manuelle \textit{versus} transcription automatique~: quelle bonne méthode pour l'entraînement~?}
+				\label{progressive}
+				Il a été question plus haut des méthodes progressive et récursive d'entraînement\footnote{Voir \textit{supra} \ref{recursive}, p.~\pageref{recursive}.}.
+				
+				La méthode récursive a été testée au cours du stage pour constituer des transcriptions d'entraînement~; on faisait appel de surcroît à la correction semi-automatisée des transcriptions dans le but de gagner du temps… pour finalement revenir à la transcription manuelle. La correction automatisée ne permettant pas d'obtenir un résultat, il fallait en réalité corriger deux fois la même page. Et même en se limitant à une correction purement manuelle des transcriptions automatiques, la nécessité de suivre les usages scribaux (notamment l'accentuation des mots) imposait un contrôle visuel plus intense pour corriger une transcription déjà faite que pour produite cette transcription.
+			
 			\subsection{Éliminer d'une transcription les lignes attestant des écritures parasites}
 				La présence de plusieurs écritures dans la même image est problématique pour évaluer la capacité d'un modèle à reconnaître une écriture particulière, car la présence d'une écriture différente dans la même page est de nature à parasiter cette évaluation. Or la phase de segmentation de la page, qui permet la reconnaissance de toutes les lignes d'écriture, ne peut pas être paramétrée pour ignorer une ou plusieurs écritures déterminées. Une fois toutes les lignes de l'image reconnue, il est donc nécessaire de supprimer les lignes que l'on juge parasites.
 				
-				Si l'on veut procéder de façon manuelle en supprimant les lignes une par une dans l'interface eScriptorium, l'opération peut se révéler fastidieuse~: supprimer une page entière consistera à cliquer sur un minimum de trente lignes… Un script a donc été développé pour faciliter ce travail\footcite{biaySupprLignesVidesPy2022}. La transcription manuelle que l'on effectue sur les seules lignes attestant l'écriture que l'on souhaite tester laisse toutes les autres lignes de la page vides. Le script transforme l'export de cette transcription (format XML-Alto) et supprime de celle-ci toutes les lignes laissées vides. On peut dès lors tester un modèle de reconnaissance d'écriture avec la certitude que celui-ci ne tentera pas de reconnaître une écriture dans des zones de l'image où on ne le souhaite pas.
+				Si l'on veut procéder de façon manuelle en supprimant les lignes une par une dans l'interface eScriptorium, l'opération peut se révéler fastidieuse~: supprimer une page entière consistera à cliquer sur un minimum de trente lignes… Un script a donc été développé pour faciliter ce travail\footcite{biaySupprLignesVidesPy2022}. La transcription manuelle que l'on effectue sur les seules lignes attestant l'écriture que l'on souhaite tester laisse toutes les autres lignes de la page vides. Le script transforme l'export de cette transcription (format \gls{alto}) et supprime de celle-ci toutes les lignes laissées vides. On peut dès lors tester un modèle de reconnaissance d'écriture avec la certitude que celui-ci ne tentera pas de reconnaître une écriture dans des zones de l'image où on ne le souhaite pas.
 				
 			\subsection{Comparer les performances des modèles}
 				On a procédé à la comparaison des performances de plusieurs modèles en utilisant le logiciel libre Kraken en ligne de commande\footcite{KrakenDocumentation} (les entraînements ont été également effectués à l'aide de ce logiciel).
@@ -404,7 +455,9 @@
 				
 				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'oeil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de \gls{cds}.
 				
-				En procédant à la constitution d'une vérité de terrain d'une dizaine de pages pour chacune des mains sélectionnées, des scores supérieurs à 95\% d'acuité ont été atteints dès le premier entraînement~:
+				Déterminer le nombre de pages transcrites nécessaires à l'entraînement efficace d'un modèle de reconnaissances des caractères dépend d'une multiplicté de facteurs, au premier rang desquels on trouve la régularité de l'écriture et son degré de cursivité. Entrent également en ligne de compte les performances de modèles déjà produit sur des écritures similaires (mais combien proches~? c'est toute la question), la densité d'usage des abréviations ou encore la qualité des reproductions photographiques. La qualité de l'encre et le contraste entre l'encre et la page sont également de nature à influencer la taille du corpus d'entraînement nécessaire pour parvenir à de bonnes performances\footcite{stokesEScriptoriumVREManuscript2021}.
+				
+				En procédant à la constitution d'une vérité de terrain d'une dizaine de pages\footnote{Cette mesure est elle-même à relativiser car la densité de l'écriture sur nos documents est variable et certaines pages ne sont pas complètement remplies~; il a donc fallu compenser les blancs par des pages supplémentaires, et au final cette mesure d'une dizaine de pages est des plus approximatives.} pour chacune des mains sélectionnées, des scores supérieurs à 95\% d'acuité ont été atteints dès le premier entraînement~:
 				
 				\begin{itemize}
 					\item 1re main de la seconde copie des lettres\footnote{Dénommée \textsf{mainCdS02\_Konv002\_01}.}~: 98,68\%
@@ -442,12 +495,6 @@
 			
 				Comme on peut le constater avec cette prédiction, une acuité de 91\% laisse encore une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
 			
-			\subsection{Transcription manuelle \textit{versus} trasncription automatique~: quelle bonne méthode pour l'entraînement~?}
-				\textbf{Cette section est à écrire.}
-				% On a testé la méthode récursive pour l'entraînement des modèles : transcrire, entraîner, prédire, corriger, entraîner (cf.~\cite{stokesEScriptoriumVREManuscript2021})
-				% En réalité, on perdait du temps !
-				% En tout cas il faut utiliser eScriptorium comme interface de segmentation et de transcription, même si tout le processus est manuel.
-				
 			\subsection{Tenir un journal des résultats de tests et d'entraînements}
 				\label{journal-test}
 				Les performances du nouveau modèle, dénommé \textsf{cds\_lectcm\_04\_mains\_01}\footnote{Cette dénomination signifie~: \gls{cds}~; \gls{lectaurep}, contrats de mariage~; quatre mains~; version~1.}, n'avaient pas été espérées aussi bonnes. La démarche de tenue d'un journal de test et d'entraînement avait donc été développée en prévision de la nécessité de répéter les entraînements et de suivre la progression des performances. Dans cette optique, un script Python a été écrit pour pré-remplir un journal de résultats\footcite{biayJournalReconnPy2022}. 
@@ -462,9 +509,9 @@
 				\label{injection}
 				Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
 				
-				La méthode la plus simple pour joindre les fichiers XML-Alto contenant les transcriptions manuelles aux fichiers contenant la prédiction automatique du texte des autres pages d'un même dossier est de regrouper ces fichiers ensemble. Or, nous avons voulu tenir compte de la possibilité que les transcriptions manuelles ne recouvrent pas toutes les lignes d'écriture d'une page ‒ le cas n'est pas très fréquent, mais nous y avons été confronté. Certaines mains n'étant attestées que de manière sporadique, en compagnie d'autres écritures, la méthodologie d'entraînement impose de ne transcrire que l'écriture propre au test ou à l'entraînement, laissant les écritures voisines de côté. Il résulte de cette nécessité que les fichiers XML-Alto contenant les transcriptions manuelles peuvent être lacunaires~: ils ne peuvent donc pas se substituer aux fichiers contenant la prédiction complète des lignes d'écriture d'une page au risque de remplacer une partie des prédictions par du vide. 
+				La méthode la plus simple pour joindre les fichiers \gls{alto} contenant les transcriptions manuelles aux fichiers contenant la prédiction automatique du texte des autres pages d'un même dossier est de regrouper ces fichiers ensemble. Or, nous avons voulu tenir compte de la possibilité que les transcriptions manuelles ne recouvrent pas toutes les lignes d'écriture d'une page ‒ le cas n'est pas très fréquent, mais nous y avons été confronté. Certaines mains n'étant attestées que de manière sporadique, en compagnie d'autres écritures, la méthodologie d'entraînement impose de ne transcrire que l'écriture propre au test ou à l'entraînement, laissant les écritures voisines de côté. Il résulte de cette nécessité que les fichiers \gls{alto} contenant les transcriptions manuelles peuvent être lacunaires~: ils ne peuvent donc pas se substituer aux fichiers contenant la prédiction complète des lignes d'écriture d'une page au risque de remplacer une partie des prédictions par du vide. 
 				
-				Il était donc nécessaire de concevoir une méthode de remplacement, dans les fichiers contenant la prédiction automatique du texte, des seules lignes pour lesquelles nous avions produit des transcriptions manuelles. Cibler de manière précise des lignes d'écriture dans un fichier XML-Alto est rendu possible par l'identifiant unique de chaque élément contenant une ligne de texte (\textsf{TextLine}). Nous avons donc écrit un script python\footcite{biayInjectTranscriptPy2022a} capable d'analyser toutes les lignes d'écriture des fichiers de nos vérités de terrain et de comparer leur identifiant avec ceux des lignes des fichiers des prédictions automatiques portant les mêmes noms. En cas de correspondance entre les identifiants, la transcription manuelle vient remplacer la prédiction du texte.
+				Il était donc nécessaire de concevoir une méthode de remplacement, dans les fichiers contenant la prédiction automatique du texte, des seules lignes pour lesquelles nous avions produit des transcriptions manuelles. Cibler de manière précise des lignes d'écriture dans un fichier \gls{alto} est rendu possible par l'identifiant unique de chaque élément contenant une ligne de texte (\textsf{TextLine}). Nous avons donc écrit un script python\footcite{biayInjectTranscriptPy2022a} capable d'analyser toutes les lignes d'écriture des fichiers de nos vérités de terrain et de comparer leur identifiant avec ceux des lignes des fichiers des prédictions automatiques portant les mêmes noms. En cas de correspondance entre les identifiants, la transcription manuelle vient remplacer la prédiction du texte.
 			
 		\section{La correction semi-automatisée}
 			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
@@ -475,7 +522,7 @@
 			
 			L'automatisation des corrections ne consiste donc pas à remplacer automatiquement le contenu des prédictions mais à analyser ce contenu et à signaler les mots représentant un problème, et si possible à proposer une correction que l'éditeur sera libre d'appliquer ou non.
 			
-			Le résultat de cette opération est imparfait ‒ ses limites sont discutées ci-après. On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vértité de terrain ou de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions au format Alto vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
+			Le résultat de cette opération est imparfait ‒ ses limites sont discutées ci-après. On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vértité de terrain ou de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions au format \gls{alto} vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
 			
 			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet\footnote{Le script principal porte le nom de \textit{spellcheckTexts}~: \cite{biaySpellcheckTextsPy2022}. Ce script est fondé sur l'utilisation du module publié par \cite{barrusPyspellcheckerPurePython}.}.
 					
@@ -493,7 +540,7 @@
 				
 				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînerait la création d'une faute : \textit{naturellement} deviendrait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot\footnote{Pour l'application mot par mot, on a utilisé le module Spacy\cite{SpaCyIndustrialstrengthNatural}.}
 				
-				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers XML-Alto des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
+				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
 								
 			\subsection{Gérer les résolutions ambiguës}
 				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple la forme \textit{cele} peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
@@ -525,6 +572,7 @@
 	\addappheadtotoc% Ajoute les annexes à la table des matières
 	
 	\appendixpage % Crée une page de titre pour les annexes
+	
 	\chapter{Normes de transcription}
 		\label{normes-trans}
 	
@@ -564,10 +612,18 @@
 		\section{Passages illisibles}
 			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
       	
+	\printglossaries
+	%\printglossary[type=acronymetype]
+	
 	% Bibliographie
-	\printbibheading[heading=bibintoc]%Pour afficher seulement le titre général de la bibliographie
-	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]%Pour les scripts
-  \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]%Pour les scripts
+	% Pour afficher seulement le titre général de la bibliographie
+	\printbibheading[heading=bibintoc]
+	
+	%Pour les scripts
+	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]
+
+	%Pour les actions de valorisation
+    \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]
   
 
 \end{document}
