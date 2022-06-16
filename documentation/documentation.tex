@@ -52,6 +52,7 @@
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 \newacronym{tei}{TEI}{Text Encoding Initiative}
+\newacronym{xml}{XML}{Extensible Markup Language}
 \newglossaryentry{segmentation}{name=segmentation,description=Analyse optique d'une image permettant d'obtenir la reconnaissance des régions et des lignes d'écriture.}
 
 % Images
@@ -125,15 +126,15 @@
 	
 		\section*{Objectifs}
 			\addcontentsline{toc}{section}{Objectifs}
-			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
+			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}\footnote{La \textit{Text Encoding Initiative} propose des principes pour l'encodage des textes ainsi qu'un format standard pour l'échange des données textuelles. Depuis le début des années 2000 sa syntaxe est fondée sur le langage \gls{xml}. Cf.~\cite{TEITextEncoding}}. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
 			
-			Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format \gls{tei}. 
+			Il s'agit en particulier d'identifier les points de difficulté que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format \gls{tei}. 
 			
 			Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
 				
 	\chapter[HTR]{Reconnaissance automatique des écritures manuscrites \\ \large (\gls{htr})}
 		
-		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (sous-entendus imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et eScriptorium)
+		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et eScriptorium)
 		\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
 		
 		\section{Principes généraux}
@@ -142,28 +143,26 @@
 			
 			\begin{enumerate}
 				\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
-				\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont repérées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
-				\item La reconnaissance des écritures proprement dite, ou transcription, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
-				\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022}, a été retenu\footcite{stokesEScriptoriumVREManuscript2021}.
+				\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
+				\item La reconnaissance des écritures proprement dite, ou transcription automatique, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
+				\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022}\footcite{stokesEScriptoriumVREManuscript2021}.
 			\end{enumerate}
 				
-			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode repose sur la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase qualifiée d'entraînement est produit un modèle capable, avec un taux d'acuité exprimé en pourcentage, de reproduire l'opération d'abord effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
+			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, avec un taux d'acuité exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
 			
-			Ce processus comporte deux phases longues et consommatrices d'énergie~:
+			Ce processus d'entraînement comporte deux phases longues et consommatrices d'énergie~:
 			
 			\begin{enumerate}
-				\item La constitution des données d'entraînement par l'homme~: segmenter et transcrire à la main un nombre de page suffisamment important pour un entraînement efficace~;
+				\item La constitution des données d'entraînement par l'homme~: segmenter et transcrire à la main un nombre de pages suffisamment important pour un entraînement efficace~;
 				\item L'entraînement par la machine, qui demande une puissance de calcul très importante (selon le matériel utilisé et la quantité de données, un entraînement peut durer de quelques heures à… quelques semaines) et donc une forte consommation d'électricité.
 			\end{enumerate}
 			
-			Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitée par un modèle est grande, plus l'opération dans son ensemble est rentable.
+			Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitée par un modèle est grande, plus l'opération dans son ensemble est rentable. De plus, un modèle produit à partir de sources déterminées peut être réutilisé dans un contexte différent, et fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés. Il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages, afin de les rendre plus adéquats aux sources sur lesquels on travaille.
 			
-			Fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés~: il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages.
-			
-			Il faut aussitôt mettre un bémol à cet état de fait encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles déjà performants. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
+			Il faut aussitôt mettre un bémol à cet état de faits encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
 			\footnote{Voir \textit{infra} \ref{lieu-segmentation}, p.~\pageref{lieu-segmentation}.}.
 			
-			En résumé, évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage, et enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
+			En résumé, évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
 		
 		\section{Enjeux et tâches préliminaires}
 			
@@ -173,7 +172,7 @@
 				Cette variété des écritures est un problème majeur pour l'automatisation des transcriptions. Les réflexions issues du projet \gls{lectaurep} ont permis de guider notre démarche. L'alternative méthodologique a été décrite ainsi par A.~Chagué~:
 				
 				\begin{quotation}
-					Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)~?\footcite{chagueCreationModelesTranscription}
+					Quand on se lance dans une campagne de transcription reposant sur la reconnaissance d’écritures manuscrites, on passe généralement par une série de questions qui sont les mêmes d’un projet à l’autre. Parmi ces questions, il y a celle des modèles de transcription et de leur rapport à la variation des écritures. Doit-on entraîner un modèle pour chaque type d’écriture présent dans un corpus de documents~? Au contraire, peut-on se contenter d’entraîner un seul modèle tout terrain (qu’on appellera mixte ou générique)\footcite{chagueCreationModelesTranscription}~?
 				\end{quotation}
 			
 				Les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte\footcite{chagueCreationModelesTranscriptiona} nous ont convaincu d'emprunter cette voie. Deux séries de tests méritaient dès lors d'être effectués~:
@@ -183,22 +182,55 @@
 					\item Reprendre un modèle générique entraîné dans le cadre du projet \gls{lectaurep} pour en évaluer les performances.
 				\end{enumerate}
 		
-			\subsection{Objectif~: éditer le texte des lettres}
-				Il est nécessaire d'aborder cette phase de la reconnaissance automatique d'écriture en pleine conscience de l'objectif à atteindre~: en l'occurrence, l'édition du texte des lettres.
-				
+			\subsection{Finalité~: l'édition des lettres}
 				À la différence de l'analyse textométrique ou de l'interrogation du texte brut, finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription persistent dans la production finale. Théoriquement, le texte doit être établi à la perfection (bien que l'erreur humaine soit toujours possible). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite entraînent fatalement des erreurs de reconnaissance, même avec un modèle particulièrement adapté à l'écriture en question
 				\footnote{Une acuité de 99\% est atteignable (\cite{stokesEScriptoriumVREManuscript2021}), mais il a semblé plus raisonnable de ne pas investir trop de temps dans l'entraînement du modèle et de se contenter des excellents résultats atteints.}.
 				
 				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
 			\subsection{Choisir des collections d'évaluation}
-				Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
+				Afin de donner les meilleurs chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
 				
-				La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenu pour les tests.
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=11cm]{img/mainCdS02_Konv002_01-02_0065.jpg}
+					\caption{Première main principale des recueils de la deuxième copie (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-02\_0065.jpg).}
+					\label{}
+				\end{figure}
 				
-				Nous avons également analysé les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} afin d'élargir la variété de notre corpus de tests. Nous y avons distingué deux mains\footnote{Une présentation des mains peut être parcourue sur le \href{https://github.com/sbiay/CdS-edition/tree/main/htr/sources}{dépôt du projet}}.
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=11cm]{img/mainCdS02_Konv002_02-01_0030.jpg}
+					\caption{Deuxième main principale des recueils de la deuxième copie (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-01\_0030.jpg).}
+					\label{}
+				\end{figure}
+			
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=11cm]{img/mainCdS02_Konv002_03-01_0006.jpg}
+					\caption{Troisième main principale des recueils de la deuxième copie  (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-01\_0006.jpg).}
+					\label{}
+				\end{figure}
 				
-				On a privilégié pour les corpus de test et d'entraîner des modèles des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso.
+				La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenues pour les tests, car la meilleure méthode consiste à transcrire ces pages à la main.
+					
+				Les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} ont également été analysées afin d'élargir la variété de notre corpus de tests. Deux mains y ont été distingués.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=11cm]{img/mainCdS02_Konv019_01-0002.jpg}
+					\caption{Première main de la correspondance Martini   (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv019\_0002.jpg).}
+					\label{}
+				\end{figure}
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=11cm]{img/mainCdS02_Konv019_02-0036.jpg}
+					\caption{Seconde main de la correspondance Martini (notice \cite{CdS19036037}).}
+					\label{}
+				\end{figure}
+					
+				On a privilégié pour les corpus de test et d'entraîner des modèles des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso (un problème assez présent dans la correspondance Martini).
 				
 				Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages).
 		
