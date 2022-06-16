@@ -51,7 +51,7 @@
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 \newacronym{tei}{TEI}{Text Encoding Initiative}
-\newglossaryentry{segmentation}{name=segmentation,description=Analyse de page.}
+\newglossaryentry{lieu-segmentation}{name=segmentation,description=Analyse de page.}
 
 % Images
 \usepackage{graphicx}
@@ -160,7 +160,7 @@
 			Fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés~: il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages.
 			
 			Il faut aussitôt mettre un bémol à cet état de fait encourageant~: les deux phases de la segmentation et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles déjà performants. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de segmentation, comme on aura l'occasion de le voir plus loin
-			\footnote{Voir \textit{infra} \ref{segmentation}, p.~\pageref{segmentation}.}.
+			\footnote{Voir \textit{infra} \ref{lieu-segmentation}, p.~\pageref{lieu-segmentation}.}.
 			
 			En résumé, évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage, et enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
 		
@@ -236,7 +236,7 @@
 			Dans ce genre de configuration, une assistance pourra être requise pour l'étape la plus délicate en termes d'ingénierie~: l'installation des applications nécessaires à la conduite du projet, celle d'eScriptorium étant le point le plus critique et l'installation des applications en langage Python pouvant également poser quelques difficultés. Nous avons en effet utilisé eScriptorium à partir d'une installation locale\footnote{La démarche est expliquée sur la page suivante~: \cite{DockerInstallInstallation}.}, faisant appel aux seules ressources d'un ordinateur portable, à savoir sans serveur ni carte graphique externe\footnote{L'ordinateur utilisé est doté d'un processeur 11th Gen Intel Core i7-1165G7 @ 2.80GHz × 8 et d'une mémoire vive de 15,4 GiB.}. Cette méthode nous a permis de procéder à des entraînements de modèle à partir de petits volumes de vérités de terrain. Si des entraînements plus massifs s'avéraient nécessaires, il serait alors impératif de se tourner vers une infrastructure dotée de plus grandes capacités de calcul, ce que, par exemple, un partenariat entre le \gls{dhi} et le projet \gls{cremma} rendrait possible.
 						
 		\section[La segmentation]{La segmentation~: reconnaissance des zones de texte et des lignes d'écriture}
-			\label{segmentation}
+			\label{lieu-segmentation}
 			% Principe général (cf. stokesEScriptoriumVREManuscript2021) :
 			% - "line-wise text recognizers" et lignes suivantes.
 			
