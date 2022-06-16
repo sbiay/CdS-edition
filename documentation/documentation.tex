@@ -119,15 +119,15 @@
 	
 		\section*{Contexte}
 			\addcontentsline{toc}{section}{Contexte}
-			gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
+			\gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
 	
 			Le projet de publier numériquement sa correspondance est né de l'intérêt pour les relations entre noblesses française et allemande au sein du \gls{dhi}. Il en a résulté la production d'un site \textit{Wordpress} adossé au système de base de données \href{https://fud.uni-trier.de/}{\gls{fud}}. Les notices de plus de 11000 lettres, publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}, associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre.
 	
 		\section*{Objectifs}
 			\addcontentsline{toc}{section}{Objectifs}
-			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format XML-TEI. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
+			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
 			
-			Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format TEI. 
+			Il s'agit en particulier d'identifier les points de difficultés que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format \gls{tei}. 
 			
 			Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
 				
@@ -245,10 +245,10 @@
 			
 			\begin{itemize}
 				\item Permettre l'entraînement d'un modèle de \gls{segmentation}~;
-				\item Transformer leur contenu afin de l'affecter à des éléments déterminés de l'arborescence XML-TEI qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
+				\item Transformer leur contenu afin de l'affecter à des éléments déterminés de l'arborescence \gls{tei} qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
 			\end{itemize}
 
-				Cette réflexion sur les besoins de la transformation vers le format TEI a été nourrie par les \textit{Guidelines} de l'édition de correspondance du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
+				Cette réflexion sur les besoins de la transformation vers le format \gls{tei} a été nourrie par les \textit{Guidelines} de l'édition de correspondance du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
 
 			\subsection{Régions}
 				L'entraînement d'un modèle de \gls{segmentation} à reconnaître et annoter automatiquement des types de régions d'écritures est un travail complexe. La mise en page des lettres répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. Le meilleur exemple de ces variations se trouve dans les recueils~: les lettres ont été transcrites les unes à la suite des autres~; un début de lettre peut dès lors se trouver à n'importe quelle hauteur de la page. 
@@ -294,7 +294,7 @@
 					\item En réécrivant dans l'interligne~: il est alors pertinent d'utiliser le type de ligne e-Scriptorium \textbf{Correction}.
 				\end{itemize}
 				
-				Un ensemble de solutions d'encodage des corrections a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}. J'envisage plutôt \textbf{ne pas encoder ces éléments dans la phase d'HTR}, et de ne les aborder que la phase d'édition. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition TEI, de suivre la reproduction du manuscrit à éditer. En outre, introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités de terrain.
+				Un ensemble de solutions d'encodage des corrections a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}. J'envisage plutôt \textbf{ne pas encoder ces éléments dans la phase d'HTR}, et de ne les aborder que la phase d'édition. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition \gls{tei}, de suivre la reproduction du manuscrit à éditer. En outre, introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités de terrain.
 				
 				En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées, lorsque c'est possible), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
 		
