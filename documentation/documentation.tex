@@ -30,6 +30,7 @@
 % Bibliographie
 \usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
 \addbibresource{./biblio.bib}
+\defbibnote{sources-cds}{Cette liste contient les cotes de l'inventaire numérique de la correspondance, \cite{KorrespondenzConstanceSalm2022}~:}
 
 %\nocite{*}
 
@@ -191,7 +192,7 @@
 				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
 			\subsection{Choisir des collections d'évaluation}
-				Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{salmCorrespondanceGeneraleSecondea}~; \cite{salmCorrespondanceGeneraleSeconde}~; \cite{salmCorrespondanceGeneraleSecondeb}.}.
+				Afin de donner les meilleurs chances aux tests à effectuer avec le modèle entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
 				
 				La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenu pour les tests.
 				
@@ -258,7 +259,7 @@
 					% !h ancre l'image dans le flux de texte
 					\centering
 					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0193-detail-01.jpg}%
-					\caption{Début d'une lettre présentant une disposition aérée des éléments (\cite{salmCorrespondanceGeneraleSeconde}).}%
+					\caption{Début d'une lettre présentant une disposition aérée des éléments (\cite{CdS02001369}).}%
 					\label{}%
 				\end{figure}
 			
@@ -266,7 +267,7 @@
 					% !h ancre l'image dans le flux de texte
 					\centering
 					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0046-detail.jpg}%
-					\caption{Début d'une lettre présentant une disposition resserrée des éléments (\cite{salmCorrespondanceGeneraleSeconde}).}%
+					\caption{Début d'une lettre présentant une disposition resserrée des éléments (\cite{CdS02001369}).}%
 					\label{}%
 				\end{figure}
 				
@@ -614,17 +615,25 @@
 			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
       	
 	\printglossaries
-	%\printglossary[type=acronymetype]
 	
 	% Bibliographie
 	% Pour afficher seulement le titre général de la bibliographie
 	\printbibheading[heading=bibintoc]
 	
-	%Pour les scripts
-	\printbibliography[heading=subbibliography, title=Scripts, keyword=scripts]
-
-	%Pour les actions de valorisation
+    % Notices d'inventaire de la correspondance
+    \printbibliography[heading=subbibliography, title=Correspondance de C.~de Salm, keyword=sources-cds,prenote=sources-cds]
+    
+    %Pour les actions de valorisation
     \printbibliography[heading=subbibliography, title=Valorisation du projet, keyword=valorisation]
-  
-
+    
+    % Ressources numériques du projet
+    \printbibliography[heading=subbibliography, title=Ressources du projet, keyword=ressources-projet]
+    
+    % Autres ressources numériques
+    \printbibliography[heading=subbibliography, title=Autres ressources numériques, keyword=autres-ressources]
+    
+    % Pour les autres références
+    \printbibliography[heading=subbibliography, title=Études, notkeyword=valorisation, notkeyword=ressources-projet, notkeyword=sources-cds, notkeyword=autres-ressources]
+    
+      
 \end{document}
