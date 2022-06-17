@@ -188,8 +188,14 @@
 				
 				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
-			\subsection{Choisir des collections d'évaluation}
-				Afin de donner les meilleurs chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale. Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
+			\subsection{Choisir des collections d'évaluation et identifier des mains}
+				Afin de donner les meilleurs chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale.
+				
+				Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
+				
+				La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenues pour les tests, car la meilleure méthode consiste à transcrire ces pages à la main.
+				
+				Trois mains principales ont pu être identifiées dans ces trois premiers volumes. La première est la plus représentée des trois.
 				
 				\begin{figure}[!h]
 					\centering
@@ -197,6 +203,8 @@
 					\caption{Première main principale des recueils de la deuxième copie (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-02\_0065.jpg).}
 					\label{}
 				\end{figure}
+			
+				Une main est particulièrement attestée dans la première moitié du premier volume~; elle est ici qualifiée de \og deuxième main principale\fg.
 				
 				\begin{figure}[!h]
 					\centering
@@ -205,14 +213,14 @@
 					\label{}
 				\end{figure}
 			
+				L'écriture qualifiée de \og troisième main principale \fg est sporadiquement attestée dans les trois volumes, mais a néamoins été identifiée sur presque 160 pages.
+			
 				\begin{figure}[!h]
 					\centering
 					\includegraphics[width=11cm]{img/mainCdS02_Konv002_03-01_0006.jpg}
 					\caption{Troisième main principale des recueils de la deuxième copie  (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-01\_0006.jpg).}
 					\label{}
 				\end{figure}
-				
-				La variété des écritures se partage de manière contrastée entre des mains dominantes et des mains rares. Généralement, deux mains dominantes se partagent un recueil~; leur distribution peut être discontinue. Quant aux mains rares, elles n'occupent que quelques feuillets par recueil~; nous ne les avons pas retenues pour les tests, car la meilleure méthode consiste à transcrire ces pages à la main.
 					
 				Les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} ont également été analysées afin d'élargir la variété de notre corpus de tests. Deux mains y ont été distingués.
 				
@@ -230,9 +238,25 @@
 					\label{}
 				\end{figure}
 					
-				On a privilégié pour les corpus de test et d'entraîner des modèles des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso (un problème assez présent dans la correspondance Martini).
+				On a privilégié pour les corpus de test et d'entraînement des modèles des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso (un problème assez présent dans la correspondance Martini).
+
+			\subsection{L'écriture personnelle de C.~de Salm~: un défi paléographique}
+				Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription d'une écriture particulièrement cursive.
 				
-				Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription pour une écriture particulièrement cursive (compter environ deux semaines pour disposer d'une bonne vingtaine de pages).
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/CdS-b1-00k3-0_orig.jpg}
+					\caption{Écriture autographe de \gls{cds} (notice \cite{C11S92047049}, transcription \textit{infra}, p.~\pageref{trans-C11S92047049}).}
+					\label{}
+				\end{figure}
+				
+				Nous avons tenté l'expérience de produire des vérités de terrain pour l'entraînement d'un modèle de reconnaissance propre à cette écriture, mais les résultats des premiers tests se sont révélés décourageants~: la meilleur acuité obtenue ne dépassait pas 44\%
+				\footnote{Résultat obtenu rétrospectivement avec le modèle que nous avons entraîné sur quatre mains~: cds\_lectcm\_04\_mains\_01.mlmodel.}.
+				
+				Par ailleurs, les difficultés rencontrées pour transcrire des pages de l'écriture de \gls{cds} ont été importantes. Il a donc fallu renoncer à cette expérience, au risque d'y passer un temps long pour un résultat douteux.
+				
+				Faute de vérités de terrain dignes de ce nom, nous donnons en annexe à ce travail les transcriptions de deux extraits de lettres
+				\footnote{Voir infra, \ref{autographes}, p.~\pageref{autographes}.}.
 		
 			\subsection{Préparer le traitement d'un dossier}
 				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
@@ -607,6 +631,145 @@
 	
 	\appendixpage % Crée une page de titre pour les annexes
 	
+	\chapter{Transcriptions \\de deux manuscrits autographes \\de C.~de Salm}
+		\label{autographes}
+		
+		\section{Premier extrait}
+	
+			La ponctuation a été quelque peu modernisée pour rejoindre une édition de type diplomatique.
+		
+			Extrait du début de la lettre de C.~de Salm à Therese Thurn und Taxis du 20 mai 1825\footcite{CdS67022030}~:
+			
+			\begin{quotation}
+				\begin{flushright}
+					Dyck, ce 20 mai 1825.
+				\end{flushright}
+				
+				\begin{center}
+					Madame,
+				\end{center}
+	
+				Que vous dire de mon silence ?
+				
+				Comment pourrai-je l'expliquer ?
+				
+				je n'en sais rien~: le travail, la soufrance
+				
+				le repos ; est ennui qui vient tout attaquer,
+				
+				fruit de longues douleurs, dont la premiere me
+				
+				semble ††††ante pour jamais
+				
+				le charme d'une douce et simple jouissance,
+				
+				voilà pourquoi, si j'en crois l'apparence,
+				
+				depuis si longtemps me tais.
+				
+				Cependant, je dois vous le dire,
+				
+				moi mème je ne puis bien décider ce point ;
+				
+				car si je ne vous écris point,
+				
+				à chaque instant, je voudrais vous écrire.
+				
+				Mais le Printems, son éclat, sa fraicheur,
+				
+				La nature si belle en ses jours des pleud†††
+				
+				par leur vivifiante flamme
+				
+				de mon Corps épuisé raniment les ressorts.
+				
+				Ces jeunes fils, vrai soutiens de mon âme
+				
+				Sans le savoir secondant ses efforts
+				
+				de l'existance, aussi, me rouvrent les trésors
+				
+				et charmeur de nouveau narcoi†
+				
+				par luy de grands chaos d'esperances remplis.
+				
+				Enfin le sort et plus juste et plus doux
+				
+				pour un moment au moins de mes maux me soulage
+				
+				je sens renaitre en moi le calme, le courage
+				
+				je me retrouve et je reviens à vous.
+							
+				Voici, Madame le tableau fidele de tout ce qui
+				passe en moi depuis que je ne vous ai ecrit, et de
+				tout ce que j'éprouve aujourdhui. Mon ††††† en est fort
+				triste. Ce n'est pas mon absence de Paris qui en est cause :
+				Mon âge ; mes habitudes de travail ne me permettent pas
+				de†††† cet' privation si vivement, C'est cet' vieille
+				douleur qui est toujours ici, et aussi la perte d'une
+				foule de mes amis et de personnes, de connaissance.
+				Encore tout recemment j'ai vu disparaitre Derrou,
+				la P(rin)cesse Borghese avec qui j'avais été tres liée, et qui
+				etait une aimable personne, et le malchanceux courrier, assassiné
+				près de son chateau, dieu sait par qui ! ‒ (vous auriez vu ce malheur
+				dans les journaux). Ce que l'on dit sur les causes de ce terrible
+				èvènement est affreux † pa††r, et je n'ose l'écrire. […]			
+			\end{quotation}
+	
+		\clearpage
+		\section{Second extrait}
+			\label{trans-C11S92047049}
+			Extrait du début de la lettre de C.~de Salm à Fürst von Hatzfeldt du 2 mars 1828\footcite{C11S92047049}~:
+			
+			\begin{quotation}
+				\begin{flushright}
+					Dyck ce 2 Mars 1818.
+				\end{flushright}
+				
+				Vous serez sans doute surpris, Prince, de recevoir une lettre
+				de moi dans ce moment, et je suis surprise aussi, d'avoir a vous
+				l'ecrire sur le sujet dont je vais vous entretenir ; mais ayant tant
+				de fois pris la plume pour des choses qui m'étaient étrangeres, je ne
+				vois pas pourquoi je ne la prendrais pas dans une occasion qui
+				m'interesse si personnellement, sutout quand je m'adresse à quelqu'un
+				dont les sentiments de justice et d'amitié me sont également Connus.
+				Voici le fait : un de mes amis ayant appris, par hazard que
+				Mme. Valentine avait le projet de troubler vot' tranquiƚité, s'est
+				haté de m'en prévenir, en me donnant à ce sujet des détails auxquels
+				je l'avoue j'ai eu peine à croire. ‒ je n'attachais mème à cet
+				écrit aucune importance réelle ; mais mon mari n'a pu se refuser
+				à me laisser lire, dans ceƚes †††††††††† vos lettres, et celles de
+				Mme. Valentine, et Comme j'ai vu dans vot' derniere que
+				vous étiez mal informé sur les points les plus essentiels de ma
+				position, j'ai cru sentir la nécessité de vous èclercir moi-mème,
+				et de ne vous laisser rien ignorer de ce qui peut gèner vos idées
+				sur moi. il n'est pas de rapport, Mons(seigneur), sous lesqels il ne
+				me soit agréable d'avoir vot' estime entiere, et celui dont
+				il s'agit est sans doute, par une faveur qui se respecte, le plus
+				essentiel de tous.
+				
+				Il n'est ni dans mon caractere, ni dans ma maniere d'agir d'a†††r
+				du malheur de qui que soit au monde ; je me suis fait, de tous
+				tems, une loi de rester étrangere aux dificultés qui se sont élevées
+				sans cesse, ent'e Mme. valẽtine et mon mari, non quand j'ai
+				pu [..........] l'obliger près de lui, ce dont je le prend à temoin.
+				Quoi que les lettres asséz fréquentes qu'elle croit devoir lui adresser ne
+				puissent m'être bien agréables, je me serais reproché d'y met' le
+				moindre obstacle et (soit-dit en passant), j'ai été blessée de la précaution
+				qu'elle a prise [.......] de lui en faire remetre une par une
+				voie détournée. Sure du coeur de mon mari, de mon état, de
+				ma position, il ne m'est pas arrivé une seule fois de craindre
+				l'effet de ces lettres, et j'ai poussé ce genre de procedés jusqu'à lui en
+				envoyer une à Berlin, dans laquelle elle lui donnait un rendès-
+				vous aux †aux : mais je dois sortir de vot' indiference lorsque
+				je vois Prince, Mme. Valẽtine vous abuser, ou s'abuser au
+				point de vous laisser croire que son divorce avec mon mari
+				n'a pas ete judicieux. […]
+				
+			\end{quotation}
+			
+	
 	\chapter{Normes de transcription}
 		\label{normes-trans}
 	
@@ -644,7 +807,9 @@
 			On a remplacé chaque lettre biffée illisible par un point et placé l'ensemble des lettres concernées entre crochets~: [..] \textit{(pour deux lettres illisibles)}.
 		
 		\section{Passages illisibles}
-			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
+			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat
+			\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
+			Le choix a été fait de substituer à chaque lettre d'un mot non lu le signe †.
       	
 	\printglossaries
 	
