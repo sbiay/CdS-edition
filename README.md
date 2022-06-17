@@ -17,14 +17,25 @@ Afin de pouvoir consulter les Jupyter notebooks ou de tester les scripts contenu
 Pour l'évaluation et l'entraînement des modèles HTR, nous avons utilisé l'application *open-source* [Kraken](https://github.com/mittagessen/kraken), disponible pour Linux et Mac OSX, non pour Windows.
 
 ## Sous Linux (Ubuntu/Debian)
+Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10, nous proposons une méthode d'installation avec Python 3.9
+
 - Pour installer Python 3, ouvrez un terminal et saisissez la commande :
     ```shell
     sudo apt-get install python3 libfreetype6-dev python3-pip python3-venv python3-virtualenv
     ```
+- Pour créer un environnement virtuel Python 3.9, effectuez successivement les commandes suivantes :
+    ```shell
+    python3 -m venv env
+    ```
+
 - Déplacez-vous dans le dossier de l'application dézippé.
 - Créez un environnement virtuel à l'aide de la commande :
     ```shell
-    python3 -m venv env
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    sudo apt-get update
+    sudo apt-get install python3.9
+    sudo apt-get install python3.9-venv
+    python3.9 -m venv ~/python/foo-3.9 venv
     ```
 - Activez cet environnement virtuel à l'aide de la commande (opération à **réitérer** à chaque lancement de l'application) :
     ```shell
