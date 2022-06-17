@@ -11,60 +11,50 @@ Objectifs :
 - Procéder à une reconnaissance automatique des écritures manuscrites (voir le [dossier dédié](./htr))
 - Transformer les transcriptions en édition XML-TEI
 
-# Installation
+# Installation (sous Linux Ubuntu/Debian)
 Afin de pouvoir consulter les Jupyter notebooks ou de tester les scripts contenus dans ce dépôt, il est nécessaire de télécharger l'archive zip, disponible sur cette page via le bouton **Code**, puis de la dézipper localement.
 
 Pour l'évaluation et l'entraînement des modèles HTR, nous avons utilisé l'application *open-source* [Kraken](https://github.com/mittagessen/kraken), disponible pour Linux et Mac OSX, non pour Windows.
 
-## Sous Linux (Ubuntu/Debian)
-Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10, nous proposons une méthode d'installation avec Python 3.9
+Pour la consultation des notebooks et la prise en main du projet sous Windows, il est possible d'utiliser le programme Bash ([un peu d'aide ici](https://blog.ineat-group.com/2020/02/utiliser-le-terminal-bash-natif-dans-windows-10/)), qui permet de travailler dans une machine virtuelle Linux tout en restant sous Windows. Mais **il est recommandé** de faire appel à une distribution native d'Ubuntu, qui peut être facilement installée en parallèle du système Windows en suivant les instructions de [cette page](https://lecrabeinfo.net/installer-ubuntu-20-04-lts-dual-boot-windows-10.html).
+
+Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10, nous proposons une méthode d'installation avec Python 3.9.
 
 - Pour installer Python 3, ouvrez un terminal et saisissez la commande :
     ```shell
     sudo apt-get install python3 libfreetype6-dev python3-pip python3-venv python3-virtualenv
     ```
+    
 - Pour créer un environnement virtuel Python 3.9, effectuez successivement les commandes suivantes :
-    ```shell
-    python3 -m venv env
-    ```
+    - Récupérez le dépôt des anciennes versions de Python
+        ```shell
+        sudo add-apt-repository ppa:deadsnakes/ppa
+        ```
+    - Recherchez les mises à jour :
+        ```shell
+        sudo apt-get update
+        ```
+    - Installez Python 3.9 :
+        ```shell
+        sudo apt-get install python3.9
+    - Installez le gestionnaire d'environnement virtuel de Python 3.9 :
+        ```
+        ```shell
+        sudo apt-get install python3.9-venv
+        ```
 
-- Déplacez-vous dans le dossier de l'application dézippé.
+- Puis déplacez-vous dans le dossier de l'application dézippé.
+
 - Créez un environnement virtuel à l'aide de la commande :
     ```shell
-    sudo add-apt-repository ppa:deadsnakes/ppa
-    sudo apt-get update
-    sudo apt-get install python3.9
-    sudo apt-get install python3.9-venv
     python3.9 -m venv ~/python/foo-3.9 venv
     ```
+
 - Activez cet environnement virtuel à l'aide de la commande (opération à **réitérer** à chaque lancement de l'application) :
     ```shell
-    source env/bin/activate
+    source venv/bin/activate
     ```
 - Installer les modules requis grâce à la commande :
-    ```shell
-    pip install -r requirements.txt
-    ```
-
-## Sous Windows
-L'installation de Python 3 est nécessaire pour faire tourner les scripts. Nous recommandons la distribution [Anaconda](https://www.anaconda.com/products/individual).
-
-Une fois la distribution Anaconda installée :
-- Lancez, depuis le menu Démarrer, l'**Anaconda Powershell Prompt** ;
-- Déplacez-vous dans le dossier de l'application dézippée ;
-- Créez un environnement virtuel à l'aide de la commande :
-    ```shell
-    conda create -n cdsenv
-    ```
-- Activez cet environnement virtuel à l'aide de la commande (opération à **réitérer** à chaque lancement de l'application) :
-    ```shell
-    conda activate cdsenv
-    ```
-- Installez le module pip :
-    ```shell
-    conda install pip
-    ```
-- Installez les modules requis par l'application grâce à la commande :
     ```shell
     pip install -r requirements.txt
     ```
