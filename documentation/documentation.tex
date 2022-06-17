@@ -617,7 +617,20 @@
 				Plutôt que neutraliser la correction de ces mots, il s'est donc avéré nécessaire de prendre en charge ces ambiguïtés. Mais se contenter de lister des propositions de correction de manière indiscriminée aurait pu là encore nuire aux performances de l'opération. Afin de faciliter la sélection de la bonne correction parmi une liste de propositions, une nouvelle fonction a été écrite\footnote{Il s'agit de la fonction dénommée \textit{ordreOccurrences}~; cf.~\cite{biaySpellcheckTextsPy2022}.} dont le rôle est de classer les mots attestés dans les vérités de terrain par ordre décroissant de nombre d'occurrences. Ainsi, le mot le plus fréquent est toujours proposé comme premier choix au correcteur, ce qui maximise les chances qu'il n'ait pas à intervenir sur la correction à effectuer.
 			
 			\subsection{Élaborer et enrichir un nouveau dictionnaire de la langue française}
+				La capacité de l'application Python Pyspellchecker à analyser les formes des mots repose sur des dictionnaires numériques spécifiques à chaque langue. Comme l'indique la documentation de l'application\footcite{barrusPyspellcheckerPurePython}, ces dictionnaires ont été élaborés à partir de la collecte massive de formes de mots parmi les ressources du site OpenSubtitles\footnote{URL~: \url{http://www.opensubtitles.org/}}, qui fournit des fichiers de sous-titres pour les oeuvres cinématographiques dans de très nombreuses langues.
 				
+				La récolte lexicale qui découle de cette source est extrêmement vaste. Pour la langue française, le nombre de formes collectées est de presque 800~000~! Il est important de rappeler qu'il s'agit de formes et non de lemmes~: on y trouvera pour le verbe \textit{aimer}~: aime, aimes, aimer, aimons, aimez, aiment, etc.
+				
+				Il n'a pas été possible de découvrir comment OpenSubtitles rassemble ses sources textuelles, mais il est assez évident que la principale origine de ces sous-titres sont les fichiers contenus dans les supports DVD et Blu-Ray. Certains de ces fichiers sont en outre issus de la traduction automatique des sous-titres d'une langue source vers une langue cible, ce dont résultent potentiellement des données de piètres qualité.
+				
+				Il n'est guère possible d'analyser ici de manière précise la nature de ces données, mais les hypothèses que l'on vient de formuler sont tout à fait susceptibles d'expliquer la médiocre qualité des formes lexicales croisées dans le dictionnaire du français utilisé par Pyspellchecker. Si l'on se tourne vers les formes les plus rarement dénombrées dans ce dictionnaire (celles comptant 1 ou 2 occurrences dans tout le corpus représentent plus de la moitié du dictionnaire), force est de constater la piètre qualité des données. Voici un tout petit extrait des premières formes lexicales comptabilisant deux occurrences~: 
+				
+				\begin{quote}
+					phiiiy, tetsujiro, étreins-le, rugissons, causatif, armonia, qccupe-toi, découvez, masanté, jannelke, aleksi, qpidon, 500km, unejeunesse, birnholz-vazquez, traînons-nous, peterkins, koidry, vinitt, mentait., bonne-journée, micromonde, myélogène, uilise, 313e, rubindium, ddeokbeoki, 'irlandia, donie, brichelle
+				\end{quote}
+			
+				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme des formes sémantique coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse de nos prédictions. Nous avons ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français et pourtant est attestée 36~fois dans le dictionnaire francophone de Pyspellchecker (!) a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
+								
 			
 	\appendix
 	

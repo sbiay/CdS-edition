@@ -37,8 +37,8 @@ Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10
     - Installez Python 3.9 :
         ```shell
         sudo apt-get install python3.9
-    - Installez le gestionnaire d'environnement virtuel de Python 3.9 :
         ```
+    - Installez le gestionnaire d'environnement virtuel de Python 3.9 :
         ```shell
         sudo apt-get install python3.9-venv
         ```
