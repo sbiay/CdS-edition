@@ -166,6 +166,12 @@
   langid = {french}
 }
 
+@online{C06S43129,
+  title = {C06/{{S43}}/129},
+  url = {https://constance-de-salm.de/archiv/#/document/4325},
+  keywords = {sources-cds}
+}
+
 @online{C11S92047049,
   title = {C11/S92/047-049},
   url = {https://constance-de-salm.de/archiv/#/document/765},
@@ -224,6 +230,12 @@
 @online{CdS02056,
   title = {{{CdS}}/02\_3/056},
   url = {https://constance-de-salm.de/archiv/#/document/8885},
+  keywords = {sources-cds}
+}
+
+@online{CdS02070071,
+  title = {{{CdS}}/02\_3/070-071},
+  url = {https://constance-de-salm.de/archiv/#/document/8907},
   keywords = {sources-cds}
 }
 
@@ -633,14 +645,6 @@
   urldate = {2022-05-24},
   abstract = {Document page segmentation is one of the most crucial steps in document image analysis. It ideally aims to explain the full structure of any document page, distinguishing text zones, graphics, photographs, halftones, figures, tables, etc. Although to date, there have been made several attempts of achieving correct page segmentation results, there are still many difficulties. The leader of the project in the framework of which this PhD work has been funded (*) uses a complete processing chain in which page segmentation mistakes are manually corrected by human operators. Aside of the costs it represents, this demands tuning of a large number of parameters; moreover, some segmentation mistakes sometimes escape the vigilance of the operators. Current automated page segmentation methods are well accepted for clean printed documents; but, they often fail to separate regions in handwritten documents when the document layout structure is loosely defined or when side notes are present inside the page. Moreover, tables and advertisements bring additional challenges for region segmentation algorithms. Our method addresses these problems. The method is divided into four parts:1. Unlike most of popular page segmentation methods, we first separate text and graphics components of the page using a boosted decision tree classifier.2. The separated text and graphics components are used among other features to separate columns of text in a two-dimensional conditional random fields framework.3. A text line detection method, based on piecewise projection profiles is then applied to detect text lines with respect to text region boundaries.4. Finally, a new paragraph detection method, which is trained on the common models of paragraphs, is applied on text lines to find paragraphs based on geometric appearance of text lines and their indentations. Our contribution over existing work lies in essence in the use, or adaptation, of algorithms borrowed from machine learning literature, to solve difficult cases. Indeed, we demonstrate a number of improvements : on separating text columns when one is situated very close to the other; on preventing the contents of a cell in a table to be merged with the contents of other adjacent cells; on preventing regions inside a frame to be merged with other text regions around, especially side notes, even when the latter are written using a font similar to that the text body. Quantitative assessment, and comparison of the performances of our method with competitive algorithms using widely acknowledged metrics and evaluation methodologies, is also provided to a large extend.(*) This PhD thesis has been funded by Conseil Général de Seine-Saint-Denis, through the FUI6 project Demat-Factory, lead by Safig SA},
   langid = {english}
-}
-
-@online{salmC06S431292021,
-  title = {C06/{{S43}}/129},
-  author = {de Salm, Constance},
-  date = {2021},
-  url = {https://constance-de-salm.de/archiv/#/document/4325},
-  keywords = {sources-cds}
 }
 
 @report{souvayCorrespondanceConstanceSalm2021,

@@ -48,7 +48,7 @@
 \newacronym{enc}{ENC}{École nationale des chartes}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
-\newacronym{lai}{LAI}{lettre absente de l'inventaire en ligne}
+\newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
 \newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
@@ -367,47 +367,43 @@
 				
 				Il restait à savoir ‒ et ça n'était pas la moindre question ‒ si un modèle de segmentation serait capable d'identifier ces régions d'écritures de manière automatique.
     
-		    \subsection{Problèmes posés par la mise en page des lettres}
+		    \subsection{Problèmes posés par l'espacement des lignes}
 				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres et le modèle de segmentation par défaut de Kraken ne se montre pas capable de les séparer.
 				
-				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne les dans une seule région les lignes qui lui semblent suffisamment proche~; il assigne à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}).
+				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne les dans une seule région les lignes qui lui semblent suffisamment proche~; il assigne à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}). L'exemple illutré par la figure \ref{seg-opener-193} montre la capacité de ce modèle à distinguer l'ouverture de la lettre (\textit{opener}) en réunissant dans une région cohérente et indépendante le titre de la lettre, le lieu et la date (ainsi qu'une annotation de type catalographique écrite en rouge).
 				
 				\begin{figure}[!h]
 					\centering
 					\includegraphics[width=15cm]{./img/CdS02_Konv002-02_0193-detail-01.jpg}%
 					\caption{Mise en page aérée au début d'une lettre (\gls{lai}, détail du cliché CdS02\_Konv002-02\_0193.jpg).}%
-					\label{}
+					\label{seg-opener-193}
 				\end{figure}
+			
+				En revanche, dans l'exemple ilustré par la figure \ref{seg-glob-46}, les lignes d'écritures sont tellement peu espacées sur l'axe veritcal qu'une seule région de texte réunit le titre, la date et le corps de la lettre.
 			
 				\begin{figure}[!h]
 					\centering
-					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0046-detail.jpg}%
+					\includegraphics[width=15cm]{./img/CdS02_Konv002-02_0046-detail.jpg}%
 					\caption{Mise en page resserrée au début d'une lettre (\gls{lai}, détail du cliché CdS02\_Konv002-02\_0046.jpg).}%
-					\label{}%
+					\label{seg-glob-46}%
 				\end{figure}
 				
-				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre.
+				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre. De plus, les mêmes différences de comportement s'observent selon l'espacement des lignes~: dans quelques cas rares, comme celui illustré par la figure \ref{seg-signaure-71}, la signature peut être distinguée en une région spécifique, mais dans la très grande majorité des cas elle est perçue comme appartenant à la même région que le corps de la lettre.
 				
-			\subsection{Analyser le comportement du modèle de segmentation par défaut d'eScriptorium}
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{./img/CdS02_Konv002-03_0071-signature.jpg}%
+					\caption{Mise en page aérée en fin de lettre (notice~: \cite{CdS02070071}).}%
+					\label{seg-signaure-71}%
+				\end{figure}
 				
-				En raison de cette complexité, nous avons opté pour une typologie de régions resserrée. Tandis que l'ontologie de F.~Chiffoleau proposait un type de région pour chaque élément significatif de l'écrit de correspondance\footcite{chiffoleauCorrespondanceLangueFrancaise2021}, nous n'avons retenu que trois types de régions principaux pour annoter la structure des lettres~:
+				Ces premières observations suggèrent qu'entraîner un modèle à reconnaître les différentes parties d'une lettres sous forme de régions d'écritures distinctes (catégorisées ci-dessus \textit{opener}, \textit{main} et \textit{closer}) s'annonce difficile. D'autres observations relatives à la numérotation des lignes ont confirmé les inconvénients de cette méthode.
 				
-				\begin{itemize}
-					\item \textbf{MainZone}~: pour le corps du texte~;
-					\item \textbf{CustomZone:opener}~: pour l'en-tête des lettres~;
-					\item \textbf{CustomZone:closer}~: pour la clôture des lettres.
-				\end{itemize}
-			
-				\textbf{la définition des régions est formelle, visuelle}
-				
-				%
-			
-			
+			\subsection{Gérer la numérotation des lignes}
+				%Reprendre ici
 
 			\subsection{Définir une ontologie des régions et des lignes}
 				Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
-				
-				Les types de lignes dont on propose l'utilisation sont~:
 						
 			\subsection{Phénomènes graphiques particuliers}
 				 \gls{cds} a corrigé certains mots de sa main~:
