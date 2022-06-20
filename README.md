@@ -16,9 +16,9 @@ Afin de pouvoir consulter les Jupyter notebooks ou de tester les scripts contenu
 
 Pour l'évaluation et l'entraînement des modèles HTR, nous avons utilisé l'application *open-source* [Kraken](https://github.com/mittagessen/kraken), disponible pour Linux et Mac OSX, non pour Windows.
 
-Pour la consultation des notebooks et la prise en main du projet sous Windows, il est possible d'utiliser le programme Bash ([un peu d'aide ici](https://blog.ineat-group.com/2020/02/utiliser-le-terminal-bash-natif-dans-windows-10/)), qui permet de travailler dans une machine virtuelle Linux tout en restant sous Windows. Mais **il est recommandé** de faire appel à une distribution native d'Ubuntu, qui peut être facilement installée en parallèle du système Windows en suivant les instructions de [cette page](https://lecrabeinfo.net/installer-ubuntu-20-04-lts-dual-boot-windows-10.html).
+Pour la consultation des notebooks et la prise en main du projet sous Windows, il est possible d'utiliser le programme Bash ([un peu d'aide ici](https://blog.ineat-group.com/2020/02/utiliser-le-terminal-bash-natif-dans-windows-10/)), qui permet de travailler dans une machine virtuelle Linux tout en restant sous Windows. Mais **il est recommandé** de faire appel à une distribution native d'Ubuntu, qui peut être installée en parallèle du système Windows en suivant les instructions de [cette page](https://lecrabeinfo.net/installer-ubuntu-20-04-lts-dual-boot-windows-10.html).
 
-Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10, nous proposons une méthode d'installation avec Python 3.9.
+Face aux difficultés rencontrées pour l'utilisation de Kraken avec Python 3.10, nous proposons une méthode d'installation avec Python 3.9 (les versions antérieures de Python 3 devraient également fonctionner sans problème).
 
 - Pour installer Python 3, ouvrez un terminal et saisissez la commande :
     ```shell

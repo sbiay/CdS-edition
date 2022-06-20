@@ -294,40 +294,100 @@
 						
 		\section[La segmentation]{La segmentation~: reconnaissance des zones de texte et des lignes d'écriture}
 			\label{lieu-segmentation}
-			% Principe général (cf. stokesEScriptoriumVREManuscript2021) :
-			% - "line-wise text recognizers" et lignes suivantes.
 			
-			L'annotation des régions et des lignes d'écritures répond à deux fonctions distinctes~:
+			La segmentation est une étape indispensable à la réalisation d'une reconnaissance automatique de l'écriture manuscrite. Il s'agit de l'étape la plus problématique, car les possibilités d'entraînement de modèles de segmentation, permettant d'automatiser le processus, recquièrent beaucoup plus de données d'entraînement pour des résultats souvent médiocres, contrairement à la reconnaissance de l'écriture elle-même.
 			
-			\begin{itemize}
-				\item Permettre l'entraînement d'un modèle de \gls{segmentation}~;
-				\item Transformer leur contenu afin de l'affecter à des éléments déterminés de l'arborescence \gls{tei} qu'il faudra construire\footnote{C'est aussi un enjeu central du projet \textbf{Galli(corpor)a}}.
-			\end{itemize}
-
-				Cette réflexion sur les besoins de la transformation vers le format \gls{tei} a été nourrie par les \textit{Guidelines} de l'édition de correspondance du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. Par ailleurs, F.~Chiffoleau a formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le XXe siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
-
-			\subsection{Régions}
-				L'entraînement d'un modèle de \gls{segmentation} à reconnaître et annoter automatiquement des types de régions d'écritures est un travail complexe. La mise en page des lettres répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. Le meilleur exemple de ces variations se trouve dans les recueils~: les lettres ont été transcrites les unes à la suite des autres~; un début de lettre peut dès lors se trouver à n'importe quelle hauteur de la page. 
+			Cette section décrit les enjeux de cette opération et relate les expériences de segmentation qui ont été réalisées à partir des recueils de la correspondance de \gls{cds}.
+						
+			\subsection{Principes et enjeux}
+				Contrairement à certains logiciels d'\gls{ocr}, qui procèdent directement à une reconnaissance optique caractère par caractère, tous les logiciels d'\gls{htr} fonctionnent en appliquant la reconnaissance optique au niveau de la ligne d'écriture (principe dénommé en anglais \textit{line-wise text recognition})\footcite{stokesEScriptoriumVREManuscript2021}. Cette technologie fonctionne sur la base d'un module d'analyse de la mise en page (\textit{layout analysis module}) qui fonctionne indépendamment du type d'écriture rencontré, rendant ainsi possible pour une application comme Kraken de travailler sur tous les types d'écritures (alphabétiques et autres). Les logiciels Transkribus et Kraken reconnaissent les lignes de base des écritures (\textit{baselines}) et peuvent ainsi repérer des zones de texte où qu'elles se situent dans une page et quelque soit leur orientation. 
 				
-				\textbf{Ajouter un commentaire sur l'espacement des lignes de l'en-tête}
+				Les capacités de l'algorithme par défaut de l'application Kraken ont été éprouvées à travers l'utilisation du logiciel eScriptorium. Les recueils de copies de lettres, présentant la particularité d'une mise en page incluant des manchettes aux lignes écrites en diagonale pour chaque lettre, représentaient un intérêt singulier.
 				
 				\begin{figure}[!h]
-					% !h ancre l'image dans le flux de texte
 					\centering
-					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0193-detail-01.jpg}%
-					\caption{Début d'une lettre présentant une disposition aérée des éléments (\cite{CdS02001369}).}%
-					\label{}%
+					\includegraphics[width=15cm]{img/CdS02_Konv002-02_0065-seg-auto-detail.jpg}
+					\caption{Segmentation par le modèle par défaut de Kraken (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-02\_0065.jpg).}
+					\label{seg-defaut-65}
+				\end{figure}
+			
+				On constate la difficulté de ce modèle standard à situer les lignes de base du texte écrit en diagonal, en haut à gauche de la page. En revanche et pour l'essentiel, le modèle a parfaitement détouré (en vert) deux régions d'écriture (la manchette et le corps de la lettre)~; il a en outre très bien repéré toutes les lignes d'écriture horizontales.
+				
+				Mais si la reconnaissance correcte des lignes d'écriture garantit a propri une bonne transcription des lettres, éditer les lettres d'un tel recueil implique une autre opération~: distinguer les lettres les unes des autres. En effet, et c'est l'une des caractéristiques de la mise en page de ces recueils de copie, les lettres y sont copiées à la suite les unes des autres, séparées par des titres. De plus, une lettre commence souvent sur une double page pour se terminer sur la suivante, son texte se partageant entre deux photographies. Si l'on veut éviter la tâche fastidieuse de reconstituer à la main le texte des lettres à partir des transcriptions automatiques de chaque photographie (en réunissant par copier-coller ces différentes parties dans un fichier commun), il devient crucial de structurer la transcription du texte contenu dans chaque image par le repérage dans le flux de texte d'éléments permettant cette structuration, à savoir les titres.
+				
+				Rien n'est plus évident à l'oeil humain que de voir un titre et de comprendre qu'il marque la fin d'une lettre et le début d'une autre. Or le modèle de segmentation par défaut de Kraken ne réalise pas cette coupure par lui-même. On le voit sur l'image suivante, la même zone verte englobe la fin d'une lettre et le début d'une autre.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/CdS02_Konv002-02_0073-seg-auto-detail.jpg}
+					\caption{Segmentation par le modèle par défaut de Kraken (notice~: \cite{CdS02073}).}
+					\label{}
+				\end{figure}
+				
+				La segmentation des pages et des lignes d'écriture pose donc une problématique. Dans quelle mesure est-il possible d'automatiser ce processus sachant qu'il est primordial que les lignes d'écriture soient correctement reconnues, qu'il est très important de pouvoir repérer les titres des lettres et que de surcroît, il n'est pas raisonnablement envisageable de créer un modèle totalement personnalisé. En effet, on a pu faire l'expérience que tenter d'entraîner un modèle à partir de zéro ne permet même pas d'aboutir à une bonne reconnaissance des lignes. La seule méthode efficace consiste donc à tirer le meilleur profit des performances du modèle standard et à tenter d'améliorer ces performances pour le rendre plus spécifique à la mise en page de ces copies de lettres.
+				
+				Ces considérations générales étant posées, on se soit d'approfondir les problèmes dotn les bases viennent d'être posées~: le comportement du modèle standard de segmentation de Kraken à l'égard des particularités de la mise en page des sources du projet d'une part, les possibilités de structuration offertes par cette étape de la segmentation en vue de l'encodage de ces lettres au format \gls{tei}, finalité du présent travail.
+					
+			\subsection{Définir une structure de document idéale en vue de l'édition finale}
+				Il est utile de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilité de segmentation automatique des pages. En effet, l'étape de la segmentation consiste à annoter (manuellement ou automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \og Signé Constance de Salm \fg l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
+				
+				Des propositions d'encodage extrêmement complètes pour les correspondances ont été formalisées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
+				
+				\selectlanguage{english}
+				\begin{itemize}
+					\item \textbf{Main};
+					\item \textbf{Title};
+					\item \textbf{Signature};
+					\item \textbf{Numbering}: numbering at the top of the letter;
+					\item \textbf{Salute};
+					\item \textbf{Dateline}: place and date of writing for the letter;
+					\item \textbf{Additions}: handwritten additions outside of the main text.
+				\end{itemize}
+				\selectlanguage{french}
+				
+				Par ailleurs, les réflexions suscitées par ces catégories lors du point d'étape du 22 avril 2022\footnote{On participé à cette discussion Anne Baillot, Floriane Chiffoleau, Pauline Spychala, Evan Virevialle et moi-même.} ont fait émerger l'idée d'une simplification de cette ontologie par régions autour de trois notions principales, reflétant le futur encodage \gls{tei}~ et marquant l'ouverture, le corps et la fin de la lettre:
+				
+				\selectlanguage{english}
+				\begin{enumerate}
+					\item Opener;
+					\item Main;
+					\item Closer.
+				\end{enumerate}
+				\selectlanguage{french}
+				
+				Il fallait en outre envisager l'annotation des éléments périphériques (annotations, annotations et systèmes de numérotation divers)~:
+				
+				\selectlanguage{english}
+				\begin{enumerate}
+					\item Annotations;
+					\item Numbering.
+				\end{enumerate}
+				\selectlanguage{french}
+				
+				Il restait à savoir ‒ et ça n'était pas la moindre question ‒ si un modèle de segmentation serait capable d'identifier ces régions d'écritures de manière automatique.
+    
+		    \subsection{Problèmes posés par la mise en page des lettres}
+				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres et le modèle de segmentation par défaut de Kraken ne se montre pas capable de les séparer.
+				
+				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne les dans une seule région les lignes qui lui semblent suffisamment proche~; il assigne à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}).
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{./img/CdS02_Konv002-02_0193-detail-01.jpg}%
+					\caption{Mise en page aérée au début d'une lettre (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-02\_0193.jpg).}%
+					\label{}
 				\end{figure}
 			
 				\begin{figure}[!h]
-					% !h ancre l'image dans le flux de texte
 					\centering
 					\includegraphics[scale=0.65]{./img/CdS02_Konv002-02_0046-detail.jpg}%
-					\caption{Début d'une lettre présentant une disposition resserrée des éléments (\cite{CdS02001369}).}%
+					\caption{Mise en page resserrée au début d'une lettre (lettre absente de l'inventaire en ligne, détail du cliché CdS02\_Konv002-02\_0046.jpg).}%
 					\label{}%
 				\end{figure}
 				
 				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre.
+				
+			\subsection{Analyser le comportement du modèle de segmentation par défaut d'eScriptorium}
 				
 				En raison de cette complexité, nous avons opté pour une typologie de régions resserrée. Tandis que l'ontologie de F.~Chiffoleau proposait un type de région pour chaque élément significatif de l'écrit de correspondance\footcite{chiffoleauCorrespondanceLangueFrancaise2021}, nous n'avons retenu que trois types de régions principaux pour annoter la structure des lettres~:
 				
@@ -338,8 +398,14 @@
 				\end{itemize}
 			
 				\textbf{la définition des régions est formelle, visuelle}
+				
+				%
 			
-			\subsection{Lignes d'écriture}
+			
+
+			\subsection{Définir une ontologie des régions et des lignes}
+				Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
+				
 				Les types de lignes dont on propose l'utilisation sont~:
 						
 			\subsection{Phénomènes graphiques particuliers}
@@ -382,6 +448,7 @@
 	    		
 	    	\subsection{Contrôler la pertinence de la \gls{segmentation}}
 		    	\label{controle-segmentation-lettres-inventoriees}
+	    		
 	    		Le script python écrit pour permettre l'importation sélective des images inventoriées \footcite{biayDonneesImagesPy2022} permet en outre de contrôler l'association entre les images sélectionnées et les notices de l'inventaire. Plusieurs lettres peuvent en effet être inventoriées pour la même image, mais surtout une image peut contenir un mélange de lettres inventoriées et de lettres non inventoriées.
 	    		
 	    		Or, il est crucial de pouvoir contrôler le statut de chaque lettre présente dans l'image. Les lettres non-inventoriées étant par définition absentes des données de l'inventaire, il n'existe aucun moyen, en aval de la transcription automatisée des textes pour sélectionner les transcriptions pertinentes (celles des lettres inventoriées) des transcriptions non pertinentes (lettres non inventoriées). Ainsi, il n'est possible de gérer correctement la transformation des transcriptions en édition qu'en ayant préalablement exclu toutes les parties de texte non pertinentes, un travail qui ne peut être automatisé.
