@@ -12,7 +12,7 @@
   
   <Tags>
     <OtherTag ID="BT46" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT47" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT48" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT49" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT50" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT58" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT59" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT74" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/>
-    <OtherTag ID="LT25" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT26" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT27" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT28" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT29" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT30" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT31" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT32" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT49" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/>
+    <OtherTag ID="LT25" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT26" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT27" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT28" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT29" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT30" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT31" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT32" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT49" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/><OtherTag ID="LT60" LABEL="CustomLine:annotations" DESCRIPTION="line type CustomLine:annotations"/>
   </Tags>
   
   <Layout>
@@ -149,60 +149,6 @@
                     VPOS="759"
                     WIDTH="587"
                     HEIGHT="125"></String>
-          </TextLine>
-
-          
-        </TextBlock>
-        
-        <TextBlock HPOS="332"
-                   VPOS="2487"
-                   WIDTH="258"
-                   HEIGHT="59"
-                   ID="eSc_textblock_06823546"
-                   TAGREFS="BT59">
-          <Shape><Polygon POINTS="588 2527 551 2546 332 2536 333 2487 590 2487"/></Shape>
-          
-          
-          <TextLine ID="eSc_line_63456086"
-                    TAGREFS="LT25"
-                    BASELINE="332 2520 567 2525" 
-                    HPOS="330"
-                    VPOS="2462"
-                    WIDTH="237"
-                    HEIGHT="91">
-            <Shape><Polygon POINTS="332 2469 332 2520 330 2548 563 2553 567 2525 565 2481 459 2488 334 2462 332 2469"/></Shape>
-	    <String CONTENT="(Carresp p.)"
-                    HPOS="330"
-                    VPOS="2462"
-                    WIDTH="237"
-                    HEIGHT="91"></String>
-          </TextLine>
-
-          
-        </TextBlock>
-        
-        <TextBlock HPOS="2019"
-                   VPOS="2524"
-                   WIDTH="174"
-                   HEIGHT="114"
-                   ID="eSc_textblock_e0e4635e"
-                   TAGREFS="BT58">
-          <Shape><Polygon POINTS="2193 2539 2184 2610 2084 2638 2019 2524 2176 2524"/></Shape>
-          
-          
-          <TextLine ID="eSc_line_07cc5349"
-                    TAGREFS="LT25"
-                    BASELINE="2064 2587 2170 2589" 
-                    HPOS="2061"
-                    VPOS="2495"
-                    WIDTH="109"
-                    HEIGHT="161">
-            <Shape><Polygon POINTS="2156 2509 2142 2497 2135 2495 2133 2495 2131 2495 2064 2506 2064 2587 2061 2649 2112 2656 2114 2656 2117 2656 2168 2631 2170 2589 2170 2520 2156 2509"/></Shape>
-	    <String CONTENT="55"
-                    HPOS="2061"
-                    VPOS="2495"
-                    WIDTH="109"
-                    HEIGHT="161"></String>
           </TextLine>
 
           

@@ -12,7 +12,7 @@
   
   <Tags>
     <OtherTag ID="BT46" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT47" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT48" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT49" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT50" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT58" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT59" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT74" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/>
-    <OtherTag ID="LT25" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT26" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT27" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT28" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT29" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT30" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT31" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT32" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT49" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/>
+    <OtherTag ID="LT25" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT26" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT27" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT28" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT29" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT30" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT31" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT32" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT49" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/><OtherTag ID="LT60" LABEL="CustomLine:annotations" DESCRIPTION="line type CustomLine:annotations"/>
   </Tags>
   
   <Layout>
@@ -70,12 +70,12 @@
         </TextBlock>
         
         <TextBlock HPOS="2478"
-                   VPOS="316"
+                   VPOS="304"
                    WIDTH="1780"
-                   HEIGHT="2157"
+                   HEIGHT="2169"
                    ID="eSc_textblock_3c14bf2c"
                    TAGREFS="BT46">
-          <Shape><Polygon POINTS="3498 467 3634 506 3634 567 3571 594 3636 623 4204 642 4249 822 4231 1309 4195 1392 4258 1871 4222 2052 4222 2213 4258 2278 4231 2448 2773 2473 2493 2473 2478 2394 2487 831 2686 669 3100 623 2886 594 2858 542 2931 479 3155 479 3112 431 3148 334 3426 334 3501 415 3571 415 3643 397 3673 325 3872 316 4213 316 4231 404 3716 467 3519 440"/></Shape>
+          <Shape><Polygon POINTS="3680 304 4240 306 4239 460 3571 594 3636 623 4204 642 4249 822 4231 1309 4195 1392 4258 1871 4222 2052 4222 2213 4258 2278 4231 2448 2773 2473 2493 2473 2478 2394 2487 831 2686 669 3100 623 2886 594 2858 542 2931 479 3155 479 3112 431 3148 334 3426 334 3501 415 3562 415 3562 446 3519 440"/></Shape>
           
           
           <TextLine ID="eSc_line_0244067d"
@@ -96,13 +96,13 @@
           
           
           <TextLine ID="eSc_line_1b90f2bd"
-                    TAGREFS="LT25"
+                    TAGREFS="LT60"
                     BASELINE="3673 400 4206 384" 
                     HPOS="3661"
                     VPOS="309"
                     WIDTH="548"
                     HEIGHT="149">
-            <Shape><Polygon POINTS="3673 400 3661 354 3704 325 3707 325 3707 325 3707 325 3709 325 3709 325 3709 325 3754 323 3756 323 3756 323 3759 323 3759 323 3759 323 3761 323 3793 343 3802 350 3820 341 3845 330 3845 330 3847 330 3847 330 3847 330 3849 330 3849 330 3849 330 3851 330 3851 330 3869 336 3894 348 3958 348 3980 327 3992 316 3992 316 3994 316 3994 316 3994 316 3996 316 3996 316 3996 316 3998 316 3998 316 4001 316 4025 323 4064 334 4200 309 4206 384 4209 420 4154 443 4154 443 4152 443 4152 443 4152 443 4150 443 4150 443 4148 443 4148 443 4148 443 4145 443 4120 427 4091 411 4057 411 4012 436 4010 436 4010 436 4010 436 4007 436 4007 436 4007 436 4005 436 4005 436 4005 436 4001 436 3912 415 3897 436 3894 436 3894 438 3894 438 3892 438 3892 438 3892 438 3890 438 3890 438 3887 438 3887 438 3887 438 3885 438 3885 438 3835 418 3802 449 3799 452 3799 454 3799 454 3797 454 3797 454 3795 454 3795 454 3795 454 3673 458"/></Shape>
+            <Shape><Polygon POINTS="3673 400 3661 354 3704 325 3707 325 3709 325 3754 323 3756 323 3759 323 3761 323 3793 343 3802 350 3820 341 3845 330 3847 330 3849 330 3851 330 3869 336 3894 348 3958 348 3980 327 3992 316 3994 316 3996 316 3998 316 4001 316 4025 323 4064 334 4200 309 4206 384 4209 420 4154 443 4152 443 4150 443 4148 443 4145 443 4120 427 4091 411 4057 411 4012 436 4010 436 4007 436 4005 436 4001 436 3912 415 3897 436 3894 436 3894 438 3892 438 3890 438 3887 438 3885 438 3835 418 3802 449 3799 452 3799 454 3797 454 3795 454 3673 458"/></Shape>
 	    <String CONTENT="(Cor. gén.le (no 20))"
                     HPOS="3661"
                     VPOS="309"
