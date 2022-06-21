@@ -10,8 +10,4 @@ Gestion des données
     - ./tables/20220408_exportFuD_complement.csv
 
 # Outils
-- Le notebook [Obtenir_metadonnees_images.ipynb](./Obtenir_metadonnees_images.ipynb) permet de récupérer l'identifiant et l'URL de la notice à partir d'un nom de fichier image. Le script peut également être utilisé en ligne de commande de la façon suivante :
-    ```shell
-    python3 donneesImages.py CHEMIN-DOSSIER
-    ```
-
+- Le notebook [Obtenir_metadonnees_images.ipynb](./Obtenir_metadonnees_images.ipynb) permet de récupérer l'identifiant et l'URL de la notice à partir d'un nom de fichier image.
