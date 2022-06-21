@@ -1,13 +1,6 @@
 import csv
 from constantes import DONNEES
 
-"""
-Ce module est dupliqué en deux emplacements du projet :
-- htr/py/toutesDonnees.py
-- donnees/py/toutesDonnees.py
-Veiller à répercuter les modifications éventuelles
-"""
-
 
 def donneesFud():
     """

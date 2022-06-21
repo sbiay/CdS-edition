@@ -3,6 +3,7 @@ import click
 import os
 from toutesDonnees import donneesFud, donneesZenodo
 
+
 def noticeImage(image):
     """
     Cette fonction prend comme argument un nom de fichier image et retourne une liste de dictionnaires renseignant :
@@ -33,7 +34,7 @@ def noticeImage(image):
         # On récupère les débuts de lettres et URL des notices publiées dans le jeu de données Zenodo
         item["incipit"] = zenodo[item["idno"]].get("incipit")
         item["URL"] = zenodo[item["idno"]]["URL"]
-
+    
     return notices
 
 
@@ -67,9 +68,6 @@ def donneesImages(source, sortie):
     if sortie[-1] != "/":
         sortie = sortie + "/"
     
-    # On charge les données fud
-    fud = donneesFud()
-    
     listeImages = []
     # On analyse l'arborescence du chemin de dossier passée en argument
     for racine, dirs, fichiers in os.walk(source):
@@ -100,7 +98,6 @@ def donneesImages(source, sortie):
                     "URL": notice["URL"],
                     "Images": notice["Images"]
                 }
-                
                 donnees = {
                     "idno": notice["idno"],
                     "incipit": notice["incipit"],
@@ -112,17 +109,17 @@ def donneesImages(source, sortie):
                 "record_nb": len(notices),
                 "records": selection
             }
-            
+        
         # Si l'image n'a pas de notice
         else:
             sansNotice.append(image)
-    
+
     # On écrit l'objet final
     resultats = {
         "results": {
             "images": parImages,
             "records": dict(sorted(parNotice.items())),
-            "no-record": sansNotice.sort()
+            "no-record": sorted(sansNotice)
         },
         "stats": {
             "images": len(parImages),
@@ -131,7 +128,7 @@ def donneesImages(source, sortie):
             "total": len(listeImages)
         }
     }
-
+    
     # On initie la liste des titres de pièces (qui permettra d'associer titre et notice par position dans une image)
     enchainTitres = {}
     # Lire le fichier de données et distribuer les images dans les dossiers par notice
@@ -145,7 +142,7 @@ def donneesImages(source, sortie):
                     enchainTitres[image] = [record]
                 else:
                     enchainTitres[image].append(record)
-
+    
     # On boucle sur l'enchainement des titres pour chaque image
     # afin de récupérer la position de chaque titre dans chaque image
     for image in enchainTitres:
