@@ -7,14 +7,14 @@ Gestion des données
     python3 donneesImages.py CHEMIN-DOSSIER
     ```
 
-# Contrôle des données
+# Contrôle des données publiables
 Nous avons contrôlé le 11 avril 2022 la liste des données figurant dans les fichiers publiés sur [Zenodo](https://zenodo.org/record/5707822) avec un export de tous les enregistrements de la base **FuD**. Les fichiers concernés, contenus dans ce dossier, sont les suivants :
 - Fichiers publiés sur **Zenodo** :
-    - 20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv
-    - 20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv
+    - ./tables/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv
+    - ./tables/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv
 - Export **FuD** :
-    - 20220408_exportFuD_principal.csv
-    - 20220408_exportFuD_complement.csv
+    - ./tables/20220408_exportFuD_principal.csv
+    - ./tables/20220408_exportFuD_complement.csv
 
 Nous avons comparé ces listes grâce aux clés suivantes (au moyen du script [controle.py](py/controle.py)]) :
 - Jeu Zenodo : `FuD-Key`
@@ -37,4 +37,4 @@ En revanche, les 14 enregistrements ayant le statut de **"80 - Freigabe"** et no
 
 Les 2 enregistrements qualifiés de publiables dans FuD, absents du jeu Zenodoet non vérifiés par Florence de Peyronnet sont : ['CdS/95/056-058', 'CDS//012-014'].
 
-On vérifie que les enregistrements vérifiés par **Florence de Peyronnet** n'ont pas été enrichis en recherchant les `Nr. der Digitalisate` dans la liste [correspSearch.csv](tables/correspSearch.csv), qui correspond à celle déposée par H. Souvay sous le titre [Ready2CMI.csv](https://github.com/dhi-digital-humanities/constance-de-salm/blob/main/CorrespSearch/Ready2CMI.csv) : en effet **aucun** de ces enregistrements n'a été enrichi.
+On contrôle que les enregistrements vérifiés par **Florence de Peyronnet** n'ont pas été enrichis en recherchant les `Nr. der Digitalisate` dans la liste [correspSearch.csv](tables/correspSearch.csv), qui correspond à celle déposée par H. Souvay sous le titre [Ready2CMI.csv](https://github.com/dhi-digital-humanities/constance-de-salm/blob/main/CorrespSearch/Ready2CMI.csv) : en effet **aucun** de ces enregistrements n'a été enrichi.

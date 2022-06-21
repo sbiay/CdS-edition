@@ -2,8 +2,6 @@ import json
 import click
 import os
 from toutesDonnees import donneesFud, donneesZenodo
-from constantes import XMLaCORRIGER
-from lxml import etree
 
 def noticeImage(image):
     """

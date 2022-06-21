@@ -1,4 +1,5 @@
 import csv
+from constantes import DONNEES
 
 """
 Ce module est dupliqué en deux emplacements du projet :
@@ -11,7 +12,7 @@ Veiller à répercuter les modifications éventuelles
 def donneesFud():
     """
     Cette fonction ouvre les fichiers CSV contenant les données exportées de la base FuD
-    Pour chaque enregistrement, elles retourne un dictionnaire selon le modèle suivant :
+    Pour chaque enregistrement, elle retourne un dictionnaire selon le modèle suivant :
      {
       'idno': 'CdS-b2-009a',
       'Nr. der Digitalisate': 'CDS//012-014',
@@ -27,7 +28,7 @@ def donneesFud():
     """
     # On charge les données exportées de Fud
     fud = []
-    with open("../donnees/tables/20220408_exportFuD_principal.csv") as csvf:
+    with open(DONNEES + "20220408_exportFuD_principal.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -44,7 +45,7 @@ def donneesFud():
                 compteur += 1
             fud.append(enregistrement)
     
-    with open("../donnees/tables/20220408_exportFuD_complement.csv") as csvf:
+    with open(DONNEES + "20220408_exportFuD_complement.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         # On inscrit dans la liste fud des dictionnaires décrivant les attributs des enregistrements
         for index, ligne in enumerate(lecteur):
@@ -66,7 +67,7 @@ def donneesFud():
 
 def donneesZenodo():
     zenodo = {}
-    with open("../donnees/tables/20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
+    with open(DONNEES + "20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         
         for index, ligne in enumerate(lecteur):
@@ -76,7 +77,7 @@ def donneesZenodo():
                 "URL": ligne['URL']
             }
     
-    with open("../donnees/tables/20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
+    with open(DONNEES + "20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
         lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
         
         for index, ligne in enumerate(lecteur):
