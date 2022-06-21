@@ -228,7 +228,7 @@
 				\begin{figure}[!h]
 					\centering
 					\includegraphics[width=11cm]{img/mainCdS02_Konv019_01-0002.jpg}
-					\caption{Première main de la correspondance Martini   (\gls{lai}, détail du cliché CdS02\_Konv019\_0002.jpg).}
+					\caption{Première main de la correspondance Martini (\gls{lai}, détail du cliché CdS02\_Konv019\_0002.jpg).}
 					\label{}
 				\end{figure}
 				
@@ -260,15 +260,21 @@
 				\footnote{Voir infra, \ref{autographes}, p.~\pageref{autographes}.}.
 		
 			\subsection{Préparer le traitement d'un dossier}
-				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés. Afin de n'engager dans notre chaîne de traitement que des documents effectivement inventoriés, nous avons consacré un \textit{notebook} à la préparation du traitement d'un dossier\footcite{biayPreparerTraitementDossier2022}.
+				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés et des éléments inventoriés mais non publiés. Un script de contrôle des données a été écrit pour dresser la liste des notices d'inventaire constituée mais dont les données n'ont pas été validées pour la publication\cite{biayDonneesNonPublieesPy2022}~; il permet d'afficher ces données dans un fichier au format Json, en donnant tout particulièrement la liste des images concernées.
 				
-				% Discuter la pertinence d'une édition sélective : nous n'avons pas les métadonnées des documents non inventoriés ; il n'est pas possible de repérer les titres des lettres inventoriées si la sélection n'est pas faite.
+				À ce titre tous les dossiers ne sont pas logés à la même enseigne. Par exemple les images du premier volume de la seconde copie\cite{CdS02001330} ont été inventoriées, en revanche, celle du second volume ne l'ont pas été\cite{CdS02001369}~; tout un lot de textes contenus dans les images de ce volume sont donc dépourvus de données catalographiques. 
 				
-				Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
+				Cette situation, certainement fondée sur des critères de pertinence (en particulier celui de ne pas inventorier les copies de lettres dont les originaux ont leur propre notice), représente un obstacle important à la gestion des prédictions \gls{htr}, qui peuvent dès lors être consituées d'un mélange de pièces non inventoriées (et donc dépourvues de toutes données descriptives) et de pièces inventoriées, ces dernières pouvant être associées à une adresse web déjà publiée et d'autres non.
+				
+				Face à cette situation inégale, le parti a été pris de n'engager dans notre chaîne de traitement que des documents non seulement inventoriés mais dont les notices ont en outre été publiées sur le site \url{http://constance-de-salm.de}. La sélection des pièces est donc une étape importante du début de la chaîne de traitement. Un \textit{notebook} lui a été consacré\footcite{biayPreparerTraitementDossier2022}.
+							
+				Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
 				
 				Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire.
+				
+				Il va de soi que la chaîne de traitement peut être conduite sans tenir compte de cette étape de sélection des pièces. Si le parti devait être pris de transcrire l'intégralité d'un recueil sans distinction des pièces inventoriées et de celles qui ne le sont pas, il suffirait de sauter cette étape du travail. Il semblait toutefois important poser les bases de la méthode sélective dans la mesure où elle pose davantage de questions d'ingénierie et de possibilités d'automatisation.
 			
-			\subsection{Transkribus ou eScriptorium~? Fonctionnalités avancées \textit{versus} science ouverte}
+			\subsection[Transkribus ou eScriptorium~?]{Transkribus ou eScriptorium~? Fonctionnalités avancées \textit{versus} science ouverte}
 				Au moment du présent stage, les deux principales applications permettant de procéder à la transcription automatique des écritures manuscrites sont eScriptorium et Transkribus.
 				
 				Différentes considérations peuvent conduire à opter pour l'une ou l'autre de ces applications\footnote{Nous avons assisté le 9 mai 2022 à l'atelier organisé au sein du Data-Lab de la \gls{bnf} et dont le programme est détaillé dans le billet d'\cite{jacquotTranskribusEScriptoriumTranscrire}.}. Deux facteurs nous apparaissent particulièrement déterminant pour fonder un tel choix~:
@@ -318,7 +324,7 @@
 				
 				Mais si la reconnaissance correcte des lignes d'écriture garantit a propri une bonne transcription des lettres, éditer les lettres d'un tel recueil implique une autre opération~: distinguer les lettres les unes des autres. En effet, et c'est l'une des caractéristiques de la mise en page de ces recueils de copie, les lettres y sont copiées à la suite les unes des autres, séparées par des titres. De plus, une lettre commence souvent sur une double page pour se terminer sur la suivante, son texte se partageant entre deux photographies. Si l'on veut éviter la tâche fastidieuse de reconstituer à la main le texte des lettres à partir des transcriptions automatiques de chaque photographie (en réunissant par copier-coller ces différentes parties dans un fichier commun), il devient crucial de structurer la transcription du texte contenu dans chaque image par le repérage dans le flux de texte d'éléments permettant cette structuration, à savoir les titres.
 				
-				Rien n'est plus évident à l'oeil humain que de voir un titre et de comprendre qu'il marque la fin d'une lettre et le début d'une autre. Or le modèle de segmentation par défaut de Kraken ne réalise pas cette coupure par lui-même. On le voit sur l'image suivante, la même zone verte englobe la fin d'une lettre et le début d'une autre.
+				Rien n'est plus évident à l'œil humain que de voir un titre et de comprendre qu'il marque la fin d'une lettre et le début d'une autre. Or le modèle de segmentation par défaut de Kraken ne réalise pas cette coupure par lui-même. On le voit sur l'image suivante, la même zone verte englobe la fin d'une lettre et le début d'une autre.
 				
 				\begin{figure}[!h]
 					\centering
@@ -331,13 +337,12 @@
 				
 				Ces considérations générales étant posées, on se soit d'approfondir les problèmes dotn les bases viennent d'être posées~: le comportement du modèle standard de segmentation de Kraken à l'égard des particularités de la mise en page des sources du projet d'une part, les possibilités de structuration offertes par cette étape de la segmentation en vue de l'encodage de ces lettres au format \gls{tei}, finalité du présent travail.
 					
-			\subsection{Définir une structure de document idéale en vue de l'édition finale}
-				Il est utile de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilité de segmentation automatique des pages. En effet, l'étape de la segmentation consiste à annoter (manuellement ou automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \og Signé Constance de Salm \fg l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
+			\subsection{Définir une structure de document idéale en vue de l'édition}
+				Il est important de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilités de segmentation automatique des pages. En effet, l'étape de la segmentation consiste à annoter (manuellement ou, si possible, automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \textit{Signé Constance de Salm} l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
 				
-				Des propositions d'encodage extrêmement complètes pour les correspondances ont été formalisées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre formulé une ontologie pour les régions et lignes des écrits de correspondance en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021} dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
-				
+				Des propositions d'encodage extrêmement complètes pour l'édition de correspondances ont été formulées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre élaboré une ontologie des régions d'écriture pour les correspondances en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021}, dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
 				\selectlanguage{english}
-				\begin{itemize}
+				\textit{\begin{itemize}
 					\item \textbf{Main};
 					\item \textbf{Title};
 					\item \textbf{Signature};
@@ -345,34 +350,32 @@
 					\item \textbf{Salute};
 					\item \textbf{Dateline}: place and date of writing for the letter;
 					\item \textbf{Additions}: handwritten additions outside of the main text.
-				\end{itemize}
+				\end{itemize}}
 				\selectlanguage{french}
 				
-				Par ailleurs, les réflexions suscitées par ces catégories lors du point d'étape du 22 avril 2022\footnote{On participé à cette discussion Anne Baillot, Floriane Chiffoleau, Pauline Spychala, Evan Virevialle et moi-même.} ont fait émerger l'idée d'une simplification de cette ontologie par régions autour de trois notions principales, reflétant le futur encodage \gls{tei}~ et marquant l'ouverture, le corps et la fin de la lettre:
-				
-				\selectlanguage{english}
+				Par ailleurs, les réflexions suscitées par ces catégories lors du point d'étape du 22 avril 2022\footnote{On participé à cette discussion Anne Baillot, Floriane Chiffoleau, Pauline Spychala, Evan Virevialle et moi-même.} ont fait émerger l'idée d'une simplification de cette ontologie par régions autour de trois notions principales marquant l'ouverture, le corps et la fin de la lettre:
+				\textit{\selectlanguage{english}
 				\begin{enumerate}
 					\item Opener;
 					\item Main;
 					\item Closer.
-				\end{enumerate}
+				\end{enumerate}}
 				\selectlanguage{french}
 				
 				Il fallait en outre envisager l'annotation des éléments périphériques (annotations, annotations et systèmes de numérotation divers)~:
-				
-				\selectlanguage{english}
+				\textit{\selectlanguage{english}
 				\begin{enumerate}
 					\item Annotations;
 					\item Numbering.
 				\end{enumerate}
-				\selectlanguage{french}
+				\selectlanguage{french}}
 				
-				Il restait à savoir ‒ et ça n'était pas la moindre question ‒ si un modèle de segmentation serait capable d'identifier ces régions d'écritures de manière automatique.
+				Restait à savoir (et ça n'était pas la moindre question) si un modèle de segmentation serait capable d'identifier ces régions d'écritures de manière automatique.
     
 		    \subsection{Problèmes posés par l'espacement des lignes}
-				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'oeil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres et le modèle de segmentation par défaut de Kraken ne se montre pas capable de les séparer.
+				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'œil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres, et le modèle de segmentation par défaut de Kraken ne se montre pas capable de les séparer de lui-même.
 				
-				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne les dans une seule région les lignes qui lui semblent suffisamment proche~; il assigne à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}). L'exemple illutré par la figure \ref{seg-opener-193} montre la capacité de ce modèle à distinguer l'ouverture de la lettre (\textit{opener}) en réunissant dans une région cohérente et indépendante le titre de la lettre, le lieu et la date (ainsi qu'une annotation de type catalographique écrite en rouge).
+				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne dans une seule région les lignes qui lui semblent suffisamment proches~; il assigne en revanche à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}). L'exemple illutré par la figure \ref{seg-opener-193} montre la capacité de ce modèle à distinguer l'ouverture de la lettre (\textit{opener}) en réunissant dans une région cohérente et indépendante le titre de la lettre, le lieu et la date (ainsi qu'une annotation de type catalographique écrite en rouge).
 				
 				\begin{figure}[!h]
 					\centering
@@ -381,7 +384,7 @@
 					\label{seg-opener-193}
 				\end{figure}
 			
-				En revanche, dans l'exemple ilustré par la figure \ref{seg-glob-46}, les lignes d'écritures sont tellement peu espacées sur l'axe veritcal qu'une seule région de texte réunit le titre, la date et le corps de la lettre.
+				En revanche, dans l'exemple illustré par la figure \ref{seg-glob-46}, les lignes d'écriture sont tellement peu espacées sur l'axe veritcal qu'une seule région de texte réunit le titre, la date et le corps de la lettre.
 			
 				\begin{figure}[!h]
 					\centering
@@ -390,7 +393,7 @@
 					\label{seg-glob-46}%
 				\end{figure}
 				
-				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est le premier mais non le seul élément) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre. De plus, les mêmes différences de comportement s'observent selon l'espacement des lignes~: dans quelques cas rares, comme celui illustré par la figure \ref{seg-signaure-71}, la signature peut être distinguée en une région spécifique, mais dans la très grande majorité des cas elle est perçue comme appartenant à la même région que le corps de la lettre.
+				La reconnaissance de la fin d'une lettre (dont la signature alignée à droite de la page est l'élément le plus récurrent) est encore plus délicate, car elle ne se manifeste jamais par un élément visuellement massif comme un titre. De plus, les mêmes différences de comportement s'observent selon l'espacement des lignes~: dans quelques cas rares, comme celui illustré par la figure \ref{seg-signaure-71}, la signature peut être distinguée en une région spécifique, mais dans la très grande majorité des cas, elle est perçue comme appartenant à la même région que le corps de la lettre.
 				
 				\begin{figure}[!h]
 					\centering
@@ -399,25 +402,91 @@
 					\label{seg-signaure-71}%
 				\end{figure}
 				
-				Ces premières observations suggèrent qu'entraîner un modèle à reconnaître les différentes parties d'une lettres sous forme de régions d'écritures distinctes (catégorisées ci-dessus \textit{opener}, \textit{main} et \textit{closer}) s'annonce difficile. D'autres observations relatives à la numérotation des lignes ont confirmé les inconvénients de cette méthode.
+				Ces premières observations suggèrent qu'entraîner un modèle à reconnaître les différentes parties d'une lettre sous forme de régions d'écritures distinctes (catégorisées ci-dessus \textit{opener}, \textit{main} et \textit{closer}) s'annonce difficile. D'autres observations relatives à la numérotation des lignes ont confirmé les inconvénients de cette méthode.
 				
 			\subsection{Gérer la numérotation des lignes}
-				%Reprendre ici
-
-			\subsection{Définir une ontologie des régions et des lignes}
-				Afin de rendre notre propre typologie générique et de pouvoir exploiter l'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, nous avons repris les types \gls{Segmonto} en exploitant les types \texttt{CustomZone} et \texttt{CustomLine} lorsqu'il était nécessaire de les personnaliser.
-						
-			\subsection{Phénomènes graphiques particuliers}
-				 \gls{cds} a corrigé certains mots de sa main~:
+				La numérotation des lignes de texte est une opération essentielle de la segmentation. Rien ne pourrait être fait de la transcription automatique du texte si les lignes n'étaient pas transcrites dans l'ordre de lecture. L'algorithme de segmentation par défaut de Kraken est bien entendu capable de numéroter les lignes selon les préférences de l'utilisateur, et dans le cas présent, de gauche à droite et de haut en bas.
+				
+				Paramètre important~: la numérotation des lignes dépend de la position des régions qui les englobent dans l'image analysée. Ainsi, la mise en page particulière des documents et le découpage du texte par régions peut jouer un rôle déterminant dans l'ordre des lignes. L'expérience a pu en être faite en remodelant de différentes manières les segmentations automatiquement produites le modèle par défaut de Kraken.
+				
+				Or les problèmes de numérotation ont été nombreux lors de ces tests. Comme le montre la figure \ref{comp-av-opener-ln-reg-193}, issue du vol.~2 de la seconde copie\footcite{CdS02001369}, obtenir une bonne numérotation des lignes de titre s'est révélé problématique dès lors que l'on souhaitait isoler ces titres dans une région propre (\textit{opener}). On observe en effet dans cet exemple que le titre situé sur la page de gauche est numéroté 23 et 24~; il ne s'intercale donc pas correctement entre les lignes de la manchette (10 et 11) et les lignes du corps de la lettre (à partir de 12). Le même phénomène s'est produit dans cet exemple pour les trois titres de la double page. Sachant que le titre est le seul élément sur lequel on puisse s'appuyer pour distinguer automatiquement le début et la fin des lettres (car il n'y a pas toujours de signature, pas toujours de manchette, pas toujours de date pour borner le texte des lettres), la mauvaise numérotation des lignes de titre est un énorme problème en vue de l'exploitation des prédictions~: sans intervention, les titres de chaque lettre de cette page se retrouveraient disposer à la fin du texte de leur lettre et ainsi passer pour le titre de la lettre suivante…
+				
+				Il est naturellement possible de corriger ces problèmes de numérotation de façon manuelle dans l'interface eScriptorium, mais il s'agit d'un travail fastidieux (chaque ligne doit être déplacée une par une) et hasardeux (le rechargement de la page peut rétablir la  numérotation d'origine.) Il fallait donc prévenir ce problème.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/comp-av-opener-ln-reg-CdS02_Konv002-02_0193.jpg}
+					\caption{Exemple de numérotation à partir d'une segmentation distingant \textit{opener} et \textit{closer} (cliché CdS02\_Konv002-02\_0193.jpg).}
+					\label{comp-av-opener-ln-reg-193}
+				\end{figure}
 			
+				Une première solution a consisté à envelopper toutes les régions d'écriture dans une sorte de super-région, dessinée autour des autres régions précédemment définie~: la page. En liant les lignes d'écriture à la page qui les englobe, l'ordre de lecture de gauche à droite et de haut en bas assure une bonne numérotation des lignes~: on constate que les titres ont retrouvé leur juste numérotation.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/comp-av-opener-ln-pag-CdS02_Konv002-02_0193.jpg}
+					\caption{Exemple de numérotation avec lignes liées à une région \textit{page} (cliché CdS02\_Konv002-02\_0193.jpg).}
+					\label{annotation-page-66}
+				\end{figure}
+				
+				Cette solution pouvait sembler prometteuse jusqu'au moment où il s'est agit d'examiner les fichiers \gls{alto} compilés par le logiciel eScriptorium, où la transcription des textes de la page se trouve structurée en fonction des régions d'écriture que l'on a définies. Le choix de lier les lignes d'écritures à la super-région \textit{page} les avait (logiquement) déconnectées de leurs propres régions~: le fichier se présentait avec des régions \textit{page} pleines de lignes d'écriture et des régions \textit{opener}, \textit{main}, etc. entièrement vides. Il devenait dès lors impossible d'exploiter les étiquettes données à ces régions d'écriture en vue de la réalisation de l'encodage des lettres~: les lettres ne pouvaient plus être distinguées les unes des autres. Il a donc fallu renoncer à emboîter des régions d'écriture pour résoudre les problèmes de numérotation. 
+				
+				La solution finalement apparue comme la seule possible consistait à simplifier la définition des régions d'écriture. Dans la figure \ref{comp-ss-opener-193}, la segmentation consiste à séparer les lettres les unes des autres et à distinguer la manchette (un choix que l'on a maintenu dans la mesure où le modèle par défaut de Kraken s'est montré capable d'opérer seul cette distinction). Toutes les parties de la lettre sont réunies dans une même région (sauf si la lettre se prolonge sur l'image suivante, naturellement). Cette option a non seulement permis de résoudre les problèmes de numérotation des titres, mais aussi de résoudre un autre problème de numérotation assez récurrent~: la ligne indiquant le lieu et la date de la lettre (numéros 14, 32 et 46 dans l'exemple en question) s'intercalait assez souvent entre la première et la seconde ligne du texte de la lettre. On a également observé dans un certain nombre de cas les deux premières lignes du texte numérotées en ordre inverse.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/comp-ss-opener-01-CdS02_Konv002-02_0193.jpg}
+					\caption{Exemple de numérotation sans région de \textit{page} ni \textit{opener} (cliché CdS02\_Konv002-02\_0193.jpg).}
+					\label{comp-ss-opener-193}
+				\end{figure}
+				
+				On le voit dans l'exemple en question, il a également été choisi de ne pas distinguer de région \textit{closer} pour la signature des lettres. Après quelques tentatives d'entraînement de modèle de segmentation en ce sens, les résultats très mauvais que l'on a obtenus prouvaient avec assez de force que cette tentative était vouée à l'échec.
+				
+			\subsection{Définir une ontologie des régions et des lignes}
+				Une fois arrêtés les principes généraux de la segmentation, il convient de définir une ontologie, à savoir la liste des types de régions et de lignes d'écriture que l'on entend appliquer à cette segmentation.
+				
+				Le choix a été fait d'inscrire cette définition des régions et des lignes suivant les principes de l'ontologie \gls{Segmonto}. Déjà cité, le projet \gls{Segmonto} propose un cadre conceptuel général pour ce genre de définition. Bien qu'orienté sur la description des manuscrits médiévaux et des premiers imprimés, il met en avant les catégories les plus génériques possibles (\textit{main}, \textit{margin}, \textit{numbering}, etc.) ainsi que des solutions de personnalisation, afin de permettre à tout type de projet d'exprimer ses besoins d'annotation de régions et de lignes d'écriture dans un cadre commun. Ce cadre facilite \textit{in fine} la réutilisation des vérités de terrain et contribue ainsi à l'ouverture des données d'entraînements des projets de reconnaissance automatique d'écriture.
+				
+				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La segmentation de nombreuses page de texte, même avec l'assistance d'un bon modèle de segmentation automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{Segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa segmentation) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
+				
+				En résumé, les types de régions d'écriture que l'on a retenus et conformés à \gls{Segmonto} sont les suivants~:
+				
 				\begin{itemize}
-					\item En rayant une lettre, un mot ou plusieurs mots, ou bien en réécrivant par dessus le texte. Dans de nombreux cas cela consiste en une simple lettre barrée~; le typage de la ligne demanderait alors beaucoup d'effort pour un résultat minime~;
-					\item En réécrivant dans l'interligne~: il est alors pertinent d'utiliser le type de ligne e-Scriptorium \textbf{Correction}.
+					\selectlanguage{english}% Permet de gérer les deux points sans espace
+					\item \textit{CustomZone:header} pour les manchettes des recueils de copies~;
+					\item \textit{MainZone} pour le corps de la lettre, regroupant toutes ses parties, du titre à la signature et au post-scriptum~;
+					\item \textit{NumberingZone} pour tous les types de numérotation portés sur la page (pagination, numérotation des pièces), qu'ils aient été établis dès la première rédaction où qu'ils aient été ajoutés plus tard (jusqu'aux ajouts des érudits)~;
+					\item \textit{MarginTextZone} pour tous les types d'annotation portés sur la page (avec la même indiscrimination que pour les systèmes de numérotation)~;
+					\item \textit{RunningTitleZone} pour les titres courants attestés dans certains recueils comme la correspondance Martini (cf.~\cite{CdS19054056} en haut de la page de gauche).
+					\selectlanguage{french}
 				\end{itemize}
 				
-				Un ensemble de solutions d'encodage des corrections a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}. J'envisage plutôt \textbf{ne pas encoder ces éléments dans la phase d'HTR}, et de ne les aborder que la phase d'édition. Il sera de toute façon necessaire, lors de la reprise manuelle de l'édition \gls{tei}, de suivre la reproduction du manuscrit à éditer. En outre, introduire des caractères tels que £, €, etc. dans la transcription génèrerait du bruit dans l'entraînement du modèle HTR et imposerait une phase de nettoyage pour les réutilisations éventuelles des vérités de terrain.
+				On recommande l'usage de la région \textit{MarginTextZone} pour les annotations portées sur une page qui ne seraient pas spécifiquement attachées à une lettre, car si l'on souhaite préserver le lien entre une annotation et une lettre spécifique, définir cette annotation comme une région d'écriture à part est de nature à poser de nouveaux problèmes de numérotation. On peut constater sur la figure \ref{num-annot-193} que la mention entre parenthèses \textit{Cor(respondance) gén(éra)le (n\textsuperscript{o}~20)} que l'on ici isolée dans une région à part a reçu le numéro 57, ce qui l'inscrit en queue de toute la numérotation de la page. La ligne ne s'inscrit dès lors plus dans la numérotation de la lettre à laquelle on souhaiterait pourtant attacher l'annotation.
 				
-				En somme, il s'agirait de \textbf{transcrire tout ce qui est lisible} (y compris les lettres biffées, lorsque c'est possible), en privilégiant le dernier état du texte dans le cas où la correction a été superposée à la première couche d'écriture.
+				En conclusion, les annotations dont on souhaite maintenir le lien à une lettre particulière doivent être incluses dans la (ou l'une des) région(s) \textit{MainZone} de leur lettre (ce que le modèle de segmentation par défaut effectue généralement de lui-même), le statut d'annotation étant signalé par le type de ligne qu'on lui attribue, et non par le type de région dans lequel on l'inscrit.
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{img/num-annot-CdS02_Konv002-02_0193.jpg}
+					\caption{Problème de numérotation lié à une région de type \textit{MarginTextZone} (cliché~: CdS02\_Konv002-02\_0193.jpg).}
+					\label{num-annot-193}
+				\end{figure}
+				
+				Face à l'éventail limité des types de régions que l'on est contraint d'adopter pour éviter les problèmes de numérotation des lignes, l'annotation sémantique des parties de la lettre (qui permettra une automatisation partielle de l'encodage final en \gls{tei}) doit être répercutée sur les types de lignes. Voici la liste de conforme à \gls{Segmonto} que l'on propose d'adopter, par ordre général d'apparition dans les lettres~:
+				
+				\begin{itemize}
+					\selectlanguage{english}
+					\item \textit{CustomLine:header} pour les petites lignes des manchettes~;
+					\item \textit{HeadingLine:title} pour les lignes de titre~;
+					\item \textit{CustomLine:dateline} pour le lieu et la date d'écriture~;
+					\item \textit{CustomLine:salute} pour l'éventuelle salutation initiale~;
+					\item \textit{DefaultLine} pour les lignes du corps de texte~;
+					\item \textit{CustomLine:verse} pour les éventuelles parties écrites en vers~;
+					\item \textit{InterlinearLine} pour les éventuelles corrections interlinéaires~;\label{interlinear}
+					\item \textit{CustomLine:signature} pour la signature~;
+					\item \textit{CustomLine:annotations} pour tous les types d'annotation.
+					\selectlanguage{french}
+				\end{itemize}
 		
 			\subsection{Entraîner des modèles de segmentation des pages}
 	    		\textbf{Cette section est à écrire.}
@@ -531,9 +600,11 @@
 				
 				Ces choix se justifient d'une part en ce qu'ils permettent un bon entraînement de la reconnaissance d'écriture caractère par caractère, d'autre part en raison de leur correspondance avec les critères de l'édition finale du texte, qui respecte les usages scribaux jusque dans l'application non systématique des règles d'accentuation des mots.
 				
-				Enfin, concernant les passages biffés, les palimpsestes ou encore les passages illisibles, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
+				Enfin, concernant les passages biffés, les palimpsestes ou encore les passages illisibles, un ensemble de solutions d'encodage a été proposé dans le cadre du projet DAHN\footcite{chiffoleauFewTipsReading}. Plutôt que d'introduire des caractères tels que £, €, etc. dans les transcriptions, ce qui les éloignerait d'une transcription de type graphématique et limiterait les possibilités de réutilisation éventuelles de ces transcriptions, on a préféré appliquer les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a} (cf.~p.\pageref{biffes}).
 				
-			\subsection{Transcription manuelle \textit{versus} transcription automatique~: quelle bonne méthode pour l'entraînement~?}
+				Lorsqu'une correction est inscrite dans l'interligne, la ligne interlinéaire reçoit une annotation spécifique qui permet de l'identifier comme telle au moment de l'encodage\footnote{Voir \textit{infra} p.~\pageref{interlinear}.}.
+								
+			\subsection[Transcription manuelle \textit{versus} transcription automatique]{Transcription manuelle \textit{versus} transcription automatique~: quelle bonne méthode pour l'entraînement~?}
 				\label{progressive}
 				Il a été question plus haut des méthodes progressive et récursive d'entraînement\footnote{Voir \textit{supra} \ref{recursive}, p.~\pageref{recursive}.}.
 				
@@ -577,7 +648,7 @@
 					aufri. Je désire que et auvrage soit sique de nobre attention -}
 				\end{quote}
 				
-				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'oeil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de \gls{cds}.
+				Battu sur sa propre écriture d'entraînement, le modèle entraîné de zéro par H.~Souvay a donc été immédiatement délaissé pour privilégier le modèle \gls{lectaurep} affiné sur les contrats de mariage, dont l'acuité s'est révélée meilleure sur toutes les mains que l'on a eu l'occasion de tester. Comme on peut le constater à l'œil nu, une acuité de 80\% reste très insuffisante pour rendre le texte exploitable. Mais il était évident que la meilleure progression serait obtenue en entraînant ce même modèle à reconnaître une variété d'écriture des scribes de la correspondance de \gls{cds}.
 				
 				Déterminer le nombre de pages transcrites nécessaires à l'entraînement efficace d'un modèle de reconnaissances des caractères dépend d'une multiplicté de facteurs, au premier rang desquels on trouve la régularité de l'écriture et son degré de cursivité. Entrent également en ligne de compte les performances de modèles déjà produit sur des écritures similaires (mais combien proches~? c'est toute la question), la densité d'usage des abréviations ou encore la qualité des reproductions photographiques. La qualité de l'encre et le contraste entre l'encre et la page sont également de nature à influencer la taille du corpus d'entraînement nécessaire pour parvenir à de bonnes performances\footcite{stokesEScriptoriumVREManuscript2021}.
 				
@@ -640,7 +711,7 @@
 		\section{La correction semi-automatisée}
 			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
 			
-			Même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps~; elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son oeil pourrait les laisser échapper.
+			Même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps~; elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son œil pourrait les laisser échapper.
 			
 			Mais automatiser la correction des prédictions requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des prédictions justes, et comme les règles d'édition que l'on applique suivent de près les usages scribaux, la graphie des mots ne saurait être uniformisée. La notion de justesse doit donc être élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
 			
@@ -662,7 +733,8 @@
 						
 				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
-				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînerait la création d'une faute : \textit{naturellement} deviendrait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot\footnote{Pour l'application mot par mot, on a utilisé le module Spacy\cite{SpaCyIndustrialstrengthNatural}.}
+				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînerait la création d'une faute : \textit{naturellement} deviendrait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot
+				\footnote{Pour l'application mot par mot, on a utilisé le module \cite{SpaCyIndustrialstrengthNatural}.}.
 				
 				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
 								
@@ -695,7 +767,7 @@
 					phiiiy, tetsujiro, étreins-le, rugissons, causatif, armonia, qccupe-toi, découvez, masanté, jannelke, aleksi, qpidon, 500km, unejeunesse, birnholz-vazquez, traînons-nous, peterkins, koidry, vinitt, mentait., bonne-journée, micromonde, myélogène, uilise, 313e, rubindium, ddeokbeoki, 'irlandia, donie, brichelle
 				\end{quote}
 			
-				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme des formes sémantique coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse de nos prédictions. Nous avons ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français et pourtant est attestée 36~fois dans le dictionnaire francophone de Pyspellchecker (!) a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
+				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme de formes sémantiques coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse de nos prédictions. Nous avons ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français et pourtant est attestée 36~fois dans le dictionnaire francophone de Pyspellchecker (!) a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
 								
 			
 	\appendix
@@ -879,6 +951,7 @@
 			Les signes de ponctuation ont été transcrits fidèlement, y compris les points marquant une pause de la plume sans articulation syntaxique~: \textit{je ne sais pas . si vous en serez bien aise}. Les tirets ont été transcrits par le caractère ‒.
 		
 		\section{Passages biffés, palimpsestes}
+			\label{biffes}
 			Pour la transcription des phénomènes complexes tels que les passages biffés ou les palimpsestes, on a appliqué les conventions préconisées par la convention de Leyde\footcite{leidenConvention}, retenues dans le cadre du \gls{cremma}\footcite{pincheSeminaireCreationModele2021a}.
 			
 			On a transcrit tout ce qui était lisible, y compris les lettres biffées, lorsque c'était possible, privilégiant le dernier état du texte et en plaçant le passage corrigé entre crochets~: [abc].
