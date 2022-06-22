@@ -39,6 +39,7 @@
 \makeglossaries
 % Acronymes
 \newacronym{alto}{ALTO}{\textit{Analyzed Layout and Text Object}}
+\newacronym{atilf}{ATILF}{Analyse et Traitement Informatique de la Langue Française (Centre National de la Recherche Scientifique-Universié de Lorraine)}
 \newacronym{bnf}{BnF}{Bibliothèque nationale de France}
 \newacronym{cds}{C.~de Salm}{Constance de Salm}
 \newacronym{cg2c2v}{Corr.~g., 2e copie, 2e vol.}{long}
@@ -48,6 +49,7 @@
 \newacronym{enc}{ENC}{École nationale des chartes}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
+\newacronym{json}{Json}{\textit{JavaScript Object Notation} (format standard de représentation de données structurées)}
 \newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
@@ -260,7 +262,7 @@
 				\footnote{Voir infra, \ref{autographes}, p.~\pageref{autographes}.}.
 		
 			\subsection[Préparer le traitement d'un dossier]{Préparer le traitement d'un dossier~: méthodologie de sélection des pièces publiées}
-				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés et des éléments inventoriés mais non publiés. Un script de contrôle des données a été écrit pour dresser la liste des notices d'inventaire mais dont les données n'ont pas été validées pour la publication\cite{biayDonneesNonPublieesPy2022}~; il permet d'afficher ces données dans un fichier au format Json, en donnant la liste des images concernées.
+				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés et des éléments inventoriés mais non publiés. Un script de contrôle des données a été écrit pour dresser la liste des notices d'inventaire mais dont les données n'ont pas été validées pour la publication\cite{biayDonneesNonPublieesPy2022}~; il permet d'afficher ces données dans un fichier au format \gls{json}, en donnant la liste des images concernées.
 				
 				À ce titre tous les dossiers ne sont pas logés à la même enseigne. Par exemple des images du premier volume de la seconde copie\cite{CdS02001330} ont été inventoriées sans être publiées. En revanche, pour le deuxième volume\cite{CdS02001369}, les images non publiées n'ont pas non plus été inventoriées~; tout un lot de textes contenus dans les images de ce volume sont donc dépourvus de données d'inventaire. 
 				
@@ -279,7 +281,7 @@
 				
 				Il va de soi que la chaîne de traitement peut être conduite sans tenir compte de cette étape de sélection des pièces. Si le parti devait être pris de transcrire l'intégralité d'un recueil sans distinction des pièces inventoriées et de celles qui ne le sont pas, il suffirait simplement de passer outre cette étape.
 				
-				La sélection des pièces est donc une étape importante du début de la chaîne de traitement que l'on a élaborée dans le cadre de ce stage. Un \textit{notebook} lui a été consacré\footcite{biayPreparerTraitementDossier2022}. Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images qui sont associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier Json qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice
+				La sélection des pièces est donc une étape importante du début de la chaîne de traitement que l'on a élaborée dans le cadre de ce stage. Un \textit{notebook} lui a été consacré\footcite{biayPreparerTraitementDossier2022}. Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images qui sont associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier \gls{json} qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice
 				\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
 				
 				Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire. Dans le cas spécifique illustré par la figure \ref{non-invent-58} d'une image contenant un mélange de pièces inventoriées et de pièces non inventoriées, c'est au stade de la segmentation que l'élimination des lettres non inventoriées est proposée (voir \textit{infra}, p.~\ref{controle-segmentation-lettres-inventoriees}).
@@ -500,29 +502,6 @@
 		
 			\subsection{Entraîner des modèles de segmentation des pages}
 	    		\textbf{Cette section est à écrire.}
-	    		
-	    		% La méthode progressive et la méthode récursive
-	    		\label{recursive}
-	    		Constituter des données d'entraînement peut faire appel à deux méthodes principales~: la méthode progressive ou la méthode récursive.
-	    		
-	    		On entend par méthode progressive le simple fait de fabriquer à la main ses données d'entraînement de A à Z. La méthode récursive fait quant à elle appel à l'outil informatique et ce en suivant plusieurs étapes (par exemple pour un modèle dévolu à la transcription, mais la démarche serait la même pour un modèle de \gls{segmentation})~:
-	    		
-	    		\begin{enumerate}
-	    			\item Segmenter à la main quelques pages~;
-	    			\item Entraîner un premier modèle~;
-	    			\item Effectuer une \gls{segmentation} automatique sur quelques autres pages~;
-	    			\item Corriger cette \gls{segmentation}~;
-	    			\item Entraîner un second modèle, etc.\footcite{stokesEScriptoriumVREManuscript2021}
-	    		\end{enumerate}
-    			
-    			\begin{figure}[!h]
-    				\centering
-    				\includegraphics[width=15cm]{./img/entrainement-recursif.jpg}
-    				\caption{Schéma d'entraînement récursif appliqué à la transcription (\cite{pincheHTRPresentationProblematiques2021}).}
-    				\label{fig}
-    			\end{figure}
-    			
-    			On a fait appel à la méthode récursive pour l'entraînement des modèles de \gls{segmentation}~; en revanche la transcription manuelle a été privilégiée pour l'entraînement des modèles de transcription, comme expliqué plus loin\footnote{Voir \textit{infra} \ref{progressive}, p.~\pageref{progressive}.}.
     		
     		\subsection{Résultats des entraînements}
     			\textbf{Cette section est à écrire.}
@@ -618,10 +597,26 @@
 				Lorsqu'une correction est inscrite dans l'interligne, la ligne interlinéaire reçoit une annotation spécifique qui permet de l'identifier comme telle au moment de l'encodage\footnote{Voir \textit{infra} p.~\pageref{interlinear}.}.
 								
 			\subsection[Transcription manuelle \textit{versus} transcription automatique]{Transcription manuelle \textit{versus} transcription automatique~: quelle bonne méthode pour l'entraînement~?}
-				\label{progressive}
-				Il a été question plus haut des méthodes progressive et récursive d'entraînement\footnote{Voir \textit{supra} \ref{recursive}, p.~\pageref{recursive}.}.
+				Constituter des données d'entraînement peut faire appel à deux méthodes principales~: la méthode progressive ou la méthode récursive.
 				
-				La méthode récursive a été testée au cours du stage pour constituer des transcriptions d'entraînement~; on faisait appel de surcroît à la correction semi-automatisée des transcriptions dans le but de gagner du temps… pour finalement revenir à la transcription manuelle. La correction automatisée ne permettant pas d'obtenir un résultat, il fallait en réalité corriger deux fois la même page. Et même en se limitant à une correction purement manuelle des transcriptions automatiques, la nécessité de suivre les usages scribaux (notamment l'accentuation des mots) imposait un contrôle visuel plus intense pour corriger une transcription déjà faite que pour produite cette transcription.
+				On entend par méthode progressive le simple fait de fabriquer à la main ses données d'entraînement de A à Z. La méthode récursive fait quant à elle appel à l'outil informatique, et ce en suivant plusieurs étapes (par exemple pour un modèle dévolu à la transcription, mais la démarche serait la même pour un modèle de \gls{segmentation})~:
+				
+				\begin{enumerate}
+					\item Segmenter à la main quelques pages~;
+					\item Entraîner un premier modèle~;
+					\item Effectuer une \gls{segmentation} automatique sur quelques autres pages~;
+					\item Corriger cette \gls{segmentation}~;
+					\item Entraîner un second modèle, etc.\footcite{stokesEScriptoriumVREManuscript2021}
+				\end{enumerate}
+				
+				\begin{figure}[!h]
+					\centering
+					\includegraphics[width=15cm]{./img/entrainement-recursif.jpg}
+					\caption{Schéma d'entraînement récursif appliqué à la transcription (\cite{pincheHTRPresentationProblematiques2021}).}
+					\label{fig}
+				\end{figure}
+							
+				La méthode récursive a été testée au cours du stage pour constituer des transcriptions d'entraînement~; on faisait appel de surcroît à la correction semi-automatisée des transcriptions dans le but de gagner du temps… pour finalement revenir à la transcription manuelle. La correction automatisée ne permettant pas d'obtenir un résultat parfait, il fallait en réalité corriger deux fois la même page. Et même en se limitant à une correction purement manuelle des transcriptions automatiques, la nécessité de suivre les usages scribaux (notamment l'accentuation des mots) imposait un contrôle visuel plus intense pour corriger une transcription déjà faite que pour produite cette transcription.
 			
 			\subsection{Éliminer d'une transcription les lignes attestant des écritures parasites}
 				La présence de plusieurs écritures dans la même image est problématique pour évaluer la capacité d'un modèle à reconnaître une écriture particulière, car la présence d'une écriture différente dans la même page est de nature à parasiter cette évaluation. Or la phase de \gls{segmentation} de la page, qui permet la reconnaissance de toutes les lignes d'écriture, ne peut pas être paramétrée pour ignorer une ou plusieurs écritures déterminées. Une fois toutes les lignes de l'image reconnue, il est donc nécessaire de supprimer les lignes que l'on juge parasites.
@@ -709,7 +704,7 @@
 				
 				Ce script analyse le contenu des dossiers de test et d'entraînement pour lesquels des préconisation de nommage et d'organisation ont été formulées plus haut~; il enregistre la date et l'heure du moment, dénombre les dossiers de mains et récupère leurs labels, il dénombre également le nombre de fichiers contenus dans les vérités de terrain (dossiers \textit{train}) de chaque main et permet ainsi de suivre l'accroissement de tel ou tel sous-corpus d'entraînement au fil des opérations. Les résultats de tests du nouveau modèle sur les différentes mains doivent ensuite être inscrits manuellement dans le fichier.
 				
-				Ce script permet également de conserver une trace de la distribution des fichiers où les mains sont attestées et de la liste de ceux qui composent les corpus de test et d'entraînement. Ces listes constituent ainsi l'archive détaillée des tests et des entraînements que l'on a effectués. Elles permettent la suppression de l'arborescence du dossier d'entraînement que l'on a élaboré sans perte d'information et garantissent la transparence des données d'entraînement du modèle\footnote{Le fichier contenant ces données se trouve à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/blob/main/htr/mains/mains.json}.}.
+				Ce script permet également de conserver une trace de la distribution des fichiers où les mains sont attestées et de la liste de ceux qui composent les corpus de test et d'entraînement. Ces listes constituent ainsi l'archive détaillée des tests et des entraînements que l'on a effectués. Elles permettent la suppression de l'arborescence du dossier d'entraînement que l'on a élaboré sans perte d'information et garantissent la transparence des données d'entraînement du modèle\footnote{Le fichier contenant ces données se trouve à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/blob/main/htr/mains/mains.\gls{json}}.}.
 				
 				Comment procéder à de nouveaux entraînements pour adapter le modèle de reconnaissance à d'autres mains de la correspondance~? En théorie, il serait plus indiqué de poursuivre l'entraînement de modèle par l'enrichissement du corpus déjà constitué et la réitération des entraînements que l'on a effectués. Recommencer en somme les entraînement que l'on a effectué à partir d'un corpus plus riche. Cette option est celle qui garantit la plus grande généricité de modèle. Mais une autre méthode peut naturellement être envisagée~: repartir du modèle que l'on a produit et l'affiner avec des données nouvelles. Cette méthode peut nuire quelque peu à la généricité du futur modèle (bien que nous n'ayons pas eu la possibilité de tester ce point) mais elle permet de réduire considérablement le temps de calcul des entraînements. Ce processus extrêmement gourmand en temps de calcul (et très dépendant des performances de l'ordinateur utilisé), sera sérieusement écourté si l'on se contente d'un affinage par quelques données supplémentaires.
 							
@@ -724,37 +719,40 @@
 		\section{La correction semi-automatisée}
 			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
 			
-			Même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps~; elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son œil pourrait les laisser échapper.
+			Toutefois, même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps. Elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son œil pourrait les laisser échapper.
 			
-			Mais automatiser la correction des prédictions requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des prédictions justes, et comme les règles d'édition que l'on applique suivent de près les usages scribaux, la graphie des mots ne saurait être uniformisée. La notion de justesse doit donc être élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
+			Mais automatiser la correction des prédictions requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des prédictions justes au regard des normes d'édition retenues. En l'occurrence, ces normes suivent de près les usages scribaux, la graphie des mots ne saurait donc être uniformisée par la correction automatisée~: la notion de justesse est élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse (on a parlé de tamis) pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
 			
 			L'automatisation des corrections ne consiste donc pas à remplacer automatiquement le contenu des prédictions mais à analyser ce contenu et à signaler les mots représentant un problème, et si possible à proposer une correction que l'éditeur sera libre d'appliquer ou non.
 			
-			Le résultat de cette opération est imparfait ‒ ses limites sont discutées ci-après. On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vértité de terrain ou de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions au format \gls{alto} vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
+			Le résultat de cette opération est imparfait (ses limites sont discutées ci-après). On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vérité de terrain, encore moins de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
 			
-			Nous avons suivi la démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} et proposé quelques développements aux scripts issus de ce projet\footnote{Le script principal porte le nom de \textit{spellcheckTexts}~: \cite{biaySpellcheckTextsPy2022}. Ce script est fondé sur l'utilisation du module publié par \cite{barrusPyspellcheckerPurePython}.}.
+			La démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} a été suivie et enrichie de quelques développements appliqués aux scripts de ce projet
+			\footnote{Le script principal porte le nom de \textit{spellcheckTexts}~: \cite{biaySpellcheckTextsPy2022}. Ce script est fondé sur l'utilisation du module publié par \cite{barrusPyspellcheckerPurePython}.}.
 					
 			\subsection{Trouver le bon compromis entre granularité et performance}
-				Les qualités respectives de plusieurs méthodes ont été évaluées afin de d'établir les paramètres les plus intéressants pour cette phase du travail. On a évoqué précédemment l'impossibilité d'un résultat parfait. L'automatisation des corrections ne permet absolument pas de faire l'économie d'une révision approfondie du texte par l'éditeur. Elle doit par conséquent faire preuve d'un haut degré de performance~: son but est d'abord et avant tout de faire gagner du temps. Or, chaque forme signalée au cours de cette phase requiert une décision de l'éditeur~: ces formes doivent donc être très pertinentes afin de ne pas gaspiller le temps de ce dernier. Contrôler chaque mot dans son contexte serait largement contre productif.
+				Les qualités respectives de plusieurs méthodes ont été évaluées afin de d'établir les paramètres les plus intéressants pour cette phase du travail. On a évoqué précédemment l'impossibilité d'un résultat parfait. En effet, l'automatisation des corrections ne permet absolument pas de faire l'économie d'une révision approfondie du texte par l'éditeur. Elle doit par conséquent faire preuve d'un haut degré de performance~: son but est d'abord et avant tout de faire gagner du temps. Or, chaque forme signalée au cours de cette phase requiert une décision de l'éditeur~: faut-il accepter la proposition de correction, la modifier, ou ne rien faire~? Les propositions de correction doivent donc être les moins nombreuses et les plus pertinentes possibles, afin de ne pas gaspiller le temps de l'éditeur~; contrôler chaque mot dans son contexte serait largement contre-productif.
 				
-				Il est donc très vite apparu nécessaire de ne pas signaler à l'éditeur les mots dont la graphie a été validée par ailleurs. Pour cela, on s'est appuyé d'une part sur un dictionnaire généraliste de la langue française et d'autre part sur les mots de la correspondance-même de \gls{cds}, à savoir les mots contenus dans les vérités de terrain que l'on a produites pour le test et l'entraînement des modèles de reconnaissance d'écriture\footnote{Pour exploiter ce second réservoir de mots, une fonction appelée \textit{collecteMots} a été ajoutée au script principal.}.
+				Il est donc très vite apparu nécessaire de ne pas signaler à l'éditeur les mots dont la graphie a été validée par ailleurs. Pour cela, on s'est appuyé d'une part sur un dictionnaire généraliste de la langue française et d'autre part sur les mots de la correspondance-même de \gls{cds}, à savoir les mots contenus dans les vérités de terrain que l'on a produites pour le test et l'entraînement des modèles de reconnaissance d'écriture, ainsi que les corrections validées pour les pages prédécemment traitées 
+				\footnote{Pour exploiter ce second réservoir de mots, une fonction appelée \textit{collecteMots} a été ajoutée au script principal.}.
 			
-				En résumé, la correction automatisée se concentre sur l'orthographe des mots. Elle ne traite pas la ponctuation. De plus, elle considère qu'une forme présente dans les vérités de terrain ou dans le dictionnaire de référence de la langue française est en soi valide. Ainsi, elle ne signale pas les mots mal prédits dont l'orthographe est attestée ailleurs dans les vérités de terrain~; par exemple, dans la prédiction \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas signalée, car le mot \textit{vu} est attesté ailleurs.
+				En résumé, la correction automatisée se concentre sur l'orthographe des mots. Elle ne traite pas la ponctuation. De plus, elle considère qu'une forme présente dans les vérités de terrain, dans les corrections déjà validées ou dans le dictionnaire de référence de la langue française est en soi valide. Ainsi, elle ne signale pas les mots mal prédits dont l'orthographe est attestée ailleurs~; par exemple, dans la prédiction \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas signalée, car le mot \textit{vu} est attesté ailleurs.
 					
 			\subsection{Analyser les mots}
-				Le script procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence par des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot. Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, mais n'est pas capable d'associer la forme \textit{pubièes} aux mots de la famille de \textit{publier}.
+				Le script procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence par des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot. Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, il est encore capable d'associer la forme \textit{pubièes} à un mot de la famille de \textit{publier} (deux fautes), mais en revanche, il n'est pas capable de faire cette association pour la forme \textit{pubièès}, qui par rapport aux formes de la famille de \textit{publier} qu'il connaît comporte au moins trois fautes.
 						
-				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
+				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires au format \gls{json} qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
 				
-				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînerait la création d'une faute : \textit{naturellement} deviendrait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot
+				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînait la création d'une faute~: \textit{naturellement} devenait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot
 				\footnote{Pour l'application mot par mot, on a utilisé le module \cite{SpaCyIndustrialstrengthNatural}.}.
 				
-				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions, il n'était plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait donc obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
-								
+				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine
+				\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions. Il n'était dès lors plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait ainsi obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
+
 			\subsection{Gérer les résolutions ambiguës}
 				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple la forme \textit{cele} peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
 							
-				Dans un premier temps nous avons procédé selon une méthode d'automatisation qui neutralisait les corrections ambiguës~: \textit{cele} était intégré à la liste globale des corrections avec une absence de lemme afin d'être exclu de la correction automatique.
+				On a procédé dans un premier temps selon une méthode qui neutralisait les corrections ambiguës~: \textit{cele} était intégré à la liste globale des corrections avec une absence de résolution afin d'être exclu de la correction automatique.
 				
 				Cette méthode présentait plusieurs inconvénients~:
 
@@ -762,7 +760,6 @@
 					\item Une fois que l'on avait procédé à des corrections pour les mots d'une page, le script qui les intégrait au fichier rassemblant toutes les corrections contrôlait qu'une forme ne puisse pas être associée à plusieurs corrections. Lorsqu'une ambiguïté était repérée, il fallait intervenir sur les deux fichiers pour neutraliser la correction. Devenu fréquent, ce processus diminuait le bénéfice de temps attendu de la correction automatique~;
 
 					\item D'autre part, il s'est avéré que les corrections ambiguës sont nombreuses, car il suffit d'une faute sur un petit mot pour le rendre ambigu avec un autre mot~: \textit{uue} peut être corrigé en \textit{rue} ou en \textit{une}~; \textit{veus} peut être corrigé en \textit{veux} ou en \textit{vous}~; \textit{ceste} peut être corrigé en \textit{cesse} ou en \textit{cette}.
-				
 				\end{itemize}
 				
 				Plutôt que neutraliser la correction de ces mots, il s'est donc avéré nécessaire de prendre en charge ces ambiguïtés. Mais se contenter de lister des propositions de correction de manière indiscriminée aurait pu là encore nuire aux performances de l'opération. Afin de faciliter la sélection de la bonne correction parmi une liste de propositions, une nouvelle fonction a été écrite\footnote{Il s'agit de la fonction dénommée \textit{ordreOccurrences}~; cf.~\cite{biaySpellcheckTextsPy2022}.} dont le rôle est de classer les mots attestés dans les vérités de terrain par ordre décroissant de nombre d'occurrences. Ainsi, le mot le plus fréquent est toujours proposé comme premier choix au correcteur, ce qui maximise les chances qu'il n'ait pas à intervenir sur la correction à effectuer.
@@ -770,7 +767,7 @@
 			\subsection{Élaborer et enrichir un nouveau dictionnaire de la langue française}
 				La capacité de l'application Python Pyspellchecker à analyser les formes des mots repose sur des dictionnaires numériques spécifiques à chaque langue. Comme l'indique la documentation de l'application\footcite{barrusPyspellcheckerPurePython}, ces dictionnaires ont été élaborés à partir de la collecte massive de formes de mots parmi les ressources du site OpenSubtitles\footnote{URL~: \url{http://www.opensubtitles.org/}}, qui fournit des fichiers de sous-titres pour les oeuvres cinématographiques dans de très nombreuses langues.
 				
-				La récolte lexicale qui découle de cette source est extrêmement vaste. Pour la langue française, le nombre de formes collectées est de presque 800~000~! Il est important de rappeler qu'il s'agit de formes et non de lemmes~: on y trouvera pour le verbe \textit{aimer}~: aime, aimes, aimer, aimons, aimez, aiment, etc.
+				La récolte lexicale qui découle de cette source est extrêmement vaste. Pour la langue française, le nombre de formes collectées est de presque 800\,000~! Il est important de rappeler qu'il s'agit de formes et non de lemmes~: on y trouvera pour le verbe \textit{aimer}~: aime, aimes, aimer, aimons, aimez, aiment, etc.
 				
 				Il n'a pas été possible de découvrir comment OpenSubtitles rassemble ses sources textuelles, mais il est assez évident que la principale origine de ces sous-titres sont les fichiers contenus dans les supports DVD et Blu-Ray. Certains de ces fichiers sont en outre issus de la traduction automatique des sous-titres d'une langue source vers une langue cible, ce dont résultent potentiellement des données de piètres qualité.
 				
@@ -780,9 +777,38 @@
 					phiiiy, tetsujiro, étreins-le, rugissons, causatif, armonia, qccupe-toi, découvez, masanté, jannelke, aleksi, qpidon, 500km, unejeunesse, birnholz-vazquez, traînons-nous, peterkins, koidry, vinitt, mentait., bonne-journée, micromonde, myélogène, uilise, 313e, rubindium, ddeokbeoki, 'irlandia, donie, brichelle
 				\end{quote}
 			
-				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme de formes sémantiques coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse de nos prédictions. Nous avons ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français mais est attestée 36~fois dans le dictionnaire francophone de Pyspellchecker, a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
-								
+				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme de formes sémantiques, coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse des prédictions. On a ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français mais est attestée pas moins de 36~fois dans le dictionnaire francophone de Pyspellchecker, a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
+				
+				Pour remédier à ce problème, on a fait appel au répertoire de textes numérisés de la ressource en ligne Frantext\footcite{Frantext}. Frantext est un corpus numérique développé par l'\gls{atilf}, dont la dernière version (mise à jour en janvier 2022) comptabilise 5555 références et 264 millions de mots. Les textes y sont proposés dans un encodage \gls{tei} très simple et avec une lemmatisation de chaque forme. Plus intéressé par les formes des mots que par leur lemme, on a pu facilement récupérer toutes les formes contenues dans une sélection de textes pour construire un dictionnaire au format \gls{json}.
+				
+				Dans un premier temps, il s'agissait de procéder à une sélection des textes les plus pertinents dans le vaste corpus de Frantext. Trois critères complémentaires ont été retenus pour établir une première collection de cinquante textes. Premièrement, tous les textes devaient être dans le domaine public afin d'éviter toute difficulté liée à la réutilisation des données. Deuxièmement, les textes devaient avoir été publiés grosso-modo dans la période d'activité de \gls{cds}~: la fourchette 1780-1850 a ainsi été retenue comme critère de sélection. Troisièmement, les textes les plus riches en mots ont été privilégiés, afin de permettre la constitution du dictionnaire le plus complet possible à partir d'un petit nombre de textes exportés
+				\footnote{Car bien que les textes soient librement téléchargeables dès lors que l'on dispose d'un compte d'utilisateur académique (celui de la Bibliothèque de l'École des chartes en l'occurrence), l'application pose une limite au volume de données téléchargeables, une limite vite atteinte avec un petit nombre de textes volumineux.}. 
+				
+				Au sein de la collection de cinquante textes qui a résulté de ces critères\footnote{La liste est consultable à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/blob/main/htr/py/dicos/frantext/recherche-frantext.csv}.}, on a procédé à une seconde sélection. On a ainsi retenu quelques textes parmi les plus volumineux pour disposer rapidement d'un dictionnaire important, des éditions de correspondance et de la littérature épistolaire pour rejoindre le genre des sources du projet (\textit{Les liaisons dangereuses} offrant en outre l'avantage d'une date haute, à la différence de la plupart des titres de la collection), et un ouvrage historique volumineux susceptible de contenir de nombreux noms propres, à savoir les \textit{Mémoires d'outre-tombe}.
+				
+				Voici la liste complète des références sélectionnées, par ordre alphabétique des noms d'auteurs~:
+				\begin{enumerate}
+					\item BALZAC Honoré, 1844, \textit{Le Lys dans la vallée}, roman~;
+					\item CHATEAUBRIAND François-René de, 1848, \textit{Mémoires d'outre-tombe}~;
+					\item CHODERLOS DE LACLOS Pierre-Ambroise-François, 1782, \textit{Les Liaisons dangereuses}, roman~;
+					\item GAUTIER Théophile, 1843, \textit{Voyage en Espagne}, récit de voyage~;
+					\item GUÉRIN Eugénie de, 1847, \textit{Lettres (1831-1847)}, correspondance~;
+					\item HUGO Victor, Marie, 1848, \textit{Correspondance : t. 1 : 1814-1848}, correspondance~;
+					\item SUE Eugène, 1843, \textit{Les Mystères de Paris}, roman~;
+					\item SUE Eugène, 1845, \textit{Le Juif errant}, roman.
+				\end{enumerate}
 			
+				Une fois les fichiers de ces références téléchargés et stockés, leur contenu a été récupéré par un script Python\footcite{biayDictGenerateurPy2022}. Celui-ci ouvre chaque fichier, en récupère toutes les formes sémantiques, compte le nombre d'occurrences de chaque forme et les inscrit dans un fichier au format \gls{json} qui consitue le dictionnaire final\footnote{Le fichier se trouve à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/blob/main/htr/py/dicos/general.\gls{json}}.}.
+				Dans le même temps, ce script complète un tableau dans lequel sont listés les textes pris en compte (dès lors que ceux-ci existent dans la collection de cinquante textes que l'on a décrite plus haut). Il est donc des plus aisé de télécharger de nouveaux textes de la collection et de relancer le script~: l'enrichissement du dictionnaire se fera en même temps que la mise à jour des sources qu'il contient.
+				
+				Une fois ce dictionnaire constitué, il était intéressant de le comparer au dictionnaire francophone par défaut de Pyspellchecker. Le nouveau dictionnaire est riche de presque 60\,000 formes, parmi lesquelles il faut compter des noms propres, des doublons de forme dans la mesure où la casse a été respectée (les mots peuvent donc être attestés deux fois, avec ou sans majuscule), ainsi que les signes de ponctuation (ils ne représentent naturellement qu'une poignée d'entrées).
+				Sur ces 60\,000 formes, moins de 5\,000 sont absentes de l'ancien dictionnaire (et l'on peut soupçonner que de nombreux noms propres ou graphies anciennes sont impliqués)~; en revance presque 800\,000 formes de l'ancien dictionnaire sont absentes du nouveau. Si l'on suppose un instant que le dictionnaire que l'on vient de constituer couvre très largement les besoins de notre projet (son utilisation l'a confirmé), on peut en déduire que le dictionnaire de Pyspellchecker contenait, du point du projet, 94\% de formes parasites. On peut donc estimer que le gain de performance pour l'exécution de l'analyse automatique des mots a été énorme.
+				
+				Mais une analyse automatique des transcriptions appuyée sur ce seul dictionnaire reste insuffisante et la nécessité d'un dictionnaire propre à la correspondance de \gls{cds} s'est trouvée confirmée à l'usage. En effet, notre nouveau dictionnaire généraliste ignore la variété des usages scribaux concernant l'accentuation des mots (en particulier l'usage de l'accent aigu), et il ignore bien entendu les noms propres des familiers de \gls{cds}. 
+				
+				En outre, une différence de conception sépare le nouveau dictionnaire généraliste du dictionnaire des formes relevées dans la correspondance. Pour les besoins de la correction des transcriptions automatiques, il était utile, dans le dictionnaire de la correspondance, de considérer comme une forme unique deux mots reliés par une élision (\textit{j'ai}, \textit{l'on}, etc.). En effet, la reconnaissance automatique d'écriture peut facilement ne pas voir l'élision d'un mot (il transcrit alors \textit{jai}, \textit{lon}), d'où le besoin de corriger fréquemment ce problème en prenant les deux mots comme un tout. Dans le nouveau dictionnaire généraliste, les élisions sont traitées comme deux formes distinctes, et donc séparées. Cette discordance entre dictionnaire généraliste et dictionnaire de la correspondance avait pour inconvénient que, si la correction automatique de \textit{effvoi} en \textit{effroi} fonctionnait bien, en revanche la forme \textit{l'effvoi} avec son élision ne pouvait pas être automatiquement mise en relation avec le mot \textit{effroi}. Il y a été remédié sans modifier la conception spécifique de chaque dictionnaire, mais simplement en ignorant les élisions au moment de l'analyse des mots par le script SpellcheckTexts
+				\footcite{biaySpellcheckTextsPy2022}.
+				
 	\appendix
 	
 	\renewcommand{\appendixpagename}{Annexes}
