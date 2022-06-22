@@ -63,6 +63,22 @@ def collecteMots():
     # Certains mots sont toujours en début de ligne et ne sont donc pas automatiquement pris en compte
     comptage["Lettre"] = 100
     
+    # On ajoute les lemmes validés du dictionnaire de correction de la correspondance
+    with open(DICTCDS) as jsonf:
+        # On charge les données du dictionnaire
+        correctionsCDS = json.load(jsonf)
+    # On boucle sur chaque forme
+    for forme in correctionsCDS:
+        lemmes = correctionsCDS[forme]["lem"]
+        # On boucle sur chaque lemme
+        for lemme in lemmes:
+            # On élimine les parenthèses indésirables
+            lemme = lemme.replace("(", "").replace(")", "")
+            # Si le lemme n'est pas présent dans le comptage (en excluant les lemmes ayant une espace ou une coupure)
+            if not comptage.get(lemme) and " " not in lemme and "-" not in lemme:
+                # On l'ajoute avec une valeur forgée de 1
+                comptage[lemme] = 1
+    
     # On exporte le comptage des mots pour les contrôler au besoin
     with open("./py/dicos/motsCDS.json", mode="w") as jsonf:
         json.dump(comptage, jsonf, ensure_ascii=False, indent=1)
@@ -123,7 +139,7 @@ def spellcheckTexts():
     - URL: https://github.com/FloChiff/DAHNProject/blob/master/Project%20development/Scripts/Correction/spellcheck_texts_PAGEXML.py
     """
     spell = SpellChecker(language=None, local_dictionary=DICTGENERAL, case_sensitive=True, distance=2)
-    # With 'case_sensitive=True', we precise that all the mots are processed as they are written in the text
+    # With 'case_sensitive=True', we precise that all the words are processed as they are written in the text
     # This means that all the uppercase mots will be considered wrong but that helps correct them
     # To use that technique, we have to call a local dictionary
     
