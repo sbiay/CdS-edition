@@ -29,11 +29,16 @@ def textCorrectionXML(no_update):
     tri = triFichiers(XMLaCORRIGER)
     # On récupère la liste des fichiers XML déjà corrigés
     corriges = triFichiers(XMLCORRIGEES)
+    
     # On définit la liste des fichiers à traiter en fonction de l'option --no-update
     atraiter = []
     if no_update:
         for fichier in tri:
-            if fichier not in corriges:
+            # On sépare le nom du fichier de son chemin complet
+            chemin = fichier.split("/")
+            fichierSSchemin = chemin[-1]
+            # On cherche le nom du fichier dans le dossier des prédictions corrigées
+            if "./predic-corrigees/" + fichierSSchemin not in corriges:
                 atraiter.append(fichier)
     else:
         atraiter = tri
