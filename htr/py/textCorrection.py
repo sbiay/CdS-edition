@@ -50,8 +50,8 @@ def textCorrectionXML(no_update):
             with open(DICTPAGESCORR + "page_" + fichier[len(XMLaCORRIGER):].replace(".xml", ".json")) as dico:
                 dictPage = json.load(dico)
         except:
-            print(f"Le dictionnaire de page page_{fichier[len(XMLaCORRIGER):].replace('.xml', '.json')} "
-                  f"n'a pas été chargé correctement (existe-t-il ?).")
+            print(f"Le dictionnaire {DICTPAGESCORR}page_{fichier[len(XMLaCORRIGER):].replace('.xml', '.json')} "
+                  f"n'a pas été chargé correctement (existe-t-il ? est-il valide ?).")
             break
         
         # On ouvre le fichier XML d'entrée
@@ -168,7 +168,7 @@ def textCorrectionXML(no_update):
             # On implémente l'index pour la ligne suivante
             index += 1
         
-        print(f"Le fichier {fichier[len(XMLaCORRIGER):]} a été corrigé avec succès")
+        print(f"Le fichier {fichier[len(XMLaCORRIGER):]} a été corrigé avec succès.\n")
         
         # On remplace le fichier correctionsCDS.json avec les contextes actualisés
         with open(DICTCDS, mode="w") as f:
