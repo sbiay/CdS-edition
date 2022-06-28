@@ -4,7 +4,7 @@ Documents anciens et reconnaissance automatique des écritures manuscrites, coll
 # Organisateurs
 Comité d’organisation : Ariane Pinche et Floriane Chiffoleau
 
-Comité scientifique : Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes
+Comité scientifique : Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes.
 
 # Archive vidéo
 - Le 23 juin : https://www.youtube.com/watch?v=dE1XUXiuitU
@@ -478,64 +478,31 @@ Christophe Tufféry, ingénieur de recherche à l’Institut national de recherc
 Dans le cadre d’une thèse de doctorat engagée depuis 2019, nous proposons une étude historiographique et épistémologique des effets du numérique sur l’archéologie et sur les archéologues sur les cinquante dernières années, une période pendant laquelle l’archéologie a vu ses méthodes modifiées par l’introduction progressive de la micro-informatique dès le terrain. Cette recherche s’appuie sur notre expérience comme archéologue depuis la fin des années 1970 et sur notre activité à l’Inrap depuis 2010. Nous avons exploité plusieurs archives de chantiers de fouilles dont celles d’un chantier sur lequel nous avons été fouilleur bénévole entre 1980 et 1988. Nous avons procédé à la numérisation de deux cahiers de fouille. Nous avons ensuite procédé à leur transcription numérique avec trois solutions techniques différentes et complémentaires, dont eScriptorium, qui présentent des avantages et des limites techniques et méthodologiques. Nous avons pu ensuite exploiter les résultats de la transcription avec diverses méthodes et outils numériques.
 
 # Ma synthèse
-## La recherche à l'heure de l'HTR
-### Communauté 
-Communauté européenne : Portugal, Italie, Suisse, France ; ainsi que partenaires nord-américains [@marguin-hamonDiscoursOuverturePresentation2022] .
+Dans le cadre du projet CREMMALab soutenu par le DIM MAP, le centre Jean-Mabillon (École nationale des chartes), en partenariat avec le LAMOP et le LabEX Hastec, a organisé les 23 et 24 juin 2022 un colloque intitulé *Documents anciens et reconnaissance automatique des écritures manuscrites*[^1].
 
-### Une remise en question de la place du chercheur 
-Dans le processus d’établissement du texte (argument principal)
+[^1]: Comité d’organisation : Ariane Pinche et Floriane Chiffoleau. Comité scientifique : Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes.
 
-### Applications : Transkribus et eScriptorium
-Des projets qui passent d'une application à l'autre :
-- [@leblancTranskribusEScriptoriumRetour2022]
-- [@paupeCursive17eSiecle2022]
+Ce colloque a été l'occasion de rassembler une communauté scientifique représentant internationalement les pays du sud de l'Europe (France, Italie, Grêce, Portugal, Suisse) et quelques partenaires nords-américains autour des enjeux, des finalités, des problèmes et des solutions d'avenir de la reconnaissance automatique des écritures manuscrites ou HTR [@marguin-hamonDiscoursOuverturePresentation2022]. Il a ainsi illustré les différentes facettes du projet CREMMA-Lab : favoriser une réflexion sur la meilleure façon de produire des données ; irriguer de ses réflexions une communauté de chercheurs qui ne fait que croître autour des enjeux de l'HTR ; proposer des solutions aux institutions patrimoniales qui sont de plus en plus intéressées par ces technologies [@campsCremmaLabProjectsTranscription2022].
 
-- L'infrastructure CREMMA est prête à être ouverte au public (sur inscription par voie institutionnelle) [@marguin-hamonDiscoursOuverturePresentation2022] : offrir un serice d'accès à eScriptorium, en part. avec Sripta.
-- Infrastructure Fondue : [@gabayFoNDUELightweightHTR2022]
+### Des finalités et des publics multiples
+Les finalités de l'HTR sont multiples. Elle concerne aussi bien les scientifiques qu'un public élargi aux savants et aux curieux. Les projets *Crimes et châtiments* et *Lettres en lumières* [@paupeCursive17eSiecle2022] et  [@fizaineLettresLumieres2022] ont illustré l'intérêt de l'HTR pour donner accès à la lecture des textes en dehors du monde académique ou pour le développement de projets de transcription contributive.
 
-Les nouveautés d'eScriptorium :
-- [@kiesslingNewDevelopmentsKraken2022]
+Pour le public scientifique, l'HTR est en mesure de rendre accessibles des données selon plusieurs modalités. 
+Le projet POPP (Projet d’Océrisation des Recensements de la Population Parisienne) a montré comment elle permet de construire de vastes bases de données par l'extraction d’informations de recensements historiques de la population dans les textes analysés [@constumReconnaissanceExtractionInformations2022].
+Le projet Sofer Mahir a proposé une méthode pour l'établissement d'éditions critiques impliquant une quinzaine de témoins [@stoklbenezraHTRCriticalEdition2022], ce qui impose de passer par une étape de structuration de la hiérarchie du documents à partir de témoins n'ayant pas tous la même mise en page.
+Les travaux de thèse de doctorat de Christophe Tufféry [@tufferyRetourExperiencesUtilisation2022] ont montré quant à eux un exemple de développement d'application visant, à partir de la transcription des carnets de fouilles archéologiques, à proposer des visualisation des ces données permettant de comprendre l'histoire d'une fouille programmée.
 
-### Technologies
-- [@kiesslingNewDevelopmentsKraken2022]
-- [@fizaineLettresLumieres2022]
+Outre la mise à disposition des sources textuelles ou des données qu'elles contiennent, l'HTR offre des possibilités de traitement massif de ces données en ouvrant plusieurs finalités. Les *Expérimentations pour l’analyse automatique de sources chinoises anciennes* [@bizais-lilligExperimentationsPourAnalyse2022] ont montré l'intérêt de l'HTR pour suivre l'utilisation de textes à travers les siècles. Dans les domaines épigraphique et paléographique également, les algorithmes HTR servent d'outil à l'analyse des mots et des glyphes par [@boschettiEpiSearchRecognisingAncient2022] ; l'analyse des erreurs de reconnaissance des caractères est également exploitée afin dégager des caractéristiques d'évolution des écritures [@paraskeviHTRHandwrittenPaleographic2022].
 
-Personnaliser Les techniques d'apprentissage : A joué un rôle important pour Le projet « Crimes et châtiments » (2022-2025) :
-- Modification de l'architecture d'apprentissage de Kraken => acuité de 85%
-- Modification du param. -r (vitesse d'apprentissage) : grosse influence [@paupeCursive17eSiecle2022]
+Enfin le projet CHAMDOC a montré que l'HTR peut intervenir dans la préservation des langues écrites en péril, comme c'est le cas du cham ancien, langue véhiculaire utilisée dans des inscriptions gravées dans tout le centre du Vietnam du VIe au XVIIe siècle [@schweyerAnalyseReconnaissanceIndexation2022].
 
-### Des finalités multiples
-- Public élargi :
-	- Le projet « Crimes et châtiments » (2022-2025) vise la lecture par un public qui n'est pas forc. acad. : permettre la lecture des sources
-		- Maj. rendues
-		- Appréciation du transcripteur pour les maj. min. 
-		- Restitution de la valeur moderne IJ UV
-		- Développement des abréviations
-		- Césures et apostrophes fidèles à la source [@paupeCursive17eSiecle2022].
+### Transkribus et eScriptorium
+Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu l'occasion de tester les deux applications [@leblancTranskribusEScriptoriumRetour2022] [@paupeCursive17eSiecle2022] et ainsi fait part de leurs expériences.
+L'HTR, en particulier l'entraînement de modèles, est un processus exigeant de très grandes capacités de calcul, et donc des infrastructures coûteuses. L'infrastructure CREMMA ouvrira bientôt au public des institutions académiques partenaires une instance d'eScriptorium [@marguin-hamonDiscoursOuverturePresentation2022] dotée de trois GPU (*Graphics Processing Unit* ou unité de traitement graphique), chacune représentant en moyenne un coût d'une dizaine de milliers d'euros. L'infrastructure Fondue de l'université de Genève bénéficie quant à elle de la puissance du superordinateur (HPC) de l'université, doté de 150 GPU. La recherche des meilleures performances des entraînements de modèles consiste à trouver le bon équilibre entre temps de calcul par image et nombre de tâches lancées en parallèle [@gabayFoNDUELightweightHTR2022].
 
-- Public scientifique :
-	- Etablir des éditions critiques : 
-		- [@stoklbenezraHTRCriticalEdition2022]
-	- Extraction d'informations :
-		- extraction d’informations de recensements historiques de la population [@constumReconnaissanceExtractionInformations2022]
-	- Visualisation de données : carnets de fouilles archéologiques [@tufferyRetourExperiencesUtilisation2022]
-
-- Recherche
-	- Stylométrie :
-		- [@cuellarModeleOuvertPour2022]
-	- Conservater un patrimoine linguistique :
-		- Cham [@schweyerAnalyseReconnaissanceIndexation2022]
-	- Histoire des textes : 
-		- Suivre l'utilisation de portions de texte à travers les siècles : normalisation linguistique [@lilligExperimentationsPourAnalyse2022]
-	- Epigraphie/paléographie :
-		- Segmentation au niveau de la granularité du mot pour les inscriptions dessinées, et même au niveau du glyphe (par un entraînement over-fitted du modèle de seg.) [@boschettiEpiSearchRecognisingAncient2022]
-		- Analyse du type d'erreur selon les siècles pour dégager des caractéristiques d'évolution de l'écriture (?) jusqu'au XVe-XVIe s. ; le classement des fautes permet d'objectiver ces évolutions [@paraskeviHTRHandwrittenPaleographic2022]
+Les développements en cours de l'interface eScriptorium donneront lieu dans un avenir proche à une fonctionnalité de recherche des termes transcrits, à du balisage TEI basique, à la possibilité d'annotation graphique des pages, à l'alignement automatique d'un texte existant sur une image et à l'intégration de l'ordre des lignes dans l'entraînement des modèles de segmentation [@kiesslingNewDevelopmentsKraken2022].
 
 
-### Apport du projet CREMMA LAB
-- Réflexion sur la meilleure façon de produire des données
-- Irriguer une communauté de chercheur de plus en plus grande
-- Proposer des solutions aux institutions patr. de + en + intéressées par ces technologies [@campsCremmaLabProjectsTranscription2022].
 
 ## Produire des modèles
 ### Les domaines explorés
@@ -564,25 +531,34 @@ Personnaliser Les techniques d'apprentissage : A joué un rôle important pour L
 	- On adapte : fine-tuning par la production de VT
 		- Quelle quantité ? Quelle est la méthode pour optimiser cette étape ? La réponse n'est pas trouvée : la décision est empirique : dépend des ressources disponinbles (les paléographes sont rares), évaluer le gain attentdu (seuil de 90%), quelle est la précision que l'on veut ?
 
-### Classification automatique des types d'écriture
+### Convertir des textes
+- Le projet Le projet ETSO, Estilometría aplicada al Teatro del Siglo de Oro : MODERNISATION de la graphie avec récupération d'éditions de textes ; tentative d'entraînement du modèle avec cette modernisation : utilisation de la fonction Text2IMage de Transkribus : associe une transcription existante avec une image => 96 % d'acuité
+
+### Problématique des sources
+#### Classification automatique des types d'écriture
 - [@torresaguilarModelisationAffinageHTR2022] **Compléter avec les notes**
 
-### L'influence de la qualité des images
+#### L'influence de la qualité des images
 - [@leblancTranskribusEScriptoriumRetour2022] pointe des difficultés particulières
 	- Numérisation des images en BD
 	- Impression déjà de basse qualité (encre, transparence, coquilles, bavures)
 
 - CREMMA LAB : ont tenté de dégrader artificiellement des images pour voir si le modèle s'entraînait mieux : pas flagrant du tout [@campsCremmaLabProjectsTranscription2022].
 
-### Entraîner avec des données lacunaires
-- [@lilligExperimentationsPourAnalyse2022]
-
-### Convertir des textes
-- Le projet Le projet ETSO, Estilometría aplicada al Teatro del Siglo de Oro : MODERNISATION de la graphie avec récupération d'éditions de textes ; tentative d'entraînement du modèle avec cette modernisation : utilisation de la fonction Text2IMage de Transkribus : associe une transcription existante avec une image => 96 % d'acuité
+#### Avec des données lacunaires
+- [@bizais-lilligExperimentationsPourAnalyse2022]
 
 ### Le défi technique de la segmentation
 - [@stoklbenezraSegmentationModeArchival2022]
 
+### Ingénierie avancée
+- Personnaliser Les techniques d'apprentissage : A joué un rôle important pour Le projet « Crimes et châtiments » (2022-2025) :
+	- Modification de l'architecture d'apprentissage de Kraken => acuité de 85%
+	- Modification du param. -r (vitesse d'apprentissage) : grosse influence [@paupeCursive17eSiecle2022]
+
+- Nouveautés
+	- [@kiesslingNewDevelopmentsKraken2022]
+	- [@fizaineLettresLumieres2022]
 
 ## Partager les données
 ### Partager des vérités de terrain
@@ -618,11 +594,10 @@ Personnaliser Les techniques d'apprentissage : A joué un rôle important pour L
 
 - Segmonto : [@gabaySegmOntoControlledVocabulary2022]
 
-### Post-traiter, exploiter les données
+### Post-traiter, exploiter les données : pour des briques open-source
 - Etablir des éditions critiques : 
 	- [@stoklbenezraHTRCriticalEdition2022]
 
-### Briques open-source
 - Avec 90% d'acuité, l'effort de production de VT ne vaut plus la peine, après il vaut mieux investir dans le post-traitement : c'est là dessus qu'il faut porter l'effort, et envisager des solutions de partage et mutualisation [@torresaguilarModelisationAffinageHTR2022].
 
 - Proposer une succession d'étapes pour le traitement des textes (pour bien sauvegarder chaque étape, améliorer chacun des outils indépendamment) [@campsCremmaLabProjectsTranscription2022].

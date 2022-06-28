@@ -13,4 +13,13 @@ Transformation md => tex
         ```
 
 - Pour publier en dehors
-    - Produire en liant la biblio
+    - Produire en liant la biblio, avec un style auteur-date et une liste bibliographique à la fin
+        ```shell
+        pandoc DocumentsAnciensReconnaissance2022.md --bibliography=../documentation/biblio.bib --csl=/home/sbiay/travail-archive-intermediaire/outils/zotero/french3.csl -o sorties/DocumentsAnciensReconnaissance2022.odt
+        ```
+    - Transformations
+        - Mettre deux réf. dans la même parenthèse ; sortie txt ainsi :
+            ```txt
+            (Leblanc et Jacsont, 2022) (Paupe, 2022)
+            ```
+        - Supprimer tous les `, 2022` des réf.
