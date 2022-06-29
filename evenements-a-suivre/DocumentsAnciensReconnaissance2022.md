@@ -482,6 +482,7 @@ Dans le cadre du projet CREMMALab soutenu par le DIM MAP, le centre Jean-Mabillo
 
 [^1]: Comité d’organisation : Ariane Pinche et Floriane Chiffoleau. Comité scientifique : Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes.
 
+## La recherche à l'heure de l'HTR
 Ce colloque a été l'occasion de rassembler une communauté scientifique représentant internationalement les pays du sud de l'Europe (France, Italie, Grêce, Portugal, Suisse) et quelques partenaires nords-américains autour des enjeux, des finalités, des problèmes et des solutions d'avenir de la reconnaissance automatique des écritures manuscrites ou HTR [@marguin-hamonDiscoursOuverturePresentation2022]. Il a ainsi illustré les différentes facettes du projet CREMMA-Lab : favoriser une réflexion sur la meilleure façon de produire des données ; irriguer de ses réflexions une communauté de chercheurs qui ne fait que croître autour des enjeux de l'HTR ; proposer des solutions aux institutions patrimoniales qui sont de plus en plus intéressées par ces technologies [@campsCremmaLabProjectsTranscription2022].
 
 ### Des finalités et des publics multiples
@@ -496,54 +497,32 @@ Outre la mise à disposition des sources textuelles ou des données qu'elles con
 
 Enfin le projet CHAMDOC a montré que l'HTR peut intervenir dans la préservation des langues écrites en péril, comme c'est le cas du cham ancien, langue véhiculaire utilisée dans des inscriptions gravées dans tout le centre du Vietnam du VIe au XVIIe siècle [@schweyerAnalyseReconnaissanceIndexation2022].
 
-### Transkribus et eScriptorium
+### Infrastructures et développements : eScriptorium et Kraken
 Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu l'occasion de tester les deux applications [@leblancTranskribusEScriptoriumRetour2022] [@paupeCursive17eSiecle2022] et ainsi fait part de leurs expériences.
 L'HTR, en particulier l'entraînement de modèles, est un processus exigeant de très grandes capacités de calcul, et donc des infrastructures coûteuses. L'infrastructure CREMMA ouvrira bientôt au public des institutions académiques partenaires une instance d'eScriptorium [@marguin-hamonDiscoursOuverturePresentation2022] dotée de trois GPU (*Graphics Processing Unit* ou unité de traitement graphique), chacune représentant en moyenne un coût d'une dizaine de milliers d'euros. L'infrastructure Fondue de l'université de Genève bénéficie quant à elle de la puissance du superordinateur (HPC) de l'université, doté de 150 GPU. La recherche des meilleures performances des entraînements de modèles consiste à trouver le bon équilibre entre temps de calcul par image et nombre de tâches lancées en parallèle [@gabayFoNDUELightweightHTR2022].
 
-Les développements en cours de l'interface eScriptorium donneront lieu dans un avenir proche à une fonctionnalité de recherche des termes transcrits, à du balisage TEI basique, à la possibilité d'annotation graphique des pages, à l'alignement automatique d'un texte existant sur une image et à l'intégration de l'ordre des lignes dans l'entraînement des modèles de segmentation [@kiesslingNewDevelopmentsKraken2022].
-
-
+Les développements en cours de l'interface eScriptorium donneront lieu dans un avenir proche à une fonctionnalité de recherche des termes transcrits, à du balisage TEI basique, à la possibilité d'annotation graphique des pages, à l'alignement automatique d'un texte existant sur une image et à l'intégration de l'ordre des lignes dans l'entraînement des modèles de segmentation. 
+Quant à l'application Kraken, sur laquelle se fonde l'interface eScriptorium, sa dernière version stable (4) propose de nouvelles bibliothèques d'entraînement et une meilleure accessibilité de son API. Elle affiche en outre une amélioration des performances pour les modèles de reconnaissance d'écriture, la reconstruction de lacunes et une nouvelle technologie de segmentation des régions et des lignes d'écriture (*layout analysis*) : grâce à l'utilisation de la toute nouvelle architecture CurT basée sur la technologie Transformers, la détection de l'orientation des lignes est désormais plus robuste, il est possible de segmenter des lignes qui se croisent. Cette innovation est néanmoins très exigeante sur le plan de l'infrastructure [@kiesslingNewDevelopmentsKraken2022].
 
 ## Produire des modèles
-### Les domaines explorés
-- Création d'un corpus de fictions littéraires fr. du XIe s. à nos jours : "From Roland to Conan", DH Tokyo 2022 ; Coeur du corpus XVIe-XVIIe romans numérisés sur Gallica (cote Y2 du cata. Nic. Clément) [@campsCremmaLabProjectsTranscription2022].
-
-- Ecritures gothiques, avec e-NDP : Sources à 90% en latin, pas de modèle HTR pour la cursiva, textualis, prégothique, semihybride [@torresaguilarModelisationAffinageHTR2022].
-
-- Une cursive du 17e siècle [@paupeCursive17eSiecle2022].
-
-- Des projets abordent des sources variées à tous les niveaux :
-	- [@baudryArchivesInquisitorialesPortugal2022]
-		- Grande variété paléographique ; mains récurrentes des notaires
-		- Des pièces nombreuses et brèves insérées dans les dossiers de procès
-		- Variété également des supports (tissu)
-		- Mélange de langues (y compris des inclusions de caractères arabes ou hébreux)
-
-- Ecritures non latines
-	- Cham [@schweyerAnalyseReconnaissanceIndexation2022]
-
-- Cursives contemporaines :
-	- carnets de fouilles archéologiques [@tufferyRetourExperiencesUtilisation2022]
+### Explorer de nouveaux types d'écriture
+Les projets de recherche présentés à l'occasion du colloque s'emploient à étendre la zone de compétence des modèles HTR dans les domaines les plus variés. 
+Tandis que les écritures livresques médiévales sont de mieux en mieux couvertes du XIIIe au XVe siècle par les modèles produits dans le cadre du projet CREMMA : Arabica, Bicerin et bientôt Cortado [@campsCremmaLabProjectsTranscription2022], le projet e-NDP s'emploie à travers les sources du chapitre de Notre-Dame de Paris à entraîner des modèles pour des écritures nouvelles : *cursiva*, *textualis*, prégothique, semihybride [@torresaguilarModelisationAffinageHTR2022]. En effet les écritures cursives font actuellement partie des fronts pionniers de l'entraînement des modèles, et ce pour le Moyen Âge, le XVIIe siècle  [@paupeCursive17eSiecle2022], les archives inquisitoriales portugaises pour la période allant 1536 à 1821 [@baudryArchivesInquisitorialesPortugal2022] ou des sources très contemporaines, comme les carnets de fouilles archéologiques du XXe siècle [@tufferyRetourExperiencesUtilisation2022].
+Comme l'a montré le projet TraPrInq (*Transcribing the court records of the Portuguese Inquisition*, 1536-1821), l'entraînement de ces modèles doit parfois relever le défi de la variété paléographique, des mélanges de langues et de types d'écriture (latine, arabe, hébraïque), de la variété des types de documents dont découle des mises en pages hétérogènes, de la variété des supports également, susceptible d'infléchir l'efficacité de l'entraînement des modèles [@baudryArchivesInquisitorialesPortugal2022]. Il s'agit en outre d'aborder la diversité des écritures dans la diachronie, ce qui vise à une échelle encore plus longue un volet du projet CREMMA avec la création d'un corpus de fictions littéraires allant du XIe siècle à nos jours à partir du noyau des romans des XVIe-XVIIe siècles numérisés sur Gallica [@campsCremmaLabProjectsTranscription2022].
+Enfin, les projets d'HTR s'étendent également en direction des écritures non latines, comme l'ont illustré des présentations du projet CHAMDOC  [@schweyerAnalyseReconnaissanceIndexation2022] ainsi que les expérimentations pour l’analyse automatique de sources chinoises anciennes [@bizais-lilligExperimentationsPourAnalyse2022].
 
 ### Affiner des modèles plutôt que repartir de 0
-- Vincent Jolivet : l'époque est révolue de la production de VT à chaque nouveau projet [@torresaguilarModelisationAffinageHTR2022].
-	- On repère un modèle existnant : transfer learning : le partage est essentiel (contribution de Stutz, Cremma, HTR-United avec le catalogue)
-	- On adapte : fine-tuning par la production de VT
-		- Quelle quantité ? Quelle est la méthode pour optimiser cette étape ? La réponse n'est pas trouvée : la décision est empirique : dépend des ressources disponinbles (les paléographes sont rares), évaluer le gain attentdu (seuil de 90%), quelle est la précision que l'on veut ?
+Mais en dehors des projets très pionniers comme ceux portant sur les écritures extrême-orientales, l'époque est révolue de la production de vérités de terrain *ex nihilo* à chaque nouveau projet, comme l'a rappelé Vincent Jolivet [@torresaguilarModelisationAffinageHTR2022]. La méthode désormais privilégiée consiste à repérer des modèles existnants (*transfer learning*). Dans ce contexte, le partage des données d'entraînement et des modèles devient essentiel. Les meilleurs modèles identifiés sont ensuite affinés (*fine-tuning*) grâce à de nouvelles vérités de terrain. Tout le problème consiste à savoir de quelle quantité de données d'entraînement l'on aura besoin pour atteindre le score que l'on s'est fixé et quelle est la meilleure méthode pour optimiser cette étape de la production d'un modèle affiné. La réponse ne peut être qu'empirique tant varient les ressources disponibles (les paléographes sont rares) et les gains d'acuité attendus de ces entraînements (et qui dépendent de la finalité de chaque projet).
 
 ### Convertir des textes
-- Le projet Le projet ETSO, Estilometría aplicada al Teatro del Siglo de Oro : MODERNISATION de la graphie avec récupération d'éditions de textes ; tentative d'entraînement du modèle avec cette modernisation : utilisation de la fonction Text2IMage de Transkribus : associe une transcription existante avec une image => 96 % d'acuité
+Le projet ETSO (*Estilometría aplicada al Teatro del Siglo de Oro*) a également montré que l'acquisition des données d'entraînement peut procéder par une autre voie que la transcription manuelle, à savoir par la récupération d'éditions de textes, d'ores-et-déjà possible grâce à la fonction Text2IMage de Transkribus, et bientôt développée pour eScriptorium [@cuellarModeleOuvertPour2022].
 
 ### Problématique des sources
-#### Classification automatique des types d'écriture
-- [@torresaguilarModelisationAffinageHTR2022] **Compléter avec les notes**
+L'entraînement des modèles HTR peut impliquer la recherche de solutions à la complexité des sources, qu'elle soit de nature matérielle avec la qualité des reproductions photographiques [@leblancTranskribusEScriptoriumRetour2022], paléographique (variété des types d'écriture, diversité des systèmes de signes) ou qu'elle ait trait à la mise en page des documents.
 
-#### L'influence de la qualité des images
-- [@leblancTranskribusEScriptoriumRetour2022] pointe des difficultés particulières
-	- Numérisation des images en BD
-	- Impression déjà de basse qualité (encre, transparence, coquilles, bavures)
+Le projet e-NDP, confronté à une assez large variété d'écritures gothiques, s'emploie à développer une méthode de classification automatique des écritures. À partir de modèles entraînés pour chaque type d'écriture, cette méthode permet d'évaluer automatiquement le type d'écriture d'un document selon les performances des différents modèles. Une fois le type d'écriture automatiquement identifié, le modèle adéquat peut être appliqué. Capable de classer les écritures zone par zone sur un même document, mais eScriptorium ne permet pour l'heure que d'appliquer un modèle HTR par page [@torresaguilarModelisationAffinageHTR2022].
 
-- CREMMA LAB : ont tenté de dégrader artificiellement des images pour voir si le modèle s'entraînait mieux : pas flagrant du tout [@campsCremmaLabProjectsTranscription2022].
+Les expérimentations pour l’analyse automatique de sources chinoises anciennes ont proposé une méthode spécifique pour l'entraînement à partir de données lacunaires [@bizais-lilligExperimentationsPourAnalyse2022]. En effet le chinois ancien comporte environ 54 000 caractères, dont seuls 4000 à 5000 sont représentés dans le jeu de données de textes xylographiés de la Chine impériale (50 images). Or tous les caractères attestés ne sont pas référencés dans le système Unicode et il peut exister plusieurs glyphes valant pour le même caractère. L'ampleur du système de signe combinée à la taille réduite du jeu de donnée a pour conséquence que de très nombreux signes contenus dans le jeu de validation sont absents du jeu d'entraînement.
 
 #### Avec des données lacunaires
 - [@bizais-lilligExperimentationsPourAnalyse2022]
