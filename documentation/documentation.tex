@@ -53,7 +53,7 @@
 \newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires}
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
-\newacronym{Segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
+\newacronym{segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 \newacronym{tei}{TEI}{Text Encoding Initiative}
 \newacronym{xml}{XML}{Extensible Markup Language}
 \newglossaryentry{segmentation}{name=segmentation,description=Analyse optique d'une image permettant d'obtenir la reconnaissance des régions et des lignes d'écriture.}
@@ -353,7 +353,7 @@
 			\subsection{Définir une structure de document idéale en vue de l'édition}
 				Il est important de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilités de segmentation automatique des pages. En effet, l'étape de la segmentation consiste à annoter (manuellement ou, si possible, automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \textit{Signé Constance de Salm} l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
 				
-				Des propositions d'encodage extrêmement complètes pour l'édition de correspondances ont été formulées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre élaboré une ontologie des régions d'écriture pour les correspondances en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021}, dans le cadre du projet \gls{Segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
+				Des propositions d'encodage extrêmement complètes pour l'édition de correspondances ont été formulées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre élaboré une ontologie des régions d'écriture pour les correspondances en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021}, dans le cadre du projet \gls{segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
 				\selectlanguage{english}
 				\textit{\begin{itemize}
 					\item \textbf{Main};
@@ -458,11 +458,11 @@
 			\subsection{Définir une ontologie des régions et des lignes}
 				Une fois arrêtés les principes généraux de la segmentation, il convient de définir une ontologie, à savoir la liste des types de régions et de lignes d'écriture que l'on entend appliquer à cette segmentation.
 				
-				Le choix a été fait d'inscrire cette définition des régions et des lignes suivant les principes de l'ontologie \gls{Segmonto}. Déjà cité, le projet \gls{Segmonto} propose un cadre conceptuel général pour ce genre de définition. Bien qu'orienté sur la description des manuscrits médiévaux et des premiers imprimés, il met en avant les catégories les plus génériques possibles (\textit{main}, \textit{margin}, \textit{numbering}, etc.) ainsi que des solutions de personnalisation, afin de permettre à tout type de projet d'exprimer ses besoins d'annotation de régions et de lignes d'écriture dans un cadre commun. Ce cadre facilite \textit{in fine} la réutilisation des vérités de terrain et contribue ainsi à l'ouverture des données d'entraînements des projets de reconnaissance automatique d'écriture.
+				Le choix a été fait d'inscrire cette définition des régions et des lignes suivant les principes de l'ontologie \gls{segmonto}. Déjà cité, le projet \gls{segmonto} propose un cadre conceptuel général pour ce genre de définition. Bien qu'orienté sur la description des manuscrits médiévaux et des premiers imprimés, il met en avant les catégories les plus génériques possibles (\textit{main}, \textit{margin}, \textit{numbering}, etc.) ainsi que des solutions de personnalisation, afin de permettre à tout type de projet d'exprimer ses besoins d'annotation de régions et de lignes d'écriture dans un cadre commun. Ce cadre facilite \textit{in fine} la réutilisation des vérités de terrain et contribue ainsi à l'ouverture des données d'entraînements des projets de reconnaissance automatique d'écriture.
 				
-				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La segmentation de nombreuses page de texte, même avec l'assistance d'un bon modèle de segmentation automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{Segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa segmentation) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
+				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La segmentation de nombreuses page de texte, même avec l'assistance d'un bon modèle de segmentation automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa segmentation) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
 				
-				En résumé, les types de régions d'écriture que l'on a retenus et conformés à \gls{Segmonto} sont les suivants~:
+				En résumé, les types de régions d'écriture que l'on a retenus et conformés à \gls{segmonto} sont les suivants~:
 				
 				\begin{itemize}
 					\selectlanguage{english}% Permet de gérer les deux points sans espace
@@ -485,7 +485,7 @@
 					\label{num-annot-193}
 				\end{figure}
 				
-				Face à l'éventail limité des types de régions que l'on est contraint d'adopter pour éviter les problèmes de numérotation des lignes, l'annotation sémantique des parties de la lettre (qui permettra une automatisation partielle de l'encodage final en \gls{tei}) doit être répercutée sur les types de lignes. Voici la liste de conforme à \gls{Segmonto} que l'on propose d'adopter, par ordre général d'apparition dans les lettres~:
+				Face à l'éventail limité des types de régions que l'on est contraint d'adopter pour éviter les problèmes de numérotation des lignes, l'annotation sémantique des parties de la lettre (qui permettra une automatisation partielle de l'encodage final en \gls{tei}) doit être répercutée sur les types de lignes. Voici la liste de conforme à \gls{segmonto} que l'on propose d'adopter, par ordre général d'apparition dans les lettres~:
 				
 				\begin{itemize}
 					\selectlanguage{english}
