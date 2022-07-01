@@ -925,7 +925,7 @@
 				Face à l'éventail limité des types de régions que l'on est contraint d'adopter pour éviter les problèmes de numérotation des lignes, l'annotation sémantique des parties de la lettre (qui permettra une automatisation partielle de l'encodage final en \gls{tei}) doit être répercutée sur les types de lignes. Voici la liste de conforme à \gls{segmonto} que l'on propose d'adopter, par ordre général d'apparition dans les lettres~:
 				
 				\begin{itemize}
-					\selectlanguage{english}
+					\selectlanguage{english}% Permet de gérer les deux points sans espace
 					\item \textit{CustomLine:header} pour les petites lignes des manchettes~;
 					\item \textit{HeadingLine:title} pour les lignes de titre~;
 					\item \textit{CustomLine:dateline} pour le lieu et la date d'écriture~;
@@ -938,11 +938,36 @@
 					\selectlanguage{french}
 				\end{itemize}
 		
-			\subsection{Entraîner des modèles de segmentation des pages}
-	    		\textbf{Cette section est à écrire.}
-    		
     		\subsection{Résultats des entraînements}
-    			\textbf{Cette section est à écrire.}
+    			Les principes de segmentation que l'on vient de définir ont été appliqués à un premier lots de 123 doubles pages issues des 2\textsuperscript{e} et 3\textsuperscript{e} volumes des recueils de copies\footcite{CdS02001369, CdS02001334}. Les pages ont été initialement segmentées par avec le modèle par défaut de Kraken, puis corrigées et annotées manuellement dans l'interface eScriptorium\footnote{Les fichiers exportés sont les 123 premiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}.}. Une fois ces corrections effectuées, les pages ont été exportées au format \gls{alto} et un modèle de segmentation affinant le modèle par défaut a été entraîné avec l'application Kraken
+    			\footnote{La commande utilisée, qui indique l'architecture d'entraînement qui nous a été conseillée par A.~Pinche, est la suivante~:
+    				
+    				\selectlanguage{english}
+    				\textsf{ketos segtrain -bl entrainements/train-seg-Konv002/*.xml -\,i ./blla.mlmodel -\,-\,resize both -\,-\,f alto -\,o ./sortie/ -\,-\,device cpu -\,-\,augment -\,-\,schedule reduceonplateau -\,s "[1,1800,0,3 Cr7,7,64,2,2 Gn32 Cr3,3,128,2,2 Gn32 Cr3,3,128 Gn32 Cr3,3,256 Gn32 Cr3,3,256 Gn32 Lbx32 Lby32 Cr1,1,32 Gn32 Lby32 Lbx32]" -\,-\,merge-baselines DefaultLine:default -\,-\,merge-regions MainZone:text}.}.
+	    			\selectlanguage{french}
+	    		
+	    		La figure \ref{seg-copie-deux-04-229} montre l'application du modèle entraîné\footnote{Le modèle est déposé à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/blob/main/htr/modeles-seg/copie-deux-04.mlmodel}.} à une nouvelle double page et permet de constater les résultats de cette personnalisation du modèle par défaut de Kraken.
+	    		
+	    		\begin{figure}[!h]
+	    			\centering
+	    			\includegraphics[width=15cm]{img/seg-copie-deux-04-CdS02_Konv002-03_0231.jpg}
+	    			\caption{Résultat de l'entraînement d'un modèle de segmentation sur 123 doubles pages de recueils.}
+	    			\label{seg-copie-deux-04-231}
+	    		\end{figure}
+    		
+    			Le nouveau modèle est parvenu à définir de manière correcte les manchettes (entourées en bleu) et le corps des lettres, réunissant toutes les parties, du titre à la signature, en leur attribuant la bonne typologie de région. En revanche le petit numéro situé en bas de la page de droite, bien que repéré par le segmenteur, n'a pas reçu la bonne annotation, puisqu'il a été catégorisé de la même manière que la manchette. Concernant les lignes d'écriture, on remarque qu'elles ont été globalement bien identifiées. Chose importante, toutes les lignes que l'on avait annotées comme \textsf{DefaultLine} ont été correctement annotées automatiquement dans cette évaluation.
+    			
+    			En revanche, ce sont les autres types de lignes que le segmenteur n'a pas correctement repéré ni annoté. Seules les lignes de titres ont été correctement annotées \textsf{HeadingLine}, mais on remarque qu'elles n'ont pas été bien repérées, car leur ligne de base est parfois découpée en plusieurs tronçons là où l'on attendrait une seule ligne horizontale. Les lignes de date, de signature, de post-scriptum ou de manchette ont quant à elle été très mal ou pas du tout repérées.
+    			
+    			Bien que très imparfait, ce résultat n'en constitue pas moins un relatif succès de l'entraînement, car ce résultat est tout à fait exploitable. Il représente une réelle économie de temps pour la correction manuelle et l'annotation des zones, dans la mesure où il parvient malgré tout à annoter correctement la manchette, le corps de la lettre et les lignes par défaut.
+    			
+    			On a tenté de confirmé ces résultats encourageants en apportant de nouvelles pages au jeu d'entraînement. Mais contrairement à ce que l'on espérait de ce nouvel entraînement où le jeu initial avait été augmenté de 61 doubles pages corrigées à la main
+    			\footnote{Il s'agit de l'intégralité des fichiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}
+    			, les résultats se sont révélés moins bons que lors du premier entraînement, car les lignes de titre ont été encore moins bien reconnu que précédemment. 
+    			
+    			La préparation des données et les entraînements eux-mêmes demandant beaucoup de temps et d'effort, il a fallu renoncer à de nouvelles expérimentations pour ne pas desservir les autres étapes de la chaîne de traitement.
+
+    			%AVOIR Ajouter des propositions pour relancer l'entraînement des modèles
 	    		
 	    	\subsection{Contrôler la pertinence de la \gls{segmentation}}
 		    	\label{controle-segmentation-lettres-inventoriees}

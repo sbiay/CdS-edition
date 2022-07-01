@@ -20,6 +20,7 @@ La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
 - [mainAuteur/](./mainAuteur/) contient des données permettant de tester des modèles de reconnaissance d'écriture sur l'écriture personnelle de Constance de Salm
 - [mains/](./mains/) contient de brèves descriptions illustrées des écritures sur lesquelles des tests ou des entraînements ont été pratiqués
 - [modeles-rec/](./modeles-rec/) contient les différents modèles de reconnaissance d'écriture entraînés ; les données chiffrées rendant compte des tests et des résultats des entraînements sont consultables dans le fichier [journal-rec.json](./entrainements/journal-rec.json)
+- [modeles-seg/](./modeles-seg/) contient les modèles de segmentation entraînés
 - [predic-a-corriger/](./predic-a-corriger/) est destiné à recevoir les fichiers XML-Alto exporté d'eScriptorium et contenant les transcriptions
 - [predic-corrigees/](./predic-corrigees/) est le dossier de destination des fichiers XML-Alto à la sortie du traitement semi-automatisé des corrections
 - [py/](./py/) : contient les scripts Python exploités dans les *notebooks*
