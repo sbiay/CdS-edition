@@ -150,7 +150,7 @@
 			\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
 			\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
 			\item La reconnaissance des écritures proprement dite, ou transcription automatique, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
-			\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022}\footcite{stokesEScriptoriumVREManuscript2021}.
+			\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022, stokesEScriptoriumVREManuscript2021}.
 		\end{enumerate}
 		
 		Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, avec un taux d'acuité exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
@@ -184,7 +184,7 @@
 		représentant les pays du sud de l'Europe (France, Italie, Grêce,
 		Portugal, Suisse) ainsi que quelques équipes nords-américaines autour
 		des enjeux, des finalités, des problèmes et des solutions d'avenir de la
-		reconnaissance automatique des écritures manuscrites ou HTR\footcite{marguin-hamonDiscoursOuverturePresentation2022} \footnote{Le titre
+		reconnaissance automatique des écritures manuscrites ou \gls{htr}\footcite{marguin-hamonDiscoursOuverturePresentation2022} \footnote{Le titre
 			de chaque intervention et le nom complet des intervenant est reporté
 			en fin de document.}. Il a ainsi illustré les différentes facettes du
 		projet CREMMA-Lab~: favoriser une réflexion sur la meilleure façon de
@@ -239,7 +239,7 @@
 		Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre
 		Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu
 		l'occasion de tester les deux applications\footcite{leblancTranskribusEScriptoriumRetour2022, paupeCursive17eSiecle2022a} et ainsi fait part de leurs
-		expériences. L'entraînement de modèles HTR est un processus exigeant de
+		expériences. L'entraînement de modèles \gls{htr} est un processus exigeant de
 		très grandes capacités de calcul, et donc des infrastructures coûteuses.
 		L'infrastructure CREMMA ouvrira bientôt au public des institutions
 		académiques partenaires une instance d'eScriptorium\footcite{marguin-hamonDiscoursOuverturePresentation2022} dotée de trois GPU
@@ -275,7 +275,7 @@
 		\subsection{Explorer de nouveaux types d'écriture}
 		
 		Les projets de recherche présentés à l'occasion du colloque s'emploient
-		à étendre la zone de compétence des modèles HTR dans les domaines les
+		à étendre la zone de compétence des modèles \gls{htr} dans les domaines les
 		plus variés. Tandis que les écritures livresques médiévales sont de
 		mieux en mieux couvertes du XIe au XVe siècle par les modèles produits
 		dans le cadre du projet CREMMA~: Arabica, Bicerin et bientôt Cortado\footcite{campsCremmaLabProjectsTranscription2022}, le projet e-NDP
@@ -333,14 +333,14 @@
 		techniques, possible avec l'application Kraken, a joué un rôle important
 		pour un projet comme ``Crimes et châtiments''\footcite{paupeCursive17eSiecle2022}. La modification du paramètre de la
 		vitesse d'apprentissage (le paramètre ``-r'' de Kraken) s'est en effet
-		répercutée sur l'acuité du modèle HTR pour l'écriture cursive du XVIIe
+		répercutée sur l'acuité du modèle \gls{htr} pour l'écriture cursive du XVIIe
 		siècle de l'ancien Évêché de Bâle.
 		
 		\subsection{Les sources et leurs problèmes}
 		
 		\subsubsection{Les types d'écriture}
 		
-		L'entraînement des modèles HTR implique souvent de trouver des solutions
+		L'entraînement des modèles \gls{htr} implique souvent de trouver des solutions
 		adaptées à la complexité des sources, qu'elle soit de nature matérielle
 		avec la qualité des reproductions photographiques\footcite{leblancTranskribusEScriptoriumRetour2022}, paléographique (variété
 		des types d'écriture, diversité des systèmes de signes) ou qu'elle ait
@@ -366,10 +366,10 @@
 		conséquence que de très nombreux signes contenus dans le jeu de
 		validation sont absents du jeu d'entraînement. Une méthode développée
 		pour l'étude de l'écriture arabe a ainsi été mise en place~: une fois
-		réalisé un premier entraînement classique de modèle HTR, les glyphes du
+		réalisé un premier entraînement classique de modèle \gls{htr}, les glyphes du
 		jeu d'entraînement sont utilisés pour forger de faux glyphes à partir
 		d'un vaste corpus de textes glané sur le web. Cette méthode permet
-		d'affiner le modèle HTR en l'aidant à reconnaître des séquences de
+		d'affiner le modèle \gls{htr} en l'aidant à reconnaître des séquences de
 		caractères. La méthode a prouvé son efficacité en faisant descendre le
 		taux d'erreur par caractère (CER pour \textit{character error rate}) à
 		14\% seulement pour les glyphes absents du jeu de données primaire.
@@ -440,7 +440,7 @@
 			\footcite{chagueSharingHTRDatasets2022}.
 		\end{enumerate}
 		
-		Le catalogue HTR-United référence d'ores-et-déjà (au 30 juin 2022) les
+		Le catalogue \gls{htr}-United référence d'ores-et-déjà (au 30 juin 2022) les
 		productions de 46 projets, comptabilisant plus de 380 000 lignes. Il
 		propose un moteur de recherche permettant d'interroger les types
 		d'écriture, les langues, et la chronologie des sources. Un standard de
@@ -463,16 +463,16 @@
 		\href{https://github.com/HTR-United/cremma-medieval/releases/tag/1.1.0}{Bicerin}
 		a ainsi pu être ``amélioré'' par l'ajout de données très différentes et
 		ce malgré une diminution de ses scores d'acuité (\textit{accuracy}). La
-		robustesse d'un modèle HTR (on parle également de sa généricité, de sa
+		robustesse d'un modèle \gls{htr} (on parle également de sa généricité, de sa
 		souplesse ou de sa plasticité) signifie sa capacité à reconnaître des
 		types d'écritures hétérogènes. Faire varier les langues et les genres
 		littéraires ou les types de texte contribue également à cette robustesse
-		dans la mesure où les modèles HTR s'appuient sur un modèle de langue
+		dans la mesure où les modèles \gls{htr} s'appuient sur un modèle de langue
 		susceptible d'influencer les prédictions. Trouver le meilleur équilibre
 		entre généricité et acuité particulière est au fond une équation très
 		empirique, de même qu'apprécier la proximité ou la distance entre deux
 		écritures. Ainsi la notion de ``hors-domaine'', employée pour
-		l'évaluation d'un modèle HTR sur des données étrangères aux données
+		l'évaluation d'un modèle \gls{htr} sur des données étrangères aux données
 		d'entraînement, recouvre une très grande variété de situations selon la
 		diversité des sources étudiées, comme cela a été évoqué au sujet du
 		projet e-NDP\footcite{torresaguilarModelisationAffinageHTR2022}.
@@ -485,7 +485,7 @@
 		souci d'harmonisation des pratiques. Cet effort passe par la rédaction
 		d'un guide de transcription (\textit{guidelines}). Les règles communes de
 		transcription ainsi proposées pourront permettre l'entraînement de
-		modèles HTR plus robustes dans la mesure où ces entraînements reposeront
+		modèles \gls{htr} plus robustes dans la mesure où ces entraînements reposeront
 		sur des transcriptions plus homogènes. Il s'agit en l'occurrence
 		d'appliquer quelques principes simples~: ne pas imiter les formes de
 		lettres lorsqu'elles se rapportent à un même caractère (allographes) et
@@ -596,7 +596,7 @@
 		atteste beaucoup d'agglutinations\footcite{stoklbenezraHTRCriticalEdition2022}, etc. En bout de chaîne, le
 		développement de modèles de publication, comme a pu l'illustrer le
 		projet Gallicorpora\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
-		n'en pas douter l'un des enjeux importants pour les projets HTR dans les
+		n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les
 		prochaines années.
 		
 		Dans ce contexte, la mise en œuvre par la communauté scientifique de
@@ -911,7 +911,7 @@
 				
 				Le choix a été fait d'inscrire cette définition des régions et des lignes suivant les principes de l'ontologie \gls{segmonto}. Déjà cité, le projet \gls{segmonto} propose un cadre conceptuel général pour ce genre de définition. Bien qu'orienté sur la description des manuscrits médiévaux et des premiers imprimés, il met en avant les catégories les plus génériques possibles (\textit{main}, \textit{margin}, \textit{numbering}, etc.) ainsi que des solutions de personnalisation, afin de permettre à tout type de projet d'exprimer ses besoins d'annotation de régions et de lignes d'écriture dans un cadre commun. Ce cadre facilite \textit{in fine} la réutilisation des vérités de terrain et contribue ainsi à l'ouverture des données d'entraînements des projets de reconnaissance automatique d'écriture.
 				
-				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La segmentation de nombreuses page de texte, même avec l'assistance d'un bon modèle de segmentation automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa segmentation) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
+				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La segmentation de nombreuses page de texte, même avec l'assistance d'un bon modèle de segmentation automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation \gls{htr}UC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa segmentation) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
 				
 				En résumé, les types de régions d'écriture que l'on a retenus et conformés à \gls{segmonto} sont les suivants~:
 				
@@ -1040,7 +1040,7 @@
 				
 				A contrario, la volonté d'imiter au plus près les usages scribaux se heurte notamment aux difficultés des modèles à reconnaître les espaces. La tendance de certains scribes à coller certains mots les uns aux autres, ou plus encore à détacher quelque peu les parties d'un même mot entraîne l'omission ou la transcription d'espaces erronée du point de vue de la lecture interprétative du texte. Une stricte imitation des usages scribaux devrait conduire à respecter ces phénomènes lors de l'établissement des transcriptions de test et d'entraînement, et ce avec deux inconvénients de taille~: la difficulté d'apprécier la réalité dimensionnelle d'une espace (à partir de quelle quantité de blanc une espace doit être transcrite) et le travail fastidieux mais indispensable de restituer ultérieurement le juste espacement du texte pour en permettre une restitution propre à la lecture ou à l'analyse.
 				
-				L'indispensable compromis à trouver sur ce point a été guidé par les réflexions menées dans le cadre du séminaire \textit{Création de modèle(s) HTR pour les documents médiévaux en ancien français et moyen français entre le \siecle{x}-\siecle{xiv}~siècle}\footcite{pincheSeminaireCreationModele2021b}. On s'est donc efforcé de définir le degré d'imitation de la source manuscrite conforme aux besoins spécifiques de l'édition de la correspondance de \gls{cds}, en suivant autant que possible les choix génériques prônés par la communauté scientifique consistuée autour du projet \gls{cremma} et qui correspondent de manière tendantielle au concept de transcription \textit{graphématique} traduit et expliqué par D.~Stutzmann\footcite[p.~251]{stutzmannPaleographieStatistiquePour2011a}.
+				L'indispensable compromis à trouver sur ce point a été guidé par les réflexions menées dans le cadre du séminaire \textit{Création de modèle(s) \gls{htr} pour les documents médiévaux en ancien français et moyen français entre le \siecle{x}-\siecle{xiv}~siècle}\footcite{pincheSeminaireCreationModele2021b}. On s'est donc efforcé de définir le degré d'imitation de la source manuscrite conforme aux besoins spécifiques de l'édition de la correspondance de \gls{cds}, en suivant autant que possible les choix génériques prônés par la communauté scientifique consistuée autour du projet \gls{cremma} et qui correspondent de manière tendantielle au concept de transcription \textit{graphématique} traduit et expliqué par D.~Stutzmann\footcite[p.~251]{stutzmannPaleographieStatistiquePour2011a}.
 				
 				Ainsi, la restitution des allographes a été écartée dans la mesure où le seul exemple d'allographe contenu dans les documents du projet est le \textit{s} long. D'autre part, la difficulté et le coût impliqué par l'imitation de l'espacement des mots a été tranchée par la restitution de l'espacement moderne des mots dès lors que l'usage scribal ne caractérisait pas un usage établi~; en revanche, les élisions, agglutinations ou encore les lexicalisations (consacrées ou fautives) ont été respectées~: \textit{d'avantage, Ç'a été, tédeum}. L'usage scribal a également été respecté dans l'accentuation des caractères, l'abréviation des mots, l'usage des majuscules, l'orthographe et la ponctuation.
 				
