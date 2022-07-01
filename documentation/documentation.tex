@@ -220,13 +220,11 @@
 		Outre la mise à disposition des sources textuelles ou des données
 		qu'elles contiennent, l'HTR offre des possibilités de traitement massif
 		de ces données avec plusieurs types d'objectifs. Les
-		\textit{Expérimentations pour l'analyse automatique de sources chinoises
-			anciennes}\footcite{bizais-lilligExperimentationsPourAnalyse2022} ont
+		\textit{Expérimentations pour l'analyse automatique de sources chinoises anciennes}\footcite{bizais-lilligExperimentationsPourAnalyse2022} ont
 		montré l'intérêt de l'HTR pour suivre l'utilisation de textes à travers
 		les siècles. Dans les domaines épigraphique et paléographique également,
 		les algorithmes de reconnaissance d'écriture peuvent servir d'outil à
-		l'analyse des mots et des glyphes\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs
-		de reconnaissance peut également être exploitée afin dégager des
+		l'analyse des mots et des glyphes\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs de reconnaissance peut également être exploitée afin dégager des
 		caractéristiques d'évolution des écritures\footcite{paraskeviHTRHandwrittenPaleographic2022}.
 		
 		Enfin le projet CHAMDOC a illustré le fait que l'HTR peut intervenir
@@ -296,7 +294,7 @@
 		hétérogènes, de la variété des supports également, susceptible
 		d'infléchir l'efficacité des entraînements\footcite{baudryArchivesInquisitorialesPortugal2022}. D'autre projets
 		tentent de couvrir une diachronie encore plus longue, comme la création
-		d'un corpus de fictions littéraires allant du XIe siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. Enfin, les projets d'HTR
+		d'un corpus de fictions littéraires allant du XIe siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. Enfin, les projets HTR
 		s'étendent également en direction des écritures non latines, comme l'ont
 		illustré des présentations du projet CHAMDOC\footcite{schweyerAnalyseReconnaissanceIndexation2022} ainsi que les
 		expérimentations pour l'analyse automatique de sources chinoises
@@ -468,7 +466,7 @@
 		types d'écritures hétérogènes. Faire varier les langues et les genres
 		littéraires ou les types de texte contribue également à cette robustesse
 		dans la mesure où les modèles \gls{htr} s'appuient sur un modèle de langue
-		susceptible d'influencer les prédictions. Trouver le meilleur équilibre
+		susceptible d'influencer les \glspl{prédiction}. Trouver le meilleur équilibre
 		entre généricité et acuité particulière est au fond une équation très
 		empirique, de même qu'apprécier la proximité ou la distance entre deux
 		écritures. Ainsi la notion de ``hors-domaine'', employée pour
@@ -579,9 +577,9 @@
 		des modèles d'HTR déjà performants implique d'apporter beaucoup de
 		données d'entraînement pour gagner, en définitive, très peu d'acuité.
 		Au-delà d'une certaine performance acquise, il peut donc être pertinent
-		de répondre aux problèmes de l'HTR (les fautes dans les prédictions)
+		de répondre aux problèmes de l'HTR (les fautes dans les \glspl{prédiction})
 		autrement que par l'entraînement de modèles encore plus performants, à
-		savoir en corrigeant les prédictions dans une phase ultérieure de la
+		savoir en corrigeant les \glspl{prédiction} dans une phase ultérieure de la
 		chaîne de traitement\footcite{torresaguilarModelisationAffinageHTR2022}.
 		
 		Ces étapes ultérieures peuvent être multiples~: lemmatisation des mots,
@@ -640,7 +638,7 @@
 				À la différence de l'analyse textométrique ou de l'interrogation du texte brut, finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription persistent dans la production finale. Théoriquement, le texte doit être établi à la perfection (bien que l'erreur humaine soit toujours possible). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite entraînent fatalement des erreurs de reconnaissance, même avec un modèle particulièrement adapté à l'écriture en question
 				\footnote{Une acuité de 99\% est atteignable (\cite{stokesEScriptoriumVREManuscript2021}), mais il a semblé plus raisonnable de ne pas investir trop de temps dans l'entraînement du modèle et de se contenter des excellents résultats atteints.}.
 				
-				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des prédictions automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de prédictions sera donnée en exemple pour apprécier l'écart entre une prédiction d'une acuité voisine de 90\% (insuffisante pour l'édition) et une prédiction d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
+				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des \glspl{prédiction} automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de \glspl{prédiction} sera donnée en exemple pour apprécier l'écart entre une \gls{prédiction} d'une acuité voisine de 90\% (insuffisante pour l'édition) et une \gls{prédiction} d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
 			\subsection{Choisir des collections d'évaluation et identifier des mains}
 				Afin de donner les meilleurs chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale.
@@ -873,7 +871,7 @@
 				
 				Paramètre important~: la numérotation des lignes dépend de la position des régions qui les englobent dans l'image analysée. Ainsi, la mise en page particulière des documents et le découpage du texte par régions peut jouer un rôle déterminant dans l'ordre des lignes. L'expérience a pu en être faite en remodelant de différentes manières les segmentations automatiquement produites le modèle par défaut de Kraken.
 				
-				Or les problèmes de numérotation ont été nombreux lors de ces tests. Comme le montre la figure \ref{comp-av-opener-ln-reg-193}, issue du vol.~2 de la seconde copie\footcite{CdS02001369}, obtenir une bonne numérotation des lignes de titre s'est révélé problématique dès lors que l'on souhaitait isoler ces titres dans une région propre (\textit{opener}). On observe en effet dans cet exemple que le titre situé sur la page de gauche est numéroté 23 et 24~; il ne s'intercale donc pas correctement entre les lignes de la manchette (10 et 11) et les lignes du corps de la lettre (à partir de 12). Le même phénomène s'est produit dans cet exemple pour les trois titres de la double page. Sachant que le titre est le seul élément sur lequel on puisse s'appuyer pour distinguer automatiquement le début et la fin des lettres (car il n'y a pas toujours de signature, pas toujours de manchette, pas toujours de date pour borner le texte des lettres), la mauvaise numérotation des lignes de titre est un énorme problème en vue de l'exploitation des prédictions~: sans intervention, les titres de chaque lettre de cette page se retrouveraient disposer à la fin du texte de leur lettre et ainsi passer pour le titre de la lettre suivante…
+				Or les problèmes de numérotation ont été nombreux lors de ces tests. Comme le montre la figure \ref{comp-av-opener-ln-reg-193}, issue du vol.~2 de la seconde copie\footcite{CdS02001369}, obtenir une bonne numérotation des lignes de titre s'est révélé problématique dès lors que l'on souhaitait isoler ces titres dans une région propre (\textit{opener}). On observe en effet dans cet exemple que le titre situé sur la page de gauche est numéroté 23 et 24~; il ne s'intercale donc pas correctement entre les lignes de la manchette (10 et 11) et les lignes du corps de la lettre (à partir de 12). Le même phénomène s'est produit dans cet exemple pour les trois titres de la double page. Sachant que le titre est le seul élément sur lequel on puisse s'appuyer pour distinguer automatiquement le début et la fin des lettres (car il n'y a pas toujours de signature, pas toujours de manchette, pas toujours de date pour borner le texte des lettres), la mauvaise numérotation des lignes de titre est un énorme problème en vue de l'exploitation des \glspl{prédiction}~: sans intervention, les titres de chaque lettre de cette page se retrouveraient disposer à la fin du texte de leur lettre et ainsi passer pour le titre de la lettre suivante…
 				
 				Il est naturellement possible de corriger ces problèmes de numérotation de façon manuelle dans l'interface eScriptorium, mais il s'agit d'un travail fastidieux (chaque ligne doit être déplacée une par une) et hasardeux (le rechargement de la page peut rétablir la  numérotation d'origine.) Il fallait donc prévenir ce problème.
 				
@@ -1090,7 +1088,7 @@
 					\label{lettre-rigaud}%
 				\end{figure}
 				
-				Voici la prédiction correspondante~:
+				Voici la \gls{prédiction} correspondante~:
 				
 				\begin{quote}
 					% Pour mettre une lettre en rouge \textcolor{red}{[i]}
@@ -1123,7 +1121,7 @@
 					\item 2e main de la correspondance Martini\footnote{Dénommée \textsf{mainCdS02\_Konv019\_02}.}~: 96,27\%
 				\end{itemize}
 			
-				Voici la prédiction, où les quelques fautes rémanentes ont été colorées en rouge~:
+				Voici la \gls{prédiction}, où les quelques fautes rémanentes ont été colorées en rouge~:
 				
 				\begin{quote}
 					% Pour mettre une lettre en rouge \textcolor{red}{i}
@@ -1150,7 +1148,7 @@
 					qui n'était qu'en récit-Cette dée m'a saisie, envuhie, et après devoir laifst quelque tempps}\footnote{Notice d'inventaire~: \cite{CdS02031032}.}
 				\end{quote}
 			
-				Comme on peut le constater avec cette prédiction, une acuité de 91\% laisse encore une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
+				Comme on peut le constater avec cette \gls{prédiction}, une acuité de 91\% laisse encore une lourde tâche de correction à l'éditeur du texte pour parvenir à un résultat publiable. Même si ce pourcentage peut sembler élevé, il reste indispensable de procéder à l'entraînement du modèle de reconnaissance pour chaque nouvelle main afin de dépasser le score de 95\% au-delà duquel la correction de la graphie des mots devient légère (la ponctuation et l'accentuation restant à examiner de près).
 			
 			\subsection{Tenir un journal des résultats de tests et d'entraînements}
 				\label{journal-test}
@@ -1162,24 +1160,24 @@
 				
 				Comment procéder à de nouveaux entraînements pour adapter le modèle de reconnaissance à d'autres mains de la correspondance~? En théorie, il serait plus indiqué de poursuivre l'entraînement de modèle par l'enrichissement du corpus déjà constitué et la réitération des entraînements que l'on a effectués. Recommencer en somme les entraînement que l'on a effectué à partir d'un corpus plus riche. Cette option est celle qui garantit la plus grande généricité de modèle. Mais une autre méthode peut naturellement être envisagée~: repartir du modèle que l'on a produit et l'affiner avec des données nouvelles. Cette méthode peut nuire quelque peu à la généricité du futur modèle (bien que nous n'ayons pas eu la possibilité de tester ce point) mais elle permet de réduire considérablement le temps de calcul des entraînements. Ce processus extrêmement gourmand en temps de calcul (et très dépendant des performances de l'ordinateur utilisé), sera sérieusement écourté si l'on se contente d'un affinage par quelques données supplémentaires.
 							
-			\subsection{Injecter les transcriptions manuelles dans les prédictions}
+			\subsection{Injecter les transcriptions manuelles dans les \glspl{prédiction}}
 				\label{injection}
 				Le test et l'entraînement des modèles de reconnaissance d'écriture impose la production de transcriptions manuelles du texte. Il nous est apparu essentiel que cette tâche un peu fastidieuse soit pleinement valorisée dans le processus d'édition et que ces transcriptions théoriquement parfaites servent non seulement à l'entraînement des modèles mais soient aussi exploitées pour la production de l'édition finale.
 				
-				La méthode la plus simple pour joindre les fichiers \gls{alto} contenant les transcriptions manuelles aux fichiers contenant la prédiction automatique du texte des autres pages d'un même dossier est de regrouper ces fichiers ensemble. Or, nous avons voulu tenir compte de la possibilité que les transcriptions manuelles ne recouvrent pas toutes les lignes d'écriture d'une page ‒ le cas n'est pas très fréquent, mais nous y avons été confronté. Certaines mains n'étant attestées que de manière sporadique, en compagnie d'autres écritures, la méthodologie d'entraînement impose de ne transcrire que l'écriture propre au test ou à l'entraînement, laissant les écritures voisines de côté. Il résulte de cette nécessité que les fichiers \gls{alto} contenant les transcriptions manuelles peuvent être lacunaires~: ils ne peuvent donc pas se substituer aux fichiers contenant la prédiction complète des lignes d'écriture d'une page au risque de remplacer une partie des prédictions par du vide. 
+				La méthode la plus simple pour joindre les fichiers \gls{alto} contenant les transcriptions manuelles aux fichiers contenant la \gls{prédiction} automatique du texte des autres pages d'un même dossier est de regrouper ces fichiers ensemble. Or, nous avons voulu tenir compte de la possibilité que les transcriptions manuelles ne recouvrent pas toutes les lignes d'écriture d'une page ‒ le cas n'est pas très fréquent, mais nous y avons été confronté. Certaines mains n'étant attestées que de manière sporadique, en compagnie d'autres écritures, la méthodologie d'entraînement impose de ne transcrire que l'écriture propre au test ou à l'entraînement, laissant les écritures voisines de côté. Il résulte de cette nécessité que les fichiers \gls{alto} contenant les transcriptions manuelles peuvent être lacunaires~: ils ne peuvent donc pas se substituer aux fichiers contenant la \gls{prédiction} complète des lignes d'écriture d'une page au risque de remplacer une partie des \glspl{prédiction} par du vide. 
 				
-				Il était donc nécessaire de concevoir une méthode de remplacement, dans les fichiers contenant la prédiction automatique du texte, des seules lignes pour lesquelles nous avions produit des transcriptions manuelles. Cibler de manière précise des lignes d'écriture dans un fichier \gls{alto} est rendu possible par l'identifiant unique de chaque élément contenant une ligne de texte (\textsf{TextLine}). Nous avons donc écrit un script python\footcite{biayInjectTranscriptPy2022a} capable d'analyser toutes les lignes d'écriture des fichiers de nos vérités de terrain et de comparer leur identifiant avec ceux des lignes des fichiers des prédictions automatiques portant les mêmes noms. En cas de correspondance entre les identifiants, la transcription manuelle vient remplacer la prédiction du texte.
+				Il était donc nécessaire de concevoir une méthode de remplacement, dans les fichiers contenant la \gls{prédiction} automatique du texte, des seules lignes pour lesquelles nous avions produit des transcriptions manuelles. Cibler de manière précise des lignes d'écriture dans un fichier \gls{alto} est rendu possible par l'identifiant unique de chaque élément contenant une ligne de texte (\textsf{TextLine}). Nous avons donc écrit un script python\footcite{biayInjectTranscriptPy2022a} capable d'analyser toutes les lignes d'écriture des fichiers de nos vérités de terrain et de comparer leur identifiant avec ceux des lignes des fichiers des \glspl{prédiction} automatiques portant les mêmes noms. En cas de correspondance entre les identifiants, la transcription manuelle vient remplacer la \gls{prédiction} du texte.
 			
 		\section{La correction semi-automatisée}
-			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des prédictions satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des prédictions sur l'ensemble de la source.
+			Une fois que l'on dispose d'un modèle de reconnaissance d'écriture suffisamment bien entraîné pour donner des \glspl{prédiction} satisfaisantes pour toutes les mains principales d'une source, on peut réaliser des \glspl{prédiction} sur l'ensemble de la source.
 			
 			Toutefois, même avec un modèle très performant, le travail de correction des fautes rémanentes ne peut être négligé. Son automatisation permet de gagner un peu de temps. Elle joue surtout le rôle de tamis, attirant l'attention de l'éditeur sur les graphies inhabituelles des mots là où son œil pourrait les laisser échapper.
 			
-			Mais automatiser la correction des prédictions requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des prédictions justes au regard des normes d'édition retenues. En l'occurrence, ces normes suivent de près les usages scribaux, la graphie des mots ne saurait donc être uniformisée par la correction automatisée~: la notion de justesse est élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse (on a parlé de tamis) pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
+			Mais automatiser la correction des \glspl{prédiction} requiert de la prudence. Il faut naturellement veiller à ne pas remplacer involontairement des \glspl{prédiction} justes au regard des normes d'édition retenues. En l'occurrence, ces normes suivent de près les usages scribaux, la graphie des mots ne saurait donc être uniformisée par la correction automatisée~: la notion de justesse est élargie aux variations graphiques de chaque scribe. De ce point de vue, l'automatisation des corrections peut s'avérer précieuse (on a parlé de tamis) pour signaler à l'éditeur un usage scribal particulier, comme l'omission d'un accent aigu sur le mot \textit{redaction}, un point dont le contrôle est nécessaire bien qu'il puisse très facilement échapper à l'attention.
 			
-			L'automatisation des corrections ne consiste donc pas à remplacer automatiquement le contenu des prédictions mais à analyser ce contenu et à signaler les mots représentant un problème, et si possible à proposer une correction que l'éditeur sera libre d'appliquer ou non.
+			L'automatisation des corrections ne consiste donc pas à remplacer automatiquement le contenu des \glspl{prédiction} mais à analyser ce contenu et à signaler les mots représentant un problème, et si possible à proposer une correction que l'éditeur sera libre d'appliquer ou non.
 			
-			Le résultat de cette opération est imparfait (ses limites sont discutées ci-après). On attend d'elle qu'elle accompagne et facilite la correction de la prédiction par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vérité de terrain, encore moins de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des prédictions vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
+			Le résultat de cette opération est imparfait (ses limites sont discutées ci-après). On attend d'elle qu'elle accompagne et facilite la correction de la \gls{prédiction} par l'éditeur, mais pas qu'elle produise un texte ayant le statut de vérité de terrain, encore moins de texte établi. Par conséquent, cette correction n'intervient pas dans le processus d'entraînement d'un modèle \gls{htr}. Une fois les modèles \gls{htr} correctement entraînés, elle permet de résoudre un certain nombre d'erreurs en amont de la transformation des \glspl{prédiction} vers le format \gls{tei}, où une correction manuelle approfondie du texte est nécessaire pour son établissement définitif.
 			
 			La démarche explicitée dans la documentation du projet DAHN\footcite{chiffoleauHowPostOCRCorrection2022} a été suivie et enrichie de quelques développements appliqués aux scripts de ce projet
 			\footnote{Le script principal porte le nom de \textit{spellcheckTexts}~: \cite{biaySpellcheckTextsPy2022}. Ce script est fondé sur l'utilisation du module publié par \cite{barrusPyspellcheckerPurePython}.}.
@@ -1190,21 +1188,21 @@
 				Il est donc très vite apparu nécessaire de ne pas signaler à l'éditeur les mots dont la graphie a été validée par ailleurs. Pour cela, on s'est appuyé d'une part sur un dictionnaire généraliste de la langue française et d'autre part sur les mots de la correspondance-même de \gls{cds}, à savoir les mots contenus dans les vérités de terrain que l'on a produites pour le test et l'entraînement des modèles de reconnaissance d'écriture, ainsi que les corrections validées pour les pages prédécemment traitées 
 				\footnote{Pour exploiter ce second réservoir de mots, une fonction appelée \textit{collecteMots} a été ajoutée au script principal.}.
 			
-				En résumé, la correction automatisée se concentre sur l'orthographe des mots. Elle ne traite pas la ponctuation. De plus, elle considère qu'une forme présente dans les vérités de terrain, dans les corrections déjà validées ou dans le dictionnaire de référence de la langue française est en soi valide. Ainsi, elle ne signale pas les mots mal prédits dont l'orthographe est attestée ailleurs~; par exemple, dans la prédiction \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas signalée, car le mot \textit{vu} est attesté ailleurs.
+				En résumé, la correction automatisée se concentre sur l'orthographe des mots. Elle ne traite pas la ponctuation. De plus, elle considère qu'une forme présente dans les vérités de terrain, dans les corrections déjà validées ou dans le dictionnaire de référence de la langue française est en soi valide. Ainsi, elle ne signale pas les mots mal prédits dont l'orthographe est attestée ailleurs~; par exemple, dans la \gls{prédiction} \textit{Dans \textbf{vu} siècle où tous les talens…}, la prédiciton erronée \textit{vu} pour \textit{un} ne sera pas signalée, car le mot \textit{vu} est attesté ailleurs.
 					
 			\subsection{Analyser les mots}
 				Le script procède à une recherche de correspondances entre les formes du texte et un dictionnaire de référence par des permutations de lettres~: il est en mesure de proposer des formes considérées comme justes dans une limite de deux fautes par mot. Par exemple, il reconnaît que la meilleure proposition pour le mot \textit{deusx} est \textit{deux}, il est encore capable d'associer la forme \textit{pubièes} à un mot de la famille de \textit{publier} (deux fautes), mais en revanche, il n'est pas capable de faire cette association pour la forme \textit{pubièès}, qui par rapport aux formes de la famille de \textit{publier} qu'il connaît comporte au moins trois fautes.
 						
-				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires au format \gls{json} qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la prédiction d'origine.
+				Afin de faciliter la correction des dictionnaires générés par le script pour chaque page (ce sont ces dictionnaires au format \gls{json} qui permettent de valider les propositions de correction), on a développé le script pour afficher le contexte du mot et en conserver la mémoire, ce qui limite le besoin d'allers-retours entre le dictionnaire à corriger et l'image ou la \gls{prédiction} d'origine.
 				
 				Une fois les corrections validées, un second script écrit par F.~Chiffoleau permet de les appliquer aux fichiers contenant les textes\footcite{biayTextCorrectionPy2022}. Originellement conçu pour remplacer des chaînes de caractère n'importe où dans le fichier concerné, il faisait courir le risque de remplacements abusifs. Par exemple, si la forme \textit{natur} devait être corrigée en \textit{nature} et que la même page de texte contenait aussi le mot \textit{naturellement}, une application globale des corrections entraînait la création d'une faute~: \textit{naturellement} devenait \textit{natureellement}. Le script a donc été perfectionné afin de procéder à l'application des corrections ligne par ligne et mot par mot
 				\footnote{Pour l'application mot par mot, on a utilisé le module \cite{SpaCyIndustrialstrengthNatural}.}.
 				
-				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des prédictions en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine
-				\footnote{L'injection des transcriptions manuelles en lieu et place des prédictions (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des prédictions. Il n'était dès lors plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait ainsi obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
+				En outre, il s'est avéré nécessaire de modifier la méthode d'application des corrections aux fichiers \gls{alto} des \glspl{prédiction} en optant pour l'écriture d'un authentique arbre XML et non d'une imitation d'arbre au format \textsf{txt}, comme c'était le cas dans le script d'origine
+				\footnote{L'injection des transcriptions manuelles en lieu et place des \glspl{prédiction} (cf.~ci-dessus, \ref{injection}, p.~\pageref{injection}) dans les seuls fichiers appartenant au corpus d'entraînement de la reconnaissance d'écriture a entraîné une modification irrémédiable de l'indentation de ceux-ci. L'indentation de ces fichiers étant devenue différente des autres fichiers des \glspl{prédiction}. Il n'était dès lors plus possible de s'appuyer sur l'identité des indentations pour repérer les lignes de textes à remplacer. Il devenait ainsi obligatoire de s'appuyer sur la hiérarchie de l'arbre XML pour appliquer ces corrections.}.
 
 			\subsection{Gérer les résolutions ambiguës}
-				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une prédiction peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple la forme \textit{cele} peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
+				Appliquer des scripts de correction automatique, on l'a signalé plus haut, comporte le risque d'appliquer partout des corrections ne se justifiant que dans certains cas et ainsi de générer des fautes. Le problème de l'ambiguïté des corrections se pose lorsqu'une \gls{prédiction} peut se prêter selon le contexte à plusieurs résolutions différentes~: par exemple la forme \textit{cele} peut résulter tantôt de l'oubli d'un \textit{l} (on corrigera en \textit{celle}), tantôt de la reconnaissance d'un \textit{e} à la place d'un \textit{a} (on corrigera en \textit{cela}).
 							
 				On a procédé dans un premier temps selon une méthode qui neutralisait les corrections ambiguës~: \textit{cele} était intégré à la liste globale des corrections avec une absence de résolution afin d'être exclu de la correction automatique.
 				
@@ -1231,7 +1229,7 @@
 					phiiiy, tetsujiro, étreins-le, rugissons, causatif, armonia, qccupe-toi, découvez, masanté, jannelke, aleksi, qpidon, 500km, unejeunesse, birnholz-vazquez, traînons-nous, peterkins, koidry, vinitt, mentait., bonne-journée, micromonde, myélogène, uilise, 313e, rubindium, ddeokbeoki, 'irlandia, donie, brichelle
 				\end{quote}
 			
-				L'inconvénient pour l'analyse des prédictions automatiques de la correspondance de \gls{cds} est double. La quantité énorme de formes sémantiques, coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse des prédictions. On a ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français mais est attestée pas moins de 36~fois dans le dictionnaire francophone de Pyspellchecker, a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
+				L'inconvénient pour l'analyse des \glspl{prédiction} automatiques de la correspondance de \gls{cds} est double. La quantité énorme de formes sémantiques, coûte du temps à la recherche automatique des fautes. Mais plus grave, les innombrables bizarreries que l'on trouve dans ce dictionnaire finissent nécessairement par parasiter l'analyse des \glspl{prédiction}. On a ainsi fait l'expérience que la forme \textit{ette}, qui n'existe pas en français mais est attestée pas moins de 36~fois dans le dictionnaire francophone de Pyspellchecker, a de fait été considérée comme juste, passant à travers les mailles du filet de la correction automatique.
 				
 				Pour remédier à ce problème, on a fait appel au répertoire de textes numérisés de la ressource en ligne Frantext\footcite{Frantext}. Frantext est un corpus numérique développé par l'\gls{atilf}, dont la dernière version (mise à jour en janvier 2022) comptabilise 5555 références et 264 millions de mots. Les textes y sont proposés dans un encodage \gls{tei} très simple et avec une lemmatisation de chaque forme. Plus intéressé par les formes des mots que par leur lemme, on a pu facilement récupérer toutes les formes contenues dans une sélection de textes pour construire un dictionnaire au format \gls{json}.
 				
