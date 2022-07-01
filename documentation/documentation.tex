@@ -139,483 +139,471 @@
 				
 	\chapter[HTR~: état des lieux]{Reconnaissance automatique des écritures manuscrites \\ \large Un état des lieux}
 		
-		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et eScriptorium)
+		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et d'eScriptorium)
 		\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
 		
 		\section{Principes généraux}
 		
-		La reconnaissance automatique des écritures manuscrites recouvre quatre phases indissociables et complémentaires~:
-		
-		\begin{enumerate}
-			\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
-			\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
-			\item La reconnaissance des écritures proprement dite, ou transcription automatique, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
-			\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022, stokesEScriptoriumVREManuscript2021}.
-		\end{enumerate}
-		
-		Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, avec un taux d'acuité exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
-		
-		Ce processus d'entraînement comporte deux phases longues et consommatrices d'énergie~:
-		
-		\begin{enumerate}
-			\item La constitution des données d'entraînement par l'homme~: segmenter et transcrire à la main un nombre de pages suffisamment important pour un entraînement efficace~;
-			\item L'entraînement par la machine, qui demande une puissance de calcul très importante (selon le matériel utilisé et la quantité de données, un entraînement peut durer de quelques heures à… quelques semaines) et donc une forte consommation d'électricité.
-		\end{enumerate}
-		
-		Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitée par un modèle est grande, plus l'opération dans son ensemble est rentable. De plus, un modèle produit à partir de sources déterminées peut être réutilisé dans un contexte différent, et fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés. Il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages, afin de les rendre plus adéquats aux sources sur lesquels on travaille.
-		
-		Il faut aussitôt mettre un bémol à cet état de faits encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
-		\footnote{Voir \textit{infra} \ref{lieu-segmentation}, p.~\pageref{lieu-segmentation}.}.
-		
+			La reconnaissance automatique des écritures manuscrites recouvre quatre phases indissociables et complémentaires~:
+			
+			\begin{enumerate}
+				\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
+				\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
+				\item La reconnaissance des écritures proprement dite, ou transcription automatique, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
+				\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022, stokesEScriptoriumVREManuscript2021}.
+			\end{enumerate}
+			
+			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, avec un taux d'acuité (ou \textit{accuracy}) exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
+			
+			Ce processus d'entraînement comporte deux phases longues et consommatrices d'énergie~:
+			
+			\begin{enumerate}
+				\item La constitution des données d'entraînement par l'homme~: segmenter et transcrire à la main un nombre de pages suffisamment important pour un entraînement efficace~;
+				\item L'entraînement par la machine, qui demande une puissance de calcul très importante (selon le matériel utilisé et la quantité de données, un entraînement peut durer de quelques heures à… quelques semaines) et donc une forte consommation d'électricité.
+			\end{enumerate}
+			
+			Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitées par un modèle est grande, plus l'opération dans son ensemble est rentable. De plus, un modèle produit à partir de sources déterminées peut être réutilisé dans un contexte différent, et fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés. Il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages, afin de les rendre plus adéquats aux sources sur lesquels on travaille.
+			
+			Il faut aussitôt mettre un bémol à cet état de faits encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
+			\footnote{Voir \textit{infra} \ref{lieu-segmentation}, p.~\pageref{lieu-segmentation}.}.
 		
 		\section{La recherche à l'heure de l'HTR}
 		
-		Dans le cadre du projet \gls{cremma}-Lab soutenu par le DIM MAP, le centre
-		Jean-Mabillon (École nationale des chartes), en partenariat avec le
-		LAMOP et le LabEX Hastec, a organisé les 23 et 24 juin 2022 un colloque
-		intitulé \textit{Documents anciens et reconnaissance automatique des
-			écritures manuscrites}\footnote{Comité d'organisation~: Ariane Pinche et
-			Floriane Chiffoleau. Comité scientifique~: Jean-Baptiste Camps, Alix
-			Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin
-			Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter
-			Stokes. \cite{DocumentsAnciensReconnaissance}}.
+			Dans le cadre du projet \gls{cremma}-Lab soutenu par le DIM MAP, le centre
+			Jean-Mabillon (École nationale des chartes), en partenariat avec le
+			LAMOP et le LabEX Hastec, a organisé les 23 et 24 juin 2022 un colloque
+			intitulé \textit{Documents anciens et reconnaissance automatique des écritures manuscrites}
+			\footnote{Comité d'organisation~: Ariane Pinche et Floriane Chiffoleau. Comité scientifique~: Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes. \cite{DocumentsAnciensReconnaissance}}.
+			
+			Ce colloque a été l'occasion de rassembler une communauté scientifique
+			représentant les pays du sud de l'Europe (France, Italie, Grêce,
+			Portugal, Suisse) ainsi que quelques équipes nords-américaines autour
+			des enjeux, des finalités, des problèmes et des solutions d'avenir de la
+			reconnaissance automatique des écritures manuscrites.
+			
+			Le compte-rendu analytique qui en est donné dans les pages qui suivent constitue un état de l'art des projets et des techniques appliquées à l'HTR.
+			
+			\subsection{Des finalités et des publics multiples}
 		
-		Ce colloque a été l'occasion de rassembler une communauté scientifique
-		représentant les pays du sud de l'Europe (France, Italie, Grêce,
-		Portugal, Suisse) ainsi que quelques équipes nords-américaines autour
-		des enjeux, des finalités, des problèmes et des solutions d'avenir de la
-		reconnaissance automatique des écritures manuscrites ou \gls{htr}\footcite{marguin-hamonDiscoursOuverturePresentation2022} \footnote{Le titre
-			de chaque intervention et le nom complet des intervenant est reporté
-			en fin de document.}. Il a ainsi illustré les différentes facettes du
-		projet \gls{cremma}-Lab~: favoriser une réflexion sur la meilleure façon de
-		produire des données~; irriguer de ces réflexions une communauté de
-		chercheurs qui ne fait que croître autour des enjeux de l'HTR~; proposer
-		des solutions aux institutions patrimoniales, de plus en plus
-		intéressées par ces technologies\footcite{campsCremmaLabProjectsTranscription2022}.
+				Les finalités de l'HTR sont multiples. Elles concernent aussi bien les
+				scientifiques qu'un public élargi aux savants et aux curieux des sources
+				écrites anciennes. Les projets \textit{Crimes et châtiments}\footcite{paupeCursiveXVIIeSiecle2022} et
+				\textit{Lettres en lumières}\footcite{fizaineLettresLumieres2022a} ont démontré l'intérêt de l'HTR pour
+				ouvrir la lecture des textes anciens en dehors du monde académique ou
+				pour le développement de projets de transcription contributive.
+				
+				Pour le public scientifique, l'HTR est en mesure de rendre accessibles
+				des données selon plusieurs modalités. Le projet POPP (Projet
+				d'Océrisation des Recensements de la Population Parisienne) a montré
+				comment elle permet de construire de vastes bases de données par
+				l'extraction d'informations de recensements historiques\footcite{constumReconnaissanceExtractionInformations2022}. Le projet Sofer
+				Mahir a proposé une méthode pour l'établissement d'éditions critiques\footcite{stoklbenezraHTRCriticalEdition2022}, ce qui impose d'ajouter à la
+				transcription des documentsune étape de structuration de leur
+				hiérarchie, les différents témoins d'un même texte affectant souvent des
+				mises en page différentes. Les travaux de thèse de doctorat de
+				Christophe Tufféry\footcite{tufferyRetourExperiencesUtilisation2022} ont
+				mis en évidence quant à eux un exemple de développement d'application
+				visant à proposer, à partir de la transcription de carnets de fouilles
+				archéologiques, des visualisations de ces données pour restituer
+				l'histoire d'une fouille programmée.
+				
+				Outre la mise à disposition des sources textuelles ou des données
+				qu'elles contiennent, l'HTR offre des possibilités de traitement massif
+				de ces données avec plusieurs types d'objectifs. Les
+				\textit{Expérimentations pour l'analyse automatique de sources chinoises anciennes}\footcite{bizais-lilligExperimentationsPourAnalyse2022} ont
+				montré l'intérêt de l'HTR pour suivre l'utilisation de textes à travers
+				les siècles. Dans les domaines épigraphique et paléographique également,
+				les algorithmes de reconnaissance d'écriture peuvent servir d'outil à
+				l'analyse des mots et des glyphes\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs de reconnaissance peut également être exploitée afin dégager des
+				caractéristiques d'évolution des écritures\footcite{paraskeviHTRHandwrittenPaleographic2022}.
+				
+				Enfin le projet CHAMDOC a illustré le fait que l'HTR peut intervenir
+				dans la préservation des langues écrites en péril, comme c'est le cas du
+				cham ancien, langue véhiculaire utilisée dans des inscriptions gravées
+				au Vietnam, du VIe au XVIIe siècle\footcite{schweyerAnalyseReconnaissanceIndexation2022}.
 		
-		\subsection{Des finalités et des publics multiples}
-		
-		Les finalités de l'HTR sont multiples. Elles concernent aussi bien les
-		scientifiques qu'un public élargi aux savants et aux curieux des sources
-		écrites anciennes. Les projets \textit{Crimes et châtiments}\footcite{paupeCursiveXVIIeSiecle2022} et
-		\textit{Lettres en lumières}\footcite{fizaineLettresLumieres2022a} ont démontré l'intérêt de l'HTR pour
-		ouvrir la lecture des textes anciens en dehors du monde académique ou
-		pour le développement de projets de transcription contributive.
-		
-		Pour le public scientifique, l'HTR est en mesure de rendre accessibles
-		des données selon plusieurs modalités. Le projet POPP (Projet
-		d'Océrisation des Recensements de la Population Parisienne) a montré
-		comment elle permet de construire de vastes bases de données par
-		l'extraction d'informations de recensements historiques\footcite{constumReconnaissanceExtractionInformations2022}. Le projet Sofer
-		Mahir a proposé une méthode pour l'établissement d'éditions critiques\footcite{stoklbenezraHTRCriticalEdition2022}, ce qui impose d'ajouter à la
-		transcription des documentsune étape de structuration de leur
-		hiérarchie, les différents témoins d'un même texte affectant souvent des
-		mises en page différentes. Les travaux de thèse de doctorat de
-		Christophe Tufféry\footcite{tufferyRetourExperiencesUtilisation2022} ont
-		mis en évidence quant à eux un exemple de développement d'application
-		visant à proposer, à partir de la transcription de carnets de fouilles
-		archéologiques, des visualisations de ces données pour restituer
-		l'histoire d'une fouille programmée.
-		
-		Outre la mise à disposition des sources textuelles ou des données
-		qu'elles contiennent, l'HTR offre des possibilités de traitement massif
-		de ces données avec plusieurs types d'objectifs. Les
-		\textit{Expérimentations pour l'analyse automatique de sources chinoises anciennes}\footcite{bizais-lilligExperimentationsPourAnalyse2022} ont
-		montré l'intérêt de l'HTR pour suivre l'utilisation de textes à travers
-		les siècles. Dans les domaines épigraphique et paléographique également,
-		les algorithmes de reconnaissance d'écriture peuvent servir d'outil à
-		l'analyse des mots et des glyphes\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs de reconnaissance peut également être exploitée afin dégager des
-		caractéristiques d'évolution des écritures\footcite{paraskeviHTRHandwrittenPaleographic2022}.
-		
-		Enfin le projet CHAMDOC a illustré le fait que l'HTR peut intervenir
-		dans la préservation des langues écrites en péril, comme c'est le cas du
-		cham ancien, langue véhiculaire utilisée dans des inscriptions gravées
-		au Vietnam, du VIe au XVIIe siècle\footcite{schweyerAnalyseReconnaissanceIndexation2022}.
-		
-		\subsection{eScriptorium et Kraken~: infrastructures et développements}
-		
-		Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre
-		Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu
-		l'occasion de tester les deux applications\footcite{leblancTranskribusEScriptoriumRetour2022, paupeCursiveXVIIeSiecle2022} et ainsi fait part de leurs
-		expériences. L'entraînement de modèles \gls{htr} est un processus exigeant de
-		très grandes capacités de calcul, et donc des infrastructures coûteuses.
-		L'infrastructure \gls{cremma} ouvrira bientôt au public des institutions
-		académiques partenaires une instance d'eScriptorium\footcite{marguin-hamonDiscoursOuverturePresentation2022} dotée de trois GPU
-		(\textit{Graphics Processing Unit} ou unité de traitement graphique),
-		chacune représentant en moyenne un coût d'une dizaine de milliers
-		d'euros. L'infrastructure FoNDUE de l'université de Genève bénéficie
-		quant à elle de la puissance du superordinateur (HPC) de l'université,
-		doté de 150 GPU. La recherche des meilleures performances des
-		entraînements de modèles consiste généralement à trouver le bon
-		équilibre entre temps de calcul par image et nombre de tâches lancées en
-		parallèle\footcite{gabayFoNDUELightweightHTR2022}.
-		
-		Les développements en cours de l'interface eScriptorium donneront lieu
-		dans un avenir proche à une fonctionnalité de recherche des termes
-		transcrits, à du balisage TEI basique, à la possibilité d'annotation
-		graphique des pages, à l'alignement automatique d'un texte existant sur
-		une image et à l'intégration de l'ordre des lignes dans l'entraînement
-		des modèles de segmentation. Quant à l'application Kraken, sur laquelle
-		se fonde l'interface eScriptorium, sa dernière version stable (4)
-		propose de nouvelles bibliothèques d'entraînement et une meilleure
-		accessibilité de son API. Elle affiche en outre une amélioration des
-		performances pour les modèles de reconnaissance d'écriture, la
-		reconstruction de lacunes et une nouvelle technologie de segmentation
-		des régions et des lignes d'écriture (\textit{layout analysis})~: grâce à
-		l'utilisation de la technologie Transformers, la détection de
-		l'orientation des lignes est désormais plus robuste, et il devient
-		possible de segmenter des lignes qui se croisent. Cette innovation est
-		néanmoins très exigeante sur le plan de l'infrastructure et renchérit le
-		coût technologique de l'entraînement de modèles\footcite{kiesslingNewDevelopmentsKraken2022}.
+			\subsection{eScriptorium et Kraken~: infrastructures et développements}
+			
+				Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre
+				Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu
+				l'occasion de tester les deux applications\footcite{leblancTranskribusEScriptoriumRetour2022, paupeCursiveXVIIeSiecle2022} et ainsi fait part de leurs
+				expériences. L'entraînement de modèles \gls{htr} est un processus exigeant de
+				très grandes capacités de calcul, et donc des infrastructures coûteuses.
+				L'infrastructure \gls{cremma} ouvrira bientôt au public des institutions
+				académiques partenaires une instance d'eScriptorium\footcite{marguin-hamonDiscoursOuverturePresentation2022} dotée de trois GPU
+				(\textit{Graphics Processing Unit} ou unité de traitement graphique),
+				chacune représentant en moyenne un coût d'une dizaine de milliers
+				d'euros. L'infrastructure FoNDUE de l'université de Genève bénéficie
+				quant à elle de la puissance du superordinateur (HPC) de l'université,
+				doté de 150 GPU. La recherche des meilleures performances des
+				entraînements de modèles consiste généralement à trouver le bon
+				équilibre entre temps de calcul par image et nombre de tâches lancées en
+				parallèle\footcite{gabayFoNDUELightweightHTR2022}.
+				
+				Les développements en cours de l'interface eScriptorium donneront lieu
+				dans un avenir proche à une fonctionnalité de recherche des termes
+				transcrits, à du balisage TEI basique, à la possibilité d'annotation
+				graphique des pages, à l'alignement automatique d'un texte existant sur
+				une image et à l'intégration de l'ordre des lignes dans l'entraînement
+				des modèles de segmentation. Quant à l'application Kraken, sur laquelle
+				se fonde l'interface eScriptorium, sa dernière version stable (4)
+				propose de nouvelles bibliothèques d'entraînement et une meilleure
+				accessibilité de son API. Elle affiche en outre une amélioration des
+				performances pour les modèles de reconnaissance d'écriture, la
+				reconstruction de lacunes et une nouvelle technologie de segmentation
+				des régions et des lignes d'écriture (\textit{layout analysis})~: grâce à
+				l'utilisation de la technologie Transformers, la détection de
+				l'orientation des lignes est désormais plus robuste, et il devient
+				possible de segmenter des lignes qui se croisent. Cette innovation est
+				néanmoins très exigeante sur le plan de l'infrastructure et renchérit le
+				coût technologique de l'entraînement de modèles\footcite{kiesslingNewDevelopmentsKraken2022}.
 		
 		\section{Produire des modèles}
 		
-		\subsection{Explorer de nouveaux types d'écriture}
-		
-		Les projets de recherche présentés à l'occasion du colloque s'emploient
-		à étendre la zone de compétence des modèles \gls{htr} dans les domaines les
-		plus variés. Tandis que les écritures livresques médiévales sont de
-		mieux en mieux couvertes du XIe au XVe siècle par les modèles produits
-		dans le cadre du projet \gls{cremma}~: Arabica, Bicerin et bientôt Cortado\footcite{campsCremmaLabProjectsTranscription2022}, le projet e-NDP
-		s'emploie à travers les sources du chapitre de Notre-Dame de Paris à
-		entraîner des modèles pour des écritures nouvelles~: \textit{cursiva},
-		\textit{textualis}, prégothique, semihybride\footcite{torresaguilarModelisationAffinageHTR2022}. En effet les écritures
-		cursives font actuellement partie des fronts pionniers de l'entraînement
-		des modèles, que ce soit pour le Moyen Âge, le XVIIe siècle\footcite{paupeCursiveXVIIeSiecle2022}, ou dans le contexte de projet
-		diachroniques comme l'étude des archives inquisitoriales portugaises
-		pour la période allant 1536 à 1821\footcite{baudryArchivesInquisitorialesPortugal2022}, ou encore des sources
-		très contemporaines comme les carnets de fouilles archéologiques du XXe
-		siècle\footcite{tufferyRetourExperiencesUtilisation2022}. Comme l'a montré
-		le projet TraPrInq (\textit{Transcribing the court records of the
-			Portuguese Inquisition}, 1536-1821), l'entraînement de ces modèles doit
-		parfois relever le défi de la variété paléographique, des mélanges de
-		langues et de types d'écriture (latine, arabe, hébraïque)~; de la
-		variété aussi des types de documents dont découle des mises en pages
-		hétérogènes, de la variété des supports également, susceptible
-		d'infléchir l'efficacité des entraînements\footcite{baudryArchivesInquisitorialesPortugal2022}. D'autre projets
-		tentent de couvrir une diachronie encore plus longue, comme la création
-		d'un corpus de fictions littéraires allant du XIe siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. Enfin, les projets HTR
-		s'étendent également en direction des écritures non latines, comme l'ont
-		illustré des présentations du projet CHAMDOC\footcite{schweyerAnalyseReconnaissanceIndexation2022} ainsi que les
-		expérimentations pour l'analyse automatique de sources chinoises
-		anciennes\footcite{bizais-lilligExperimentationsPourAnalyse2022}.
-		
-		\subsection{Méthodes d'acquisition et d'entraînement}
-		
-		En dehors des projets très pionniers comme ceux portant sur les
-		écritures extrême-orientales, l'époque est révolue de la production de
-		vérités de terrain \textit{ex nihilo} à chaque nouveau projet, comme l'a
-		rappelé Vincent Jolivet\footcite{torresaguilarModelisationAffinageHTR2022}.
-		La méthode désormais privilégiée consiste à repérer des modèles
-		existants (\textit{transfer learning}). Dans ce contexte, le partage des
-		données d'entraînement et des modèles devient essentiel. Les meilleurs
-		modèles identifiés sont ensuite affinés (\textit{fine-tuning}) grâce à de
-		nouvelles vérités de terrain. Tout le problème consiste à savoir de
-		quelle quantité de données d'entraînement l'on aura besoin pour
-		atteindre le score nécessaire, et quelle est la meilleure méthode pour
-		optimiser cette étape de la production d'un modèle affiné. La réponse ne
-		peut être qu'empirique tant les ressources disponibles sont variables
-		(les paléographes sont rares !) et les gains d'acuité attendus de ces
-		entraînements (qui dépendent de la finalité de chaque projet).
-		
-		Le projet ETSO (\textit{Estilometría aplicada al Teatro del Siglo de Oro})
-		a également montré que l'acquisition des données d'entraînement peut
-		procéder par une autre voie que la transcription manuelle, à savoir la
-		récupération d'éditions de textes existantes et leur alignement avec la
-		reproduction photographique de page manuscrites, une tâche
-		d'ores-et-déjà possible grâce à la fonction Text2IMage de Transkribus et
-		bientôt développée par eScriptorium\footcite{cuellarModeleOuvertPour2022}.
-		
-		Les techniques d'apprentissage constituent bien souvent la clé du succès
-		pour l'entraînement d'un modèle robuste. La personnalisation de ces
-		techniques, possible avec l'application Kraken, a joué un rôle important
-		pour un projet comme \og Crimes et châtiments \fg{} \footcite{paupeCursive17eSiecle2022}. La modification du paramètre de la
-		vitesse d'apprentissage (le paramètre \textsf{-r}  de Kraken) s'est en effet
-		répercutée sur l'acuité du modèle \gls{htr} pour l'écriture cursive du XVIIe
-		siècle de l'ancien Évêché de Bâle.
-		
-		\subsection{Les sources et leurs problèmes}
-		
-		\subsubsection{Les types d'écriture}
-		
-		L'entraînement des modèles \gls{htr} implique souvent de trouver des solutions
-		adaptées à la complexité des sources, qu'elle soit de nature matérielle
-		avec la qualité des reproductions photographiques\footcite{leblancTranskribusEScriptoriumRetour2022}, paléographique (variété
-		des types d'écriture, diversité des systèmes de signes) ou qu'elle ait
-		trait à la mise en page des documents.
-		
-		Le projet e-NDP, confronté à une assez large variété d'écritures
-		gothiques, s'emploie à développer une méthode de classification
-		automatique des écritures. À partir de modèles entraînés pour chaque
-		type d'écriture, cette méthode permet d'évaluer automatiquement le type
-		d'écriture d'un document selon les performances des différents modèles.
-		Une fois le type d'écriture automatiquement identifié, le modèle adéquat
-		peut être appliqué\footcite{torresaguilarModelisationAffinageHTR2022}.
-		
-		L'équipe travaillant sur les sources chinoises anciennes a quant à elle
-		proposé une méthode spécifique pour l'entraînement à partir de données
-		lacunaires\footcite{bizais-lilligExperimentationsPourAnalyse2022}. En effet
-		le chinois ancien comporte environ 54 000 caractères, dont seuls 4000 à
-		5000 sont représentés dans le jeu de données retenu~: des textes
-		xylographiés de la Chine impériale (50 images). Or tous les caractères
-		attestés ne sont pas référencés dans le système Unicode et il peut
-		exister plusieurs glyphes valant pour le même caractère. L'ampleur du
-		système de signes combinée à la taille réduite du jeu de données a pour
-		conséquence que de très nombreux signes contenus dans le jeu de
-		validation sont absents du jeu d'entraînement. Une méthode développée
-		pour l'étude de l'écriture arabe a ainsi été mise en place~: une fois
-		réalisé un premier entraînement classique de modèle \gls{htr}, les glyphes du
-		jeu d'entraînement sont utilisés pour forger de faux glyphes à partir
-		d'un vaste corpus de textes glané sur le web. Cette méthode permet
-		d'affiner le modèle \gls{htr} en l'aidant à reconnaître des séquences de
-		caractères. La méthode a prouvé son efficacité en faisant descendre le
-		taux d'erreur par caractère (CER pour \textit{character error rate}) à
-		14\% seulement pour les glyphes absents du jeu de données primaire.
-		
-		\subsubsection{Les types de mise en page}
-		
-		L'étude des écritures chinoises anciennes soulève en outre des problèmes
-		ayant trait à la segmentation des lignes. L'écriture verticale des
-		sources xylographiques étudiées présente deux types de configuration des
-		caractères~: des colonnes simples et des colonnes doubles. Dans le
-		second cas, de grands caractères servent de rubrique, un peu comme les
-		titres chapteautant plusieurs colonnes dans la presse écrite. Cette
-		succession verticale de grand caractères centrés et de petits caractères
-		sur deux colonnes contrarie l'entraînement d'un modèle de segmentation
-		fondé sur la principe de la ligne de base (\textit{baseline})~; pour
-		répondre à ce problème, la technique de la boîte englobante
-		(\textit{bouding-box}) a été appliquée afin d'identifier les types de
-		colonnes (double ou simple) et de pouvoir ensuite traiter correctement
-		chaque région du texte de manière adaptée\footcite{bizais-lilligExperimentationsPourAnalyse2022}. L'analyse de mises
-		en page complexes a également été abordée par l'équipe du Geniza Lab\footcite{stoklbenezraSegmentationModeArchival2022} qui travaille sur une
-		très vaste typologie de documents médiévaux en hébreu, judéo-arabe et
-		araméen. Certains documents analysés présentent en effet un corps de
-		texte disposé en lignes horizontales et une glose marginale disposée de
-		manière giratoire autour du premier~; des marges sont en outre écrites
-		la tête en bas. Deux méthodes ont été envisagées pour l'entraînement de
-		modèles de segmentation~:
-		
-		\begin{enumerate}
+			\subsection{Explorer de nouveaux types d'écriture}
 			
-			\item
-			Entraîner huit modèles différents avec une rotation de l'image à 45
-			degrés entre chaque entraînement pour reconnaître chaque orientation
-			de texte~;
-			\item
-			Entraîner un seul modèle (sans rotation) avec une annotation (corrigée
-			manuellement) des régions et des lignes d'écriture selon leur
-			orientation, chaque orientation étant annoté de manière propre.
-		\end{enumerate}
-		
-		C'est finalement cette seconde option qui a été retenue comme la plus
-		efficace.
+				Les projets de recherche présentés à l'occasion du colloque s'emploient
+				à étendre la zone de compétence des modèles \gls{htr} dans les domaines les
+				plus variés. Tandis que les écritures livresques médiévales sont de
+				mieux en mieux couvertes du XIe au XVe siècle par les modèles produits
+				dans le cadre du projet \gls{cremma}~: Arabica, Bicerin et bientôt Cortado\footcite{campsCremmaLabProjectsTranscription2022}, le projet e-NDP
+				s'emploie à travers les sources du chapitre de Notre-Dame de Paris à
+				entraîner des modèles pour des écritures nouvelles~: \textit{cursiva},
+				\textit{textualis}, prégothique, semihybride\footcite{torresaguilarModelisationAffinageHTR2022}. En effet les écritures
+				cursives font actuellement partie des fronts pionniers de l'entraînement
+				des modèles, que ce soit pour le Moyen Âge, le XVIIe siècle\footcite{paupeCursiveXVIIeSiecle2022}, ou dans le contexte de projet
+				diachroniques comme l'étude des archives inquisitoriales portugaises
+				pour la période allant 1536 à 1821\footcite{baudryArchivesInquisitorialesPortugal2022}, ou encore des sources
+				très contemporaines comme les carnets de fouilles archéologiques du XXe
+				siècle\footcite{tufferyRetourExperiencesUtilisation2022}. Comme l'a montré
+				le projet TraPrInq (\textit{Transcribing the court records of the
+					Portuguese Inquisition}, 1536-1821), l'entraînement de ces modèles doit
+				parfois relever le défi de la variété paléographique, des mélanges de
+				langues et de types d'écriture (latine, arabe, hébraïque)~; de la
+				variété aussi des types de documents dont découle des mises en pages
+				hétérogènes, de la variété des supports également, susceptible
+				d'infléchir l'efficacité des entraînements\footcite{baudryArchivesInquisitorialesPortugal2022}. D'autre projets
+				tentent de couvrir une diachronie encore plus longue, comme la création
+				d'un corpus de fictions littéraires allant du XIe siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. Enfin, les projets HTR
+				s'étendent également en direction des écritures non latines, comme l'ont
+				illustré des présentations du projet CHAMDOC\footcite{schweyerAnalyseReconnaissanceIndexation2022} ainsi que les
+				expérimentations pour l'analyse automatique de sources chinoises
+				anciennes\footcite{bizais-lilligExperimentationsPourAnalyse2022}.
+			
+			\subsection{Méthodes d'acquisition et d'entraînement}
+			
+				En dehors des projets très pionniers comme ceux portant sur les
+				écritures extrême-orientales, l'époque est révolue de la production de
+				vérités de terrain \textit{ex nihilo} à chaque nouveau projet, comme l'a
+				rappelé Vincent Jolivet\footcite{torresaguilarModelisationAffinageHTR2022}.
+				La méthode désormais privilégiée consiste à repérer des modèles
+				existants (\textit{transfer learning}). Dans ce contexte, le partage des
+				données d'entraînement et des modèles devient essentiel. Les meilleurs
+				modèles identifiés sont ensuite affinés (\textit{fine-tuning}) grâce à de
+				nouvelles vérités de terrain. Tout le problème consiste à savoir de
+				quelle quantité de données d'entraînement l'on aura besoin pour
+				atteindre le score nécessaire, et quelle est la meilleure méthode pour
+				optimiser cette étape de la production d'un modèle affiné. La réponse ne
+				peut être qu'empirique tant les ressources disponibles sont variables
+				(les paléographes sont rares !) et les gains d'acuité attendus de ces
+				entraînements (qui dépendent de la finalité de chaque projet).
+				
+				Le projet ETSO (\textit{Estilometría aplicada al Teatro del Siglo de Oro})
+				a également montré que l'acquisition des données d'entraînement peut
+				procéder par une autre voie que la transcription manuelle, à savoir la
+				récupération d'éditions de textes existantes et leur alignement avec la
+				reproduction photographique de page manuscrites, une tâche
+				d'ores-et-déjà possible grâce à la fonction Text2IMage de Transkribus et
+				bientôt développée par eScriptorium\footcite{cuellarModeleOuvertPour2022}.
+				
+				Les techniques d'apprentissage constituent bien souvent la clé du succès
+				pour l'entraînement d'un modèle robuste. La personnalisation de ces
+				techniques, possible avec l'application Kraken, a joué un rôle important
+				pour un projet comme \og Crimes et châtiments \fg{} \footcite{paupeCursive17eSiecle2022}. La modification du paramètre de la
+				vitesse d'apprentissage (le paramètre \textsf{-r}  de Kraken) s'est en effet
+				répercutée sur l'acuité du modèle \gls{htr} pour l'écriture cursive du XVIIe
+				siècle de l'ancien Évêché de Bâle.
+			
+			\subsection{Les sources et leurs problèmes}
+			
+				\subsubsection{Les types d'écriture}
+				
+				L'entraînement des modèles \gls{htr} implique souvent de trouver des solutions
+				adaptées à la complexité des sources, qu'elle soit de nature matérielle
+				avec la qualité des reproductions photographiques\footcite{leblancTranskribusEScriptoriumRetour2022}, paléographique (variété
+				des types d'écriture, diversité des systèmes de signes) ou qu'elle ait
+				trait à la mise en page des documents.
+				
+				Le projet e-NDP, confronté à une assez large variété d'écritures
+				gothiques, s'emploie à développer une méthode de classification
+				automatique des écritures. À partir de modèles entraînés pour chaque
+				type d'écriture, cette méthode permet d'évaluer automatiquement le type
+				d'écriture d'un document selon les performances des différents modèles.
+				Une fois le type d'écriture automatiquement identifié, le modèle adéquat
+				peut être appliqué\footcite{torresaguilarModelisationAffinageHTR2022}.
+				
+				L'équipe travaillant sur les sources chinoises anciennes a quant à elle
+				proposé une méthode spécifique pour l'entraînement à partir de données
+				lacunaires\footcite{bizais-lilligExperimentationsPourAnalyse2022}. En effet
+				le chinois ancien comporte environ 54 000 caractères, dont seuls 4000 à
+				5000 sont représentés dans le jeu de données retenu~: des textes
+				xylographiés de la Chine impériale (50 images). Or tous les caractères
+				attestés ne sont pas référencés dans le système Unicode et il peut
+				exister plusieurs glyphes valant pour le même caractère. L'ampleur du
+				système de signes combinée à la taille réduite du jeu de données a pour
+				conséquence que de très nombreux signes contenus dans le jeu de
+				validation sont absents du jeu d'entraînement. Une méthode développée
+				pour l'étude de l'écriture arabe a ainsi été mise en place~: une fois
+				réalisé un premier entraînement classique de modèle \gls{htr}, les glyphes du
+				jeu d'entraînement sont utilisés pour forger de faux glyphes à partir
+				d'un vaste corpus de textes glané sur le web. Cette méthode permet
+				d'affiner le modèle \gls{htr} en l'aidant à reconnaître des séquences de
+				caractères. La méthode a prouvé son efficacité en faisant descendre le
+				taux d'erreur par caractère (CER pour \textit{character error rate}) à
+				14\% seulement pour les glyphes absents du jeu de données primaire.
+				
+				\subsubsection{Les types de mise en page}
+				
+				L'étude des écritures chinoises anciennes soulève en outre des problèmes
+				ayant trait à la segmentation des lignes. L'écriture verticale des
+				sources xylographiques étudiées présente deux types de configuration des
+				caractères~: des colonnes simples et des colonnes doubles. Dans le
+				second cas, de grands caractères servent de rubrique, un peu comme les
+				titres chapteautant plusieurs colonnes dans la presse écrite. Cette
+				succession verticale de grand caractères centrés et de petits caractères
+				sur deux colonnes contrarie l'entraînement d'un modèle de segmentation
+				fondé sur la principe de la ligne de base (\textit{baseline})~; pour
+				répondre à ce problème, la technique de la boîte englobante
+				(\textit{bouding-box}) a été appliquée afin d'identifier les types de
+				colonnes (double ou simple) et de pouvoir ensuite traiter correctement
+				chaque région du texte de manière adaptée\footcite{bizais-lilligExperimentationsPourAnalyse2022}. L'analyse de mises
+				en page complexes a également été abordée par l'équipe du Geniza Lab\footcite{stoklbenezraSegmentationModeArchival2022} qui travaille sur une
+				très vaste typologie de documents médiévaux en hébreu, judéo-arabe et
+				araméen. Certains documents analysés présentent en effet un corps de
+				texte disposé en lignes horizontales et une glose marginale disposée de
+				manière giratoire autour du premier~; des marges sont en outre écrites
+				la tête en bas. Deux méthodes ont été envisagées pour l'entraînement de
+				modèles de segmentation~:
+				
+				\begin{enumerate}
+					
+					\item
+					Entraîner huit modèles différents avec une rotation de l'image à 45
+					degrés entre chaque entraînement pour reconnaître chaque orientation
+					de texte~;
+					\item
+					Entraîner un seul modèle (sans rotation) avec une annotation (corrigée
+					manuellement) des régions et des lignes d'écriture selon leur
+					orientation, chaque orientation étant annoté de manière propre.
+				\end{enumerate}
+				
+				C'est finalement cette seconde option qui a été retenue comme la plus
+				efficace.
 		
 		\section{Partager les données}
 		
-		Pour exprimer leur plein potentiel les avancées technologiques de l'HTR
-		supposent, encore plus que l'échange des bons procédés et des méthodes
-		innovantes, le partage des données. Les infrastructures d'entraînement
-		coûtent cher, mais c'est aussi le cas de la production de vérités de
-		terrain qui exige des compétences rares (paléographiques, linguistiques)
-		et beaucoup de temps pour les mettre en œuvre soigneusement.
-		
-		\subsection{Partager les vérités de terrain et les modèles}
-		
-		Le projet \gls{cremma}-Lab contribue à cet effort de partage selon deux voies
-		:
-		
-		\begin{enumerate}
+			Pour exprimer leur plein potentiel les avancées technologiques de l'HTR
+			supposent, encore plus que l'échange des bons procédés et des méthodes
+			innovantes, le partage des données. Les infrastructures d'entraînement
+			coûtent cher, mais c'est aussi le cas de la production de vérités de
+			terrain qui exige des compétences rares (paléographiques, linguistiques)
+			et beaucoup de temps pour les mettre en œuvre soigneusement.
 			
-			\item
-			La production de vérités de terrain pour les écritures latines allant
-			du Moyen Âge au XXe siècle (21000 lignes de transcription ont été
-			publiées de manière ouverte)~;
-			\item
-			Le développement du catalogue
-			\href{https://htr-united.github.io/catalog.html}{HTR-United} pour
-			l'identification des vérités de terrain disponibles en ligne
-			\footcite{campsCremmaLabProjectsTranscription2022}
-			\footcite{chagueSharingHTRDatasets2022}.
-		\end{enumerate}
-		
-		Le catalogue \gls{htr}-United référence d'ores-et-déjà (au 30 juin 2022) les
-		productions de 46 projets, comptabilisant plus de 380 000 lignes. Il
-		propose un moteur de recherche permettant d'interroger les types
-		d'écriture, les langues, et la chronologie des sources. Un standard de
-		description des métadonnées permet à tout projet de signaler ses propres
-		vérités de terrain afin d'être correctement référencé dans le catalogue.
-		
-		\subsection{Pour des données génériques}
-		
-		La réutilisation des vérités de terrain implique d'en apprécier la
-		proximité avec des sources données. Comment choisir les données
-		d'entraînement permettant d'obtenir les meilleurs scores de son propre
-		projet ? Les expérimentations du projet \gls{cremma}-Lab permettent d'établir
-		qu'il n'est pas la peine de trop spécialiser ses données d'entraînement
-		par langue ou par type de texte pour obtenir de bons résultats de
-		reconnaissance\footcite{campsCremmaLabProjectsTranscription2022}. Mais
-		obtenir les meilleurs scores possibles n'est pas sans inconvénient. Si
-		ces sources sont trop similaires, l'entraînement devient synonyme
-		d'hyper-spécialisation et les scores risquent de chuter pour des sources
-		nouvelles. Le modèle
-		\href{https://github.com/HTR-United/cremma-medieval/releases/tag/1.1.0}{Bicerin}
-		a ainsi pu être \og amélioré \fg{}  par l'ajout de données très différentes et
-		ce malgré une diminution de ses scores d'acuité (\textit{accuracy}). La
-		robustesse d'un modèle \gls{htr} (on parle également de sa généricité, de sa
-		souplesse ou de sa plasticité) signifie sa capacité à reconnaître des
-		types d'écritures hétérogènes. Faire varier les langues et les genres
-		littéraires ou les types de texte contribue également à cette robustesse
-		dans la mesure où les modèles \gls{htr} s'appuient sur un modèle de langue
-		susceptible d'influencer les \glspl{prédiction}. Trouver le meilleur équilibre
-		entre généricité et acuité particulière est au fond une équation très
-		empirique, de même qu'apprécier la proximité ou la distance entre deux
-		écritures. Ainsi la notion de \og hors-domaine \fg{} , employée pour
-		l'évaluation d'un modèle \gls{htr} sur des données étrangères aux données
-		d'entraînement, recouvre une très grande variété de situations selon la
-		diversité des sources étudiées, comme cela a été évoqué au sujet du
-		projet e-NDP\footcite{torresaguilarModelisationAffinageHTR2022}.
-		
-		Les présentations ont montré combien la diversité des projets et de
-		leurs finalités est irréductible à une méthodologie unique. Pourtant,
-		nombre de projets partagent les mêmes enjeux et dépendent du partage des
-		mêmes données d'entraînement. C'est pourquoi le projet \gls{cremma}-Lab\footcite{campsCremmaLabProjectsTranscription2022} propose des réflexions
-		méthodologiques sur les protocoles de transcriptions des corpus, dans un
-		souci d'harmonisation des pratiques. Cet effort passe par la rédaction
-		d'un guide de transcription (\textit{guidelines}). Les règles communes de
-		transcription ainsi proposées pourront permettre l'entraînement de
-		modèles \gls{htr} plus robustes dans la mesure où ces entraînements reposeront
-		sur des transcriptions plus homogènes. Il s'agit en l'occurrence
-		d'appliquer quelques principes simples~: ne pas imiter les formes de
-		lettres lorsqu'elles se rapportent à un même caractère (allographes) et
-		conserver les abrévations (dont le développement dépend souvent du
-		contexte, de la langue écrite ou \textit{scripta}). Pour les abréviations
-		et autres caractères spéciaux, il s'agit de suivre une table de
-		caractères Unicode de référence, l'outil ChocoMufin développé par
-		HTR-United permettant le contrôle des caractères employés et ainsi
-		d'éviter que des caractères Unicode différents ne soient mobilisés de
-		manière concurrente pour la résolution d'un signe graphique équivalent.
-		
-		Du côté de l'analyse de la mise en page et des lignes d'écriture, une
-		autre initiative dans le sens de l'harmonisation des vérités de terrain
-		a pris forme avec le projet \gls{segmonto}\footcite{gabaySegmOntoControlledVocabulary2022}. D'abord fondé sur l'étude
-		des manuscrits médiévaux et des imprimés anciens, \gls{segmonto} propose une
-		ontologie complète pour la descrition des régions et des lignes qui se
-		veut suffisamment générique pour répondre à l'ensemble des besoins
-		d'annotation, quelque soit le type de source ancienne ou contemporaine
-		étudié. Ces concepts relèvent par conséquent de la description
-		matérielle plutôt que de la fonction sémantique des régions d'écriture
-		(la notion de \og marge \fg{} a par exemple été préférée à celle de glose et
-		celle d'objet \og graphique\fg{} à la notion de décoration ou d'image). La
-		liste des zones est la suivante~:
-		
-		\begin{itemize}
-			\item
-			CustomZone
-			\item
-			DamageZone
-			\item
-			DigitizationArtefactZone
-			\item
-			DropCapitalZone
-			\item
-			GraphicZone
-			\item
-			MainZone
-			\item
-			MarginTextZone
-			\item
-			MusicZone
-			\item
-			NumberingZone
-			\item
-			QuireMarksZone
-			\item
-			RunningTitleZone
-			\item
-			SealZone
-			\item
-			StampZone
-			\item
-			TableZone
-			\item
-			TitlePageZone
-		\end{itemize}
-		
-		Au niveau des lignes, l'onotologie est plus resserée~:
-		
-		\begin{itemize}
-			\item
-			CustomLine
-			\item
-			DefaultLine
-			\item
-			DropCapitalLine
-			\item
-			HeadingLine
-			\item
-			InterlinearLine
-			\item
-			MusicLine
-		\end{itemize}
-		
-		Outre des catégories génériques recommandées, une syntaxe a été établie
-		afin d'introduire de la modularité~; on pourra par exemple définir des
-		colonnes de la façon suivante~: par \textit{MainZone:columnA},
-		\textit{MainZone:columnB}. En outre, les catégories \textit{CustomZone} et
-		\textit{CustomLine} permettent, de la manière décrite dans l'exemple
-		précédent, de définir des catégories personnalisées.
-		
-		\subsection{Exploiter les données~: pour des solutions
-			\textit{open-source}}{Exploiter les données~: pour des solutions open-source}
-		
-		Atteindre un certain degré d'harmonisation des pratiques ne signifie pas
-		nécessairement contraindre les finalités des projets. Au contraire, la
-		conciliation de cette double exigence (harmonisation, finalités
-		multiples) est rendue possible par le recours à une méthode de travail
-		séquentielle~: une chaîne de traitement clairement structurée en étapes
-		successives qui procèdent indépendamment les unes des autres. Entraîner
-		des modèles d'HTR déjà performants implique d'apporter beaucoup de
-		données d'entraînement pour gagner, en définitive, très peu d'acuité.
-		Au-delà d'une certaine performance acquise, il peut donc être pertinent
-		de répondre aux problèmes de l'HTR (les fautes dans les \glspl{prédiction})
-		autrement que par l'entraînement de modèles encore plus performants, à
-		savoir en corrigeant les \glspl{prédiction} dans une phase ultérieure de la
-		chaîne de traitement\footcite{torresaguilarModelisationAffinageHTR2022}.
-		
-		Ces étapes ultérieures peuvent être multiples~: lemmatisation des mots,
-		normalisation des graphies, annotation des entités nommées, etc. Leur
-		utilité est propre aux finalités de chaque projet~: produire des modèles
-		HTR robustes ne nécessite aucun traitement particulier, car le partage
-		du modèle est une fin en soi\footcite{campsCremmaLabProjectsTranscription2022}~; en revanche, rendre un
-		corpus de textes interrogeable sur plusieurs siècles suppose de lui
-		appliquer des solutions d'uniformisation éditoriale\footcite{bizais-lilligExperimentationsPourAnalyse2022, torresaguilarModelisationAffinageHTR2022}~; établir une édition
-		critique peut encore supposer des traitements particuliers, comme
-		séparer les mots (\textit{tokenization}) lorsque la langue de la source
-		atteste beaucoup d'agglutinations\footcite{stoklbenezraHTRCriticalEdition2022}, etc. En bout de chaîne, le
-		développement de modèles de publication, comme a pu l'illustrer le
-		projet Gallicorpora\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
-		n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les
-		prochaines années.
-		
-		Dans ce contexte, la mise en œuvre par la communauté scientifique de
-		solutions applicatives indépendantes et complémentaires les unes des
-		autres comporte plusieurs types de bénéfices. En ne faisant pas dépendre
-		les projets de recherche d'un logiciel unique (potentiellement
-		défaillant, comme toute application), elle est un gage de sécurité et de
-		pérennité de ces projets. Le développement d'applications
-		\textit{open-source} rend de plus chaque fonctionnalité perfectible de
-		manière contributive au rythme des besoins de la communauté ou d'un
-		projet singulier. Enfin et surtout, traiter les sources par étapes
-		successives permet l'archivage des états intermédiaires du travail et
-		donc le contrôle de ces étapes par des projets ultérieurs ou, encore une
-		fois, le partage des données entre des projets n'ayant pas les mêmes
-		finalités\footcite{campsCremmaLabProjectsTranscription2022}.
+			\subsection{Partager les vérités de terrain et les modèles}
+			
+				Le projet \gls{cremma}-Lab contribue à cet effort de partage selon deux voies~:
+				
+				\begin{enumerate}
+					
+					\item
+					La production de vérités de terrain pour les écritures latines allant
+					du Moyen Âge au XXe siècle (21000 lignes de transcription ont été
+					publiées de manière ouverte)~;
+					\item
+					Le développement du catalogue
+					\href{https://htr-united.github.io/catalog.html}{HTR-United} pour
+					l'identification des vérités de terrain disponibles en ligne
+					\footcite{campsCremmaLabProjectsTranscription2022}
+					\footcite{chagueSharingHTRDatasets2022}.
+				\end{enumerate}
+				
+				Le catalogue \gls{htr}-United référence d'ores-et-déjà (au 30 juin 2022) les
+				productions de 46 projets, comptabilisant plus de 380 000 lignes. Il
+				propose un moteur de recherche permettant d'interroger les types
+				d'écriture, les langues, et la chronologie des sources. Un standard de
+				description des métadonnées permet à tout projet de signaler ses propres
+				vérités de terrain afin d'être correctement référencé dans le catalogue.
+			
+			\subsection{Pour des données génériques}
+			
+				La réutilisation des vérités de terrain implique d'en apprécier la
+				proximité avec des sources données. Comment choisir les données
+				d'entraînement permettant d'obtenir les meilleurs scores de son propre
+				projet ? Les expérimentations du projet \gls{cremma}-Lab permettent d'établir
+				qu'il n'est pas la peine de trop spécialiser ses données d'entraînement
+				par langue ou par type de texte pour obtenir de bons résultats de
+				reconnaissance\footcite{campsCremmaLabProjectsTranscription2022}. Mais
+				obtenir les meilleurs scores possibles n'est pas sans inconvénient. Si
+				ces sources sont trop similaires, l'entraînement devient synonyme
+				d'hyper-spécialisation et les scores risquent de chuter pour des sources
+				nouvelles. Le modèle
+				\href{https://github.com/HTR-United/cremma-medieval/releases/tag/1.1.0}{Bicerin}
+				a ainsi pu être \og amélioré \fg{}  par l'ajout de données très différentes et
+				ce malgré une diminution de ses scores d'acuité (\textit{accuracy}). La
+				robustesse d'un modèle \gls{htr} (on parle également de sa généricité, de sa
+				souplesse ou de sa plasticité) signifie sa capacité à reconnaître des
+				types d'écritures hétérogènes. Faire varier les langues et les genres
+				littéraires ou les types de texte contribue également à cette robustesse
+				dans la mesure où les modèles \gls{htr} s'appuient sur un modèle de langue
+				susceptible d'influencer les \glspl{prédiction}. Trouver le meilleur équilibre
+				entre généricité et acuité particulière est au fond une équation très
+				empirique, de même qu'apprécier la proximité ou la distance entre deux
+				écritures. Ainsi la notion de \og hors-domaine \fg{} , employée pour
+				l'évaluation d'un modèle \gls{htr} sur des données étrangères aux données
+				d'entraînement, recouvre une très grande variété de situations selon la
+				diversité des sources étudiées, comme cela a été évoqué au sujet du
+				projet e-NDP\footcite{torresaguilarModelisationAffinageHTR2022}.
+				
+				Les présentations ont montré combien la diversité des projets et de
+				leurs finalités est irréductible à une méthodologie unique. Pourtant,
+				nombre de projets partagent les mêmes enjeux et dépendent du partage des
+				mêmes données d'entraînement. C'est pourquoi le projet \gls{cremma}-Lab\footcite{campsCremmaLabProjectsTranscription2022} propose des réflexions
+				méthodologiques sur les protocoles de transcriptions des corpus, dans un
+				souci d'harmonisation des pratiques. Cet effort passe par la rédaction
+				d'un guide de transcription (\textit{guidelines}). Les règles communes de
+				transcription ainsi proposées pourront permettre l'entraînement de
+				modèles \gls{htr} plus robustes dans la mesure où ces entraînements reposeront
+				sur des transcriptions plus homogènes. Il s'agit en l'occurrence
+				d'appliquer quelques principes simples~: ne pas imiter les formes de
+				lettres lorsqu'elles se rapportent à un même caractère (allographes) et
+				conserver les abrévations (dont le développement dépend souvent du
+				contexte, de la langue écrite ou \textit{scripta}). Pour les abréviations
+				et autres caractères spéciaux, il s'agit de suivre une table de
+				caractères Unicode de référence, l'outil ChocoMufin développé par
+				HTR-United permettant le contrôle des caractères employés et ainsi
+				d'éviter que des caractères Unicode différents ne soient mobilisés de
+				manière concurrente pour la résolution d'un signe graphique équivalent.
+				
+				Du côté de l'analyse de la mise en page et des lignes d'écriture, une
+				autre initiative dans le sens de l'harmonisation des vérités de terrain
+				a pris forme avec le projet \gls{segmonto}\footcite{gabaySegmOntoControlledVocabulary2022}. D'abord fondé sur l'étude
+				des manuscrits médiévaux et des imprimés anciens, \gls{segmonto} propose une
+				ontologie complète pour la descrition des régions et des lignes qui se
+				veut suffisamment générique pour répondre à l'ensemble des besoins
+				d'annotation, quelque soit le type de source ancienne ou contemporaine
+				étudié. Ces concepts relèvent par conséquent de la description
+				matérielle plutôt que de la fonction sémantique des régions d'écriture
+				(la notion de \og marge \fg{} a par exemple été préférée à celle de glose et
+				celle d'objet \og graphique\fg{} à la notion de décoration ou d'image). La
+				liste des zones est la suivante~:
+				
+				\begin{itemize}
+					\item
+					CustomZone
+					\item
+					DamageZone
+					\item
+					DigitizationArtefactZone
+					\item
+					DropCapitalZone
+					\item
+					GraphicZone
+					\item
+					MainZone
+					\item
+					MarginTextZone
+					\item
+					MusicZone
+					\item
+					NumberingZone
+					\item
+					QuireMarksZone
+					\item
+					RunningTitleZone
+					\item
+					SealZone
+					\item
+					StampZone
+					\item
+					TableZone
+					\item
+					TitlePageZone
+				\end{itemize}
+				
+				Au niveau des lignes, l'onotologie est plus resserée~:
+				
+				\begin{itemize}
+					\item
+					CustomLine
+					\item
+					DefaultLine
+					\item
+					DropCapitalLine
+					\item
+					HeadingLine
+					\item
+					InterlinearLine
+					\item
+					MusicLine
+				\end{itemize}
+				
+				Outre des catégories génériques recommandées, une syntaxe a été établie
+				afin d'introduire de la modularité~; on pourra par exemple définir des
+				colonnes de la façon suivante~: par \textit{MainZone:columnA},
+				\textit{MainZone:columnB}. En outre, les catégories \textit{CustomZone} et
+				\textit{CustomLine} permettent, de la manière décrite dans l'exemple
+				précédent, de définir des catégories personnalisées.
+			
+			\subsection{Exploiter les données~: pour des solutions
+				\textit{open-source}}{Exploiter les données~: pour des solutions open-source}
+			
+				Atteindre un certain degré d'harmonisation des pratiques ne signifie pas
+				nécessairement contraindre les finalités des projets. Au contraire, la
+				conciliation de cette double exigence (harmonisation, finalités
+				multiples) est rendue possible par le recours à une méthode de travail
+				séquentielle~: une chaîne de traitement clairement structurée en étapes
+				successives qui procèdent indépendamment les unes des autres. Entraîner
+				des modèles d'HTR déjà performants implique d'apporter beaucoup de
+				données d'entraînement pour gagner, en définitive, très peu d'acuité.
+				Au-delà d'une certaine performance acquise, il peut donc être pertinent
+				de répondre aux problèmes de l'HTR (les fautes dans les \glspl{prédiction})
+				autrement que par l'entraînement de modèles encore plus performants, à
+				savoir en corrigeant les \glspl{prédiction} dans une phase ultérieure de la
+				chaîne de traitement\footcite{torresaguilarModelisationAffinageHTR2022}.
+				
+				Ces étapes ultérieures peuvent être multiples~: lemmatisation des mots,
+				normalisation des graphies, annotation des entités nommées, etc. Leur
+				utilité est propre aux finalités de chaque projet~: produire des modèles
+				HTR robustes ne nécessite aucun traitement particulier, car le partage
+				du modèle est une fin en soi\footcite{campsCremmaLabProjectsTranscription2022}~; en revanche, rendre un
+				corpus de textes interrogeable sur plusieurs siècles suppose de lui
+				appliquer des solutions d'uniformisation éditoriale\footcite{bizais-lilligExperimentationsPourAnalyse2022, torresaguilarModelisationAffinageHTR2022}~; établir une édition
+				critique peut encore supposer des traitements particuliers, comme
+				séparer les mots (\textit{tokenization}) lorsque la langue de la source
+				atteste beaucoup d'agglutinations\footcite{stoklbenezraHTRCriticalEdition2022}, etc. En bout de chaîne, le
+				développement de modèles de publication, comme a pu l'illustrer le
+				projet Gallicorpora\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
+				n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les
+				prochaines années.
+				
+				Dans ce contexte, la mise en œuvre par la communauté scientifique de
+				solutions applicatives indépendantes et complémentaires les unes des
+				autres comporte plusieurs types de bénéfices. En ne faisant pas dépendre
+				les projets de recherche d'un logiciel unique (potentiellement
+				défaillant, comme toute application), elle est un gage de sécurité et de
+				pérennité de ces projets. Le développement d'applications
+				\textit{open-source} rend de plus chaque fonctionnalité perfectible de
+				manière contributive au rythme des besoins de la communauté ou d'un
+				projet singulier. Enfin et surtout, traiter les sources par étapes
+				successives permet l'archivage des états intermédiaires du travail et
+				donc le contrôle de ces étapes par des projets ultérieurs ou, encore une
+				fois, le partage des données entre des projets n'ayant pas les mêmes
+				finalités\footcite{^campsCremmaLabProjectsTranscription2022}.
 			
 	\chapter[HTR~: mise en œuvre]{Mettre en œuvre l'\gls{htr} \\ \large pour la correspondance de \gls{cds}}
 		
 		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
 	
-		
 		\section{Enjeux et tâches préliminaires}
 			
 			\subsection{Des sources écrites par plusieurs mains}
