@@ -4,6 +4,7 @@ import os
 import shutil
 from lxml import etree
 
+
 @click.command()
 @click.argument("SOURCE")
 @click.argument("SORTIE")
@@ -22,16 +23,16 @@ def distributionFichiers(source, sortie):
         print(f"Le fichier des données-images n'a pas pu être ouvert (existe-t-il dans le dossier {source} ?)")
     
     # EVALUER LES DOSSIER À CRÉER
-
+    
     # On initie la liste des pièces à créer et des prédictions importées
     aCreer = []
     predictionsImport = []
-
+    
     # On analyse le contenu du dossier importé
     for chemin, dossiers, fichiers in os.walk(source):
         for nomFichier in fichiers:
             predictionsImport.append(nomFichier)
-
+    
     # On boucle sur chaque notice décrites par le fichier de données
     for record in donneesImages["results"]["records"]:
         # On initie un booléen pour le contrôle de présence de toutes les prédictions d'une notice
@@ -55,27 +56,11 @@ def distributionFichiers(source, sortie):
             os.mkdir(sortie + record)
         except FileExistsError:
             True
-            
+        
         # On boucle sur les images de chaque notice
         for index, image in enumerate(donneesImages["results"]["records"][record]["images"]):
             # On copie le fichier image vers la destination, dans le dossier de notice courant
             shutil.copy(f"{source}{image[:-4]}.xml", sortie + record)
-        
-    # TODO Purger les fichiers des Textblock non pertinents
-    # On initie une liste d'erreur pour le contrôle des fichiers de prédiction
-    erreurs = []
-    # On récupère les identifiants des zones ayant un titre
-    regionAvecTitre = None
-    # On récupère l'arbre XML correspondant à l'image courante
-    """
-    try:
-        xml = etree.parse(source + image[:-4] + ".xml") #TODO on prendra les XMLCORRIGEES
-        nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
-        regionAvecTitre = xml.xpath("//alto:TextBlock[descendant::alto:TextLine[@TAGREFS=//alto:OtherTag["
-                                    "@LABEL='HeadingLine:title']/@ID]]/@ID",
-                                    namespaces=nsmap)
-    except:
-        erreurs.append(image[:-4] + ".xml")
-    """
+
 
 distributionFichiers()
