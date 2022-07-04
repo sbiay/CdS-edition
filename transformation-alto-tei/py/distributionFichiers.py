@@ -21,27 +21,46 @@ def distributionFichiers(source, sortie):
     except:
         print(f"Le fichier des données-images n'a pas pu être ouvert (existe-t-il dans le dossier {source} ?)")
     
-    # On initie les erreurs pour les prédictions manquantes par rapport aux données de l'inventaire
-    erreurs = []
-    
-    # Lire le fichier de données et distribuer les images dans les dossiers par notice
+    # EVALUER LES DOSSIER À CRÉER
+
+    # On initie la liste des pièces à créer et des prédictions importées
+    aCreer = []
+    predictionsImport = []
+
+    # On analyse le contenu du dossier importé
+    for chemin, dossiers, fichiers in os.walk(source):
+        for nomFichier in fichiers:
+            predictionsImport.append(nomFichier)
+
+    # On boucle sur chaque notice décrites par le fichier de données
     for record in donneesImages["results"]["records"]:
+        # On initie un booléen pour le contrôle de présence de toutes les prédictions d'une notice
+        complet = True
+        # On boucle sur les images de chaque notice
+        for index, image in enumerate(donneesImages["results"]["records"][record]["images"]):
+            # On renomme l'image pour obtenir le nom de la prédiction correspondante
+            label = image.replace(".jpg", ".xml")
+            # On contrôle que la prédiction soit dans le dossier d'import
+            if label not in predictionsImport:
+                complet = False
+        if complet:
+            aCreer.append(record)
+    
+    # DISTRIBUER LES PRÉDICTIONS DANS DES DOSSIERS PROPRES À CHAQUE NOTICE
+    
+    # On boucle sur chaque notice
+    for record in aCreer:
+        # On crée le dossier de la pièce s'il n'existe pas déjà
         try:
             os.mkdir(sortie + record)
         except FileExistsError:
             True
-        
+            
         # On boucle sur les images de chaque notice
-        for index, image in enumerate(donneesImages["results"]["records"][record]["Images"]):
-            try:
-                # On copie le fichier image vers la destination, dans le dossier de notice courant
-                shutil.copy(f"{source}{image[:-4]}.xml", sortie + record)
-            except:
-                erreurs.append(image[:-4] + ".xml")
-                
-    # On délivre le message d'erreur
-    print(f"Les fichiers suivants n'ont pas été trouvés : {erreurs}")
-    
+        for index, image in enumerate(donneesImages["results"]["records"][record]["images"]):
+            # On copie le fichier image vers la destination, dans le dossier de notice courant
+            shutil.copy(f"{source}{image[:-4]}.xml", sortie + record)
+        
     # TODO Purger les fichiers des Textblock non pertinents
     # On initie une liste d'erreur pour le contrôle des fichiers de prédiction
     erreurs = []
