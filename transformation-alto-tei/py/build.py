@@ -8,6 +8,7 @@ from py.build_body import body
 from py.segment import segment
 from py.text_data import Text
 from py.tags_dict import Tags
+from py.outils import triFichiers
 from lxml import etree
 
 
@@ -72,39 +73,69 @@ class XMLTEI:
         donneesPiece = donneesDossier["results"]["records"][idPiece]
         
         # On récupère les chemins des prédictions
-        predictionsImport = []
-        for chemin, dossiers, fichiers in os.walk("data/" + idPiece):
-            for nomFichier in fichiers:
-                predictionsImport.append(f"./data/{idPiece}/{nomFichier}")
-
-        # On récupère la position du titre de la lettre dans la prédiction
+        predictionsImport = triFichiers("data/" + idPiece + "/")
+        
+        # On récupère les lignes du début de la lettre (région contenant le header et le titre
         positionTitre = donneesDossier["results"]["records"][idPiece]["title_position"]
         
-        # Si un dossier comporte une seule image
-        if len(donneesPiece["images"]) == 1:
-            # On assigne le chemin du fichier
-            fichier = predictionsImport[0]
+        # On boucle sur chaque fichier
+        for index, fichier in enumerate(predictionsImport):
+            # On initie la liste contenant
+            regionsPiece = []
             
-            # On ouvre la prediction
-            xml = etree.parse(fichier)
-            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
-            # On récupère les codes des régions et des lignes
-            tags = Tags(self.p[0], self.d, self.NS).labels()
-            # On boucle sur les couples pour récupérer les codes des tags
-            for tag in tags:
-                if tags[tag] == "HeadingLine:title":
-                    codeTitre = tag
-                if tags[tag] == "MainZone":
-                    codeMain = tag
-            
-            if fichier == "./data/CdS-b1-06p9/CdS02_Konv002-03_0056.xml":
-                # On récupère les zones de titres de la page
-                idZoneTitres = xml.xpath(f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"
-                                      f"{codeTitre}']]/@ID", namespaces=nsmap)
-                # On récupère l'id de la zone de titre pertinente
-                idZoneTitre = idZoneTitres[positionTitre - 1]
-                print(idZoneTitre)
-            
+            # On traite le début de la lettre
+            if index == 0:
+                # TODO test
+                #print(f"Id. de la pièce : {idPiece} -- Nom du fichier de début : {fichier}")
+                
+                # On assigne le chemin du fichier de début
+                fichier = predictionsImport[0]
+        
+                # On ouvre la prediction
+                xml = etree.parse(fichier)
+                nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+                # On récupère les codes des régions et des lignes
+                tags = Tags(self.p[0], self.d, self.NS).labels()
+                # On boucle sur les couples pour récupérer les codes des tags
+                for tag in tags:
+                    if tags[tag] == "HeadingLine:title":
+                        codeTitre = tag
+                    if tags[tag] == "MainZone":
+                        codeMain = tag
+                    if tags[tag] == "CustomZone:header":
+                        codeHeader = tag
+        
+                # On récupère la zone de titre de la pièce
+                zoneTitre = xml.xpath(
+                    f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"
+                    f"{codeTitre}']][position()={positionTitre}]", namespaces=nsmap)
+                
+                idTitre = zoneTitre[0].xpath(f"@ID", namespaces=nsmap)
+                idTitre = str(idTitre[0])
+                # On récupère le header éventuel dans le bloc précédent
+                header = None
+                blocsPrecedents = xml.xpath(
+                    f"//alto:TextBlock[@ID='{idTitre}']/preceding-sibling::alto:TextBlock",
+                    namespaces=nsmap)
+                
+                if blocsPrecedents:
+                    blocPrecedent = blocsPrecedents[-1]
+                    tagBlocPrec = blocPrecedent.xpath(f"@TAGREFS", namespaces=nsmap)[0]
+                    # Si le tag répond au code CustomZone:header
+                    if tagBlocPrec == codeHeader:
+                        header = blocPrecedent
+                        regionsPiece.append(header[0])
+        
+                # On ajoute après l'éventuel header la zone contenant le titre
+                regionsPiece.append(zoneTitre[0])
+                
+                print(regionsPiece)
+                
+                if self.d == "CdS-b1-06p9":
+                    print(f"Id. titre : {idTitre}")
+                    print(f'Id. calculé du header : {blocPrecedent.xpath(f"@ID", namespaces=nsmap)[0]}')
+                    print("La solution est :       eSc_textblock_3aac8f8c")
+    
         # IMPLÉMENTER LES ÉLÉMENTS
         text = Text(self.root)
         body(self.root, text.data)
