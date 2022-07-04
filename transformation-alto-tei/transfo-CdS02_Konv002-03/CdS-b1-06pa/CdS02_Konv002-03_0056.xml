@@ -12,7 +12,7 @@
   
   <Tags>
     <OtherTag ID="BT60" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT61" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT62" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT63" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT64" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT65" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT67" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT69" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/>
-    <OtherTag ID="LT41" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT42" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT43" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT44" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT45" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT46" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT47" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT48" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT50" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/>
+    <OtherTag ID="LT41" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT42" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT43" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT44" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT45" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT46" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT47" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT48" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT50" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/><OtherTag ID="LT61" LABEL="CustomLine:annotations" DESCRIPTION="line type CustomLine:annotations"/>
   </Tags>
   
   <Layout>
@@ -337,7 +337,7 @@
           
           
           <TextLine ID="eSc_line_63c1bbd0"
-                    TAGREFS="LT41"
+                    TAGREFS="LT61"
                     BASELINE="1501 1303 2011 1290" 
                     HPOS="1497"
                     VPOS="1210"
@@ -826,7 +826,7 @@
           
           
           <TextLine ID="eSc_line_eb342e45"
-                    TAGREFS="LT41"
+                    TAGREFS="LT61"
                     BASELINE="3518 1030 3970 1024" 
                     HPOS="3513"
                     VPOS="954"
