@@ -1,4 +1,5 @@
 import json
+from py.iiif_data import IIIF_API
 from py.sru_data import SRU_API
 from py.build_teiheader import teiheader
 from py.build_sourcedoc import sourcedoc
@@ -29,32 +30,18 @@ class XMLTEI:
             The dictionary self.tags is reassigned to a dictionary that the Tags.labels() method returns.
         """
         # TODO Test avec des données forgées pour CDS
-        if self.d == "test-cds":
-            # On récupère les métadonnées fabriquées dans le fichier Json
-            with open("./donnees-test-cds/metadata-cds.json") as jsonf:
-                metadata = json.load(jsonf)
+        # On récupère les métadonnées fabriquées dans le fichier Json
+        with open("./donnees-test-cds/metadata-cds.json") as jsonf:
+            metadata = json.load(jsonf)
             self.metadata = metadata
             self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
-            
-            with open("./donnees-test-cds/exemple-tags.json", mode="w") as f:
-                json.dump(self.tags, f, ensure_ascii=False, indent=3)
-                
-        else:
-            # -- Parse data from IIIF Image API --
-            iiif = IIIF_API(self.d)  # (iiif_data.py) instantiate a IIIF_API class for this document
-            iiif_data = iiif.clean(iiif.request())  # get the IIIF Image API's JSON response
-            self.metadata.update({"iiif":iiif_data})  # parse the JSON response and prepare dictionary of relevant data
-            # -- Parse data from BnF's SRU API --
-            sru = SRU_API(iiif_data["Catalogue ARK"])  # (sru_data.py) isntantiate an SRU_API class for this document
-            response, perfect_match = sru.request()  # get the BnF SRU API's MARCXML response and/or a boolean confirming if the document was found
-            sru_data = sru.clean(response, perfect_match)  # parse the MARCXML response and prepare dictinoary of relevant data
-            self.metadata.update({"sru":sru_data})
-            # -- Parse tag data from one ALTO document --
-            self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
-            
-            # TODO On exporte les métadonnées pour les visualiser
-            with open("./donnees-test-cds/exemple-metadata.json", mode="w") as f:
-                json.dump(self.metadata, f, ensure_ascii=False, indent=3)
+
+        with open("./donnees-test-cds/exemple-tags.json", mode="w") as f:
+            json.dump(self.tags, f, ensure_ascii=False, indent=3)
+
+        # TODO On exporte les métadonnées pour les visualiser
+        with open("./donnees-test-cds/exemple-metadata.json", mode="w") as f:
+            json.dump(self.metadata, f, ensure_ascii=False, indent=3)
             
     # -- PHASE 2 -- XML-TEI construction of <teiHeader> and <sourceDoc>
     def build_tree(self):
