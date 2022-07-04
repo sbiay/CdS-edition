@@ -11,10 +11,14 @@ class Tags:
         self.ns = ns
         
     def labels(self):
-        root = etree.parse(self.filepath).getroot()
+        # On retype le chemin de fichier en chaîne pour éviter TypeError: cannot parse from 'PosixPath'
+        chemin = str(self.filepath)
+        xml = etree.parse(chemin)
+        root = xml.getroot()
         elements = [t.attrib for t in root.findall('.//a:OtherTag', namespaces=self.ns)]
         collect = defaultdict(dict)
         for d in elements:
             collect[d["ID"]] = d["LABEL"]
         self.tags = dict(collect)
+
         return self.tags
