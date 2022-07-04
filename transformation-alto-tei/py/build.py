@@ -1,12 +1,11 @@
 import json
-from src.iiif_data import IIIF_API
-from src.sru_data import SRU_API
-from src.build_teiheader import teiheader
-from src.build_sourcedoc import sourcedoc
-from src.build_body import body
-from src.segment import segment
-from src.text_data import Text
-from src.tags_dict import Tags
+from py.sru_data import SRU_API
+from py.build_teiheader import teiheader
+from py.build_sourcedoc import sourcedoc
+from py.build_body import body
+from py.segment import segment
+from py.text_data import Text
+from py.tags_dict import Tags
 from lxml import etree
 
 

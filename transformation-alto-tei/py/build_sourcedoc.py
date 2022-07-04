@@ -1,7 +1,7 @@
-from src.tags_dict import Tags
-from src.format_files import Files
-from src.sourcedoc_attributes import Attributes
-from src.surface_and_desc import SurfaceTree
+from py.tags_dict import Tags
+from py.format_files import Files
+from py.sourcedoc_attributes import Attributes
+from py.surface_and_desc import SurfaceTree
 from lxml import etree
 
 NS = {'a':"http://www.loc.gov/standards/alto/ns-v4#"}  # namespace for the Alto xml
