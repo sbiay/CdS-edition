@@ -77,23 +77,19 @@ class XMLTEI:
         
         # On récupère les lignes du début de la lettre (région contenant le header et le titre
         positionTitre = donneesDossier["results"]["records"][idPiece]["title_position"]
-        
+
+        nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
         # On boucle sur chaque fichier
         for index, fichier in enumerate(predictionsImport):
             # On initie la liste contenant
             regionsPiece = []
+            xml = etree.parse(fichier)
             
             # On traite le début de la lettre
             if index == 0:
                 # TODO test
                 #print(f"Id. de la pièce : {idPiece} -- Nom du fichier de début : {fichier}")
                 
-                # On assigne le chemin du fichier de début
-                fichier = predictionsImport[0]
-        
-                # On ouvre la prediction
-                xml = etree.parse(fichier)
-                nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
                 # On récupère les codes des régions et des lignes
                 tags = Tags(self.p[0], self.d, self.NS).labels()
                 # On boucle sur les couples pour récupérer les codes des tags
@@ -129,13 +125,79 @@ class XMLTEI:
                 # On ajoute après l'éventuel header la zone contenant le titre
                 regionsPiece.append(zoneTitre[0])
                 
-                print(regionsPiece)
+                # On récupère les mainZone qui suivent celles du titre (ce sont les blocs de textes frères suivants
+                # qui sont de type mainZone et ne contiennent pas de ligne de titre)
+                blocsSuivants = xml.xpath(
+                    f"//alto:TextBlock[@ID='{idTitre}']/"
+                    f"following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']"
+                    f"[not(child::alto:TextLine[@TAGREFS='{codeTitre}'])]",
+                    namespaces=nsmap)
                 
-                if self.d == "CdS-b1-06p9":
-                    print(f"Id. titre : {idTitre}")
-                    print(f'Id. calculé du header : {blocPrecedent.xpath(f"@ID", namespaces=nsmap)[0]}')
-                    print("La solution est :       eSc_textblock_3aac8f8c")
-    
+                # On récupère les autres types de régions
+                blocsAutres = xml.xpath(
+                    f"//alto:TextBlock[@ID='{idTitre}']/"
+                    f"following-sibling::alto:TextBlock[not(@TAGREFS='{codeMain}')][not(@TAGREFS='{codeHeader}')]",
+                    namespaces=nsmap)
+                
+                regionsPiece.append(blocsSuivants)
+                regionsPiece.append(blocsAutres)
+                
+            # On traite le milieu de la lettre quand elle s'étend sur plus de deux fichiers
+            elif len(predictionsImport) > 2 and index != 0 and index != len(predictionsImport) -1 :
+                # TODO à tester
+                # On ouvre la prediction
+                blocsSuivants = xml.xpath(
+                    f"//alto:TextBlock",
+                    namespaces=nsmap)
+                for bloc in blocsSuivants:
+                    regionsPiece.append(bloc)
+            
+            # On traite la fin de la lettre
+            elif index == len(predictionsImport) -1:
+                # On récupère les codes des régions et des lignes
+                tags = Tags(self.p[0], self.d, self.NS).labels()
+                # On boucle sur les couples pour récupérer les codes des tags
+                for tag in tags:
+                    if tags[tag] == "HeadingLine:title":
+                        codeTitre = tag
+                    if tags[tag] == "MainZone":
+                        codeMain = tag
+                    if tags[tag] == "CustomZone:header":
+                        codeHeader = tag
+                
+                # On récupère la première mainZone
+                mainZones = xml.xpath(
+                    f"//alto:TextBlock[@TAGREFS='{codeMain}']", namespaces=nsmap)
+                zonePremiere = mainZones[0]
+                regionsPiece.append(zonePremiere)
+                
+                # On récupère les éventuelles maineZones suivantes, sauf si elles comportent un titre
+                idPrem = zonePremiere.xpath(f"@ID", namespaces=nsmap)
+                idPrem = str(idPrem[0])
+                blocsSuivants = xml.xpath(
+                    f"//alto:TextBlock[@ID='{idPrem}']/following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']"
+                    f"[not(child::alto:TextLine[@TAGREFS='{codeTitre}'])]",
+                    namespaces=nsmap)
+                if blocsSuivants:
+                    for bloc in blocsSuivants:
+                        regionsPiece.append(bloc)
+                
+                # On récupère les autres types de régions
+                blocsAutres = xml.xpath(
+                    f"//alto:TextBlock[not(@TAGREFS='{codeMain}')][not(@TAGREFS='{codeHeader}')]",
+                    namespaces=nsmap)
+                if blocsAutres:
+                    for bloc in blocsAutres:
+                        regionsPiece.append(bloc)
+
+            # TODO contrôle
+            if self.d == "CdS-b1-06pa" and fichier == "data/CdS-b1-06pa/CdS02_Konv002-03_0057.xml":
+                for region in regionsPiece:
+                    print(region.xpath(f"@ID", namespaces=nsmap))
+                #print(f'Id. calculé du main suivant et final :')
+                #print("La solution est : eSc_textblock_7cb7eef8")
+                
+            
         # IMPLÉMENTER LES ÉLÉMENTS
         text = Text(self.root)
         body(self.root, text.data)
