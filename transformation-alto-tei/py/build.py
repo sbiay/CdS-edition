@@ -1,4 +1,5 @@
 import json
+import os
 from py.iiif_data import IIIF_API
 from py.sru_data import SRU_API
 from py.build_teiheader import teiheader
@@ -56,10 +57,60 @@ class XMLTEI:
         sourcedoc(self.d, self.root, self.p, self.tags)  # (build_sourcedoc.py)
     
     # -- PHASE 3 -- extract and annotate text in <body> and <standoff>
-    def annotate_text(self):
+    def annotate_text(self, donnees):
         """Parse and map data from the <sourceDoc> to XML-TEI elements in <body>.
-        """        
+        """
+        
+        # SÉLECTIONNER LES LIGNES PERTINENTES
+        
+        # On assigne l'identifiant de la pièce courante
+        idPiece = self.d
+        # On récupère le contenu des métadonnées du dossier
+        with open(donnees) as jsonf:
+            donneesDossier = json.load(jsonf)
+        # On récupère les données de la pièce courante
+        donneesPiece = donneesDossier["results"]["records"][idPiece]
+        
+        # On récupère les chemins des prédictions
+        predictionsImport = []
+        for chemin, dossiers, fichiers in os.walk("data/" + idPiece):
+            for nomFichier in fichiers:
+                predictionsImport.append(f"./data/{idPiece}/{nomFichier}")
+
+        # On récupère la position du titre de la lettre dans la prédiction
+        positionTitre = donneesDossier["results"]["records"][idPiece]["title_position"]
+        
+        # Si un dossier comporte une seule image
+        if len(donneesPiece["images"]) == 1:
+            # On assigne le chemin du fichier
+            fichier = predictionsImport[0]
+            
+            # On ouvre la prediction
+            xml = etree.parse(fichier)
+            nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+            # On récupère les codes des régions et des lignes
+            tags = Tags(self.p[0], self.d, self.NS).labels()
+            # On boucle sur les couples pour récupérer les codes des tags
+            for tag in tags:
+                if tags[tag] == "HeadingLine:title":
+                    codeTitre = tag
+                if tags[tag] == "MainZone":
+                    codeMain = tag
+            
+            if fichier == "./data/CdS-b1-06p9/CdS02_Konv002-03_0056.xml":
+                # On récupère les zones de titres de la page
+                idZoneTitres = xml.xpath(f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"
+                                      f"{codeTitre}']]/@ID", namespaces=nsmap)
+                # On récupère l'id de la zone de titre pertinente
+                idZoneTitre = idZoneTitres[positionTitre - 1]
+                print(idZoneTitre)
+            
+        # IMPLÉMENTER LES ÉLÉMENTS
         text = Text(self.root)
         body(self.root, text.data)
         segment(self.root, text.main)
-        
+
+        # TODO Visualiser le contenu de text.data
+        donnees = text.data
+        with open(f"./test/{self.d}-text.data.json", mode="w") as jsonf:
+            json.dump(donnees, jsonf)
