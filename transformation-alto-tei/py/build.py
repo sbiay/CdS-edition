@@ -196,7 +196,8 @@ class XMLTEI:
                     print(region.xpath(f"@ID", namespaces=nsmap))
                 #print(f'Id. calculé du main suivant et final :')
                 #print("La solution est : eSc_textblock_7cb7eef8")
-                
+            
+            # TODO RÉÉCRIRE LE fichier AVEC UNIQUEMENT LES BLOCS CONTENUS DANS regionsPiece
             
         # IMPLÉMENTER LES ÉLÉMENTS
         text = Text(self.root)
