@@ -92,8 +92,7 @@ def selectionBlocs(self, donnees):
                 tagBlocPrec = blocPrecedent.xpath(f"@TAGREFS", namespaces=nsmap)[0]
                 # Si le tag répond au code CustomZone:header
                 if tagBlocPrec == codeHeader:
-                    header = blocPrecedent
-                    regionsPiece.append(header[0])
+                    regionsPiece.append(blocPrecedent)
         
             # On ajoute après l'éventuel header la zone contenant le titre
             regionsPiece.append(zoneTitre[0])
@@ -169,16 +168,11 @@ def selectionBlocs(self, donnees):
     
     # On récupère les identifiants de chaque ligne
     idlignesPiece = []
-    print("\n" + idPiece)
-    #print(len(regionsPiece))
     for region in regionsPiece:
-        print(region.xpath("@ID"))
         idLignes = region.xpath(
                 f"child::alto:TextLine/@ID",
                 namespaces=nsmap)
         for index, id in enumerate(idLignes):
             idlignesPiece.append(id)
-            # TODO test
-            print(id)
     
     return idlignesPiece
