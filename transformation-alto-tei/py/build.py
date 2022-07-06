@@ -64,13 +64,24 @@ class XMLTEI:
         
         # SÉLECTIONNER LES LIGNES PERTINENTES
         lignesPertinentes = selectionBlocs(self=self, donnees=donnees)
-        
-        # IMPLÉMENTER LES ÉLÉMENTS
+
         text = Text(self.root)
-        body(self.root, text.data)
-        segment(self.root, text.main)
+        sourcedoc = text.data
+        
+        # On élimine du contenu les lignes dont l'identifiant n'est pas dans lignesPertinentes
+        contenu = []
+        for ligne in sourcedoc:
+            if ligne[7] in lignesPertinentes:
+                contenu.append(ligne)
 
         # TODO Visualiser le contenu de text.data
-        donnees = text.data
-        with open(f"./test/{self.d}-text.data.json", mode="w") as jsonf:
-            json.dump(donnees, jsonf)
+        with open(f"./test/{self.d}-sourcedoc.json", mode="w") as jsonf:
+            json.dump(sourcedoc, jsonf)
+        with open(f"./test/{self.d}-pertinent.json", mode="w") as jsonf:
+            json.dump(contenu, jsonf)
+
+        # IMPLÉMENTER LES ÉLÉMENTS
+        #body(self.root, contenu)
+        #segment(self.root, text.main)
+
+        

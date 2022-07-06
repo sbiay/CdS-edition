@@ -35,7 +35,7 @@ def selectionBlocs(self, donnees):
     :return: liste des identifiants de lignes dans les fichiers Alto de la pièce à éditer
     :return type: list
     """
-    print(self.d)
+
     idPiece = self.d
     
     # On récupère le contenu des métadonnées du dossier
@@ -169,11 +169,16 @@ def selectionBlocs(self, donnees):
     
     # On récupère les identifiants de chaque ligne
     idlignesPiece = []
+    print("\n" + idPiece)
+    #print(len(regionsPiece))
     for region in regionsPiece:
-        idLignes = xml.xpath(
-                f"//alto:TextLine/@ID",
+        print(region.xpath("@ID"))
+        idLignes = region.xpath(
+                f"child::alto:TextLine/@ID",
                 namespaces=nsmap)
-        for id in idLignes:
+        for index, id in enumerate(idLignes):
             idlignesPiece.append(id)
+            # TODO test
+            print(id)
     
     return idlignesPiece
