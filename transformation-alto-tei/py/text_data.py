@@ -13,17 +13,42 @@ class Text:
         """Parse contextual and attribute data for each text line and store it in a named tuple.
         Returns:
             data (list of named tuples): list of data for each text line
-        """        
-        Line = namedtuple("Line", ["id", "n", "text", "line_type", "zone_type", "zone_id", "page_id"])
-        data = [Line(
-            ln.getparent().get("{http://www.w3.org/XML/1998/namespace}id"),  # @xml:id of the line's zone
-            ln.getparent().get("n"),  # line number
-            ln.text,  # text content of line
-            ln.getparent().get("type"),  # @type of line
-            ln.getparent().getparent().get("type"),  # @type of text block zone
-            ln.getparent().getparent().get("{http://www.w3.org/XML/1998/namespace}id"),  # @xml:id of text block zone
-            ln.getparent().getparent().getparent().get("{http://www.w3.org/XML/1998/namespace}id"),  # @xml:id of page
-        ) for ln in self.root.findall('.//line')]
+        """
+        Line = namedtuple("Line", ["id", "n", "text", "line_type", "zone_type", "zone_id", "page_id", "idAlto"])
+        data = []
+        
+        for ln in self.root.findall('.//line'):
+            # On définit le type de ligne
+            typeLigne = ln.getparent().get("type")
+            # S'il existe un sous-type, on le récupère
+            if ln.getparent().get("subtype") != "none":
+                typeLigne = typeLigne + ":" + ln.getparent().get("subtype"),  # @type of line
+            # On retype les chaînes en tuple
+            if type(typeLigne) == str:
+                typeLigne = (typeLigne,)
+            # On définit le type de région
+            typeRegion = ln.getparent().getparent().get("type")
+            # S'il existe un sous-type, on le récupère
+            if ln.getparent().getparent().get("subtype") != "none":
+                typeRegion = typeRegion + ":" + ln.getparent().getparent().get("subtype")
+            if type(typeRegion) == str:
+                typeRegion = (typeRegion,)
+            
+            data.append(
+                Line(
+                ln.getparent().get("{http://www.w3.org/XML/1998/namespace}id"),  # @xml:id of the line's zone
+                ln.getparent().get("n"),  # line number
+                ln.text,  # text content of line
+                typeLigne[0],
+                typeRegion[0],  # @type of text block zone
+                ln.getparent().getparent().get("{http://www.w3.org/XML/1998/namespace}id"),
+                # @xml:id of text block zone
+                ln.getparent().getparent().getparent().get("{http://www.w3.org/XML/1998/namespace}id"),
+                # @xml:id of page
+                ln.getparent().get("corresp") # Identifiant de l'élément alto
+                )
+            )
+            
         return data
 
     def extract(self):

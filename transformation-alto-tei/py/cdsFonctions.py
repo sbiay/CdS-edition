@@ -30,11 +30,12 @@ def triFichiers(dossier):
 
 def selectionBlocs(self, donnees):
     """
-    
-    :param idPiece:
-    :return:
+    :param self: pièce à éditer
+    :param donnees: chemin de fichier
+    :return: liste des identifiants de lignes dans les fichiers Alto de la pièce à éditer
+    :return type: list
     """
-
+    print(self.d)
     idPiece = self.d
     
     # On récupère le contenu des métadonnées du dossier
@@ -50,12 +51,13 @@ def selectionBlocs(self, donnees):
     positionTitre = donneesDossier["results"]["records"][idPiece]["title_position"]
 
     nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
+
+    regionsPiece = []
+    
     # On boucle sur chaque fichier
     for index, fichier in enumerate(predictionsImport):
         # On initie la liste contenant
-        regionsPiece = []
         xml = etree.parse(fichier)
-    
         # On traite le début de la lettre
         if index == 0:
             # TODO test
@@ -109,9 +111,13 @@ def selectionBlocs(self, donnees):
                 f"//alto:TextBlock[@ID='{idTitre}']/"
                 f"following-sibling::alto:TextBlock[not(@TAGREFS='{codeMain}')][not(@TAGREFS='{codeHeader}')]",
                 namespaces=nsmap)
-        
-            regionsPiece.append(blocsSuivants)
-            regionsPiece.append(blocsAutres)
+            
+            if blocsSuivants:
+                for bloc in blocsSuivants:
+                    regionsPiece.append(bloc)
+            if blocsAutres:
+                for bloc in blocsAutres:
+                    regionsPiece.append(bloc)
     
         # On traite le milieu de la lettre quand elle s'étend sur plus de deux fichiers
         elif len(predictionsImport) > 2 and index != 0 and index != len(predictionsImport) - 1:
@@ -119,8 +125,9 @@ def selectionBlocs(self, donnees):
             blocsSuivants = xml.xpath(
                 f"//alto:TextBlock",
                 namespaces=nsmap)
-            for bloc in blocsSuivants:
-                regionsPiece.append(bloc)
+            if blocsSuivants:
+                for bloc in blocsSuivants:
+                    regionsPiece.append(bloc)
     
         # On traite la fin de la lettre
         elif index == len(predictionsImport) - 1:
@@ -160,4 +167,13 @@ def selectionBlocs(self, donnees):
                 for bloc in blocsAutres:
                     regionsPiece.append(bloc)
     
-        # TODO RÉÉCRIRE LE fichier AVEC UNIQUEMENT LES BLOCS CONTENUS DANS regionsPiece
+    # On récupère les identifiants de chaque ligne
+    idlignesPiece = []
+    for region in regionsPiece:
+        idLignes = xml.xpath(
+                f"//alto:TextLine/@ID",
+                namespaces=nsmap)
+        for id in idLignes:
+            idlignesPiece.append(id)
+    
+    return idlignesPiece
