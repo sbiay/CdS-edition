@@ -19,7 +19,7 @@ def body(root, data):
         
         # find the last element added to the div
         last_element = div[-1]
-
+    
         # NumberingZone, QuireMarksZone, and RunningTitleZone line
         if line.zone_type == "NumberingZone" or line.zone_type == "QuireMarksZone" or line.zone_type == "RunningTitleZone":
             # enclose any page number, quire marks, or running title inside a <fw>

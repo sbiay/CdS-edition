@@ -81,7 +81,10 @@ class XMLTEI:
             json.dump(contenu, jsonf)
 
         # IMPLÉMENTER LES ÉLÉMENTS
-        #body(self.root, contenu)
-        #segment(self.root, text.main)
+        if self.d == "CdS-b1-06p9":
+            print("\n" + self.d)
+            body(root=self.root, data=contenu)
+            print(f"La pièce {self.d} est OK")
+            #segment(self.root, text.main)
 
         

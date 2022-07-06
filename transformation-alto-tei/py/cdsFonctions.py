@@ -37,7 +37,8 @@ def selectionBlocs(self, donnees):
     """
 
     idPiece = self.d
-    
+    # TODO test
+    test = None
     # On récupère le contenu des métadonnées du dossier
     with open(donnees) as jsonf:
         donneesDossier = json.load(jsonf)
@@ -60,9 +61,6 @@ def selectionBlocs(self, donnees):
         xml = etree.parse(fichier)
         # On traite le début de la lettre
         if index == 0:
-            # TODO test
-            # print(f"Id. de la pièce : {idPiece} -- Nom du fichier de début : {fichier}")
-        
             # On récupère les codes des régions et des lignes
             tags = Tags(self.p[0], self.d, self.NS).labels()
             # On boucle sur les couples pour récupérer les codes des tags
@@ -82,7 +80,6 @@ def selectionBlocs(self, donnees):
             idTitre = zoneTitre[0].xpath(f"@ID", namespaces=nsmap)
             idTitre = str(idTitre[0])
             # On récupère le header éventuel dans le bloc précédent
-            header = None
             blocsPrecedents = xml.xpath(
                 f"//alto:TextBlock[@ID='{idTitre}']/preceding-sibling::alto:TextBlock",
                 namespaces=nsmap)
@@ -101,8 +98,7 @@ def selectionBlocs(self, donnees):
             # qui sont de type mainZone et ne contiennent pas de ligne de titre)
             blocsSuivants = xml.xpath(
                 f"//alto:TextBlock[@ID='{idTitre}']/"
-                f"following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']"
-                f"[not(child::alto:TextLine[@TAGREFS='{codeTitre}'])]",
+                f"following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']",
                 namespaces=nsmap)
         
             # On récupère les autres types de régions
@@ -111,9 +107,20 @@ def selectionBlocs(self, donnees):
                 f"following-sibling::alto:TextBlock[not(@TAGREFS='{codeMain}')][not(@TAGREFS='{codeHeader}')]",
                 namespaces=nsmap)
             
+            # S'il existe des régions d'écriture après la première
             if blocsSuivants:
+                # On boucle sur chaque région
                 for bloc in blocsSuivants:
-                    regionsPiece.append(bloc)
+                    # On récupère les éventuelles lignes de titre de la région
+                    titre = bloc.xpath(f"child::alto:TextLine[@TAGREFS='{codeTitre}']", namespaces=nsmap)
+                    # S'il n'y a pas de titre
+                    if not titre:
+                        # La région est pertinente
+                        regionsPiece.append(bloc)
+                    # S'il y a un titre
+                    else:
+                        # On arrête la boucle
+                        break
             if blocsAutres:
                 for bloc in blocsAutres:
                     regionsPiece.append(bloc)
@@ -151,12 +158,23 @@ def selectionBlocs(self, donnees):
             idPrem = zonePremiere.xpath(f"@ID", namespaces=nsmap)
             idPrem = str(idPrem[0])
             blocsSuivants = xml.xpath(
-                f"//alto:TextBlock[@ID='{idPrem}']/following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']"
-                f"[not(child::alto:TextLine[@TAGREFS='{codeTitre}'])]",
+                f"//alto:TextBlock[@ID='{idPrem}']/"
+                f"following-sibling::alto:TextBlock[@TAGREFS='{codeMain}']",
                 namespaces=nsmap)
+            # S'il existe des régions d'écriture après la première
             if blocsSuivants:
+                # On boucle sur chaque région
                 for bloc in blocsSuivants:
-                    regionsPiece.append(bloc)
+                    # On récupère les éventuelles lignes de titre de la région
+                    titre = bloc.xpath(f"child::alto:TextLine[@TAGREFS='{codeTitre}']", namespaces=nsmap)
+                    # S'il n'y a pas de titre
+                    if not titre:
+                        # La région est pertinente
+                        regionsPiece.append(bloc)
+                    # S'il y a un titre
+                    else:
+                        # On arrête la boucle
+                        break
         
             # On récupère les autres types de régions
             blocsAutres = xml.xpath(
@@ -174,5 +192,6 @@ def selectionBlocs(self, donnees):
                 namespaces=nsmap)
         for index, id in enumerate(idLignes):
             idlignesPiece.append(id)
+            
     
     return idlignesPiece
