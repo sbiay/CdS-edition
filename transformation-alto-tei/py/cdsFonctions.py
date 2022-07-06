@@ -28,13 +28,15 @@ def triFichiers(dossier):
     return tri
 
 
-def selectionBlocs(idPiece, donnees, self):
+def selectionBlocs(self, donnees):
     """
     
     :param idPiece:
     :return:
     """
 
+    idPiece = self.d
+    
     # On récupère le contenu des métadonnées du dossier
     with open(donnees) as jsonf:
         donneesDossier = json.load(jsonf)
@@ -113,7 +115,6 @@ def selectionBlocs(idPiece, donnees, self):
     
         # On traite le milieu de la lettre quand elle s'étend sur plus de deux fichiers
         elif len(predictionsImport) > 2 and index != 0 and index != len(predictionsImport) - 1:
-            # TODO à tester
             # On ouvre la prediction
             blocsSuivants = xml.xpath(
                 f"//alto:TextBlock",
@@ -160,4 +161,3 @@ def selectionBlocs(idPiece, donnees, self):
                     regionsPiece.append(bloc)
     
         # TODO RÉÉCRIRE LE fichier AVEC UNIQUEMENT LES BLOCS CONTENUS DANS regionsPiece
-    

@@ -63,7 +63,7 @@ class XMLTEI:
         """
         
         # SÉLECTIONNER LES LIGNES PERTINENTES
-        lignesPertinentes = selectionBlocs(self=self, idPiece=self.d, donnees=donnees)
+        lignesPertinentes = selectionBlocs(self=self, donnees=donnees)
         
         # IMPLÉMENTER LES ÉLÉMENTS
         text = Text(self.root)

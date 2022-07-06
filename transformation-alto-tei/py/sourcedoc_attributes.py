@@ -57,14 +57,14 @@ class Attributes:
 
         attributes = []
         processed_blocks = []
-
+        
         # run through each targeted ALTO element one by one
         for i in range(len(zone_elements)):
             # parse the three (possible) components of the targeted ALTO element's @TAGREFS, according to SegmOnto guidelines;
             # the 3 groups of this regex parse the following expected tag syntax: MainZone:column#1 --> (MainZone)(column)(1)
             tag_parts = re.match(r"(\w+):?(\w+)?#?(\d?)?", str(self.tags[att_list[i]["TAGREFS"]]))
-
-            # specifically for the current targeted ALTO element [i], reformat the attribute values extracted 
+            
+            # specifically for the current targeted ALTO element [i], reformat the attribute values extracted
             # from its child <Polygon> (see above, stored in variable "points") so that every second value 
             # is joined to the previous value by a comma; eg. "2204 4621 2190 4528" --> "2204,4621 2190,4528"
             zone_points = " ".join([re.sub(r"\s", ",", x) for x in re.findall(r"(\d+ \d+)", points[i]["POINTS"])])
@@ -74,6 +74,9 @@ class Attributes:
             y = att_list[i]["VPOS"]
             w = att_list[i]["WIDTH"]
             h = att_list[i]["HEIGHT"]
+            
+            # On récupère l'identifiant de l'élément Alto
+            altoId = att_list[i]["ID"]
 
             # assign together the newly created/formatted attribute values to TEI attribute names that the <zone> will use
             zone_att = {
@@ -82,7 +85,9 @@ class Attributes:
                 "n":tag_parts.group(3) or "none",
                 "points":zone_points,
                 # use the values of the ALTO element's @HPOS, @VPOS, @WIDTH, @HEIGHT to complete region parameters for the IIIF Image API URI
-                "source":f"https://gallica.bnf.fr/iiif/ark:/12148/{self.doc}/f{self.folio}/{x},{y},{w},{h}/full/0/native.jpg"
+                "source":f"https://gallica.bnf.fr/iiif/ark:/12148/{self.doc}/f{self.folio}/{x},{y},{w},"
+                         f"{h}/full/0/native.jpg",
+                "corresp": altoId
             }
 
             # update a list of TEI attribute-value pairs with those parsed from the current targeted ALTO element
