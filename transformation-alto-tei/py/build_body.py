@@ -5,19 +5,31 @@ def body(root, data):
     text = etree.SubElement(root, "text")
     body = etree.SubElement(text, "body")
     div = etree.SubElement(body, "div")
-    for line in data:
+    for index, line in enumerate(data):
         # prepare attributes for the text block's zone
-        zone_atts = {"corresp":f"#{line.zone_id}", "type":line.zone_type}
+        zone_atts = {"corresp": f"#{line.zone_id}", "type": line.zone_type}
         # prepare <lb/> with this line's xml:id as @corresp
         lb = etree.Element("lb", corresp=f"#{line.id}")
+        # Contenu des lignes de texte
         lb.tail = f"{line.text}"
-
-        # if this is the page's first line, create a <pb> with the page's xml:id
-        if int(line.n) == 1:
-            pb = etree.Element("pb", corresp=f"#{line.page_id}")
-            div.append(pb)
         
-        # find the last element added to the div
+        # Implémenter un premier élément
+        if index == 0:
+            # if this is the page's first line, create a <pb> with the page's xml:id
+            if int(line.n) == 1:
+                pb = etree.Element("pb", corresp=f"#{line.page_id}")
+                div.append(pb)
+            else:
+                init = etree.Element("ab", zone_atts)
+                div.append(init)
+                last_element = div[-1]
+                last_element.append(lb)
+        else:
+            # if this is the page's first line, create a <pb> with the page's xml:id
+            if int(line.n) == 1:
+                pb = etree.Element("pb", corresp=f"#{line.page_id}")
+                div.append(pb)
+
         last_element = div[-1]
     
         # NumberingZone, QuireMarksZone, and RunningTitleZone line
@@ -38,8 +50,8 @@ def body(root, data):
                 last_element.append(lb)
             
         # MainZone line
-        elif line.zone_type == "MainZone":
-            # create an <ab> if one is not already the preceding sibling 
+        elif line.zone_type == "MainZone" or line.zone_type == "CustomZone:header":
+            # create an <ab> if one is not already the preceding sibling
             if last_element.tag != "ab":
                 ab = etree.Element("ab", zone_atts)
                 last_element.addnext(ab)
@@ -57,7 +69,15 @@ def body(root, data):
                 elif ab_children[-1].tag == "hi":
                     ab_children[-1].append(lb)
             
+                """
+                elif line.line_type == "CustomLine:signature":
+                    # On crée l'élément cible
+                    signed = etree.Element("signed")
+                    # On ajoute cet élément au précédent
+                    last_element.append(signed)
+                    signed.append(lb)
+                """
             # if the line is not emphasized, append it to the last element in the <ab>
-            elif line.line_type == "DefaultLine":
+            else:
                 last_element.append(lb)
                 
