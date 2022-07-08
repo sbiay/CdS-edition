@@ -26,7 +26,14 @@ def body(root, data):
         # On écrit un pb si le numéro de la ligne est 1
         if int(line.n) == 1:
             pb = etree.Element("pb", corresp=f"#{line.page_id}")
-            last_element.append(pb)
+            # On teste si le dernier élément a des enfants
+            try:
+                # Si oui, on ajoute le pb au dernier enfant
+                last_element.getchildren()[-1].append(pb)
+            except:
+                # Sinon on l'ajoute à la div
+                last_element.append(pb)
+            last_element = div[-1]
         
         # prepare attributes for the text block's zone
         zone_atts = {"corresp": f"#{line.zone_id}", "type": line.zone_type}
@@ -125,7 +132,12 @@ def body(root, data):
                     choice.append(comment)
                     corr = etree.SubElement(choice, "corr")
                     corr.append(lb)
-                    last_element.getchildren()[-1].append(choice)
+                    # Pour ajouter une correction à la fin d'un vers
+                    if last_element.getchildren()[-1].tag == "l":
+                        last_element.getchildren()[-1].append(choice)
+                    # Pour ajouter une correction dans un paragraphe
+                    else:
+                        last_element.append(choice)
                 # Vers
                 elif line.line_type == "CustomLine:verse":
                     # Si le vers est précédé d'un paragraphe
@@ -157,8 +169,8 @@ def body(root, data):
                             lg.append(l)
                 # Pour les autres types de lignes
                 else:
-                    # On instancie un premier p avec la première ligne DefaultLine
-                    if last_element.tag == "opener":
+                    # On instancie un premier p avec la première ligne DefaultLine ou après une partie versifiée
+                    if last_element.tag == "opener" or last_element.tag == "lg":
                         p = etree.SubElement(div, "p")
                         p.append(lb)
                         last_element = div[-1]
