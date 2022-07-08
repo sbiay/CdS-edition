@@ -81,9 +81,7 @@ class XMLTEI:
             json.dump(contenu, jsonf)
 
         # IMPLÉMENTER LES ÉLÉMENTS
-        print("\n" + self.d)
         body(root=self.root, data=contenu)
-        print(f"La pièce {self.d} est OK")
         #segment(self.root, text.main)
         
         # TODO Structurer les lettres
