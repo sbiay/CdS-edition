@@ -11,13 +11,16 @@ def body(root, data):
     dateline = None
     salute = None
     annotations = None
-    p = None
+    closer = None
     
     last_element = div[-1]
+    lastCloserElt = None
     
     # On assigne un booléen pour délimiter le opener
     zoneOpener = True
     zoneMain = False
+    zoneCloser = False
+    zonePostscript = False
     
     for index, line in enumerate(data):
         # On écrit un pb si le numéro de la ligne est 1
@@ -32,11 +35,16 @@ def body(root, data):
         # Contenu des lignes de texte
         lb.tail = f"{line.text}"
 
-        # LIGNES DU OPENER
         # Si on rencontre une DefaultLine, c'est que le opener est terminé
         if line.line_type == "DefaultLine":
             zoneOpener = False
             zoneMain = True
+        
+        # Si on rencontre une signature, c'est que l'on commence le closer
+        if line.line_type == "CustomLine:signature":
+            zoneOpener = False
+            zoneMain = False
+            zoneCloser = True
         
         if zoneOpener:
             # Header
@@ -73,17 +81,18 @@ def body(root, data):
         elif zoneMain:
             # On réinitialise les variables d'éléments
             annotations = None
-            # On instancie un premier p avec la première ligne DefaultLine
-            if last_element.tag == "opener":
-                p = etree.SubElement(div, "p")
-                p.append(lb)
-                last_element = div[-1]
-            elif last_element.tag == "p":
-                last_element.append(lb)
-                last_element = div[-1]
             
+            # Corrections interlinéaires
+            if line.line_type == "InterlinearLine":
+                comment = etree.Comment("Correction interlinéaire")
+                choice = etree.Element("choice")
+                sic = etree.SubElement(choice, "sic")
+                corr = etree.SubElement(choice, "corr")
+                corr.append(lb)
+                last_element.append(comment)
+                last_element.append(choice)
             # Vers
-            if line.line_type == "CustomLine:verse":
+            elif line.line_type == "CustomLine:verse":
                 # Si le vers est précédé d'un paragraphe
                 if last_element.tag == "p":
                     # On crée un élément lg
@@ -97,7 +106,70 @@ def body(root, data):
                     l = etree.SubElement(lg, "l")
                     l.append(lb)
                     lg.append(l)
+                elif last_element.tag == "postscript":
+                    # Si le vers est précédé d'un paragraphe
+                    if last_postscript_elt.tag == "p":
+                        # On crée un élément lg
+                        lg = etree.SubElement(last_element, "lg")
+                        l = etree.SubElement(lg, "l")
+                        l.append(lb)
+                        lg.append(l)
+                        postscript.append(lg)
+                        last_postscript_elt = postscript[-1]
+                    elif last_postscript_elt.tag == "lg":
+                        l = etree.SubElement(lg, "l")
+                        l.append(lb)
+                        lg.append(l)
+                        
+                    
+            else:
+                # On instancie un premier p avec la première ligne DefaultLine
+                if last_element.tag == "opener":
+                    p = etree.SubElement(div, "p")
+                    p.append(lb)
+                    last_element = div[-1]
+                elif last_element.tag == "p":
+                    last_element.append(lb)
+                    last_element = div[-1]
+                # Post-scriptum
+                elif last_element.tag == "closer":
+                    postscript = etree.SubElement(div, "postscript")
+                    p = etree.SubElement(postscript, "p")
+                    p.append(lb)
+                    last_element = div[-1]
+                    last_postscript_elt = postscript[-1]
+                    
+        # CLOSER
+        elif zoneCloser:
+            if closer is None:
+                closer = etree.SubElement(div, "closer")
+                last_element = div[-1]
+           
+            # Un closer ne peut commencer que par une signature
+            if lastCloserElt is None:
+                signed = etree.SubElement(closer, "signed")
+                signed.append(lb)
+                closer.append(signed)
+                lastCloserElt = closer[-1]
+            # Si le closer possède déjà des lignes
+            else:
+                signed.append(lb)
                 
+            """
+                # Si la ligne n'est pas une signature
+                else:
+                    # On l'inscrit dans un postscript
+                    if lastCloserElt.tag != "postscript":
+                        postscript = etree.SubElement(closer, "postscript")
+                        p = etree.SubElement(postscript, "p")
+                        p.append(lb)
+                        postscript.append(p)
+                        closer.append(postscript)
+                        lastCloserElt = closer[-1]
+                    else:
+                        p.append(lb)
+            """
+            # TODO prévoir les vers et autres post-scriptum
         
         """
         # if the line is emphasized for being
