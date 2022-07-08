@@ -6,13 +6,18 @@ def body(root, data):
     body = etree.SubElement(text, "body")
     div = etree.SubElement(body, "div")
     opener = etree.SubElement(div, "opener")
-    # Sous-éléments du opener
-    header = etree.SubElement(opener, "fw")
-    header.set("type", "letterhead")
-    title = etree.SubElement(opener, "title")
-    dateline = etree.SubElement(opener, "dateline")
+    header = None
+    title = None
+    dateline = None
+    salute = None
+    annotations = None
+    p = None
     
     last_element = div[-1]
+    
+    # On assigne un booléen pour délimiter le opener
+    zoneOpener = True
+    zoneMain = False
     
     for index, line in enumerate(data):
         # On écrit un pb si le numéro de la ligne est 1
@@ -26,21 +31,74 @@ def body(root, data):
         lb = etree.Element("lb", corresp=f"#{line.id}")
         # Contenu des lignes de texte
         lb.tail = f"{line.text}"
+
+        # LIGNES DU OPENER
+        # Si on rencontre une DefaultLine, c'est que le opener est terminé
+        if line.line_type == "DefaultLine":
+            zoneOpener = False
+            zoneMain = True
         
-        # TODO gérer les annotations dans le opener
-        # On définit les types de ligne trouvés dans le opener
+        if zoneOpener:
+            # Header
+            if line.line_type in "CustomLine:header":
+                if header is None:
+                    header = etree.SubElement(opener, "fw")
+                    header.set("type", "letterhead")
+                header.append(lb)
+            # Titre
+            if line.line_type in "HeadingLine:title":
+                if title is None:
+                    title = etree.SubElement(opener, "title")
+                title.append(lb)
+            # Dateline
+            if line.line_type in "CustomLine:dateline":
+                if dateline is None:
+                    dateline = etree.SubElement(opener, "dateline")
+                dateline.append(lb)
+            # Salute
+            if line.line_type in "CustomLine:salute":
+                if salute is None:
+                    salute = etree.SubElement(opener, "salute")
+                salute.append(lb)
+            # Notes
+            if line.line_type in "CustomLine:annotations":
+                if annotations is None:
+                    annotations = etree.SubElement(opener, "note")
+                annotations.append(lb)
+            # TODO poser des resp et construire des éléments handNote
+            # On met à jour le dernier enfant de la div
+            last_element = div[-1]
         
-        # On récupère les lignes pour le opener
-        if line.line_type in "HeadingLine:title":
-            title.append(lb)
-        if line.line_type in "CustomLine:header":
-            header.append(lb)
-        # TODO voir comment rendre possible l'inscription de la date ailleurs
-        if line.line_type in "CustomLine:dateline":
-            print(lb.tail)
-            dateline.append(lb)
-        
+        # CORPS DE LA LETTRE
+        elif zoneMain:
+            # On réinitialise les variables d'éléments
+            annotations = None
+            # On instancie un premier p avec la première ligne DefaultLine
+            if last_element.tag == "opener":
+                p = etree.SubElement(div, "p")
+                p.append(lb)
+                last_element = div[-1]
+            elif last_element.tag == "p":
+                last_element.append(lb)
+                last_element = div[-1]
             
+            # Vers
+            if line.line_type == "CustomLine:verse":
+                # Si le vers est précédé d'un paragraphe
+                if last_element.tag == "p":
+                    # On crée un élément lg
+                    lg = etree.SubElement(last_element, "lg")
+                    l = etree.SubElement(lg, "l")
+                    l.append(lb)
+                    lg.append(l)
+                    div.append(lg)
+                    last_element = div[-1]
+                elif last_element.tag == "lg":
+                    l = etree.SubElement(lg, "l")
+                    l.append(lb)
+                    lg.append(l)
+                
+        
         """
         # if the line is emphasized for being
         if line.line_type == "DropCapitalLine" or "HeadingLine" in line.line_type:
