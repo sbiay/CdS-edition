@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ark_12148_CdS-b1-06ou">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
+        <author xml:id="cds">
+          <persName>
+            <surname>Constance de Salm</surname>
+          </persName>
+        </author>
+        <respStmt>
+          <resp>Transformation from ALTO4 to TEI by</resp>
+          <persName>
+            <forename>Kelly</forename>
+            <surname>Christensen</surname>
+            <ptr type="orcid" target="000000027236874X"/>
+          </persName>
+          <persName>
+            <forename>Simon</forename>
+            <surname>Gabay</surname>
+            <ptr type="orcid" target="0000000190944475"/>
+          </persName>
+          <persName>
+            <forename>Ariane</forename>
+            <surname>Pinche</surname>
+            <ptr type="orcid" target="0000000278435050"/>
+          </persName>
+        </respStmt>
+      </titleStmt>
+      <extent>
+        <measure unit="images" n="1"/>
+      </extent>
+      <publicationStmt>
+        <publisher>Gallic(orpor)a</publisher>
+        <authority>BnF DATALab</authority>
+        <availability status="restricted" n="cc-by">
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date when="2022-07-08"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <ptr/>
+          <author ref="#cds">
+            <persName>
+              <surname>Constance de Salm</surname>
+            </persName>
+          </author>
+          <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
+          <pubPlace>Information not available.</pubPlace>
+          <publisher>Information not available.</publisher>
+          <date>1815-1821</date>
+        </bibl>
+        <msDesc>
+          <msIdentifier>
+            <country key="FR"/>
+            <settlement>Information not available.</settlement>
+            <repository>Information not available.</repository>
+            <idno>Information not available.</idno>
+            <altIdentifier>
+              <idno type="ark">CdS-b1-06ou</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <physDesc>
+            <objectDesc>
+              <p>Manuscrit</p>
+            </objectDesc>
+          </physDesc>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fr">français</language>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <sourceDoc>
+    <surfaceGrp>
+      <surface xml:id="f175" n="14" ulx="0" uly="0" lrx="4657" lry="2713">
+        <graphic url="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/full/full/0/native.jpg"/>
+        <zone xml:id="f175_z1" type="CustomZone" subtype="header" n="none" points="775,298 793,359 748,431 461,449 443,388 524,298" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/443,298,350,151/full/0/native.jpg" corresp="eSc_textblock_34d32e4c">
+          <zone xml:id="f175_z1_l1" type="CustomLine" subtype="header" n="1" points="508,350 497,305 585,289 603,323 610,348 515,382" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/497,289,113,93/full/0/native.jpg" corresp="eSc_line_16e38313">
+            <path xml:id="f175_z1_l1_p" points="509,352 512,352 549,337 605,325"/>
+            <line xml:id="f175_z1_l1_t">1818</line>
+          </zone>
+          <zone xml:id="f175_z1_l2" type="CustomLine" subtype="header" n="2" points="477,422 454,382 640,309 642,309 739,293 750,327 780,420 689,447 687,447 685,447 601,445 540,445 488,461" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/454,293,326,168/full/0/native.jpg" corresp="eSc_line_4e86d78f">
+            <path xml:id="f175_z1_l2_p" points="478,423 485,417 531,395 586,383 595,374 623,371 635,362 666,349 678,349 752,328"/>
+            <line xml:id="f175_z1_l2_t">(de Mme la Princesse</line>
+          </zone>
+          <zone xml:id="f175_z1_l3" type="CustomLine" subtype="header" n="3" points="567,434 542,354 669,289 705,391 716,434 572,454" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/542,289,174,165/full/0/native.jpg" corresp="eSc_line_ba8d9796">
+            <path xml:id="f175_z1_l3_p" points="568,435 583,435 623,423 685,395 706,392"/>
+            <line xml:id="f175_z1_l3_t">de Salm)</line>
+          </zone>
+        </zone>
+        <zone xml:id="f175_z2" type="MainZone" subtype="none" n="none" points="2006,585 2259,614 2277,802 1999,838 1879,929 2205,1012 2241,1073 1610,1091 1562,1028 579,1019 560,841 506,795 560,757 588,678 1237,651 1257,569 1121,533 1148,461 1239,440 1212,415 1284,316 1590,325 1626,361 1626,440 1664,461 2150,479 2187,558" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/506,316,1771,775/full/0/native.jpg" corresp="eSc_textblock_0f5c793d">
+          <zone xml:id="f175_z2_l1" type="HeadingLine" subtype="title" n="4" points="1248,397 1246,411 1594,427 1599,404 1599,311 1508,307 1506,305 1476,280 1474,280 1472,280 1470,280 1248,289 1248,397" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/1246,280,353,147/full/0/native.jpg" corresp="eSc_line_8a97e4f7">
+            <path xml:id="f175_z2_l1_p" points="1250,400 1601,406"/>
+            <line xml:id="f175_z2_l1_t">Lettre</line>
+          </zone>
+          <zone xml:id="f175_z2_l2" type="HeadingLine" subtype="title" n="5" points="1133,535 1126,492 1189,456 1191,456 1194,456 1246,456 1248,456 1250,456 1250,458 1282,486 1327,454 1329,454 1332,454 1334,454 1411,465 1515,454 1517,454 1519,454 1583,481 1590,483 1594,479 1608,467 1610,467 1612,467 1614,467 1617,467 1619,467 1633,479 1639,486 1732,486 1795,474 1829,470 1832,470 1879,472 1981,479 1994,470 1997,465 1999,465 2001,465 2003,465 2031,467 2110,479 2137,465 2146,524 2144,556 1890,549 1863,558 1856,560 1854,560 1852,560 1850,560 1847,560 1847,558 1845,558 1832,544 1791,558 1784,560 1782,560 1780,560 1764,558 1700,549 1687,558 1682,562 1680,562 1678,562 1678,565 1617,565 1614,562 1612,562 1603,560 1576,549 1538,560 1517,565 1515,565 1513,565 1510,565 1508,565 1508,562 1504,560 1497,551 1336,549 1133,560" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/1126,454,1020,111/full/0/native.jpg" corresp="eSc_line_73d0e0a3">
+            <path xml:id="f175_z2_l2_p" points="1133,535 2146,524"/>
+            <line xml:id="f175_z2_l2_t">A Mr Prous (au château de Liedberg)</line>
+          </zone>
+          <zone xml:id="f175_z2_l3" type="CustomLine" subtype="dateline" n="6" points="1818,664 1813,605 1861,603 1863,603 1865,603 1868,603 1868,605 1870,605 1884,619 1911,608 1922,603 1924,603 1927,603 1929,603 1949,608 1988,619 2008,610 2028,601 2031,601 2033,601 2035,601 2076,612 2094,617 2110,614 2157,603 2159,603 2250,619 2254,660 2254,678 1818,682" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/1813,601,441,81/full/0/native.jpg" corresp="eSc_line_0be11a86">
+            <path xml:id="f175_z2_l3_p" points="1818,664 2254,660"/>
+            <line xml:id="f175_z2_l3_t">Dyck, ce 3 Août 1818.</line>
+          </zone>
+          <zone xml:id="f175_z2_l4" type="DefaultLine" subtype="none" n="7" points="574,739 567,694 597,678 597,678 597,678 599,678 599,678 601,678 902,689 997,678 997,678 999,678 999,678 1076,687 1094,675 1096,675 1096,675 1096,675 1099,675 1099,675 1101,675 1101,675 1216,687 1253,673 1253,673 1255,673 1255,673 1255,673 1257,673 1506,685 1533,673 1533,673 1535,673 1535,673 1535,673 1538,673 1718,682 1822,671 1822,671 1825,671 1825,671 1893,682 1911,669 1911,669 1913,669 1913,669 1915,669 1915,669 1915,669 1917,669 1917,669 1920,669 1967,680 2012,669 2015,669 2015,669 2017,669 2243,682 2248,727 2245,750 574,759" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/567,669,1681,90/full/0/native.jpg" corresp="eSc_line_81ccc116">
+            <path xml:id="f175_z2_l4_p" points="574,739 2248,727"/>
+            <line xml:id="f175_z2_l4_t">On vous regrette fort. On ira chercher Louise à midi et sa</line>
+          </zone>
+          <zone xml:id="f175_z2_l5" type="DefaultLine" subtype="none" n="8" points="511,816 506,775 703,770 757,750 759,750 759,750 759,750 963,748 965,748 965,748 968,748 968,748 1011,764 1056,748 1056,748 1058,748 1058,748 1060,748 1060,748 1060,748 1130,761 1158,743 1160,743 1160,743 1160,743 1162,743 1162,743 1162,743 1164,743 1164,743 1259,759 1341,748 1341,748 1343,748 1488,755 1513,739 1515,739 1515,739 1515,739 1517,739 1517,739 1519,739 1519,739 1519,739 1574,750 1590,737 1590,737 1592,737 1592,737 1592,737 1594,737 1594,737 1594,737 1596,737 1773,748 1804,732 1804,732 1804,732 1807,732 1807,732 1809,732 1809,732 1809,732 1852,741 1886,730 1886,730 1888,730 1888,730 1890,730 2261,743 2266,784 2266,807 2012,822 2010,822 2010,822 1913,813 1875,811 1841,816 1761,827 1761,827 1761,829 1691,829 1689,827 1689,827 1687,827 1687,827 1666,818 1644,809 1526,820 1504,822 1504,822 1501,822 1463,822 1196,813 1103,829 1094,829 1094,829 1092,829 1092,829 1092,829 1085,829 1026,816 990,831 981,834 981,834 979,834 979,834 979,834 977,834 977,834 974,834 974,834 974,834 968,831 943,818 762,818 667,836 651,838 651,838 649,838 649,838 631,836 531,825 515,838" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/506,730,1760,108/full/0/native.jpg" corresp="eSc_line_63d540ac">
+            <path xml:id="f175_z2_l5_p" points="511,816 2266,784"/>
+            <line xml:id="f175_z2_l5_t">maman si elle le peut et on vous attendra à la fin de la semaine</line>
+          </zone>
+          <zone xml:id="f175_z2_l6" type="DefaultLine" subtype="none" n="9" points="567,868 560,829 597,809 597,809 597,809 599,809 599,809 599,809 601,809 601,809 603,809 603,809 603,809 635,825 658,813 658,813 658,813 660,813 660,813 660,813 662,813 796,822 818,807 818,807 821,807 821,807 823,807 823,807 825,807 909,807 909,807 909,807 911,807 911,807 913,807 913,807 934,822 934,822 938,822 981,809 983,809 983,809 983,809 986,809 986,809 988,809 1022,818 1035,804 1035,804 1035,804 1038,804 1038,804 1040,804 1040,804 1040,804 1042,804 1042,804 1042,804 1044,804 1087,818 1094,820 1108,818 1189,802 1189,802 1191,802 1191,802 1191,802 1255,816 1273,818 1397,813 1404,859 1404,886 1178,890 1176,890 1176,890 1164,890 1106,879 1090,890 1090,890 1087,890 1087,890 1087,890 1087,890 1085,890 1085,890 1083,890 1083,890 1083,890 1078,890 1020,879 990,890 986,893 986,893 983,893 983,893 983,893 981,893 956,893 814,881 796,893 793,893 793,893 791,893 791,893 791,893 791,893 789,893 789,893 789,893 705,883 567,895" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/560,802,844,93/full/0/native.jpg" corresp="eSc_line_d196d83f">
+            <path xml:id="f175_z2_l6_p" points="567,868 1404,859"/>
+            <line xml:id="f175_z2_l6_t">On aura le comte de Hompesch.</line>
+          </zone>
+          <zone xml:id="f175_z2_l7" type="DefaultLine" subtype="none" n="10" points="576,935 574,888 1635,888 1639,931 1637,963 1413,965 1411,965 1411,965 1393,963 1338,951 1210,960 1148,965 1146,965 1146,965 1146,965 1144,965 1144,965 1142,965 1135,960 1117,951 1047,951 1040,960 1033,965 1033,967 1033,967 1031,967 1031,967 1031,967 1029,967 1029,967 1026,967 1026,967 963,960 913,954 895,958 870,967 868,967 868,967 868,967 866,967 866,967 866,967 863,967 863,967 843,958 832,954 707,954 696,958 676,967 676,967 674,967 674,967 674,967 671,967 671,967 574,956" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/574,888,1065,79/full/0/native.jpg" corresp="eSc_line_8c878b26">
+            <path xml:id="f175_z2_l7_p" points="576,935 1639,931"/>
+            <line xml:id="f175_z2_l7_t">On fait ses compliments à Mr Ritz.</line>
+          </zone>
+          <zone xml:id="f175_z2_l8" type="DefaultLine" subtype="none" n="11" points="581,1006 576,963 631,949 631,949 631,949 633,949 633,949 744,963 762,963 780,963 920,949 920,949 922,949 922,949 925,949 925,949 925,949 927,949 945,960 1040,951 1040,951 1042,951 1042,951 1044,951 1044,951 1044,951 1047,951 1047,951 1047,954 1056,963 1058,965 1162,965 1180,963 1309,947 1309,947 1311,947 1764,963 1768,1001 1770,1017 1734,1035 1734,1035 1734,1035 1732,1035 1732,1035 1730,1035 1730,1035 1730,1035 1664,1021 1587,1035 1587,1035 1585,1035 1585,1035 1452,1021 1295,1035 1295,1035 1293,1035 1293,1035 1291,1035 1291,1035 1257,1021 1230,1035 1230,1035 1230,1035 1228,1035 1228,1035 1225,1035 1225,1035 1225,1035 1223,1035 1180,1021 1130,1037 1128,1037 1128,1037 1128,1037 1126,1037 974,1026 893,1037 893,1037 891,1037 891,1037 891,1037 825,1024 703,1037 703,1037 701,1037 701,1037 698,1037 698,1037 698,1037 696,1037 674,1024 581,1024" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/576,947,1194,90/full/0/native.jpg" corresp="eSc_line_40853694">
+            <path xml:id="f175_z2_l8_p" points="581,1006 1768,1001"/>
+            <line xml:id="f175_z2_l8_t">Mille amitiés à vous et à toute la maison.</line>
+          </zone>
+          <zone xml:id="f175_z2_l9" type="CustomLine" subtype="signature" n="12" points="1610,1069 1610,1010 2202,1019 2202,1069 2202,1089 2132,1105 2130,1105 2128,1105 2080,1094 2071,1091 2062,1094 2033,1103 2031,1103 2028,1103 1970,1096 1933,1091 1906,1096 1870,1105 1868,1105 1865,1105 1863,1105 1852,1098 1841,1091 1820,1098 1804,1105 1802,1105 1800,1105 1768,1101 1730,1094 1610,1103" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/1610,1010,592,95/full/0/native.jpg" corresp="eSc_line_fb92b62f">
+            <path xml:id="f175_z2_l9_p" points="1610,1069 2202,1069"/>
+            <line xml:id="f175_z2_l9_t">(Signé) Constance de Salm.</line>
+          </zone>
+        </zone>
+        <zone xml:id="f175_z3" type="NumberingZone" subtype="none" n="none" points="2125,1256 2125,1082 2270,1082 2270,1256" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/2125,1082,145,174/full/0/native.jpg" corresp="eSc_textblock_623d66a7">
+          <zone xml:id="f175_z3_l1" type="DefaultLine" subtype="none" n="13" points="2162,1234 2101,1155 2117,1123 2117,1121 2119,1121 2119,1119 2121,1119 2144,1112 2164,1105 2202,1053 2282,1139 2288,1153 2243,1171 2234,1191 2230,1200 2230,1202 2227,1202 2227,1205 2166,1241" source="https://gallica.bnf.fr/iiif/ark:/12148/CdS-b1-06ou/f175/2101,1053,187,188/full/0/native.jpg" corresp="eSc_line_468a5301">
+            <path xml:id="f175_z3_l1_p" points="2164,1235 2164,1229 2186,1198 2284,1140"/>
+            <line xml:id="f175_z3_l1_t">1823</line>
+          </zone>
+        </zone>
+      </surface>
+    </surfaceGrp>
+  </sourceDoc>
+  <text>
+    <body>
+      <div>
+        <opener>
+          <pb corresp="#f175"/>
+          <fw type="letterhead"><lb corresp="#f175_z1_l1"/>1818<lb corresp="#f175_z1_l2"/>(de Mme la Princesse<lb corresp="#f175_z1_l3"/>de Salm)</fw>
+          <title><lb corresp="#f175_z2_l1"/>Lettre<lb corresp="#f175_z2_l2"/>A Mr Prous (au château de Liedberg)</title>
+          <dateline><lb corresp="#f175_z2_l3"/>Dyck, ce 3 Août 1818.</dateline>
+        </opener>
+        <p><lb corresp="#f175_z2_l4"/>On vous regrette fort. On ira chercher Louise à midi et sa<lb corresp="#f175_z2_l5"/>maman si elle le peut et on vous attendra à la fin de la semaine<lb corresp="#f175_z2_l6"/>On aura le comte de Hompesch.<lb corresp="#f175_z2_l7"/>On fait ses compliments à Mr Ritz.<lb corresp="#f175_z2_l8"/>Mille amitiés à vous et à toute la maison.</p>
+        <closer>
+          <signed><lb corresp="#f175_z2_l9"/>(Signé) Constance de Salm.</signed>
+        </closer>
+        <fw corresp="#f175_z3" type="NumberingZone"><lb corresp="#f175_z3_l1"/>1823<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
+      </div>
+    </body>
+  </text>
+</TEI>

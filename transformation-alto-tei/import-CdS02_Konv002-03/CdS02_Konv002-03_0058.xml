@@ -11,7 +11,7 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT60" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT61" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT62" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT63" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT64" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT65" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT67" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT69" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/>
+    <OtherTag ID="BT60" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT61" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT62" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT63" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT64" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT65" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT67" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT69" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/><OtherTag ID="BT82" LABEL="CustomZone:annotations" DESCRIPTION="block type CustomZone:annotations"/>
     <OtherTag ID="LT41" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT42" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT43" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT44" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT45" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT46" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT47" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT48" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT50" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/><OtherTag ID="LT61" LABEL="CustomLine:annotations" DESCRIPTION="line type CustomLine:annotations"/>
   </Tags>
   
@@ -667,7 +667,7 @@
           
           
           <TextLine ID="eSc_line_4ab5ee39"
-                    TAGREFS="LT41"
+                    TAGREFS="LT46"
                     BASELINE="2479 2124 2724 2120" 
                     HPOS="2476"
                     VPOS="2072"

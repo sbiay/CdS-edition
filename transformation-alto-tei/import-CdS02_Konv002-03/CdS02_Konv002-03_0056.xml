@@ -11,7 +11,7 @@
   </Description>
   
   <Tags>
-    <OtherTag ID="BT60" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT61" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT62" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT63" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT64" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT65" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT67" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT69" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/>
+    <OtherTag ID="BT60" LABEL="MainZone" DESCRIPTION="block type MainZone"/><OtherTag ID="BT61" LABEL="MarginTextZone" DESCRIPTION="block type MarginTextZone"/><OtherTag ID="BT62" LABEL="RunningTitleZone" DESCRIPTION="block type RunningTitleZone"/><OtherTag ID="BT63" LABEL="CustomZone:closer" DESCRIPTION="block type CustomZone:closer"/><OtherTag ID="BT64" LABEL="CustomZone:opener" DESCRIPTION="block type CustomZone:opener"/><OtherTag ID="BT65" LABEL="CustomZone:page" DESCRIPTION="block type CustomZone:page"/><OtherTag ID="BT67" LABEL="NumberingZone" DESCRIPTION="block type NumberingZone"/><OtherTag ID="BT69" LABEL="CustomZone:header" DESCRIPTION="block type CustomZone:header"/><OtherTag ID="BT82" LABEL="CustomZone:annotations" DESCRIPTION="block type CustomZone:annotations"/>
     <OtherTag ID="LT41" LABEL="DefaultLine" DESCRIPTION="line type DefaultLine"/><OtherTag ID="LT42" LABEL="HeadingLine:title" DESCRIPTION="line type HeadingLine:title"/><OtherTag ID="LT43" LABEL="InterlinearLine" DESCRIPTION="line type InterlinearLine"/><OtherTag ID="LT44" LABEL="CustomLine:dateline" DESCRIPTION="line type CustomLine:dateline"/><OtherTag ID="LT45" LABEL="CustomLine:postscript" DESCRIPTION="line type CustomLine:postscript"/><OtherTag ID="LT46" LABEL="CustomLine:salute" DESCRIPTION="line type CustomLine:salute"/><OtherTag ID="LT47" LABEL="CustomLine:signature" DESCRIPTION="line type CustomLine:signature"/><OtherTag ID="LT48" LABEL="CustomLine:verse" DESCRIPTION="line type CustomLine:verse"/><OtherTag ID="LT50" LABEL="CustomLine:header" DESCRIPTION="line type CustomLine:header"/><OtherTag ID="LT61" LABEL="CustomLine:annotations" DESCRIPTION="line type CustomLine:annotations"/>
   </Tags>
   
@@ -343,7 +343,7 @@
                     VPOS="1210"
                     WIDTH="514"
                     HEIGHT="139">
-            <Shape><Polygon POINTS="1501 1303 1501 1333 1537 1349 1540 1349 1542 1349 1669 1346 1671 1346 1730 1319 1755 1308 1796 1315 1839 1321 1841 1321 1844 1321 1846 1321 1860 1310 1866 1306 1882 1308 1912 1315 1914 1315 1916 1315 1918 1315 1918 1312 1921 1312 1925 1306 1928 1303 1930 1306 1971 1324 1973 1324 1975 1324 1977 1324 1980 1324 2011 1301 2011 1290 2007 1224 1497 1210 1501 1303"/></Shape>
+            <Shape><Polygon POINTS="1501 1333 1537 1349 1540 1349 1542 1349 1669 1346 1671 1346 1730 1319 1755 1308 1796 1315 1839 1321 1841 1321 1844 1321 1846 1321 1860 1310 1866 1306 1882 1308 1912 1315 1914 1315 1916 1315 1918 1315 1918 1312 1921 1312 1925 1306 1928 1303 1930 1306 1971 1324 1973 1324 1975 1324 1977 1324 1980 1324 2011 1301 2011 1290 2007 1224 1497 1210 1501 1303"/></Shape>
 	    <String CONTENT="(Cori génte (n° 20)"
                     HPOS="1497"
                     VPOS="1210"
@@ -832,7 +832,7 @@
                     VPOS="954"
                     WIDTH="456"
                     HEIGHT="107">
-            <Shape><Polygon POINTS="3819 954 3817 954 3815 954 3815 956 3801 968 3785 986 3729 975 3724 975 3722 975 3710 977 3656 990 3613 990 3604 986 3565 963 3563 963 3561 963 3558 963 3556 963 3513 986 3515 1029 3515 1038 3586 1058 3588 1058 3590 1061 3663 1061 3663 1058 3665 1058 3706 1040 3715 1036 3724 1040 3744 1049 3747 1049 3749 1049 3751 1049 3781 1040 3799 1036 3967 1040 3969 1022 3964 956 3822 954 3819 954"/></Shape>
+            <Shape><Polygon POINTS="3817 954 3815 954 3815 956 3801 968 3785 986 3729 975 3724 975 3722 975 3710 977 3656 990 3613 990 3604 986 3565 963 3563 963 3561 963 3558 963 3556 963 3513 986 3515 1029 3515 1038 3586 1058 3588 1058 3590 1061 3663 1061 3663 1058 3665 1058 3706 1040 3715 1036 3724 1040 3744 1049 3747 1049 3749 1049 3751 1049 3781 1040 3799 1036 3967 1040 3969 1022 3964 956 3822 954 3819 954"/></Shape>
 	    <String CONTENT="Cor. génte (n° 20)"
                     HPOS="3513"
                     VPOS="954"
@@ -860,7 +860,7 @@
           
           
           <TextLine ID="eSc_line_2e8ca30d"
-                    TAGREFS="LT41"
+                    TAGREFS="LT42"
                     BASELINE="3005 1287 3681 1299" 
                     HPOS="3003"
                     VPOS="1222"
