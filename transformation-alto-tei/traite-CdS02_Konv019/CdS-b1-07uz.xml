@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ark_12148_CdS-b1-07uz">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
+        <author xml:id="cds">
+          <persName>
+            <surname>Constance de Salm</surname>
+          </persName>
+        </author>
+        <respStmt>
+          <resp>Transformation from ALTO4 to TEI by</resp>
+          <persName>
+            <forename>Kelly</forename>
+            <surname>Christensen</surname>
+            <ptr type="orcid" target="000000027236874X"/>
+          </persName>
+          <persName>
+            <forename>Simon</forename>
+            <surname>Gabay</surname>
+            <ptr type="orcid" target="0000000190944475"/>
+          </persName>
+          <persName>
+            <forename>Ariane</forename>
+            <surname>Pinche</surname>
+            <ptr type="orcid" target="0000000278435050"/>
+          </persName>
+        </respStmt>
+      </titleStmt>
+      <extent>
+        <measure unit="images" n="1"/>
+      </extent>
+      <publicationStmt>
+        <publisher>Gallic(orpor)a</publisher>
+        <authority>BnF DATALab</authority>
+        <availability status="restricted" n="cc-by">
+          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
+        </availability>
+        <date when="2022-07-11"/>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>
+          <ptr/>
+          <author ref="#cds">
+            <persName>
+              <surname>Constance de Salm</surname>
+            </persName>
+          </author>
+          <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
+          <pubPlace>Information not available.</pubPlace>
+          <publisher>Information not available.</publisher>
+          <date>1815-1821</date>
+        </bibl>
+        <msDesc>
+          <msIdentifier>
+            <country key="FR"/>
+            <settlement>Information not available.</settlement>
+            <repository>Information not available.</repository>
+            <idno>Information not available.</idno>
+            <altIdentifier>
+              <idno type="ark">CdS-b1-07uz</idno>
+            </altIdentifier>
+          </msIdentifier>
+          <physDesc>
+            <objectDesc>
+              <p>Manuscrit</p>
+            </objectDesc>
+          </physDesc>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="fr">français</language>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <sourceDoc>
+    <surfaceGrp>
+      <surface xml:id="CdS02_Konv019_0004" n="2" ulx="0" uly="0" lrx="4595" lry="2973">
+        <graphic url="./CdS-b1-07uz/CdS02_Konv019_0004.jpg"/>
+        <zone xml:id="CdS02_Konv019_0004_z1" type="MainZone" subtype="none" n="none" points="4287,584 4307,1216 4337,1268 4287,1625 4317,1979 4218,2167 4121,2557 3039,2504 2958,2352 2263,2371 2297,663 2523,624 3041,188 3879,182" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_textblock_13f2ad00">
+          <zone xml:id="CdS02_Konv019_0004_z1_l1" type="HeadingLine" subtype="title" n="1" points="2988,327 2988,341 3697,336 3697,312 3692,250 3593,250 3593,247 3563,225 3561,225 3559,225 3556,225 3554,225 3467,247 3445,252 3440,247 3412,225 3410,225 3407,225 3373,225 3370,225 3368,225 3365,225 3343,247 3333,255 3308,245 3259,227 3256,227 3254,227 3179,230 3177,230 3174,230 3155,245 3152,247 3150,245 3140,237 3140,235 3137,235 3135,235 3132,235 3130,235 3107,245 3100,247 3093,245 3058,232 3055,232 3053,232 2986,242 2988,327" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_fb43c47a">
+            <path xml:id="CdS02_Konv019_0004_z1_l1_p" points="2991,329 3700,314"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l1_t">Lettre de Martini.</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l2" type="CustomLine" subtype="salute" n="2" points="2827,413 2827,440 3197,428 3199,408 3194,366 3083,359 3026,329 3023,329 3021,329 2924,331 2922,331 2919,331 2919,334 2882,371 2825,371 2827,413" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_efdc83a6">
+            <path xml:id="CdS02_Konv019_0004_z1_l2_p" points="2830,416 3202,411"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l2_t">Madame</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l3" type="DefaultLine" subtype="none" n="3" points="2622,537 2597,559 2572,579 2552,594 2547,609 2545,621 2857,641 2860,644 2971,644 2971,641 2974,641 2976,641 2993,629 3140,644 3142,644 4267,639 4270,624 4267,572 4134,547 4131,547 4129,547 4126,547 4109,559 4024,550 4022,550 4020,550 3987,564 3970,550 3967,550 3965,550 3963,550 3960,550 3898,564 3824,537 3821,537 3819,537 3611,564 3539,535 3536,535 3534,535 3492,537 3489,537 3487,537 3449,564 3368,535 3365,535 3363,535 3216,559 3137,547 3135,547 3132,547 3088,559 3050,545 3048,545 3045,545 2835,559 2780,527 2778,527 2775,527 2634,527 2622,537" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_09b7d568">
+            <path xml:id="CdS02_Konv019_0004_z1_l3_p" points="2550,611 4272,626"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l3_t">C'est uniquement pour vous donner une marque de</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l4" type="DefaultLine" subtype="none" n="4" points="2475,631 2451,634 2426,639 2401,644 2376,649 2352,651 2327,656 2314,656 2302,683 2299,693 2347,711 2349,711 2352,711 2466,698 2602,713 2604,713 2607,713 2646,701 2865,715 2867,715 2966,703 2986,703 3016,706 3164,718 3167,718 3326,711 3412,706 3556,713 3732,723 3734,723 3737,723 3759,715 3779,711 3814,718 3846,723 3848,723 3883,718 3935,711 4270,723 4275,701 4272,651 4181,639 4178,639 4106,649 4072,654 4042,649 3977,636 3975,636 3856,649 3816,651 3789,649 3710,634 3707,634 3407,646 3368,646 3363,646 3343,631 3340,631 3338,631 3202,631 3199,631 3197,631 3159,644 3155,646 3150,644 3122,631 3120,631 3117,631 3115,631 3065,644 3063,644 3060,644 3013,629 3011,629 3008,629 2902,644 2889,644 2887,644 2862,631 2860,631 2857,631 2758,641 2721,626 2718,626 2716,626 2713,626 2711,626 2686,641 2681,641 2523,626 2520,626 2488,626 2475,631" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_d3e1e729">
+            <path xml:id="CdS02_Konv019_0004_z1_l4_p" points="2304,686 4277,703"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l4_t">mon souvenir que je vous adresse celle lettre, car je n'ai absolu</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l5" type="DefaultLine" subtype="none" n="5" points="2299,770 2299,780 4275,787 4277,770 4277,723 4240,706 4238,706 3928,706 3925,706 3809,723 3484,706 3482,706 3479,706 3477,706 3454,723 3281,708 3278,708 3276,708 3224,723 3221,725 2726,725 2723,723 2684,706 2681,706 2426,706 2423,706 2299,720 2299,770" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_85efbe0d">
+            <path xml:id="CdS02_Konv019_0004_z1_l5_p" points="2302,772 4280,772"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l5_t">-ment rien de nouveau a vous apprendre. J'ai lu les Details de</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l6" type="DefaultLine" subtype="none" n="6" points="4205,772 4203,772 3975,785 3970,785 3965,785 3844,772 3819,772 3794,772 3769,772 3744,772 3720,772 3695,772 3685,772 3682,772 3680,772 3655,785 3648,785 3556,772 3554,772 3415,785 3392,787 3132,787 3127,782 3105,772 3102,772 3100,772 3098,772 3078,782 3073,785 3063,782 3011,772 3008,772 2934,782 2917,785 2897,782 2832,772 2830,772 2778,782 2760,785 2713,782 2570,772 2567,772 2307,780 2307,834 2307,847 2374,862 2376,862 2495,849 2542,862 2545,862 2547,862 2758,849 2907,862 2909,862 3028,849 3098,862 3100,862 3385,849 3440,862 3442,862 3445,862 3447,862 3449,862 3472,849 4186,862 4188,862 4257,847 4257,834 4257,785 4208,772 4205,772" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_1dbba883">
+            <path xml:id="CdS02_Konv019_0004_z1_l6_p" points="2309,837 4260,837"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l6_t">Votre Voyage dans la lettre que Melle Minette a écrite a sa</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l7" type="DefaultLine" subtype="none" n="7" points="2312,901 2312,929 4282,929 4285,909 4282,864 4200,849 4198,849 3963,862 3943,862 3923,862 3687,849 3685,849 3682,849 3650,862 3648,862 3630,847 3628,847 3625,847 3623,847 2312,854 2312,901" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_310a17f2">
+            <path xml:id="CdS02_Konv019_0004_z1_l7_p" points="2314,904 4287,911"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l7_t">grand Maman. Je suis charmée que vous soyez arrivée a Brux</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l8" type="DefaultLine" subtype="none" n="8" points="2307,978 2307,1000 2485,988 3127,1000 3174,1000 3177,1000 3184,1000 3306,986 3345,998 3348,998 3350,998 3544,986 4292,998 4297,973 4287,914 4230,929 4166,914 4148,911 4146,911 3992,916 3648,929 3630,921 3613,911 3611,911 3502,911 3499,911 3497,911 3469,921 3452,929 3435,921 3402,911 3400,911 3397,911 3335,924 3296,934 3182,934 3164,926 3132,914 3130,914 3127,914 3125,914 3090,926 3073,934 2805,934 2800,929 2763,914 2760,914 2758,914 2614,931 2607,931 2602,931 2418,914 2416,914 2413,914 2411,914 2381,934 2304,934 2307,978" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_8bbcf575">
+            <path xml:id="CdS02_Konv019_0004_z1_l8_p" points="2309,981 4300,976"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l8_t">-elles sain et sauve. Avez vous passé devant l'hotel de l'angle</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l9" type="DefaultLine" subtype="none" n="9" points="2299,1045 2299,1065 2862,1055 2902,1065 2909,1067 2912,1067 2914,1070 3229,1070 3229,1067 3231,1067 3241,1065 3288,1052 4270,1062 4275,1040 4270,991 3987,978 3985,978 3982,978 3943,991 3933,993 3908,991 3804,981 3801,981 3799,981 3769,993 3764,993 3749,993 3648,978 3645,978 3643,978 3640,978 3618,993 3616,993 3613,993 3578,981 3576,981 3573,981 3467,993 3462,993 3454,993 3335,978 3333,978 3331,978 3286,995 3281,995 3254,995 3060,981 3058,981 2964,995 2961,995 2936,981 2934,981 2931,981 2723,981 2721,981 2718,981 2671,995 2503,981 2500,981 2498,981 2461,995 2411,981 2409,981 2406,981 2297,998 2299,1045" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_0351d0cf">
+            <path xml:id="CdS02_Konv019_0004_z1_l9_p" points="2302,1047 4277,1043"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l9_t">-terre ? devant la Boutique de la Marchande de 9ants au gros</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l10" type="DefaultLine" subtype="none" n="10" points="4064,1043 4062,1043 4059,1043 4049,1050 4029,1062 3799,1062 3769,1052 3732,1043 3730,1043 3727,1043 3655,1052 3601,1062 3554,1055 3494,1045 3492,1045 3489,1045 3452,1055 3427,1065 3234,1065 3214,1057 3157,1045 3155,1045 3152,1045 3115,1060 3107,1065 3023,1065 3018,1060 2986,1045 2984,1045 2981,1045 2798,1062 2773,1065 2770,1062 2743,1050 2741,1050 2379,1047 2376,1047 2374,1047 2295,1067 2297,1109 2299,1142 2349,1124 2589,1124 2632,1139 2634,1139 2637,1139 2639,1139 2651,1139 2780,1124 2865,1137 2887,1139 2889,1139 2949,1137 3159,1122 3207,1134 3212,1134 3214,1134 3216,1134 3229,1134 3311,1122 3345,1132 3360,1137 3363,1137 3365,1137 4295,1122 4297,1102 4287,1047 4235,1060 4126,1047 4067,1043 4064,1043" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_1afb189e">
+            <path xml:id="CdS02_Konv019_0004_z1_l10_p" points="2299,1112 4300,1104"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l10_t">pouce ? depuis votre départ je ne fais que flaner. Je dine en</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l11" type="DefaultLine" subtype="none" n="11" points="2317,1179 2317,1191 4260,1196 4265,1179 4265,1134 4208,1114 4205,1114 4203,1114 4200,1114 4161,1134 3893,1134 3853,1114 3851,1114 3759,1114 3757,1114 3754,1114 3752,1114 3727,1134 3368,1134 3331,1114 3328,1114 3135,1114 3132,1114 3130,1114 3098,1129 3080,1114 3078,1114 3075,1114 3008,1114 3006,1114 3003,1114 2966,1134 2847,1134 2808,1117 2805,1117 2803,1117 2800,1117 2798,1117 2778,1132 2733,1119 2731,1119 2728,1119 2726,1119 2689,1132 2661,1114 2659,1114 2656,1114 2654,1114 2651,1114 2589,1132 2567,1114 2565,1114 2562,1114 2364,1114 2361,1114 2359,1114 2317,1132 2317,1179" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_dcc1323d">
+            <path xml:id="CdS02_Konv019_0004_z1_l11_p" points="2319,1181 4267,1181"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l11_t">Ville le plus souvent possible, mais jamais deux Jours de</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l12" type="DefaultLine" subtype="none" n="12" points="3868,1181 3844,1181 3829,1181 3668,1194 3658,1194 3633,1181 3620,1181 3613,1181 3581,1194 3573,1196 3561,1194 3482,1181 3479,1181 3477,1181 3474,1181 3452,1196 3449,1196 3445,1196 3378,1181 3375,1181 3095,1194 3068,1181 3065,1181 3063,1181 3060,1181 3031,1194 2966,1181 2964,1181 2961,1181 2902,1199 2899,1199 2894,1199 2746,1184 2743,1184 2634,1199 2575,1184 2572,1184 2354,1184 2352,1184 2349,1184 2307,1199 2309,1243 2309,1268 4282,1253 4285,1236 4277,1191 3918,1194 3910,1191 3873,1181 3868,1181" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_7b1a4c06">
+            <path xml:id="CdS02_Konv019_0004_z1_l12_p" points="2312,1246 4287,1238"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l12_t">suite à cause de Mde d'Et. j'ai même diné hier au Marais</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l13" type="DefaultLine" subtype="none" n="13" points="2302,1313 2302,1330 3016,1342 3018,1342 3120,1330 3169,1342 3172,1342 3174,1342 3261,1330 3298,1342 3301,1342 3303,1342 3383,1327 3390,1327 3395,1327 3469,1340 3472,1340 3556,1327 3561,1327 3804,1327 4240,1327 4277,1340 4280,1340 4282,1340 4285,1340 4287,1340 4307,1325 4307,1308 4300,1251 4220,1266 4195,1251 4193,1251 4191,1251 4188,1251 4186,1251 4183,1251 4136,1263 4020,1251 4000,1251 3997,1251 3995,1251 3992,1251 3970,1268 3782,1268 3754,1253 3747,1251 3744,1251 3742,1251 3739,1251 3730,1253 3692,1266 3640,1256 3618,1251 3616,1251 3613,1251 3596,1256 3549,1266 3311,1258 3251,1256 3249,1256 3246,1256 3241,1258 3209,1268 3145,1258 3110,1253 3107,1253 3078,1258 3028,1268 2939,1261 2867,1253 2865,1253 2299,1263 2302,1313" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_819551de">
+            <path xml:id="CdS02_Konv019_0004_z1_l13_p" points="2304,1315 4309,1310"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l13_t">avec Mde de Joliveau. Vous devez avoir eu bien chaud dans votre</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l14" type="DefaultLine" subtype="none" n="14" points="2304,1379 2302,1389 2361,1407 2364,1407 2366,1409 2808,1409 2808,1407 2810,1407 2857,1394 2860,1394 2862,1394 2961,1409 2964,1409 3031,1397 3159,1409 3162,1412 3400,1412 3400,1409 3402,1409 3437,1397 3442,1397 3608,1397 3611,1399 3625,1412 3628,1412 3630,1412 3633,1412 4272,1402 4275,1387 4272,1345 4178,1327 3861,1327 3858,1327 3856,1327 3853,1327 3831,1342 3829,1342 3787,1327 3784,1327 3782,1327 3531,1340 3509,1325 3506,1325 3504,1325 3370,1325 3368,1325 3365,1325 3331,1340 3328,1340 3269,1325 3266,1325 3264,1325 3189,1340 3182,1340 2892,1340 2892,1337 2860,1322 2857,1322 2855,1322 2852,1322 2850,1322 2830,1337 2830,1340 2622,1340 2619,1337 2604,1325 2602,1325 2599,1325 2597,1325 2594,1325 2572,1337 2570,1337 2542,1322 2540,1322 2537,1322 2304,1335 2304,1379" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_69b41f7e">
+            <path xml:id="CdS02_Konv019_0004_z1_l14_p" points="2307,1382 4277,1389"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l14_t">Voiture, comment vont vos Boutons ? comptez les pour m'ap-</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l15" type="DefaultLine" subtype="none" n="15" points="2304,1454 2304,1479 4267,1479 4270,1459 4267,1412 3316,1397 3313,1397 3311,1397 3288,1409 3286,1409 3159,1409 3159,1407 3145,1394 3142,1394 3140,1394 3137,1394 3016,1407 3011,1407 3008,1407 2951,1394 2949,1394 2946,1394 2912,1407 2909,1409 2646,1409 2644,1407 2629,1394 2627,1394 2624,1394 2622,1394 2304,1404 2304,1454" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_7fa9400f">
+            <path xml:id="CdS02_Konv019_0004_z1_l15_p" points="2307,1456 4272,1461"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l15_t">-prendre dans chacune de vos lettres la diminution du nom-</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l16" type="DefaultLine" subtype="none" n="16" points="2309,1528 2309,1555 2470,1553 2473,1553 2475,1553 2495,1541 2850,1541 2892,1553 2894,1553 2897,1553 3231,1541 3259,1550 3261,1550 3264,1550 3266,1550 3269,1550 3291,1538 4260,1548 4265,1523 4260,1481 3920,1481 3898,1461 3896,1461 3893,1461 3839,1461 3836,1461 3834,1461 3779,1479 3730,1461 3727,1461 3541,1461 3539,1461 3536,1461 3479,1479 3420,1461 3417,1461 3415,1461 3288,1481 3283,1481 3278,1481 3179,1464 2961,1464 2959,1464 2857,1481 2855,1481 2852,1481 2723,1464 2721,1464 2718,1464 2661,1481 2639,1464 2637,1464 2634,1464 2547,1464 2545,1464 2542,1464 2483,1481 2386,1466 2384,1466 2307,1481 2309,1528" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_94eb5d5a">
+            <path xml:id="CdS02_Konv019_0004_z1_l16_p" points="2312,1531 4267,1526"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l16_t">-bre. Mde. Votre Mère. doit vous avoir écrit qu'elle en à enor-</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l17" type="DefaultLine" subtype="none" n="17" points="2304,1602 2304,1615 2686,1615 2689,1593 2684,1545 2609,1531 2607,1531 2540,1541 2483,1550 2302,1538 2304,1602" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_056b0993">
+            <path xml:id="CdS02_Konv019_0004_z1_l17_p" points="2307,1605 2691,1595"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l17_t">-mement.</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l18" type="DefaultLine" subtype="none" n="18" points="2624,1595 2488,1612 2488,1659 2488,1674 4235,1687 4238,1659 4235,1607 3846,1612 3836,1607 3811,1595 3809,1595 3806,1595 3804,1595 3779,1607 3769,1615 3650,1615 3625,1610 3549,1595 3546,1595 3375,1610 3340,1612 3335,1610 3313,1595 3311,1595 3308,1595 3142,1595 3140,1595 3036,1612 3023,1612 3021,1612 2986,1595 2984,1595 2981,1595 2753,1610 2627,1595 2624,1595" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_aaf2c03a">
+            <path xml:id="CdS02_Konv019_0004_z1_l18_p" points="2490,1662 4240,1662"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l18_t">l'On vient de repandre a toutes les portes eschères</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l19" type="DefaultLine" subtype="none" n="19" points="2309,1731 2309,1749 4277,1749 4280,1726 4272,1674 4156,1684 4047,1674 3975,1669 3972,1669 3928,1677 3878,1684 3866,1677 3858,1669 3856,1669 3853,1669 3851,1669 3804,1677 3774,1682 3685,1679 3487,1669 3484,1669 3482,1669 3459,1679 3449,1684 3427,1682 3375,1672 3373,1672 3286,1682 3241,1687 3209,1682 3142,1672 3140,1672 3137,1672 3135,1672 3117,1684 3107,1689 2996,1689 2986,1684 2951,1672 2949,1672 2946,1672 2944,1672 2941,1672 2919,1684 2914,1689 2813,1689 2808,1687 2765,1672 2763,1672 2760,1672 2758,1672 2718,1687 2716,1687 2706,1687 2523,1672 2520,1672 2518,1672 2515,1672 2495,1689 2307,1689 2309,1731" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_ac885513">
+            <path xml:id="CdS02_Konv019_0004_z1_l19_p" points="2312,1734 4282,1729"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l19_t">un imprimé en forme d'une petite lettre dans lequel Mde</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l20" type="DefaultLine" subtype="none" n="20" points="2312,1806 2312,1825 2475,1835 2478,1835 2540,1825 2565,1823 2575,1825 2599,1835 2602,1835 2604,1835 2607,1835 2634,1825 2644,1823 2654,1825 2684,1835 2686,1835 2689,1835 2691,1835 2716,1825 2726,1823 2751,1825 2825,1835 2827,1835 3187,1825 3340,1820 3353,1823 3380,1833 3383,1833 3385,1833 3388,1833 3412,1823 3425,1820 3437,1823 3469,1833 3472,1833 3474,1833 3648,1823 3710,1820 3717,1823 3734,1835 3737,1835 3739,1835 3742,1838 4116,1838 4116,1835 4119,1835 4151,1823 4156,1820 4287,1820 4290,1806 4290,1763 4161,1763 4158,1761 4119,1746 4116,1746 4114,1746 3987,1759 3967,1761 3943,1759 3824,1746 3821,1746 3742,1759 3712,1761 3650,1756 3516,1746 3514,1746 3511,1746 3494,1756 3479,1763 3355,1763 3318,1754 3281,1746 3278,1746 3276,1746 3261,1754 3249,1761 2984,1761 2959,1751 2946,1746 2944,1746 2825,1746 2822,1746 2820,1746 2817,1746 2813,1749 2790,1763 2659,1763 2575,1746 2562,1746 2560,1746 2557,1746 2552,1746 2503,1761 2468,1746 2466,1746 2463,1746 2312,1746 2312,1806" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_2a366550">
+            <path xml:id="CdS02_Konv019_0004_z1_l20_p" points="2314,1808 4292,1808"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l20_t">de Genlis et son Casimir sont cruellement persiflés. Je vous</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l21" type="DefaultLine" subtype="none" n="21" points="2309,1872 2309,1892 3464,1892 3467,1868 3459,1820 2307,1825 2309,1872" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_e121f029">
+            <path xml:id="CdS02_Konv019_0004_z1_l21_p" points="2312,1875 3469,1870"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l21_t">l'enverrai avec ma prochaine.</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l22" type="DefaultLine" subtype="none" n="22" points="2525,1949 2525,1977 2624,1964 3041,1964 3050,1972 3055,1977 3058,1977 3060,1977 3063,1977 3132,1972 3209,1964 3251,1969 3303,1977 3306,1977 3308,1977 3311,1977 3318,1969 3326,1962 3435,1962 3477,1967 3534,1974 3536,1977 3769,1977 3769,1974 3772,1974 3774,1974 3787,1964 3789,1962 3796,1964 3851,1974 3853,1977 4240,1977 4240,1974 4243,1974 4295,1957 4295,1944 4287,1897 4168,1900 4148,1895 4106,1885 4104,1885 4101,1885 4099,1885 4096,1885 4086,1895 4079,1902 3772,1902 3747,1895 3722,1887 3720,1887 3717,1887 3640,1892 3559,1900 3487,1892 3410,1885 3407,1885 3333,1887 3331,1887 3328,1887 3323,1892 3311,1902 3202,1892 3152,1887 3150,1887 3147,1887 3145,1887 3140,1892 3125,1905 2845,1905 2780,1890 2763,1887 2760,1887 2743,1890 2669,1902 2634,1890 2629,1887 2627,1887 2624,1887 2523,1887 2525,1949" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_6b19160e">
+            <path xml:id="CdS02_Konv019_0004_z1_l22_p" points="2527,1952 4297,1947"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l22_t">Je commence à me flatter que je recevrai bientot</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l23" type="DefaultLine" subtype="none" n="23" points="2312,2021 2312,2036 2669,2048 2671,2048 2773,2036 2780,2036 2788,2036 2857,2048 2860,2048 2944,2036 2961,2034 2966,2036 2991,2046 2993,2046 2996,2046 2998,2046 3021,2036 3026,2034 3231,2034 3236,2036 3261,2046 3264,2046 3266,2046 4260,2031 4262,2014 4255,1969 3980,1974 3958,1969 3915,1959 3913,1959 3910,1959 3908,1959 3905,1959 3891,1969 3883,1977 3511,1977 3457,1972 3343,1962 3340,1962 3281,1974 3264,1977 3244,1974 3189,1962 3187,1962 3105,1974 3085,1977 3078,1974 3048,1962 3045,1962 3043,1962 3041,1962 3008,1974 2993,1974 2594,1964 2592,1964 2589,1964 2565,1977 2562,1979 2560,1977 2547,1967 2545,1967 2542,1967 2344,1964 2342,1964 2339,1964 2309,1974 2312,2021" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_3dc5b54b">
+            <path xml:id="CdS02_Konv019_0004_z1_l23_p" points="2314,2024 4265,2016"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l23_t">de vos nouvelles, vous voyez Madame que je suis exactt</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l24" type="DefaultLine" subtype="none" n="24" points="2312,2091 2314,2123 2384,2105 2671,2105 2708,2120 2713,2120 2716,2120 2718,2120 2741,2120 2904,2103 2931,2115 2934,2115 2936,2115 2996,2103 3088,2115 3093,2115 3095,2118 3241,2118 3241,2115 3244,2115 3246,2115 3246,2113 3266,2100 3283,2113 3283,2115 3286,2115 3288,2115 3291,2115 3308,2113 3385,2100 3472,2113 3506,2115 3509,2115 3586,2110 3725,2100 3747,2108 3757,2113 3759,2113 3762,2113 4193,2103 4195,2081 4191,2041 4057,2036 4034,2019 4032,2019 4029,2019 4027,2019 3720,2041 3472,2024 3469,2024 3467,2024 3464,2024 3442,2041 3353,2041 3105,2024 3102,2024 3100,2024 3050,2043 2974,2026 2971,2026 2874,2038 2706,2026 2703,2026 2701,2026 2664,2046 2602,2026 2599,2026 2446,2026 2443,2026 2309,2048 2312,2091" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_82a0e90c">
+            <path xml:id="CdS02_Konv019_0004_z1_l24_p" points="2314,2093 4198,2083"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l24_t">et de parole, je serai toute ma vie de même. Agréez en</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l25" type="DefaultLine" subtype="none" n="25" points="2830,2157 2830,2204 2984,2204 2984,2202 2986,2202 2988,2202 2988,2200 2991,2200 3006,2182 3078,2177 3110,2195 3120,2200 3122,2200 3125,2202 3159,2202 3159,2200 3162,2200 3164,2200 3172,2195 3192,2177 3293,2190 3358,2197 3360,2197 3363,2197 3385,2187 3412,2175 3516,2185 3645,2195 3648,2195 3650,2195 3715,2177 3749,2170 3779,2175 3856,2192 3858,2192 3861,2192 3863,2192 3888,2172 3893,2170 3910,2172 4007,2187 4010,2187 4012,2187 4015,2187 4015,2185 4032,2170 4049,2180 4052,2180 4054,2180 4057,2180 4205,2162 4205,2143 4200,2108 3995,2095 3992,2095 3990,2095 3938,2108 3896,2093 3893,2093 3891,2093 3888,2093 3886,2093 3866,2110 3784,2110 3747,2093 3744,2093 3742,2093 3633,2110 3591,2095 3588,2095 3586,2095 3509,2113 3353,2098 3350,2098 3236,2115 3177,2100 3174,2100 3172,2100 3169,2100 3167,2100 3150,2113 3135,2100 3132,2100 3130,2100 3055,2100 3053,2100 2966,2118 2877,2103 2874,2103 2872,2103 2827,2120 2830,2157" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_f1377e87">
+            <path xml:id="CdS02_Konv019_0004_z1_l25_p" points="2832,2160 4208,2145"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l25_t">je vous prie, les nouvelles assurances.</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l26" type="CustomLine" subtype="dateline" n="26" points="2312,2257 2309,2304 2394,2333 2396,2333 2399,2333 2515,2321 2555,2336 2557,2336 2560,2336 2619,2321 2654,2313 2708,2326 2716,2264 2716,2207 2399,2182 2396,2182 2312,2197 2312,2257" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_33d399f5">
+            <path xml:id="CdS02_Konv019_0004_z1_l26_p" points="2314,2259 2718,2266"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l26_t">Mardi d Mai.</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z1_l27" type="CustomLine" subtype="signature" n="27" points="3301,2418 3301,2462 3625,2435 3720,2460 3722,2460 3725,2460 3727,2460 3730,2460 3732,2460 3801,2435 3898,2435 3938,2457 3945,2413 3940,2361 3851,2341 3848,2341 3846,2341 3844,2341 3834,2348 3804,2323 3801,2323 3799,2323 3715,2323 3712,2323 3710,2323 3707,2323 3665,2358 3663,2361 3608,2361 3601,2358 3576,2338 3573,2338 3571,2338 3568,2338 3566,2338 3509,2358 3497,2361 3494,2356 3459,2328 3459,2326 3457,2326 3454,2326 3353,2326 3350,2326 3348,2326 3298,2351 3301,2418" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_3955bb24">
+            <path xml:id="CdS02_Konv019_0004_z1_l27_p" points="3303,2420 3948,2415"/>
+            <line xml:id="CdS02_Konv019_0004_z1_l27_t">(Signé. Martini.</line>
+          </zone>
+        </zone>
+        <zone xml:id="CdS02_Konv019_0004_z2" type="MarginTextZone" subtype="none" n="none" points="2664,304 2612,245 2495,255 2495,178 2632,168 2664,118 2879,138 2911,183 2911,269" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_textblock_a46493ff">
+          <zone xml:id="CdS02_Konv019_0004_z2_l1" type="DefaultLine" subtype="none" n="28" points="2879,143 2855,136 2830,133 2805,131 2778,128 2753,126 2728,123 2703,121 2684,118 2646,133 2632,163 2607,168 2582,170 2570,170 2510,200 2510,245 2582,245 2584,245 2587,245 2594,240 2639,210 2743,222 2758,222 2760,222 2882,205 2884,190 2882,146 2879,143" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_8760ec70">
+            <path xml:id="CdS02_Konv019_0004_z2_l1_p" points="2511,203 2886,192"/>
+            <line xml:id="CdS02_Konv019_0004_z2_l1_t">[...] [.....]</line>
+          </zone>
+          <zone xml:id="CdS02_Konv019_0004_z2_l2" type="DefaultLine" subtype="none" n="29" points="2691,198 2666,198 2642,198 2644,270 2644,322 2689,322 2691,322 2694,322 2711,312 2743,292 2803,292 2805,267 2800,200 2708,195 2691,198" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_7b34b03d">
+            <path xml:id="CdS02_Konv019_0004_z2_l2_p" points="2645,272 2806,268"/>
+            <line xml:id="CdS02_Konv019_0004_z2_l2_t">Genlis</line>
+          </zone>
+        </zone>
+        <zone xml:id="CdS02_Konv019_0004_z3" type="MarginTextZone" subtype="none" n="none" points="2317,2735 2525,2715 2741,2715 2770,2762 2602,2792 2307,2772" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_textblock_729cd9c7">
+          <zone xml:id="CdS02_Konv019_0004_z3_l1" type="DefaultLine" subtype="none" n="30" points="2733,2722 2384,2725 2379,2727 2354,2730 2329,2732 2329,2759 2329,2802 2746,2814 2748,2759 2746,2730 2733,2722" source="./CdS-b1-07uz/CdS02_Konv019_0004.jpg" corresp="eSc_line_6b650e8a">
+            <path xml:id="CdS02_Konv019_0004_z3_l1_p" points="2332,2762 2749,2762"/>
+            <line xml:id="CdS02_Konv019_0004_z3_l1_t">non copié</line>
+          </zone>
+        </zone>
+      </surface>
+    </surfaceGrp>
+  </sourceDoc>
+  <text>
+    <body>
+      <div>
+        <opener>
+          <pb corresp="#CdS02_Konv019_0004"/>
+          <title><lb corresp="#CdS02_Konv019_0004_z1_l1"/>Lettre de Martini.</title>
+          <salute><lb corresp="#CdS02_Konv019_0004_z1_l2"/>Madame</salute>
+        </opener>
+        <p><lb corresp="#CdS02_Konv019_0004_z1_l3"/>C'est uniquement pour vous donner une marque de<lb corresp="#CdS02_Konv019_0004_z1_l4"/>mon souvenir que je vous adresse celle lettre, car je n'ai absolu<lb corresp="#CdS02_Konv019_0004_z1_l5"/>-ment rien de nouveau a vous apprendre. J'ai lu les Details de<lb corresp="#CdS02_Konv019_0004_z1_l6"/>Votre Voyage dans la lettre que Melle Minette a écrite a sa<lb corresp="#CdS02_Konv019_0004_z1_l7"/>grand Maman. Je suis charmée que vous soyez arrivée a Brux<lb corresp="#CdS02_Konv019_0004_z1_l8"/>-elles sain et sauve. Avez vous passé devant l'hotel de l'angle<lb corresp="#CdS02_Konv019_0004_z1_l9"/>-terre ? devant la Boutique de la Marchande de 9ants au gros<lb corresp="#CdS02_Konv019_0004_z1_l10"/>pouce ? depuis votre départ je ne fais que flaner. Je dine en<lb corresp="#CdS02_Konv019_0004_z1_l11"/>Ville le plus souvent possible, mais jamais deux Jours de<lb corresp="#CdS02_Konv019_0004_z1_l12"/>suite à cause de Mde d'Et. j'ai même diné hier au Marais<lb corresp="#CdS02_Konv019_0004_z1_l13"/>avec Mde de Joliveau. Vous devez avoir eu bien chaud dans votre<lb corresp="#CdS02_Konv019_0004_z1_l14"/>Voiture, comment vont vos Boutons ? comptez les pour m'ap-<lb corresp="#CdS02_Konv019_0004_z1_l15"/>-prendre dans chacune de vos lettres la diminution du nom-<lb corresp="#CdS02_Konv019_0004_z1_l16"/>-bre. Mde. Votre Mère. doit vous avoir écrit qu'elle en à enor-<lb corresp="#CdS02_Konv019_0004_z1_l17"/>-mement.<lb corresp="#CdS02_Konv019_0004_z1_l18"/>l'On vient de repandre a toutes les portes eschères<lb corresp="#CdS02_Konv019_0004_z1_l19"/>un imprimé en forme d'une petite lettre dans lequel Mde<lb corresp="#CdS02_Konv019_0004_z1_l20"/>de Genlis et son Casimir sont cruellement persiflés. Je vous<lb corresp="#CdS02_Konv019_0004_z1_l21"/>l'enverrai avec ma prochaine.<lb corresp="#CdS02_Konv019_0004_z1_l22"/>Je commence à me flatter que je recevrai bientot<lb corresp="#CdS02_Konv019_0004_z1_l23"/>de vos nouvelles, vous voyez Madame que je suis exactt<lb corresp="#CdS02_Konv019_0004_z1_l24"/>et de parole, je serai toute ma vie de même. Agréez en<lb corresp="#CdS02_Konv019_0004_z1_l25"/>je vous prie, les nouvelles assurances.</p>
+        <closer>
+          <dateline><lb corresp="#CdS02_Konv019_0004_z1_l26"/>Mardi d Mai.</dateline>
+          <signed><lb corresp="#CdS02_Konv019_0004_z1_l27"/>(Signé. Martini.</signed>
+        </closer>
+        <note corresp="#CdS02_Konv019_0004_z2" type="MarginTextZone"><lb corresp="#CdS02_Konv019_0004_z2_l1"/>[...] [.....]<!--Vérifier que la note corresponde à la lettre et mettre à jour le type--><lb corresp="#CdS02_Konv019_0004_z2_l2"/>Genlis<lb corresp="#CdS02_Konv019_0004_z3_l1"/>non copié</note>
+      </div>
+    </body>
+  </text>
+</TEI>
