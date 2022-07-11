@@ -38,13 +38,6 @@ class XMLTEI:
             self.metadata = metadata
             self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
 
-        with open("./donnees-test-cds/exemple-tags.json", mode="w") as f:
-            json.dump(self.tags, f, ensure_ascii=False, indent=3)
-
-        # TODO On exporte les métadonnées pour les visualiser
-        with open("./donnees-test-cds/exemple-metadata.json", mode="w") as f:
-            json.dump(self.metadata, f, ensure_ascii=False, indent=3)
-            
     # -- PHASE 2 -- XML-TEI construction of <teiHeader> and <sourceDoc>
     def build_tree(self):
         """Parse and map data from ALTO files to an XML-TEI tree's <teiHeader> and <sourceDoc>.
@@ -58,7 +51,7 @@ class XMLTEI:
         sourcedoc(self.d, self.root, self.p, self.tags)  # (build_sourcedoc.py)
     
     # -- PHASE 3 -- extract and annotate text in <body> and <standoff>
-    def annotate_text(self, donnees):
+    def annotate_text(self, securite, donnees):
         """Parse and map data from the <sourceDoc> to XML-TEI elements in <body>.
         """
         
@@ -67,8 +60,9 @@ class XMLTEI:
         # Si aucune ligne n'a été trouvée
         if lignesPertinentes is None:
             # La fonction est interrompue
-            return None
-
+            securite = True
+            return donnees, securite
+        
         text = Text(self.root)
         sourcedoc = text.data
         
@@ -78,17 +72,6 @@ class XMLTEI:
             if ligne[7] in lignesPertinentes:
                 contenu.append(ligne)
 
-        # TODO Visualiser le contenu de text.data
-        with open(f"./test/{self.d}-sourcedoc.json", mode="w") as jsonf:
-            json.dump(sourcedoc, jsonf)
-        with open(f"./test/{self.d}-pertinent.json", mode="w") as jsonf:
-            json.dump(contenu, jsonf)
-
         # IMPLÉMENTER LES ÉLÉMENTS
         body(root=self.root, data=contenu)
-        #segment(self.root, text.main)
-        
-        # TODO Structurer les lettres
-        # Créer un opener
-
         
