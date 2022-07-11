@@ -64,6 +64,10 @@ class XMLTEI:
         
         # SÉLECTIONNER LES LIGNES PERTINENTES
         lignesPertinentes = selectionBlocs(self=self, donnees=donnees)
+        # Si aucune ligne n'a été trouvée
+        if lignesPertinentes is None:
+            # La fonction est interrompue
+            return None
 
         text = Text(self.root)
         sourcedoc = text.data

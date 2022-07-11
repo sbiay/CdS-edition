@@ -42,8 +42,12 @@ def selectionBlocs(self, donnees):
     # On récupère le contenu des métadonnées du dossier
     with open(donnees) as jsonf:
         donneesDossier = json.load(jsonf)
-    # On récupère les données de la pièce courante
-    donneesPiece = donneesDossier["results"]["records"][idPiece]
+    # Si la pièce concernée existe dans le fichier de données
+    if donneesDossier["results"]["records"].get(idPiece):
+        # On récupère les données de la pièce courante
+        donneesPiece = donneesDossier["results"]["records"][idPiece]
+    else:
+        return None
 
     # On récupère les chemins des prédictions
     predictionsImport = triFichiers("data/" + idPiece + "/")
@@ -54,6 +58,8 @@ def selectionBlocs(self, donnees):
     nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
 
     regionsPiece = []
+    # On initie un header, zone qui n'est pas présente dans toutes les pièces
+    codeHeader = None
     
     # On boucle sur chaque fichier
     for index, fichier in enumerate(predictionsImport):
@@ -76,7 +82,7 @@ def selectionBlocs(self, donnees):
             zoneTitre = xml.xpath(
                 f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"
                 f"{codeTitre}']][position()={positionTitre}]", namespaces=nsmap)
-        
+            
             idTitre = zoneTitre[0].xpath(f"@ID", namespaces=nsmap)
             idTitre = str(idTitre[0])
             # On récupère le header éventuel dans le bloc précédent
