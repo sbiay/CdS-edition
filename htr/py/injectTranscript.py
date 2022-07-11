@@ -19,6 +19,7 @@ def recupTranscriptions(dossier):
     # On boucle sur les fichiers du dossier
     for root, dirs, files in os.walk(dossier):
         for filename in files:
+            print(filename)
             # On pose comme condition de ne traiter que des fichiers XML (le dossier contient aussi des images)
             if filename[-3:] == "xml":
                 # On initie le dictionnaire des lignes du fichier
@@ -45,18 +46,18 @@ def recupTranscriptions(dossier):
 
 
 @click.command()
-def injectTranscript():
+@click.argument("SOURCE", default=VT)
+def injectTranscript(source):
     """
     Cette fonction récupère l'ensemble des transcriptions manuelles sous la forme d'un dictionnaire,
     parse les fichiers XML de la prédiction HTR et remplace leurs lignes d'écriture
     lorsqu'il existe une transcription manuelle pour le même identifiant de ligne.
     :return: None
     """
-    
     # RECUPERATION DES TRANSCRIPTIONS MANUELLES
     transcriptions = {}
     # On récupère les transcriptions manuelles à l'aide de la fonction recupTranscriptions(dossier)
-    transcrVT = recupTranscriptions(VT)
+    transcrVT = recupTranscriptions(source)
     
     # On réunit les transcriptions dans un seul dict
     for cle in transcrVT:
