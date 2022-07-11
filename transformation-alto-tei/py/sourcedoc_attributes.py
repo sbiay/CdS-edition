@@ -56,7 +56,16 @@ class Attributes:
         # create a list whose items are dictionaries naming each targeted ALTO element's attributes
         att_list = [z.attrib for z in zone_elements]
         # extract the attributes for the child <Polygon> of each targeted ALTO element and put that dictionary into a list
-        points = [z.find('.//a:Polygon', namespaces=NS).attrib for z in zone_elements]
+        points = []
+        for z in zone_elements:
+            try:
+                points.append(z.find('.//a:Polygon', namespaces=NS).attrib)
+            # En l'absence de polygon, on crée un dictionnaire de coordonnées vide
+            except AttributeError:
+                points.append(
+                    {'POINTS': ''}
+                )
+        
 
         attributes = []
         processed_blocks = []

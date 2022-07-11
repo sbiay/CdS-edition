@@ -26,13 +26,18 @@ def body(root, data):
         # On écrit un pb si le numéro de la ligne est 1
         if int(line.n) == 1:
             pb = etree.Element("pb", corresp=f"#{line.page_id}")
-            # On teste si le dernier élément a des enfants
-            try:
-                # Si oui, on ajoute le pb au dernier enfant
-                last_element.getchildren()[-1].append(pb)
-            except:
-                # Sinon on l'ajoute à la div
-                last_element.append(pb)
+            # Si le dernier élément est un fw
+            if last_element.tag != "fw":
+                # On teste si le dernier élément a des enfants
+                try:
+                    # Si oui, on ajoute le pb au dernier enfant
+                    last_element.getchildren()[-1].append(pb)
+                    # Si le dernier élément est un fw
+                except:
+                    # Sinon on l'ajoute à la div
+                    last_element.append(pb)
+            else:
+                div.append(pb)
             last_element = div[-1]
         
         # prepare attributes for the text block's zone
@@ -133,6 +138,7 @@ def body(root, data):
                     corr = etree.SubElement(choice, "corr")
                     corr.append(lb)
                     # Pour ajouter une correction à la fin d'un vers
+                    print(line)
                     if last_element.getchildren()[-1].tag == "l":
                         last_element.getchildren()[-1].append(choice)
                     # Pour ajouter une correction dans un paragraphe
@@ -170,13 +176,16 @@ def body(root, data):
                 # Pour les autres types de lignes
                 else:
                     # On instancie un premier p avec la première ligne DefaultLine ou après une partie versifiée
-                    if last_element.tag == "opener" or last_element.tag == "lg":
+                    # ou après un saut de page
+                    if last_element.tag != "p" and last_element.tag != "closer":
+                        if line.text[:5] == "25 an":
+                            print(line)
                         p = etree.SubElement(div, "p")
                         p.append(lb)
                         last_element = div[-1]
                     elif last_element.tag == "p":
+                        
                         last_element.append(lb)
-                        last_element = div[-1]
                     # Post-scriptum
                     elif last_element.tag == "closer":
                         postscript = etree.SubElement(div, "postscript")

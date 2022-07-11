@@ -9,6 +9,12 @@ from lxml import etree
 @click.argument("SOURCE")
 @click.argument("SORTIE")
 def distributionFichiers(source, sortie):
+    """
+    
+    :param source: Chemin de dossier contenant les prédictions et devant contenir un fichier donnees.json
+    :param sortie: Chemin de dossier où seront distribués les fichiers de prédictions
+    :return: None
+    """
     # On contrôle l'écriture des chemins de dossiers
     if source[-1] != "/":
         source = source + "/"
