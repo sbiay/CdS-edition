@@ -140,13 +140,18 @@
             <line xml:id="CdS02_Konv002-02_0073_z2_l11_t">(Signé) Constance de Salm.</line>
           </zone>
         </zone>
-        <zone xml:id="CdS02_Konv002-02_0073_z3" type="NumberingZone" subtype="none" n="none" points="4245,2567 4226,2629 4165,2629 4165,2521" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_textblock_a5cd7979">
-          <zone xml:id="CdS02_Konv002-02_0073_z3_l1" type="DefaultLine" subtype="none" n="15" points="4183,2610 4185,2560 4222,2569 4240,2558 4247,2610 4247,2647 4183,2658" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_line_ae174a55">
-            <path xml:id="CdS02_Konv002-02_0073_z3_l1_p" points="4184,2613 4248,2613"/>
-            <line xml:id="CdS02_Konv002-02_0073_z3_l1_t">60</line>
+        <zone xml:id="CdS02_Konv002-02_0073_z3" type="MarginTextZone" subtype="none" n="none" points="2383,2503 2545,2512 2600,2530 2600,2592 2373,2610 2373,2509" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_textblock_2b9bdab1">
+          <zone xml:id="CdS02_Konv002-02_0073_z3_l1" type="DefaultLine" subtype="none" n="15" points="0000,0000 0000,0000 0000,0000" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_line_34ecefb4">
+            <path xml:id="CdS02_Konv002-02_0073_z3_l1_p" points="2397,2579 2583,2579"/>
+            <line xml:id="CdS02_Konv002-02_0073_z3_l1_t">(à sup :)</line>
           </zone>
         </zone>
-        <zone xml:id="CdS02_Konv002-02_0073_z4" type="MarginTextZone" subtype="none" n="none" points="2383,2503 2545,2512 2600,2530 2600,2592 2373,2610 2373,2509" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_textblock_2b9bdab1"/>
+        <zone xml:id="CdS02_Konv002-02_0073_z4" type="NumberingZone" subtype="none" n="none" points="4245,2567 4226,2629 4165,2629 4165,2521" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_textblock_a5cd7979">
+          <zone xml:id="CdS02_Konv002-02_0073_z4_l1" type="DefaultLine" subtype="none" n="16" points="4183,2610 4185,2560 4222,2569 4240,2558 4247,2610 4247,2647 4183,2658" source="./CdS-b1-06ot/CdS02_Konv002-02_0073.jpg" corresp="eSc_line_ae174a55">
+            <path xml:id="CdS02_Konv002-02_0073_z4_l1_p" points="4184,2613 4248,2613"/>
+            <line xml:id="CdS02_Konv002-02_0073_z4_l1_t">60</line>
+          </zone>
+        </zone>
       </surface>
     </surfaceGrp>
   </sourceDoc>
@@ -163,7 +168,8 @@
         <closer>
           <signed><lb corresp="#CdS02_Konv002-02_0073_z2_l11"/>(Signé) Constance de Salm.</signed>
         </closer>
-        <fw corresp="#CdS02_Konv002-02_0073_z3" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0073_z3_l1"/>60<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
+        <note corresp="#CdS02_Konv002-02_0073_z3" type="MarginTextZone"><lb corresp="#CdS02_Konv002-02_0073_z3_l1"/>(à sup :)<!--Vérifier que la note corresponde à la lettre et mettre à jour le type--></note>
+        <fw corresp="#CdS02_Konv002-02_0073_z4" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0073_z4_l1"/>60<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
       </div>
     </body>
   </text>
