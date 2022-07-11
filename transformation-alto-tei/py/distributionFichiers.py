@@ -7,20 +7,17 @@ from lxml import etree
 
 @click.command()
 @click.argument("SOURCE")
-@click.argument("SORTIE")
-def distributionFichiers(source, sortie):
+def distributionFichiers(source):
     """
-    
+    Cette fonction prend comme argument un chemin de dossier contenant des prédictions au format XML,
+    analyse le contenu du fichier de données contenu au même emplacement et créé pour chaque pièce inventoriée
+    dans ce dernier un dossier contenant les prédictions pertinentes.
     :param source: Chemin de dossier contenant les prédictions et devant contenir un fichier donnees.json
-    :param sortie: Chemin de dossier où seront distribués les fichiers de prédictions
-    :return: None
     """
     # On contrôle l'écriture des chemins de dossiers
     if source[-1] != "/":
         source = source + "/"
-    if sortie[-1] != "/":
-        sortie = sortie + "/"
-    
+
     # On récupère le fichier de données
     try:
         with open(source + "donnees.json") as jsonf:
@@ -59,14 +56,15 @@ def distributionFichiers(source, sortie):
     for record in aCreer:
         # On crée le dossier de la pièce s'il n'existe pas déjà
         try:
-            os.mkdir(sortie + record)
+            os.mkdir("./data/" + record)
+            print("./data/" + record)
         except FileExistsError:
             True
         
         # On boucle sur les images de chaque notice
         for index, image in enumerate(donneesImages["results"]["records"][record]["images"]):
             # On copie le fichier image vers la destination, dans le dossier de notice courant
-            shutil.copy(f"{source}{image[:-4]}.xml", sortie + record)
+            shutil.copy(f"{source}{image[:-4]}.xml", "./data/" + record)
 
 
 distributionFichiers()
