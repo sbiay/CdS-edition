@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns="http://www.loc.gov/standards/alto/ns-v4#"
-      xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
+<?xml version='1.0' encoding='UTF-8'?>
+<alto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/standards/alto/ns-v4#" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v4# http://www.loc.gov/standards/alto/v4/alto-4-2.xsd">
   <Description>
     <MeasurementUnit>pixel</MeasurementUnit>
     <sourceImageInformation>
@@ -16,78 +14,37 @@
   </Tags>
   
   <Layout>
-    <Page WIDTH="4595"
-          HEIGHT="2973"
-          PHYSICAL_IMG_NR="1"
-          ID="eSc_dummypage_">
-      <PrintSpace HPOS="0"
-                  VPOS="0"
-                  WIDTH="4595"
-                  HEIGHT="2973">
+    <Page WIDTH="4595" HEIGHT="2973" PHYSICAL_IMG_NR="1" ID="eSc_dummypage_">
+      <PrintSpace HPOS="0" VPOS="0" WIDTH="4595" HEIGHT="2973">
         
-        <TextBlock HPOS="4232.0"
-                   VPOS="2823.0"
-                   WIDTH="65.0"
-                   HEIGHT="70.0"
-                   ID="eSc_textblock_ab747229"
-                   TAGREFS="BT57">
+        <TextBlock HPOS="4232.0" VPOS="2823.0" WIDTH="65.0" HEIGHT="70.0" ID="eSc_textblock_ab747229" TAGREFS="BT57">
           <Shape><Polygon POINTS="4232 2823 4232 2893 4297 2893 4297 2823"/></Shape>
           
           
-          <TextLine ID="eSc_line_464a16d7"
-                    TAGREFS="LT33"
-                    BASELINE="4243 2877 4288 2877" 
-                    HPOS="4240"
-                    VPOS="2824"
-                    WIDTH="47"
-                    HEIGHT="94">
+          <TextLine ID="eSc_line_464a16d7" TAGREFS="LT33" BASELINE="4243 2877 4288 2877" HPOS="4240" VPOS="2824" WIDTH="47" HEIGHT="94">
             <Shape><Polygon POINTS="4240 2824 4240 2876 4240 2918 4287 2916 4287 2876 4285 2824 4265 2824"/></Shape>
-	    <String CONTENT="5"
-                    HPOS="4240"
-                    VPOS="2824"
-                    WIDTH="47"
-                    HEIGHT="94"></String>
+	    <String CONTENT="5" HPOS="4240" VPOS="2824" WIDTH="47" HEIGHT="94"/>
           </TextLine>
 
           
         </TextBlock>
         
-        <TextBlock HPOS="2482.0"
-                   VPOS="148.0"
-                   WIDTH="295.0"
-                   HEIGHT="171.0"
-                   ID="eSc_textblock_55a3f146"
-                   TAGREFS="BT56">
+        <TextBlock HPOS="2482.0" VPOS="148.0" WIDTH="295.0" HEIGHT="171.0" ID="eSc_textblock_55a3f146" TAGREFS="BT56">
           <Shape><Polygon POINTS="2482 319 2482 148 2777 148 2777 319"/></Shape>
           
         </TextBlock>
         
-        <TextBlock HPOS="2886.0"
-                   VPOS="141.0"
-                   WIDTH="594.0"
-                   HEIGHT="91.0"
-                   ID="eSc_textblock_b342d9b3"
-                   TAGREFS="BT56">
+        <TextBlock HPOS="2886.0" VPOS="141.0" WIDTH="594.0" HEIGHT="91.0" ID="eSc_textblock_b342d9b3" TAGREFS="BT56">
           <Shape><Polygon POINTS="2886 141 2886 232 3480 232 3480 141"/></Shape>
           
         </TextBlock>
         
-        <TextBlock HPOS="2260.0"
-                   VPOS="2705.0"
-                   WIDTH="441.0"
-                   HEIGHT="87.0"
-                   ID="eSc_textblock_160f300d"
-                   TAGREFS="BT56">
+        <TextBlock HPOS="2260.0" VPOS="2705.0" WIDTH="441.0" HEIGHT="87.0" ID="eSc_textblock_160f300d" TAGREFS="BT56">
           <Shape><Polygon POINTS="2701 2792 2260 2792 2280 2735 2634 2705 2681 2705"/></Shape>
           
         </TextBlock>
         
-        <TextBlock HPOS="2270"
-                   VPOS="256"
-                   WIDTH="2005"
-                   HEIGHT="2413"
-                   ID="eSc_textblock_03805cb8"
-                   TAGREFS="BT51">
+        <TextBlock HPOS="2270" VPOS="256" WIDTH="2005" HEIGHT="2413" ID="eSc_textblock_03805cb8" TAGREFS="BT51">
           <Shape><Polygon POINTS="3207 2445 3031 2455 2939 2504 2270 2494 2280 554 2473 535 2730 344 3015 260 4275 256 4267 1454 4228 1754 4267 1872 4267 2425 4049 2644 3946 2669 3225 2663"/></Shape>
           
         </TextBlock>
