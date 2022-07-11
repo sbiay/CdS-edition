@@ -155,21 +155,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <pb corresp="#CdS02_Konv002-02_0193"/>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0193_z1_l1"/>1819<lb corresp="#CdS02_Konv002-02_0193_z1_l2"/>(de Mr Cherubini)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0193_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0193_z2_l2"/>A Mme la Princesse de Salm</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0193_z2_l3"/>Paris, ce 20 Janvier, 1819.</dateline>
-          <salute><lb corresp="#CdS02_Konv002-02_0193_z2_l4"/>Madame,</salute>
-        </opener>
-        <p><lb corresp="#CdS02_Konv002-02_0193_z2_l5"/>Les lettres que vous n'avez adressées pour faire remettre à Mr<lb corresp="#CdS02_Konv002-02_0193_z2_l6"/>ont été immédiatement envoyées à leur d'estination.<lb corresp="#CdS02_Konv002-02_0193_z2_l7"/>Vous m'avez fait l'honneur de m'inviter à diner pour demain, et tout<lb corresp="#CdS02_Konv002-02_0193_z2_l8"/>en vous remerciant, j'ai le regret de vous prévenir que je ne pourrai me<lb corresp="#CdS02_Konv002-02_0193_z2_l9"/>rendre à votre aimable invitation, attendu que je dinerai à St Denis, étant<lb corresp="#CdS02_Konv002-02_0193_z2_l10"/>obligé d'y aller avec la Chapelle du Roi pour le service funèbre qu'on<lb corresp="#CdS02_Konv002-02_0193_z2_l11"/>célèbrera pour l'anniversaire de la mort de Louis XVI. Veuillez agréer<lb corresp="#CdS02_Konv002-02_0193_z2_l12"/>Madame, et mes excuses, et les expressions des sentimens respectueux<lb corresp="#CdS02_Konv002-02_0193_z2_l13"/>avec lesquels j'ai l'honneur d'être.<lb corresp="#CdS02_Konv002-02_0193_z2_l14"/>Votre très humble et très obéissant</p>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0193_z2_l15"/>Serviteur (Signé) Chérubini.</signed>
-        </closer>
-      </div>
-    </body>
-  </text>
 </TEI>

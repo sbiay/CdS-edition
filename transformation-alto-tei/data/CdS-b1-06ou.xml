@@ -141,21 +141,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <pb corresp="#CdS02_Konv002-02_0175"/>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0175_z1_l1"/>1818<lb corresp="#CdS02_Konv002-02_0175_z1_l2"/>(de Mme la Princesse<lb corresp="#CdS02_Konv002-02_0175_z1_l3"/>de Salm)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0175_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0175_z2_l2"/>A Mr Prous (au château de Liedberg)</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0175_z2_l3"/>Dyck, ce 3 Août 1818.</dateline>
-        </opener>
-        <p><lb corresp="#CdS02_Konv002-02_0175_z2_l4"/>On vous regrette fort. On ira chercher Louise à midi et sa<lb corresp="#CdS02_Konv002-02_0175_z2_l5"/>maman si elle le peut et on vous attendra à la fin de la semaine<lb corresp="#CdS02_Konv002-02_0175_z2_l6"/>On aura le comte de Hompesch.<lb corresp="#CdS02_Konv002-02_0175_z2_l7"/>On fait ses compliments à Mr Ritz.<lb corresp="#CdS02_Konv002-02_0175_z2_l8"/>Mille amitiés à vous et à toute la maison.</p>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0175_z2_l9"/>(Signé) Constance de Salm.</signed>
-        </closer>
-        <fw corresp="#CdS02_Konv002-02_0175_z3" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0175_z3_l1"/>1823<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-      </div>
-    </body>
-  </text>
 </TEI>

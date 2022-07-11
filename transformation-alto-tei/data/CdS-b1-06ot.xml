@@ -155,22 +155,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <pb corresp="#CdS02_Konv002-02_0073"/>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0073_z1_l1"/>1816<lb corresp="#CdS02_Konv002-02_0073_z1_l2"/>(de Mme la Princesse<lb corresp="#CdS02_Konv002-02_0073_z1_l3"/>de Salm)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0073_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0073_z2_l2"/>A Mr Prous (au château de Liedberg)</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0073_z2_l3"/>Dyck, ce 5 8re, 1816.</dateline>
-        </opener>
-        <p><lb corresp="#CdS02_Konv002-02_0073_z2_l4"/>J'ai fait attendre votre messager, Monsieur, pour vous dire, moi<lb corresp="#CdS02_Konv002-02_0073_z2_l5"/>même, que le Comte de Hompesch est ici et que je le décide à rester encore<lb corresp="#CdS02_Konv002-02_0073_z2_l6"/>demain, dans l'espoir que j'ai de vous avoir. Venez donc, je vous prie<lb corresp="#CdS02_Konv002-02_0073_z2_l7"/>passer la journée avec nous. Nous mènerons joyeuse vie et vous mettrons<lb corresp="#CdS02_Konv002-02_0073_z2_l8"/>les soucis sous le pied.<lb corresp="#CdS02_Konv002-02_0073_z2_l9"/>La Politique à demain.<lb corresp="#CdS02_Konv002-02_0073_z2_l10"/>A toujours, les assurances d'estime et d'amitié sincères.</p>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0073_z2_l11"/>(Signé) Constance de Salm.</signed>
-        </closer>
-        <note corresp="#CdS02_Konv002-02_0073_z3" type="MarginTextZone"><lb corresp="#CdS02_Konv002-02_0073_z3_l1"/>(à sup :)<!--Vérifier que la note corresponde à la lettre et mettre à jour le type--></note>
-        <fw corresp="#CdS02_Konv002-02_0073_z4" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0073_z4_l1"/>60<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-      </div>
-    </body>
-  </text>
 </TEI>

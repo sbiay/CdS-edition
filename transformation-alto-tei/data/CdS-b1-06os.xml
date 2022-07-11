@@ -294,22 +294,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0067_z3_l1"/>1816<lb corresp="#CdS02_Konv002-02_0067_z3_l2"/>(de Mme la Princesse<lb corresp="#CdS02_Konv002-02_0067_z3_l3"/>de Salm)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0067_z4_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0067_z4_l2"/>A Mr Prons (au château de Liedberg)</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0067_z4_l3"/>Dyck, le 18 Septembre, 1816.</dateline>
-        </opener>
-        <p><lb corresp="#CdS02_Konv002-02_0067_z4_l4"/>Seriez vous assez bon, Monsieur, pour remettre à la chère Louise le<lb corresp="#CdS02_Konv002-02_0067_z4_l5"/>morceau de gros de Naples jaune ci-joint, et lui dire que je désirerais en<lb corresp="#CdS02_Konv002-02_0067_z4_l6"/>avoir une aune (de Brabant) de pareil ? Mais il faut qu'il soit bien<lb corresp="#CdS02_Konv002-02_0067_z4_l7"/>semblable ; car il ne s'agit de rien moins que de ressortir des manche, et<lb corresp="#CdS02_Konv002-02_0067_z4_l8"/>ou ne badine pas avec cela ; s'il n'y en a pas, je m'en passerai.<lb corresp="#CdS02_Konv002-02_0067_z4_l9"/>Je vais enfin, je crois, faire le fameux voyage de Cologne, et<lb corresp="#CdS02_Konv002-02_0067_z4_l10"/>à tout hasard, vous seriez bien aimables de venir tous demain ou<lb corresp="#CdS02_Konv002-02_0067_z4_l11"/>après demain. Il n'est question ici que de Kermesse et en allant pro-<lb corresp="#CdS02_Konv002-02_0067_z4_l12"/>mener du coté des lieux habités nous verrions encore une queue<lb corresp="#CdS02_Konv002-02_0067_z4_l13"/>du beau monde. A demain donc, s'il vous est possible ; car s'il fait<lb corresp="#CdS02_Konv002-02_0067_z4_l14"/>beau, je pars jeudi.<lb corresp="#CdS02_Konv002-02_0067_z4_l15"/>Voilà la puissance tout a fait à la raison dans notre cher pays<lb corresp="#CdS02_Konv002-02_0067_z4_l16"/>et nous aurons de la tranquillité, Dieu merci. Je l'aime dans le monde,<lb corresp="#CdS02_Konv002-02_0067_z4_l17"/>afin surtout que ma vie puisse s'y agiter librement. Vous avez<lb corresp="#CdS02_Konv002-02_0067_z4_l18"/>eu bien tort de vous en aller le jour de notre monde. Nous avons<lb corresp="#CdS02_Konv002-02_0067_z4_l19"/>passé de jolis moments le soir. J'ai été heureuse comme une vraie<lb corresp="#CdS02_Konv002-02_0067_z4_l20"/>enfant. Dieu me conserve cette jeunesse d'esprt à défaut de l'autre.<lb corresp="#CdS02_Konv002-02_0067_z4_l21"/>C'est la source de tout ce qu'il y 'a de bon et de consolant dans le monde.<lb corresp="#CdS02_Konv002-02_0067_z4_l22"/>vie<lb corresp="#CdS02_Konv002-02_0067_z4_l23"/>J'ai écrit des volumes ce matin ; vous en êtes la dernière feuille<lb corresp="#CdS02_Konv002-02_0067_z4_l24"/>Vous savez le cris des Marchandes de Paris aux derniers les bons.<lb corresp="#CdS02_Konv002-02_0067_z4_l25"/>Cependant je ne veux vous rien dire d'agréable aujourd'hui ; car il<lb corresp="#CdS02_Konv002-02_0067_z4_l26"/>me semble que vous m'avez trouvée maussade la dernière fois.</p>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0067_z4_l27"/>A revoir donc à demain.<lb corresp="#CdS02_Konv002-02_0067_z4_l28"/>(Signé) Constance de Salm</signed>
-        </closer>
-        <fw corresp="#CdS02_Konv002-02_0067_z5" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0067_z5_l1"/><!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-        <note corresp="#CdS02_Konv002-02_0067_z6" type="MarginTextZone"><lb corresp="#CdS02_Konv002-02_0067_z6_l1"/>105<!--Vérifier que la note corresponde à la lettre et mettre à jour le type--></note>
-        <fw corresp="#CdS02_Konv002-02_0067_z7" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0067_z7_l1"/>57<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-      </div>
-    </body>
-  </text>
 </TEI>

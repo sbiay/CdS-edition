@@ -223,21 +223,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <pb corresp="#CdS02_Konv002-02_0189"/>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0189_z1_l1"/>1818<lb corresp="#CdS02_Konv002-02_0189_z1_l2"/>(de Mme. la Princesse<lb corresp="#CdS02_Konv002-02_0189_z1_l3"/>de Salm)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0189_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0189_z2_l2"/>A. SM. l'Empereur Alexandre.</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0189_z2_l3"/>Atix la Chapelle, le 20 Sorr, 1816.</dateline>
-          <salute><lb corresp="#CdS02_Konv002-02_0189_z2_l4"/>Sire,</salute>
-        </opener>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0189_z2_l28"/>(lincé) Coudtaqce Princesse de Salm.</signed>
-        </closer>
-        <fw corresp="#CdS02_Konv002-02_0189_z3" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0189_z3_l1"/>155<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--><lb corresp="#CdS02_Konv002-02_0189_z4_l1"/>170</fw>
-      </div>
-    </body>
-  </text>
 </TEI>

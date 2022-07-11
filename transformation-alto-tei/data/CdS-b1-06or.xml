@@ -294,23 +294,4 @@
       </surface>
     </surfaceGrp>
   </sourceDoc>
-  <text>
-    <body>
-      <div>
-        <opener>
-          <pb corresp="#CdS02_Konv002-02_0067"/>
-          <fw type="letterhead"><lb corresp="#CdS02_Konv002-02_0067_z1_l1"/>181<lb corresp="#CdS02_Konv002-02_0067_z1_l2"/>(de Mme la Phincesse<lb corresp="#CdS02_Konv002-02_0067_z1_l3"/>de Salm)</fw>
-          <title><lb corresp="#CdS02_Konv002-02_0067_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-02_0067_z2_l2"/>A Mr Prons (au château de Liedberg)</title>
-          <dateline><lb corresp="#CdS02_Konv002-02_0067_z2_l3"/>Dyck, le 15 Septembre 1816.</dateline>
-        </opener>
-        <p><lb corresp="#CdS02_Konv002-02_0067_z2_l4"/>Il fait si beau, Monsieur, que je pense que Mme Kopp, vous<lb corresp="#CdS02_Konv002-02_0067_z2_l5"/>Louise et le grand fils pourriez venir à pied ou en voiture passer<lb corresp="#CdS02_Konv002-02_0067_z2_l6"/>la journée avec nous : c'est dit ou la Kermesse, nous irons promener<lb corresp="#CdS02_Konv002-02_0067_z2_l7"/>de ce côté ; nous entendrons les violons, et c'est toujours quelque<lb corresp="#CdS02_Konv002-02_0067_z2_l8"/>chose que de voir la joie.<lb corresp="#CdS02_Konv002-02_0067_z2_l9"/>Je conterai mes commissions à Louise ; il me faut mille<lb corresp="#CdS02_Konv002-02_0067_z2_l10"/>petites choses de Creveld.<lb corresp="#CdS02_Konv002-02_0067_z2_l11"/>Venez donc tous. J'embrasse les dames et salue les messieurs.</p>
-        <closer>
-          <signed><lb corresp="#CdS02_Konv002-02_0067_z2_l12"/>(Signé) C. de S.</signed>
-        </closer>
-        <fw corresp="#CdS02_Konv002-02_0067_z5" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0067_z5_l1"/><!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-        <note corresp="#CdS02_Konv002-02_0067_z6" type="MarginTextZone"><lb corresp="#CdS02_Konv002-02_0067_z6_l1"/>105<!--Vérifier que la note corresponde à la lettre et mettre à jour le type--></note>
-        <fw corresp="#CdS02_Konv002-02_0067_z7" type="NumberingZone"><lb corresp="#CdS02_Konv002-02_0067_z7_l1"/>57<!--Vérifier que le numéro corresponde à la lettre et mettre à jour le type : pageNum si numéro de page, letterNum si numéro de lettre--></fw>
-      </div>
-    </body>
-  </text>
 </TEI>
