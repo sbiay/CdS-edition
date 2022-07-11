@@ -63,7 +63,7 @@ class Attributes:
             # En l'absence de polygon, on crée un dictionnaire de coordonnées vide
             except AttributeError:
                 points.append(
-                    {'POINTS': ''}
+                    {'POINTS': '0000,0000 0000,0000 0000,0000 0000,0000'}
                 )
         
 

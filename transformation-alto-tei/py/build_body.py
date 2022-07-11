@@ -67,11 +67,15 @@ def body(root, data):
         # MarginTextZone
         elif line.zone_type == "MarginTextZone":
             # create a <note> if one is not already the preceding sibling
-            note = etree.Element("note", zone_atts)
-            note.append(lb)
-            comment = etree.Comment("Vérifier que la note corresponde à la lettre et mettre à jour le type")
-            note.append(comment)
-            last_element.append(note)
+            if last_element.tag != "note":
+                note = etree.Element("note", zone_atts)
+                note.append(lb)
+                comment = etree.Comment("Vérifier que la note corresponde à la lettre et mettre à jour le type")
+                note.append(comment)
+                div.append(note)
+                last_element = div[-1]
+            else:
+                last_element.append(lb)
         
         # Pour les autres types de zones
         else:
@@ -138,7 +142,6 @@ def body(root, data):
                     corr = etree.SubElement(choice, "corr")
                     corr.append(lb)
                     # Pour ajouter une correction à la fin d'un vers
-                    print(line)
                     if last_element.getchildren()[-1].tag == "l":
                         last_element.getchildren()[-1].append(choice)
                     # Pour ajouter une correction dans un paragraphe
@@ -178,8 +181,6 @@ def body(root, data):
                     # On instancie un premier p avec la première ligne DefaultLine ou après une partie versifiée
                     # ou après un saut de page
                     if last_element.tag != "p" and last_element.tag != "closer":
-                        if line.text[:5] == "25 an":
-                            print(line)
                         p = etree.SubElement(div, "p")
                         p.append(lb)
                         last_element = div[-1]
