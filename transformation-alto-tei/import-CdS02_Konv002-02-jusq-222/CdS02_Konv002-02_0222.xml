@@ -254,6 +254,13 @@
         <TextBlock HPOS="2504" VPOS="2531" WIDTH="216" HEIGHT="62" ID="eSc_textblock_21ba1e6e" TAGREFS="BT59">
           <Shape><Polygon POINTS="2720 2584 2515 2593 2504 2534 2705 2531"/></Shape>
           
+          
+          <TextLine ID="eSc_line_4c84a995" TAGREFS="LT25" BASELINE="2528 2577 2702 2570" HPOS="2524" VPOS="2532" WIDTH="176" HEIGHT="72">
+            <Shape><Polygon POINTS="2682 2532 2659 2532 2637 2532 2614 2532 2591 2532 2569 2532 2546 2532 2524 2532 2526 2575 2528 2604 2585 2586 2696 2588 2700 2568 2693 2532 2682 2532"/></Shape>
+	    <String CONTENT="(Corresp p :)" HPOS="2524" VPOS="2532" WIDTH="176" HEIGHT="72"/>
+          </TextLine>
+
+          
         </TextBlock>
         
 

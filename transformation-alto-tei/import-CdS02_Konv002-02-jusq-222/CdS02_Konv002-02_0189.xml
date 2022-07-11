@@ -42,7 +42,7 @@
                     WIDTH="68"
                     HEIGHT="27">
             
-	    <String CONTENT=""
+	    <String CONTENT="1818"
                     HPOS="2472"
                     VPOS="301"
                     WIDTH="68"
@@ -59,7 +59,7 @@
                     WIDTH="208"
                     HEIGHT="101">
             
-	    <String CONTENT=""
+	    <String CONTENT="(de Mme. la Princesse"
                     HPOS="2464"
                     VPOS="286"
                     WIDTH="208"
@@ -76,7 +76,7 @@
                     WIDTH="132"
                     HEIGHT="65">
             
-	    <String CONTENT=""
+	    <String CONTENT="de Salm)"
                     HPOS="2521"
                     VPOS="332"
                     WIDTH="132"
@@ -589,7 +589,7 @@
                     WIDTH="68"
                     HEIGHT="81">
             <Shape><Polygon POINTS="2411 2545 2411 2561 2474 2561 2474 2543 2469 2495 2406 2480 2411 2545"/></Shape>
-	    <String CONTENT="1515"
+	    <String CONTENT="155"
                     HPOS="2406"
                     VPOS="2480"
                     WIDTH="68"
@@ -616,7 +616,7 @@
                     WIDTH="75"
                     HEIGHT="77">
             <Shape><Polygon POINTS="4340 2534 4331 2507 4292 2498 4290 2498 4288 2498 4286 2498 4283 2498 4272 2507 4274 2541 4274 2568 4344 2575 4347 2538 4344 2536 4340 2534"/></Shape>
-	    <String CONTENT=""
+	    <String CONTENT="170"
                     HPOS="4272"
                     VPOS="2498"
                     WIDTH="75"
