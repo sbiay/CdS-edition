@@ -89,6 +89,7 @@ def body(root, data):
                 zoneOpener = False
                 zoneMain = False
                 zoneCloser = True
+            
             # Cas rare d'une signature dans un post-scriptum
             elif line.line_type == "CustomLine:signature" and last_element.tag == "postscript":
                 if postscriptsigned is None:
@@ -97,6 +98,11 @@ def body(root, data):
                     last_element.append(signed)
                 else:
                     signed.append(lb)
+            # Si on rencontre une mention de date en cours de traitement de la zoneMain, on passe au closer
+            elif line.line_type == "CustomLine:dateline" and zoneMain:
+                zoneOpener = False
+                zoneMain = False
+                zoneCloser = True
                 
             if zoneOpener:
                 # Header
@@ -185,7 +191,6 @@ def body(root, data):
                         p.append(lb)
                         last_element = div[-1]
                     elif last_element.tag == "p":
-                        
                         last_element.append(lb)
                     # Post-scriptum
                     elif last_element.tag == "closer":
@@ -197,19 +202,45 @@ def body(root, data):
                         
             # CLOSER
             elif zoneCloser:
+                # Si le closer n'a pas été créé
                 if closer is None:
+                    # On le crée
                     closer = etree.SubElement(div, "closer")
                     last_element = div[-1]
-               
-                # Un closer ne peut commencer que par une signature
-                if lastCloserElt is None:
-                    signed = etree.SubElement(closer, "signed")
-                    signed.append(lb)
-                    closer.append(signed)
-                    lastCloserElt = closer[-1]
-                # Si le closer possède déjà des lignes
-                else:
-                    signed.append(lb)
+                
+                # Signature
+                if line.line_type == "CustomLine:signature":
+                    # Si le closer a déjà un enfant
+                    if last_element.getchildren():
+                        # Si le dernier enfant n'est pas un élément signed
+                        if last_element.getchildren()[-1].tag != "signed":
+                            signed = etree.Element("signed")
+                            signed.append(lb)
+                            last_element.append(signed)
+                        # Si le dernier enfant est un élément signed
+                        else:
+                            last_element.getchildren()[-1].append(lb)
+                    else:
+                        signed = etree.Element("signed")
+                        signed.append(lb)
+                        last_element.append(signed)
+                # Date
+                elif line.line_type == "CustomLine:dateline":
+                    # Si le closer a déjà un enfant
+                    if last_element.getchildren():
+                        # Si le dernier enfant n'est pas un élément signed
+                        if last_element.getchildren()[-1].tag != "dateline":
+                            dateline = etree.Element("dateline")
+                            dateline.append(lb)
+                            last_element.append(dateline)
+                        # Si le dernier enfant est un élément signed
+                        else:
+                            last_element.getchildren()[-1].append(lb)
+                    else:
+                        dateline = etree.Element("dateline")
+                        dateline.append(lb)
+                        last_element.append(dateline)
+                
                 
            
 
