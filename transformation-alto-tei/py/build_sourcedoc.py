@@ -22,9 +22,11 @@ def sourcedoc(document, tei_root, filepath_list, tags):
         lines_on_page = 0
         # On retype le chemin de fichier en chaîne pour éviter TypeError: cannot parse from 'PosixPath'
         chemin = str(file.filepath)
+        # On récupère le nom du fichier
+        fichier = f"./{(chemin.split('/')[1] + '/' + chemin.split('/')[2]).replace('xml', 'jpg')}"
         alto_root = etree.parse(chemin).getroot()
-        attributes = Attributes(document, file.num, alto_root, tags)  # sourcedoc_attributes.py
-        stree = SurfaceTree(document, file.num, alto_root)  # surface_and_desc.py (surface element and descendants)
+        attributes = Attributes(document, fichier, alto_root, tags)  # sourcedoc_attributes.py
+        stree = SurfaceTree(document, fichier, alto_root)  # surface_and_desc.py (surface element and descendants)
 
         # -- SURFACE --
         # for every page in the document, create a <surface> and assign its attributes

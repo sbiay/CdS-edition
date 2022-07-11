@@ -24,12 +24,15 @@ class Attributes:
         # create a dictionary of attributes names and their values for the ALTO file's <Page> element
         att_list = self.root.find('.//a:Page', namespaces=NS).attrib
         # assign the ALTO file's extracted <Page> attribute values to TEI attribute names
-        attributes = {"{http://www.w3.org/XML/1998/namespace}id":f"f{self.folio}",
+        label = self.folio
+        label = label.split('/')[2].replace('.jpg', '')
+        attributes = {"{http://www.w3.org/XML/1998/namespace}id": label,
                     "n":att_list["PHYSICAL_IMG_NR"],
                     "ulx":"0",
                     "uly":"0",
                     "lrx":att_list["WIDTH"],
                     "lry":att_list["HEIGHT"]}
+        
         return attributes
 
     def zone(self, parent, target):
@@ -85,8 +88,7 @@ class Attributes:
                 "n":tag_parts.group(3) or "none",
                 "points":zone_points,
                 # use the values of the ALTO element's @HPOS, @VPOS, @WIDTH, @HEIGHT to complete region parameters for the IIIF Image API URI
-                "source":f"https://gallica.bnf.fr/iiif/ark:/12148/{self.doc}/f{self.folio}/{x},{y},{w},"
-                         f"{h}/full/0/native.jpg",
+                "source": self.folio,
                 "corresp": altoId
             }
 
@@ -98,5 +100,5 @@ class Attributes:
             # whose parent is always a TextBlock, eg. the first <TextLine> of a <TextBlock> would hvae the parent: 
             # f'TextBlock[@ID="{processed_blocks[0]}"]/'
             processed_blocks.append(att_list[i]["ID"])
-
+            
         return attributes, processed_blocks
