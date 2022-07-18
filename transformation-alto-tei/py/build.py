@@ -1,5 +1,6 @@
 import json
 import os
+import csv
 from py.iiif_data import IIIF_API
 from py.sru_data import SRU_API
 from py.build_teiheader import teiheader
@@ -9,6 +10,7 @@ from py.segment import segment
 from py.text_data import Text
 from py.tags_dict import Tags
 from py.cdsFonctions import triFichiers, selectionBlocs
+from py.constantes import DONNEES
 from lxml import etree
 
 
@@ -32,11 +34,29 @@ class XMLTEI:
             The dictionary self.tags is reassigned to a dictionary that the Tags.labels() method returns.
         """
         # TODO Test avec des données forgées pour CDS
-        # On récupère les métadonnées fabriquées dans le fichier Json
-        with open("./donnees-test-cds/metadata-cds.json") as jsonf:
-            metadata = json.load(jsonf)
-            self.metadata = metadata
-            self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
+        metadata = {}
+        # On charge les données Zenodo : partie 1
+        with open(DONNEES + "20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
+            lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
+            # On boucle sur chaque ligne
+            for index, ligne in enumerate(lecteur):
+                # Si l'identifiant du dossier courant correspond à la clé FUD
+                if ligne["FuD-Key"] == self.d:
+                    # On implémente le dict des métadonnées
+                    metadata = ligne
+        # On charge les données Zenodo : partie 2
+        with open(DONNEES + "20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv") as csvf:
+            lecteur = csv.DictReader(csvf, delimiter='\t', quotechar="|")
+            for ligne in lecteur:
+                if ligne["FuD-Key"] == self.d:
+                    metadata = ligne
+        
+        # TODO dev : on inscrit les métadonnées dans des exports Json
+        with open(f"./donnees-test-cds/{self.d}.json", mode="w") as jsonf:
+            json.dump(metadata, jsonf)
+        
+        self.metadata = metadata
+        self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
 
     # -- PHASE 2 -- XML-TEI construction of <teiHeader> and <sourceDoc>
     def build_tree(self):

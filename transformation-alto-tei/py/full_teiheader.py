@@ -79,7 +79,7 @@ class FullTree:
                     Entry("language",None,"Language",None),
                     Entry("language","ident",None,"lang")]
         for e in entries:
-            if self.sru and e.unimarc_data and self.sru[e.unimarc_data]:
+            if self.sru and e.unimarc_data and self.sru.get(e.unimarc_data):
                 self.entry(self.sru[e.unimarc_data], self.children[e.tei_element], e.attribute)
             elif e.iiif_data and self.iiif[e.iiif_data]:
                 self.entry(self.iiif[e.iiif_data], self.children[e.tei_element], e.attribute)

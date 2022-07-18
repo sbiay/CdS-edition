@@ -1,4 +1,5 @@
 from py.default_teiheader import DefaultTree
+from lxml import etree
 from py.full_teiheader import FullTree
 
 NS = {"s":"http://www.loc.gov/zing/srw/", "m":"info:lc/xmlns/marcxchange-v2"}
@@ -14,11 +15,14 @@ def teiheader(metadata, document, root, count_pages):
         root (etree): XML-TEI tree
     """    
     # step 1 -- generate default <teiHeader>
-    elements = DefaultTree(document, root, metadata, count_pages)  # deafult_teiheader.py
+    elements = DefaultTree(document, root, count_pages)  # deafult_teiheader.py
     elements.build()
     
-    # step 2 -- enter available metadata into relevant element in <teiHeader>
-    htree = FullTree(elements.children, metadata)  # full_teiheader.py
-    htree.author_data()
-    htree.other_data()
+    # step 2 -- generate full <teiHeader>
+    nsmap = {"tei": "http://www.tei-c.org/ns/1.0/"}
+    # On récupère l'élément teiheader
+    teiheader = root.xpath("//teiHeader", namespaces=nsmap)[0]
+    #p = etree.SubElement(teiheader, "p")
+    
+    
     return root
