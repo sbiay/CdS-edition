@@ -31,12 +31,9 @@ def teiheader(metadata, document, root, count_pages):
     
     # step 2 -- generate full <teiHeader>
     nsmap = {"tei": "http://www.tei-c.org/ns/1.0/"}
-    # On récupère l'élément titre
+    
+    # Title
     title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
-    
-    # TODO
-    # <title xml:lang="en">Letter from Ludwig Tieck to Friedrich von Raumer (Ziebingen, 30 March 1815)</title>
-    
     auteur = nom(metadata['Verfasser'])
     destinataire = nom(metadata['Empfänger'])
     date = metadata['Datierung_JJJJ-MM-TT']
@@ -46,5 +43,30 @@ def teiheader(metadata, document, root, count_pages):
     date = f"{date[2]} {mois[int(date[1]) - 1]} {date[0]}"
     lieuExp = metadata["Ausstellungsort"]
     title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, le {date})"
+    
+    # correspDesc
+    profileDesc = root.xpath("//teiHeader/profileDesc", namespaces=nsmap)[0]
+    correspDesc = etree.SubElement(profileDesc, "correspDesc")
+    correspAction = etree.SubElement(correspDesc, "correspAction")
+    # Expédition
+    correspAction.attrib["type"] = "sent"
+    persName = etree.SubElement(correspAction, "persName")
+    persName.attrib["ref"] = metadata["VIAF_Verfasser"]
+    persName.text = metadata['Verfasser']
+    placeName = etree.SubElement(correspAction, "placeName")
+    placeName.attrib["ref"] = metadata["Geonames_Ausstellungsort"]
+    placeName.text = lieuExp
+    date = etree.SubElement(correspAction, "date")
+    date.attrib["when-iso"] = metadata['Datierung_JJJJ-MM-TT']
+    # Réception
+    correspAction = etree.SubElement(correspDesc, "correspAction")
+    correspAction.attrib["type"] = "received"
+    persName = etree.SubElement(correspAction, "persName")
+    persName.attrib["ref"] = metadata["VIAF_Empfänger"]
+    persName.text = metadata['Empfänger']
+    if metadata["Empfangsort"]:
+        placeName = etree.SubElement(correspAction, "placeName")
+        placeName.attrib["ref"] = metadata["Geonames_Empfangsort"]
+        placeName.text = metadata["Empfangsort"]
     
     return root
