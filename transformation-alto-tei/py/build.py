@@ -33,7 +33,7 @@ class XMLTEI:
             The value of self.metadata's key "sru" is updated from None to the dictionary that the SRU_API.clean() method returns.
             The dictionary self.tags is reassigned to a dictionary that the Tags.labels() method returns.
         """
-        # TODO Test avec des données forgées pour CDS
+        # Récupération des métadonnées
         metadata = {}
         # On charge les données Zenodo : partie 1
         with open(DONNEES + "20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv") as csvf:
@@ -50,12 +50,17 @@ class XMLTEI:
             for ligne in lecteur:
                 if ligne["FuD-Key"] == self.d:
                     metadata = ligne
-        
-        # TODO dev : on inscrit les métadonnées dans des exports Json
-        with open(f"./donnees-test-cds/{self.d}.json", mode="w") as jsonf:
-            json.dump(metadata, jsonf)
-        
-        self.metadata = metadata
+        # On modifie la typographie des clés des métadonnées
+        nouvmetada = {}
+        for cle in metadata:
+            nouvcle = ""
+            nouvcle = cle.replace(" ", "_").replace(".", "").replace("(", "_").replace(")", "").replace("__", "_")
+            if nouvcle[0] == "_":
+                print
+                nouvcle = nouvcle[1:]
+            nouvmetada[nouvcle] = metadata[cle]
+        # On réassigne les nouvelles métadonnées à l'ancienne variable
+        self.metadata = nouvmetada
         self.tags = Tags(self.p[0], self.d, self.NS).labels()  # (tags_dict.py) get dictionary of tags {label:ref} for this document
 
     # -- PHASE 2 -- XML-TEI construction of <teiHeader> and <sourceDoc>
@@ -63,7 +68,10 @@ class XMLTEI:
         """Parse and map data from ALTO files to an XML-TEI tree's <teiHeader> and <sourceDoc>.
         """        
         # instantiate the XML-TEI root for this document and assign the root basic attributes
-        tei_root_att = {"xmlns":"http://www.tei-c.org/ns/1.0", "{http://www.w3.org/XML/1998/namespace}id":f"ark_12148_{self.d}"}
+        tei_root_att = {
+            "xmlns":"http://www.tei-c.org/ns/1.0",
+            "{http://www.w3.org/XML/1998/namespace}id":self.d
+        }
         self.root = etree.Element("TEI", tei_root_att)
         # build <teiHeader>
         teiheader(self.metadata, self.d, self.root, len(self.p))  # (build_teiheader.py)

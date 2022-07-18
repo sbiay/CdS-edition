@@ -1,28 +1,26 @@
 data:
-  # specify the relative path of your data files
+  # chemin relatif du dossier de données
   path: "./data"
 
 responsibility:
-  text: "Transformation from ALTO4 to TEI by"
-  # create a dictionary for each contributor in your project, featuring
-  # their first name (forename), last name (surname), and ORCID (ptr)
-  resp: [{"forename":"Sébastien", 
-          "surname":"Biay",
-          "ptr":{"type":"orcid","target":"000000027236874X"}
-          },
-
-        {"forename":"Mareike",
-        "surname":"König",
-         "ptr":{"type":"orcid","target":"000000027236874X"}
+  # nom de la personne responsable de l'encodage
+  principal:
+    forename: Sébastien
+    surname: Biay
+  # titre du projet
+  title: La correspondance de Constance de Salm (1767-1845)
+  # personnes responsables
+  resp:
+    [ { "forename": "Anne",
+        "surname": "Baillot",
         },
 
-        {"forename":"Anne",
-        "surname":"Baillot",
-         "ptr":{"type":"orcid","target":"000000027236874X"}
-        }
-        ]
+      { "forename": "Mareike",
+        "surname": "König",
+      }
+    ]
 
-  # name the publisher of this digital edition (project name)
+  # Institution du projet éditorial
   publisher: "Deutsches historisches Institut Paris"
   # name which authority finances or supports the project
   authority: ""
