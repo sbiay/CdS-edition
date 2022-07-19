@@ -29,16 +29,15 @@ def body(root, data):
         # On écrit un pb si le numéro de la ligne est 1
         if int(line.n) == 1:
             pb = etree.Element("pb", corresp=f"#{line.page_id}")
-            # Si le dernier élément est un fw
+            # Si le dernier élément n'est pas un fw (header, note, marge)
             if last_element.tag != "fw":
-                # On teste si le dernier élément a des enfants
-                try:
+                if last_element.tag == "lg":
                     # Si oui, on ajoute le pb au dernier enfant
                     last_element.getchildren()[-1].append(pb)
-                    # Si le dernier élément est un fw
-                except:
+                else:
                     # Sinon on l'ajoute à la div
                     last_element.append(pb)
+            # Si le dernier élément est un fw (header, note, marge)
             else:
                 div.append(pb)
             last_element = div[-1]
