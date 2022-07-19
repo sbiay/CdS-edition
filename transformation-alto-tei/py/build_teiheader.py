@@ -32,10 +32,11 @@ def teiheader(metadata, document, root, count_pages):
     # step 2 -- generate full <teiHeader>
     nsmap = {"tei": "http://www.tei-c.org/ns/1.0/"}
     
-    # Title
-    title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
+    # Auteur et destinataire
     auteur = nom(metadata['Verfasser'])
     destinataire = nom(metadata['Empfänger'])
+
+    # Date d'envoi
     date = metadata['Datierung_JJJJ-MM-TT']
     # On teste l'existence de la date
     if not date:
@@ -47,10 +48,28 @@ def teiheader(metadata, document, root, count_pages):
                 'novembre', 'décembre']
         # On recompose une chaîne du type "25 avril 1824"
         date = f"{date[2]} {mois[int(date[1]) - 1]} {date[0]}"
+    
+    # Lieu d'expédition
     lieuExp = metadata["Ausstellungsort"]
     # On teste l'existence du lieu d'expédition
     if not lieuExp:
         lieuExp = "s.l."
+        # On sauvegarde la forme complète dans une variable
+        lieuExpCompl = lieuExp
+    else:
+        lieuExpCompl = lieuExp
+        # On simplifie au besoin le nom du lieu
+        if "/" in lieuExp:
+            lieuExp = lieuExp.split("/")[1]
+        if "(" in lieuExp:
+            lieuExp = lieuExp.split("(")[0][:-1]
+        if "," in lieuExp:
+            lieuExp = lieuExp.split(",")[0]
+        if lieuExp[0] == " ":
+            lieuExp = lieuExp[1:]
+    
+    # Titre de la lettre
+    title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
     title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, le {date})"
     
     # correspDesc
@@ -68,7 +87,7 @@ def teiheader(metadata, document, root, count_pages):
     # Si le lieu d'expédition n'est pas connu
     else:
         placeName.attrib["ref"] = "unknown"
-    placeName.text = lieuExp
+    placeName.text = lieuExpCompl
     date = etree.SubElement(correspAction, "date")
     date.attrib["when-iso"] = metadata['Datierung_JJJJ-MM-TT']
     # Réception
