@@ -12,7 +12,7 @@ def body(root, data):
     salute = None
     annotations = None
     closer = None
-    postscriptsigned = None
+    postscriptsigned = False
     
     last_element = div[-1]
     lastCloserElt = None
@@ -21,6 +21,9 @@ def body(root, data):
     zoneOpener = True
     zoneMain = False
     zoneCloser = False
+
+    # On assigne un booléen pour les problèmes de numérotation de ligne
+    prblmNum = False
     
     for index, line in enumerate(data):
         # On écrit un pb si le numéro de la ligne est 1
@@ -89,21 +92,38 @@ def body(root, data):
                 zoneOpener = False
                 zoneMain = False
                 zoneCloser = True
-            
+
             # Cas rare d'une signature dans un post-scriptum
             elif line.line_type == "CustomLine:signature" and last_element.tag == "postscript":
-                if postscriptsigned is None:
-                    signed = etree.Element("signed")
-                    signed.append(lb)
-                    last_element.append(signed)
-                else:
-                    signed.append(lb)
-            # Si on rencontre une mention de date en cours de traitement de la zoneMain, on passe au closer
-            elif line.line_type == "CustomLine:dateline" and zoneMain:
                 zoneOpener = False
                 zoneMain = False
                 zoneCloser = True
-                
+                if not postscriptsigned:
+                    signed = etree.SubElement(last_element, "signed")
+                    comment = etree.Comment("Salut")
+                    signed.append(lb)
+                    signed.append(comment)
+                    
+                    postscriptsigned = True
+                else:
+                    signed.append(lb)
+
+            # Si on rencontre une mention de date en cours de traitement de la zoneMain, on passe au closer
+            elif line.line_type == "CustomLine:dateline" and zoneMain:
+                # Si le type de la ligne suivante est DefaultLine, on a probablement affaire à problème de numérotation de ligne
+                if data[index + 1].line_type == "DefaultLine":
+                    # On traite la ligne en tant que MainZone
+                    zoneOpener = False
+                    zoneMain = True
+                    zoneCloser = False
+                    prblmNum = True
+                # Si le type de la ligne suivante n'est pas DefaultLine, tout est normal
+                else:
+                    # On traite la ligne en tant que Closer
+                    zoneOpener = False
+                    zoneMain = False
+                    zoneCloser = True
+            
             if zoneOpener:
                 # Header
                 if line.line_type in "CustomLine:header":
@@ -137,9 +157,6 @@ def body(root, data):
             
             # CORPS DE LA LETTRE
             elif zoneMain:
-                # On réinitialise les variables d'éléments
-                annotations = None
-                
                 # Corrections interlinéaires
                 if line.line_type == "InterlinearLine":
                     comment = etree.Comment("Correction interlinéaire")
@@ -182,6 +199,7 @@ def body(root, data):
                             l = etree.SubElement(lg, "l")
                             l.append(lb)
                             lg.append(l)
+
                 # Pour les autres types de lignes
                 else:
                     # On instancie un premier p avec la première ligne DefaultLine ou après une partie versifiée
@@ -192,6 +210,11 @@ def body(root, data):
                         last_element = div[-1]
                     elif last_element.tag == "p":
                         last_element.append(lb)
+                        # Dateline
+                        if line.line_type in "CustomLine:dateline" and prblmNum:
+                            comment = etree.Comment("Mention de date mal placée dans l'ordre des lignes")
+                            last_element.append(comment)
+                            last_element.append(lb)
                     # Post-scriptum
                     elif last_element.tag == "closer":
                         postscript = etree.SubElement(div, "postscript")
@@ -209,7 +232,7 @@ def body(root, data):
                     last_element = div[-1]
                 
                 # Signature
-                if line.line_type == "CustomLine:signature":
+                if line.line_type == "CustomLine:signature" and not postscriptsigned:
                     # Si le closer a déjà un enfant
                     if last_element.getchildren():
                         # Si le dernier enfant n'est pas un élément signed
@@ -220,6 +243,7 @@ def body(root, data):
                         # Si le dernier enfant est un élément signed
                         else:
                             last_element.getchildren()[-1].append(lb)
+                    # Si le closer n'a pas encore d'enfant
                     else:
                         signed = etree.Element("signed")
                         signed.append(lb)

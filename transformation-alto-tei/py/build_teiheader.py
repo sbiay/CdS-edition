@@ -37,11 +37,20 @@ def teiheader(metadata, document, root, count_pages):
     auteur = nom(metadata['Verfasser'])
     destinataire = nom(metadata['Empfänger'])
     date = metadata['Datierung_JJJJ-MM-TT']
-    date = date.split("-")
-    mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre',
-            'novembre', 'décembre']
-    date = f"{date[2]} {mois[int(date[1]) - 1]} {date[0]}"
+    # On teste l'existence de la date
+    if not date:
+        date = "s.d."
+    else:
+        # On découpe la date au format YYYY-MM-JJ
+        date = date.split("-")
+        mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre',
+                'novembre', 'décembre']
+        # On recompose une chaîne du type "25 avril 1824"
+        date = f"{date[2]} {mois[int(date[1]) - 1]} {date[0]}"
     lieuExp = metadata["Ausstellungsort"]
+    # On teste l'existence du lieu d'expédition
+    if not lieuExp:
+        lieuExp = "s.l."
     title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, le {date})"
     
     # correspDesc
@@ -54,7 +63,11 @@ def teiheader(metadata, document, root, count_pages):
     persName.attrib["ref"] = metadata["VIAF_Verfasser"]
     persName.text = metadata['Verfasser']
     placeName = etree.SubElement(correspAction, "placeName")
-    placeName.attrib["ref"] = metadata["Geonames_Ausstellungsort"]
+    if metadata["Geonames_Ausstellungsort"]:
+        placeName.attrib["ref"] = metadata["Geonames_Ausstellungsort"]
+    # Si le lieu d'expédition n'est pas connu
+    else:
+        placeName.attrib["ref"] = "unknown"
     placeName.text = lieuExp
     date = etree.SubElement(correspAction, "date")
     date.attrib["when-iso"] = metadata['Datierung_JJJJ-MM-TT']
