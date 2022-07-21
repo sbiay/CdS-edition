@@ -17,7 +17,7 @@
         <availability status="restricted" n="CC BY-NC-ND 4.0">
           <licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
         </availability>
-        <date when="2022-07-19"/>
+        <date when="2022-07-21"/>
       </publicationStmt>
       <seriesStmt>
         <title>La correspondance de Constance de Salm (1767-1845)</title>
@@ -45,7 +45,7 @@
         <correspAction type="sent">
           <persName ref="http://viaf.org/viaf/71826548">Rigaud, Pierre-Augustin</persName>
           <placeName ref="https://www.geonames.org/2988507">Paris</placeName>
-          <date when-iso="1824-06-21"/>
+          <date when-iso="1824-06-21">1824-06-21</date>
         </correspAction>
         <correspAction type="received">
           <persName ref="https://viaf.org/viaf/121051">Salm, Constance de (CdS)</persName>

@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Lettre de Paul Joseph von Pröpper à Constance de Salm (Hülchrath, Gde. Grevenbroich, le 27 juin 1824)</title>
+        <title>Lettre de Paul Joseph von Pröpper à Constance de Salm (Hülchrath, le 27 juin 1824)</title>
         <principal>
           <persName>
             <forename>Sébastien</forename>
@@ -17,7 +17,7 @@
         <availability status="restricted" n="CC BY-NC-ND 4.0">
           <licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
         </availability>
-        <date when="2022-07-19"/>
+        <date when="2022-07-21"/>
       </publicationStmt>
       <seriesStmt>
         <title>La correspondance de Constance de Salm (1767-1845)</title>
@@ -45,7 +45,7 @@
         <correspAction type="sent">
           <persName ref="http://viaf.org/viaf/306291608">Pröpper, Paul Joseph von</persName>
           <placeName ref="https://www.geonames.org/3205876">Hülchrath, Gde. Grevenbroich</placeName>
-          <date when-iso="1824-06-27"/>
+          <date when-iso="1824-06-27">1824-06-27</date>
         </correspAction>
         <correspAction type="received">
           <persName ref="https://viaf.org/viaf/121051">Salm, Constance de (CdS)</persName>

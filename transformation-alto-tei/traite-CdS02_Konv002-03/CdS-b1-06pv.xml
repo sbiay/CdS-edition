@@ -3,7 +3,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Lettre de Constance de Salm à König von Preußen Friedrich Wilhelm III. (Dyck (Schloss), Gde. Jüchen, le 24 juin 1824)</title>
+        <title>Lettre de Constance de Salm à König von Preußen Friedrich Wilhelm III. (Dyck, le 24 juin 1824)</title>
         <principal>
           <persName>
             <forename>Sébastien</forename>
@@ -17,7 +17,7 @@
         <availability status="restricted" n="CC BY-NC-ND 4.0">
           <licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
         </availability>
-        <date when="2022-07-19"/>
+        <date when="2022-07-21"/>
       </publicationStmt>
       <seriesStmt>
         <title>La correspondance de Constance de Salm (1767-1845)</title>
@@ -45,7 +45,7 @@
         <correspAction type="sent">
           <persName ref="https://viaf.org/viaf/121051">Salm, Constance de (CdS)</persName>
           <placeName ref="https://www.geonames.org/2894637">Dyck (Schloss), Gde. Jüchen</placeName>
-          <date when-iso="1824-06-24"/>
+          <date when-iso="1824-06-24">1824-06-24</date>
         </correspAction>
         <correspAction type="received">
           <persName ref="http://viaf.org/viaf/774683">Friedrich Wilhelm III., König von Preußen</persName>
