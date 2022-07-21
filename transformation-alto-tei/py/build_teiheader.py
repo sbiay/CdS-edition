@@ -47,7 +47,7 @@ def teiheader(metadata, document, root, count_pages):
         mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre',
                 'novembre', 'décembre']
         # On recompose une chaîne du type "25 avril 1824"
-        date = f"{date[2]} {mois[int(date[1]) - 1]} {date[0]}"
+        date = f"le {date[2]} {mois[int(date[1]) - 1]} {date[0]}"
     
     # Lieu d'expédition
     lieuExp = metadata["Ausstellungsort"]
@@ -70,7 +70,7 @@ def teiheader(metadata, document, root, count_pages):
     
     # Titre de la lettre
     title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
-    title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, le {date})"
+    title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, {date})"
     
     # correspDesc
     profileDesc = root.xpath("//teiHeader/profileDesc", namespaces=nsmap)[0]
@@ -89,7 +89,14 @@ def teiheader(metadata, document, root, count_pages):
         placeName.attrib["ref"] = "unknown"
     placeName.text = lieuExpCompl
     date = etree.SubElement(correspAction, "date")
-    date.attrib["when-iso"] = metadata['Datierung_JJJJ-MM-TT']
+    # Si la date est connue
+    if metadata['Datierung_JJJJ-MM-TT']:
+        # On écrit l'attribut when-iso
+        date.attrib["when-iso"] = metadata['Datierung_JJJJ-MM-TT']
+        date.text = metadata['Datierung_JJJJ-MM-TT']
+    # Si la date n'est pas connue
+    else:
+        date.text = "s.d."
     # Réception
     correspAction = etree.SubElement(correspDesc, "correspAction")
     correspAction.attrib["type"] = "received"

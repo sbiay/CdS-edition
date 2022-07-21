@@ -65,6 +65,7 @@ def distributionFichiers(source):
         for index, image in enumerate(donneesImages["results"]["records"][record]["images"]):
             # On copie le fichier image vers la destination, dans le dossier de notice courant
             shutil.copy(f"{source}{image[:-4]}.xml", "./data/" + record)
+            shutil.copy(f"{source}{image[:-4]}.jpg", "./data/" + record)
 
 
 distributionFichiers()
