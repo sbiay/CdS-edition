@@ -57,7 +57,7 @@ def distributionFichiers(source):
         # On crée le dossier de la pièce s'il n'existe pas déjà
         try:
             os.mkdir("./data/" + record)
-            print("Le dossier ./data/" + record + "a été créé avec succès.")
+            print("Le dossier ./data/" + record + " a été créé avec succès.")
         except FileExistsError:
             True
         
