@@ -50,7 +50,12 @@ def selectionBlocs(self, donnees):
         return None
 
     # On récupère les chemins des prédictions
-    predictionsImport = triFichiers("data/" + idPiece + "/")
+    tousFichiers = triFichiers("data/" + idPiece + "/")
+    predictionsImport = []
+    # On ne retient que les fichiers XML
+    for fichier in tousFichiers:
+        if fichier[-3:] == "xml":
+            predictionsImport.append(fichier)
 
     # On récupère les lignes du début de la lettre (région contenant le header et le titre
     positionTitre = donneesDossier["results"]["records"][idPiece]["title_position"]
