@@ -1,79 +1,56 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="ark_12148_CdS-b1-07uz">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="CdS-b1-07uz">
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
-        <author xml:id="cds">
+        <title>Lettre de Jean Paul Égide Martini à Constance de Salm (s.l., s.d.)</title>
+        <principal>
           <persName>
-            <surname>Constance de Salm</surname>
+            <forename>Sébastien</forename>
+            <surname>Biay</surname>
           </persName>
-        </author>
+        </principal>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Deutsches historisches Institut Paris</publisher>
+        <authority></authority>
+        <availability status="restricted" n="CC BY-NC-ND 4.0">
+          <licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+        </availability>
+        <date when="2022-07-21"/>
+      </publicationStmt>
+      <seriesStmt>
+        <title>La correspondance de Constance de Salm (1767-1845)</title>
         <respStmt>
-          <resp>Transformation from ALTO4 to TEI by</resp>
+          <resp>Encadrement scientifique et technique du projet</resp>
           <persName>
-            <forename>Kelly</forename>
-            <surname>Christensen</surname>
-            <ptr type="orcid" target="000000027236874X"/>
+            <forename>Anne</forename>
+            <surname>Baillot</surname>
           </persName>
           <persName>
-            <forename>Simon</forename>
-            <surname>Gabay</surname>
-            <ptr type="orcid" target="0000000190944475"/>
-          </persName>
-          <persName>
-            <forename>Ariane</forename>
-            <surname>Pinche</surname>
-            <ptr type="orcid" target="0000000278435050"/>
+            <forename>Mareike</forename>
+            <surname>König</surname>
           </persName>
         </respStmt>
-      </titleStmt>
-      <extent>
-        <measure unit="images" n="1"/>
-      </extent>
-      <publicationStmt>
-        <publisher>Gallic(orpor)a</publisher>
-        <authority>BnF DATALab</authority>
-        <availability status="restricted" n="cc-by">
-          <licence target="https://creativecommons.org/licenses/by/4.0/"/>
-        </availability>
-        <date when="2022-07-11"/>
-      </publicationStmt>
+      </seriesStmt>
       <sourceDesc>
-        <bibl>
-          <ptr/>
-          <author ref="#cds">
-            <persName>
-              <surname>Constance de Salm</surname>
-            </persName>
-          </author>
-          <title>Correspondance générale, seconde copie, 2&lt;sup&gt;e&lt;/sup&gt; volume, 1815-1821</title>
-          <pubPlace>Information not available.</pubPlace>
-          <publisher>Information not available.</publisher>
-          <date>1815-1821</date>
-        </bibl>
-        <msDesc>
-          <msIdentifier>
-            <country key="FR"/>
-            <settlement>Information not available.</settlement>
-            <repository>Information not available.</repository>
-            <idno>Information not available.</idno>
-            <altIdentifier>
-              <idno type="ark">CdS-b1-07uz</idno>
-            </altIdentifier>
-          </msIdentifier>
-          <physDesc>
-            <objectDesc>
-              <p>Manuscrit</p>
-            </objectDesc>
-          </physDesc>
-        </msDesc>
+        <p>Nativement numérique.</p>
       </sourceDesc>
     </fileDesc>
     <profileDesc>
       <langUsage>
-        <language ident="fr">français</language>
+        <language ident="fr"/>
       </langUsage>
+      <correspDesc>
+        <correspAction type="sent">
+          <persName ref="http://viaf.org/viaf/19866122">Martini, Jean Paul Égide, eigentl. Johann Paul Ägidius Martin bzw. Schwarzendorf</persName>
+          <placeName ref="unknown">s.l.</placeName>
+          <date>s.d.</date>
+        </correspAction>
+        <correspAction type="received">
+          <persName ref="https://viaf.org/viaf/121051">Salm, Constance de (CdS)</persName>
+        </correspAction>
+      </correspDesc>
     </profileDesc>
   </teiHeader>
   <sourceDoc>
