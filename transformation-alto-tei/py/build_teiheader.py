@@ -72,6 +72,25 @@ def teiheader(metadata, document, root, count_pages):
     title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
     title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, {date})"
     
+    # Notice de l'inventaire
+    sourceDesc = root.xpath("//sourceDesc", namespaces=nsmap)[0]
+    biblStruct = etree.SubElement(sourceDesc, "biblStruct")
+    analytic = etree.SubElement(biblStruct, "analytic")
+    title = etree.SubElement(analytic, "title")
+    title.text = metadata["Nr"]
+    idno = etree.SubElement(analytic, "idno")
+    idno.text = metadata["URL"]
+    monogr = etree.SubElement(biblStruct, "monogr")
+    title = etree.SubElement(monogr, "title")
+    title.text = "Die Korrespondenz der Constance de Salm (1767-1845). Inventar des Fonds Salm der Société des Amis du Vieux Toulon et de sa Région und des Bestands Constance de Salm im Archiv Schloss Dyck (Mitgliedsarchiv der Vereinigten Adelsarchive im Rheinland e.V.). Elektronische Edition"
+    imprint = etree.SubElement(monogr, "imprint")
+    publisher = etree.SubElement(imprint, "publisher")
+    pubPlace = etree.SubElement(imprint, "pubPlace")
+    date = etree.SubElement(imprint, "date")
+    publisher.text = "DHI Paris"
+    pubPlace.text = "Paris"
+    date.text = "2021"
+
     # correspDesc
     profileDesc = root.xpath("//teiHeader/profileDesc", namespaces=nsmap)[0]
     correspDesc = etree.SubElement(profileDesc, "correspDesc")

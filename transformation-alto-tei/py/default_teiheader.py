@@ -55,8 +55,6 @@ class DefaultTree:
         
         # sourceDesc
         sourceDesc = etree.SubElement(fileDesc, "sourceDesc")
-        p = etree.SubElement(sourceDesc, "p")
-        p.text = "Nativement numérique."
         langUsage = etree.SubElement(profileDesc, "langUsage")
         self.children["language"] = etree.SubElement(langUsage, "language") # pass to other methods
         self.children["language"].attrib["ident"] = "fr"
