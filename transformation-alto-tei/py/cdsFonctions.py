@@ -82,7 +82,7 @@ def selectionBlocs(self, donnees):
                     codeMain = tag
                 if tags[tag] == "CustomZone:header":
                     codeHeader = tag
-        
+            
             # On récupère la zone de titre de la pièce
             zoneTitre = xml.xpath(
                 f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"

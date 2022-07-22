@@ -82,7 +82,7 @@ class XMLTEI:
     def annotate_text(self, securite, donnees):
         """Parse and map data from the <sourceDoc> to XML-TEI elements in <body>.
         """
-        print("\n" + self.d)
+
         # SÉLECTIONNER LES LIGNES PERTINENTES
         lignesPertinentes = selectionBlocs(self=self, donnees=donnees)
         # Si aucune ligne n'a été trouvée

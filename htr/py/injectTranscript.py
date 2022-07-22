@@ -40,37 +40,48 @@ def recupTranscriptions(dossier):
                 
                 # On ajoute le dictionnaire des transcriptions du fichier au dictionnaire de synthèse
                 transcriptions[filename] = transcrFichier
-    
+
     return transcriptions
 
 
 @click.command()
-@click.argument("SOURCE", default=VT)
-def injectTranscript(source):
+@click.argument("PREDICTION", default=XMLaCORRIGER)
+@click.argument("VT", default=VT)
+def injectTranscript(prediction, vt):
     """
     Cette fonction récupère l'ensemble des transcriptions manuelles sous la forme d'un dictionnaire,
     parse les fichiers XML de la prédiction HTR et remplace leurs lignes d'écriture
     lorsqu'il existe une transcription manuelle pour le même identifiant de ligne.
+    :param prediction: chemin du dossier contenant les prédiction à corriger
+    :param vt: chemin du dossier contenant les vérités de terrain
     :return: None
     """
+    
+    # On contrôle que le nom du dossier se termine par /
+    if prediction[-1] != "/":
+        prediction = prediction + "/"
+    if vt[-1] != "/":
+        vt = vt + "/"
+
+
     # RECUPERATION DES TRANSCRIPTIONS MANUELLES
     transcriptions = {}
     # On récupère les transcriptions manuelles à l'aide de la fonction recupTranscriptions(dossier)
-    transcrVT = recupTranscriptions(source)
+    transcrVT = recupTranscriptions(vt)
     
     # On réunit les transcriptions dans un seul dict
     for cle in transcrVT:
         transcriptions[cle] = transcrVT[cle]
     
     # REMPLACEMENT DES PREDICTIONS PAR LES TRANSCRIPTIONS MANUELLES
-    for root, dirs, files in os.walk(XMLaCORRIGER):
+    for root, dirs, files in os.walk(prediction):
         # On boucle sur chaque fichier contenant les prédictions
         for filename in files:
             # On pose comme condition de ne traiter que du XML et que le fichier aient une transcription manuelle
             if filename[-3:] == "xml" and transcriptions.get(filename):
                 transcrFichier = {}
                 # On ouvre le fichier
-                with open(XMLaCORRIGER + filename) as f:
+                with open(prediction + filename) as f:
                     xml = etree.parse(f)
                 # On implémente l'espace de nom alto
                 nsmap = {'alto': "http://www.loc.gov/standards/alto/ns-v4#"}
@@ -90,13 +101,13 @@ def injectTranscript(source):
                     # On vérifie que l'identifiant existe aussi dans le dictionnaire des transcriptions manuelles
                     if transcriptions[filename].get(id):
                         # On récupère l'élément String pour chaque ligne de la prédiction
-                        prediction = xml.xpath(f"//alto:TextLine[@ID='{id}']/alto:String", namespaces=nsmap)
-                        prediction = prediction[0]
+                        txt = xml.xpath(f"//alto:TextLine[@ID='{id}']/alto:String", namespaces=nsmap)
+                        txt = txt[0]
                         # On remplace la valeur de l'attribut @CONTENT par la transcription manuelle
-                        prediction.attrib['CONTENT'] = transcriptions[filename][id]
+                        txt.attrib['CONTENT'] = transcriptions[filename][id]
                 
                 # On écrit l'arbre dans un fichier de sortie du même nom que le fichier d'entrée
-                xml.write(XMLaCORRIGER + filename, method="xml", pretty_print=True, xml_declaration=True,
+                xml.write(prediction + filename, method="xml", pretty_print=True, xml_declaration=True,
                           encoding="UTF-8")
 
 
