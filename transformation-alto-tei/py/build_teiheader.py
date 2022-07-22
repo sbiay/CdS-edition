@@ -1,6 +1,5 @@
 from py.default_teiheader import DefaultTree
 from lxml import etree
-from py.full_teiheader import FullTree
 
 NS = {"s":"http://www.loc.gov/zing/srw/", "m":"info:lc/xmlns/marcxchange-v2"}
 

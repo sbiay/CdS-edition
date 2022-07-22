@@ -2,7 +2,6 @@ import click
 import json
 import os
 import shutil
-from lxml import etree
 
 
 @click.command()

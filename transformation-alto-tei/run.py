@@ -1,7 +1,6 @@
 import click
 from collections import namedtuple
 from pathlib import Path
-#from datetime import datetime
 from time import perf_counter
 
 import yaml

@@ -1,12 +1,7 @@
-import json
-import os
 import csv
-from py.iiif_data import IIIF_API
-from py.sru_data import SRU_API
 from py.build_teiheader import teiheader
 from py.build_sourcedoc import sourcedoc
 from py.build_body import body
-from py.segment import segment
 from py.text_data import Text
 from py.tags_dict import Tags
 from py.cdsFonctions import triFichiers, selectionBlocs

@@ -1,4 +1,3 @@
-from py.tags_dict import Tags
 from py.format_files import Files
 from py.sourcedoc_attributes import Attributes
 from py.surface_and_desc import SurfaceTree

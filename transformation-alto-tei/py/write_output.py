@@ -7,5 +7,9 @@ class Write:
 
     def write(self):
         with open(f'data/{self.d}.xml', 'wb') as f:
-                etree.ElementTree(self.r).write(f, encoding="utf-8", xml_declaration=True, pretty_print=True)
+                etree.ElementTree(self.r).write(
+                    f, 
+                    encoding="utf-8", 
+                    xml_declaration=True, 
+                    pretty_print=True)
             
