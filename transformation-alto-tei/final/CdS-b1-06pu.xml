@@ -354,9 +354,18 @@
           <pb corresp="#CdS02_Konv002-03_0072"/>
           <fw type="letterhead"><lb corresp="#CdS02_Konv002-03_0072_z1_l1"/>1824<lb corresp="#CdS02_Konv002-03_0072_z1_l2"/>(de Mr. Rigaud</fw>
           <title><lb corresp="#CdS02_Konv002-03_0072_z2_l1"/>Lettre<lb corresp="#CdS02_Konv002-03_0072_z2_l3"/>A Mme la Princesse de Salm</title>
-          <note><lb corresp="#CdS02_Konv002-03_0072_z2_l2"/>(Cor. génle. (n° 20)</note>
+          <dateline><lb corresp="#CdS02_Konv002-03_0072_z2_l5"/>Paris, ce 21 Juin, 1824.</dateline>
+          <note><lb corresp="#CdS02_Konv002-03_0072_z2_l2"/>(<choice><abbr>Cor.</abbr><expan>Correspondance</expan></choice> <choice><abbr>gén<hi rend="superscript">le</hi>.</abbr><expan>générale</expan></choice> (n° 20))</note>
         </opener>
-        <p><lb corresp="#CdS02_Konv002-03_0072_z2_l4"/>Madame, j'ai reçu le joli cadeau et l'aimable billet que vous avez<!--Mention de date mal placée dans l'ordre des lignes--><lb corresp="#CdS02_Konv002-03_0072_z2_l5"/>Paris, ce 21 Juin, 1824.<lb corresp="#CdS02_Konv002-03_0072_z2_l6"/>bien voulu m'adresser le 2 de ce mois. Je vous prie d'en recevoir mes<lb corresp="#CdS02_Konv002-03_0072_z2_l7"/>très humbles remercimens. La vérité n'est pas toujours aussi bien recompensée<lb corresp="#CdS02_Konv002-03_0072_z2_l8"/>J'ai lu les 24 heures, et dans un beau moment je me mis dit : pour-<lb corresp="#CdS02_Konv002-03_0072_z2_l9"/>quoi ne mettrait on pas ces lettres en vers ? mais en y refléchissant<lb corresp="#CdS02_Konv002-03_0072_z2_l10"/>j'ai senti combien il serait témeraire d'attaquer la prose de Telema-<lb corresp="#CdS02_Konv002-03_0072_z2_l11"/>que et de Julie.<lb corresp="#CdS02_Konv002-03_0072_z2_l12"/>Sans doute, Madame, qu'après la belle saison vous reviendrez à<lb corresp="#CdS02_Konv002-03_0072_z2_l13"/>Paris. J'espère d'avoir l'honneur de vous témoigner de vive voix<lb corresp="#CdS02_Konv002-03_0072_z2_l14"/>toute ma reconnaissance.<lb corresp="#CdS02_Konv002-03_0072_z2_l15"/>Je puis avec respect, Madame,</p>
+        <p>
+          <lb corresp="#CdS02_Konv002-03_0072_z2_l4"/>Madame, j'ai reçu le joli cadeau et l'aimable billet que vous avez<lb corresp="#CdS02_Konv002-03_0072_z2_l6"/>bien voulu m'adresser le 2 de ce mois. Je vous prie d'en recevoir mes<lb corresp="#CdS02_Konv002-03_0072_z2_l7"/>très humbles remercimens. La vérité n'est pas toujours aussi bien recompensée.
+          </p>
+        <p>
+          <lb corresp="#CdS02_Konv002-03_0072_z2_l8"/>J'ai lu les 24 heures, et dans un beau moment je me mis dit : pour-<lb corresp="#CdS02_Konv002-03_0072_z2_l9"/>quoi ne mettrait on pas ces lettres en vers ? mais en y refléchissant<lb corresp="#CdS02_Konv002-03_0072_z2_l10"/>j'ai senti combien il serait témeraire d'attaquer la prose de Telema-<lb corresp="#CdS02_Konv002-03_0072_z2_l11"/>que et de Julie.
+        </p>
+        <p>
+          <lb corresp="#CdS02_Konv002-03_0072_z2_l12"/>Sans doute, Madame, qu'après la belle saison vous reviendrez à<lb corresp="#CdS02_Konv002-03_0072_z2_l13"/>Paris. J'espère d'avoir l'honneur de vous témoigner de vive voix<lb corresp="#CdS02_Konv002-03_0072_z2_l14"/>toute ma reconnaissance.<lb corresp="#CdS02_Konv002-03_0072_z2_l15"/>Je puis avec respect, Madame,
+        </p>
         <closer>
           <signed><lb corresp="#CdS02_Konv002-03_0072_z2_l16"/>Votre très humble<lb corresp="#CdS02_Konv002-03_0072_z2_l17"/>et très obeissant Serviteur<lb corresp="#CdS02_Konv002-03_0072_z2_l18"/>(Signé) Rigaud.</signed>
         </closer>
