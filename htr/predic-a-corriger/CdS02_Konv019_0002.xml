@@ -245,14 +245,14 @@
           
           <TextLine ID="eSc_line_9ad93ff1" TAGREFS="LT33" BASELINE="2529 220 2731 220" HPOS="2529" VPOS="220" WIDTH="202" HEIGHT="0">
             
-	    <String CONTENT="" HPOS="2529" VPOS="220" WIDTH="202" HEIGHT="0"/>
+	    <String CONTENT="Corps Lég." HPOS="2529" VPOS="220" WIDTH="202" HEIGHT="0"/>
           </TextLine>
 
           
           
           <TextLine ID="eSc_line_37041969" TAGREFS="LT33" BASELINE="2532 290 2653 290" HPOS="2532" VPOS="290" WIDTH="121" HEIGHT="0">
             
-	    <String CONTENT="" HPOS="2532" VPOS="290" WIDTH="121" HEIGHT="0"/>
+	    <String CONTENT="Codes" HPOS="2532" VPOS="290" WIDTH="121" HEIGHT="0"/>
           </TextLine>
 
           
@@ -264,7 +264,7 @@
           
           <TextLine ID="eSc_line_764593da" TAGREFS="LT33" BASELINE="2894 223 3443 223" HPOS="2894" VPOS="223" WIDTH="549" HEIGHT="0">
             
-	    <String CONTENT="" HPOS="2894" VPOS="223" WIDTH="549" HEIGHT="0"/>
+	    <String CONTENT="1804 ou 1805" HPOS="2894" VPOS="223" WIDTH="549" HEIGHT="0"/>
           </TextLine>
 
           
@@ -276,7 +276,7 @@
           
           <TextLine ID="eSc_line_99baa6cf" TAGREFS="LT33" BASELINE="2294 2781 2654 2778" HPOS="2290" VPOS="2717" WIDTH="361" HEIGHT="109">
             <Shape><Polygon POINTS="2292 2814 2404 2814 2416 2824 2416 2826 2418 2826 2421 2826 2423 2826 2651 2816 2651 2777 2644 2717 2290 2732 2292 2779"/></Shape>
-	    <String CONTENT="-" HPOS="2290" VPOS="2717" WIDTH="361" HEIGHT="109"/>
+	    <String CONTENT="non copié" HPOS="2290" VPOS="2717" WIDTH="361" HEIGHT="109"/>
           </TextLine>
 
           

@@ -217,7 +217,7 @@
           
           <TextLine ID="eSc_line_c6989621" TAGREFS="LT33" BASELINE="2701 196 3711 196" HPOS="2701" VPOS="196" WIDTH="1010" HEIGHT="0">
             
-	    <String CONTENT="" HPOS="2701" VPOS="196" WIDTH="1010" HEIGHT="0"/>
+	    <String CONTENT="Lettres de Mr Mr. Martini" HPOS="2701" VPOS="196" WIDTH="1010" HEIGHT="0"/>
           </TextLine>
 
           
@@ -229,7 +229,7 @@
           
           <TextLine ID="eSc_line_2ee97b11" TAGREFS="LT33" BASELINE="2319 2779 2714 2779" HPOS="2316" VPOS="2707" WIDTH="397" HEIGHT="112">
             <Shape><Polygon POINTS="2316 2777 2316 2816 2710 2819 2713 2777 2713 2730 2631 2727 2629 2725 2604 2707 2601 2707 2599 2707 2596 2707 2490 2712 2487 2712 2485 2712 2485 2715 2480 2717 2470 2727 2440 2717 2418 2710 2415 2710 2413 2710 2410 2710 2401 2715 2381 2725 2316 2712 2316 2777"/></Shape>
-	    <String CONTENT="-" HPOS="2316" VPOS="2707" WIDTH="397" HEIGHT="112"/>
+	    <String CONTENT="non copié" HPOS="2316" VPOS="2707" WIDTH="397" HEIGHT="112"/>
           </TextLine>
 
           
@@ -241,7 +241,7 @@
           
           <TextLine ID="eSc_line_a03be622" TAGREFS="LT33" BASELINE="3932 193 4320 257" HPOS="3932" VPOS="193" WIDTH="388" HEIGHT="64">
             
-	    <String CONTENT="" HPOS="3932" VPOS="193" WIDTH="388" HEIGHT="64"/>
+	    <String CONTENT="Arc de Triomphe" HPOS="3932" VPOS="193" WIDTH="388" HEIGHT="64"/>
           </TextLine>
 
           
@@ -255,14 +255,14 @@
           
           <TextLine ID="eSc_line_454d6789" TAGREFS="LT33" BASELINE="3822 299 3980 278" HPOS="3822" VPOS="278" WIDTH="158" HEIGHT="21">
             
-	    <String CONTENT="" HPOS="3822" VPOS="278" WIDTH="158" HEIGHT="21"/>
+	    <String CONTENT="[......]" HPOS="3822" VPOS="278" WIDTH="158" HEIGHT="21"/>
           </TextLine>
 
           
           
           <TextLine ID="eSc_line_8c7baac3" TAGREFS="LT33" BASELINE="3834 360 3998 324" HPOS="3834" VPOS="324" WIDTH="164" HEIGHT="36">
             
-	    <String CONTENT="" HPOS="3834" VPOS="324" WIDTH="164" HEIGHT="36"/>
+	    <String CONTENT="rentables" HPOS="3834" VPOS="324" WIDTH="164" HEIGHT="36"/>
           </TextLine>
 
           
