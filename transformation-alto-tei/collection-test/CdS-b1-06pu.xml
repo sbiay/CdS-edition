@@ -17,7 +17,7 @@
         <availability status="restricted" n="CC BY-NC-ND 4.0">
           <licence target="https://creativecommons.org/licenses/by-nc-nd/4.0/"/>
         </availability>
-        <date when="2022-07-21"/>
+        <date when="2022-07-22"/>
       </publicationStmt>
       <seriesStmt>
         <title>La correspondance de Constance de Salm (1767-1845)</title>
@@ -34,7 +34,20 @@
         </respStmt>
       </seriesStmt>
       <sourceDesc>
-        <p>Nativement numérique.</p>
+        <biblStruct>
+          <analytic>
+            <title>CdS/02_3/072</title>
+            <idno>https://constance-de-salm.de/archiv/#/document/8908</idno>
+          </analytic>
+          <monogr>
+            <title>Die Korrespondenz der Constance de Salm (1767-1845). Inventar des Fonds Salm der Société des Amis du Vieux Toulon et de sa Région und des Bestands Constance de Salm im Archiv Schloss Dyck (Mitgliedsarchiv der Vereinigten Adelsarchive im Rheinland e.V.). Elektronische Edition</title>
+            <imprint>
+              <publisher>DHI Paris</publisher>
+              <pubPlace>Paris</pubPlace>
+              <date>2021</date>
+            </imprint>
+          </monogr>
+        </biblStruct>
       </sourceDesc>
     </fileDesc>
     <profileDesc>
