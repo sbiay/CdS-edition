@@ -80,20 +80,26 @@ class XMLTEI:
 
         # SÉLECTIONNER LES LIGNES PERTINENTES
         lignesPertinentes = selectionBlocs(self=self, donnees=donnees)
+                
+        text = Text(self.root)
+        sourcedoc = text.data
+        
         # Si aucune ligne n'a été trouvée
         if lignesPertinentes is None:
             # La fonction est interrompue
             securite = True
             return donnees, securite
-        
-        text = Text(self.root)
-        sourcedoc = text.data
-        
+
         # On élimine du contenu les lignes dont l'identifiant n'est pas dans lignesPertinentes
         contenu = []
-        for ligne in sourcedoc:
-            if ligne[7] in lignesPertinentes:
-                contenu.append(ligne)
+        # Si l'on n' pas trouvé de ligne de titre
+        if not lignesPertinentes:
+            contenu = text.data
+        else:
+            for ligne in sourcedoc:
+                if ligne[7] in lignesPertinentes:
+                    contenu.append(ligne)
+
 
         # IMPLÉMENTER LES ÉLÉMENTS
         body(root=self.root, data=contenu)

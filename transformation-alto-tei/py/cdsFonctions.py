@@ -88,6 +88,10 @@ def selectionBlocs(self, donnees):
                 f"//alto:TextBlock[@TAGREFS='{codeMain}'][child::alto:TextLine[@TAGREFS='"
                 f"{codeTitre}']][position()={positionTitre}]", namespaces=nsmap)
             
+            # Si l'on ne trouve pas de titre
+            if not zoneTitre:
+                return []
+            
             idTitre = zoneTitre[0].xpath(f"@ID", namespaces=nsmap)
             idTitre = str(idTitre[0])
             # On récupère le header éventuel dans le bloc précédent
