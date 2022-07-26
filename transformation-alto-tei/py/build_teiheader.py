@@ -81,7 +81,7 @@ def teiheader(metadata, document, root, count_pages):
     idno.text = metadata["URL"]
     monogr = etree.SubElement(biblStruct, "monogr")
     title = etree.SubElement(monogr, "title")
-    title.text = "Die Korrespondenz der Constance de Salm (1767-1845). Inventar des Fonds Salm der Société des Amis du Vieux Toulon et de sa Région und des Bestands Constance de Salm im Archiv Schloss Dyck (Mitgliedsarchiv der Vereinigten Adelsarchive im Rheinland e.V.). Elektronische Edition"
+    title.text = "La correspondance de Constance de Salm (1767-1845). Inventaire du fonds Salm de la Société des Amis du Vieux Toulon et de sa Région et du fonds Constance de Salm, Archiv Schloss Dyck (Mitgliedsarchiv der Vereinigten Adelsarchive im Rheinland e.V.). Édition numérique"
     imprint = etree.SubElement(monogr, "imprint")
     publisher = etree.SubElement(imprint, "publisher")
     pubPlace = etree.SubElement(imprint, "pubPlace")
