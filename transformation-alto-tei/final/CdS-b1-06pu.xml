@@ -86,7 +86,7 @@
             points="517,315 517,317 399,344 412,387 426,435 553,380 614,387 619,387 621,387 623,387 673,371 657,312 635,253 542,281 539,281 539,283 537,283 530,294 526,299 530,315"
             source="./CdS-b1-06pu/CdS02_Konv002-03_0072.jpg" corresp="eSc_line_b7c40c50">
             <path xml:id="CdS02_Konv002-03_0072_z1_l2_p" points="415,390 659,314"/>
-            <line xml:id="CdS02_Konv002-03_0072_z1_l2_t">(de Mr. Rigaud</line>
+            <line xml:id="CdS02_Konv002-03_0072_z1_l2_t">(de Mr. Rigaud)</line>
           </zone>
         </zone>
         <zone xml:id="CdS02_Konv002-03_0072_z2" type="MainZone" subtype="none" n="none"
@@ -536,7 +536,7 @@
         <opener>
           <pb corresp="#CdS02_Konv002-03_0072"/>
           <fw type="letterhead"><lb corresp="#CdS02_Konv002-03_0072_z1_l1"/>1824<lb
-              corresp="#CdS02_Konv002-03_0072_z1_l2"/>(de Mr. Rigaud</fw>
+              corresp="#CdS02_Konv002-03_0072_z1_l2"/>(de Mr. Rigaud)</fw>
           <title><lb corresp="#CdS02_Konv002-03_0072_z2_l1"/>Lettre<lb
               corresp="#CdS02_Konv002-03_0072_z2_l3"/>A Mme la Princesse de Salm</title>
           <dateline><lb corresp="#CdS02_Konv002-03_0072_z2_l5"/>Paris, ce 21 Juin, 1824.</dateline>
