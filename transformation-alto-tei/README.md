@@ -12,5 +12,7 @@ La mise en oeuvre concrète est expliquée dans les *notebooks* de ce dossier :
 
 # Contenu des dossiers :
 - [collection-test](./collection-test/) contient une série d'encodages réalisés de manière automatique à partir de différents dossiers
+- [demo/](./demo) contient les images qui illustrent les *notebooks*.
 - **import-\*/** contiennent des fichiers ALTO et leurs images, ainsi que les fichiers **donnees.json** indispensables à la transformation
+- [final/](./final) contient une série d'encodages finalisés manuellement
 - [py/](./py) contient les scripts nécessaires à la transformation
