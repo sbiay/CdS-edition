@@ -28,7 +28,7 @@
 \usepackage[nottoc]{tocbibind}% Pour ajouter la biblio à la TDM sans numérotation de chapitre
 
 % Bibliographie
-\usepackage[backend=biber, sorting=nyt, style=enc,maxbibnames=10]{biblatex}
+\usepackage[backend=biber, sorting=nyt, style=enc, maxbibnames=10]{biblatex}
 \addbibresource{./biblio.bib}
 \defbibnote{sources-cds}{Cette liste contient les cotes de l'inventaire numérique de la correspondance, \cite{KorrespondenzConstanceSalm2022}~:}
 
@@ -48,6 +48,7 @@
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut Paris}
 \newacronym{enc}{ENC}{École nationale des chartes}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften}
+\newacronym{galcor}{Gallic(orpor)a}{Gallic(orpor)a (projet financé par Huma-Num et le BnF DataLab)}
 \newacronym{htr}{HTR}{\textit{Handwritten Text Recognition}}
 \newacronym{json}{Json}{\textit{JavaScript Object Notation} (format standard de représentation de données structurées)}
 \newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
@@ -67,7 +68,10 @@
 \usepackage{csquotes}
 
 % Blocs de code
-%\usepackage{minted}% [cache=false] fait disparaître le message d'erreur mais le contenu ne s'affiche plus
+\usepackage[cache=false]{minted}%  fait disparaître le message d'erreur mais le contenu ne s'affiche plus
+%\usepackage{pifont}
+
+
 
 % Schéma d'arborescence de dossiers
 \usepackage[edges]{forest}
@@ -131,7 +135,9 @@
 	
 		\section*{Objectifs}
 			\addcontentsline{toc}{section}{Objectifs}
-			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}\footnote{La \textit{Text Encoding Initiative} propose des principes pour l'encodage des textes ainsi qu'un format standard pour l'échange des données textuelles. Depuis le début des années 2000 sa syntaxe est fondée sur le langage \gls{xml}. Cf.~\cite{TEITextEncoding}}. On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
+			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}. 
+			
+			On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
 			
 			Il s'agit en particulier d'identifier les points de difficulté que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format \gls{tei}. 
 			
@@ -582,7 +588,7 @@
 				séparer les mots (\textit{tokenization}) lorsque la langue de la source
 				atteste beaucoup d'agglutinations\footcite{stoklbenezraHTRCriticalEdition2022}, etc. En bout de chaîne, le
 				développement de modèles de publication, comme a pu l'illustrer le
-				projet Gallicorpora\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
+				projet \gls{galcor}\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
 				n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les
 				prochaines années.
 				
@@ -719,6 +725,7 @@
 				Il va de soi que la chaîne de traitement peut être conduite sans tenir compte de cette étape de sélection des pièces. Si le parti devait être pris de transcrire l'intégralité d'un recueil sans distinction des pièces inventoriées et de celles qui ne le sont pas, il suffirait simplement de passer outre cette étape.
 				
 				La sélection des pièces est donc une étape importante du début de la chaîne de traitement que l'on a élaborée dans le cadre de ce stage. Un \textit{notebook} lui a été consacré\footcite{biayPreparerTraitementDossier2022}. Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images qui sont associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier \gls{json} qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice
+				\label{donnees-images}
 				\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
 				
 				Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire. Dans le cas spécifique illustré par la figure \ref{non-invent-58} d'une image contenant un mélange de pièces inventoriées et de pièces non inventoriées, c'est au stade de la segmentation que l'élimination des lettres non inventoriées est proposée (voir \textit{infra}, p.~\ref{controle-segmentation-lettres-inventoriees}).
@@ -742,8 +749,7 @@
 				En effet, pour approfondir ce dernier point, la communauté active autour du développement et de l'utilisation de l'interface eScriptorium (elle même fondée sur le logiciel libre Kraken\footcite{KrakenDocumentation}), promeut les principes de la science ouverte de multiples manières (développement \textit{open-source}, respects de standards des formats numériques, ouverture des données de modèles, de vérités de terrain, développement d'outils auxiliaires à la transcription, à la gestion de fichiers, propositions de standards d'annotation). La possibilité de réutiliser et modifier librement le code source garantit une grande pérennité d'utilisation de ces applications et donc pour les projets qui y font appel. Un projet dépendant d'un écosystème logiciel clos tel que Transkribus court en effet le risque de ne plus pouvoir être mené en cas de défaillance de cet écosystème. Un logiciel libre installé localement pourra en revanche être maintenu et réparé, et le projet de se poursuivre une fois l'écueil franchi.
 				
 				L'ouverture des données (en particulier des données d'entraînement des modèles) est également décisive pour une politique de science ouverte appliquée à l'apprentissage machine. Cette technologie repose sur la consitution de données d'entraînement. Il en découle naturellement que ces données déterminent, conditionnent les résultats obtenus par les modèles entraînés (quelles images ont été choisies, quels textes ont été transcrits pour parvenir à tel résultat). Pour comprendre le fonctionnement de ces modèles et leurs performances, il faut donc disposer d'une archive des données d'entraînement~; celles-ci doivent être exposées de manière transparente, et ainsi pouvoir être critiquées, analysées ou réutilisées. Ainsi, le logiciel Kraken permet (techniquement) et la communauté eScriptorium encourage (politiquement) la publication et le partage des vérités de terrain (qui sont les véritables données brutes d'entraînement) ainsi que des modèles eux-mêmes\footcite{chagueHTRUnitedMutualisonsVerite2021}.
-				%AVOIR
-				% Dimension écologique : L'apprentissage machine est un processus long et gourmand en énergie, il est donc essentiel de pouvoir en partager les bénéfices ; or il n'est pas possible d'exporter un modèle entraîné sur Transkribus
+				%COMPLPOS Dimension écologique : L'apprentissage machine est un processus long et gourmand en énergie, il est donc essentiel de pouvoir en partager les bénéfices ; or il n'est pas possible d'exporter un modèle entraîné sur Transkribus
 				
 				On peut ajouter à cette considération sur le transparence des données le haut degré de souplesse requis par les projets d'édition scientifique. Que l'on prenne en considération les spécificités des sources éditées, les critères d'édition choisis par les chercheurs ou encore les finalités de ces projets, ces derniers impliquent une multiplicité de décisions incompatibles avec l'utilisation de solutions logicielles clé en main. Les besoins particuliers de la recherche sont ainsi beaucoup mieux servis par l'emploi de briques logicielles indépendantes, modulables, entre lesquelles peuvent s'échanger les données dans des standards bien établis, plutôt que par le recours à des suites logicielles performantes mais aux fonctionnalités déterminées par une communauté de développement extérieure au projet. Le risque est en effet immense de devoir reconsidérer les attendus du projets à la découverte soudaine d'une fonctionnalité manquante ou plus souvent encore de l'impossibilité de personnaliser un mode d'expression des données\footcite{stokesEScriptoriumVREManuscript2021}.
 				
@@ -981,8 +987,7 @@
 				
 		\section{La reconnaissance des caractères}
 			Comme énoncé plus haut, les résultats probants obtenus par le projet \gls{lectaurep} en suivant l'option d'entraînement d'un modèle mixte pour l'ensemble des écritures (plutôt qu'une série de modèles propres à une seule main) ont orienté notre démarche \footcite{chagueCreationModelesTranscriptiona}.
-			%AVOIR
-			% DIRE que ce que je fais avec mon stage : c'est PERSONNALISER sur les écritures de CDS.
+			%AVOIR Dire que ce que je fais avec mon stage : c'est PERSONNALISER sur les écritures de CDS.
 			
 			Les caractéristiques paléographiques des recueils de correspondance traités à l'occasion de ce stage apportaient un argument supplémentaire en ce sens. Les dossiers qui constituent l'archive de la correspondance de \gls{cds} réunissent des documents écrits par plusieurs mains. Dans les cas les plus fréquents, chaque écriture est attestée sur une partie cohérente de recueil. Mais on a également pu constater que certaines écritures sont attestées de manière sporadique, en particulier dans les recueils de copies\footnote{C'est tout particulièrement le cas de la main dénommée mainCdS02\_Konv002\_03, sporadiquement attestée dans plusieurs recueils de la seconde copie des lettres~; la reproduction photographique d'un échantillon de cet écriture ainsi que la liste des fichiers où elle a pu être identifiée se trouvent sur la page \textit{Mains} du dépôt du projet (\cite{biayMains2022}).}. Il était dès lors impossible d'envisager entraîner des modèles particuliers pour chaque écriture en découpant les dossiers par grandes zones.
 			
@@ -1275,17 +1280,203 @@
 				En outre, une différence de conception sépare le nouveau dictionnaire généraliste du dictionnaire des formes relevées dans la correspondance. Pour les besoins de la correction des transcriptions automatiques, il était utile, dans le dictionnaire de la correspondance, de considérer comme une forme unique deux mots reliés par une élision (\textit{j'ai}, \textit{l'on}, etc.). En effet, la reconnaissance automatique d'écriture peut facilement ne pas voir l'élision d'un mot (il transcrit alors \textit{jai}, \textit{lon}), d'où le besoin de corriger fréquemment ce problème en prenant les deux mots comme un tout. Dans le nouveau dictionnaire généraliste, les élisions sont traitées comme deux formes distinctes, et donc séparées. Cette discordance entre dictionnaire généraliste et dictionnaire de la correspondance avait pour inconvénient que, si la correction automatique de \textit{effvoi} en \textit{effroi} fonctionnait bien, en revanche la forme \textit{l'effvoi} avec son élision ne pouvait pas être automatiquement mise en relation avec le mot \textit{effroi}. Il y a été remédié sans modifier la conception spécifique de chaque dictionnaire, mais simplement en ignorant les élisions au moment de l'analyse des mots par le script SpellcheckTexts
 				\footcite{biaySpellcheckTextsPy2022}.
 				
-				%AVOIR
-				% Développement possible du dictionnaire : faire un entraînement artificiel qui ajoute des formes non accentuées des mots (neutralisation du problème de l'accentuation) : risque certes de créer des formes non attestées
-				
-				\begin{figure}[!h]
-					\centering
-					\includegraphics[width=15cm]{schema/build-body.png}
-					\caption{LEGENDE}
-					\label{}
-				\end{figure}
-				
-				
+				%COMPLPOS Développement possible du dictionnaire : faire un entraînement artificiel qui ajoute des formes non accentuées des mots (neutralisation du problème de l'accentuation) : risque certes de créer des formes non attestées
+			
+	\chapter[Transformation TEI]{Transformation des transcriptions automatiques en édition XML-TEI}
+	
+		L'étape finale de la chaîne de traitement consiste à transformer les transcriptions automatiques en édition nativement numérique. Le format d'édition privilégié est la \gls{tei}. 
+		
+		La \textit{Text Encoding Initiative}, communauté scientifique qui donne son nom au format \gls{tei}, propose des principes pour l'encodage des textes ainsi qu'un format standard pour l'échange des données textuelles\footcite{TEITextEncoding}. Depuis le début des années 2000, sa syntaxe est fondée sur le langage \gls{xml}. Fondée aux États-Unis, cette communauté est internationale. Sa vocation à permettre l'encodage de tous les types de textes est à l'origine des innombrables possibilités offertes par le format \gls{tei}. Dès lors, l'objectif d'exprimer une édition numérique scientifique (avec des critères nécessairement élaborés), dans un format partagé, repose sur l'adoption d'usages communs et, en fin de compte, la restriction des possibles de la \gls{tei} pour le type de document traité. 
+		
+		La ressource en ligne \textit{Encoding Correspondence}\footcite{dumontEncodingCorrespondenceManual2019} propose un ensemble de solutions d'encodage pour les écrits de correspondance. Ces solutions ont été adoptées dans le cadre du projet \gls{dahn} pour l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauEncodingXMLTree2020}. À la faveur de ce travail, F.~Chriffoleau a produit un guide d'encodage fonctionnel (\textit{guidelines})\footcite{chiffoleauCorrespondenceGuidelines2022} au format \gls{tei}. C'est sur la base de cette documentation que l'encodage \gls{tei} pour la correspondance de \gls{cds} a été élaboré.
+		
+		Si l'encodage représente la forme finale que l'on souhaite donner à l'édition, y parvenir suppose un ensemble d'opérations qu'il s'agissait d'automatiser autant que possible, un certain nombre de tâches d'encodage final devant nécessairement être effectué manuellement en bout de chaîne.
+		
+		Cette partie détaille les phases de la transformation des transcriptions obtenues par \gls{htr}. Il a dans un premier temps fallu procéder à un choix technologique~: celui du projet qui allait pouvoir servir de modèle.
+		
+		\section{Choisir un projet-modèle}
+			
+			Deux solutions concurrentes ont pu être envisagées grâce aux outils produits par d'autres entreprises éditoriales. Le projet \gls{dahn} avait donné naissance à un ensemble de scripts Python permettant de transformer le texte d'une lettre en encodage \gls{tei}, sélectionnant les lignes du texte selon les motifs qu'ils contiennent (patronymes, dates, signature, etc.) pour les inscrire dans les éléments correspondants du format \gls{tei}. Cette méthode avait le désavantage de ne pas permettre d'exploiter l'annotation des régions et des lignes d'écriture développée lors de la segmentation des lettres
+			\footnote{Le projet avait été mené avant qu'eScriptorium ne propose une interface permettant cette annotation sémantique.}.
+			
+			Par bonheur, un stage simultané à celui-ci, mené par Kelly Christensen, s'était attelé au développement d'une application en langage Python, Alto2tei
+			\footnote{%
+				L'application que l'on a reprise est la suivante~: \cite{christensenAltoTei2022}. Elle a elle-même été développée à partir d'une application développée par Vincent Jolivet, chef de la mission numérique de l'\gls{enc}~: \cite{jolivetAlto2tei2022}.
+			}
+			, capable de transformer une reproduction numérique de document textuel publiée sur Gallica en intégrant dans l'encodage \gls{tei} les annotations des régions et des lignes d'écritures contenues dans les transcriptions au format \gls{alto}. On pouvait dès lors envisager d'exploiter les annotations que l'on avait faites sans devoir reconstituer la structure sémantique du texte par une méthode secondaire.
+			
+			Embarquant tout le contenu structuré des transcriptions-sources, cette application offre en outre l'avantage d'inscrire de manière pérenne le résultat des transcriptions dans l'édition électronique elle-même. Elle constitue ainsi l'archive sur laquelle se fonde l'encodage et rend également possible de générer de nouveaux fichiers \gls{alto} pour les utiliser en tant que vérités de terrain
+			\footnote{Cette archive est placée dans l'élément \textsf{<sourceDoc>} du fichier \gls{tei}.}. %
+			Cette archive documente enfin le contexte de l'édition, puisque dans le cas où la ou les doubles pages attestant la lettre traitée attestent également d'autres lettres (avant ou après), c'est l'intégralité des transcriptions de ces documents qui est présentée dans cette partie du fichier \gls{tei}%
+			\footnote{Ceci n'est néanmoins valable que pour les textes inventoriés, car tenir compte également des textes non-inventoriés eut empêché l'automatisation de la construction des fichiers \gls{tei}.}.
+			
+		\section{Distribuer les fichiers de chaque lettre dans des dossiers}
+		
+			L'application Alto2tei de \gls{galcor} a été conçue pour produire un fichier \gls{tei} unique à partir d'un dossier contenant un ensemble de fichiers \gls{alto}. Il s'agissait donc dans un premier temps de distribuer, à partir d'un lot de fichiers \gls{alto} contenant les transcriptions d'une succession de lettres, de distribuer dans des dossiers distincts, les seuls fichiers pertinents pour chaque lettre, car, encore une fois, l'objectif était d'éditer chaque lettre dans un fichier \gls{tei} propre.
+			
+			Les informations nécessaires à la distribution des fichiers pouvaient être récupérées dans un fichier de données produit à une étape antérieure du travail, lorsqu'il s'agissait de sélectionner les seules images contenant des lettres inventoriées%
+			\footnote{Voir \textit{supra}, p.~\pageref{donnees-images}.}. L'extrait suivant montre parmi les notices (\textit{records}) relatives à un dossier, que la lettre ayant pour identifiant \textsf{CdS-b1-06pa} est attestée sur deux fichiers-images. Ainsi, le script que l'on a élaboré pour la distribution des fichiers\footcite{biayDistributionFichiersPy2022} crée un dossier portant le nom de l'identifiant de la lettre et place dans ce dossier les images ainsi que les fichiers \gls{alto} correspondants.
+			
+			\label{json-CdS-b1-06pa}
+			\begin{minted}[linenos=false,
+					xleftmargin=21pt]{js}
+{
+  "records": {
+    "CdS-b1-06pa": {
+      "incipit": "Madame, je me suis empressé…",
+      "URL": "https://constance-de-salm.de/archiv/#/document/8886",
+      "init_image": "CdS02_Konv002-03_0056.jpg",
+      "title_position": 3,
+      "images": [
+        "CdS02_Konv002-03_0056.jpg",
+        "CdS02_Konv002-03_0057.jpg"
+    }
+  }
+}
+			\end{minted}
+			
+			Une fois les fichiers distribués, l'application Alto2tei est capable de générer un fichier \gls{tei} pour chaque lettre. Mais l'étape suivante représente davantage de difficulté. Une fois le contenu des différents fichiers \gls{alto} intégré au fichier \gls{tei} de chaque lettre, il faut que la construction de l'élément \textsf{<text>} du fichier \gls{tei} s'opère de manière sélective, en extrayant de son contexte la lettre à éditer sans les textes des lettres voisines, comme l'explique le point suivant.
+			
+		\section{Récupérer les zones d'écritures pertinentes}
+		
+			L'exemple de la lettre \textsf{CdS-b1-06pa} permet d'illustrer les difficultés de cette étape. L'image \ref{56int} présente la double page attestant le début de la lettre (en bas à droite), tandis que l'image \ref{57int} en présente la fin (en haut à gauche).
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{img/CdS02_Konv002-03_0056.jpg}
+				\caption{Page présentant deux lettres puis le début de la lettre \textsf{CdS-b1-06pa} (notice \cite{CdS02056057}).}
+				\label{56int}
+			\end{figure}
+
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{img/CdS02_Konv002-03_0057.jpg}
+				\caption{Page présentant la fin de la lettre \textsf{CdS-b1-06pa} puis deux autres lettres.}
+				\label{57int}
+			\end{figure}
+		
+			Dans un premier temps, l'application Alto2tei importe dans l'élément \textsf{<sourceDoc>} du fichier \gls{tei} de la lettre l'intégralité du contenu des deux fichiers \gls{alto}, y compris le texte des autres lettres attestées sur les mêmes pages. Pour sélectionner le seul texte de la lettre à éditer, on s'est appuyé sur l'existence d'un titre pour chaque lettre. Ce titre a fait l'objet d'une annotation lors de la phase de segmentation et ses lignes sont donc accompagnées de l'information sémantique \textsf{HeadingLine:title}.
+			
+			Un script Python a été conçu pour intervenir dans l'application \gls{galcor} entre la construction du \textsf{<sourceDoc>} et la construction du \textsf{<text>} pour sélectionner les lignes pertinentes à éditer\footnote{Il s'agit de la fonction \textsf{selectionBlocs} dans le script \cite{biayCdsFonctionsPy2022}.}. Ce script doit récupèrer dans un premier temps une information capitale~: la position, dans la double page, du titre de la lettre à éditer. Connaissant le nombre de lettres attestées sur une même page et sachant que leurs identifiants se succèdent dans l'ordre alphanumérique, il avait été possible de calculer cette position automatiquement en générant le fichier de données dont on a montré un extrait précédemment (l'information est donnée sous la clé \textsf{title\_position})\footnote{Voir \textit{supra}, p.~\pageref{json-CdS-b1-06pa}}. On peut vérifier l'information en se reportant à l'image \ref{56int}~: le titre de la lettre d'exemple, dont le texte commence par \textit{Madame, je me suis empressé} est bien le troisième titre de la page. Le titre de la lettre ayant été localisé par sa position parmi les régions d'écriture, on procède alors à la récupération des régions d'écritures qui le suivent sur cette double page et sur la suivante, jusqu'à recontrer une nouvelle région d'écriture contenant un titre, ce qui indique qu'une nouvelle lettre est en train de commencer et que la sélection des régions pertinentes doit donc être interrompue
+			\footnote{Cette opération de sélection a été effectuée au moyen de requêtes X-path construire dans le script Python grâce à la librairie Lxml (\url{https://lxml.de/}).}. Ces régions d'écritures récupérées, on en extrait la liste des identifiants de chaque ligne, car le format \gls{alto} attribue à chaque ligne un identifiant unique. C'est cette liste d'identifiant qui a permis de poser un filtre lors de la construction de l'élément \textsf{<text>} du fichier \gls{tei} à partir du contenu de son élément \textsf{<sourceDoc>}~: l'application Alto2tei a été modifiée pour ne construire l'élément \textsf{<text>} qu'à partir des lignes dont l'identifiant a été listé comme pertinent, les autres lignes étant simplement ignorées.
+			
+			L'extrait de données suivant montre l'information structurée (correspondant à une seule ligne de texte) à partir de laquelle est effectuée la construction du \textsf{<text>}~:
+			
+			\begin{minted}{js}
+[
+  "CdS02_Konv019_0003_z1_l16",
+  "16", 
+  "recommandé à tous a part de ne point inquiéter…", 
+  "DefaultLine", 
+  "MainZone", 
+  "CdS02_Konv019_0003_z1", 
+  "CdS02_Konv019_0003", 
+  "eSc_line_f4af3b05"
+]
+			\end{minted}
+			
+			On constate que le texte de la ligne est transmis au script de construction accompagné de nombreuses métadonnées, sont l'identifiant unique de la ligne issu du fichier \gls{alto} (dernière donnée de la liste~: ici \textsf{eSc\_line\_f4af3b05}), ainsi que deux informations essentielles pour la suite des opérations~: le type de région d'écriture auquel la ligne appartient (ici \textsf{MainZone}) et le type de ligne lui-même (ici \textsf{DefaultLine}). Ces informations permettent en effet de structurer l'encodage de la lettre, comme on doit l'expliquer à présent.
+						
+		\section{Structurer l'encodage d'une lettre}
+
+			L'opération la plus délicate de la transformation \gls{tei} est la construction de l'élément \textsf{<text>} à partir des lignes filtrées comme pertinentes. Le projet \gls{galcor} ayant vocation à transformer en \gls{tei} une très large typologie de documents, il propose une structuration très générique des textes édités. En revanche, une édition de correspondance concerne une typologie de document restreinte et implique une structuration d'encodage particulière. Ainsi le texte des lettres doit être sémantiquement structuré en trois parties principales~:
+			
+			\begin{enumerate}
+				\item Un \textit{opener} contenant tous les éléments graphiques disposés visuellement au début de la lettre (en-tête, titre, date, nom de l'expéditeur, salutation)~;
+				\item Une succession de paragraphes~;
+				\item Un \textit{closer} contenant les éléments graphiques disposés visuellement en fin de lettre (salutation, signature, post-scriptum).
+			\end{enumerate}
+		
+			Le fait que le contenu de chaque ligne soit transmis au script de construction accompagné de ses métadonnées (et notamment des types de régions et de lignes associés au contenu) a permis d'automatiser cette structuration. Mais il fallait pour cela réécrire de manière profonde le script sur lequel l'application Alto2tei de \gls{galcor} reposait%
+			\footnote{Pour le script original, voir \cite{christensenBodyBuildPy2022}~; pour son adpatation au présent proje, voir \cite{biayBuildBodyPy2022}.}.
+			Cette réécriture exprime un ensemble de conditions relativement complexe, mais dont le principe général est simple~: ni le \textit{opener} ni le \textit{closer} de la lettre ne contiennent de ligne dont le type soit \textsf{DefaultLine}. Dès lors, l'énumération de chaque ligne dans l'ordre du texte permet de définir la partie dans laquelle on se situe~:
+			
+			\begin{enumerate}
+				\item Tant que l'on ne rencontre pas de \textsf{DefaultLine}, on se situe dans le \textit{opener}~;
+				\item Dès que l'on rencontre une \textsf{DefaultLine}, on se situe dans le corps de la lettre~;
+				\item Dès que l'on rencontre une mention de date, une salutation ou une signature, on se situe dans le \textit{closer} (celui-ci pouvant être éventuellement suivi par un post-scriptum).
+			\end{enumerate}
+		
+			L'arbre général des conditions de traitement des lignes est représenté par la figure \ref{cond-body}.
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{schema/build-body.png}
+				\caption{Arbre des conditions de traitements des lignes pour la construction de l'édition (image en haute définition disponible \href{https://raw.githubusercontent.com/sbiay/CdS-edition/main/documentation/schema/build-body.svg}{ici}).}
+				\label{cond-body}
+			\end{figure}
+		
+			Outre les principales parties du texte, il fallait tenir compte des éléments marginaux~: systèmes de numérotation (page, lettre), notes, annotations érudites ou d'origine, titres courants. Il n'était pas possible d'associer strictement ces éléments à leur lettre. Lorsque plusieurs pages se partagent la même lettre, la numérotation des éléments marginaux ne s'inscrit pas toujours au bon endroit dans la succession des régions d'écriture (ces éléments sont souvent rejetés en fin de numérotation). Pour que ce problème ne passe pas inaperçu, l'encodage automatique attire l'attention de l'éditeur de la façon suivante~:
+			
+			\begin{minted}{xml}
+<note type="MarginTextZone">
+  <!--Vérifier que la note corresponde à la lettre et mettre à jour le type-->
+  [transcription de la note]
+</note>
+			\end{minted}
+		
+			Enfin, une dimension importante de la complexité de l'encodage des lettres a été l'alternance présentée par certaines entre contenu prosaïque (à transformer en éléments \textsf{<p>}) et contenu versifié (à transformer en élément \textsf{lg}). Encore une fois, l'annotation des lignes permet de les traiter de la manière adéquate (\textsf{CustomLine:verse} dans le cas des parties versifiées). 
+			
+			On présente ici à titre d'exemple le résultat de l'encodage automatique d'un texte singulier dans sa constitution, car il contient un poème en tant que post-scriptum.
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{img/CdS02_Konv002-03_0059.jpg}
+				\caption{Lettre de P.-A.~Rigaud à \gls{cds} (notice \cite{CdS02059})).}
+				\label{}
+			\end{figure}
+			
+			\small
+			
+			\begin{minted}{xml}
+<div>
+  <opener>
+    <fw type="letterhead"><lb/>1824<lb/>(de Mr Rigaud)</fw>
+    <title><lb/>Lettre<lb/>A Mme la Princesse de Salm.</title>
+    <note><lb/>(Cor. génle. (n° 20)</note>
+    <dateline><lb/>Paris, ce 26 avril, 1824.</dateline>
+    <salute><lb/>Madame,</salute>
+  </opener>
+  <p><lb/>vous m'avez honoré hier, je vous evoie les vers que je me propose
+    <lb/>Pour repondre au désir que vous m'exprimez, dans la lettre dont<lb/>
+    de placer de la tête de mon volume, Si je n'ai pas mieux fait, ce n'est
+    <lb/>pas faute de bonne intention.<lb/>L'envoi que vous avez daigné me 
+    faire de votre ouvrage, prouve<lb/>que vous tenez au grand principe du 
+    Christianisme qu'il faut rendre<lb/>le bien pour le mal. J'ai l'honneur 
+    de vous remercier de ce précieux<lb/>cadeau et de me dire, avec respect, 
+    Madame,
+  </p>
+  <closer>
+    <signed><lb/>Votre très humble et très obéissant Serviteur,
+    <lb/>(Signé) Rigaud.</signed>
+  </closer>
+  <postscript>
+    <p><lb/>A Madame la Princesse Constance de Salm</p>
+    <lg>
+      <l><lb/>Si vous les protègez, ce livre et son auteur</l>
+      <l>Arriveront jusqu'au Parnasse.</l>
+      <l><lb/>De cette éminente faveur</l>
+      <l><lb/>C'est à vous que je rendrai grace.</l>
+      <l><lb/>Hélas ! que n'ai-je l'heureux don</l>
+      <l><lb/>D'ajouter à mes faibles pages</l>
+      <l><lb/>L'esprit, l'agrément, la raison</l>
+      <l><lb/>Qu'on admire dans vos ouvrage !</l>
+      <l><lb/>Mes vers seraient gravés au temple d'Apollon</l>
+    </lg>
+    <signed><lb/>(Signé) Auguste Rigaud.<!--Salut--></signed>
+  </postscript>
+  <fw corresp="#CdS02_Konv002-03_0059_z4" type="NumberingZone">
+    <lb/>214<!--Vérifier que le numéro corresponde à la lettre et 
+    mettre à jour le type : pageNum ou letterNum -->
+  </fw>
+</div>
+
+			\end{minted}
+		
+			\normalsize
+		
+		%ICI
+			
 				
 	\appendix
 	
