@@ -1384,7 +1384,7 @@
 			\begin{enumerate}
 				\item Un \textit{opener} contenant tous les éléments graphiques disposés visuellement au début de la lettre (en-tête, titre, date, nom de l'expéditeur, salutation)~;
 				\item Une succession de paragraphes~;
-				\item Un \textit{closer} contenant les éléments graphiques disposés visuellement en fin de lettre (salutation, signature, post-scriptum).
+				\item Un \textit{closer} contenant les éléments graphiques disposés visuellement en fin de lettre (salutation, signature) et qui peut éventuellement être suivi d'un post-scriptum.
 			\end{enumerate}
 		
 			Le fait que le contenu de chaque ligne soit transmis au script de construction accompagné de ses métadonnées (et notamment des types de régions et de lignes associés au contenu) a permis d'automatiser cette structuration. Mais il fallait pour cela réécrire de manière profonde le script sur lequel l'application Alto2tei de \gls{galcor} reposait%
@@ -1415,7 +1415,7 @@
 </note>
 			\end{minted}
 		
-			Enfin, une dimension importante de la complexité de l'encodage des lettres a été l'alternance présentée par certaines entre contenu prosaïque (à transformer en éléments \textsf{<p>}) et contenu versifié (à transformer en élément \textsf{lg}). Encore une fois, l'annotation des lignes permet de les traiter de la manière adéquate (\textsf{CustomLine:verse} dans le cas des parties versifiées). 
+			Une dimension importante de la complexité de l'encodage des lettres a été l'alternance présentée par certaines entre contenu prosaïque (à transformer en éléments \textsf{<p>}) et contenu versifié (à transformer en élément \textsf{lg}). Encore une fois, l'annotation des lignes permet de les traiter de la manière adéquate (\textsf{CustomLine:verse} dans le cas des parties versifiées). 
 			
 			On présente ici à titre d'exemple le résultat de l'encodage automatique d'un texte singulier dans sa constitution, car il contient un poème en tant que post-scriptum.
 			
@@ -1474,8 +1474,148 @@
 			\end{minted}
 		
 			\normalsize
+			Enfin, les corrections écrites dans l'interligne ont elles aussi été annotées de façon particulière (\textsf{InterlinearLine}), ce qui permet de les traiter dans un encodage qui exprime leur fonction de correction du texte original.
+			
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=15cm]{img/CdS02_Konv002-03_0072-detail-corr.jpg}
+				\caption{Exemple de correction interlinéaire (notice \cite{CdS02072}).}
+				\label{}
+			\end{figure}
 		
-		%ICI
+			L'encodage automatique prend la forme suivante (les balises de début de ligne ont été supprimées pour davantage de clarté)~:
+			
+			\begin{minted}{xml}
+l'éxaltation d'une âme [........] tendre et
+<!--Correction interlinéaire-->
+<choice>
+  <sic/><!--Partie laissée vide car non prédictible par le script-->
+  <corr>
+    vraiment
+  </corr>
+</choice>
+			\end{minted}
+			
+			Bien entendu, cet encodage ne constitue qu'une étape intermédiaire, laissant une partie de travail non automatisable à la responsabilité de l'éditeur, qui en l'occurrence doit préciser que la partie corrigée n'est pas lisible~:
+			
+			\begin{minted}{xml}
+l'éxaltation d'une âme 
+<choice>
+  <sic>
+    <unclear reason="illegible"/>
+  </sic>
+  <corr>
+    vraiment
+  </corr>
+</choice> tendre et
+			\end{minted}
+		
+			Le bon fonctionnement des scripts d'encodage a été testé sur une sélection de lettres, choisies pour la diversité des cas de figures qu'elles présentaient\footnote{La collection de test se trouve à l'adresse suivante~: \url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei/collection-test}.}. Il s'agissait de structurer correctement des lettres se développant sur plusieurs pages (sur deux pages ou sur plus de deux pages), mais aussi de bien distinguer plusieurs lettres écrites sur la même page, cas particulièrement fréquent dans les recueils de copies. L'automatisation de l'encodage a été testée tout particulièrement avec ces recueils de copies, documents très structurés, comportant des manchettes, des notes infrapaginales, des corrections, des textes en vers, et où les lettres se succèdent sans laisser de blanc. Il va de soi que la bonne structuration de l'encodage de ces documents complexes garantit la bonne structuration des documents plus simples. 
+			
+			Dans l'éventualité où une lettre serait dépourvue de titre, élément-clé de la méthode d'encodage que l'on a élaborée, la production de l'édition ne serait pas pour autant rendue impossible~: le contenu du texte serait encodé malgré tout, avec le texte des documents qui le précèdent ou qui le suivent sur la même page, obligeant à la suppression manuelle de ces parties.
+			
+		\section{Inscrire les métadonnées dans l'en-tête de la lettre}
+		
+			\subsection{Décrire la lettre}
+				Le projet \gls{galcor} ne traitant que des sources publiées sur Gallica, il récupère les métadonnées bibliographiques dans deux sources principales~: les manifestes 3IF\footnote{Il s'agit de fichiers au format \gls{json}. Pour un bref aperçu des principes de ce mode d'exposition des données, voir \cite{robineauComprendreIIIFInteroperabilite2016}.} des documents et le catalogue général de la \gls{bnf}.
+				
+				Les métadonnées de la correspondance de \gls{cds} ont quant à elle été publiées sur la plateforme Zenodo dans un format tabulaire\footcite{peyronnetdrydenInventarKorrespondenzConstance2021}. Il est donc aisé d'associer le fichier \gls{tei} à ses métadonnées en allant chercher dans ces tableaux l'identifiant de la lettre à éditer. Le script \textsf{build\_teiheader} de l'application Alto2tei a été modifié pour procéder à cette récupération inscrire des données choisies dans l'arborescence de l'en-tête du fichier \gls{tei}. L'inscription de ces données a lieu au niveau de l'élément \textsf{<profileDesc>}, au sein d'un sous-élément spécialement dévolu à la description des correspondances~: le \textsf{<correspDesc>}. Celui-ci comporte des éléments obligatoires (\textsf{<correspAction>}) pour la description de l'expédition (expéditeur, lieu, date) et de la réception d'une lettre.
+				
+				\small
+				\begin{minted}{xml}
+<profileDesc>
+  <correspDesc>
+    <correspAction type="sent">
+      <persName ref="https://viaf.org/viaf/121051">
+        Salm, Constance de (CdS)
+      </persName>
+      <placeName ref="https://www.geonames.org/2894637">
+        Dyck (Schloss), Gde. Jüchen
+      </placeName>
+      <date when-iso="1816-01-14">1816-01-14</date>
+    </correspAction>
+    <correspAction type="received">
+      <persName ref="n/a">Prous, Henry</persName>
+    </correspAction>
+  </correspDesc>
+</profileDesc>
+				\end{minted}
+				\normalsize
+			
+				Il convient également de donner une expression plus littéraire à ces données. C'est le rôle de l'élément titre (\textsf{<title>}) du document \gls{tei} que l'on a forgé de manière automatique, par la manipulation des chaînes de caractères du nom de l'expéditeur, du destinataire, du lieu et de la date d'expédition (avec les mentions s.l. et s.d. dans le cas de lettres sans lieu ou sans date). Il s'agissait notamment de simplifier les noms (débarassés des titres de noblesse) et de rétablir le prénom avant le patronyme, ou encore d'exprimer la date en toutes lettres. Toujours pour la même lettre (et donc à partir des mêmes données brutes), le titre a été exprimé de la façon suivante~:
+				
+				\small
+				\begin{minted}{xml}
+<title>
+  Lettre de Constance de Salm à Henry Prous (Dyck, le 14 janvier 1816)
+</title>
+				\end{minted}
+				\normalsize
+				
+				
+			\subsection{Citer la notice de l'inventaire}
+			
+				Il était également essentiel d'inscrire dans l'en-tête du fichier \gls{tei} la référence bibliographique de la notice de la lettre publiée en ligne. Cette description intervient dans l'élément \textsf{<sourceDesc>}~:
+				
+				\small
+				\begin{minted}{xml}
+<sourceDesc>
+  <biblStruct>
+    <analytic>
+      <title>CdS/19/002</title>
+      <idno>https://constance-de-salm.de/archiv/#/document/10462</idno>
+    </analytic>
+    <monogr>
+      <title>
+        La correspondance de Constance de Salm (1767-1845). 
+        Inventaire du fonds Salm de la Société des Amis du Vieux Toulon et de sa Région 
+        et du fonds Constance de Salm, Archiv Schloss Dyck (Mitgliedsarchiv 
+        der Vereinigten Adelsarchive im Rheinland e.V.). Édition numérique
+      </title>
+      <imprint>
+        <publisher>DHI Paris</publisher>
+        <pubPlace>Paris</pubPlace>
+        <date>2021</date>
+      </imprint>
+    </monogr>
+  </biblStruct>
+</sourceDesc>
+				\end{minted}
+				\normalsize
+				
+			\subsection{Renseigner les données du projet}
+			
+				Enfin, les données descriptives du projet, l'édition de la correspondance dans son ensemble, ont été décrites dans l'élément \textsf{<seriesStmt>} de la façon suivante (l'encodage des noms a été simplifié)~:
+				
+				\small
+				\begin{minted}{xml}
+<seriesStmt>
+  <title>La correspondance de Constance de Salm (1767-1845)</title>
+  <respStmt>
+    <resp>Encadrement scientifique et technique du projet</resp>
+    <persName>Anne Baillot</persName>
+    <persName>Mareike König</persName>
+    <persName>Floriane Chiffoleau</persName>
+  </respStmt>
+  <respStmt>
+    <resp>Réalisation de la chaîne de traitement</resp>
+    <persName>Sébastien Biay</persName>
+  </respStmt>
+</seriesStmt>
+				\end{minted}
+				\normalsize
+
+		\section{Finaliser l'encodage d'une lettre}
+		
+			Un certain nombre de tâches non automatisables ont fait l'objet d'une documentation fonctionnelle, exemples à l'appui\footcite{biayFinaliserEncodageLettre2022}.
+			
+			La première consiste à diviser les paragraphes. En effet, les zones d'écriture définies au moment de la \gls{segmentation} engloble les paragraphes d'une manière indistincte, et seul l'oeil humain permet de resconstituer cette structure à posteriori.
+			
+			Les corrections interlinéaires, en partie encodées automatiquement, doivent être réinsérées dans la ligne où se trouve la partie corrigée. On l'a également dit plus haut~: les notes marginales et éléments de numérotation doivent être contrôlées et parfois déplacées.
+			
+			Il n'a pas été prévu de script pour la résolution automatique des abréviations courantes, ce qui aurait été possible avec davantage de temps bien entendu. 
+			
+			D'une manière générale, l'édition numérique de la correspondance de \gls{cds}, avec les subtilités d'encodage inhérentes à ce type de travail, comme la création d'un apparat critique pour corriger le texte là où le copiste a commis des fautes manifestes, ne peut pas se satisfaire d'une simple documentation fonctionnelle. L'enjeu appelle la rédaction d'un schéma ODD (\textit{One Document Does it all}) qui établisse de manière précise et exhaustive les règles d'encodage de la correspondance et en porte la spécification technique\footnote{Une ODD joue à la fois un rôle de documentation pour les contributeurs du projet, sorte de guide d'encodage, et de validation technique des documents.}. Sa mise en œuvre étant un travail exigeant, les dimensions du stage ne permettaient pas d'atteindre cet objectif supplémentaire\footnote{On s'est contenté de finaliser manuellement l'encodage de trois petites lettres, afin de pouvoir en évaluer les possibilités d'exploitation. Cf.~\url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei/final}}.
 			
 				
 	\appendix

@@ -43,15 +43,16 @@ class DefaultTree:
         seriesStmt = etree.SubElement(fileDesc, "seriesStmt")
         title = etree.SubElement(seriesStmt, "title")
         title.text = config["responsibility"]["title"]
-        respStmt = etree.SubElement(seriesStmt, "respStmt")
-        resp = etree.SubElement(respStmt, "resp")
-        resp.text = "Encadrement scientifique et technique du projet"
-        for index, i in enumerate(config["responsibility"]["resp"]):
-            persName = etree.SubElement(respStmt, "persName")
-            forename = etree.SubElement(persName, "forename")
-            forename.text = config["responsibility"]["resp"][index]["forename"]
-            surname = etree.SubElement(persName, "surname")
-            surname.text = config["responsibility"]["resp"][index]["surname"]
+        for index, item in enumerate(config["responsibility"]["resp"]):
+            respStmt = etree.SubElement(seriesStmt, "respStmt")
+            resp = etree.SubElement(respStmt, "resp")
+            resp.text = config["responsibility"]["resp"][index]["role"]
+            for indexb, i in enumerate(config["responsibility"]["resp"][index]["persons"]):
+                persName = etree.SubElement(respStmt, "persName")
+                forename = etree.SubElement(persName, "forename")
+                forename.text = config["responsibility"]["resp"][index]["persons"][indexb]["forename"]
+                surname = etree.SubElement(persName, "surname")
+                surname.text = config["responsibility"]["resp"][index]["persons"][indexb]["surname"]
         
         # sourceDesc
         sourceDesc = etree.SubElement(fileDesc, "sourceDesc")

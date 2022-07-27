@@ -11,16 +11,33 @@ responsibility:
   title: La correspondance de Constance de Salm (1767-1845)
   # personnes responsables
   resp:
-    [ { "forename": "Anne",
-        "surname": "Baillot",
-        },
-
-      { "forename": "Mareike",
-        "surname": "König",
+    [
+      {
+        "role": "Encadrement scientifique et technique du projet",
+        "persons":[
+          {
+            "forename": "Anne",
+            "surname": "Baillot",
+          },
+          {
+            "forename": "Mareike",
+            "surname": "König",
+          },
+          {
+            "forename": "Floriane",
+            "surname": "Chiffoleau",
+          }
+        ]
       },
-      { "forename": "Floriane",
-        "surname": "Chiffoleau",
-        }
+      {
+        "role": "Réalisation de la chaîne de traitement",
+        "persons":[
+          {
+            "forename": "Sébastien",
+            "surname": "Biay",
+          }
+        ]
+      },
     ]
 
   # Institution du projet éditorial
