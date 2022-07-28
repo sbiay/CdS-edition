@@ -1,3 +1,6 @@
+\author{Sébastien Biay - M2 TNAH}
+\title{Chaîne de traîtement pour l'édition numérique de la correspondance manuscrite de Constance de Salm (1767-1845)}
+
 % Package obligatoire : type de document
 \documentclass[a4paper,12pt,twoside]{book}
 
@@ -23,7 +26,7 @@
 
 % Table des matières
 \addto\captionsfrench{
-\renewcommand*\contentsname{Contenu de la documentation}
+\renewcommand*\contentsname{Table des matières}
 }
 \usepackage[nottoc]{tocbibind}% Pour ajouter la biblio à la TDM sans numérotation de chapitre
 
@@ -123,10 +126,81 @@
 % DOCUMENT
 \begin{document}
 	
+	\begin{titlepage}
+		\begin{center}
+			
+			\bigskip
+			
+			\begin{large}				
+				ÉCOLE NATIONALE DES CHARTES\\
+				UNIVERSITÉ PARIS, SCIENCES \& LETTRES
+			\end{large}
+			\begin{center}\rule{2cm}{0.02cm}\end{center}
+			
+			\bigskip
+			\bigskip
+			\bigskip
+			\begin{Large}
+				\textbf{Sébastien Biay}\\
+			\end{Large}
+			%selon le cas
+			\begin{normalsize} \textit{Docteur ès arts}\\
+			\end{normalsize}
+			
+			\bigskip
+			\bigskip
+			\bigskip
+			
+			\begin{Huge}
+				\textbf{Chaîne de traîtement \\
+					pour l'édition numérique \\
+					de la correspondance manuscrite \\
+					de Constance de Salm (1767-1845)}\\
+			\end{Huge}
+			\vfill
+			
+			\begin{large}
+				Mémoire 
+				pour le diplôme de master \\
+				\og{} Technologies numériques appliquées à l'histoire \fg{} \\
+				\bigskip
+				2022
+			\end{large}
+			
+		\end{center}
+	\end{titlepage}
+
+	\thispagestyle{empty}	
+	\cleardoublepage
+	
+	\frontmatter
+	\chapter*{Résumé}
+		\medskip
+		Résumé du mémoire en français. Cette page ne doit pas dépasser une page.\\
+		
+		\textbf{Mots-clés~:} une liste de mots-clés~; séparés par des points-virgules.
+		
+		\textbf{Informations bibliographiques~:} Prénom Nom, \textit{Titre du mémoire. Sous-titre du mémoire}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. [Noms des directeurs], École nationale des chartes, 2022.
+		
+		\thispagestyle{empty}	
+		\cleardoublepage
+	
+	\chapter*{Remerciements}
+	
+		Mes remerciements vont tout d'abord à\dots
+		
+		\thispagestyle{empty}	
+		\cleardoublepage
+		
 	\tableofcontents
 	
-	\chapter*{Présentation}
-	\addcontentsline{toc}{chapter}{Présentation}% Ajoute à la table des matières sans numérotation
+		\thispagestyle{empty}	
+		\cleardoublepage
+		
+	\mainmatter
+	
+	\chapter*{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}% Ajoute à la table des matières sans numérotation
 	
 		\section*{Contexte}
 			\addcontentsline{toc}{section}{Contexte}
