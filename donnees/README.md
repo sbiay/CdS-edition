@@ -1,7 +1,6 @@
-Gestion des données
+Données
 ====
 
-# Fichiers de données
 - Fichiers publiés sur **Zenodo** :
     - ./20211116_Constance_de_Salm_Korrespondenz_Inventar_Briefe.csv
     - ./20211116_Constance_de_Salm_Korrespondenz_Inventar_weitere_Quellen.csv
