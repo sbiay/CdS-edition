@@ -54,6 +54,7 @@
 \newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
 \newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires (initiative conjointe du Minutier central des notaires de Paris des Archives Nationales, de l’Inria et de l’EPHE, en partenariat avec le Ministère de la Culture)}
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
+\newacronym{odd}{ODD}{\textit{One Document Does it all} (schéma de validation d'une édition nativement numérique au format \gls{tei})}
 \newacronym{segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
 \newacronym{tei}{TEI}{Text Encoding Initiative}
 \newacronym{xml}{XML}{\textit{Extensible Markup Language} (standard du W3C pour l'expression de données en arborescence)}
@@ -1615,11 +1616,49 @@ l'éxaltation d'une âme
 			
 			Il n'a pas été prévu de script pour la résolution automatique des abréviations courantes, ce qui aurait été possible avec davantage de temps bien entendu. 
 			
-			D'une manière générale, l'édition numérique de la correspondance de \gls{cds}, avec les subtilités d'encodage inhérentes à ce type de travail, comme la création d'un apparat critique pour corriger le texte là où le copiste a commis des fautes manifestes, ne peut pas se satisfaire d'une simple documentation fonctionnelle. L'enjeu appelle la rédaction d'un schéma ODD (\textit{One Document Does it all}) qui établisse de manière précise et exhaustive les règles d'encodage de la correspondance et en porte la spécification technique\footnote{Une ODD joue à la fois un rôle de documentation pour les contributeurs du projet, sorte de guide d'encodage, et de validation technique des documents.}. Sa mise en œuvre étant un travail exigeant, les dimensions du stage ne permettaient pas d'atteindre cet objectif supplémentaire\footnote{On s'est contenté de finaliser manuellement l'encodage de trois petites lettres, afin de pouvoir en évaluer les possibilités d'exploitation. Cf.~\url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei/final}}.
+			D'une manière générale, l'édition numérique de la correspondance de \gls{cds}, avec les subtilités d'encodage inhérentes à ce type de travail, comme la création d'un apparat critique pour corriger le texte là où le copiste a commis des fautes manifestes, ne peut pas se satisfaire d'une simple documentation fonctionnelle. L'enjeu appelle la rédaction d'un schéma \gls{odd} qui établisse de manière précise et exhaustive les règles d'encodage de la correspondance et en porte la spécification technique\footnote{Une ODD joue à la fois un rôle de documentation pour les contributeurs du projet, sorte de guide d'encodage, et de validation technique des documents.}. Sa mise en œuvre étant un travail exigeant, les dimensions du stage ne permettaient pas d'atteindre cet objectif supplémentaire\footnote{On s'est contenté de finaliser manuellement l'encodage de trois petites lettres, afin de pouvoir en évaluer les possibilités d'exploitation. Cf.~\url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei/final}}.
 			
 	\chapter*{Conclusion}
 		\addcontentsline{toc}{chapter}{Conclusion}% Ajoute à la table des matières sans numérotation
 		
+		La correspondance de \gls{cds} est un vaste corpus (11\,000 pièces environ), constitué de documents de nature hétérogène (originaux, brouillons, copie), en feuilles libres ou constitués en recueils, copiés par de multiples mains. Il n'était guère possible d'analyser de manière complète ces documents, que ce soit sur le plan de la mise en page, sur le plan paléographique ou sur le plan de la conservation, et cette absence d'une évaluation globale est une limite évidente aux apports de ce stage. Mais, s'il eut été trop coûteux de dresser la cartographie complète du territoire, le front pionnier que l'on y a ouvert en facilitera sans doute l'exploration de manière considérable.
+		
+		On s'est ainsi attelé à trois problèmes inhérents à toute entreprise d'édition nativement numérique d'un corpus massif~: 
+		
+		\begin{enumerate}
+			\item Analyser la mise en page des documents (par l'entraînement d'un modèle de segmentation des pages)~;
+			\item Produire un modèle capable de reconnaître simultanément les écritures de plusieurs copistes et rendre sa méthode d'entraînement réitérable~;
+			\item Structurer l'édition lettre par lettre à partir de sources où elles ont été copiées ensemble, et ce de manière automatisée.
+		\end{enumerate}
+		
+		Pour relever ces différents défis, il fallait déterminer à quel endroit ouvrir le front. On s'est principalement attaché aux documents qui sont apparus comme les plus complexes, à savoir les recueils de la seconde copie\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}~:
+		
+		\begin{enumerate}
+			\item Ce sont les documents présentant la mise en page la plus structurée (titres, manchettes)~;
+			\item Les éléments marginaux y sont nombreux (systèmes de classement par type de lettre, numérotation des pages, notes érudites)~;
+			\item Elles contiennent de nombreux documents non inventoriés~: il était donc nécessaire de trier les documents à éditer et les documents à écarter.
+		\end{enumerate}
+		
+		Aborder les documents apparaissant comme les plus complexes permet de penser que la chaîne de traitement qui a été mise en place est dotée d'une vraie robustesse, et qu'elle permettra sans mal de traiter des documents plus simples. 
+		
+		Au demeurant, toutes les difficultés de traitement des documents n'ont pas pu être prises en compte. On a notamment identifié un problème de transparence du papier dans la correspondance de J.-P.~Martini à \gls{cds}, qui mériterait de réfléchir à une méthode de pré-traitement des images\footnote{Voir par exemple la lettre \cite{CdS19054056}.}.
+		
+		L'analyse de la mise en page, par l'entraînement d'un modèle de \gls{segmentation}, n'a produit que des résultats partiels, mais encourageants. Les méthode d'entraînement sont amenées à évoluer rapidement dans les années à venir et l'on peut penser que l'approche de la \gls{segmentation} que l'on a envisagée sera rapidement dépassée. Mais cette approche a néanmoins abouti à un gain de temps réel dans le traitement des pages, seules les petites subtilités comme les mentions de date, les signatures, etc. représentant un réel problème. Malgré cet inaboutissement, il était important de ne pas sacrifier trop de temps à cette étape du travail afin de mettre en place une chaîne de traitement relativement complète, qui aboutisse à la construction de l'édition numérique au format \gls{tei}.
+		
+		L'entraînement d'algorithmes de reconnaissance des écritures manuscrites a en revanche rencontré moins de difficultés. Grâce aux apports méthodologiques et aux modèles récupérés du projet \gls{lectaurep}, d'excellents scores ont pu être obtenus avec relativement peu de données d'entraînements produites.
+		Il a un temps été envisagé d'entraîner un modèle pour reconnaître l'écriture autographe de \gls{cds}, mais la transcription de ses brouillons s'est révélée gourmande en temps, avec le risque que le résultats se révèlent mauvais. On s'est donc contenté de donner en annexe les transcriptions effectuées afin de faciliter le travail d'un futur paléographe.
+		La méthodologie de correction semi-automatisée qui a été inspirée par le projet \gls{dahn} a également été approfondie et élaborée pour parvenir à des résultats très satisfaisants en termes de fonctionnalité. Mais l'on conserve un doute sur l'utilité de ce dispositif dans le contexte d'une édition, où la relecture du texte est toujours nécessaire au moment de la réalisation de l'encodage final. Dissocier (pour l'automatiser) une partie de la correction de texte de cette phase finale est-elle vraiment rentable~? La réponse peut certes dépendre des conditions dans lesquelles est mené le projet, ce sur quoi l'on reviendra dans un instant.
+		
+		Enfin, l'on a abordé dans les dernières semaines (pour ne pas dire dans les derniers jours) du stage la phase de transformation des transcriptions automatiques en édition au format \gls{tei}. L'application Alto2tei du projet \gls{galcor} a permis un gain de temps considérable. La production d'éditions structurées a ainsi pu être menée à bien, mais le volet philologique du travail demeure incomplet, en l'absence d'une \gls{odd} en bonne et due forme, dont le \textit{Guide d'encodage pour l'édition numérique des égo-documents} du projet \gls{dahn} devrait constituer la meilleure matrice possible\footcite{chiffoleauGuideEncodagePour2022}. L'encodage pourrait en outre être poussé plus loin qu'on ne l'a fait, avec la reconnaissance des entités nommées (processus automatisable) ou la description des mains intervenant sur chaque lettre (copiste, corrections souvent effectuées par \gls{cds}, érudit).
+		
+		La chaîne de traitement que l'on a produite devrait permettre de mener efficacement l'édition numérique de la correspondance de \gls{cds} sans requérir d'importantes compétences en ingénierie ou en langages de programmation. Mais il est illusoire de penser qu'elle puisse parfaitement fonctionner pour tous les documents du corpus et que l'on puisse se l'approprier sans une bonne connaissance du XML (et de la TEI en particulier) ainsi que des notions de langage Python et d'utilisation d'un système d'exploitation Linux%
+		\footnote{On a pu tester le fonctionnement de l'application Kraken dans une machine virtuelle sous Windows, mais pas l'installation complète de la chaîne de traitement.}. %
+		La phase la plus délicate de la prise en main sera nécessairement son installation. Mais, alors qu'il nous a fallu déployer l'interface eScriptorium localement (ce qui n'a pas été simple), l'ouverture prochaine d'une instance de cette application hébergée par Paris Sciences et Lettres devrait grandement simplifier son l'accès à cet outil essentiel. 	
+		Passées les difficultés du démarrage, les phases les plus chronophages du travail éditorial resteront la correction de la \gls{segmentation} des pages, la production de vérités de terrain ou la correction des \glspl{prédiction}, ainsi que la finalisation de l'encodage, dont une liste de tâches demeurent impossibles à automatiser.
+		
+		Il pourrait être intéressant, pour le développement futur du projet, d'engager un nouveau chantier d'ingénierie pour créer une plateforme de transcription collaborative, où la prédiction brute des textes serait proposée à la correction par les contributeurs, accélérant ainsi la constitution de vérités de terrain ou la correction préalable à l'encodage en \gls{tei}… 
+		
+		La route vers une édition complète de la correspondance de \gls{cds} sera longue quoiqu'il arrive, et nous n'avons fait qu'atteindre un premier relais. Mais l'histoire des femmes de lettres suscite l'adhésion du public et des institutions, et l'adéquation entre l'\og honnête liberté \fg \footcite{CdS02045046} louée par \gls{cds} et l'esprit du temps pourrait placer ce projet éditorial sous des auspices favorables.
 		
 		%ICI
 			
