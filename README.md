@@ -5,7 +5,7 @@
 
 Ce travail vise à la mise en place d'un flux de production pour l'édition électronique nativement numérique de la correspondance de Constance de Salm (1767-1845), dont [l'inventaire](https://constance-de-salm.de/) a été dressé par le département de l'Histoire numérique de l'[Institut historique allemand à Paris (DHIP/IHA)](http://www.dhi-paris.fr/fr/page-daccueil.html).
 
-Le fichier [documentation.pdf](./documentation/documentation.pdf) donne une description complète de la méthodologie adoptée et du travail en cours.
+Le fichier [documentation.pdf](./rapportBiay/documentation.pdf) donne une description complète de la méthodologie adoptée et du travail en cours.
 
 Objectifs :
 - Procéder à une reconnaissance automatique des écritures manuscrites (voir le [dossier dédié](./htr))

@@ -29,7 +29,7 @@ La mise en oeuvre concrète est expliquée dans les notebooks de ce dossier :
 # Aide
 La consultation de ces *notebooks* suppose d'avoir suivi les consignes d'[installation](https://github.com/sbiay/CdS-edition#installation).
 
-Pour une documentation plus détaillée, on consultera le fichier [documentation.pdf](../documentation/documentation.pdf).
+Pour une documentation plus détaillée, on consultera le fichier [documentation.pdf](../rapportBiay/documentation.pdf).
 
 En cas de doute sur l'**avancement du traitement d'une source**, on peut comparer la liste des fichiers de deux dossiers à l'aide de la commande :
 ```shell

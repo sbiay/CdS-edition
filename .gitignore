@@ -30,8 +30,8 @@ bibliographie/
 compte-rendus/
 connexionFuD.txt
 consignes-rapport.md
-documentation/*csv
-documentation/img/
+rapportBiay/*csv
+rapportBiay/img/
 fdr.md
 htr/.ipynb_checkpoints/
 htr/arbo.txt
@@ -86,6 +86,7 @@ transformation-alto-tei/test/
 htr/predic-a-corriger/*jpg
 transformation-alto-tei/donnees-test-cds/
 transformation-alto-tei/import-CdS02_Konv*/*jpg
-documentation/schema/*graphml
+rapportBiay/schema/*graphml
 transformation-alto-tei/data/
 *bak
+cl.md
