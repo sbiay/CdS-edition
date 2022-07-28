@@ -170,10 +170,11 @@
 		\end{center}
 	\end{titlepage}
 
-	\thispagestyle{empty}	
+	\pagestyle{empty}	
 	\cleardoublepage
 	
 	\frontmatter
+	\pagestyle{plain}
 	\chapter*{Résumé}
 		\medskip
 		Résumé du mémoire en français. Cette page ne doit pas dépasser une page.\\
@@ -182,23 +183,26 @@
 		
 		\textbf{Informations bibliographiques~:} Prénom Nom, \textit{Titre du mémoire. Sous-titre du mémoire}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. [Noms des directeurs], École nationale des chartes, 2022.
 		
-		\thispagestyle{empty}	
-		\cleardoublepage
-	
+	\pagestyle{empty}	
+	\cleardoublepage
+
+	\pagestyle{plain}
 	\chapter*{Remerciements}
 	
 		Mes remerciements vont tout d'abord à\dots
 		
-		\thispagestyle{empty}	
-		\cleardoublepage
-		
+	\pagestyle{empty}	
+	\cleardoublepage
+	
+	\pagestyle{plain}
 	\tableofcontents
 	
-		\thispagestyle{empty}	
-		\cleardoublepage
+	\pagestyle{empty}	
+	\cleardoublepage
 		
 	\mainmatter
 	
+	\pagestyle{plain}
 	\chapter*{Introduction}
 	\addcontentsline{toc}{chapter}{Introduction}% Ajoute à la table des matières sans numérotation
 	
@@ -679,8 +683,13 @@
 				successives permet l'archivage des états intermédiaires du travail et
 				donc le contrôle de ces étapes par des projets ultérieurs ou, encore une
 				fois, le partage des données entre des projets n'ayant pas les mêmes
-				finalités\footcite{^campsCremmaLabProjectsTranscription2022}.
-			
+				finalités\footcite{campsCremmaLabProjectsTranscription2022}.
+	
+
+	\pagestyle{empty}
+	\cleardoublepage
+	\pagestyle{plain}			
+	
 	\chapter[HTR~: mise en œuvre]{Mettre en œuvre l'\gls{htr} \\ \large pour la correspondance de \gls{cds}}
 		
 		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
@@ -1356,7 +1365,11 @@
 				\footcite{biaySpellcheckTextsPy2022}.
 				
 				%COMPLPOS Développement possible du dictionnaire : faire un entraînement artificiel qui ajoute des formes non accentuées des mots (neutralisation du problème de l'accentuation) : risque certes de créer des formes non attestées
-			
+	
+	\pagestyle{empty}
+	\cleardoublepage
+	\pagestyle{plain}			
+		
 	\chapter[Transformation TEI]{Transformation des transcriptions automatiques en édition XML-TEI}
 	
 		L'étape finale de la chaîne de traitement consiste à transformer les transcriptions automatiques en édition nativement numérique. Le format d'édition privilégié est la \gls{tei}. 
@@ -1691,7 +1704,11 @@ l'éxaltation d'une âme
 			Il n'a pas été prévu de script pour la résolution automatique des abréviations courantes, ce qui aurait été possible avec davantage de temps bien entendu. 
 			
 			D'une manière générale, l'édition numérique de la correspondance de \gls{cds}, avec les subtilités d'encodage inhérentes à ce type de travail, comme la création d'un apparat critique pour corriger le texte là où le copiste a commis des fautes manifestes, ne peut pas se satisfaire d'une simple documentation fonctionnelle. L'enjeu appelle la rédaction d'un schéma \gls{odd} qui établisse de manière précise et exhaustive les règles d'encodage de la correspondance et en porte la spécification technique\footnote{Une ODD joue à la fois un rôle de documentation pour les contributeurs du projet, sorte de guide d'encodage, et de validation technique des documents.}. Sa mise en œuvre étant un travail exigeant, les dimensions du stage ne permettaient pas d'atteindre cet objectif supplémentaire\footnote{On s'est contenté de finaliser manuellement l'encodage de trois petites lettres, afin de pouvoir en évaluer les possibilités d'exploitation. Cf.~\url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei/final}}.
-			
+		
+	\pagestyle{empty}
+	\cleardoublepage
+	\pagestyle{plain}			
+		
 	\chapter*{Conclusion}
 		\addcontentsline{toc}{chapter}{Conclusion}% Ajoute à la table des matières sans numérotation
 		
@@ -1734,8 +1751,8 @@ l'éxaltation d'une âme
 		
 		La route vers une édition complète de la correspondance de \gls{cds} sera longue quoiqu'il arrive, et nous n'avons fait qu'atteindre un premier relais. Mais l'histoire des femmes de lettres suscite l'adhésion du public et des institutions, et l'adéquation entre l'\og honnête liberté \fg \footcite{CdS02045046} louée par \gls{cds} et l'esprit du temps pourrait placer ce projet éditorial sous des auspices favorables.
 		
-		%ICI
-			
+	\pagestyle{empty}
+	\cleardoublepage		
 				
 	\appendix
 	
@@ -1748,6 +1765,9 @@ l'éxaltation d'une âme
 	\addappheadtotoc% Ajoute les annexes à la table des matières
 	
 	\appendixpage % Crée une page de titre pour les annexes
+	
+	\cleardoublepage
+	\pagestyle{plain}			
 	
 	\chapter{Transcriptions \\de deux manuscrits autographes \\de C.~de Salm}
 		\label{autographes}
@@ -1886,7 +1906,9 @@ l'éxaltation d'une âme
 				n'a pas ete judicieux. […]
 				
 			\end{quotation}
-			
+	\pagestyle{empty}				
+	\cleardoublepage
+	\pagestyle{plain}					
 	
 	\chapter{Normes de transcription}
 		\label{normes-trans}
@@ -1929,8 +1951,16 @@ l'éxaltation d'une âme
 			Pour les problèmes de déchiffrement du texte, la convention de Leyde n'a pas d'autre préconisation que la mention en apparat
 			\footnote{\langue{No sigla were suggested for corruptions (i.e. letters that are legible or restorable, but not understood). Instead, it was proposed that these should be dealt with in an apparatus} (\cite{leidenConvention}).}.
 			Le choix a été fait de substituer à chaque lettre d'un mot non lu le signe †.
+
+	\pagestyle{empty}				
+	\cleardoublepage
+	\pagestyle{plain}					
       	
 	\printglossaries
+
+	\pagestyle{empty}				
+	\cleardoublepage
+	\pagestyle{plain}					
 	
 	% Bibliographie
 	% Pour afficher seulement le titre général de la bibliographie
