@@ -47,15 +47,16 @@
 \newacronym{cds}{C.~de Salm}{Constance de Salm}
 \newacronym{cg2c2v}{Corr.~g., 2e copie, 2e vol.}{long}
 \newacronym{cremma}{Cremma}{Consortium Reconnaissance d’Écriture Manuscrite des Matériaux Anciens}
-\newacronym{dahn}{DAHN}{Dispositif de soutien à l’Archivistique et aux Humanités Numériques (partenariat entre l’Inria, l’Université du Mans et l’EHESS)}
+\newacronym{dahn}{DAHN}{Dispositif de soutien à l’Archivistique et aux Humanités Numériques (partenariat entre l’\gls{inria}, l’Université du Mans et l’EHESS)}
 \newacronym{dhi}{DHIP}{Deutsches Historisches Institut, Paris}
 \newacronym{enc}{ENC}{École nationale des chartes}
 \newacronym{fud}{FuD}{Die Virtuelle Forschungsumgebung für die Geistes- und Sozialwissenschften (système de gestion de bases de données, Trèves)}
 \newacronym{galcor}{Gallic(orpor)a}{Gallic(orpor)a (projet financé par Huma-Num et le BnF DataLab)}
-\newacronym{htr}{HTR}{\textit{Handwritten Text Recognition} (reconnaissance automatique d'écriture manuscrite)}
+\newacronym{inria}{Inria}{Institut national de recherche en sciences et technologies du numérique}
+\newacronym{htr}{HTR}{reconnaissance automatique d'écriture manuscrite ou \textit{Handwritten Text Recognition}}
 \newacronym{json}{Json}{\textit{JavaScript Object Notation} (format standard de représentation de données structurées)}
 \newacronym{lai}{LAI}{Lettre Absente de l'Inventaire en ligne}
-\newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires (initiative conjointe du Minutier central des notaires de Paris des Archives Nationales, de l’Inria et de l’EPHE, en partenariat avec le Ministère de la Culture)}
+\newacronym{lectaurep}{Lectaurep}{Lecture Automatique de Répertoires (initiative conjointe du Minutier central des notaires de Paris des Archives Nationales, de l’\gls{inria} et de l’EPHE, en partenariat avec le Ministère de la Culture)}
 \newacronym{ocr}{OCR}{\textit{Optical Character Recognition}}
 \newacronym{odd}{ODD}{\textit{One Document Does it all} (schéma de validation d'une édition nativement numérique au format \gls{tei})}
 \newacronym{segmonto}{SegmOnto}{SegmOnto~: A Controlled Vocabulary to Describe the Layout of Pages}
@@ -155,7 +156,8 @@
 				\textbf{Chaîne de traîtement \\
 					pour l'édition numérique \\
 					de la correspondance manuscrite \\
-					de Constance de Salm (1767-1845)}\\
+					de Constance de Salm\\
+					(1767-1845)}\\
 			\end{Huge}
 			\vfill
 			
@@ -177,11 +179,11 @@
 	\pagestyle{plain}
 	\chapter*{Résumé}
 		\medskip
-		Résumé du mémoire en français. Cette page ne doit pas dépasser une page.\\
+		La correspondance de Constance de Salm (1767-1845), femme de lettres française, compte environ 11\,000 lettres manuscrites. Ces lettres ont été numérisées, inventoriées et publiées en ligne par l'Institut historique allemande de Paris, avec leurs métadonnées descriptives. Ce rapport de stage décrit la mise en place d'une chaîne de traitement pour l'édition des textes de cette correspondance au format XML-TEI. L'acquisition des textes a été effectuée par reconnaissance automatique des écritures manuscrites. Les documents ayant été rédigés par plusieurs copistes, une part importante du travail a consisté à entraîner un modèle générique pour la reconnaissance de ces écritures, et à documenter cette méthodologie d'entraînement spécifique. On s'est également efforcé d'entraîner un modèle de segmentation pour l'analyse de la mise en page des documents, avec un succès relatif. En dernier lieu, la chaîne de traitement permet la transformation de la prédiction automatique des textes en éditions numériques au format TEI, avec distribution automatique du contenu de chaque lettre dans un fichier propre et structuration du contenu des lettres à partir des métadonnées de segmentation.\\
 		
-		\textbf{Mots-clés~:} une liste de mots-clés~; séparés par des points-virgules.
+		\textbf{Mots-clés~:} HTR~; XML-TEI~; édition numérique~; édition de textes~; correspondance~; Constance de Salm (1767-1845)~; \siecle{xix} s.
 		
-		\textbf{Informations bibliographiques~:} Prénom Nom, \textit{Titre du mémoire. Sous-titre du mémoire}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. [Noms des directeurs], École nationale des chartes, 2022.
+		\textbf{Informations bibliographiques~:} Sébastien Biay, \textit{Chaîne de traîtement pour l'édition numérique de la correspondance manuscrite de Constance de Salm (1767-1845)}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. Mareike König, Ariane Pinche, École nationale des chartes, 2022.
 		
 	\pagestyle{empty}	
 	\cleardoublepage
@@ -206,30 +208,50 @@
 	\chapter*{Introduction}
 	\addcontentsline{toc}{chapter}{Introduction}% Ajoute à la table des matières sans numérotation
 	
-		\section*{Contexte}
+		\section*{Le contexte}
 			\addcontentsline{toc}{section}{Contexte}
-			\gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance à partir de son mariage avec de nombreux intellectuels en Allemagne, en France, en Russie.
-	
-			Le projet de publier numériquement sa correspondance est né de l'intérêt pour les relations entre noblesses française et allemande au sein du \gls{dhi}. Il en a résulté la production d'un site \textit{Wordpress} adossé au système de base de données \href{https://fud.uni-trier.de/}{\gls{fud}}. Les notices de plus de 11000 lettres, publiées sur le site \href{https://constance-de-salm.de}{constance-de-salm.de}, associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre.
-	
-		\section*{Objectifs}
+			\gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance avec de nombreux intellectuels en Allemagne, en France, en Russie, à partir de son mariage avec Joseph de Salm-Reifferscheidt-Dyck (1773-1861).
+			
+			Cette correspondance, principalement conservée dans les archives de la Société des amis du Vieux Toulon et de sa région (Toulon), a suscité l'intérêt des chercheurs du \gls{dhi} en 2010, date à laquelle le fonds de la société a été numérisé\footcite{peyronnet-drydenSalonVirtuelInventaire2012, ProposProjet}. Coordonné par Florence de Peyronnet-Dryden, un groupe de recherche%
+			\footnote{Membres~: Dr. Eva Dade, Eva Knels, Hannah Schneider.} %
+			a dressé l'inventaire numérique de ces lettres au sein du système de base de données \gls{fud} de l’université de Trèves
+			\footnote{\url{https://fud.uni-trier.de/}} entre 2011 et 2013. L'accès aux données était alors possible aux chercheurs sur inscription.%
+			
+			Suite à la découverte d'une partie complémentaire au fonds de Toulon, racheté par la famille Salm-Reifferscheidt-Dyck et aujourd'hui conservée dans les archives du château de Dyck, le nombre des pièces inventoriées a été porté entre 2014 et 2015 à environ 11\,000%
+			\footnote{Le groupe de recherche était alors constitué de~: Florence de Peyronnet-Dryden, Sabine Breihofer, Dr. Eva Dade et Dr. Alice Habersack}.
+			Jusqu'alors les données de la correspondance étaient publiées sous une licence restrictive.
+			
+			En 2019, le \gls{dhi} a pris l'initiative, sous l'impulsion de Dr. Mareike König, responsable du département de l'histoire numérique, d'ouvrir la licence d'accès aux données et de procéder à une nouvelle publication. Il en a résulté la production d'un site \textit{Wordpress} en français et en allemand, \href{https://constance-de-salm.de}{\textsf{constance-de-salm.de}}, dont les notices associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre. Il s'est en outre agi d'enrichir les entitées nommées à partir des référentiels Geonames, GND et VIAF%
+			\footnote{%
+				\url{https://www.geonames.org/}~; \url{https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html}~;%
+				\url{https://viaf.org/}.} %
+			et d'intégrer l'ensemble des données au catalogue numérique Corresp-Search, qui rassemble un vaste corpus de métadonnées descriptives de correspondances%
+			\footcite{CorrespSearchSearchScholarly2021}, 
+			un travail réalisé par Hyppolyte Souvay à l'occasion d'un stage pour l'obtention du master Humanités numériques de l'\gls{enc}\footcite{souvayCorrespondanceConstanceSalm2021}.
+			
+		\section*{Les objectifs}
 			\addcontentsline{toc}{section}{Objectifs}
-			L'objectif du stage consiste à mettre en place un flux de production automatisé pour l'édition des lettres au format \gls{tei}. 
+			Depuis 2019 a émergé la volonté d'adjoindre aux données descriptives de la correspondance une édition numérique du texte des lettres. Inaugurer ce projet d'édition a été l'objectif du présent stage. Éditer 11\,000 lettres en quatre mois eut été naturellement impossible. Il s'agissait dans un premier temps d'évaluer les avantages de recourir à une \gls{htr} et d'identifier les points de difficulté que pouvaient poser le traitement de ce vaste corpus. Dans la mesure où ces difficultés étaient surmontables, il fallait mettre en place une chaîne de traitement conduisant de l'acquisition du texte à la formalisation de son édition au format \gls{tei} et documenter la conduite de ce travail de la manière la plus précise possible.
 			
-			On s'appuiera pour cela sur les instruments et la documentation produits dans le cadre du projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924)\footcite{chiffoleauDAHNProject}.
+			Deux facteurs ont joué en faveur de la réussite de cette mission~: d'une part l'initiation aux principes de l'\gls{htr} et la prise en main du logiciel eScriptorium dans le cadre des cours du master Technologies numériques appliquées à l'histoire, et d'autre part le recours aux instruments et à la documentation produits par le projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924), dont les responsables scientifiques et techniques --- Anne Baillot, professeur en Études Germaniques à l'Université du Mans, et Floriane Chiffoleau, diplômée du master et doctorante en humanités numériques (\gls{inria}) --- se sont associées à l'encadrement de ce stage\footcite{chiffoleauDAHNProject}.
 			
-			Il s'agit en particulier d'identifier les points de difficulté que posent le traitement de ce vaste corpus tant du point de vue de la transcription automatisée des documents que du point de vue de leur encodage au format \gls{tei}. 
+			Après un état des lieux général des travaux recourant à l'\gls{htr} (chapitre \ref{chap1}), on exposera l'application concrète de cette méthode de traitement à la correspondance de \gls{cds} (chapitre \ref{chap2}), pour terminer sur la phase finale de la chaîne de traitement, à savoir la transformation des fichiers produits par \gls{htr} en édition nativement numérique (chapitre \ref{chap3}).
 			
-			Il serait notamment souhaitable, au terme du stage de disposer d'un flux de production pour l'édition d'un volume de recueil de lettres.
-				
+			Ce rapport a été conçu comme une documentation analytique du travail effectué au cours du stage. On y décrit les méthodes qui ont été employées, leur pertinence, leurs limites et les possibilités de développements futurs. Il permet ainsi de comprendre le travail qui a été fourni. En revanche, pour reprendre en main la chaîne de traitement, on se tournera vers la documentation fonctionnelle que l'on a produite sous la forme de \textit{jupyter notebooks}%
+			\footnote{%
+				Ces documents sont hébergés aux adresses suivantes~: pour la phase \gls{htr}, \url{https://github.com/sbiay/CdS-edition/tree/main/htr}~; pour la phase de transformation, \url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei}. Ils peuvent être parcourus en ligne~; en revanche leur pleine exploitation fonctionnelle suppose une procédure d'installation expliquée à la racine du même dépôt. L'intégralité des fichiers que l'on a produits est également déposée sur le disque dur où sont également archivées les reproductions numériques de la correspondance, et conservé au sein du département de l'histoire numérique du \gls{dhi}.%
+			}.
+			Cette documentation fonctionnelle décrit et illustre les opérations à effectuer dans l'interface eScriptorium d'une part, et permet d'autre part de lancer les scripts en langage Python et autres actions en ligne de commande\footnote{Via le terminal GNU BASH sous Linux.} aux moyens desquels les données du projet doivent être manipulées.
+							
 	\chapter[HTR~: état des lieux]{Reconnaissance automatique des écritures manuscrites \\ \large Un état des lieux}
+		\label{chap1}
 		
-		La reconnaissance automatique des écritures manuscrites (ou \gls{htr}) se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et d'eScriptorium)
+		L'\gls{htr} se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et d'eScriptorium)
 		\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
 		
 		\section{Principes généraux}
 		
-			La reconnaissance automatique des écritures manuscrites recouvre quatre phases indissociables et complémentaires~:
+			L'\gls{htr} recouvre quatre phases indissociables et complémentaires~:
 			
 			\begin{enumerate}
 				\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
@@ -691,8 +713,9 @@
 	\pagestyle{plain}			
 	
 	\chapter[HTR~: mise en œuvre]{Mettre en œuvre l'\gls{htr} \\ \large pour la correspondance de \gls{cds}}
+		\label{chap2}
 		
-		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé, l'intégralité de la correspondance n'ayant évidemment pu être traitée en quatre mois de stage. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
+		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
 	
 		\section{Enjeux et tâches préliminaires}
 			
@@ -1371,7 +1394,8 @@
 	\pagestyle{plain}			
 		
 	\chapter[Transformation TEI]{Transformation des transcriptions automatiques en édition XML-TEI}
-	
+		\label{chap3}
+		
 		L'étape finale de la chaîne de traitement consiste à transformer les transcriptions automatiques en édition nativement numérique. Le format d'édition privilégié est la \gls{tei}. 
 		
 		La \textit{Text Encoding Initiative}, communauté scientifique qui donne son nom au format \gls{tei}, propose des principes pour l'encodage des textes ainsi qu'un format standard pour l'échange des données textuelles\footcite{TEITextEncoding}. Depuis le début des années 2000, sa syntaxe est fondée sur le langage \gls{xml}. Fondée aux États-Unis, cette communauté est internationale. Sa vocation à permettre l'encodage de tous les types de textes est à l'origine des innombrables possibilités offertes par le format \gls{tei}. Dès lors, l'objectif d'exprimer une édition numérique scientifique (avec des critères nécessairement élaborés), dans un format partagé, repose sur l'adoption d'usages communs et, en fin de compte, la restriction des possibles de la \gls{tei} pour le type de document traité. 
@@ -1742,14 +1766,16 @@ l'éxaltation d'une âme
 		
 		Enfin, l'on a abordé dans les dernières semaines (pour ne pas dire dans les derniers jours) du stage la phase de transformation des transcriptions automatiques en édition au format \gls{tei}. L'application Alto2tei du projet \gls{galcor} a permis un gain de temps considérable. La production d'éditions structurées a ainsi pu être menée à bien, mais le volet philologique du travail demeure incomplet, en l'absence d'une \gls{odd} en bonne et due forme, dont le \textit{Guide d'encodage pour l'édition numérique des égo-documents} du projet \gls{dahn} devrait constituer la meilleure matrice possible\footcite{chiffoleauGuideEncodagePour2022}. L'encodage pourrait en outre être poussé plus loin qu'on ne l'a fait, avec la reconnaissance des entités nommées (processus automatisable) ou la description des mains intervenant sur chaque lettre (copiste, corrections souvent effectuées par \gls{cds}, érudit).
 		
-		La chaîne de traitement que l'on a produite devrait permettre de mener efficacement l'édition numérique de la correspondance de \gls{cds} sans requérir d'importantes compétences en ingénierie ou en langages de programmation. Mais il est illusoire de penser qu'elle puisse parfaitement fonctionner pour tous les documents du corpus et que l'on puisse se l'approprier sans une bonne connaissance du XML (et de la TEI en particulier) ainsi que des notions de langage Python et d'utilisation d'un système d'exploitation Linux%
-		\footnote{On a pu tester le fonctionnement de l'application Kraken dans une machine virtuelle sous Windows, mais pas l'installation complète de la chaîne de traitement.}. %
+		La chaîne de traitement que l'on a produite devrait permettre de mener efficacement l'édition numérique de la correspondance de \gls{cds} sans requérir d'importantes compétences en ingénierie ou en langages de programmation. La documentation fonctionnelle que l'on a produite sous la forme de \textit{Jupyter notebooks} est censée permettre l'exploitation de tous les morceaux de programme de manière simplifiée, mais il est difficile d'imaginer que l'on puisse que l'on puisse s'approprier cette chaîne de traitement et la faire fonctionner sans une bonne connaissance du XML (\gls{alto} et \gls{tei}) ainsi que des notions de langage Python et d'utilisation d'un système d'exploitation Linux%
+		\footnote{
+			On a pu tester le fonctionnement de l'application Kraken dans une machine virtuelle sous Windows, mais pas l'installation complète de la chaîne de traitement.
+		}.%
 		La phase la plus délicate de la prise en main sera nécessairement son installation. Mais, alors qu'il nous a fallu déployer l'interface eScriptorium localement (ce qui n'a pas été simple), l'ouverture prochaine d'une instance de cette application hébergée par Paris Sciences et Lettres devrait grandement simplifier son l'accès à cet outil essentiel. 	
 		Passées les difficultés du démarrage, les phases les plus chronophages du travail éditorial resteront la correction de la \gls{segmentation} des pages, la production de vérités de terrain ou la correction des \glspl{prédiction}, ainsi que la finalisation de l'encodage, dont une liste de tâches demeurent impossibles à automatiser.
 		
-		Il pourrait être intéressant, pour le développement futur du projet, d'engager un nouveau chantier d'ingénierie pour créer une plateforme de transcription collaborative, où la prédiction brute des textes serait proposée à la correction par les contributeurs, accélérant ainsi la constitution de vérités de terrain ou la correction préalable à l'encodage en \gls{tei}… 
+		Il pourrait être intéressant, pour le développement futur du projet, d'engager un nouveau chantier d'ingénierie pour créer une plateforme de transcription collaborative, où la prédiction brute des textes serait proposée à la correction par les contributeurs, accélérant ainsi la constitution de vérités de terrain ou la correction préalable à l'encodage en \gls{tei}. En l'occurrence, l'utilisation de la correction semi-automatisée pourrait se révéler très pertinente pour un premier nettoyage avant l'intervention des contributeurs.
 		
-		La route vers une édition complète de la correspondance de \gls{cds} sera longue quoiqu'il arrive, et nous n'avons fait qu'atteindre un premier relais. Mais l'histoire des femmes de lettres suscite l'adhésion du public et des institutions, et l'adéquation entre l'\og honnête liberté \fg \footcite{CdS02045046} louée par \gls{cds} et l'esprit du temps pourrait placer ce projet éditorial sous des auspices favorables.
+		La route vers une édition complète de la correspondance de \gls{cds} sera longue quoiqu'il arrive, et nous n'avons fait qu'atteindre un premier relais. Mais l'histoire des femmes de lettres suscite l'adhésion du public et des institutions, et l'adéquation entre l'\og honnête liberté \fg louée par \gls{cds}\footcite{CdS02045046} et l'esprit du temps placeront peut-être ce projet éditorial ambitieux sous des auspices favorables.
 		
 	\pagestyle{empty}
 	\cleardoublepage		
