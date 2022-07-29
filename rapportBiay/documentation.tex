@@ -26,7 +26,7 @@
 
 % Table des matières
 \addto\captionsfrench{
-\renewcommand*\contentsname{Table des matières}
+	\renewcommand*\contentsname{Table des matières}
 }
 \usepackage[nottoc]{tocbibind}% Pour ajouter la biblio à la TDM sans numérotation de chapitre
 
@@ -153,7 +153,7 @@
 			\bigskip
 			
 			\begin{Huge}
-				\textbf{Chaîne de traîtement \\
+				\textbf{Chaîne de traitement \\
 					pour l'édition numérique \\
 					de la correspondance manuscrite \\
 					de Constance de Salm\\
@@ -183,7 +183,7 @@
 		
 		\textbf{Mots-clés~:} HTR~; XML-TEI~; édition numérique~; édition de textes~; correspondance~; Constance de Salm (1767-1845)~; \siecle{xix} s.
 		
-		\textbf{Informations bibliographiques~:} Sébastien Biay, \textit{Chaîne de traîtement pour l'édition numérique de la correspondance manuscrite de Constance de Salm (1767-1845)}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. Mareike König, Ariane Pinche, École nationale des chartes, 2022.
+		\textbf{Informations bibliographiques~:} Sébastien Biay, \textit{Chaîne de traitement pour l'édition numérique de la correspondance manuscrite de Constance de Salm (1767-1845)}, mémoire de master \og{}Technologies numériques appliquées à l'histoire\fg{}, dir. Mareike König, Ariane Pinche, École nationale des chartes, 2022.
 		
 	\pagestyle{empty}	
 	\cleardoublepage
@@ -212,34 +212,36 @@
 			\addcontentsline{toc}{section}{Contexte}
 			\gls{cds} (1767-1845), femme de lettres française, a entretenu une vaste correspondance avec de nombreux intellectuels en Allemagne, en France, en Russie, à partir de son mariage avec Joseph de Salm-Reifferscheidt-Dyck (1773-1861).
 			
-			Cette correspondance, principalement conservée dans les archives de la Société des amis du Vieux Toulon et de sa région (Toulon), a suscité l'intérêt des chercheurs du \gls{dhi} en 2010, date à laquelle le fonds de la société a été numérisé\footcite{peyronnet-drydenSalonVirtuelInventaire2012, ProposProjet}. Coordonné par Florence de Peyronnet-Dryden, un groupe de recherche%
+			Cette correspondance, principalement conservée dans les archives de la Société des amis du Vieux Toulon et de sa région (Toulon), a suscité l'intérêt des chercheurs du \gls{dhi} à partir de 2010, date à laquelle le fonds de la société a été numérisé
+			\footcite{peyronnet-drydenSalonVirtuelInventaire2012, ProposProjet}. Coordonné par Florence de Peyronnet-Dryden, un groupe de recherche%
 			\footnote{Membres~: Dr. Eva Dade, Eva Knels, Hannah Schneider.} %
 			a dressé l'inventaire numérique de ces lettres au sein du système de base de données \gls{fud} de l’université de Trèves
-			\footnote{\url{https://fud.uni-trier.de/}} entre 2011 et 2013. L'accès aux données était alors possible aux chercheurs sur inscription.%
+			\footnote{\url{https://fud.uni-trier.de/}} %
+			entre 2011 et 2013. L'accès aux données était alors possible aux chercheurs sur inscription.%
 			
-			Suite à la découverte d'une partie complémentaire au fonds de Toulon, racheté par la famille Salm-Reifferscheidt-Dyck et aujourd'hui conservée dans les archives du château de Dyck, le nombre des pièces inventoriées a été porté entre 2014 et 2015 à environ 11\,000%
+			Suite à la découverte d'une partie complémentaire au fonds de Toulon, rachetée par la famille Salm-Reifferscheidt-Dyck et aujourd'hui conservée dans les archives du château de Dyck, le nombre des pièces inventoriées a été porté entre 2014 et 2015 à environ 11\,000%
 			\footnote{Le groupe de recherche était alors constitué de~: Florence de Peyronnet-Dryden, Sabine Breihofer, Dr. Eva Dade et Dr. Alice Habersack}.
 			Jusqu'alors les données de la correspondance étaient publiées sous une licence restrictive.
 			
-			En 2019, le \gls{dhi} a pris l'initiative, sous l'impulsion de Dr. Mareike König, responsable du département de l'histoire numérique, d'ouvrir la licence d'accès aux données et de procéder à une nouvelle publication. Il en a résulté la production d'un site \textit{Wordpress} en français et en allemand, \href{https://constance-de-salm.de}{\textsf{constance-de-salm.de}}, dont les notices associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre. Il s'est en outre agi d'enrichir les entitées nommées à partir des référentiels Geonames, GND et VIAF%
+			En 2019, le \gls{dhi} a pris l'initiative, sous l'impulsion de Dr. Mareike König, responsable du département de l'histoire numérique, d'ouvrir la licence d'accès aux données et de procéder à une nouvelle publication. Il en a résulté la production d'un site \textit{Wordpress} en français et en allemand, \href{https://constance-de-salm.de}{\textsf{constance-de-salm.de}}, dont les notices associent la reproduction numérique des documents manuscrits (lettres, copies, brouillons, recueils) avec leurs métadonnées descriptives, ainsi qu'une transcription de la première ligne de chaque lettre. Il s'est en outre agi d'enrichir les entités nommées à partir des référentiels Geonames, GND et VIAF%
 			\footnote{%
 				\url{https://www.geonames.org/}~; \url{https://www.dnb.de/DE/Professionell/Standardisierung/GND/gnd_node.html}~;%
 				\url{https://viaf.org/}.} %
 			et d'intégrer l'ensemble des données au catalogue numérique Corresp-Search, qui rassemble un vaste corpus de métadonnées descriptives de correspondances%
 			\footcite{CorrespSearchSearchScholarly2021}, 
-			un travail réalisé par Hyppolyte Souvay à l'occasion d'un stage pour l'obtention du master Humanités numériques de l'\gls{enc}\footcite{souvayCorrespondanceConstanceSalm2021}.
+			un travail réalisé par Hippolyte Souvay à l'occasion d'un stage pour l'obtention du master Humanités numériques de l'\gls{enc}\footcite{souvayCorrespondanceConstanceSalm2021}.
 			
 		\section*{Les objectifs}
 			\addcontentsline{toc}{section}{Objectifs}
 			Depuis 2019 a émergé la volonté d'adjoindre aux données descriptives de la correspondance une édition numérique du texte des lettres. Inaugurer ce projet d'édition a été l'objectif du présent stage. Éditer 11\,000 lettres en quatre mois eut été naturellement impossible. Il s'agissait dans un premier temps d'évaluer les avantages de recourir à une \gls{htr} et d'identifier les points de difficulté que pouvaient poser le traitement de ce vaste corpus. Dans la mesure où ces difficultés étaient surmontables, il fallait mettre en place une chaîne de traitement conduisant de l'acquisition du texte à la formalisation de son édition au format \gls{tei} et documenter la conduite de ce travail de la manière la plus précise possible.
 			
-			Deux facteurs ont joué en faveur de la réussite de cette mission~: d'une part l'initiation aux principes de l'\gls{htr} et la prise en main du logiciel eScriptorium dans le cadre des cours du master Technologies numériques appliquées à l'histoire, et d'autre part le recours aux instruments et à la documentation produits par le projet \gls{dahn}, fondé sur l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924), dont les responsables scientifiques et techniques --- Anne Baillot, professeur en Études Germaniques à l'Université du Mans, et Floriane Chiffoleau, diplômée du master et doctorante en humanités numériques (\gls{inria}) --- se sont associées à l'encadrement de ce stage\footcite{chiffoleauDAHNProject}.
+			Deux facteurs ont joué en faveur de la réussite de cette mission~: d'une part l'initiation aux principes de l'\gls{htr} et la prise en main du logiciel eScriptorium dans le cadre des cours du master Technologies numériques appliquées à l'histoire, et d'autre part le recours aux instruments et à la documentation produits par le projet \gls{dahn} pour l'édition de la correspondance de Paul d’Estournelles de Constant (1852-1924), dont les responsables scientifiques et techniques --- Anne Baillot, professeur en Études Germaniques à l'Université du Mans, et Floriane Chiffoleau, diplômée du master et doctorante en humanités numériques (\gls{inria}) --- se sont associées à l'encadrement de ce stage\footcite{chiffoleauDAHNProject}.
 			
 			Après un état des lieux général des travaux recourant à l'\gls{htr} (chapitre \ref{chap1}), on exposera l'application concrète de cette méthode de traitement à la correspondance de \gls{cds} (chapitre \ref{chap2}), pour terminer sur la phase finale de la chaîne de traitement, à savoir la transformation des fichiers produits par \gls{htr} en édition nativement numérique (chapitre \ref{chap3}).
 			
-			Ce rapport a été conçu comme une documentation analytique du travail effectué au cours du stage. On y décrit les méthodes qui ont été employées, leur pertinence, leurs limites et les possibilités de développements futurs. Il permet ainsi de comprendre le travail qui a été fourni. En revanche, pour reprendre en main la chaîne de traitement, on se tournera vers la documentation fonctionnelle que l'on a produite sous la forme de \textit{jupyter notebooks}%
+			Ce rapport a été conçu comme une documentation analytique du travail effectué au cours du stage. On y décrit les méthodes qui ont été employées, leur pertinence, les outils développés, leurs limites et les possibilités de développements futurs. Il permet ainsi de comprendre le travail qui a été fourni. En revanche, pour reprendre en main la chaîne de traitement, on se tournera vers la documentation fonctionnelle que l'on a produite sous la forme de \textit{Jupyter notebooks}%
 			\footnote{%
-				Ces documents sont hébergés aux adresses suivantes~: pour la phase \gls{htr}, \url{https://github.com/sbiay/CdS-edition/tree/main/htr}~; pour la phase de transformation, \url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei}. Ils peuvent être parcourus en ligne~; en revanche leur pleine exploitation fonctionnelle suppose une procédure d'installation expliquée à la racine du même dépôt. L'intégralité des fichiers que l'on a produits est également déposée sur le disque dur où sont également archivées les reproductions numériques de la correspondance, et conservé au sein du département de l'histoire numérique du \gls{dhi}.%
+				Ces documents sont hébergés aux adresses suivantes~: pour la phase \gls{htr}, \url{https://github.com/sbiay/CdS-edition/tree/main/htr}~; pour la phase de transformation, \url{https://github.com/sbiay/CdS-edition/tree/main/transformation-alto-tei}. Ils peuvent être parcourus en ligne~; en revanche leur pleine exploitation fonctionnelle suppose une procédure d'installation expliquée à la racine du même dépôt. L'intégralité des fichiers que l'on a produits est également déposée sur le disque dur où sont archivées les reproductions numériques de la correspondance, disque conservé au sein du département de l'histoire numérique du \gls{dhi}.%
 			}.
 			Cette documentation fonctionnelle décrit et illustre les opérations à effectuer dans l'interface eScriptorium d'une part, et permet d'autre part de lancer les scripts en langage Python et autres actions en ligne de commande\footnote{Via le terminal GNU BASH sous Linux.} aux moyens desquels les données du projet doivent être manipulées.
 							
@@ -247,7 +249,9 @@
 		\label{chap1}
 		
 		L'\gls{htr} se fonde sur des principes techniques globalement similaires à la reconnaissance optique des caractères (imprimés) (ou \gls{ocr}), et il est courant de ne pas établir de distinction fondamentale entre ces deux techniques, bien que leur mise en application fasse appel à des logiciels différents (il sera question plus loin de Transkribus et d'eScriptorium)
-		\footnote{Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).}.
+		\footnote{
+			Certaines publications tentent d'introduire une distinction entre les deux techniques dans la mesure où les techniques d'\gls{ocr} se fondent souvent sur la reconnaissance caractère par caractère et non sur la reconnaissance des lignes (employée par toutes les techniques \gls{htr}), mais ce n'est pas toujours le cas (\cite{stokesEScriptoriumVREManuscript2021}).
+			}.
 		
 		\section{Principes généraux}
 		
@@ -255,12 +259,12 @@
 			
 			\begin{enumerate}
 				\item L'import des images dans l'application~: dans le cas présent il s'agit simplement de convertir les images stockées sur un disque dur du format non compressé \textsf{tiff} (qui permet d'archiver des images de la meilleure qualité possible) vers le format compressé \textsf{jpeg} (qui permet de travailler avec une bonne qualité d'image sous la forme de fichiers plus légers)~;
-				\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable~!)~;
+				\item La \gls{segmentation} des pages, au cours de laquelle les textes contenus sur chaque page sont repérés par zone, et les lignes qui composent ces zones de texte sont identifiées et numérotées dans l'ordre de lecture (ce sans quoi la transcription produite serait inexploitable)~;
 				\item La reconnaissance des écritures proprement dite, ou transcription automatique, qui procède à l'identification de chaque caractère sur les lignes précédemment repérées~;
 				\item La compilation des lignes transcrites dans un document cohérent pour chaque image traitée et l'export du résultat dans un format exploitable~: on a en l'occurrence retenu le format \gls{alto}, maintenu par la Bibliothèque du Congrès et privilégié par la \gls{bnf}\footcite{TechniquesFormatsConversion2022, stokesEScriptoriumVREManuscript2021}.
 			\end{enumerate}
 			
-			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, avec un taux d'acuité (ou \textit{accuracy}) exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
+			Les phases les plus délicates sont naturellement la troisième et la quatrième en ce qu'elles reposent toutes deux sur l'apprentissage machine (\textit{machine learning}) ou apprentissage supervisé. Cette méthode implique la constitution de données d'entraînement de façon manuelle, données qui sont ensuite analysées de manière statistique par l'outil informatique. Au terme de cette phase est produit un modèle capable, selon un taux d'acuité (ou \textit{accuracy}) exprimé en pourcentage, de reproduire l'opération initialement effectuée manuellement, qu'il s'agisse de la reconnaissance des régions et des lignes d'écriture (\gls{segmentation}) ou de la transcription des caractères.
 			
 			Ce processus d'entraînement comporte deux phases longues et consommatrices d'énergie~:
 			
@@ -269,12 +273,12 @@
 				\item L'entraînement par la machine, qui demande une puissance de calcul très importante (selon le matériel utilisé et la quantité de données, un entraînement peut durer de quelques heures à… quelques semaines) et donc une forte consommation d'électricité.
 			\end{enumerate}
 			
-			Une fois qu'un modèle satisfisant est produit, son utilisation est en revanche rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitées par un modèle est grande, plus l'opération dans son ensemble est rentable. De plus, un modèle produit à partir de sources déterminées peut être réutilisé dans un contexte différent, et fort heureusement, le développement des projets faisant appel à la reconnaissance automatique des écritures manuscrites a engendré la multiplication des données d'entraînement et des modèles pré-entraînés. Il ne s'agit donc pas de partir de zéro mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages, afin de les rendre plus adéquats aux sources sur lesquels on travaille.
+			Une fois qu'un modèle satisfaisant a été produit, son utilisation est rapide et très peu consommatrice~; ainsi, plus la quantité de données pouvant être traitées par un modèle est grande, plus l'opération dans son ensemble est rentable. De plus, un modèle produit à partir de sources déterminées peut être réutilisé dans un contexte différent, et fort heureusement le développement des projets faisant appel à l'\gls{htr} a engendré la multiplication des données d'entraînement et des modèles pré-entraînés. Il ne s'agit donc pas de partir de zéro, mais d'abord et avant tout d'identifier les meilleurs modèles à partir desquels procéder à de nouveaux entraînements ou affinages, afin de les rendre plus adéquats aux sources sur lesquels on travaille.
 			
-			Il faut aussitôt mettre un bémol à cet état de faits encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de page transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
+			Il faut aussitôt mettre un bémol à cet état de faits encourageant~: les deux phases de la \gls{segmentation} et de la transcription ne jouissent pas du tout des mêmes possibilités quant à la réutilisation de modèles. Si les modèles de transcription sont déjà nombreux et, lorsque les écritures ne sont pas trop cursives, peuvent être affinés de façon satisfaisante sur de nouvelles écritures avec seulement une dizaine de pages transcrites à la main, il n'en va pas de même des modèles de \gls{segmentation}, comme on aura l'occasion de le voir plus loin
 			\footnote{Voir \textit{infra} \ref{lieu-segmentation}, p.~\pageref{lieu-segmentation}.}.
 		
-		\section{La recherche à l'heure de l'HTR}
+		\section{La recherche à l'heure de l'\gls{htr}}
 		
 			Dans le cadre du projet \gls{cremma}-Lab soutenu par le DIM MAP, le centre
 			Jean-Mabillon (École nationale des chartes), en partenariat avec le
@@ -283,115 +287,122 @@
 			\footnote{Comité d'organisation~: Ariane Pinche et Floriane Chiffoleau. Comité scientifique~: Jean-Baptiste Camps, Alix Chagué, Thibault Clérice, Frédéric Duval, Vincent Jolivet, Benjamin Kiessling, Nicolas Perreaux, Ariane Pinche, Laurent Romary, Peter Stokes. \cite{DocumentsAnciensReconnaissance}}.
 			
 			Ce colloque a été l'occasion de rassembler une communauté scientifique
-			représentant les pays du sud de l'Europe (France, Italie, Grêce,
-			Portugal, Suisse) ainsi que quelques équipes nords-américaines autour
+			représentant les pays du sud de l'Europe (France, Italie, Grèce,
+			Portugal, Suisse) ainsi que quelques équipes nord-américaines autour
 			des enjeux, des finalités, des problèmes et des solutions d'avenir de la
 			reconnaissance automatique des écritures manuscrites.
 			
-			Le compte-rendu analytique qui en est donné dans les pages qui suivent constitue un état de l'art des projets et des techniques appliquées à l'HTR.
+			Le compte rendu analytique qui en est donné dans les pages qui suivent constitue un état de l'art des projets et des techniques appliquées à l'\gls{htr}.
 			
 			\subsection{Des finalités et des publics multiples}
 		
-				Les finalités de l'HTR sont multiples. Elles concernent aussi bien les
+				Les finalités de l'\gls{htr} sont multiples. Elles concernent aussi bien les
 				scientifiques qu'un public élargi aux savants et aux curieux des sources
 				écrites anciennes. Les projets \textit{Crimes et châtiments}\footcite{paupeCursiveXVIIeSiecle2022} et
-				\textit{Lettres en lumières}\footcite{fizaineLettresLumieres2022a} ont démontré l'intérêt de l'HTR pour
+				\textit{Lettres en lumières}\footcite{fizaineLettresLumieres2022a} ont démontré l'intérêt de l'\gls{htr} pour
 				ouvrir la lecture des textes anciens en dehors du monde académique ou
 				pour le développement de projets de transcription contributive.
 				
-				Pour le public scientifique, l'HTR est en mesure de rendre accessibles
+				Pour le public scientifique, l'\gls{htr} est en mesure de rendre accessibles
 				des données selon plusieurs modalités. Le projet POPP (Projet
 				d'Océrisation des Recensements de la Population Parisienne) a montré
 				comment elle permet de construire de vastes bases de données par
 				l'extraction d'informations de recensements historiques\footcite{constumReconnaissanceExtractionInformations2022}. Le projet Sofer
 				Mahir a proposé une méthode pour l'établissement d'éditions critiques\footcite{stoklbenezraHTRCriticalEdition2022}, ce qui impose d'ajouter à la
-				transcription des documentsune étape de structuration de leur
-				hiérarchie, les différents témoins d'un même texte affectant souvent des
-				mises en page différentes. Les travaux de thèse de doctorat de
+				transcription des documents une étape de structuration de leur
+				hiérarchie (livre, chapitre, paragraphe, etc.). Les travaux de thèse de doctorat de
 				Christophe Tufféry\footcite{tufferyRetourExperiencesUtilisation2022} ont
-				mis en évidence quant à eux un exemple de développement d'application
+				mis en évidence, quant à eux, un exemple de développement d'application
 				visant à proposer, à partir de la transcription de carnets de fouilles
 				archéologiques, des visualisations de ces données pour restituer
 				l'histoire d'une fouille programmée.
 				
 				Outre la mise à disposition des sources textuelles ou des données
-				qu'elles contiennent, l'HTR offre des possibilités de traitement massif
+				qu'elles contiennent, l'\gls{htr} offre des possibilités de traitement massif
 				de ces données avec plusieurs types d'objectifs. Les
-				\textit{Expérimentations pour l'analyse automatique de sources chinoises anciennes}\footcite{bizais-lilligExperimentationsPourAnalyse2022} ont
-				montré l'intérêt de l'HTR pour suivre l'utilisation de textes à travers
-				les siècles. Dans les domaines épigraphique et paléographique également,
-				les algorithmes de reconnaissance d'écriture peuvent servir d'outil à
-				l'analyse des mots et des glyphes\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs de reconnaissance peut également être exploitée afin dégager des
-				caractéristiques d'évolution des écritures\footcite{paraskeviHTRHandwrittenPaleographic2022}.
+				\textit{Expérimentations pour l'analyse automatique de sources chinoises anciennes}
+				\footcite{bizais-lilligExperimentationsPourAnalyse2022} 
+				ont montré l'intérêt de l'\gls{htr} pour suivre l'utilisation de textes à travers les siècles. Dans les domaines épigraphique et paléographique également, les algorithmes de reconnaissance d'écriture peuvent servir d'outil à l'analyse des mots et des glyphes
+				\footcite{boschettiEpiSearchRecognisingAncient2022}~; l'analyse des erreurs de reconnaissance peut également être exploitée afin de dégager des
+				caractéristiques d'évolution des écritures
+				\footcite{paraskeviHTRHandwrittenPaleographic2022}.
 				
-				Enfin le projet CHAMDOC a illustré le fait que l'HTR peut intervenir
+				Enfin le projet CHAMDOC a illustré le fait que l'\gls{htr} peut intervenir
 				dans la préservation des langues écrites en péril, comme c'est le cas du
 				cham ancien, langue véhiculaire utilisée dans des inscriptions gravées
-				au Vietnam, du VIe au XVIIe siècle\footcite{schweyerAnalyseReconnaissanceIndexation2022}.
+				au Vietnam, du VIe au XVIIe siècle
+				\footcite{schweyerAnalyseReconnaissanceIndexation2022}.
 		
 			\subsection{eScriptorium et Kraken~: infrastructures et développements}
 			
-				Le paysage des applications dédiées à l'HTR se partage depuis 2019 entre
-				Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu
-				l'occasion de tester les deux applications\footcite{leblancTranskribusEScriptoriumRetour2022, paupeCursiveXVIIeSiecle2022} et ainsi fait part de leurs
-				expériences. L'entraînement de modèles \gls{htr} est un processus exigeant de
-				très grandes capacités de calcul, et donc des infrastructures coûteuses.
+				Le paysage des applications dédiées à l'\gls{htr} se partage depuis 2019 entre Transkribus (2016) et eScriptorium. Certains projets de recherche ont eu
+				l'occasion de tester les deux applications
+				\footcite{leblancTranskribusEScriptoriumRetour2022, paupeCursiveXVIIeSiecle2022} 
+				et ainsi fait part de leurs expériences. L'entraînement de modèles \gls{htr} est un processus exigeant de très grandes capacités de calcul, et donc des infrastructures coûteuses.
 				L'infrastructure \gls{cremma} ouvrira bientôt au public des institutions
 				académiques partenaires une instance d'eScriptorium\footcite{marguin-hamonDiscoursOuverturePresentation2022} dotée de trois GPU
-				(\textit{Graphics Processing Unit} ou unité de traitement graphique),
+				(\textit{Graphics Processing Unit} ou unités de traitement graphique),
 				chacune représentant en moyenne un coût d'une dizaine de milliers
 				d'euros. L'infrastructure FoNDUE de l'université de Genève bénéficie
 				quant à elle de la puissance du superordinateur (HPC) de l'université,
 				doté de 150 GPU. La recherche des meilleures performances des
 				entraînements de modèles consiste généralement à trouver le bon
 				équilibre entre temps de calcul par image et nombre de tâches lancées en
-				parallèle\footcite{gabayFoNDUELightweightHTR2022}.
+				parallèle
+				\footcite{gabayFoNDUELightweightHTR2022}.
 				
 				Les développements en cours de l'interface eScriptorium donneront lieu
 				dans un avenir proche à une fonctionnalité de recherche des termes
-				transcrits, à du balisage TEI basique, à la possibilité d'annotation
+				transcrits, à du balisage \gls{tei} basique, à la possibilité d'annotation
 				graphique des pages, à l'alignement automatique d'un texte existant sur
 				une image et à l'intégration de l'ordre des lignes dans l'entraînement
-				des modèles de {segmentation}. Quant à l'application Kraken, sur laquelle
+				des modèles de \gls{segmentation}. Quant à l'application Kraken, sur laquelle
 				se fonde l'interface eScriptorium, sa dernière version stable (4)
 				propose de nouvelles bibliothèques d'entraînement et une meilleure
 				accessibilité de son API. Elle affiche en outre une amélioration des
 				performances pour les modèles de reconnaissance d'écriture, la
-				reconstruction de lacunes et une nouvelle technologie de {segmentation}
-				des régions et des lignes d'écriture (\textit{layout analysis})~: grâce à
-				l'utilisation de la technologie Transformers, la détection de
-				l'orientation des lignes est désormais plus robuste, et il devient
+				reconstruction de lacunes et une nouvelle technologie de \gls{segmentation}
+				des régions et des lignes d'écriture (\textit{layout analysis})~: 
+				grâce à l'utilisation de la technologie Transformers, la détection de
+				l'orientation des lignes est désormais plus robuste et il devient
 				possible de segmenter des lignes qui se croisent. Cette innovation est
 				néanmoins très exigeante sur le plan de l'infrastructure et renchérit le
-				coût technologique de l'entraînement de modèles\footcite{kiesslingNewDevelopmentsKraken2022}.
+				coût technologique de l'entraînement de modèles
+				\footcite{kiesslingNewDevelopmentsKraken2022}.
 		
 		\section{Produire des modèles}
 		
 			\subsection{Explorer de nouveaux types d'écriture}
 			
 				Les projets de recherche présentés à l'occasion du colloque s'emploient
-				à étendre la zone de compétence des modèles \gls{htr} dans les domaines les
-				plus variés. Tandis que les écritures livresques médiévales sont de
-				mieux en mieux couvertes du XIe au XVe siècle par les modèles produits
-				dans le cadre du projet \gls{cremma}~: Arabica, Bicerin et bientôt Cortado\footcite{campsCremmaLabProjectsTranscription2022}, le projet e-NDP
-				s'emploie à travers les sources du chapitre de Notre-Dame de Paris à
+				à étendre la zone de compétence des modèles \gls{htr} dans les domaines les plus variés.
+				Tandis que les écritures livresques médiévales sont de
+				mieux en mieux couvertes du \siecle{xi} au \siecle{xv} siècle par les modèles produits
+				dans le cadre du projet \gls{cremma}~: Arabica, Bicerin et récemment Cortado
+				\footcite{campsCremmaLabProjectsTranscription2022}, 
+				le projet e-NDP
+				s'emploie, à travers les sources du chapitre de Notre-Dame de Paris, à
 				entraîner des modèles pour des écritures nouvelles~: \textit{cursiva},
-				\textit{textualis}, prégothique, semihybride\footcite{torresaguilarModelisationAffinageHTR2022}. En effet les écritures
+				\textit{textualis}, prégothique, semihybride
+				\footcite{torresaguilarModelisationAffinageHTR2022}.
+				En effet les écritures
 				cursives font actuellement partie des fronts pionniers de l'entraînement
-				des modèles, que ce soit pour le Moyen Âge, le XVIIe siècle\footcite{paupeCursiveXVIIeSiecle2022}, ou dans le contexte de projet
+				des modèles, que ce soit pour le Moyen Âge, le \siecle{xvii} siècle\footcite{paupeCursiveXVIIeSiecle2022}, ou dans le contexte de projet
 				diachroniques comme l'étude des archives inquisitoriales portugaises
-				pour la période allant 1536 à 1821\footcite{baudryArchivesInquisitorialesPortugal2022}, ou encore des sources
-				très contemporaines comme les carnets de fouilles archéologiques du XXe
-				siècle\footcite{tufferyRetourExperiencesUtilisation2022}. Comme l'a montré
-				le projet TraPrInq (\textit{Transcribing the court records of the
-					Portuguese Inquisition}, 1536-1821), l'entraînement de ces modèles doit
+				pour la période allant de 1536 à 1821
+				\footcite{baudryArchivesInquisitorialesPortugal2022}, ou encore des sources très contemporaines comme les carnets de fouilles archéologiques du \siecle{xx} siècle
+				\footcite{tufferyRetourExperiencesUtilisation2022}.
+				Comme l'a montré
+				le projet TraPrInq (\textit{Transcribing the court records of the Portuguese Inquisition}, 1536-1821), l'entraînement de ces modèles doit
 				parfois relever le défi de la variété paléographique, des mélanges de
 				langues et de types d'écriture (latine, arabe, hébraïque)~; de la
-				variété aussi des types de documents dont découle des mises en pages
-				hétérogènes, de la variété des supports également, susceptible
-				d'infléchir l'efficacité des entraînements\footcite{baudryArchivesInquisitorialesPortugal2022}. D'autre projets
-				tentent de couvrir une diachronie encore plus longue, comme la création
-				d'un corpus de fictions littéraires allant du XIe siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. Enfin, les projets HTR
+				variété aussi des types de documents, dont découle des mises en page
+				hétérogènes~; de la variété des supports également, susceptible
+				d'infléchir l'efficacité des entraînements
+				\footcite{baudryArchivesInquisitorialesPortugal2022}.
+				D'autres projets tentent de couvrir une diachronie encore plus longue, comme la création
+				d'un corpus de fictions littéraires allant du \siecle{xi} siècle à nos jours\footcite{campsCremmaLabProjectsTranscription2022}. 
+				Enfin, les projets HTR
 				s'étendent également en direction des écritures non latines, comme l'ont
 				illustré des présentations du projet CHAMDOC\footcite{schweyerAnalyseReconnaissanceIndexation2022} ainsi que les
 				expérimentations pour l'analyse automatique de sources chinoises
@@ -402,34 +413,33 @@
 				En dehors des projets très pionniers comme ceux portant sur les
 				écritures extrême-orientales, l'époque est révolue de la production de
 				vérités de terrain \textit{ex nihilo} à chaque nouveau projet, comme l'a
-				rappelé Vincent Jolivet\footcite{torresaguilarModelisationAffinageHTR2022}.
+				rappelé Vincent Jolivet
+				\footcite{torresaguilarModelisationAffinageHTR2022}.
 				La méthode désormais privilégiée consiste à repérer des modèles
 				existants (\textit{transfer learning}). Dans ce contexte, le partage des
 				données d'entraînement et des modèles devient essentiel. Les meilleurs
-				modèles identifiés sont ensuite affinés (\textit{fine-tuning}) grâce à de
-				nouvelles vérités de terrain. Tout le problème consiste à savoir de
+				modèles identifiés sont ensuite affinés (\textit{fine-tuning}) grâce à de nouvelles vérités de terrain. Tout le problème consiste à savoir de
 				quelle quantité de données d'entraînement l'on aura besoin pour
 				atteindre le score nécessaire, et quelle est la meilleure méthode pour
 				optimiser cette étape de la production d'un modèle affiné. La réponse ne
-				peut être qu'empirique tant les ressources disponibles sont variables
-				(les paléographes sont rares !) et les gains d'acuité attendus de ces
+				peut être qu'empirique tant sont variables les ressources disponibles 
+				(les paléographes sont rares~!) et les gains d'acuité attendus de ces
 				entraînements (qui dépendent de la finalité de chaque projet).
 				
 				Le projet ETSO (\textit{Estilometría aplicada al Teatro del Siglo de Oro})
-				a également montré que l'acquisition des données d'entraînement peut
+				a montré que l'acquisition des données d'entraînement peut
 				procéder par une autre voie que la transcription manuelle, à savoir la
 				récupération d'éditions de textes existantes et leur alignement avec la
 				reproduction photographique de page manuscrites, une tâche
 				d'ores-et-déjà possible grâce à la fonction Text2IMage de Transkribus et
-				bientôt développée par eScriptorium\footcite{cuellarModeleOuvertPour2022}.
+				bientôt développée pour eScriptorium
+				\footcite{cuellarModeleOuvertPour2022}.
 				
 				Les techniques d'apprentissage constituent bien souvent la clé du succès
 				pour l'entraînement d'un modèle robuste. La personnalisation de ces
 				techniques, possible avec l'application Kraken, a joué un rôle important
 				pour un projet comme \og Crimes et châtiments \fg{} \footcite{paupeCursive17eSiecle2022}. La modification du paramètre de la
-				vitesse d'apprentissage (le paramètre \textsf{-r}  de Kraken) s'est en effet
-				répercutée sur l'acuité du modèle \gls{htr} pour l'écriture cursive du XVIIe
-				siècle de l'ancien Évêché de Bâle.
+				vitesse d'apprentissage (le paramètre \textsf{-r}  de Kraken) s'est en effet répercutée sur l'acuité du modèle \gls{htr} pour l'écriture cursive du \siecle{xviie} siècle de l'ancien Évêché de Bâle.
 			
 			\subsection{Les sources et leurs problèmes}
 			
@@ -437,9 +447,9 @@
 				
 				L'entraînement des modèles \gls{htr} implique souvent de trouver des solutions
 				adaptées à la complexité des sources, qu'elle soit de nature matérielle
-				avec la qualité des reproductions photographiques\footcite{leblancTranskribusEScriptoriumRetour2022}, paléographique (variété
-				des types d'écriture, diversité des systèmes de signes) ou qu'elle ait
-				trait à la mise en page des documents.
+				avec la qualité des reproductions photographiques
+				\footcite{leblancTranskribusEScriptoriumRetour2022}, 
+				paléographique (variété des types d'écriture, diversité des systèmes de signes) ou qu'elle ait trait à la mise en page des documents.
 				
 				Le projet e-NDP, confronté à une assez large variété d'écritures
 				gothiques, s'emploie à développer une méthode de classification
@@ -447,15 +457,17 @@
 				type d'écriture, cette méthode permet d'évaluer automatiquement le type
 				d'écriture d'un document selon les performances des différents modèles.
 				Une fois le type d'écriture automatiquement identifié, le modèle adéquat
-				peut être appliqué\footcite{torresaguilarModelisationAffinageHTR2022}.
+				peut être appliqué
+				\footcite{torresaguilarModelisationAffinageHTR2022}.
 				
 				L'équipe travaillant sur les sources chinoises anciennes a quant à elle
 				proposé une méthode spécifique pour l'entraînement à partir de données
-				lacunaires\footcite{bizais-lilligExperimentationsPourAnalyse2022}. En effet
-				le chinois ancien comporte environ 54 000 caractères, dont seuls 4000 à
+				lacunaires
+				\footcite{bizais-lilligExperimentationsPourAnalyse2022}.
+				En effet, le chinois ancien comporte environ 54 000 caractères, dont seuls 4000 à
 				5000 sont représentés dans le jeu de données retenu~: des textes
 				xylographiés de la Chine impériale (50 images). Or tous les caractères
-				attestés ne sont pas référencés dans le système Unicode et il peut
+				attestés ne sont pas référencés dans le système Unicode, et il peut
 				exister plusieurs glyphes valant pour le même caractère. L'ampleur du
 				système de signes combinée à la taille réduite du jeu de données a pour
 				conséquence que de très nombreux signes contenus dans le jeu de
@@ -472,25 +484,28 @@
 				\subsubsection{Les types de mise en page}
 				
 				L'étude des écritures chinoises anciennes soulève en outre des problèmes
-				ayant trait à la {segmentation} des lignes. L'écriture verticale des
+				ayant trait à la \gls{segmentation} des lignes. L'écriture verticale des
 				sources xylographiques étudiées présente deux types de configuration des
 				caractères~: des colonnes simples et des colonnes doubles. Dans le
 				second cas, de grands caractères servent de rubrique, un peu comme les
-				titres chapteautant plusieurs colonnes dans la presse écrite. Cette
+				titres chapeautant plusieurs colonnes dans un article de presse écrite. Cette
 				succession verticale de grand caractères centrés et de petits caractères
-				sur deux colonnes contrarie l'entraînement d'un modèle de {segmentation}
-				fondé sur la principe de la ligne de base (\textit{baseline})~; pour
-				répondre à ce problème, la technique de la boîte englobante
+				sur deux colonnes contrarie l'entraînement d'un modèle de \gls{segmentation}
+				fondé sur le principe de la ligne de base (\textit{baseline}).
+				Pour répondre à ce problème, la technique de la boîte englobante
 				(\textit{bouding-box}) a été appliquée afin d'identifier les types de
 				colonnes (double ou simple) et de pouvoir ensuite traiter correctement
-				chaque région du texte de manière adaptée\footcite{bizais-lilligExperimentationsPourAnalyse2022}. L'analyse de mises
-				en page complexes a également été abordée par l'équipe du Geniza Lab\footcite{stoklbenezraSegmentationModeArchival2022} qui travaille sur une
+				chaque région du texte de manière adaptée
+				\footcite{bizais-lilligExperimentationsPourAnalyse2022}.
+				
+				L'analyse de mises
+				en page complexes a également été abordée lors du colloque par l'équipe du Geniza Lab\footcite{stoklbenezraSegmentationModeArchival2022} qui travaille sur une
 				très vaste typologie de documents médiévaux en hébreu, judéo-arabe et
 				araméen. Certains documents analysés présentent en effet un corps de
 				texte disposé en lignes horizontales et une glose marginale disposée de
 				manière giratoire autour du premier~; des marges sont en outre écrites
 				la tête en bas. Deux méthodes ont été envisagées pour l'entraînement de
-				modèles de {segmentation}~:
+				modèles de \gls{segmentation}~:
 				
 				\begin{enumerate}
 					
@@ -509,8 +524,8 @@
 		
 		\section{Partager les données}
 		
-			Pour exprimer leur plein potentiel les avancées technologiques de l'HTR
-			supposent, encore plus que l'échange des bons procédés et des méthodes
+			Pour exprimer leur plein potentiel, les avancées technologiques de l'\gls{htr}
+			supposent, plus encore que l'échange des bons procédés et des méthodes
 			innovantes, le partage des données. Les infrastructures d'entraînement
 			coûtent cher, mais c'est aussi le cas de la production de vérités de
 			terrain qui exige des compétences rares (paléographiques, linguistiques)
@@ -524,42 +539,39 @@
 					
 					\item
 					La production de vérités de terrain pour les écritures latines allant
-					du Moyen Âge au XXe siècle (21000 lignes de transcription ont été
-					publiées de manière ouverte)~;
+					du Moyen Âge au \siecle{xx} siècle (21000 lignes de transcription ont été publiées de manière ouverte)~;
 					\item
 					Le développement du catalogue
 					\href{https://htr-united.github.io/catalog.html}{HTR-United} pour
 					l'identification des vérités de terrain disponibles en ligne
-					\footcite{campsCremmaLabProjectsTranscription2022}
-					\footcite{chagueSharingHTRDatasets2022}.
+					\footcite{campsCremmaLabProjectsTranscription2022, chagueSharingHTRDatasets2022}.
 				\end{enumerate}
 				
 				Le catalogue \gls{htr}-United référence d'ores-et-déjà (au 30 juin 2022) les
-				productions de 46 projets, comptabilisant plus de 380 000 lignes. Il
+				productions de 46 projets, comptabilisant plus de 380\,000 lignes. Il
 				propose un moteur de recherche permettant d'interroger les types
-				d'écriture, les langues, et la chronologie des sources. Un standard de
+				d'écriture, les langues et la chronologie des sources. Un standard de
 				description des métadonnées permet à tout projet de signaler ses propres
 				vérités de terrain afin d'être correctement référencé dans le catalogue.
 			
 			\subsection{Pour des données génériques}
 			
 				La réutilisation des vérités de terrain implique d'en apprécier la
-				proximité avec des sources données. Comment choisir les données
-				d'entraînement permettant d'obtenir les meilleurs scores de son propre
-				projet ? Les expérimentations du projet \gls{cremma}-Lab permettent d'établir
+				proximité avec des sources déterminées. Comment choisir les données
+				d'entraînement permettant d'obtenir les meilleurs scores pour son propre
+				projet~? Les expérimentations du projet \gls{cremma}-Lab permettent d'établir
 				qu'il n'est pas la peine de trop spécialiser ses données d'entraînement
 				par langue ou par type de texte pour obtenir de bons résultats de
-				reconnaissance\footcite{campsCremmaLabProjectsTranscription2022}. Mais
-				obtenir les meilleurs scores possibles n'est pas sans inconvénient. Si
-				ces sources sont trop similaires, l'entraînement devient synonyme
+				reconnaissance
+				\footcite{campsCremmaLabProjectsTranscription2022}.
+				Mais obtenir les meilleurs scores possibles n'est pas sans inconvénient. Si
+				les sources sont trop similaires, l'entraînement devient synonyme
 				d'hyper-spécialisation et les scores risquent de chuter pour des sources
-				nouvelles. Le modèle
-				\href{https://github.com/HTR-United/cremma-medieval/releases/tag/1.1.0}{Bicerin}
-				a ainsi pu être \og amélioré \fg{}  par l'ajout de données très différentes et
-				ce malgré une diminution de ses scores d'acuité (\textit{accuracy}). La
-				robustesse d'un modèle \gls{htr} (on parle également de sa généricité, de sa
-				souplesse ou de sa plasticité) signifie sa capacité à reconnaître des
-				types d'écritures hétérogènes. Faire varier les langues et les genres
+				nouvelles.
+				Le modèle \href{https://github.com/HTR-United/cremma-medieval/releases/tag/1.1.0}{Bicerin} 
+				a ainsi pu être \og amélioré \fg{}  par l'ajout de données très différentes, et ce malgré une diminution de ses scores d'acuité (\textit{accuracy}).
+				La robustesse d'un modèle \gls{htr} (on parle également de sa généricité, de sa souplesse ou de sa plasticité) signifie sa capacité à reconnaître des types d'écritures hétérogènes.
+				Faire varier les langues et les genres
 				littéraires ou les types de texte contribue également à cette robustesse
 				dans la mesure où les modèles \gls{htr} s'appuient sur un modèle de langue
 				susceptible d'influencer les \glspl{prédiction}. Trouver le meilleur équilibre
@@ -569,13 +581,14 @@
 				l'évaluation d'un modèle \gls{htr} sur des données étrangères aux données
 				d'entraînement, recouvre une très grande variété de situations selon la
 				diversité des sources étudiées, comme cela a été évoqué au sujet du
-				projet e-NDP\footcite{torresaguilarModelisationAffinageHTR2022}.
+				projet e-NDP
+				\footcite{torresaguilarModelisationAffinageHTR2022}.
 				
 				Les présentations ont montré combien la diversité des projets et de
 				leurs finalités est irréductible à une méthodologie unique. Pourtant,
 				nombre de projets partagent les mêmes enjeux et dépendent du partage des
 				mêmes données d'entraînement. C'est pourquoi le projet \gls{cremma}-Lab\footcite{campsCremmaLabProjectsTranscription2022} propose des réflexions
-				méthodologiques sur les protocoles de transcriptions des corpus, dans un
+				méthodologiques sur les protocoles de transcriptions des corpus dans un
 				souci d'harmonisation des pratiques. Cet effort passe par la rédaction
 				d'un guide de transcription (\textit{guidelines}). Les règles communes de
 				transcription ainsi proposées pourront permettre l'entraînement de
@@ -583,7 +596,7 @@
 				sur des transcriptions plus homogènes. Il s'agit en l'occurrence
 				d'appliquer quelques principes simples~: ne pas imiter les formes de
 				lettres lorsqu'elles se rapportent à un même caractère (allographes) et
-				conserver les abrévations (dont le développement dépend souvent du
+				conserver les abréviations (dont le développement dépend souvent du
 				contexte, de la langue écrite ou \textit{scripta}). Pour les abréviations
 				et autres caractères spéciaux, il s'agit de suivre une table de
 				caractères Unicode de référence, l'outil ChocoMufin développé par
@@ -595,14 +608,13 @@
 				autre initiative dans le sens de l'harmonisation des vérités de terrain
 				a pris forme avec le projet \gls{segmonto}\footcite{gabaySegmOntoControlledVocabulary2022}. D'abord fondé sur l'étude
 				des manuscrits médiévaux et des imprimés anciens, \gls{segmonto} propose une
-				ontologie complète pour la descrition des régions et des lignes qui se
+				ontologie complète pour la description des régions et des lignes, une ontologie qui se
 				veut suffisamment générique pour répondre à l'ensemble des besoins
-				d'annotation, quelque soit le type de source ancienne ou contemporaine
+				d'annotation, quel que soit le type de source ancienne ou contemporaine
 				étudié. Ces concepts relèvent par conséquent de la description
 				matérielle plutôt que de la fonction sémantique des régions d'écriture
 				(la notion de \og marge \fg{} a par exemple été préférée à celle de glose et
-				celle d'objet \og graphique\fg{} à la notion de décoration ou d'image). La
-				liste des zones est la suivante~:
+				celle d'objet \og graphique\fg{} à la notion de décoration ou d'image). La liste des zones est la suivante~:
 				
 				\begin{itemize}
 					\item
@@ -637,7 +649,7 @@
 					TitlePageZone
 				\end{itemize}
 				
-				Au niveau des lignes, l'onotologie est plus resserée~:
+				Au niveau des lignes, l'ontologie est plus resserée~:
 				
 				\begin{itemize}
 					\item
@@ -661,8 +673,7 @@
 				\textit{CustomLine} permettent, de la manière décrite dans l'exemple
 				précédent, de définir des catégories personnalisées.
 			
-			\subsection{Exploiter les données~: pour des solutions
-				\textit{open-source}}{Exploiter les données~: pour des solutions open-source}
+			\subsection{Exploiter les données}{Exploiter les données~: pour des solutions \textit{open-source}}
 			
 				Atteindre un certain degré d'harmonisation des pratiques ne signifie pas
 				nécessairement contraindre les finalités des projets. Au contraire, la
@@ -670,28 +681,31 @@
 				multiples) est rendue possible par le recours à une méthode de travail
 				séquentielle~: une chaîne de traitement clairement structurée en étapes
 				successives qui procèdent indépendamment les unes des autres. Entraîner
-				des modèles d'HTR déjà performants implique d'apporter beaucoup de
-				données d'entraînement pour gagner, en définitive, très peu d'acuité.
+				des modèles d'\gls{htr} déjà performants implique d'apporter beaucoup de
+				données d'entraînement pour gagner en définitive très peu d'acuité.
 				Au-delà d'une certaine performance acquise, il peut donc être pertinent
-				de répondre aux problèmes de l'HTR (les fautes dans les \glspl{prédiction})
+				de répondre aux problèmes de l'\gls{htr} (les fautes dans les \glspl{prédiction})
 				autrement que par l'entraînement de modèles encore plus performants, à
-				savoir en corrigeant les \glspl{prédiction} dans une phase ultérieure de la
-				chaîne de traitement\footcite{torresaguilarModelisationAffinageHTR2022}.
+				savoir en corrigeant les \glspl{prédiction} dans une phase ultérieure de la chaîne de traitement
+				\footcite{torresaguilarModelisationAffinageHTR2022}.
 				
 				Ces étapes ultérieures peuvent être multiples~: lemmatisation des mots,
 				normalisation des graphies, annotation des entités nommées, etc. Leur
 				utilité est propre aux finalités de chaque projet~: produire des modèles
-				HTR robustes ne nécessite aucun traitement particulier, car le partage
-				du modèle est une fin en soi\footcite{campsCremmaLabProjectsTranscription2022}~; en revanche, rendre un
+				\gls{htr} robustes ne nécessite aucun traitement particulier, car le partage
+				du modèle est une fin en soi
+				\footcite{campsCremmaLabProjectsTranscription2022}~; en revanche, rendre un
 				corpus de textes interrogeable sur plusieurs siècles suppose de lui
-				appliquer des solutions d'uniformisation éditoriale\footcite{bizais-lilligExperimentationsPourAnalyse2022, torresaguilarModelisationAffinageHTR2022}~; établir une édition
+				appliquer des solutions d'uniformisation éditoriale
+				\footcite{bizais-lilligExperimentationsPourAnalyse2022, torresaguilarModelisationAffinageHTR2022}~; 
+				établir une édition
 				critique peut encore supposer des traitements particuliers, comme
 				séparer les mots (\textit{tokenization}) lorsque la langue de la source
-				atteste beaucoup d'agglutinations\footcite{stoklbenezraHTRCriticalEdition2022}, etc. En bout de chaîne, le
+				atteste beaucoup d'agglutinations
+				\footcite{stoklbenezraHTRCriticalEdition2022}, etc.
+				En bout de chaîne, le
 				développement de modèles de publication, comme a pu l'illustrer le
-				projet \gls{galcor}\footcite{gabaySegmOntoControlledVocabulary2022}, sera à
-				n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les
-				prochaines années.
+				projet \gls{galcor}\footcite{gabaySegmOntoControlledVocabulary2022}, sera à n'en pas douter l'un des enjeux importants pour les projets \gls{htr} dans les prochaines années.
 				
 				Dans ce contexte, la mise en œuvre par la communauté scientifique de
 				solutions applicatives indépendantes et complémentaires les unes des
@@ -703,19 +717,20 @@
 				manière contributive au rythme des besoins de la communauté ou d'un
 				projet singulier. Enfin et surtout, traiter les sources par étapes
 				successives permet l'archivage des états intermédiaires du travail et
-				donc le contrôle de ces étapes par des projets ultérieurs ou, encore une
-				fois, le partage des données entre des projets n'ayant pas les mêmes
-				finalités\footcite{campsCremmaLabProjectsTranscription2022}.
+				donc le contrôle de ces étapes par des projets ultérieurs ou encore une
+				fois le partage des données entre des projets n'ayant pas les mêmes
+				finalités
+				\footcite{campsCremmaLabProjectsTranscription2022}.
 	
 
 	\pagestyle{empty}
 	\cleardoublepage
 	\pagestyle{plain}			
 	
-	\chapter[HTR~: mise en œuvre]{Mettre en œuvre l'\gls{htr} \\ \large pour la correspondance de \gls{cds}}
+	\chapter[HTR~: mise en œuvre]{Mettre en œuvre l'HTR \\ \large pour la correspondance de \gls{cds}}
 		\label{chap2}
 		
-		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraînement facilement des modèles performants ?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé. Enfin, on discutera du choix des applications utilisées pour procéder à la reconnaissance automatique de l'écriture.
+		Évaluer la rentabilité de la reconnaissance automatique des écritures manuscrites suppose avant tout d'évaluer les caractéristiques graphiques des sources d'une part (la mise en page des documents et les styles d'écritures permettent-ils d'entraîner facilement des modèles performants~?), et de définir les finalités du travail d'autre part. Il en sera question dans ce chapitre. En outre, on justifiera la sélection des sources sur lesquelles nous avons travaillé et l'on discutera du choix de l'application utilisée pour procéder à l'\gls{htr}.
 	
 		\section{Enjeux et tâches préliminaires}
 			
@@ -737,12 +752,14 @@
 		
 			\subsection{Finalité~: l'édition des lettres}
 				À la différence de l'analyse textométrique ou de l'interrogation du texte brut, finalités très courantes de la reconnaissance automatique d'écriture, l'édition ne peut tolérer que quelques fautes de transcription persistent dans la production finale. Théoriquement, le texte doit être établi à la perfection (bien que l'erreur humaine soit toujours possible). Or, la reconnaissance automatique d'écriture ne parvient jamais à une acuité de 100\%~: la reconnaissance des espaces et des signes de ponctuation est particulièrement problématique, et les variations paléographiques inhérentes à toute écriture manuscrite entraînent fatalement des erreurs de reconnaissance, même avec un modèle particulièrement adapté à l'écriture en question
-				\footnote{Une acuité de 99\% est atteignable (\cite{stokesEScriptoriumVREManuscript2021}), mais il a semblé plus raisonnable de ne pas investir trop de temps dans l'entraînement du modèle et de se contenter des excellents résultats atteints.}.
+				\footnote{
+					Une acuité de 99\% est atteignable (\cite{stokesEScriptoriumVREManuscript2021}), mais il a semblé plus raisonnable de ne pas investir trop de temps dans l'entraînement du modèle et de se contenter des excellents résultats atteints.
+					}.
 				
-				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en-dessous d'une acuité estimée autour de 95\%, la reprise des \glspl{prédiction} automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc, imposant de procéder par une transcription manuelle. Une série de \glspl{prédiction} sera donnée en exemple pour apprécier l'écart entre une \gls{prédiction} d'une acuité voisine de 90\% (insuffisante pour l'édition) et une \gls{prédiction} d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
+				L'évaluation des performances des modèles est donc un élément capital de cette phase du travail, car en dessous d'une acuité estimée autour de 95\%, la reprise des \glspl{prédiction} automatiques du texte par l'éditeur devient tellement fastidieuse que le bénéfice de la reconnaissance automatique devient caduc. Une série de \glspl{prédiction} sera donnée en exemple pour apprécier l'écart entre une \gls{prédiction} d'une acuité voisine de 90\% (insuffisante pour l'édition) et une \gls{prédiction} d'une acuité supérieure à 95\%\footnote{Cf.~\ref{comp-perf-mod}, p.~\pageref{comp-perf-mod} \textit{et passim}.}.
 				
 			\subsection{Choisir des collections d'évaluation et identifier des mains}
-				Afin de donner les meilleurs chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale.
+				Afin de donner les meilleures chances à l'évaluation du modèle déjà entraîné par H.~Souvay, nous sommes repartis des mêmes vérités de terrain, issues de la seconde copie de la correspondance générale.
 				
 				Ces recueils de lettres constituent la part du corpus la plus normée sur le plan de l'écriture et de la mise en page, leur qualité de conservation assurant en outre de bonnes conditions à la reconnaissance d'écriture. Nous avons particulièrement exploité les trois premiers volumes de cet ensemble qui en compte six\footnote{\cite{CdS02001330}~; \cite{CdS02001369}~; \cite{CdS02001334}.}.
 				
@@ -766,7 +783,7 @@
 					\label{}
 				\end{figure}
 			
-				L'écriture qualifiée de \og troisième main principale \fg{} est sporadiquement attestée dans les trois volumes, mais a néamoins été identifiée sur presque 160 pages.
+				L'écriture qualifiée de \og troisième main principale \fg{} est sporadiquement attestée dans les trois volumes, mais a néanmoins été identifiée sur presque 160 pages.
 			
 				\begin{figure}[!h]
 					\centering
@@ -775,7 +792,7 @@
 					\label{}
 				\end{figure}
 					
-				Les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} ont également été analysées afin d'élargir la variété de notre corpus de tests. Deux mains y ont été distingués.
+				Les écritures du recueil de la correspondance adressée par J.P.E.~Martini à \gls{cds} ont également été analysées afin d'élargir la variété de notre corpus de tests. Deux mains y ont été distinguées.
 				
 				\begin{figure}[!h]
 					\centering
@@ -791,10 +808,10 @@
 					\label{}
 				\end{figure}
 					
-				On a privilégié pour les corpus de test et d'entraînement des modèles des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso (un problème assez présent dans la correspondance Martini).
+				On a privilégié, pour les corpus de test et d'entraînement des modèles, des reproductions favorables à une bonne reconnaissance de l'écriture, évitant en particulier les problèmes de transparence qui font ressortir au recto l'encre du verso (un problème assez présent dans la correspondance Martini).
 
 			\subsection{L'écriture personnelle de C.~de Salm~: un défi paléographique}
-				Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription d'une écriture particulièrement cursive.
+				Concernant l'écriture personnelle de \gls{cds}, le site ne publie aucune lettre originale de sa main, mais 52 brouillons (\textit{Entwurf}). Entraîner un modèle de reconnaissance sur cette écriture suppose un travail délicat de transcription, pour une écriture particulièrement cursive.
 				
 				\begin{figure}[!h]
 					\centering
@@ -803,20 +820,22 @@
 					\label{}
 				\end{figure}
 				
-				Nous avons tenté l'expérience de produire des vérités de terrain pour l'entraînement d'un modèle de reconnaissance propre à cette écriture, mais les résultats des premiers tests se sont révélés décourageants~: la meilleur acuité obtenue ne dépassait pas 44\%
-				\footnote{Résultat obtenu rétrospectivement avec le modèle que nous avons entraîné sur quatre mains~: cds\_lectcm\_04\_mains\_01.mlmodel.}.
+				Nous avons tenté l'expérience de produire des vérités de terrain pour l'entraînement d'un modèle de reconnaissance propre à cette écriture, mais les résultats des premiers tests se sont révélés décourageants~: la meilleure acuité obtenue ne dépassait pas 44\%
+				\footnote{
+					Résultat obtenu rétrospectivement avec le modèle que nous avons entraîné sur quatre mains~: cds\_lectcm\_04\_mains\_01.mlmodel.
+					}.
 				
 				Par ailleurs, les difficultés rencontrées pour transcrire des pages de l'écriture de \gls{cds} ont été importantes. Il a donc fallu renoncer à cette expérience, au risque d'y passer un temps long pour un résultat douteux.
 				
 				Faute de vérités de terrain dignes de ce nom, nous donnons en annexe à ce travail les transcriptions de deux extraits de lettres
-				\footnote{Voir infra, \ref{autographes}, p.~\pageref{autographes}.}.
+				\footnote{Voir \textit{infra}, \ref{autographes}, p.~\pageref{autographes}.}.
 		
 			\subsection[Préparer le traitement d'un dossier]{Préparer le traitement d'un dossier~: méthodologie de sélection des pièces publiées}
-				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés et des éléments inventoriés mais non publiés. Un script de contrôle des données a été écrit pour dresser la liste des notices d'inventaire mais dont les données n'ont pas été validées pour la publication\cite{biayDonneesNonPublieesPy2022}~; il permet d'afficher ces données dans un fichier au format \gls{json}, en donnant la liste des images concernées.
+				L'archive photographique de la correspondance de \gls{cds} comporte des documents non inventoriés et des éléments inventoriés, mais non publiés. Un script de contrôle des données a été écrit pour dresser la liste des notices d'inventaire dont les données n'ont pas été validées pour la publication\cite{biayDonneesNonPublieesPy2022}~; il permet d'afficher ces données dans un fichier au format \gls{json}, en donnant la liste des images concernées.
 				
-				À ce titre tous les dossiers ne sont pas logés à la même enseigne. Par exemple des images du premier volume de la seconde copie\cite{CdS02001330} ont été inventoriées sans être publiées. En revanche, pour le deuxième volume\cite{CdS02001369}, les images non publiées n'ont pas non plus été inventoriées~; tout un lot de textes contenus dans les images de ce volume sont donc dépourvus de données d'inventaire. 
+				À ce titre tous les dossiers ne sont pas logés à la même enseigne. Par exemple, des images du premier volume de la seconde copie\cite{CdS02001330} ont été inventoriées sans être publiées. En revanche, pour le deuxième volume\cite{CdS02001369}, les images non publiées n'ont pas non plus été inventoriées~; tout un lot de textes contenus dans les images de ce volume est donc dépourvu de données d'inventaire. 
 				
-				Cette situation, certainement fondée sur des critères de pertinence (en particulier celui de ne pas inventorier les copies de lettres dont les originaux ont déjà leur propre notice), représente un obstacle à la gestion automatisée des transcriptions qui peuvent être constituées d'un mélange de pièces non inventoriées (et donc dépourvues de toutes données descriptives) et de pièces inventoriées (ces dernières pouvant être associées à une adresse web déjà publiée et d'autres non). Prenons l'exemple de la figure \ref{non-invent-58}. Cette photographie contient la fin d'une lettre\footcite{CdS02057058}, le début d'une autre\footcite{CdS02058059}, et entre les deux une lettre non inventoriée, dont le titre se situe en haut de la page de droite.
+				Cette situation, certainement fondée sur des critères de pertinence (en particulier celui de ne pas inventorier les copies de lettres dont les originaux ont déjà leur propre notice), représente un obstacle à la gestion automatisée des transcriptions, qui peuvent être constituées d'un mélange de pièces non inventoriées (et donc dépourvues de toutes données descriptives) et de pièces inventoriées (ces dernières pouvant être associées à une adresse web déjà publiée et d'autres non). Prenons l'exemple de la figure \ref{non-invent-58}. Cette photographie contient la fin d'une lettre\footcite{CdS02057058}, le début d'une autre\footcite{CdS02058059}, et entre les deux une lettre non inventoriée, dont le titre se situe en haut de la page de droite.
 				
 				\begin{figure}[!h]
 					\centering
@@ -825,17 +844,21 @@
 					\label{non-invent-58}
 				\end{figure}
 				
-				Admettons que l'on ne souhaite éditer que les lettres inventoriées. Les données de l'inventaire permettent d'établir d'une part que la première lettre attestée dans cette image commence à l'image précédente et que d'autre part l'inventaire connaît une seconde lettre dont le titre se situe dans cette image. Si l'on ne procède pas d'une manière ou d'une autre à l'élimination préalable de la lettre non inventoriée, il faudra non seulement corriger la {segmentation} et la transcription d'une lettre que l'on ne souhaite pas conserver dans l'encodage final (surcroît de travail inutile), mais aussi encoder à la main, pour la transcription de chaque lettre, toutes les données descriptives issues de l'inventaire, car aucun moyen de permettra alors de déterminer si le titre de la seconde lettre inventoriée sur la page est celui situé en haut de la page de droite ou s'il s'agit de celui situé en bas de la page de droite.
-						
-				Face à ce problème et à la présence (inégale selon les dossiers) de données non publiées dans l'inventaire, le parti a été pris de n'engager dans notre chaîne de traitement que des documents non seulement inventoriés mais dont les notices ont en outre été publiées sur le site \url{http://constance-de-salm.de}.
+				Admettons que l'on ne souhaite éditer que les lettres inventoriées. Les données de l'inventaire permettent d'établir d'une part que la première lettre attestée dans cette image commence à l'image précédente et que d'autre part l'inventaire connaît une seconde lettre dont le titre se situe dans cette image. Si l'on ne procède pas d'une manière ou d'une autre à l'élimination préalable de la lettre non inventoriée, il faudra non seulement corriger la \gls{segmentation} et la transcription d'une lettre que l'on ne souhaite pas conserver dans l'encodage final (surcroît de travail inutile), mais aussi encoder à la main, pour la transcription de chaque lettre, toutes les données descriptives issues de l'inventaire, car aucun moyen ne permettra alors de déterminer si le titre de la seconde lettre inventoriée sur la page est celui situé en haut de la page de droite ou s'il s'agit de celui situé en bas de la page de droite.
 				
-				Il va de soi que la chaîne de traitement peut être conduite sans tenir compte de cette étape de sélection des pièces. Si le parti devait être pris de transcrire l'intégralité d'un recueil sans distinction des pièces inventoriées et de celles qui ne le sont pas, il suffirait simplement de passer outre cette étape.
+				Face à ce problème et à la présence (inégale selon les dossiers) de données non publiées dans l'inventaire, le parti a été pris de n'engager dans notre chaîne de traitement que des documents non seulement inventoriés, mais dont les notices ont en outre été publiées sur le site \url{http://constance-de-salm.de}.
 				
-				La sélection des pièces est donc une étape importante du début de la chaîne de traitement que l'on a élaborée dans le cadre de ce stage. Un \textit{notebook} lui a été consacré\footcite{biayPreparerTraitementDossier2022}. Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images qui sont associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier \gls{json} qui liste (entre autres informations), pour chaque notice l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice
-				\label{donnees-images}
-				\footnote{Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})}.
+				Il va de soi que la chaîne de traitement peut être conduite sans tenir compte de cette étape de sélection des pièces. Si le parti devait être pris de transcrire l'intégralité d'un recueil sans distinction des pièces inventoriées et de celles qui ne le sont pas, il suffirait de passer outre cette étape.
 				
-				Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire. Dans le cas spécifique illustré par la figure \ref{non-invent-58} d'une image contenant un mélange de pièces inventoriées et de pièces non inventoriées, c'est au stade de la {segmentation} que l'élimination des lettres non inventoriées est proposée (voir \textit{infra}, p.~\ref{controle-segmentation-lettres-inventoriees}).
+				La sélection des pièces est donc une étape importante du début de la chaîne de traitement que l'on a élaborée dans le cadre de ce stage. Un \textit{notebook} lui a été consacré
+				\footcite{biayPreparerTraitementDossier2022}.
+				Après l'étape préliminaire de l'import local et de la conversion des images au format Jpeg (afin de ne pas travailler avec le format Tiff, trop lourd), il est nécessaire d'établir la liste des images qui sont associées à une notice publiée de l'inventaire. Nous avons pour cela écrit un script Python\footcite{biayDonneesImagesPy2022} qui analyse les noms des fichiers convertis et importés localement, croise ces noms avec les données de l'inventaire et écrit en sortie un fichier \gls{json} qui liste (notamment) pour chaque notice de l'inventaire contenant l'une des images du dossier, l'URL de cette notice sur le site \url{https://constance-de-salm.de} et la liste complète des images attachées à cette notice%
+				\label{donnees-images}%
+				\footnote{%
+					Le fichier donne par ailleurs la liste des images qui ne sont liées à aucune notice de l'inventaire, ainsi qu'une présentation des mêmes données d'association image-notice, mais cette fois par image et non par notice, et ce afin de permettre le contrôle visuel des zones de texte à transcrire (cf.~\textit{infra}, \ref{controle-segmentation-lettres-inventoriees}, p.~\pageref{controle-segmentation-lettres-inventoriees})%
+					}.
+				
+				Une fois le dossier analysé et le fichier produit, les commandes que nous avons écrites dans le \textit{notebook} permettent de n'importer dans le dossier de travail que les images correspondant à une notice de l'inventaire. Dans le cas spécifique, illustré par la figure \ref{non-invent-58}, d'une image contenant un mélange de pièces inventoriées et de pièces non inventoriées, c'est au stade de la \gls{segmentation} que l'élimination des lettres non inventoriées est proposée (voir \textit{infra}, p.~\ref{controle-segmentation-lettres-inventoriees}).
 							
 			\subsection[Transkribus ou eScriptorium~?]{Transkribus ou eScriptorium~? Fonctionnalités avancées \textit{versus} science ouverte}
 				Au moment du présent stage, les deux principales applications permettant de procéder à la transcription automatique des écritures manuscrites sont eScriptorium et Transkribus.
@@ -864,12 +887,12 @@
 							
 				Dans ce genre de configuration, une assistance pourra être requise pour l'étape la plus délicate en termes d'ingénierie~: l'installation des applications nécessaires à la conduite du projet, celle d'eScriptorium étant le point le plus critique et l'installation des applications en langage Python pouvant également poser quelques difficultés. Nous avons en effet utilisé eScriptorium à partir d'une installation locale\footnote{La démarche est expliquée sur la page suivante~: \cite{DockerInstallInstallation}.}, faisant appel aux seules ressources d'un ordinateur portable, à savoir sans serveur ni carte graphique externe\footnote{L'ordinateur utilisé est doté d'un processeur 11th Gen Intel Core i7-1165G7 @ 2.80GHz × 8 et d'une mémoire vive de 15,4 GiB.}. Cette méthode nous a permis de procéder à des entraînements de modèle à partir de petits volumes de vérités de terrain. Si des entraînements plus massifs s'avéraient nécessaires, il serait alors impératif de se tourner vers une infrastructure dotée de plus grandes capacités de calcul, ce que, par exemple, un partenariat entre le \gls{dhi} et le projet \gls{cremma} rendrait possible.
 						
-		\section[La {segmentation}]{La {segmentation}~: reconnaissance des zones de texte et des lignes d'écriture}
+		\section[La \gls{segmentation}]{La \gls{segmentation}~: reconnaissance des zones de texte et des lignes d'écriture}
 			\label{lieu-segmentation}
 			
-			La {segmentation} est une étape indispensable à la réalisation d'une reconnaissance automatique de l'écriture manuscrite. Il s'agit de l'étape la plus problématique, car les possibilités d'entraînement de modèles de {segmentation}, permettant d'automatiser le processus, recquièrent beaucoup plus de données d'entraînement pour des résultats souvent médiocres, contrairement à la reconnaissance de l'écriture elle-même.
+			La \gls{segmentation} est une étape indispensable à la réalisation d'une reconnaissance automatique de l'écriture manuscrite. Il s'agit de l'étape la plus problématique, car les possibilités d'entraînement de modèles de \gls{segmentation}, permettant d'automatiser le processus, recquièrent beaucoup plus de données d'entraînement pour des résultats souvent médiocres, contrairement à la reconnaissance de l'écriture elle-même.
 			
-			Cette section décrit les enjeux de cette opération et relate les expériences de {segmentation} qui ont été réalisées à partir des recueils de la correspondance de \gls{cds}.
+			Cette section décrit les enjeux de cette opération et relate les expériences de \gls{segmentation} qui ont été réalisées à partir des recueils de la correspondance de \gls{cds}.
 						
 			\subsection{Principes et enjeux}
 				Contrairement à certains logiciels d'\gls{ocr}, qui procèdent directement à une reconnaissance optique caractère par caractère, tous les logiciels d'\gls{htr} fonctionnent en appliquant la reconnaissance optique au niveau de la ligne d'écriture (principe dénommé en anglais \textit{line-wise text recognition})\footcite{stokesEScriptoriumVREManuscript2021}. Cette technologie fonctionne sur la base d'un module d'analyse de la mise en page (\textit{layout analysis module}) qui fonctionne indépendamment du type d'écriture rencontré, rendant ainsi possible pour une application comme Kraken de travailler sur tous les types d'écritures (alphabétiques et autres). Les logiciels Transkribus et Kraken reconnaissent les lignes de base des écritures (\textit{baselines}) et peuvent ainsi repérer des zones de texte où qu'elles se situent dans une page et quelque soit leur orientation. 
@@ -887,7 +910,7 @@
 				
 				Mais si la reconnaissance correcte des lignes d'écriture garantit a propri une bonne transcription des lettres, éditer les lettres d'un tel recueil implique une autre opération~: distinguer les lettres les unes des autres. En effet, et c'est l'une des caractéristiques de la mise en page de ces recueils de copie, les lettres y sont copiées à la suite les unes des autres, séparées par des titres. De plus, une lettre commence souvent sur une double page pour se terminer sur la suivante, son texte se partageant entre deux photographies. Si l'on veut éviter la tâche fastidieuse de reconstituer à la main le texte des lettres à partir des transcriptions automatiques de chaque photographie (en réunissant par copier-coller ces différentes parties dans un fichier commun), il devient crucial de structurer la transcription du texte contenu dans chaque image par le repérage dans le flux de texte d'éléments permettant cette structuration, à savoir les titres.
 				
-				Rien n'est plus évident à l'œil humain que de voir un titre et de comprendre qu'il marque la fin d'une lettre et le début d'une autre. Or le modèle de {segmentation} par défaut de Kraken ne réalise pas cette coupure par lui-même. On le voit sur l'image suivante, la même zone verte englobe la fin d'une lettre et le début d'une autre.
+				Rien n'est plus évident à l'œil humain que de voir un titre et de comprendre qu'il marque la fin d'une lettre et le début d'une autre. Or le modèle de \gls{segmentation} par défaut de Kraken ne réalise pas cette coupure par lui-même. On le voit sur l'image suivante, la même zone verte englobe la fin d'une lettre et le début d'une autre.
 				
 				\begin{figure}[!h]
 					\centering
@@ -896,12 +919,12 @@
 					\label{}
 				\end{figure}
 				
-				La {segmentation} des pages et des lignes d'écriture pose donc une problématique. Dans quelle mesure est-il possible d'automatiser ce processus sachant qu'il est primordial que les lignes d'écriture soient correctement reconnues, qu'il est très important de pouvoir repérer les titres des lettres et que de surcroît, il n'est pas raisonnablement envisageable de créer un modèle totalement personnalisé. En effet, on a pu faire l'expérience que tenter d'entraîner un modèle à partir de zéro ne permet même pas d'aboutir à une bonne reconnaissance des lignes. La seule méthode efficace consiste donc à tirer le meilleur profit des performances du modèle standard et à tenter d'améliorer ces performances pour le rendre plus spécifique à la mise en page de ces copies de lettres.
+				La \gls{segmentation} des pages et des lignes d'écriture pose donc une problématique. Dans quelle mesure est-il possible d'automatiser ce processus sachant qu'il est primordial que les lignes d'écriture soient correctement reconnues, qu'il est très important de pouvoir repérer les titres des lettres et que de surcroît, il n'est pas raisonnablement envisageable de créer un modèle totalement personnalisé. En effet, on a pu faire l'expérience que tenter d'entraîner un modèle à partir de zéro ne permet même pas d'aboutir à une bonne reconnaissance des lignes. La seule méthode efficace consiste donc à tirer le meilleur profit des performances du modèle standard et à tenter d'améliorer ces performances pour le rendre plus spécifique à la mise en page de ces copies de lettres.
 				
-				Ces considérations générales étant posées, on se soit d'approfondir les problèmes dotn les bases viennent d'être posées~: le comportement du modèle standard de {segmentation} de Kraken à l'égard des particularités de la mise en page des sources du projet d'une part, les possibilités de structuration offertes par cette étape de la {segmentation} en vue de l'encodage de ces lettres au format \gls{tei}, finalité du présent travail.
+				Ces considérations générales étant posées, on se soit d'approfondir les problèmes dotn les bases viennent d'être posées~: le comportement du modèle standard de \gls{segmentation} de Kraken à l'égard des particularités de la mise en page des sources du projet d'une part, les possibilités de structuration offertes par cette étape de la \gls{segmentation} en vue de l'encodage de ces lettres au format \gls{tei}, finalité du présent travail.
 					
 			\subsection{Définir une structure de document idéale en vue de l'édition}
-				Il est important de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilités de {segmentation} automatique des pages. En effet, l'étape de la {segmentation} consiste à annoter (manuellement ou, si possible, automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \textit{Signé Constance de Salm} l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
+				Il est important de prendre en considération la morphologie que devra prendre l'encodage final des lettres avant même de se lancer dans l'évaluation des possibilités de \gls{segmentation} automatique des pages. En effet, l'étape de la \gls{segmentation} consiste à annoter (manuellement ou, si possible, automatiquement) des zones ou régions d'écriture et les lignes qui y sont comprises. Si l'on associe, par exemple, à la ligne qui dans l'image contient le texte \textit{Signé Constance de Salm} l'information sémantique selon laquelle il s'agit de la signature d'une lettre, il devient possible d'encoder automatiquement le texte comme étant une signature dans l'édition numérique finale.
 				
 				Des propositions d'encodage extrêmement complètes pour l'édition de correspondances ont été formulées dans les \textit{Guidelines} du projet DAHN\footcite{chiffoleauCorrespondenceGuidelines2022}. En lien avec ces propositions d'encodage, F.~Chiffoleau a en outre élaboré une ontologie des régions d'écriture pour les correspondances en langue française pour le \siecle{xx}~siècle \footcite{chiffoleauCorrespondanceLangueFrancaise2021}, dans le cadre du projet \gls{segmonto}\footcite{gabaySegmOntoCommonVocabulary2021}. Voici les types de régions d'écriture dont l'application aux sources du présent projet pouvait être pertinente~:
 				\selectlanguage{english}
@@ -933,10 +956,10 @@
 				\end{enumerate}
 				\selectlanguage{french}}
 				
-				Restait à savoir (et ça n'était pas la moindre question) si un modèle de {segmentation} serait capable d'identifier ces régions d'écritures de manière automatique.
+				Restait à savoir (et ça n'était pas la moindre question) si un modèle de \gls{segmentation} serait capable d'identifier ces régions d'écritures de manière automatique.
     
 		    \subsection{Problèmes posés par l'espacement des lignes}
-				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'œil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres, et le modèle de {segmentation} par défaut de Kraken ne se montre pas capable de les séparer de lui-même.
+				La mise en page des lettres dans les recueils de copie répond à des principes clairs pour l'œil humain~; il présente en revanche d'importantes variations métriques dans l'espace de la page. On a déjà pointé précédemment un problème de taille~: les lettres sont écrites les unes à la suite des autres, et le modèle de \gls{segmentation} par défaut de Kraken ne se montre pas capable de les séparer de lui-même.
 				
 				Ce modèle procède à l'évaluation de l'espacement entre les régions d'écritures~: il fusionne dans une seule région les lignes qui lui semblent suffisamment proches~; il assigne en revanche à des régions distinctes les lignes qui lui semblent suffisamment éloignées. On a vu que cette appréciation lui permet de distinguer la manchette des lettres, caractéristique de ces recueils de copie (voir \textit{supra}, figure~\ref{seg-defaut-65}, p.~\pageref{seg-defaut-65}). L'exemple illutré par la figure \ref{seg-opener-193} montre la capacité de ce modèle à distinguer l'ouverture de la lettre (\textit{opener}) en réunissant dans une région cohérente et indépendante le titre de la lettre, le lieu et la date (ainsi qu'une annotation de type catalographique écrite en rouge).
 				
@@ -968,9 +991,9 @@
 				Ces premières observations suggèrent qu'entraîner un modèle à reconnaître les différentes parties d'une lettre sous forme de régions d'écritures distinctes (catégorisées ci-dessus \textit{opener}, \textit{main} et \textit{closer}) s'annonce difficile. D'autres observations relatives à la numérotation des lignes ont confirmé les inconvénients de cette méthode.
 				
 			\subsection{Gérer la numérotation des lignes}
-				La numérotation des lignes de texte est une opération essentielle de la {segmentation}. Rien ne pourrait être fait de la transcription automatique du texte si les lignes n'étaient pas transcrites dans l'ordre de lecture. L'algorithme de {segmentation} par défaut de Kraken est bien entendu capable de numéroter les lignes selon les préférences de l'utilisateur, et dans le cas présent, de gauche à droite et de haut en bas.
+				La numérotation des lignes de texte est une opération essentielle de la \gls{segmentation}. Rien ne pourrait être fait de la transcription automatique du texte si les lignes n'étaient pas transcrites dans l'ordre de lecture. L'algorithme de \gls{segmentation} par défaut de Kraken est bien entendu capable de numéroter les lignes selon les préférences de l'utilisateur, et dans le cas présent, de gauche à droite et de haut en bas.
 				
-				Paramètre important~: la numérotation des lignes dépend de la position des régions qui les englobent dans l'image analysée. Ainsi, la mise en page particulière des documents et le découpage du texte par régions peut jouer un rôle déterminant dans l'ordre des lignes. L'expérience a pu en être faite en remodelant de différentes manières les {segmentation}s automatiquement produites le modèle par défaut de Kraken.
+				Paramètre important~: la numérotation des lignes dépend de la position des régions qui les englobent dans l'image analysée. Ainsi, la mise en page particulière des documents et le découpage du texte par régions peut jouer un rôle déterminant dans l'ordre des lignes. L'expérience a pu en être faite en remodelant de différentes manières les \gls{segmentation}s automatiquement produites le modèle par défaut de Kraken.
 				
 				Or les problèmes de numérotation ont été nombreux lors de ces tests. Comme le montre la figure \ref{comp-av-opener-ln-reg-193}, issue du vol.~2 de la seconde copie\footcite{CdS02001369}, obtenir une bonne numérotation des lignes de titre s'est révélé problématique dès lors que l'on souhaitait isoler ces titres dans une région propre (\textit{opener}). On observe en effet dans cet exemple que le titre situé sur la page de gauche est numéroté 23 et 24~; il ne s'intercale donc pas correctement entre les lignes de la manchette (10 et 11) et les lignes du corps de la lettre (à partir de 12). Le même phénomène s'est produit dans cet exemple pour les trois titres de la double page. Sachant que le titre est le seul élément sur lequel on puisse s'appuyer pour distinguer automatiquement le début et la fin des lettres (car il n'y a pas toujours de signature, pas toujours de manchette, pas toujours de date pour borner le texte des lettres), la mauvaise numérotation des lignes de titre est un énorme problème en vue de l'exploitation des \glspl{prédiction}~: sans intervention, les titres de chaque lettre de cette page se retrouveraient disposer à la fin du texte de leur lettre et ainsi passer pour le titre de la lettre suivante…
 				
@@ -979,7 +1002,7 @@
 				\begin{figure}[!h]
 					\centering
 					\includegraphics[width=15cm]{img/comp-av-opener-ln-reg-CdS02_Konv002-02_0193.jpg}
-					\caption{Exemple de numérotation à partir d'une {segmentation} distingant \textit{opener} et \textit{closer} (cliché CdS02\_Konv002-02\_0193.jpg).}
+					\caption{Exemple de numérotation à partir d'une \gls{segmentation} distingant \textit{opener} et \textit{closer} (cliché CdS02\_Konv002-02\_0193.jpg).}
 					\label{comp-av-opener-ln-reg-193}
 				\end{figure}
 			
@@ -994,7 +1017,7 @@
 				
 				Cette solution pouvait sembler prometteuse jusqu'au moment où il s'est agit d'examiner les fichiers \gls{alto} compilés par le logiciel eScriptorium, où la transcription des textes de la page se trouve structurée en fonction des régions d'écriture que l'on a définies. Le choix de lier les lignes d'écritures à la super-région \textit{page} les avait (logiquement) déconnectées de leurs propres régions~: le fichier se présentait avec des régions \textit{page} pleines de lignes d'écriture et des régions \textit{opener}, \textit{main}, etc. entièrement vides. Il devenait dès lors impossible d'exploiter les étiquettes données à ces régions d'écriture en vue de la réalisation de l'encodage des lettres~: les lettres ne pouvaient plus être distinguées les unes des autres. Il a donc fallu renoncer à emboîter des régions d'écriture pour résoudre les problèmes de numérotation. 
 				
-				La solution finalement apparue comme la seule possible consistait à simplifier la définition des régions d'écriture. Dans la figure \ref{comp-ss-opener-193}, la {segmentation} consiste à séparer les lettres les unes des autres et à distinguer la manchette (un choix que l'on a maintenu dans la mesure où le modèle par défaut de Kraken s'est montré capable d'opérer seul cette distinction). Toutes les parties de la lettre sont réunies dans une même région (sauf si la lettre se prolonge sur l'image suivante, naturellement). Cette option a non seulement permis de résoudre les problèmes de numérotation des titres, mais aussi de résoudre un autre problème de numérotation assez récurrent~: la ligne indiquant le lieu et la date de la lettre (numéros 14, 32 et 46 dans l'exemple en question) s'intercalait assez souvent entre la première et la seconde ligne du texte de la lettre. On a également observé dans un certain nombre de cas les deux premières lignes du texte numérotées en ordre inverse.
+				La solution finalement apparue comme la seule possible consistait à simplifier la définition des régions d'écriture. Dans la figure \ref{comp-ss-opener-193}, la \gls{segmentation} consiste à séparer les lettres les unes des autres et à distinguer la manchette (un choix que l'on a maintenu dans la mesure où le modèle par défaut de Kraken s'est montré capable d'opérer seul cette distinction). Toutes les parties de la lettre sont réunies dans une même région (sauf si la lettre se prolonge sur l'image suivante, naturellement). Cette option a non seulement permis de résoudre les problèmes de numérotation des titres, mais aussi de résoudre un autre problème de numérotation assez récurrent~: la ligne indiquant le lieu et la date de la lettre (numéros 14, 32 et 46 dans l'exemple en question) s'intercalait assez souvent entre la première et la seconde ligne du texte de la lettre. On a également observé dans un certain nombre de cas les deux premières lignes du texte numérotées en ordre inverse.
 				
 				\begin{figure}[!h]
 					\centering
@@ -1003,14 +1026,14 @@
 					\label{comp-ss-opener-193}
 				\end{figure}
 				
-				On le voit dans l'exemple en question, il a également été choisi de ne pas distinguer de région \textit{closer} pour la signature des lettres. Après quelques tentatives d'entraînement de modèle de {segmentation} en ce sens, les résultats très mauvais que l'on a obtenus prouvaient avec assez de force que cette tentative était vouée à l'échec.
+				On le voit dans l'exemple en question, il a également été choisi de ne pas distinguer de région \textit{closer} pour la signature des lettres. Après quelques tentatives d'entraînement de modèle de \gls{segmentation} en ce sens, les résultats très mauvais que l'on a obtenus prouvaient avec assez de force que cette tentative était vouée à l'échec.
 				
 			\subsection{Définir une ontologie des régions et des lignes}
-				Une fois arrêtés les principes généraux de la {segmentation}, il convient de définir une ontologie, à savoir la liste des types de régions et de lignes d'écriture que l'on entend appliquer à cette {segmentation}.
+				Une fois arrêtés les principes généraux de la \gls{segmentation}, il convient de définir une ontologie, à savoir la liste des types de régions et de lignes d'écriture que l'on entend appliquer à cette \gls{segmentation}.
 				
 				Le choix a été fait d'inscrire cette définition des régions et des lignes suivant les principes de l'ontologie \gls{segmonto}. Déjà cité, le projet \gls{segmonto} propose un cadre conceptuel général pour ce genre de définition. Bien qu'orienté sur la description des manuscrits médiévaux et des premiers imprimés, il met en avant les catégories les plus génériques possibles (\textit{main}, \textit{margin}, \textit{numbering}, etc.) ainsi que des solutions de personnalisation, afin de permettre à tout type de projet d'exprimer ses besoins d'annotation de régions et de lignes d'écriture dans un cadre commun. Ce cadre facilite \textit{in fine} la réutilisation des vérités de terrain et contribue ainsi à l'ouverture des données d'entraînements des projets de reconnaissance automatique d'écriture.
 				
-				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La {segmentation} de nombreuses page de texte, même avec l'assistance d'un bon modèle de {segmentation} automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa {segmentation}) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
+				Inscrire le présent projet dans ce cadre communautaire est également bénéfique au projet lui-même. La \gls{segmentation} de nombreuses page de texte, même avec l'assistance d'un bon modèle de \gls{segmentation} automatique, suppose un contrôle et parfois une correction attentive des pages segmentées. Là où l'algorithme ne parvient pas à identifier un type de région ou un type de ligne, il la laisse sans annotation (type \textit{None}). L'outil de validation d'annotation HTRUC\footcite{clericeHTRUCHTRUnitedCatalog2021}, développé selon les catégories de \gls{segmonto}, permet de contrôler de manière très efficace que des lignes ou des régions ne sont pas restées sans annotation~; il permet encore de s'assurer que les principes de nommage des régions et des lignes ont été respectés, que ce soit pour les catégories génériques (que l'on peut mal orthographier en préparant sa \gls{segmentation}) ou pour les catégories personnalisées (qui doivent être regroupées sous les catégories \textit{CustomZone} et \textit{CustomLine}).
 				
 				En résumé, les types de régions d'écriture que l'on a retenus et conformés à \gls{segmonto} sont les suivants~:
 				
@@ -1026,7 +1049,7 @@
 				
 				On recommande l'usage de la région \textit{MarginTextZone} pour les annotations portées sur une page qui ne seraient pas spécifiquement attachées à une lettre, car si l'on souhaite préserver le lien entre une annotation et une lettre spécifique, définir cette annotation comme une région d'écriture à part est de nature à poser de nouveaux problèmes de numérotation. On peut constater sur la figure \ref{num-annot-193} que la mention entre parenthèses \textit{Cor(respondance) gén(éra)le (n\textsuperscript{o}~20)} que l'on ici isolée dans une région à part a reçu le numéro 57, ce qui l'inscrit en queue de toute la numérotation de la page. La ligne ne s'inscrit dès lors plus dans la numérotation de la lettre à laquelle on souhaiterait pourtant attacher l'annotation.
 				
-				En conclusion, les annotations dont on souhaite maintenir le lien à une lettre particulière doivent être incluses dans la (ou l'une des) région(s) \textit{MainZone} de leur lettre (ce que le modèle de {segmentation} par défaut effectue généralement de lui-même), le statut d'annotation étant signalé par le type de ligne qu'on lui attribue, et non par le type de région dans lequel on l'inscrit.
+				En conclusion, les annotations dont on souhaite maintenir le lien à une lettre particulière doivent être incluses dans la (ou l'une des) région(s) \textit{MainZone} de leur lettre (ce que le modèle de \gls{segmentation} par défaut effectue généralement de lui-même), le statut d'annotation étant signalé par le type de ligne qu'on lui attribue, et non par le type de région dans lequel on l'inscrit.
 				
 				\begin{figure}[!h]
 					\centering
@@ -1052,7 +1075,7 @@
 				\end{itemize}
 		
     		\subsection{Résultats des entraînements}
-    			Les principes de {segmentation} que l'on vient de définir ont été appliqués à un premier lots de 123 doubles pages issues des 2\textsuperscript{e} et 3\textsuperscript{e} volumes des recueils de copies\footcite{CdS02001369, CdS02001334}. Les pages ont été initialement segmentées avec le modèle par défaut de Kraken, puis corrigées et annotées manuellement dans l'interface eScriptorium\footnote{Les fichiers exportés sont les 123 premiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}.}. Une fois ces corrections effectuées, les pages ont été exportées au format \gls{alto} et un modèle de {segmentation} affinant le modèle par défaut a été entraîné avec l'application Kraken
+    			Les principes de \gls{segmentation} que l'on vient de définir ont été appliqués à un premier lots de 123 doubles pages issues des 2\textsuperscript{e} et 3\textsuperscript{e} volumes des recueils de copies\footcite{CdS02001369, CdS02001334}. Les pages ont été initialement segmentées avec le modèle par défaut de Kraken, puis corrigées et annotées manuellement dans l'interface eScriptorium\footnote{Les fichiers exportés sont les 123 premiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}.}. Une fois ces corrections effectuées, les pages ont été exportées au format \gls{alto} et un modèle de \gls{segmentation} affinant le modèle par défaut a été entraîné avec l'application Kraken
     			\footnote{La commande utilisée, qui indique l'architecture d'entraînement qui nous a été conseillée par A.~Pinche, est la suivante~:
     				
     				\selectlanguage{english}
@@ -1065,7 +1088,7 @@
 	    		\begin{figure}[!h]
 	    			\centering
 	    			\includegraphics[width=15cm]{img/seg-copie-deux-04-CdS02_Konv002-03_0231.jpg}
-	    			\caption{Résultat de l'entraînement d'un modèle de {segmentation} sur 123 doubles pages de recueils.}
+	    			\caption{Résultat de l'entraînement d'un modèle de \gls{segmentation} sur 123 doubles pages de recueils.}
 	    			\label{seg-copie-deux-04-231}
 	    		\end{figure}
     		
@@ -1073,7 +1096,7 @@
     			
     			En revanche, ce sont les autres types de lignes que le segmenteur n'a pas correctement repéré ni annoté. Seules les lignes de titres ont été correctement annotées \textsf{HeadingLine}, mais on remarque qu'elles n'ont pas été bien repérées, car leur ligne de base est parfois découpée en plusieurs tronçons là où l'on attendrait une seule ligne horizontale. Les lignes de date, de signature, de post-scriptum ou de manchette ont quant à elle été très mal ou pas du tout repérées.
     			
-    			Bien que très imparfait, ce résultat n'en constitue pas moins un relatif succès de l'entraînement, dans la mesure où la {segmentation} produite est tout à fait exploitable. Elle peut être corrigée manuellement beaucoup moins de temps qu'une annotation manuelle consécutive à une {segmentation} avec modèle par défaut.
+    			Bien que très imparfait, ce résultat n'en constitue pas moins un relatif succès de l'entraînement, dans la mesure où la \gls{segmentation} produite est tout à fait exploitable. Elle peut être corrigée manuellement beaucoup moins de temps qu'une annotation manuelle consécutive à une \gls{segmentation} avec modèle par défaut.
     			
     			On a tenté de confirmé ces résultats encourageants en apportant de nouvelles pages au jeu d'entraînement. Mais contrairement à ce que l'on espérait, avec 61 doubles pages supplémentaires corrigées à la main
     			\footnote{Il s'agit de l'intégralité des fichiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}}
@@ -1408,7 +1431,7 @@
 		
 		\section{Choisir un projet-modèle}
 			
-			Deux solutions concurrentes ont pu être envisagées grâce aux outils produits par d'autres entreprises éditoriales. Le projet \gls{dahn} avait donné naissance à un ensemble de scripts Python permettant de transformer le texte d'une lettre en encodage \gls{tei}, sélectionnant les lignes du texte selon les motifs qu'ils contiennent (patronymes, dates, signature, etc.) pour les inscrire dans les éléments correspondants du format \gls{tei}. Cette méthode avait le désavantage de ne pas permettre d'exploiter l'annotation des régions et des lignes d'écriture développée lors de la {segmentation} des lettres
+			Deux solutions concurrentes ont pu être envisagées grâce aux outils produits par d'autres entreprises éditoriales. Le projet \gls{dahn} avait donné naissance à un ensemble de scripts Python permettant de transformer le texte d'une lettre en encodage \gls{tei}, sélectionnant les lignes du texte selon les motifs qu'ils contiennent (patronymes, dates, signature, etc.) pour les inscrire dans les éléments correspondants du format \gls{tei}. Cette méthode avait le désavantage de ne pas permettre d'exploiter l'annotation des régions et des lignes d'écriture développée lors de la \gls{segmentation} des lettres
 			\footnote{Le projet avait été mené avant qu'eScriptorium ne propose une interface permettant cette annotation sémantique.}.
 			
 			Par bonheur, un stage simultané à celui-ci, mené par Kelly Christensen, s'était attelé au développement d'une application en langage Python, Alto2tei
@@ -1467,7 +1490,7 @@
 				\label{57int}
 			\end{figure}
 		
-			Dans un premier temps, l'application Alto2tei importe dans l'élément \textsf{<sourceDoc>} du fichier \gls{tei} de la lettre l'intégralité du contenu des deux fichiers \gls{alto}, y compris le texte des autres lettres attestées sur les mêmes pages. Pour sélectionner le seul texte de la lettre à éditer, on s'est appuyé sur l'existence d'un titre pour chaque lettre. Ce titre a fait l'objet d'une annotation lors de la phase de {segmentation} et ses lignes sont donc accompagnées de l'information sémantique \textsf{HeadingLine:title}.
+			Dans un premier temps, l'application Alto2tei importe dans l'élément \textsf{<sourceDoc>} du fichier \gls{tei} de la lettre l'intégralité du contenu des deux fichiers \gls{alto}, y compris le texte des autres lettres attestées sur les mêmes pages. Pour sélectionner le seul texte de la lettre à éditer, on s'est appuyé sur l'existence d'un titre pour chaque lettre. Ce titre a fait l'objet d'une annotation lors de la phase de \gls{segmentation} et ses lignes sont donc accompagnées de l'information sémantique \textsf{HeadingLine:title}.
 			
 			Un script Python a été conçu pour intervenir dans l'application \gls{galcor} entre la construction du \textsf{<sourceDoc>} et la construction du \textsf{<text>} pour sélectionner les lignes pertinentes à éditer\footnote{Il s'agit de la fonction \textsf{selectionBlocs} dans le script \cite{biayCdsFonctionsPy2022}.}. Ce script doit récupèrer dans un premier temps une information capitale~: la position, dans la double page, du titre de la lettre à éditer. Connaissant le nombre de lettres attestées sur une même page et sachant que leurs identifiants se succèdent dans l'ordre alphanumérique, il avait été possible de calculer cette position automatiquement en générant le fichier de données dont on a montré un extrait précédemment (l'information est donnée sous la clé \textsf{title\_position})\footnote{Voir \textit{supra}, p.~\pageref{json-CdS-b1-06pa}}. On peut vérifier l'information en se reportant à l'image \ref{56int}~: le titre de la lettre d'exemple, dont le texte commence par \textit{Madame, je me suis empressé} est bien le troisième titre de la page. Le titre de la lettre ayant été localisé par sa position parmi les régions d'écriture, on procède alors à la récupération des régions d'écritures qui le suivent sur cette double page et sur la suivante, jusqu'à recontrer une nouvelle région d'écriture contenant un titre, ce qui indique qu'une nouvelle lettre est en train de commencer et que la sélection des régions pertinentes doit donc être interrompue
 			\footnote{Cette opération de sélection a été effectuée au moyen de requêtes X-path construire dans le script Python grâce à la librairie Lxml (\url{https://lxml.de/}).}. Ces régions d'écritures récupérées, on en extrait la liste des identifiants de chaque ligne, car le format \gls{alto} attribue à chaque ligne un identifiant unique. C'est cette liste d'identifiant qui a permis de poser un filtre lors de la construction de l'élément \textsf{<text>} du fichier \gls{tei} à partir du contenu de son élément \textsf{<sourceDoc>}~: l'application Alto2tei a été modifiée pour ne construire l'élément \textsf{<text>} qu'à partir des lignes dont l'identifiant a été listé comme pertinent, les autres lignes étant simplement ignorées.
@@ -1736,7 +1759,7 @@ l'éxaltation d'une âme
 	\chapter*{Conclusion}
 		\addcontentsline{toc}{chapter}{Conclusion}% Ajoute à la table des matières sans numérotation
 		
-		La correspondance de \gls{cds} est un vaste corpus (11\,000 pièces environ), constitué de documents de nature hétérogène (originaux, brouillons, copie), en feuilles libres ou constitués en recueils, copiés par de multiples mains. Il n'était guère possible d'analyser de manière complète ces documents, que ce soit sur le plan de la mise en page, sur le plan paléographique ou sur le plan de la conservation, et cette absence d'une évaluation globale est une limite évidente aux apports de ce stage. Mais, s'il eut été trop coûteux de dresser la cartographie complète du territoire, le front pionnier que l'on y a ouvert en facilitera sans doute l'exploration de manière considérable.
+		La correspondance de \gls{cds} est un vaste corpus (11\,000 pièces environ), constitué de documents de nature hétérogène (originaux, brouillons, copie), en feuilles libres ou en recueils, copiés par de multiples mains. Il n'était guère possible d'analyser de manière complète ces documents, que ce soit sur le plan de la mise en page, sur le plan paléographique ou sur le plan de la conservation, et cette absence d'une évaluation globale est une limite évidente aux apports de ce stage. Mais, s'il eut été trop coûteux de dresser la cartographie complète du territoire, le front pionnier que l'on y a ouvert en facilitera sans doute l'exploration de manière considérable.
 		
 		On s'est ainsi attelé à trois problèmes inhérents à toute entreprise d'édition nativement numérique d'un corpus massif~: 
 		
@@ -1758,7 +1781,7 @@ l'éxaltation d'une âme
 		
 		Au demeurant, toutes les difficultés de traitement des documents n'ont pas pu être prises en compte. On a notamment identifié un problème de transparence du papier dans la correspondance de J.-P.~Martini à \gls{cds}, qui mériterait de réfléchir à une méthode de pré-traitement des images\footnote{Voir par exemple la lettre \cite{CdS19054056}.}.
 		
-		L'analyse de la mise en page, par l'entraînement d'un modèle de \gls{segmentation}, n'a produit que des résultats partiels, mais encourageants. Les méthode d'entraînement sont amenées à évoluer rapidement dans les années à venir et l'on peut penser que l'approche de la \gls{segmentation} que l'on a envisagée sera rapidement dépassée. Mais cette approche a néanmoins abouti à un gain de temps réel dans le traitement des pages, seules les petites subtilités comme les mentions de date, les signatures, etc. représentant un réel problème. Malgré cet inaboutissement, il était important de ne pas sacrifier trop de temps à cette étape du travail afin de mettre en place une chaîne de traitement relativement complète, qui aboutisse à la construction de l'édition numérique au format \gls{tei}.
+		L'analyse de la mise en page, par l'entraînement d'un modèle de \gls{segmentation}, n'a produit que des résultats partiels, mais encourageants. Les méthodes d'entraînement sont amenées à évoluer rapidement dans les années à venir et l'on peut penser que l'approche de la \gls{segmentation} que l'on a envisagée sera rapidement dépassée. Mais cette approche a néanmoins abouti à un gain de temps réel dans le traitement des pages, seules les petites subtilités comme les mentions de date, les signatures, etc. représentant un réel problème. Malgré cet inaboutissement, il était important de ne pas sacrifier trop de temps à cette étape du travail afin de mettre en place une chaîne de traitement relativement complète, qui aboutisse à la construction de l'édition numérique au format \gls{tei}.
 		
 		L'entraînement d'algorithmes de reconnaissance des écritures manuscrites a en revanche rencontré moins de difficultés. Grâce aux apports méthodologiques et aux modèles récupérés du projet \gls{lectaurep}, d'excellents scores ont pu être obtenus avec relativement peu de données d'entraînements produites.
 		Il a un temps été envisagé d'entraîner un modèle pour reconnaître l'écriture autographe de \gls{cds}, mais la transcription de ses brouillons s'est révélée gourmande en temps, avec le risque que le résultats se révèlent mauvais. On s'est donc contenté de donner en annexe les transcriptions effectuées afin de faciliter le travail d'un futur paléographe.
