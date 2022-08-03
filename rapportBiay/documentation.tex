@@ -892,7 +892,7 @@
 				}.
 				Cette méthode nous a permis de procéder à des entraînements de modèle à partir de petits volumes de vérités de terrain. Si des entraînements plus massifs s'avéraient nécessaires, il serait alors impératif de se tourner vers une infrastructure dotée de plus grandes capacités de calcul, ce que, par exemple, un partenariat entre le \gls{dhi} et le projet \gls{cremma} rendrait possible.
 						
-		\section[La \gls{segmentation}]{La \gls{segmentation}~: reconnaissance des zones de texte et des lignes d'écriture}
+		\section[La segmentation]{La segmentation~: reconnaissance des zones de texte et des lignes d'écriture}
 			\label{lieu-segmentation}
 			
 			La \gls{segmentation} est une étape indispensable à la réalisation d'une reconnaissance automatique de l'écriture manuscrite. Il s'agit de l'étape la plus problématique, car les possibilités d'entraînement de modèles de \gls{segmentation}, permettant d'automatiser le processus, requièrent beaucoup plus de données d'entraînement que pour la reconnaissance de l'écriture elle-même, avec des résultats parfois médiocres.
@@ -1100,14 +1100,14 @@
     			
     			Bien que très imparfait, ce résultat n'en constitue pas moins un relatif succès de l'entraînement, dans la mesure où la \gls{segmentation} produite est tout à fait exploitable. Elle peut être corrigée manuellement en beaucoup moins de temps qu'une annotation manuelle consécutive à une \gls{segmentation} avec modèle par défaut.
     			
-    			On a tenté de confirmer ces résultats encourageants en apportant de nouvelles pages au jeu d'entraînement. Mais contrairement à ce que l'on espérait, avec 61 doubles pages supplémentaires corrigées à la main
-    			\footnote{Il s'agit de l'intégralité des fichiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}}
-    			, les résultats se sont révélés moins bons que lors du premier entraînement, car les lignes de titre ont été encore moins bien reconnues que précédemment. 
+    			On a tenté de confirmer ces résultats encourageants en apportant de nouvelles pages au jeu d'entraînement. Mais, contrairement à ce que l'on espérait, avec 61 doubles pages supplémentaires corrigées à la main
+    			\footnote{Il s'agit de l'intégralité des fichiers contenus dans le dossier \url{https://github.com/sbiay/CdS-edition/tree/main/htr/entrainements/train-seg-Konv002`}}, %
+    			les résultats se sont révélés moins bons que lors du premier entraînement, car les lignes de titre ont été encore moins bien reconnues que précédemment. 
     			
     			La préparation des données et les entraînements eux-mêmes demandant beaucoup de temps et d'effort, il a fallu renoncer à de nouvelles expérimentations pour ne pas desservir les autres étapes de la chaîne de traitement.
-
-    			%AVOIR Ajouter des propositions pour relancer l'entraînement des modèles
-	    		
+    			
+    			Les recherches actuelles portant sur ce domaine d'ingénierie permettent d'espérer de meilleurs résultats. Dans un article sous presse, T.~Clérice propose une nouvelle méthode d'entraînement fondée sur la technologie de détection d'objet plutôt que sur celle de la classification des pixels, ainsi qu'un module dénommé YALTAi (\textit{You Actually Look Twice At it}), grâce auquel des modèles de segmentation entraînés par détection d'objet avec l'application YOLOv5, dont les performances ont été évaluées bien meilleures que celles de Kraken, sont désormais rendus compatibles avec l'application Kraken et pourraient ainsi être intégrés à la chaîne de traitement\footcite{clericeYouActuallyLook2022}.
+    		
 	    	\subsection{Contrôler la pertinence de la \gls{segmentation}}
 		    	\label{controle-segmentation-lettres-inventoriees}
 	    		
