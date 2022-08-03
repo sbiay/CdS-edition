@@ -58,7 +58,6 @@ htr/py/evalutionDictGen.py
 htr/test-rec/*jpg
 htr/traitnts.md
 htr/transcriptions.json
-htr/verite-terrain/*jpg
 htr/xmlPage-aCorriger/
 htr/xmlPage-corrigees/
 lexique-deu-fra.csv
