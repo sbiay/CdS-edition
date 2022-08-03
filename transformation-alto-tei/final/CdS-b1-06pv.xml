@@ -46,6 +46,13 @@
         </respStmt>
       </seriesStmt>
       <sourceDesc>
+        <msDesc>
+          <msIdentifier>
+            <institution>Archiv Schloss Dyck</institution>
+            <repository>Fonds Constance de Salm</repository>
+            <idno>CdS/19/002</idno>
+          </msIdentifier>
+        </msDesc>
         <biblStruct>
           <analytic>
             <title>CdS/02_3/072</title>
