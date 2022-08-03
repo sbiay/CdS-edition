@@ -71,8 +71,24 @@ def teiheader(metadata, document, root, count_pages):
     title = root.xpath("//teiHeader//title", namespaces=nsmap)[0]
     title.text = f"Lettre de {auteur} à {destinataire} ({lieuExp}, {date})"
     
-    # Notice de l'inventaire
+    # Description de l'archive
     sourceDesc = root.xpath("//sourceDesc", namespaces=nsmap)[0]
+    msDesc = etree.SubElement(sourceDesc, "msDesc")
+    msIdentifier = etree.SubElement(msDesc, "msIdentifier")
+    institution = etree.SubElement(msIdentifier, "institution")
+    repository = etree.SubElement(msIdentifier, "repository")
+    # On récupère le nom de l'institution de conservation
+    if metadata["Bestand"] == "Schloss Dyck":
+        institution.text = "Archiv Schloss Dyck"
+        repository.text = "Fonds Constance de Salm"
+    else:
+        institution.text = "Société des Amis du Vieux Toulon et de sa Région"
+        repository.text = "Fonds Salm"
+    # Cote
+    idno = etree.SubElement(msIdentifier, "idno")
+    idno.text = metadata["Nr"]
+
+    # Notice de l'inventaire
     biblStruct = etree.SubElement(sourceDesc, "biblStruct")
     analytic = etree.SubElement(biblStruct, "analytic")
     title = etree.SubElement(analytic, "title")
